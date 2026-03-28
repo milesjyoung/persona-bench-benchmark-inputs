@@ -1,0 +1,504 @@
+{
+  "calendar_entries": [
+    {
+      "date": "2026-01-01",
+      "time": "12:00",
+      "duration_minutes": 180,
+      "title": "New Year's Day Dinner at Mom & Dad's",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Family traditions"]
+    },
+    {
+      "date": "2026-01-02",
+      "time": "06:15",
+      "duration_minutes": 50,
+      "title": "Morning Run w/ Dana - Gym (treadmill)",
+      "location": "Planet Fitness, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club"]
+    },
+    {
+      "date": "2026-01-03",
+      "time": "11:00",
+      "duration_minutes": 480,
+      "title": "Work - Mid Shift",
+      "location": "Restaurant, Madison",
+      "people": ["Jess"],
+      "category": "work",
+      "preferences_reflected": ["Food service career"]
+    },
+    {
+      "date": "2026-01-04",
+      "time": "09:30",
+      "duration_minutes": 60,
+      "title": "Sunday Mass",
+      "location": "Catholic parish, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith", "Family traditions"]
+    },
+    {
+      "date": "2026-01-04",
+      "time": "13:00",
+      "duration_minutes": 180,
+      "title": "Sunday Family Dinner + Packers Playoff Watch",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta", "Packers viewing"]
+    },
+    {
+      "date": "2026-01-07",
+      "time": "06:15",
+      "duration_minutes": 50,
+      "title": "Morning Run w/ Dana - Gym (treadmill)",
+      "location": "Planet Fitness, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club"]
+    },
+    {
+      "date": "2026-01-07",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Family traditions", "Italian heritage"]
+    },
+    {
+      "date": "2026-01-08",
+      "time": "18:30",
+      "duration_minutes": 90,
+      "title": "Craft-Brew Tasting - New Winter Stout Flight",
+      "location": "Ale Asylum, downtown Madison",
+      "people": [],
+      "category": "social",
+      "preferences_reflected": ["Craft-brew tastings"]
+    },
+    {
+      "date": "2026-01-10",
+      "time": "08:00",
+      "duration_minutes": 90,
+      "title": "Saturday Farmers Market (winter indoor)",
+      "location": "Dane County Farmers Market, Capitol Square (indoor)",
+      "people": [],
+      "category": "errands",
+      "preferences_reflected": ["Farmers market", "Seasonal produce", "Wisconsin cheese curds"]
+    },
+    {
+      "date": "2026-01-10",
+      "time": "14:00",
+      "duration_minutes": 420,
+      "title": "Work - Afternoon/Close Shift",
+      "location": "Restaurant, Madison",
+      "people": [],
+      "category": "work",
+      "preferences_reflected": ["Food service career"]
+    },
+    {
+      "date": "2026-01-11",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-01-14",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna - Helped with Sunday Gravy Prep",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian heritage", "Cooking and baking"]
+    },
+    {
+      "date": "2026-01-15",
+      "time": "15:00",
+      "duration_minutes": 480,
+      "title": "Work - Close Shift (swapped w/ Jess)",
+      "location": "Restaurant, Madison",
+      "people": ["Jess"],
+      "category": "work",
+      "preferences_reflected": ["Food service career"]
+    },
+    {
+      "date": "2026-01-18",
+      "time": "09:30",
+      "duration_minutes": 60,
+      "title": "Sunday Mass",
+      "location": "Catholic parish, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith"]
+    },
+    {
+      "date": "2026-01-18",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-01-20",
+      "time": "19:00",
+      "duration_minutes": 140,
+      "title": "Wes Anderson Double Feature - Rushmore & The Royal Tenenbaums",
+      "location": "Indie theater, downtown Madison",
+      "people": [],
+      "category": "entertainment",
+      "preferences_reflected": ["Wes Anderson films", "Indie theater"]
+    },
+    {
+      "date": "2026-01-22",
+      "time": "18:30",
+      "duration_minutes": 90,
+      "title": "Craft-Brew Tasting - WI Winter Ale Series",
+      "location": "Karben4 Brewing, Madison",
+      "people": [],
+      "category": "social",
+      "preferences_reflected": ["Craft-brew tastings"]
+    },
+    {
+      "date": "2026-01-24",
+      "time": "10:00",
+      "duration_minutes": 120,
+      "title": "ServSafe Study Session",
+      "location": "Madison Public Library, Central",
+      "people": [],
+      "category": "career_development",
+      "preferences_reflected": ["ServSafe certification", "Career goals"]
+    },
+    {
+      "date": "2026-01-25",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-01-28",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Family traditions", "Italian heritage"]
+    },
+    {
+      "date": "2026-01-30",
+      "time": "06:15",
+      "duration_minutes": 50,
+      "title": "Morning Run w/ Dana - Gym (treadmill)",
+      "location": "Planet Fitness, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club"]
+    },
+    {
+      "date": "2026-02-01",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-02-04",
+      "time": "06:15",
+      "duration_minutes": 50,
+      "title": "CANCELLED - Morning Run (Dana sick, ran solo on treadmill)",
+      "location": "Planet Fitness, Madison",
+      "people": [],
+      "category": "fitness",
+      "preferences_reflected": ["Running"]
+    },
+    {
+      "date": "2026-02-05",
+      "time": "11:00",
+      "duration_minutes": 480,
+      "title": "Work - Mid Shift (covered for Jess)",
+      "location": "Restaurant, Madison",
+      "people": [],
+      "category": "work",
+      "preferences_reflected": ["Food service career"]
+    },
+    {
+      "date": "2026-02-06",
+      "time": "06:15",
+      "duration_minutes": 50,
+      "title": "Morning Run w/ Dana - Gym (treadmill)",
+      "location": "Planet Fitness, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club"]
+    },
+    {
+      "date": "2026-02-06",
+      "time": "08:00",
+      "duration_minutes": 45,
+      "title": "Post-Run Coffee w/ Dana",
+      "location": "Colectivo Coffee, Monroe St, Madison",
+      "people": ["Dana"],
+      "category": "social",
+      "preferences_reflected": ["Running", "Dana friendship"]
+    },
+    {
+      "date": "2026-02-08",
+      "time": "15:00",
+      "duration_minutes": 300,
+      "title": "Super Bowl Watch Party at Mom & Dad's",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony"],
+      "category": "family",
+      "preferences_reflected": ["Packers fandom", "Family traditions", "Italian-Midwestern cooking"]
+    },
+    {
+      "date": "2026-02-10",
+      "time": "14:00",
+      "duration_minutes": 90,
+      "title": "Community College Info Session - Hospitality Program",
+      "location": "Madison Area Technical College",
+      "people": [],
+      "category": "career_development",
+      "preferences_reflected": ["Community college research", "Hospitality program", "Career goals"]
+    },
+    {
+      "date": "2026-02-11",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Family traditions", "Italian heritage"]
+    },
+    {
+      "date": "2026-02-12",
+      "time": "18:00",
+      "duration_minutes": 90,
+      "title": "Craft-Brew Tasting - Valentine's Sour Ale Release",
+      "location": "Working Draft Beer Company, Madison",
+      "people": [],
+      "category": "social",
+      "preferences_reflected": ["Craft-brew tastings"]
+    },
+    {
+      "date": "2026-02-14",
+      "time": "17:00",
+      "duration_minutes": 120,
+      "title": "Valentine's Day Baking - Spiced Apple Crumble for Mom",
+      "location": "Mary's apartment, Madison",
+      "people": [],
+      "category": "personal",
+      "preferences_reflected": ["Cooking and baking", "Spiced apple crumble"]
+    },
+    {
+      "date": "2026-02-15",
+      "time": "09:30",
+      "duration_minutes": 60,
+      "title": "Sunday Mass",
+      "location": "Catholic parish, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith"]
+    },
+    {
+      "date": "2026-02-15",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner + Parish Potluck Prep w/ Mom",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta", "Parish potluck"]
+    },
+    {
+      "date": "2026-02-17",
+      "time": "10:00",
+      "duration_minutes": 90,
+      "title": "Dr. Follow-Up Appointment",
+      "location": "UW Health clinic, Madison",
+      "people": [],
+      "category": "health",
+      "preferences_reflected": ["Health maintenance"]
+    },
+    {
+      "date": "2026-02-18",
+      "time": "12:15",
+      "duration_minutes": 45,
+      "title": "Ash Wednesday Mass (lunch break)",
+      "location": "Catholic parish, Madison",
+      "people": [],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith", "Liturgical calendar"]
+    },
+    {
+      "date": "2026-02-20",
+      "time": "17:30",
+      "duration_minutes": 120,
+      "title": "Lenten Fish Fry - Parish Hall",
+      "location": "Catholic parish hall, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith", "Lenten traditions", "Fish fry"]
+    },
+    {
+      "date": "2026-02-22",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "RESCHEDULED - Sunday Family Dinner (moved from noon, Mary worked morning open shift)",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-02-25",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna - Brought Sudoku Book",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Family traditions", "Sudoku"]
+    },
+    {
+      "date": "2026-02-27",
+      "time": "17:30",
+      "duration_minutes": 120,
+      "title": "Lenten Fish Fry - Parish Hall",
+      "location": "Catholic parish hall, Madison",
+      "people": ["Lucia Alberti", "Tony"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith", "Lenten traditions", "Fish fry"]
+    },
+    {
+      "date": "2026-02-28",
+      "time": "06:15",
+      "duration_minutes": 55,
+      "title": "Morning Run w/ Dana - Lake Mendota (first outdoor run of the year!)",
+      "location": "Lake Mendota path, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club", "Lake Mendota"]
+    },
+    {
+      "date": "2026-03-01",
+      "time": "09:30",
+      "duration_minutes": 60,
+      "title": "Sunday Mass",
+      "location": "Catholic parish, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith"]
+    },
+    {
+      "date": "2026-03-01",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-03-04",
+      "time": "06:15",
+      "duration_minutes": 55,
+      "title": "Morning Run w/ Dana - Lake Mendota",
+      "location": "Lake Mendota path, Madison",
+      "people": ["Dana"],
+      "category": "fitness",
+      "preferences_reflected": ["Running", "Madison Runners Club", "Lake Mendota"]
+    },
+    {
+      "date": "2026-03-04",
+      "time": "08:00",
+      "duration_minutes": 45,
+      "title": "Post-Run Coffee w/ Dana",
+      "location": "Colectivo Coffee, Monroe St, Madison",
+      "people": ["Dana"],
+      "category": "social",
+      "preferences_reflected": ["Running", "Dana friendship"]
+    },
+    {
+      "date": "2026-03-06",
+      "time": "17:30",
+      "duration_minutes": 120,
+      "title": "Lenten Fish Fry - Parish Hall",
+      "location": "Catholic parish hall, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith", "Lenten traditions", "Fish fry"]
+    },
+    {
+      "date": "2026-03-07",
+      "time": "06:00",
+      "duration_minutes": 480,
+      "title": "Work - Open Shift",
+      "location": "Restaurant, Madison",
+      "people": ["Jess"],
+      "category": "work",
+      "preferences_reflected": ["Food service career"]
+    },
+    {
+      "date": "2026-03-08",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta"]
+    },
+    {
+      "date": "2026-03-11",
+      "time": "16:00",
+      "duration_minutes": 90,
+      "title": "Visit Nonna",
+      "location": "Nonna's apartment, Madison",
+      "people": ["Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Family traditions", "Italian heritage"]
+    },
+    {
+      "date": "2026-03-15",
+      "time": "09:30",
+      "duration_minutes": 60,
+      "title": "Sunday Mass",
+      "location": "Catholic parish, Madison",
+      "people": ["Lucia Alberti"],
+      "category": "religion",
+      "preferences_reflected": ["Roman Catholic faith"]
+    },
+    {
+      "date": "2026-03-15",
+      "time": "13:00",
+      "duration_minutes": 150,
+      "title": "Sunday Family Dinner",
+      "location": "Alberti family home, Madison",
+      "people": ["Lucia Alberti", "Dad", "Tony", "Nonna"],
+      "category": "family",
+      "preferences_reflected": ["Italian-Midwestern cooking", "Homemade pasta", "Family traditions"]
+    }
+  ]
+}

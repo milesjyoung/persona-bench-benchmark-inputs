@@ -1,0 +1,181 @@
+{
+  "participant": "Mary Alberti",
+  "generated": "2026-03-20",
+  "source": "step2_interview/interview_output.json + step2b_expert_verification/verification_output.json",
+  "generation_prompt": "Given the enriched persona from Step 2 (interview transcript and extracted profile) and the expert views from Step 2b, generate a comprehensive preference profile covering all major life domains. Each preference must cite interview evidence.",
+  "preferences": {
+    "health_and_wellness": {
+      "summary": "Active runner managing borderline hypertension through exercise and diet; hereditary shellfish sensitivity",
+      "details": [
+        "Runs 3-5 miles along Lake Mendota 3x/week (MWF at 6:15am) with Madison Runners Club",
+        "Borderline hypertension — cutting sodium, monitoring BP, doctor recheck in 6 months",
+        "Shellfish sensitivity (hereditary from mother) — avoids shrimp/crab, double-checks menus",
+        "Tracks meals in bullet journal for sodium awareness",
+        "Meal preps to avoid eating fast food at work",
+        "Takes Benadryl as backup for accidental shellfish exposure"
+      ],
+      "evidence": "Q6: 'blood pressure... a little elevated'; Q7: 'Dana will literally text me if I don't show up'; Q8: 'bad reaction at a restaurant about a year ago'"
+    },
+    "food": {
+      "summary": "Midwestern-Italian fusion home cook with specific signature dishes and farm-to-table leanings",
+      "details": [
+        "Signature dishes: cheddar-crusted bratwurst, cheese-curd poutine, spiced apple crumble",
+        "Italian-American family recipes: homemade pasta, Sunday gravy (Nonna's tradition)",
+        "Grows tomatoes, basil, and peppers in raised-bed garden",
+        "Buys seasonal produce and cheese curds at Saturday farmers market",
+        "Avoids shellfish (shrimp, crab) due to sensitivity",
+        "Trying to reduce sodium intake for BP management",
+        "Comfort baking: spiced apple crumble is go-to stress food"
+      ],
+      "evidence": "Q1: 'cheddar-crusted bratwurst next to a plate of rigatoni'; Q10 follow-up: 'spiced apple crumble is my go-to comfort bake'; Q7: 'cheese curds, bratwurst, all of it'"
+    },
+    "travel": {
+      "summary": "Budget-conscious regional traveler with aspirational international dreams",
+      "details": [
+        "Regular: Door County, WI weekend getaways with Dana (hiking, cheese curds, wineries)",
+        "Aspirational: Napa Valley, CA (wine country and culinary tourism)",
+        "Dream: Kyoto, Japan (someday trip)",
+        "Occasional: Milwaukee, WI for Brewers games with Jess",
+        "Constraint: Must balance travel costs with diner savings fund"
+      ],
+      "evidence": "Q4: 'We've gone to Door County together a couple times'; Q10: 'I keep looking at pictures of Napa Valley and Kyoto'"
+    },
+    "social_and_relationships": {
+      "summary": "Family-centered with a tight inner circle of 5; values loyalty and mutual support",
+      "details": [
+        "Mom (Lucia) is most important person — sees 2x/week, daily-ish contact",
+        "Nonna — visits Wednesdays, origin of cooking tradition and Italian identity",
+        "Dana — running partner 3x/week, mentor-friend, Door County trips",
+        "Jess — coworker confidante, shift-swap partner, Brewers buddy",
+        "Tony — younger brother, protective older sister role, weekly contact",
+        "Values loyalty — Kaylee friendship died after trust-breaking promotion",
+        "Community connections: Marcus (cheese vendor), parish community, running club"
+      ],
+      "evidence": "Q2: 'My mom is probably the most important person'; Q4: 'Dana... She's become like a real friend'; Q2: 'Jess is the one person I can actually vent to'"
+    },
+    "home_and_lifestyle": {
+      "summary": "Routine-obsessed bullet journaler in a modest Madison apartment with a raised-bed garden",
+      "details": [
+        "Bullet journal tracks spending, meals, shifts, savings, running, and weekly routines",
+        "Morning routine mapped to the minute — disruption causes anxiety",
+        "Raised-bed vegetable garden (tomatoes, basil, peppers)",
+        "Meal preps on Sundays as part of weekly reset",
+        "Budget-conscious: clips coupons, logs every receipt, $150/month leisure limit",
+        "Lives in Madison, WI (likely apartment with garden access)"
+      ],
+      "evidence": "Q1: 'I started a bullet journal a couple years ago to keep my head straight'; Q5 follow-up: 'Now if my routine gets disrupted I get kind of anxious'"
+    },
+    "entertainment": {
+      "summary": "Indie film, folk music, and low-key social gatherings",
+      "details": [
+        "Wes Anderson films — attends indie theater screenings (Rushmore, Royal Tenenbaums)",
+        "Self-help books (habit stacking, productivity)",
+        "Sudoku puzzles (stress relief, anxiety management)",
+        "Craft-brew tastings at local Madison breweries"
+      ],
+      "evidence": "Q11: 'I went to a Wes Anderson double feature at the indie theater downtown'; Q10 follow-up: 'I'll do Sudoku... the focus it takes kind of shuts off the anxious part of my brain'"
+    },
+    "hobbies": {
+      "summary": "Running, cooking/baking, gardening, bullet journaling, Sudoku, craft beer",
+      "details": [
+        "Running: 3-5 miles 3x/week, Lake Mendota, Madison Runners Club",
+        "Cooking/Baking: Italian-American and Midwestern recipes, hosts dinner gatherings",
+        "Raised-bed gardening: tomatoes, basil, peppers (spring/summer/fall)",
+        "Bullet journaling: daily habit, tracks all aspects of life",
+        "Sudoku: competitive edge outlet, anxiety management",
+        "Craft-brew tastings: local Madison breweries, occasional indulgence",
+        "Reading: self-help and productivity books"
+      ],
+      "evidence": "Q1: 'I run three to five miles along Lake Mendota'; Q1: 'I have a raised bed out back'; Q5: 'maybe do some Sudoku'"
+    },
+    "work_and_career": {
+      "summary": "Ambitious food service worker with a clear upward trajectory toward diner ownership",
+      "details": [
+        "Current: fast food/counter worker, 5 years at same chain, performing supervisor duties without title",
+        "Next step: shift supervisor promotion (actively pursuing, passed over once for Kaylee)",
+        "Medium-term: restaurant manager, community college hospitality program, ServSafe certification",
+        "Long-term dream: own a neighborhood diner ('a real neighborhood place where people come for breakfast')",
+        "Saves ~$100/month in 'diner fund'",
+        "Skills: POS, cash handling, food safety, inventory, team scheduling, shift leadership"
+      ],
+      "evidence": "Q1: 'My big dream is to own my own diner someday'; Q10: 'I've been channeling it into my diner savings and my community college research'"
+    },
+    "arts_and_culture": {
+      "summary": "Folk music, indie film, local arts scene",
+      "details": [
+        "Music: John Prine (lyrical storytelling), Bon Iver (atmospheric indie folk)",
+        "Film: Wes Anderson (attends indie theater screenings)",
+        "Local arts: art walks and museum exhibits (from seed data)",
+        "Italian-American cultural traditions: Sunday dinners, Feast of Seven Fishes, homemade pasta"
+      ],
+      "evidence": "Q10 follow-up: 'I put on John Prine or Bon Iver and just go'; Q11: 'Wes Anderson double feature at the indie theater'"
+    },
+    "sports": {
+      "summary": "Dedicated Packers fan, casual Brewers follower, active runner",
+      "details": [
+        "Green Bay Packers: watches every Sunday with family in fall, emotional investment",
+        "Milwaukee Brewers: summer viewer, occasional road trips to Milwaukee with Jess",
+        "Wisconsin Badgers basketball: fan (from seed data, absent from interview)",
+        "Madison Runners Club: active member, 3-5 miles 3x/week at Lake Mendota",
+        "Considering first half-marathon (Dana encouraging, Madison Mini in May)"
+      ],
+      "evidence": "Q1 follow-up: 'If the Packers are on, my dad has the TV going'; Q5: 'catch a Brewers game'; Q2: 'Dana... she's done a bunch of half-marathons'"
+    },
+    "nature_and_outdoors": {
+      "summary": "Lake Mendota runner, raised-bed gardener, Door County hiker",
+      "details": [
+        "Running along Lake Mendota path 3x/week",
+        "Raised-bed vegetable gardening (spring-fall)",
+        "Door County weekend getaways — hiking, lakeside relaxation",
+        "Farmers market every Saturday (outdoor in summer, indoor in winter)",
+        "Dreams of Kyoto — interest in nature/culture travel"
+      ],
+      "evidence": "Q1: 'I run three to five miles along Lake Mendota'; Q4: 'Door County... hiking, eating cheese curds, hitting up wineries'"
+    },
+    "technology": {
+      "summary": "Low-tech, analog-leaning — bullet journal over apps, basic tech user",
+      "details": [
+        "Uses bullet journal (analog) for all tracking rather than apps",
+        "Basic phone usage — texting, probably social media",
+        "No technology hobbies or interests mentioned",
+        "Works with POS systems at restaurant (job skill, not hobby)"
+      ],
+      "evidence": "Q1: 'I started a bullet journal a couple years ago'; Q11 follow-up: 'Every receipt gets logged' (in journal, not app)"
+    },
+    "society": {
+      "summary": "Community-oriented, values local connections and neighborhood identity",
+      "details": [
+        "Values farmers market as weekly community ritual",
+        "Parish community involvement (potlucks, fish fry volunteering)",
+        "Running club as social community",
+        "Dreams of a neighborhood diner — community-building aspiration",
+        "Moderate political leaning, not strongly partisan"
+      ],
+      "evidence": "Q4: Marcus 'It's one of those community connections that makes Madison feel like home'; Q1: 'a real neighborhood place where people come for breakfast and know your name'"
+    },
+    "music": {
+      "summary": "Folk and indie folk listener, uses music for emotional regulation",
+      "details": [
+        "John Prine — lyrical storytelling, listens while running and when stressed",
+        "Bon Iver — atmospheric indie folk, running and stress music",
+        "Classic rock — listed in seed data but not substantiated in interview"
+      ],
+      "evidence": "Q10 follow-up: 'I put on John Prine or Bon Iver and just go'"
+    },
+    "fashion": {
+      "summary": "Practical, budget-conscious, work-appropriate clothing",
+      "details": [
+        "Running gear: $120 running shoes noted as significant expense",
+        "Work uniform/practical clothing for food service",
+        "No fashion interests or clothing brands mentioned",
+        "Budget-conscious — unlikely to splurge on fashion"
+      ],
+      "evidence": "Q11: 'I had to get new running shoes last month, which was like a hundred and twenty bucks, and that hurt'"
+    }
+  },
+  "verification_notes": {
+    "seed_alignment": "13 of 15 preference categories have direct seed data alignment. Technology and Fashion are inferred from interview absence and financial constraints.",
+    "interview_coverage": "All preferences cite specific interview quotes. Classic rock (Music) and Art walks (Arts & Culture) are carried from seed but lack interview substantiation — flagged in Step 2b verification.",
+    "expert_alignment": "Preferences are consistent with all 4 expert views. Behavioral Economist confirms financial constraints shape entertainment, travel, and food choices."
+  }
+}

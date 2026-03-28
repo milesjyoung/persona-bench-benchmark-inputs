@@ -1,0 +1,210 @@
+{
+  "spec_compliance_date": "2026-03-20",
+  "specs_source": "generate_personas.py + PDF guidelines",
+  "track": "Track 2 — Deterministic Spec Compliance",
+  "persona": "Mary Alberti, age 28, Female, HS diploma, Madison WI (urban)",
+  "checks": {
+    "dunbar_sizing": {
+      "verdict": "PASS",
+      "formula": "intimate = max(2, int(5 * (0.5 + E)))",
+      "estimated_E": 0.65,
+      "E_estimation_rationale": "Mary runs with a club 3x/week, attends craft-brew tastings, participates in family dinners weekly, engages with farmers market community, has multiple distinct social spheres (running club, work, family, church, market). She is clearly above-average in extraversion but not extreme — she also values solo routines (bullet journal, Sudoku, gardening). Estimated E = 0.65 (moderately high, ~1 SD above mean of 0.5).",
+      "math": "intimate = max(2, int(5 * (0.5 + 0.65))) = max(2, int(5 * 1.15)) = max(2, int(5.75)) = max(2, 5) = 5",
+      "expected_intimate_size": 5,
+      "actual_intimate_size": 5,
+      "details": "With E ~ 0.65, the formula yields exactly 5 intimate members. The social_circle_output.json places 5 people in the intimate_5 layer (Lucia/Mom, Dana, Jess, Nonna, Tony). This is consistent with the Dunbar formula. Note: the formula is sensitive to E — at E=0.50, intimate = max(2, int(5*1.0)) = 5 still holds; at E=0.70, intimate = max(2, int(5*1.2)) = max(2,6) = 6. So the 5-member circle is valid for E in the range [0.30, 0.69]. Mary's behavioral E of ~0.65 falls comfortably in this range."
+    },
+    "census_age": {
+      "verdict": "PASS",
+      "mary_age": 28,
+      "bracket": "25-44",
+      "bracket_count": "27 out of 100",
+      "bracket_pct": "27%",
+      "details": "Mary at age 28 falls squarely in the 25-44 age bracket, which is the largest bracket at 27/100 personas. Her age is plausible and well within the Census allocation. The generator picks ages uniformly within each bracket (random.randint(25,44)), so age 28 has equal probability as any other age in the range."
+    },
+    "census_gender": {
+      "verdict": "PASS",
+      "mary_gender": "Female",
+      "spec_distribution": "49 Male / 51 Female out of 100",
+      "details": "Mary is Female. The spec allocates 51 female personas out of 100, matching the US Census split. A female persona is slightly more likely than male in this distribution. No issues."
+    },
+    "census_location": {
+      "verdict": "PASS (with caveat)",
+      "mary_location": "Madison, WI 53717",
+      "spec_distribution": "80 urban / 20 rural",
+      "details": "Madison, WI is an urban area (pop ~270k metro ~660k), consistent with the 80% urban allocation. However, the generate_personas.py urban location pool (line 61-68) does NOT include Madison — it lists NYC, LA, Chicago, Houston, Phoenix, SF, Philadelphia, San Antonio, San Diego, Dallas, Austin, Seattle, Denver, Atlanta, Miami, Boston, Portland, Minneapolis, Nashville, Charlotte. Madison was chosen during the Step 1/2 persona creation process outside the generator's pool. This is acceptable for a hand-crafted persona but technically diverges from the generator's location set. Verdict PASS because urban classification is correct; the specific city is outside the coded pool but is a valid US urban location."
+    },
+    "census_education": {
+      "verdict": "PASS",
+      "mary_education": "High School Diploma",
+      "spec_distribution_25plus": "HS=37%, Some College=25%, Bachelor's=24%, Graduate=14%",
+      "details": "Mary (age 28, thus 25+) has a high school diploma. The spec assigns 37% of adults 25+ to HS diploma — the single largest education category. She is also pursuing community college / ServSafe, which is consistent with upward mobility from the HS baseline. Her education level fits the most common category. PASS."
+    },
+    "health_hypertension": {
+      "verdict": "FAIL — age-prevalence mismatch",
+      "spec_prevalence": "45% of ALL adults (line 588: round(len(adults) * 0.45))",
+      "spec_assignment_method": "Sorted by age descending, top 45% get hypertension (lines 585-594). This means the oldest ~35 adults get it first.",
+      "age_adjusted_real_prevalence": "US CDC data: hypertension prevalence is ~22% for ages 18-39, ~7-8% for ages 25-29 specifically. The 45% figure is the overall adult rate, heavily driven by 65+ (>70%) and 45-64 (~55%).",
+      "mary_age": 28,
+      "mary_has_hypertension": true,
+      "analysis": "The generator sorts adults by age descending and assigns hypertension to the top 35 (~45% of 78 adults). Mary at 28 would typically NOT be in the top 35 oldest adults in a 100-persona population (the 25-44 bracket alone has 27 people, plus 25 in 45-64 and 17 in 65+). In the generator, the 42 oldest adults (17 aged 65+ and 25 aged 45-64) would fill most of the 35 slots, leaving little room for 25-44 year-olds. However, the interview gives Mary 'borderline hypertension' — described as 'elevated numbers, not medication-level yet.' This is clinically plausible at age 28 (pre-hypertension affects ~1 in 4 young adults), but the generator's 45% flat rate applied to all adults overstates the condition for her age bracket.",
+      "details": "Two issues: (1) The generator's 45% prevalence is for all adults and the age-descending sort SHOULD protect young adults, but the interview assigns Mary borderline hypertension anyway. (2) Real US prevalence for a 28-year-old female is ~7-8%, making this an unlikely assignment. For the synthetic population it is not necessarily wrong — someone has to be in the unlucky 7-8% — but it warrants flagging. The 'borderline' framing in the interview softens this somewhat. Verdict FAIL because the age-specific prevalence makes this a statistically unusual assignment that the generator's own age-sort mechanism would typically prevent."
+    },
+    "health_shellfish": {
+      "verdict": "PASS",
+      "spec_count": "3 shellfish allergies across ~78 adults (line 177: ('Shellfish', 3))",
+      "spec_prevalence": "3/78 = 3.8%",
+      "real_us_prevalence": "~2.0% (FARE data). Some estimates range 2-3%.",
+      "mary_has_shellfish": true,
+      "details": "Mary is one of 3 adults with shellfish allergy/sensitivity in the 78-adult pool. The spec count of 3 yields 3.8%, which is slightly above the ~2% real US prevalence but within a reasonable range for a small sample (3 vs. the 'expected' 1.56 at 2%). The PDF Table 4 specifies exactly 3 shellfish allergies, and the generator follows this exactly. Mary having shellfish sensitivity is consistent — she is one of the 3 designated slots. PASS."
+    },
+    "ocean_conscientiousness": {
+      "verdict": "PASS",
+      "rule": "C > 0.6 triggers planning activities: 'Weekly meal prep and planning' and 'Budget review session' (lines 1548-1552)",
+      "estimated_C": "High (>0.6)",
+      "evidence": [
+        "Bullet journal tracks spending, meals, routines, shifts, and savings — daily habit",
+        "Morning mapped to the minute; disrupted routine causes anxiety",
+        "Logs every receipt immediately after purchase ('stand at the register and write it down')",
+        "Meal prepping for the week (Sunday reset)",
+        "Budget review is explicit: 'I have a whole spread for it. Every receipt gets logged.'",
+        "Systematic career planning: crew → supervisor → manager → diner owner",
+        "ServSafe study sessions on calendar"
+      ],
+      "details": "Mary's behavior strongly matches the C>0.6 rule. She exhibits both spec-prescribed activities (meal prep/planning and budget review) and goes beyond them with obsessive routine tracking. The spec says C>0.6 triggers planning activities — Mary's behavioral C is clearly well above 0.6, possibly 0.80+. Her planning behaviors are unmistakable. PASS."
+    },
+    "ocean_neuroticism": {
+      "verdict": "PASS (borderline)",
+      "rule": "N > 0.6 triggers 'Health anxiety check-up' and 'Re-checking home security' (lines 1541-1545)",
+      "estimated_N": "Moderate (~0.45-0.55, possibly up to 0.60)",
+      "evidence": [
+        "Health anxiety: 'That freaked me out a little because my nonna has had heart stuff' — blood pressure scare led to behavioral change",
+        "Shellfish paranoia: 'I'm basically paranoid about it' — always double-checks menus",
+        "Routine disruption anxiety: 'If I miss my morning run, my whole day feels off'",
+        "Receipt double-checking behavior (could be C or N or both)",
+        "Does NOT show: excessive worry dominating her life, avoidance behavior, catastrophizing, social anxiety",
+        "Self-rates emotionally as '7 out of 10 most days'"
+      ],
+      "details": "Mary shows specific anxieties (health/allergen checking, routine rigidity) but is generally well-adjusted and self-aware. Her N is likely moderate — around 0.50-0.55. The health anxiety behaviors ARE present (checking BP at Walgreens, doctor follow-ups, allergen vigilance) but could be attributed to legitimate health management rather than neurotic trait expression. She does not show the full N>0.6 behavioral pattern (no 're-checking home security' type behaviors). The health check-ups she attends are medically justified, not anxiety-driven. Verdict PASS borderline — the behaviors are present but may reflect situational concern rather than trait neuroticism. If Mary's N is actually below 0.6, the health anxiety behaviors are still plausible as circumstantial, not trait-driven."
+    },
+    "ocean_extraversion": {
+      "verdict": "PASS",
+      "rule": "E level correlates with social activity count; E>0.8 triggers guaranteed Social activity (line 1596-1597); E<0.2 enforces 4:1 alone:social (lines 1607-1620)",
+      "estimated_E": 0.65,
+      "evidence": [
+        "Running club 3x/week (social activity)",
+        "Craft-brew tastings Tue/Thu (social, though could go alone)",
+        "Weekly family dinners (social)",
+        "Farmers market every Saturday with community engagement (20-min chats with Marcus)",
+        "Brewers games with Jess (social)",
+        "Door County trips with Dana (social)",
+        "Church Mass 2-3x/month (social)",
+        "Also has significant solo activities: bullet journaling, Sudoku, gardening, self-help reading, baking"
+      ],
+      "details": "Mary's social activity count is moderate-to-high, consistent with E~0.65. She has roughly 5-7 social activities per week balanced against 3-4 solo ones. She is NOT in the E<0.2 introvert range (no 4:1 alone:social needed). She is NOT in the E>0.8 extreme extravert range (no guaranteed Social activity trigger needed). She falls in the broad middle range where the generator produces a natural mix. Her social frequency is appropriate for a moderately extraverted 28-year-old. PASS."
+    },
+    "allergen_pool": {
+      "verdict": "PASS",
+      "spec": "ALLERGENS list (line 177): Shellfish=3, Peanuts=2, Tree Nuts=1, Milk/Dairy=2, Egg=1, Wheat/Gluten=1, Soy=1, Fish=1, Sesame=0. Total: 12 allergy assignments across ~78 adults.",
+      "mary_allergen": "Shellfish sensitivity",
+      "details": "Mary has shellfish sensitivity, which maps to one of the 3 'Shellfish' allergy slots in the ALLERGENS pool. The spec allocates exactly 3 shellfish allergies. Mary occupying one of these 3 slots is fully consistent. Her hereditary angle (mother has the same condition) is a nice narrative touch that doesn't violate the spec — the generator doesn't model heredity, but it doesn't prohibit it either. The interview correctly uses behavioral clues (double-checking menus, avoiding shellfish at fish fry, stomach cramps from shrimp stock) rather than naming the condition directly, consistent with the forward-process requirement. PASS."
+    },
+    "circle_demographics": {
+      "verdict": "PASS",
+      "members_analyzed": [
+        {
+          "name": "Lucia Alberti (Mother)",
+          "age": 54,
+          "gender": "Female",
+          "location": "Madison, WI",
+          "occupation": "Works (unspecified)",
+          "plausibility": "PASS — age 54 is plausible for the mother of a 28-year-old. Same city is consistent with Mary seeing her 2x/week. Italian-American consistent with Mary's heritage."
+        },
+        {
+          "name": "Dana",
+          "age": 38,
+          "gender": "Female",
+          "location": "Madison, WI area",
+          "occupation": "Not stated",
+          "plausibility": "PASS — age 38 matches Mary's statement 'like ten years older than me.' Same city (Madison Runners Club). Demographics are sparse but nothing contradicts Census reasonableness."
+        },
+        {
+          "name": "Jess",
+          "age": "Mid-20s to early 30s (estimated)",
+          "gender": "Female",
+          "location": "Madison, WI area",
+          "occupation": "Fast food / counter worker",
+          "plausibility": "PASS — coworker at same restaurant, age estimate is reasonable for fast food workforce. Same city. Low education level implied by occupation is Census-consistent."
+        },
+        {
+          "name": "Nonna Alberti",
+          "age": "80s",
+          "gender": "Female",
+          "location": "Madison, WI area",
+          "occupation": "Retired",
+          "plausibility": "PASS — grandmother in her 80s with an ~54-year-old daughter is plausible (had daughter at ~26-28). Calabrian immigrant. Madison-based, consistent with Mary's weekly visits."
+        },
+        {
+          "name": "Tony Alberti",
+          "age": "Early-to-mid 20s (estimated)",
+          "gender": "Male",
+          "location": "Madison, WI area",
+          "occupation": "Community college student",
+          "plausibility": "PASS — younger brother in community college is Census-plausible. Same family, same city. Age gap of ~4-6 years with Mary is realistic."
+        }
+      ],
+      "gender_note": "4 Female, 1 Male in the intimate circle. This skews female, but is explained by Mary's family structure (mother, grandmother) and her closest friends (Dana, Jess) being women. The only male is her brother. This is socially realistic — same-gender friendships dominate intimate circles, and Mary's family has prominent female figures.",
+      "age_range_note": "The circle spans ~20s (Tony) to 80s (Nonna), which is unusual for a peer-based social network but completely normal for a family-dominant intimate circle. 3 of 5 members are family.",
+      "details": "All 5 circle members have plausible demographics for their roles. Ages are internally consistent with interview evidence. All are Madison-based, explaining the high contact frequency. No Census violations detected. PASS."
+    },
+    "activity_personality": {
+      "verdict": "PASS",
+      "rules_checked": [
+        {
+          "rule": "E < 0.2: 4:1 alone:social ratio (lines 1607-1620)",
+          "applies_to_mary": false,
+          "reason": "Mary's estimated E is ~0.65, well above the 0.2 threshold. This rule does not apply."
+        },
+        {
+          "rule": "Age 45+ and E <= 0.8: max 2 social activities (lines 1622-1635)",
+          "applies_to_mary": false,
+          "reason": "Mary is 28, well below the 45 age threshold. This rule does not apply."
+        },
+        {
+          "rule": "18-24: highest social frequency (spec requirement)",
+          "applies_to_mary": false,
+          "reason": "Mary is 28, outside the 18-24 bracket. This bracket-level check cannot be verified on a single persona."
+        }
+      ],
+      "mary_activity_assessment": {
+        "social_activities_per_week": "~5-7 (running club 3x, family dinner 1x, craft-brew 1-2x, farmers market 1x, occasional Brewers game/church)",
+        "solo_activities_per_week": "~3-5 (bullet journaling daily, gardening, Sudoku, self-help reading, baking)",
+        "ratio": "Approximately 1.5:1 social:solo, consistent with moderate-to-high E",
+        "age_appropriate": "28-year-old with active social life but balanced solo time — appropriate for the 25-44 bracket which has no special social caps"
+      },
+      "details": "None of the restrictive activity rules (E<0.2 introvert cap, 45+ social cap) apply to Mary. She falls in the unrestricted middle: age 25-44, estimated E~0.65. Her activity mix shows a healthy social-to-solo balance consistent with moderate extraversion. Her running, craft-brew, family, and church activities provide 5-7 social touchpoints per week, which is plausible for her age and personality. PASS."
+    }
+  },
+  "summary": {
+    "total_checks": 12,
+    "passed": 11,
+    "failed": 1,
+    "compliance_rate": "91.7%",
+    "failed_checks": [
+      {
+        "check": "health_hypertension",
+        "reason": "The spec assigns hypertension at a 45% flat adult rate, sorted by age descending. The generator's own age-sort mechanism would typically protect a 28-year-old from receiving this condition, as the oldest ~35 adults would fill the hypertension slots first. Real US prevalence for a 28-year-old female is ~7-8%, making Mary's borderline hypertension statistically unusual. The interview frames it as 'borderline' (pre-hypertension), which softens the concern, but it remains a prevalence mismatch."
+      }
+    ],
+    "borderline_checks": [
+      {
+        "check": "ocean_neuroticism",
+        "note": "Mary shows health-related anxiety behaviors consistent with N>0.6 rules, but her overall emotional profile suggests N closer to 0.50-0.55. The health behaviors may be situational (legitimate medical concerns) rather than trait-driven neuroticism. Passed because the behavioral markers are present, but the trait inference is ambiguous."
+      },
+      {
+        "check": "census_location",
+        "note": "Madison, WI is correctly classified as urban, but it is not in the generator's coded URBAN_LOCATIONS pool. Passed because the urban/rural classification is correct, but the specific city diverges from the generator's location set."
+      }
+    ]
+  }
+}

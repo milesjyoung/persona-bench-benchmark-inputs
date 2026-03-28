@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "subject": "Mary Alberti",
+    "generated": "2026-03-20",
+    "source_files": ["step2_interview/interview_output.json", "step3_social_circles/social_circle_output.json"],
+    "time_span": "January–March 2026",
+    "total_conversations": 5,
+    "total_snippets": 19,
+    "needle_chains": {
+      "hypertension": {
+        "type": "synthetic_temporal",
+        "description": "Doctor visit with elevated numbers → dietary changes (cutting sodium, meal prep) → follow-up showing improvement",
+        "locations": ["CONV-001 snippet 2", "CONV-002 snippet 3", "CONV-001 snippet 4"]
+      },
+      "shellfish": {
+        "type": "real_logical",
+        "description": "Avoiding shared fryers at parish fish fry → bringing own food to Lent events → bad restaurant experience referenced when picking new restaurant",
+        "locations": ["CONV-001 snippet 1", "CONV-004 snippet 2", "CONV-003 snippet 2"]
+      },
+      "career": {
+        "type": "real_temporal",
+        "description": "Frustration about Kaylee's scheduling power → considering ServSafe cert for new location → researching community college hospitality program",
+        "locations": ["CONV-003 snippet 1", "CONV-003 snippet 3", "CONV-005 snippet 4"]
+      }
+    }
+  },
+  "messenger_logs": [
+    {
+      "conversation_id": "CONV-001",
+      "participants": ["Mary Alberti", "Lucia Alberti"],
+      "relationship": "Mother — closest family member, sees 2x/week, shared cooking tradition and shellfish sensitivity, devout Catholic who attends Sunday Mass every week",
+      "snippets": [
+        {
+          "date": "2026-01-10",
+          "embedded_facts": [
+            "Shellfish sensitivity (shared with mom) — Mary bringing her own dish to parish fish fry to avoid cross-contamination from shared fryers",
+            "Catholic faith — parish fish fry volunteering, Lent rhythm",
+            "Mom is protective about food safety, 'always ask twice' refrain"
+          ],
+          "needle_type": "real_logical",
+          "messages": [
+            {"sender": "Lucia", "text": "Mary are you still helping at the fish fry this Friday? Father Tom asked about volunteers for cleanup.", "time": "14:22"},
+            {"sender": "Mary", "text": "yes!! i'll be there right after my shift so probably like 7:30ish", "time": "14:45"},
+            {"sender": "Lucia", "text": "Good. I'm making the baked cod and the calamari for the table. Do you want me to set a plate aside for you with just the cod?", "time": "14:47"},
+            {"sender": "Mary", "text": "yes please lol you know the drill. i'm gonna bring my own pasta salad too just in case. last time somebody used the same fryer for everything and i was NOT about to risk it", "time": "14:50"},
+            {"sender": "Lucia", "text": "Smart girl. Always ask twice. I'll make sure nobody puts anything near your plate. Love Mom", "time": "14:52"}
+          ]
+        },
+        {
+          "date": "2026-01-22",
+          "embedded_facts": [
+            "Hypertension — doctor visit with elevated numbers, told to reduce sodium and recheck",
+            "Family history — Nonna has cardiac issues",
+            "Mom is worried and protective, immediately offers practical help (cookbook)"
+          ],
+          "needle_type": "synthetic_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "hey mom just got out of my checkup", "time": "11:14"},
+            {"sender": "Lucia", "text": "And?? How did it go?", "time": "11:15"},
+            {"sender": "Mary", "text": "fine i guess. numbers were still a little high. she wants me to really watch the sodium and come back in a few months", "time": "11:17"},
+            {"sender": "Lucia", "text": "Mary. You need to take this seriously. You know Nonna has had problems with all of that. Did the doctor say anything about medication?", "time": "11:18"},
+            {"sender": "Mary", "text": "no no it's not that bad. she said keep running and cut back on salt and recheck in like 6 months. i'm fine mom i promise", "time": "11:20"},
+            {"sender": "Lucia", "text": "I am going to send you that low sodium cookbook I got from the library. You are eating too much of that fast food at work. I know you are.", "time": "11:22"},
+            {"sender": "Mary", "text": "lol ok ok i'll look at it. love you", "time": "11:24"},
+            {"sender": "Lucia", "text": "Love you more. Take care of yourself please. Love Mom", "time": "11:25"}
+          ]
+        },
+        {
+          "date": "2026-02-16",
+          "embedded_facts": [
+            "Sunday dinner tradition — Italian-American family, homemade rigatoni",
+            "Nonna slowing down but still going to daily Mass",
+            "Lent starting — fish Fridays, Catholic observance",
+            "Mom coordinates family logistics"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Lucia", "text": "Are you coming for dinner Sunday? Nonna wants to make her rigatoni but I told her I'd help this time. She's been tired.", "time": "09:33"},
+            {"sender": "Mary", "text": "oh no is she ok??", "time": "09:51"},
+            {"sender": "Lucia", "text": "She's fine Mary. Just slowing down a little. She went to daily Mass this morning so she can't be that tired. But I want to do the heavy lifting so she can sit and tell me I'm doing it wrong.", "time": "09:53"},
+            {"sender": "Mary", "text": "lmaooo that is literally her favorite activity. ok yes i'll be there. also reminder lent starts wednesday so are we doing fish fridays at your place or mine", "time": "09:55"},
+            {"sender": "Lucia", "text": "Mine. I already bought halibut for this Friday. No shellfish obviously. Bring a salad if you want. Love Mom", "time": "09:58"}
+          ]
+        },
+        {
+          "date": "2026-03-12",
+          "embedded_facts": [
+            "Hypertension improving — numbers better after dietary changes and continued running",
+            "Mom's prayers and recipes contributing to Mary's motivation",
+            "Dad also doesn't listen about sodium (family dynamic)"
+          ],
+          "needle_type": "synthetic_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "MOM guess what", "time": "16:02"},
+            {"sender": "Lucia", "text": "What?? Are you OK??", "time": "16:03"},
+            {"sender": "Mary", "text": "lol yes calm down. i checked my numbers at the walgreens machine and they were actually way better than january!! the running and cutting back on salt is actually working", "time": "16:05"},
+            {"sender": "Lucia", "text": "Oh thank God. See??? I told you. Your father never listens to me about the salt either but at least one of my children has some sense. Keep it up Mary.", "time": "16:07"},
+            {"sender": "Mary", "text": "hahaha poor dad. ok i gotta go back in my break is almost over. see you sunday?", "time": "16:09"},
+            {"sender": "Lucia", "text": "Yes. I'm making lentil soup. Low sodium. Don't argue with me. Love Mom", "time": "16:11"}
+          ]
+        }
+      ]
+    },
+    {
+      "conversation_id": "CONV-002",
+      "participants": ["Mary Alberti", "Dana"],
+      "relationship": "Running club friend — closest non-family friend, ~10 years older, half-marathon runner, accountability partner, mentor figure who pushes Mary in running and life planning",
+      "snippets": [
+        {
+          "date": "2026-01-06",
+          "embedded_facts": [
+            "Running routine — Lake Mendota, Madison Runners Club, MWF mornings",
+            "Dana as accountability partner and experienced runner",
+            "Financial constraint — Mary checks budget before committing to race entry fee"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Dana", "text": "Happy new year! Are you running tomorrow morning? Supposed to be 12 degrees but no wind", "time": "19:44"},
+            {"sender": "Mary", "text": "oh for sure i'm going. new year new me and all that lol. i already set out my layers", "time": "19:58"},
+            {"sender": "Dana", "text": "That's what I like to hear! I want to push for 4.5 miles. My half marathon training officially starts this month and I need to build my base back up after the holidays", "time": "20:01"},
+            {"sender": "Mary", "text": "wait you're doing ANOTHER half??? ok queen. i'll try to keep up", "time": "20:03"},
+            {"sender": "Dana", "text": "You should seriously think about signing up too! The Madison Mini is in May. It would be your first half but you are absolutely ready for it", "time": "20:05"},
+            {"sender": "Mary", "text": "mmm the entry fee tho. let me check my budget. you know i have a whole spreadsheet for this lol", "time": "20:07"},
+            {"sender": "Dana", "text": "Ha! Your bullet journal empire. Let me know. It would be fun to train together!", "time": "20:09"}
+          ]
+        },
+        {
+          "date": "2026-01-29",
+          "embedded_facts": [
+            "Dana texts when Mary misses a run — accountability dynamic",
+            "Mary is routine-dependent, gets anxious when schedule is disrupted",
+            "Lake Mendota morning run pattern"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Dana", "text": "Didn't see you at the lake this morning! Everything ok?", "time": "08:15"},
+            {"sender": "Mary", "text": "ugh i know i'm sorry. my alarm didn't go off and then i had to be at work by 9 for a shift change. my whole morning was thrown off and honestly my brain has been weird all day because of it", "time": "12:33"},
+            {"sender": "Dana", "text": "Ha I totally get it. You're the most routine-dependent person I know and I mean that as a compliment. Friday for sure though right?", "time": "12:40"},
+            {"sender": "Mary", "text": "friday for SURE. i need it. this week has been A LOT", "time": "12:42"}
+          ]
+        },
+        {
+          "date": "2026-02-12",
+          "embedded_facts": [
+            "Hypertension — dietary changes in progress, cutting sodium, meal prepping more",
+            "Dana's mom had similar health situation — normalizes the experience",
+            "Financial constraint — eating at work to save money but it conflicts with health goals",
+            "Running linked to health management"
+          ],
+          "needle_type": "synthetic_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "ok random question do you have any good low sodium recipes? i've been trying to cut back and i'm running out of ideas. everything i usually make has like cheese and salt and more cheese", "time": "18:22"},
+            {"sender": "Dana", "text": "Omg yes! I went through a whole phase of that when my mom was dealing with similar stuff. I'll text you a few links tonight. Have you tried roasting vegetables with just lemon and herbs? Total game changer", "time": "18:30"},
+            {"sender": "Mary", "text": "ooh ok yeah send them please. i've been meal prepping more because if i don't i just eat fries at work all day and that is NOT helping my situation", "time": "18:33"},
+            {"sender": "Dana", "text": "Ugh the work food trap. I remember that from my waitressing days. Prep is everything. Also those morning runs are doing more for you than you realize. Keep showing up!", "time": "18:36"},
+            {"sender": "Mary", "text": "you're literally my coach AND my therapist lol thank you", "time": "18:38"}
+          ]
+        },
+        {
+          "date": "2026-03-05",
+          "embedded_facts": [
+            "Career advancement — Mary researched community college hospitality program and ServSafe certification",
+            "Financial constraint — $200 is significant, needs extra shifts, has it in budget journal",
+            "Dana as mentor — encourages FAFSA, has been pushing SBA loan research",
+            "Diner dream is a long-term goal Mary is actively working toward"
+          ],
+          "needle_type": "real_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "so i actually looked into that community college hospitality program you mentioned. they have a spring enrollment window for the ServSafe cert and it's only like $200", "time": "20:14"},
+            {"sender": "Dana", "text": "YES!! Mary!! That is amazing. Did you look at financial aid too? You should absolutely apply for FAFSA", "time": "20:18"},
+            {"sender": "Mary", "text": "ugh i know i keep putting that off. paperwork makes my brain melt. but yeah $200 is doable if i pick up an extra shift or two. i already have it penciled into my budget journal", "time": "20:21"},
+            {"sender": "Dana", "text": "You and that bullet journal honestly run the world. Have you thought any more about the SBA loan stuff? For down the road with the diner?", "time": "20:24"},
+            {"sender": "Mary", "text": "one thing at a time lol. ServSafe first then world domination. but yeah i bookmarked the SBA site so baby steps", "time": "20:26"},
+            {"sender": "Dana", "text": "Baby steps that are going somewhere! I'm proud of you. See you at 6:15 Friday?", "time": "20:28"},
+            {"sender": "Mary", "text": "wouldn't miss it", "time": "20:29"}
+          ]
+        }
+      ]
+    },
+    {
+      "conversation_id": "CONV-003",
+      "participants": ["Mary Alberti", "Jess"],
+      "relationship": "Coworker at the same fast food restaurant — trusted confidante, shift-swap partner, the one person Mary can vent to at work, Brewers game buddy",
+      "snippets": [
+        {
+          "date": "2026-01-14",
+          "embedded_facts": [
+            "Career frustration — Kaylee got promoted over Mary and now controls scheduling",
+            "Mary has more seniority but no title",
+            "Catholic practice — Mary can't close Friday because of parish fish fry",
+            "Shift-swap dynamic between Mary and Jess",
+            "Farmers market Saturday routine"
+          ],
+          "needle_type": "real_temporal",
+          "messages": [
+            {"sender": "Jess", "text": "dude kaylee just made the new schedule and she put us both on close friday AND saturday. i literally cannot", "time": "21:08"},
+            {"sender": "Mary", "text": "are you KIDDING me. i specifically told her i can't do friday close because of the fish fry thing at church. she KNOWS that", "time": "21:10"},
+            {"sender": "Jess", "text": "she doesn't care. ever since she got that title she's been on a whole power trip", "time": "21:12"},
+            {"sender": "Mary", "text": "don't even get me started. i trained her jess. i've been here 2 years longer. and now she's making MY schedule?? make it make sense", "time": "21:14"},
+            {"sender": "Jess", "text": "it doesn't. literally everyone knows you should've gotten it. can you swap with me at least? i'll take your friday if you take my saturday day shift", "time": "21:16"},
+            {"sender": "Mary", "text": "yeah that works actually. saturday day means i can still hit the farmers market in the morning. you're a lifesaver jess for real", "time": "21:18"},
+            {"sender": "Jess", "text": "that's what we do", "time": "21:19"}
+          ]
+        },
+        {
+          "date": "2026-02-07",
+          "embedded_facts": [
+            "Shellfish sensitivity — bad restaurant experience referenced ('stomach was NOT happy')",
+            "Mary always double-checks menus, calls ahead about shared fryers",
+            "Financial constraint — Mary is on a budget for eating out"
+          ],
+          "needle_type": "real_logical",
+          "messages": [
+            {"sender": "Mary", "text": "hey are you still down for that new Thai place on state street saturday?", "time": "17:44"},
+            {"sender": "Jess", "text": "yesss i've been wanting to try it forever. 6:30 work?", "time": "17:50"},
+            {"sender": "Mary", "text": "perfect. also can you check if their menu is online? i need to look at it before we go. you know how i am lol", "time": "17:52"},
+            {"sender": "Jess", "text": "lol yes i know. gotta investigate every ingredient. i'll send you the link", "time": "17:54"},
+            {"sender": "Mary", "text": "listen after that pasta incident last year where my stomach was NOT happy for like two days straight i am not taking any chances anymore. i'm gonna call ahead and ask about shared fryers too", "time": "17:56"},
+            {"sender": "Jess", "text": "totally fair. honestly i'll eat whatever you can eat i really don't care. it's the company that matters", "time": "17:58"}
+          ]
+        },
+        {
+          "date": "2026-02-21",
+          "embedded_facts": [
+            "Career advancement — Mary considering ServSafe certification",
+            "New restaurant location opening in Sun Prairie needs supervisors",
+            "Financial constraint — $200 is a lot right now, framing it as investment",
+            "Kaylee conflict referenced indirectly — 'NOT getting passed over again'",
+            "Channeling frustration into self-improvement"
+          ],
+          "needle_type": "real_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "ok so random but have you ever thought about getting your ServSafe? like the actual certification", "time": "20:33"},
+            {"sender": "Jess", "text": "no lol why would i voluntarily take a test. aren't we done with school", "time": "20:36"},
+            {"sender": "Mary", "text": "lmaoo ok fair. but i'm seriously thinking about it. like if i get certified it looks way better when i apply for the supervisor spot at the new location they're opening", "time": "20:38"},
+            {"sender": "Jess", "text": "wait there's a new location?? where", "time": "20:39"},
+            {"sender": "Mary", "text": "sun prairie. derek mentioned it last week. they're gonna need supervisors and i am NOT getting passed over again", "time": "20:41"},
+            {"sender": "Jess", "text": "ok yeah that's actually really smart. get the cert before anyone else even thinks about it. how much is it", "time": "20:42"},
+            {"sender": "Mary", "text": "like $200 for the course and exam. which is a lot for me rn but it's an investment right? that's what i keep telling myself", "time": "20:44"},
+            {"sender": "Jess", "text": "it IS an investment. and you'd be an amazing supervisor honestly. way better than... you know who", "time": "20:46"},
+            {"sender": "Mary", "text": "JESS lmaooo stop. but also... yeah. ok i'm doing it", "time": "20:47"}
+          ]
+        },
+        {
+          "date": "2026-03-15",
+          "embedded_facts": [
+            "Brewers fandom — planning opening day trip to Milwaukee",
+            "Financial constraint — bringing snacks instead of buying at stadium, budget-conscious planning",
+            "Shift-swap dynamic, work schedule coordination",
+            "Farmers market cheese curds — Saturday routine"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Jess", "text": "OPENING DAY IS IN TWO WEEKS", "time": "13:20"},
+            {"sender": "Mary", "text": "I KNOW i've been counting down. are we doing the milwaukee trip this year or what", "time": "13:35"},
+            {"sender": "Jess", "text": "absolutely. i already asked off for that saturday. april 11th. let's gooo", "time": "13:37"},
+            {"sender": "Mary", "text": "ok let me see if i can swap that shift. we should get the cheap seats and just bring our own snacks. i'm trying not to spend like $80 at the stadium again lol", "time": "13:39"},
+            {"sender": "Jess", "text": "lol budget queen mary strikes again. deal. i'll drive if you bring the food", "time": "13:41"},
+            {"sender": "Mary", "text": "done. cheese curds from marcus at the farmers market and homemade trail mix. we're doing this RIGHT", "time": "13:43"}
+          ]
+        }
+      ]
+    },
+    {
+      "conversation_id": "CONV-004",
+      "participants": ["Mary Alberti", "Nonna Alberti"],
+      "relationship": "Grandmother — matriarch, Calabrian immigrant in her 80s, daily Mass attendee, origin of Mary's cooking tradition, not a heavy texter (Mary texts to coordinate visits, Nonna replies simply)",
+      "snippets": [
+        {
+          "date": "2026-01-15",
+          "embedded_facts": [
+            "Wednesday visit routine — Mary checks in on Nonna weekly",
+            "Nonna is in her 80s, texts sparingly and directly",
+            "Local Madison detail — Metcalfe's grocery store",
+            "Nonna still actively involved in directing family life"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Mary", "text": "Hi Nonna!! I'm coming over Wednesday after work ok? Should be there by 7:30. Do you need me to bring anything?", "time": "18:05"},
+            {"sender": "Nonna", "text": "Yes come. Bring bread. The good kind from Metcalfes.", "time": "18:42"},
+            {"sender": "Mary", "text": "lol ok the good kind. got it. love you see you wednesday", "time": "18:44"},
+            {"sender": "Nonna", "text": "Love you too. Dont forget.", "time": "19:01"}
+          ]
+        },
+        {
+          "date": "2026-02-14",
+          "embedded_facts": [
+            "Shellfish sensitivity — Mary bringing her own pasta to Lent fish fry because she can't eat most of the dishes",
+            "Catholic Lent observance — parish fish fry tradition",
+            "Nonna accommodates Mary's sensitivity (uses only olive oil, no shared shrimp oil)",
+            "Nonna making baccala — traditional Italian salt cod dish",
+            "Three generations of women coordinating the family's religious food tradition"
+          ],
+          "needle_type": "real_logical",
+          "messages": [
+            {"sender": "Mary", "text": "Nonna are you making anything for the Lent fish fry at church this friday?", "time": "17:30"},
+            {"sender": "Nonna", "text": "I am making the baccala. Your mother is doing the rest. You come help us.", "time": "17:55"},
+            {"sender": "Mary", "text": "i'll be there! i'm making my own pasta to bring too since i can't eat half the stuff there lol. you know me", "time": "17:58"},
+            {"sender": "Nonna", "text": "I know. You are like your mother. I will make sure the baccala has no shrimp in the oil. Olive oil only.", "time": "18:15"},
+            {"sender": "Mary", "text": "you're the best nonna. seriously. see you friday", "time": "18:17"}
+          ]
+        },
+        {
+          "date": "2026-03-11",
+          "embedded_facts": [
+            "Nonna's health — slowing down, Mary and Mom both monitoring her",
+            "Nonna still going to daily Mass despite being tired (devotion)",
+            "Garden season starting — Nonna's Calabrian knowledge about growing tomatoes",
+            "Wednesday visit routine continues",
+            "Easter timeline — tomato seedlings after Easter"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Mary", "text": "Hey Nonna! Coming Wednesday as usual. Mom said you were tired this week. Are you feeling ok?", "time": "12:15"},
+            {"sender": "Nonna", "text": "I am fine. Your mother worries too much. I went to Mass every day this week.", "time": "13:02"},
+            {"sender": "Mary", "text": "lol of course you did. ok well rest up anyway. also!! it's almost garden season and i want to ask you about when to start the tomato seedlings. you always know the best time", "time": "13:05"},
+            {"sender": "Nonna", "text": "After Easter. Not before. The frost will kill them. I will show you when you come.", "time": "13:30"},
+            {"sender": "Mary", "text": "ok deal. love you nonna see you wednesday", "time": "13:32"}
+          ]
+        }
+      ]
+    },
+    {
+      "conversation_id": "CONV-005",
+      "participants": ["Mary Alberti", "Tony Alberti"],
+      "relationship": "Younger brother — community college student in Madison, Mary is the protective older sister, sees him ~1x/week mostly at Sunday dinner",
+      "snippets": [
+        {
+          "date": "2026-01-19",
+          "embedded_facts": [
+            "Sunday dinner tradition — Italian-American family gathering",
+            "Packers fandom — family bonding, Tony less motivated without a game on",
+            "Mom's rigatoni and Nonna attending",
+            "Tony is casual about family obligations, Mary keeps him in line"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Mary", "text": "you coming to dinner today or what", "time": "10:04"},
+            {"sender": "Tony", "text": "yeah probably. packers aren't on tho so whats the point lol", "time": "10:30"},
+            {"sender": "Mary", "text": "the POINT is mom made rigatoni and nonna is coming so get your butt over there", "time": "10:32"},
+            {"sender": "Tony", "text": "ok ok fine. what time", "time": "10:45"},
+            {"sender": "Mary", "text": "like 2. don't be late or mom will give you the look", "time": "10:46"},
+            {"sender": "Tony", "text": "lmao the look. say less i'll be there", "time": "10:48"}
+          ]
+        },
+        {
+          "date": "2026-02-04",
+          "embedded_facts": [
+            "Tony in community college — Mary checking on his midterms",
+            "Mary as supportive older sister offering to help",
+            "Career frustration — Mary still waiting on supervisor promotion, confides briefly in Tony",
+            "Tony is supportive in his own low-key way"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Mary", "text": "hey how'd your midterms go", "time": "19:15"},
+            {"sender": "Tony", "text": "ehh. passed everything. econ is killing me tho", "time": "19:40"},
+            {"sender": "Mary", "text": "passing is passing!! do you need help with anything? i'm no good at econ but i can quiz you or whatever", "time": "19:42"},
+            {"sender": "Tony", "text": "nah i'm good. thanks tho. hows work", "time": "19:50"},
+            {"sender": "Mary", "text": "same old same old. still waiting on that supervisor thing. trying not to lose my mind about it lol", "time": "19:52"},
+            {"sender": "Tony", "text": "you'll get it. you're literally the hardest worker there", "time": "19:55"},
+            {"sender": "Mary", "text": "thanks tony. that actually means a lot coming from you", "time": "19:56"}
+          ]
+        },
+        {
+          "date": "2026-02-28",
+          "embedded_facts": [
+            "Lent fish fry — Catholic family tradition, parish event",
+            "Mom volunteered Tony without asking — family dynamic",
+            "Mary bringing her own pasta salad (shellfish cross-contamination avoidance)",
+            "Tony's more casual relationship with church obligations"
+          ],
+          "needle_type": "filler",
+          "messages": [
+            {"sender": "Mary", "text": "are you coming to the fish fry at church tomorrow", "time": "17:10"},
+            {"sender": "Tony", "text": "do i have a choice", "time": "17:25"},
+            {"sender": "Mary", "text": "no lol mom already put your name down to help set up chairs", "time": "17:26"},
+            {"sender": "Tony", "text": "of course she did. fine. what time", "time": "17:30"},
+            {"sender": "Mary", "text": "5:30 setup, food starts at 6:30. i'm bringing pasta salad. just show up and be helpful for once", "time": "17:32"},
+            {"sender": "Tony", "text": "WOW ok. i am helpful. sometimes. see you there", "time": "17:34"}
+          ]
+        },
+        {
+          "date": "2026-03-18",
+          "embedded_facts": [
+            "Career advancement — Mary researching community college hospitality program herself",
+            "Tony attends Madison College, Mary wants his perspective",
+            "ServSafe certification tied to supervisor ambitions",
+            "Diner dream — Mary's long-term goal, self-aware about needing more than 'vibes and a bullet journal'",
+            "Sibling bond — Tony is genuinely excited for Mary, offers to show her around campus"
+          ],
+          "needle_type": "real_temporal",
+          "messages": [
+            {"sender": "Mary", "text": "ok so weird question. how do you like madison college? like the actual campus and the classes and stuff", "time": "20:08"},
+            {"sender": "Tony", "text": "its fine? why lol", "time": "20:15"},
+            {"sender": "Mary", "text": "i'm looking at their hospitality program. thinking about taking some classes. maybe evenings or weekends around my work shifts", "time": "20:17"},
+            {"sender": "Tony", "text": "wait seriously?? thats sick mary. you should totally do it", "time": "20:18"},
+            {"sender": "Mary", "text": "yeah i mean if i ever want to actually open the diner i need more than just vibes and a bullet journal lol. plus the ServSafe cert could help me get supervisor way sooner", "time": "20:20"},
+            {"sender": "Tony", "text": "do it. also i can show you around campus if you want. i know where the good vending machines are which is honestly the most important info", "time": "20:22"},
+            {"sender": "Mary", "text": "lmaooo you're ridiculous. but yeah maybe i'll come check it out this weekend. thanks tony", "time": "20:24"},
+            {"sender": "Tony", "text": "got you", "time": "20:25"}
+          ]
+        }
+      ]
+    }
+  ]
+}

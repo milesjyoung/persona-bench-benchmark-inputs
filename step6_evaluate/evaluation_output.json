@@ -1,0 +1,259 @@
+{
+  "evaluation_date": "2026-03-20",
+  "evaluation_scope": "Inferability of Mary Alberti's profile from messenger logs (Step 4) + calendar logs (Step 5) ALONE, without access to the interview or seed data.",
+  "rating_scale": "1 = not inferable at all, 2 = very weakly suggested, 3 = moderately inferable with effort, 4 = clearly inferable, 5 = unmistakably present",
+  "preferences": {
+    "bullet_journaling": {
+      "rating": 3,
+      "evidence_messenger": "CONV-002, Jan 6: Dana says 'Your bullet journal empire.' CONV-002, Mar 5: Dana says 'You and that bullet journal honestly run the world.' CONV-003, Feb 21: Mary says 'i already have it penciled into my budget journal.'",
+      "evidence_calendar": "No direct entry. Budget tracking and routine structure are implicit in the organized calendar itself.",
+      "reasoning": "Three messenger references make it clear Mary has a bullet journal, but the depth of the habit (daily check-ins, meal tracking, spending logs) is not inferable from logs alone."
+    },
+    "running_madison_runners_club": {
+      "rating": 5,
+      "evidence_messenger": "CONV-002 is entirely about running. Dana checks if Mary is running (Jan 6, Jan 29). Half-marathon discussion. Lake Mendota route mentioned.",
+      "evidence_calendar": "10 running entries: gym treadmill (Jan-Feb) and outdoor Lake Mendota (late Feb-Mar). Dana appears in 8 of them. 6:15am start times.",
+      "reasoning": "The most heavily evidenced preference. Running is inferable from both messenger and calendar independently. Frequency (3x/week MWF), location (Lake Mendota), partner (Dana), and seasonal pattern (indoor winter, outdoor spring) are all clear."
+    },
+    "cooking_and_baking": {
+      "rating": 4,
+      "evidence_messenger": "CONV-001, Feb 16: discussion of Sunday dinner rigatoni. CONV-002, Feb 12: Mary mentions meal prepping, asks for recipes. CONV-003, Mar 15: Mary offers to bring homemade trail mix and Marcus's cheese curds. CONV-004, Feb 14: discussion of baccala recipe.",
+      "evidence_calendar": "Feb 14 'Valentine's Day Baking - Spiced Apple Crumble for Mom.' Multiple Sunday dinner entries tagged 'Italian-Midwestern cooking.'",
+      "reasoning": "Multiple references to cooking, recipes, and food preparation across both sources. Specific dishes (rigatoni, baccala, spiced apple crumble, trail mix) are mentioned. Clearly inferable."
+    },
+    "raised_bed_gardening": {
+      "rating": 2,
+      "evidence_messenger": "CONV-004, Mar 11: Mary asks Nonna about when to start tomato seedlings. Nonna says 'After Easter.'",
+      "evidence_calendar": "No garden entry in this window.",
+      "reasoning": "Only one brief reference. An LLM could infer Mary does some gardening, but the specifics (raised bed, tomatoes/basil/peppers) are barely evidenced. The tomato seedling reference helps but doesn't establish it as a major hobby."
+    },
+    "craft_brew_tastings": {
+      "rating": 4,
+      "evidence_messenger": "No explicit craft-brew discussion in messenger logs.",
+      "evidence_calendar": "3 entries: Jan 8 'Ale Asylum', Jan 22 'Karben4 Brewing', Feb 12 'Working Draft Beer Company.' All labeled craft-brew tastings.",
+      "reasoning": "Calendar alone makes this clearly inferable. Three different breweries over 6 weeks establishes a pattern. The lack of messenger references is notable — no one texts Mary about breweries — but calendar evidence is sufficient."
+    },
+    "sudoku": {
+      "rating": 1,
+      "evidence_messenger": "No mention of Sudoku in any conversation.",
+      "evidence_calendar": "One indirect reference: Feb 25 'Visit Nonna - Brought Sudoku Book.' This could be a gift for Nonna rather than evidence of Mary's own habit.",
+      "reasoning": "Essentially not inferable. The single Sudoku book reference is ambiguous — it could mean Mary bought Nonna a puzzle book. Without the interview, there is no way to know Sudoku is Mary's personal stress-relief activity."
+    },
+    "self_help_books": {
+      "rating": 1,
+      "evidence_messenger": "No references to books, reading, or self-help in any conversation.",
+      "evidence_calendar": "No entries related to reading.",
+      "reasoning": "Not inferable at all. Private reading habits rarely surface in texts or calendars unless someone shares a recommendation."
+    },
+    "wes_anderson_films": {
+      "rating": 4,
+      "evidence_messenger": "No movie references in any conversation.",
+      "evidence_calendar": "Jan 20 'Wes Anderson Double Feature - Rushmore & The Royal Tenenbaums' at indie theater.",
+      "reasoning": "One clear calendar entry names Wes Anderson and two specific films. An LLM could confidently identify this as a preference. Rating not 5 because it's a single data point — could be a one-off rather than a sustained interest."
+    },
+    "art_walks_museum_exhibits": {
+      "rating": 1,
+      "evidence_messenger": "No references to art walks, museums, galleries, or exhibits.",
+      "evidence_calendar": "No entries.",
+      "reasoning": "Not inferable at all from these logs. This seed preference has zero representation in either data source."
+    },
+    "farmers_market": {
+      "rating": 4,
+      "evidence_messenger": "CONV-003, Mar 15: Mary says 'cheese curds from marcus at the farmers market' for the Brewers trip. CONV-003, Jan 14: Mary swaps shift to preserve Saturday farmers market visit.",
+      "evidence_calendar": "Jan 10 'Saturday Farmers Market (winter indoor)' at Capitol Square.",
+      "reasoning": "Calendar entry plus two messenger references (one naming Marcus the cheese vendor by name) establish this as a regular Saturday activity. The shift-swap to protect market time is especially telling."
+    },
+    "catholic_faith": {
+      "rating": 5,
+      "evidence_messenger": "Fish fry references in CONV-001, CONV-003, CONV-004, CONV-005. Lent observance discussed in CONV-001 (Feb 16). Ash Wednesday reference (CONV-001). Nonna's daily Mass (CONV-004). Mary can't close Friday 'because of the fish fry thing at church' (CONV-003).",
+      "evidence_calendar": "4 Sunday Mass entries, 1 Ash Wednesday Mass, 3 Lenten Fish Fry entries. Parish location consistently referenced.",
+      "reasoning": "Unmistakably present. Both sources independently establish Catholic practice through behavioral evidence: Mass attendance, Lenten observance, fish fry volunteering, Ash Wednesday. The strongest-evidenced hidden dimension."
+    },
+    "packers_fandom": {
+      "rating": 4,
+      "evidence_messenger": "CONV-005, Jan 19: Tony jokes 'packers aren't on tho so whats the point.'",
+      "evidence_calendar": "Jan 4 'Sunday Family Dinner + Packers Playoff Watch', Feb 8 'Super Bowl Watch Party.'",
+      "reasoning": "Calendar shows two football viewing events. Tony's comment implies Packers viewing is a regular family draw. Clearly a fan, but not as deeply evidenced as running or faith."
+    },
+    "brewers_fandom": {
+      "rating": 4,
+      "evidence_messenger": "CONV-003, Mar 15: Jess and Mary plan opening day trip to Milwaukee. Mary says 'I've been counting down.' They discuss cheap seats, bringing their own food.",
+      "evidence_calendar": "No entries (season hasn't started).",
+      "reasoning": "Messenger conversation strongly establishes Brewers fandom. Mary's excitement ('counting down'), willingness to drive to Milwaukee, and budget-planning for the trip all suggest genuine fandom, not casual interest."
+    },
+    "badgers_basketball": {
+      "rating": 1,
+      "evidence_messenger": "No references to Wisconsin Badgers in any conversation.",
+      "evidence_calendar": "No entries.",
+      "reasoning": "Not inferable. This preference exists only in the seed data and was not carried into interview, messenger, or calendar."
+    },
+    "door_county_getaways": {
+      "rating": 1,
+      "evidence_messenger": "No references to Door County in any conversation.",
+      "evidence_calendar": "No entries.",
+      "reasoning": "Not inferable from logs. Despite being an important shared activity with Dana per the interview, no Door County trip appears in this January-March window."
+    },
+    "servsafe_certification": {
+      "rating": 5,
+      "evidence_messenger": "CONV-002, Mar 5: Mary tells Dana about the community college ServSafe cert, $200 cost. CONV-003, Feb 21: Mary asks Jess about ServSafe, discusses new Sun Prairie location, '$200 for the course and exam.'",
+      "evidence_calendar": "Jan 24 'ServSafe Study Session' at Madison Public Library.",
+      "reasoning": "Unmistakably present across both sources. Mary discusses it with two different people and has a study session on the calendar. The cost, motivation, and timeline are all clear."
+    },
+    "community_college_hospitality": {
+      "rating": 5,
+      "evidence_messenger": "CONV-002, Mar 5: Dana encourages FAFSA for the program. CONV-005, Mar 18: Mary asks Tony about Madison College, mentions the hospitality program.",
+      "evidence_calendar": "Feb 10 'Community College Info Session - Hospitality Program' at MATC.",
+      "reasoning": "Multiple references across messenger and calendar. The specific school (Madison College / MATC), program (hospitality), and supporting details (FAFSA, Tony's campus tour offer) are all present."
+    },
+    "diner_dream": {
+      "rating": 4,
+      "evidence_messenger": "CONV-002, Mar 5: Dana mentions SBA loans 'for down the road with the diner.' Mary says 'ServSafe first then world domination.' CONV-005, Mar 18: Mary tells Tony 'if i ever want to actually open the diner i need more than just vibes and a bullet journal.'",
+      "evidence_calendar": "No explicit diner reference.",
+      "reasoning": "Two clear messenger references establish the diner as a long-term goal. The language suggests it's aspirational but actively being planned toward (ServSafe, community college as stepping stones). No calendar entry, but the career development entries (ServSafe study, MATC info session) provide supporting context."
+    },
+    "italian_midwestern_food_fusion": {
+      "rating": 5,
+      "evidence_messenger": "Rigatoni at Sunday dinner (CONV-001, CONV-005). Baccala recipe (CONV-004). Cheese curds from farmers market (CONV-003). Mom's lentil soup (CONV-001).",
+      "evidence_calendar": "10 Sunday dinner entries tagged 'Italian-Midwestern cooking' and 'Homemade pasta.'",
+      "reasoning": "Unmistakably present. The fusion of Italian (rigatoni, baccala) and Midwestern (cheese curds, bratwurst) food traditions is woven throughout both data sources."
+    },
+    "music_john_prine_bon_iver": {
+      "rating": 1,
+      "evidence_messenger": "No music references in any conversation.",
+      "evidence_calendar": "No concert or music entries.",
+      "reasoning": "Not inferable at all. Music taste is one of the hardest preferences to embed in texts and calendar without forcing it. Neither data source contains any music reference."
+    },
+    "napa_valley_kyoto_travel": {
+      "rating": 1,
+      "evidence_messenger": "No travel aspiration references.",
+      "evidence_calendar": "No entries.",
+      "reasoning": "Not inferable. These are dream destinations discussed only in the interview. No messenger conversation or calendar entry references either location."
+    }
+  },
+  "hidden_facts": {
+    "borderline_hypertension": {
+      "rating": 4,
+      "evidence_messenger": "CONV-001, Jan 22: 'numbers were still a little high. she wants me to really watch the sodium and come back in a few months.' Lucia references Nonna's 'problems with all of that.' CONV-002, Feb 12: Mary asks Dana for 'low sodium recipes,' says 'eating fries at work... NOT helping my situation.' Dana says her mom 'dealt with similar stuff.' CONV-001, Mar 12: Mary's Walgreens numbers 'way better than january,' credits running and salt reduction. Lucia says Dad 'never listens to me about the salt either.'",
+      "evidence_calendar": "Feb 17 'Dr. Follow-Up Appointment' at UW Health clinic (no condition named).",
+      "reasoning": "An attentive LLM could piece together: elevated 'numbers,' sodium restriction, family history of cardiac issues, running as treatment, Walgreens monitoring, doctor follow-up. The word 'hypertension' is never used, but the clinical picture is inferable. Rating 4 rather than 5 because 'numbers' is ambiguous without context — could theoretically refer to blood sugar or cholesterol."
+    },
+    "shellfish_sensitivity": {
+      "rating": 4,
+      "evidence_messenger": "CONV-001, Jan 10: Mary brings own pasta salad to fish fry, references shared fryer risk. Lucia says 'Always ask twice.' CONV-003, Feb 7: Mary checks Thai restaurant menu in advance, calls ahead about shared fryers, references 'pasta incident last year where my stomach was NOT happy.' CONV-004, Feb 14: Nonna says 'I will make sure the baccala has no shrimp in the oil. Olive oil only.' Nonna says 'You are like your mother' (hereditary link).",
+      "evidence_calendar": "No direct reference. Fish fry entries exist but don't reference shellfish avoidance.",
+      "reasoning": "Three separate behavioral chains establish a food avoidance pattern: bringing own food, checking menus, calling about shared fryers, Nonna accommodating by separating shrimp oil. The Nonna comment 'You are like your mother' suggests hereditary sensitivity. An LLM could reasonably infer a shellfish or seafood sensitivity. Rating 4 because the specific trigger (shellfish vs. general seafood) requires careful reading of the 'shrimp in the oil' detail."
+    },
+    "financial_constraint": {
+      "rating": 4,
+      "evidence_messenger": "CONV-002, Jan 6: Mary checks budget before signing up for half-marathon entry fee. Dana calls it 'your bullet journal empire.' CONV-003, Feb 21: '$200 for the course and exam. which is a lot for me rn.' CONV-003, Mar 15: Mary suggests cheap seats and bringing own snacks to Brewers game: 'i'm trying not to spend like $80 at the stadium again.' Jess calls her 'budget queen.'",
+      "evidence_calendar": "Work shifts at a fast food restaurant. No expensive events. Farmers market shopping.",
+      "reasoning": "Budget consciousness is clearly inferable: checking costs before committing, $200 described as significant, bringing own food to save money, budget tracking in journal. Combined with the fast food workplace (low-wage job), an LLM can infer financial tightness. The specific details (no emergency fund, rent is half paycheck, $100/month diner savings) are not recoverable."
+    },
+    "personal_conflict_kaylee": {
+      "rating": 3,
+      "evidence_messenger": "CONV-003, Jan 14: Jess says 'kaylee just made the new schedule and she put us both on close friday AND saturday.' Mary responds 'i trained her jess. i've been here 2 years longer. and now she's making MY schedule??' Jess says 'literally everyone knows you should've gotten it.' CONV-003, Feb 21: Mary says 'i am NOT getting passed over again' about the new Sun Prairie supervisor spot. Jess says 'way better than... you know who.'",
+      "evidence_calendar": "No Kaylee references.",
+      "reasoning": "Two messenger references establish: (1) Kaylee got a promotion Mary wanted, (2) Kaylee now makes the schedule and is on a 'power trip,' (3) Mary trained Kaylee and has more seniority, (4) the relationship is over ('you know who'). An LLM could infer a workplace conflict and promotion snub. Rating 3 because Kaylee is mentioned only in conversations with Jess — the scope and emotional depth of the conflict is narrower than in the interview."
+    },
+    "catholic_identity": {
+      "rating": 5,
+      "evidence_messenger": "Fish fry volunteering (CONV-001, Jan 10). Lent planning (CONV-001, Feb 16). Ash Wednesday reference. Nonna's daily Mass (CONV-004). Tony drafted for church setup (CONV-005). Friday close conflict due to fish fry (CONV-003, Jan 14).",
+      "evidence_calendar": "4 Sunday Mass entries, Ash Wednesday Mass, 3 Lenten Fish Fry entries.",
+      "reasoning": "Unmistakably Catholic. The combination of Mass attendance, Lenten fish fries, Ash Wednesday observance, and Nonna's daily Mass makes this the most transparently inferable hidden fact. While Mary never says 'I am Catholic,' the behavioral evidence is overwhelming."
+    },
+    "political_leaning": {
+      "rating": 1,
+      "evidence_messenger": "Zero political references in any conversation.",
+      "evidence_calendar": "Zero political entries.",
+      "reasoning": "Completely non-inferable. No political statements, no civic engagement, no candidate mentions, no policy opinions, no political media references. An LLM could only guess based on demographic stereotypes (Midwestern Catholic working-class), which is not evidence."
+    }
+  },
+  "relationships": {
+    "lucia_alberti_mother": {
+      "type_inferability": 5,
+      "closeness_inferability": 5,
+      "evidence": "CONV-001 has 4 extended conversations. Lucia signs 'Love Mom' in every snippet. They discuss Sunday dinner, doctor appointments, Nonna's health, Lent planning, and food safety. Lucia is protective ('Take care of yourself please'), gives advice ('that low sodium cookbook'), and coordinates family logistics. Calendar shows Lucia in 16 entries: Mass, dinners, fish fries.",
+      "reasoning": "Mother-daughter relationship is unmistakable from 'Love Mom' signoffs alone. Closeness is evidenced by high contact frequency, health discussions, and emotional support."
+    },
+    "dana_running_friend": {
+      "type_inferability": 4,
+      "closeness_inferability": 4,
+      "evidence": "CONV-002 covers running logistics, accountability check-ins, low sodium recipes, and career advice (FAFSA, SBA loans). Calendar shows 8 running entries with Dana plus 2 post-run coffees. All interactions are running-based or mentorship-oriented.",
+      "reasoning": "Running-club friend and mentor is clearly inferable. The accountability texting, half-marathon encouragement, and career advice establish a close friendship beyond casual running partners. Type is clearly 'friend' not 'family.' Age difference ('your bullet journal empire' suggests generational distance) hints at the mentor dynamic."
+    },
+    "jess_coworker_friend": {
+      "type_inferability": 4,
+      "closeness_inferability": 4,
+      "evidence": "CONV-003 covers shift scheduling conflicts, Kaylee venting, restaurant outings, ServSafe discussion, and Brewers game planning. Jess's texting style is casual and intimate ('dude,' 'lmaooo,' calling Mary 'budget queen'). Calendar shows Jess only in 3 work entries.",
+      "reasoning": "Coworker relationship is clear from shift discussions, Kaylee scheduling drama, and work venting. The friendship layer (Brewers trip, Thai restaurant, personal humor) shows they are more than just colleagues. Calendar underrepresents the friendship — messenger alone is the primary evidence source."
+    },
+    "nonna_grandmother": {
+      "type_inferability": 5,
+      "closeness_inferability": 4,
+      "evidence": "CONV-004 has 3 snippets. Nonna's texting style (short, direct, delayed responses) signals elderly person. Content: Wednesday visit coordination, baccala cooking for church, tomato seedling advice. Calendar shows 7 Nonna visit entries, all on Wednesdays or at family dinners. Mary addresses her as 'Nonna' and 'Nonna' appears in calendar entries.",
+      "reasoning": "Grandmother identity is clear from the name 'Nonna' (Italian for grandmother), short texting style, and role in family cooking traditions. Wednesday visit pattern and concern about her tiredness show closeness."
+    },
+    "tony_brother": {
+      "type_inferability": 5,
+      "closeness_inferability": 3,
+      "evidence": "CONV-005 has 4 snippets. Mary's tone is protective-older-sister ('get your butt over there,' 'be helpful for once,' checking on midterms). Tony appears at family dinners, fish fries. They share Alberti surname. Tony is at community college. Calendar shows 5 appearances, all family events.",
+      "reasoning": "Sibling relationship is clear: shared surname, family event attendance, Mary's bossy-older-sister tone, Mom volunteering Tony for church setup. Closeness is moderate (3) because contact is mostly family-obligation-driven rather than emotionally deep. Tony's messages are short and reactive — Mary always initiates."
+    }
+  },
+  "expert_perspectives": {
+    "psychologist": {
+      "rating": 4,
+      "notes": "High conscientiousness is strongly inferable from: rigid running schedule (3x/week), budget tracking references, ServSafe study, community college research, receipt-checking behavior ('budget queen'). Routine dependence is evidenced by Mary's distress when she misses a run (CONV-002 Jan 29: 'my whole morning was thrown off... my brain has been weird all day'). Competitive drive shows through Kaylee conflict and 'NOT getting passed over again.' Agreeableness evident in family engagement, church volunteering, and accommodating Nonna's preferences. An LLM could construct a reasonable personality profile from behavioral patterns."
+    },
+    "behavioral_economist": {
+      "rating": 3,
+      "notes": "Occupation (fast food) is inferable from work shifts at 'Restaurant, Madison' with variable hours. Income level (low) is suggested by: $200 is 'a lot for me rn,' budget-conscious Brewers trip planning, entry fee requires budget check, fast food workplace. Career aspiration (upward mobility) is clear from ServSafe, MATC, supervisor pursuit. However, specific financial details (rent-to-income ratio, exact savings rate, debt status, diner fund amount) are not recoverable from logs alone."
+    },
+    "political_scientist": {
+      "rating": 1,
+      "notes": "No political content of any kind in messenger or calendar. Catholic church attendance and working-class background might inform a demographic prior, but this is stereotyping, not evidence. Political leaning is the single least inferable dimension of Mary's profile. This is appropriate — forcing political content into texts and calendars would feel artificial."
+    },
+    "demographer": {
+      "rating": 4,
+      "notes": "Gender: inferable from gendered references ('girl' equivalent in Jess's texts, 'Love Mom' from Lucia). Age range (late 20s): no children, fast food job with 5-year tenure, community college research, roommate-absent lifestyle. Location (Madison, WI): explicit in calendar entries, Lake Mendota running, local venues. Italian-American heritage: Alberti surname, Nonna, baccala, rigatoni, Italian food references. Education (high school, pursuing more): MATC enrollment research, FAFSA discussion. Marital status (single): no partner references anywhere."
+    }
+  },
+  "overall_quality_score": 3.6,
+  "score_breakdown": {
+    "preferences_average": 3.0,
+    "hidden_facts_average": 3.5,
+    "relationships_average": 4.3,
+    "expert_perspectives_average": 3.0
+  },
+  "coverage_summary": {
+    "preferences_rated_4_or_5": "10 of 21",
+    "preferences_rated_1": "6 of 21 (music, self-help, art walks, Badgers, Door County, Napa/Kyoto)",
+    "hidden_facts_rated_4_or_5": "4 of 6",
+    "hidden_facts_rated_1": "1 of 6 (political leaning)",
+    "relationships_all_type_rated_4_plus": "5 of 5",
+    "relationships_all_closeness_rated_3_plus": "5 of 5"
+  },
+  "strongest_dimensions": [
+    "Catholic faith (5/5) — behavioral evidence is overwhelming across both data sources",
+    "Running / Madison Runners Club (5/5) — most-evidenced preference in both messenger and calendar",
+    "Italian-Midwestern food fusion (5/5) — woven throughout family dinners and conversations",
+    "ServSafe certification (5/5) — discussed with 2 different people + calendar study session",
+    "Community college hospitality program (5/5) — multiple references + calendar info session",
+    "Lucia Alberti mother relationship (5/5 type, 5/5 closeness) — 'Love Mom' alone is definitive"
+  ],
+  "weakest_dimensions": [
+    "Political leaning (1/5) — zero evidence, impossible to infer from logs",
+    "Music preferences (1/5) — John Prine, Bon Iver have zero representation anywhere",
+    "Art walks / museum exhibits (1/5) — zero evidence in either data source",
+    "Self-help books (1/5) — private reading habit, not log-visible",
+    "Badgers basketball (1/5) — exists only in seed, never surfaced in any downstream data",
+    "Door County getaways (1/5) — important interview topic but absent from logs"
+  ],
+  "recommendations": [
+    "Add a music reference to messenger: e.g., Dana mentions a Bon Iver song during a run, or Mary shares a John Prine lyric when she's feeling down. Even one reference would raise music from 1 to 3.",
+    "Add a Door County trip planning conversation between Mary and Dana. This is a key friendship activity that is completely absent from the logs despite multiple interview references.",
+    "The Kaylee conflict could be strengthened with a second touchpoint: e.g., Mary mentions being passed over when talking to Dana about the ServSafe cert, or a brief reference when discussing the promotion with Tony.",
+    "Consider adding one art walk or gallery visit to the calendar (matching the seed's arts_persona) to fill this persistent gap.",
+    "Political leaning will likely always be a 1/5 in logs — this is acceptable. Forcing political content into texts would feel artificial for this persona."
+  ]
+}

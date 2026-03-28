@@ -1,0 +1,252 @@
+{
+  "verification_date": "2026-03-20",
+  "seed_source": "NVIDIA Nemotron-Personas-USA (id: e7c0574639a244c8972c92aab9501035)",
+  "interview_source": "step2_interview/interview_output.json",
+  "experts": {
+    "psychologist": {
+      "observations": [
+        {
+          "id": 1,
+          "text": "Seed describes Mary as 'routine-obsessed, bullet-journal aficionado who balances disciplined work ambition with a competitive edge.' Interview corroborates this extensively: Mary describes mornings mapped to the minute, anxiety when routine is disrupted (Q5 follow-up: 'if my routine gets disrupted I get kind of anxious'), and bullet journal tracking of spending, meals, shifts, and savings. Strong personality consistency.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "persona field: 'routine-obsessed, bullet-journal aficionado'",
+          "interview_ref": "Q1: 'I started a bullet journal a couple years ago'; Q5: 'I'm pretty regimented'; Q5 follow-up: 'Now if my routine gets disrupted I get kind of anxious'"
+        },
+        {
+          "id": 2,
+          "text": "Seed mentions 'a habit of double-checking every receipt for hidden costs.' Interview independently confirms this behavior in multiple contexts: double-checks menus for allergens (Q6 follow-up), logs every receipt in bullet journal (Q11 follow-up: 'My coworkers think I'm nuts because I'll literally stand at the register after buying coffee and write it down'), and clips coupons (Q12). Exact behavioral match.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "persona field: 'a habit of double-checking every receipt for hidden costs'",
+          "interview_ref": "Q11 follow-up: 'Every receipt gets logged'; Q6 follow-up: 'I always double-check menus'; Q12: 'I clip coupons, I double-check every receipt'"
+        },
+        {
+          "id": 3,
+          "text": "Seed mentions 'occasional craft-brew indulgence.' Interview specifies craft-brew tastings on 'Tuesdays and Thursdays' (Q5) with qualifier 'if there's something good on tap.' The word 'sometimes' partially aligns with 'occasional,' but having two scheduled weekdays is arguably more than 'occasional.' Minor frequency amplification.",
+          "verdict": "INCONSISTENT",
+          "seed_ref": "persona field: 'occasional craft-brew indulgence'",
+          "interview_ref": "Q5: 'Tuesdays and Thursdays I sometimes do a craft-brew tasting downtown if there's something good on tap'"
+        },
+        {
+          "id": 4,
+          "text": "The seed names no family members at all. The interview introduces Tony (younger brother, Q2), Nonna (grandmother, Q1), Dad (machine shop worker, Q2), Aunt Rosa and Cousin Marco (Q3). These are plausible but entirely interview-generated. The seed's cultural_background mentions 'Sunday family meals' generically, which is consistent with the family structure described, but no family specifics can be verified against the seed.",
+          "verdict": "GAP",
+          "seed_ref": "cultural_background: 'Sunday family meals featuring homemade pasta and Wisconsin cheese' (no family members named)",
+          "interview_ref": "Q2: 'younger brother, Tony'; Q1: 'my nonna made pasta from scratch every weekend'; Q2: 'He works at a machine shop'; Q3: 'My aunt Rosa... Cousin Marco'"
+        },
+        {
+          "id": 5,
+          "text": "Seed's persona mentions a 'competitive edge.' The interview operationalizes this through the Kaylee promotion conflict: Mary was passed over for shift supervisor despite more seniority, Kaylee then micromanaged her, and the relationship died (Q4 follow-up). Mary describes the experience as a 'gut punch' (Q10) and is channeling frustration into self-improvement (ServSafe, community college). Consistent transformation of abstract trait into concrete narrative.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "persona field: 'competitive edge'",
+          "interview_ref": "Q4 follow-up: 'she got promoted to shift supervisor over me'; Q10: 'Watching Kaylee get the promotion I wanted was a gut punch'"
+        },
+        {
+          "id": 6,
+          "text": "Seed's sports_persona includes 'roots for the Wisconsin Badgers basketball team in the winter.' The interview never mentions the Badgers at all. It covers Packers (Q1 follow-up: 'If the Packers are on, my dad has the TV going'), Brewers (Q5: 'catch a Brewers game'), and the Madison Runners Club, but completely omits Badgers basketball.",
+          "verdict": "GAP",
+          "seed_ref": "sports_persona: 'roots for the Wisconsin Badgers basketball team in the winter'",
+          "interview_ref": "No mention of Wisconsin Badgers basketball anywhere in transcript"
+        },
+        {
+          "id": 7,
+          "text": "Interview reveals a developmental arc absent from the seed: Mary's early twenties were chaotic ('kind of a mess, honestly. I'd stay up too late, skip meals, show up to work dragging,' Q5 follow-up), and the bullet journal was a transformative intervention approximately 2 years ago after reading a 'habit stacking' book. The seed presents routine-obsession as a stable trait. The interview adds a plausible origin story that enriches without contradicting.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "persona: 'routine-obsessed, bullet-journal aficionado'",
+          "interview_ref": "Q5 follow-up: 'In my early twenties I was kind of a mess... The bullet journal changed everything for me about two years ago'"
+        },
+        {
+          "id": 8,
+          "text": "Seed lists 'Solving Sudoku puzzles' as a hobby. Interview confirms Sudoku as a stress-relief and focus activity (Q5: 'maybe do some Sudoku'; Q10 follow-up: 'the focus it takes kind of shuts off the anxious part of my brain'). The interview adds emotional function (anxiety management) that deepens the hobby beyond the seed's bare listing.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "hobbies_and_interests_list: 'Solving Sudoku puzzles'",
+          "interview_ref": "Q5: 'maybe do some Sudoku'; Q10 follow-up: 'I'll do Sudoku. It sounds weird but the focus it takes kind of shuts off the anxious part of my brain'"
+        }
+      ],
+      "summary": {"consistent": 6, "inconsistent": 1, "gaps": 2}
+    },
+    "behavioral_economist": {
+      "observations": [
+        {
+          "id": 1,
+          "text": "Seed's occupation is 'fast_food_or_counter_worker.' Interview confirms 5 years at the same chain restaurant doing POS, drive-thru, prep, and cash handling (Q1, Q5). She describes performing supervisor duties without the title (Q1). Exact occupation match.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "occupation: 'fast_food_or_counter_worker'",
+          "interview_ref": "Q1: 'I started working fast food pretty much right away... about five years now'; Q5: 'register, drive-thru, prep, whatever they need'"
+        },
+        {
+          "id": 2,
+          "text": "Seed's career_goals_and_ambitions specify: crew to shift supervisor, then restaurant manager, then diner owner, plus community college hospitality program and ServSafe certification. Interview hits every milestone: supervisor pursuit (Q1, Q12), diner dream (Q1: 'a real neighborhood place where people come for breakfast'), community college research (Q10, Q12 follow-up), and ServSafe (Q10). All five career elements match.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "career_goals_and_ambitions: 'advance from crew member to shift supervisor... restaurant manager... own a small family-style diner... community college hospitality program... ServSafe manager certification'",
+          "interview_ref": "Q1: 'My big dream is to own my own diner'; Q10: 'community college research... ServSafe certification'; Q12: 'the shift supervisor thing matters so much'"
+        },
+        {
+          "id": 3,
+          "text": "Seed's travel_persona says 'occasional culinary adventures in Napa Valley' which implies past visits. Interview treats Napa as purely aspirational: 'I keep looking at pictures of Napa Valley' (Q10). Given Mary's financial situation (fast food wages, rent takes half her paycheck, no emergency fund), actual Napa visits are financially implausible. The interview's treatment is more realistic, but it contradicts the seed's implication of prior visits.",
+          "verdict": "INCONSISTENT",
+          "seed_ref": "travel_persona: 'occasional culinary adventures in Napa Valley'",
+          "interview_ref": "Q10: 'I keep looking at pictures of Napa Valley and Kyoto and thinking, when is it gonna be my turn?'"
+        },
+        {
+          "id": 4,
+          "text": "Interview establishes detailed financial constraints: rent takes half her paycheck (Q11), no emergency fund (Q12: 'If my car broke down tomorrow, I'd be in trouble'), saves ~$100/month for diner fund (Q11), $120 running shoes described as painful (Q11), zero debt (Q12). The seed provides no financial data, so these details cannot be verified against it, but they are internally coherent for a fast food worker in Madison, WI.",
+          "verdict": "GAP",
+          "seed_ref": "No financial data in seed (occupation is 'fast_food_or_counter_worker' from which low income can be inferred)",
+          "interview_ref": "Q11: 'Rent is always the big one'; Q12: 'If my car broke down tomorrow, I'd be in trouble'; Q12: 'I'm not in debt, which I'm proud of'"
+        },
+        {
+          "id": 5,
+          "text": "Door County weekend getaways appear in both seed (travel_persona) and interview (Q4: 'We've gone to Door County together a couple times... hiking, eating cheese curds, hitting up wineries'). Door County is ~3 hours from Madison, and budget weekends ($150-300 split with Dana) are feasible on Mary's income. This is the most financially realistic travel element.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "travel_persona: 'quiet lakeside relaxation in Door County'",
+          "interview_ref": "Q4: 'We've gone to Door County together a couple times for weekend getaways — just hiking, eating cheese curds, hitting up wineries'"
+        },
+        {
+          "id": 6,
+          "text": "Seed's culinary_persona mentions 'perfecting Midwestern classics such as cheddar-crusted bratwurst, cheese-curd laden poutine, and a spiced apple crumble.' Interview confirms all three: cheddar-crusted bratwurst (Q1 follow-up: 'cheddar-crusted bratwurst next to a plate of rigatoni'), cheese curds (Q4, Q7: 'cheese curds, bratwurst, all of it'), and spiced apple crumble (Q10 follow-up: 'a spiced apple crumble is my go-to comfort bake'). All three signature dishes match.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "culinary_persona: 'cheddar-crusted bratwurst, cheese-curd laden poutine, and a spiced apple crumble'",
+          "interview_ref": "Q1 follow-up: 'cheddar-crusted bratwurst'; Q7: 'cheese curds, bratwurst'; Q10 follow-up: 'a spiced apple crumble is my go-to comfort bake'"
+        },
+        {
+          "id": 7,
+          "text": "The $20 Wes Anderson double feature at the indie theater (Q11) is consistent with the seed's arts_persona (Wes Anderson) and represents a modest entertainment expenditure appropriate for her income level. The detail that she notes the exact cost ('like twenty bucks with popcorn') reinforces the receipt-checking personality trait.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "arts_persona: 'classic cinematography of Wes Anderson'",
+          "interview_ref": "Q11: 'I went to a Wes Anderson double feature at the indie theater downtown, so that was like twenty bucks with popcorn'"
+        },
+        {
+          "id": 8,
+          "text": "Seed education_level is 'high_school.' Interview confirms: 'After high school I didn't really have the money for a four-year college, so I started working fast food pretty much right away' (Q1). She is now exploring community college (Q10, Q12 follow-up mentions FAFSA). Exact match with forward trajectory.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "education_level: 'high_school'",
+          "interview_ref": "Q1: 'After high school I didn't really have the money for a four-year college'"
+        }
+      ],
+      "summary": {"consistent": 6, "inconsistent": 1, "gaps": 1}
+    },
+    "political_scientist": {
+      "observations": [
+        {
+          "id": 1,
+          "text": "The seed contains no political information whatsoever. The interview also produces zero explicit political statements across all 12 questions and follow-ups. The extracted_profile infers 'Moderate / not strongly partisan' based on behavioral signals. This inference is reasonable but entirely interview-generated with no seed basis for verification.",
+          "verdict": "GAP",
+          "seed_ref": "No political leaning or affiliation in any seed field",
+          "interview_ref": "extracted_profile political_leaning: 'Moderate / not strongly partisan' inferred from behavioral clues"
+        },
+        {
+          "id": 2,
+          "text": "Seed's cultural_background states 'second-generation Italian-American raised in Madison, Wisconsin' with 'Catholic, Midwestern upbringing.' Interview confirms identically: 'Second-gen Italian-American' (Q1), 'my grandparents came over from Calabria' (Q1), 'Catholic family, big Sunday dinners, the whole deal' (Q1). Cultural identity is perfectly aligned.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "cultural_background: 'second-generation Italian-American raised in Madison, Wisconsin... Catholic, Midwestern upbringing'",
+          "interview_ref": "Q1: 'Second-gen Italian-American — my grandparents came over from Calabria... Catholic family, big Sunday dinners'"
+        },
+        {
+          "id": 3,
+          "text": "Seed mentions valuing 'outdoor recreation, local farmers markets, and modest, reliable living.' Interview confirms all three: running as outdoor recreation (Q1, Q5), farmers market every Saturday (Q5, Q4 — Marcus the cheese vendor), and modest financial lifestyle with meticulous budgeting (Q11, Q12). The seed's civic/community values are faithfully reflected.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "cultural_background: 'outdoor recreation, local farmers markets, and modest, reliable living'",
+          "interview_ref": "Q5: 'Saturday is farmers market in the morning'; Q4: Marcus cheese vendor; Q12: detailed budgeting behavior"
+        },
+        {
+          "id": 4,
+          "text": "The interview's religion section (Q9) describes a practicing but not deeply theological Catholic who values 'community and the tradition' over theology. She attends Mass 2-3 Sundays per month, prays when stressed, and participates in parish potlucks. This is a nuanced and faithful interpretation of the seed's 'Catholic, Midwestern upbringing emphasized hard work, practicality, and community.'",
+          "verdict": "CONSISTENT",
+          "seed_ref": "cultural_background: 'Catholic... upbringing emphasized hard work, practicality, and community'",
+          "interview_ref": "Q9: 'I think for me it's more about the community and the tradition than the theology'; Q9 follow-up: 'I help my mom bring food to the parish potluck'"
+        },
+        {
+          "id": 5,
+          "text": "No political media consumption, activism, or partisan statements appear anywhere in the interview. For a 28-year-old in 2026, the complete absence of political engagement is notable. The Stanford Table 7 protocol does not include a direct political question, so this gap is partly structural. However, the seed also provides no political information, making this a shared gap.",
+          "verdict": "GAP",
+          "seed_ref": "No political content in seed",
+          "interview_ref": "No political media, activism, or partisan statements in full 12-question transcript"
+        },
+        {
+          "id": 6,
+          "text": "Italian-American Catholic identity in Wisconsin is a politically meaningful demographic. Historically, this group has shifted from strongly Democratic to more heterogeneous. Mary's profile (HS education, food service work, Catholic, concerned about wages) fits the moderate/swing segment. The interview does not force partisan alignment, which is appropriate given the seed's silence on politics.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "cultural_background: Italian-American, Catholic, Madison WI",
+          "interview_ref": "Q9: religion section; Q12: financial concerns; extracted_profile: 'Midwestern Catholic working-class background suggests centrist pragmatism'"
+        }
+      ],
+      "summary": {"consistent": 4, "inconsistent": 0, "gaps": 2}
+    },
+    "demographer": {
+      "observations": [
+        {
+          "id": 1,
+          "text": "Seed: age 28, sex Female, marital_status never_married. Interview confirms all three exactly. No romantic partner is mentioned anywhere in the interview. Exact demographic match.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "age: 28, sex: 'Female', marital_status: 'never_married'",
+          "interview_ref": "interview_metadata: age 28, gender Female; extracted_profile: 'Never married'; no romantic partner in transcript"
+        },
+        {
+          "id": 2,
+          "text": "Seed: city Madison, state WI, zipcode 53717. Interview confirms Madison, WI. Specific zipcode not independently mentioned in transcript but listed in metadata. Lake Mendota running, downtown farmers market, and other Madison-specific locations ground the geography.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "city: 'Madison', state: 'WI', zipcode: '53717'",
+          "interview_ref": "interview_metadata location: 'Madison, WI 53717'; Q1: Lake Mendota; Q5: 'downtown' Madison"
+        },
+        {
+          "id": 3,
+          "text": "Seed's culinary_persona says 'fresh tomatoes, beans, and herbs from their raised-bed garden.' Interview Q1 says 'I have a raised bed out back where I grow tomatoes, basil, peppers.' The seed says beans; the interview says peppers. The seed says herbs (generic); the interview specifies basil. Minor discrepancy in garden contents.",
+          "verdict": "INCONSISTENT",
+          "seed_ref": "culinary_persona: 'fresh tomatoes, beans, and herbs from their raised-bed garden'",
+          "interview_ref": "Q1: 'I have a raised bed out back where I grow tomatoes, basil, peppers'"
+        },
+        {
+          "id": 4,
+          "text": "Seed's sports_persona says 'clocking 3-5 mile runs around Lake Mendota with the Madison Runners Club.' Interview says 'I run three to five miles along Lake Mendota with the Madison Runners Club a few times a week' (Q1) with specific schedule of MWF at 6:15am (Q5). Distance, location, and club name all match exactly.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "sports_persona: 'clocking 3-5 mile runs around Lake Mendota with the Madison Runners Club'",
+          "interview_ref": "Q1: 'I run three to five miles along Lake Mendota with the Madison Runners Club'"
+        },
+        {
+          "id": 5,
+          "text": "Seed's arts_persona names John Prine, Bon Iver, and Wes Anderson as cultural touchstones. Interview confirms all three: John Prine and Bon Iver as running/coping music (Q10 follow-up), Wes Anderson double feature at indie theater (Q11). All three cultural references transfer from seed to interview accurately.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "arts_persona: 'John Prine... Bon Iver... Wes Anderson'",
+          "interview_ref": "Q10 follow-up: 'I put on John Prine or Bon Iver'; Q11: 'Wes Anderson double feature at the indie theater downtown'"
+        },
+        {
+          "id": 6,
+          "text": "Seed's culinary_persona mentions 'hosting low-key dinner gatherings.' The interview shows Mary attending family dinners at her parents' home and bringing food to parish potlucks, but never describes Mary hosting gatherings at her own place. This seed detail is unconfirmed.",
+          "verdict": "GAP",
+          "seed_ref": "culinary_persona: 'hosting low-key dinner gatherings'",
+          "interview_ref": "No mention of Mary hosting at her own home. She attends family dinners (Q1 follow-up), brings food to potlucks (Q9 follow-up)"
+        },
+        {
+          "id": 7,
+          "text": "Seed hobbies list includes 'Listening to classic rock music.' Interview names John Prine (folk/country) and Bon Iver (indie folk) as Mary's go-to artists (Q10 follow-up). Neither is classic rock. The extracted_profile includes 'Classic rock (general)' as a music preference, but this is not substantiated by the transcript. Genre mismatch.",
+          "verdict": "INCONSISTENT",
+          "seed_ref": "hobbies_and_interests_list: 'Listening to classic rock music'",
+          "interview_ref": "Q10 follow-up: 'I put on John Prine or Bon Iver'; extracted_profile: lists 'Classic rock (general)' but transcript names only folk/indie artists"
+        },
+        {
+          "id": 8,
+          "text": "The Feast of the Seven Fishes (Christmas Eve) is a genuine Italian-American Catholic tradition. Its inclusion in the interview (Q6) is culturally accurate for the seed's 'second-generation Italian-American' with 'Catholic, Midwestern upbringing.' The detail that Mary must avoid shellfish at this feast links cultural, dietary, and health dimensions authentically.",
+          "verdict": "CONSISTENT",
+          "seed_ref": "cultural_background: 'second-generation Italian-American... Catholic'",
+          "interview_ref": "Q6: 'my family does a big fish fry for Christmas Eve — the Feast of the Seven Fishes, you know? I just have to make sure I stick to the non-shellfish dishes'"
+        }
+      ],
+      "summary": {"consistent": 5, "inconsistent": 2, "gaps": 1}
+    }
+  },
+  "overall_verdict": "PASS_WITH_REVISIONS",
+  "inconsistencies_found": [
+    "CRAFT-BREW FREQUENCY: Seed says 'occasional craft-brew indulgence.' Interview establishes twice-weekly tastings (Tuesdays and Thursdays), which exceeds 'occasional' even with the 'sometimes' qualifier.",
+    "NAPA VALLEY STATUS: Seed travel_persona says 'occasional culinary adventures in Napa Valley' implying past visits. Interview treats Napa as purely aspirational ('I keep looking at pictures'). Given her finances, actual visits are implausible.",
+    "GARDEN CONTENTS: Seed says 'tomatoes, beans, and herbs.' Interview says 'tomatoes, basil, peppers.' Beans replaced by peppers; herbs generalized to specific basil.",
+    "MUSIC GENRE: Seed lists 'Listening to classic rock music.' Interview names John Prine (folk/country) and Bon Iver (indie folk). Neither is classic rock. The extracted_profile includes 'Classic rock (general)' without transcript support."
+  ],
+  "suggested_revisions": [
+    "Reduce craft-brew frequency to 'once or twice a month' to match seed's 'occasional' and to be more financially coherent with her savings goals and hypertension concerns.",
+    "Align Napa Valley references: either update seed to say 'dreaming of culinary adventures in Napa Valley' or add a single past budget trip to the interview.",
+    "Align garden contents: either add beans to interview description or accept minor variation as natural elaboration.",
+    "Either add a classic rock artist reference to the interview (e.g., Springsteen, Fleetwood Mac) or remove 'Classic rock (general)' from the extracted_profile since it lacks transcript basis.",
+    "Add a Wisconsin Badgers basketball reference to the interview to match the seed's sports_persona, which explicitly includes them.",
+    "Add a mention of art walks or museum visits to the interview transcript, since the seed's arts_persona includes this but it has zero transcript evidence."
+  ]
+}

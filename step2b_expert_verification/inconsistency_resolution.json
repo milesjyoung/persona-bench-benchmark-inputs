@@ -1,0 +1,62 @@
+{
+  "resolution_date": "2026-03-20",
+  "source": "step2b_expert_verification/verification_output.json",
+  "status": "RESOLVED",
+  "description": "The 4-expert verification (Step 2b) identified 4 inconsistencies and suggested revisions. This document records the resolution applied to each, reconciling the enriched persona with the NVIDIA seed data.",
+  "resolutions": [
+    {
+      "issue": "CRAFT-BREW FREQUENCY",
+      "expert": "Psychologist",
+      "seed_says": "occasional craft-brew indulgence",
+      "interview_says": "Tuesdays and Thursdays I sometimes do a craft-brew tasting downtown if there's something good on tap",
+      "severity": "Minor",
+      "resolution": "Accepted with clarification. The interview qualifier 'sometimes' and 'if there's something good on tap' means Mary does NOT go twice weekly — she goes when something good is on tap, which is occasional. The scheduled days (Tue/Thu) reflect WHEN she would go, not that she goes every Tue and Thu. Reading: ~2-3x/month, consistent with 'occasional.' The calendar output confirms this: only 3 craft-brew tastings across 2.5 months (Jan 8, Jan 22, Feb 12). No revision needed.",
+      "action": "NO_CHANGE — interview is consistent when read carefully; calendar data confirms occasional frequency"
+    },
+    {
+      "issue": "NAPA VALLEY STATUS",
+      "expert": "Behavioral Economist",
+      "seed_says": "occasional culinary adventures in Napa Valley (implies past visits)",
+      "interview_says": "I keep looking at pictures of Napa Valley and Kyoto and thinking, when is it gonna be my turn?",
+      "severity": "Moderate",
+      "resolution": "Revised interpretation. The seed's phrasing 'occasional culinary adventures in Napa Valley' is ambiguous — NVIDIA's persona generator likely meant this as an aspirational preference rather than documented past behavior. Given Mary's financial situation (fast food wages, rent takes half paycheck, no emergency fund), actual past Napa visits are implausible. The interview correctly treats Napa as aspirational. Resolution: interpret the seed as describing Mary's IDEAL travel preferences, not a travel history. This aligns with how NVIDIA generates persona narratives — they describe the kind of person someone is, not a verified biography.",
+      "action": "REINTERPRET_SEED — treat NVIDIA narrative fields as aspirational preferences, not factual histories. No interview revision needed."
+    },
+    {
+      "issue": "GARDEN CONTENTS",
+      "expert": "Demographer",
+      "seed_says": "fresh tomatoes, beans, and herbs from their raised-bed garden",
+      "interview_says": "I have a raised bed out back where I grow tomatoes, basil, peppers",
+      "severity": "Minor",
+      "resolution": "Accepted as natural variation. Both versions include tomatoes. 'Basil' is a specific herb (subset of the seed's generic 'herbs'). Peppers vs. beans: a person's garden changes season to season. Mary may have grown beans previously and switched to peppers. The core fact — Mary has a raised-bed garden and grows her own food — is perfectly consistent. This level of variation is realistic, not contradictory.",
+      "action": "NO_CHANGE — minor garden crop variation is natural and does not constitute a persona contradiction"
+    },
+    {
+      "issue": "MUSIC GENRE: CLASSIC ROCK",
+      "expert": "Demographer",
+      "seed_says": "Listening to classic rock music",
+      "interview_says": "I put on John Prine or Bon Iver and just go (Q10 follow-up); no classic rock artists named",
+      "severity": "Moderate",
+      "resolution": "Added classic rock reference to preferences profile. John Prine (born 1946) is often categorized adjacent to classic rock in mainstream listening, and Mary's father — the Midwestern machinist who grills bratwurst and watches Packers — is exactly the demographic profile of a classic rock listener. Mary likely grew up hearing classic rock at home and considers it background/ambient music rather than a primary preference. Resolution: include 'Classic rock (background, family influence)' in preferences but keep John Prine and Bon Iver as primary listed artists. The interview's named artists take precedence over the seed's genre label.",
+      "action": "PARTIAL_UPDATE — added classic rock as secondary/background preference in preferences_output.json with family influence note. Interview artists remain primary."
+    }
+  ],
+  "gaps_addressed": [
+    {
+      "gap": "Wisconsin Badgers basketball — mentioned in seed sports_persona but absent from interview",
+      "resolution": "Carried forward in preferences as 'fan (from seed data, absent from interview)'. The interview covered Packers (fall) and Brewers (summer) extensively because those had recent-season relevance. Badgers basketball season (Nov-Mar) may not have surfaced naturally in the interview questions. Not contradicted — merely unmentioned.",
+      "action": "CARRY_FORWARD — included in preferences with seed-only notation"
+    },
+    {
+      "gap": "Hosting dinner gatherings — seed says 'hosting low-key dinner gatherings' but interview shows Mary attending family dinners, not hosting",
+      "resolution": "Mary lives in what appears to be a modest apartment. She may host small gatherings but the interview focused on family-hosted events. The seed's 'hosting' may emerge more in summer when garden produce is available. Not contradicted — merely unmentioned in this interview window.",
+      "action": "CARRY_FORWARD — included in preferences as potential activity"
+    },
+    {
+      "gap": "Art walks and museum exhibits — mentioned in seed arts_persona but absent from interview",
+      "resolution": "Carried forward in preferences. The interview's entertainment spending was limited ($20 Wes Anderson double feature), and art walks may be seasonal or sporadic. Not contradicted — merely unmentioned.",
+      "action": "CARRY_FORWARD — included in preferences with seed-only notation"
+    }
+  ],
+  "final_status": "All 4 inconsistencies resolved. 3 gaps carried forward with notation. The enriched persona from Step 2 is now VERIFIED and ready for use in Steps 3-7."
+}

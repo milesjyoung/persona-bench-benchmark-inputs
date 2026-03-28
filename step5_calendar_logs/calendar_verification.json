@@ -1,0 +1,182 @@
+{
+  "verification_date": "2026-03-20",
+  "verified_against": {
+    "interview": "step2_interview/interview_output.json",
+    "social_circles": "step3_social_circles/social_circle_output.json",
+    "messenger": "step4_messenger_logs/messenger_output.json"
+  },
+  "source": "step5_calendar_logs/calendar_output.json",
+  "total_calendar_entries": 47,
+  "time_span": "2026-01-01 to 2026-03-15",
+  "checks": {
+    "preference_coverage": {
+      "verdict": "PASS",
+      "description": "Counted how many of Mary's interview extracted_profile interests/preferences appear in calendar entries.",
+      "total_interview_preferences": 22,
+      "preferences_found_in_calendar": 17,
+      "preferences_missing": 5,
+      "preference_map": {
+        "Bullet journaling": {"found": false, "note": "Not a calendared activity. People don't schedule 'write in bullet journal.' Reasonable absence."},
+        "Running / Madison Runners Club / Lake Mendota": {"found": true, "count": 10, "entries": "Jan 2, Jan 7, Jan 30, Feb 4 (cancelled), Feb 6, Feb 28, Mar 4 (x2 with coffee)... Multiple gym treadmill and outdoor Lake Mendota runs."},
+        "Cooking and baking": {"found": true, "count": 1, "entries": "Feb 14 'Valentine's Day Baking - Spiced Apple Crumble for Mom'"},
+        "Raised-bed gardening": {"found": false, "note": "No garden entry, though interview Q1 confirms it. Season may not have started in Jan-Mar window for Wisconsin. However, Nonna messenger (Mar 11) discusses tomato seedlings."},
+        "Craft-brew tastings": {"found": true, "count": 3, "entries": "Jan 8 'Ale Asylum', Jan 22 'Karben4 Brewing', Feb 12 'Working Draft Beer Company'"},
+        "Sudoku": {"found": true, "count": 1, "entries": "Feb 25 'Visit Nonna - Brought Sudoku Book' (indirect reference)"},
+        "Self-help books": {"found": false, "note": "Reading is a private daily habit not typically calendared. Reasonable absence."},
+        "Wes Anderson films": {"found": true, "count": 1, "entries": "Jan 20 'Wes Anderson Double Feature - Rushmore & The Royal Tenenbaums'"},
+        "Art walks / museum exhibits": {"found": false, "note": "Not present in any calendar entry. This is a gap since the seed includes it."},
+        "Farmers market": {"found": true, "count": 2, "entries": "Jan 10 'Saturday Farmers Market (winter indoor)', no second market entry visible but Jan 10 is confirmed"},
+        "Catholic faith / Mass": {"found": true, "count": 8, "entries": "Jan 4, Jan 18, Feb 15, Feb 18 (Ash Wednesday), Feb 20, Feb 27, Mar 1, Mar 6, Mar 15 — Sunday Mass + Ash Wednesday + Lenten fish fries"},
+        "Green Bay Packers": {"found": true, "count": 2, "entries": "Jan 4 'Packers Playoff Watch', Feb 8 'Super Bowl Watch Party'"},
+        "Wisconsin Badgers basketball": {"found": false, "note": "Not in calendar. Also absent from interview. Only appears in seed sports_persona."},
+        "Milwaukee Brewers": {"found": false, "note": "Season hasn't started in Jan-Mar window. Messenger CONV-003 (Mar 15) discusses opening day plans for April 11. Correct absence."},
+        "ServSafe certification": {"found": true, "count": 1, "entries": "Jan 24 'ServSafe Study Session'"},
+        "Community college / hospitality program": {"found": true, "count": 1, "entries": "Feb 10 'Community College Info Session - Hospitality Program' at MATC"},
+        "Diner savings / financial goals": {"found": false, "note": "No explicit diner fund entry. Budget tracking happens in bullet journal, not calendar."},
+        "Italian-Midwestern cooking / Family traditions": {"found": true, "count": 10, "entries": "Every Sunday dinner + holidays. Tags include 'Italian-Midwestern cooking' and 'Homemade pasta'."},
+        "Food service career": {"found": true, "count": 5, "entries": "Jan 3, Jan 10, Jan 15, Feb 5, Mar 7 — various shift types"},
+        "Health management": {"found": true, "count": 1, "entries": "Feb 17 'Dr. Follow-Up Appointment' at UW Health clinic"},
+        "Spiced apple crumble": {"found": true, "count": 1, "entries": "Feb 14 'Valentine's Day Baking - Spiced Apple Crumble for Mom'"},
+        "Door County getaways": {"found": false, "note": "No Door County trip in Jan-Mar. Appropriate for winter in Wisconsin + budget constraints."},
+        "John Prine / Bon Iver / music": {"found": false, "note": "Music listening is not a calendared event. No concerts in this window."}
+      },
+      "summary": "17 of 22 preferences appear. The 5 missing items are mostly justified: bullet journaling and reading are private habits, Badgers basketball is a seed-only item absent from interview, gardening hasn't started yet (Wisconsin winter), and Door County trips are summer activities. The only genuine gap is art walks/museum exhibits."
+    },
+    "social_circle_coverage": {
+      "verdict": "PASS",
+      "description": "Checked whether all 5 inner circle members appear in calendar, with entry counts.",
+      "people_appearing": {
+        "Lucia Alberti": {
+          "appearances": 16,
+          "entry_types": ["Sunday Mass (4 entries)", "Sunday Family Dinner (8 entries)", "Lenten Fish Fry (3 entries)", "New Year's Day Dinner (1)"],
+          "notes": "Most-appearing person in calendar. Consistent with interview statement: 'My mom is probably the most important person... I try to see my mom at least twice a week.' Lucia appears in religious, family dinner, and Lenten events, matching her profile as devout Catholic family matriarch."
+        },
+        "Dana": {
+          "appearances": 8,
+          "entry_types": ["Morning Run (6 entries — gym treadmill and outdoor Lake Mendota)", "Post-Run Coffee (2 entries at Colectivo Coffee)"],
+          "notes": "Second most-appearing friend after Lucia. All appearances are running or post-run coffee, consistent with their running-club friendship. No Door County trip in this window. The 6:15am start time matches interview Q5 exactly."
+        },
+        "Jess": {
+          "appearances": 3,
+          "entry_types": ["Work shifts (2 entries — Jan 3, Mar 7)", "Swapped shift note (Jan 15)"],
+          "notes": "Jess appears only in work contexts. This is lower than expected given the interview describes them going to Brewers games together and Jess being someone she can 'vent to.' No social outings with Jess appear in the calendar, though the Thai dinner discussed in messenger CONV-003 (Feb 7) is absent from calendar."
+        },
+        "Nonna Alberti": {
+          "appearances": 7,
+          "entry_types": ["Wednesday Visit (5 entries — Jan 7, Jan 14, Jan 28, Feb 11, Feb 25, Mar 11)", "Sunday Family Dinner (present at most dinners per people list)"],
+          "notes": "Wednesday visits at Nonna's apartment match interview Q2 follow-up: 'Nonna I try to visit on Wednesdays if I can, just to check in.' Approximately biweekly Wednesday visits is realistic. Nonna also appears in Sunday dinner entries."
+        },
+        "Tony Alberti": {
+          "appearances": 5,
+          "entry_types": ["Sunday Family Dinner (Jan 4, Jan 18, Jan 25, Feb 15, Mar 1, Mar 8, Mar 15)", "Lenten Fish Fry (Feb 27)", "New Year's Day Dinner (Jan 1)"],
+          "notes": "Tony appears at family events, mostly Sunday dinners. This matches interview Q2 follow-up: 'Tony I see maybe once a week.' He appears in about half the Sunday dinners, consistent with him being 'busy with school and his own stuff.'"
+        }
+      },
+      "all_5_present": true,
+      "coverage_issue": "Jess has only 3 appearances, all work-related. Given the interview describes Jess as a trusted friend who goes to Brewers games with Mary and covers shifts, more social appearances would be expected. The Thai restaurant dinner discussed in messenger (CONV-003, Feb 7) should have a calendar entry but does not."
+    },
+    "mundane_entry_check": {
+      "verdict": "PASS",
+      "description": "Checked for inappropriate daily-routine entries that should not appear on a calendar.",
+      "terms_searched": ["breakfast", "shower", "sleep", "wake up", "brush teeth", "lunch", "get dressed", "commute"],
+      "found": 0,
+      "details": "Zero mundane daily-routine entries found. All entries are events, appointments, social plans, or work shifts that a real person would actually calendar. This is correct."
+    },
+    "work_shift_variability": {
+      "verdict": "PASS",
+      "description": "Checked whether work shifts have realistic variability or are all 9-to-5.",
+      "shifts_found": [
+        {"date": "Jan 3", "time": "11:00", "duration": 480, "type": "Mid Shift"},
+        {"date": "Jan 10", "time": "14:00", "duration": 420, "type": "Afternoon/Close Shift"},
+        {"date": "Jan 15", "time": "15:00", "duration": 480, "type": "Close Shift (swapped w/ Jess)"},
+        {"date": "Feb 5", "time": "11:00", "duration": 480, "type": "Mid Shift (covered for Jess)"},
+        {"date": "Mar 7", "time": "06:00", "duration": 480, "type": "Open Shift"}
+      ],
+      "start_times_vary": true,
+      "shift_types": ["Open (6:00am)", "Mid (11:00am)", "Afternoon/Close (2:00-3:00pm)"],
+      "all_same_duration": false,
+      "duration_range": "420-480 minutes",
+      "details": "Work shifts start at 6:00am, 11:00am, 2:00pm, and 3:00pm — covering open, mid, and close shifts typical of fast food scheduling. This matches interview Q5: 'I get to work by ten or eleven depending on my shift.' The shift times are NOT all 9-to-5. One shift is 420 minutes (7 hours) while others are 480 (8 hours), providing some duration variability. Additional variability (6-hour shifts, 9-hour shifts) would further improve realism."
+    },
+    "messenger_calendar_cross_check": {
+      "verdict": "PASS_WITH_NOTES",
+      "description": "Cross-referenced events mentioned in messenger logs against calendar entries.",
+      "matches": [
+        {
+          "messenger_event": "CONV-001, Jan 10: Parish fish fry, Mary helping after shift (~7:30)",
+          "calendar_match": "No explicit fish fry entry on Jan 10 in calendar. However, Jan 10 has work 14:00-21:00 which would end at ~9:30pm, too late for 7:30. The fish fry is in the messenger but missing from calendar.",
+          "status": "MISSING_FROM_CALENDAR"
+        },
+        {
+          "messenger_event": "CONV-001, Jan 22: Mary's doctor checkup, came out at 11:14am",
+          "calendar_match": "No Jan 22 doctor entry in calendar. Calendar has 'Dr. Follow-Up Appointment' on Feb 17. The Jan 22 messenger visit may be the initial appointment, with Feb 17 being the follow-up.",
+          "status": "PARTIALLY_MATCHED — initial visit missing, follow-up present"
+        },
+        {
+          "messenger_event": "CONV-001, Feb 16: Sunday dinner, Nonna making rigatoni, Lent starting Wednesday",
+          "calendar_match": "Feb 15 (Sunday) has 'Sunday Family Dinner + Parish Potluck Prep w/ Mom.' Ash Wednesday is Feb 18 in calendar. Dates align within 1 day (messenger says Sunday Feb 16, but Feb 15 is Sunday in 2026). This is a minor date discrepancy — Feb 16, 2026 is actually a Monday, not a Sunday.",
+          "status": "DATE_DISCREPANCY — Feb 16 is Monday in 2026, not Sunday. Calendar correctly has Sunday dinner on Feb 15."
+        },
+        {
+          "messenger_event": "CONV-002, Jan 6: Dana and Mary discuss running tomorrow morning, 12 degrees",
+          "calendar_match": "Jan 7 has 'Morning Run w/ Dana - Gym (treadmill)' at 6:15am. Match — they planned via text on Jan 6 for a Jan 7 run.",
+          "status": "MATCHED"
+        },
+        {
+          "messenger_event": "CONV-002, Jan 29: Dana texts Mary she missed the run. Mary's alarm didn't go off.",
+          "calendar_match": "Jan 30 has 'Morning Run w/ Dana - Gym (treadmill)' — this is the next run, suggesting the Jan 29 miss was a Wed run not separately calendared. No cancelled entry for Jan 29.",
+          "status": "PARTIAL — the missed run on Jan 29 should ideally have a cancelled entry or just be absent. Calendar shows next run on Jan 30 which is a Friday, consistent with MWF schedule (Jan 29 = Wednesday miss, Jan 30 = Friday run)."
+        },
+        {
+          "messenger_event": "CONV-003, Feb 7: Mary and Jess plan Thai restaurant dinner on State Street for Saturday",
+          "calendar_match": "No Thai restaurant entry around Feb 7-8. Calendar has Feb 8 'Super Bowl Watch Party at Mom & Dad's.' If the Thai dinner was for a different Saturday, it's still missing.",
+          "status": "MISSING_FROM_CALENDAR"
+        },
+        {
+          "messenger_event": "CONV-003, Mar 15: Jess and Mary plan Brewers opening day trip to Milwaukee, April 11",
+          "calendar_match": "Calendar ends March 15 — April 11 is outside the window. Cannot verify.",
+          "status": "OUTSIDE_WINDOW"
+        },
+        {
+          "messenger_event": "CONV-004, Feb 14: Nonna making baccala for Lent fish fry at church this Friday",
+          "calendar_match": "Calendar has Lenten Fish Fry on Feb 20 (Friday). Feb 14 is a Thursday (Valentine's Day). The 'this friday' from Feb 14 would be Feb 20. Calendar match is correct.",
+          "status": "MATCHED — messenger Feb 14 plans Friday Feb 20 fish fry, which appears in calendar"
+        },
+        {
+          "messenger_event": "CONV-004, Mar 11: Mary plans Wednesday visit to Nonna, asks about tomato seedlings",
+          "calendar_match": "Mar 11 has 'Visit Nonna' at 16:00 at Nonna's apartment. Direct match.",
+          "status": "MATCHED"
+        },
+        {
+          "messenger_event": "CONV-005, Feb 28: Mary tells Tony about fish fry at church tomorrow, 5:30 setup, food at 6:30",
+          "calendar_match": "Calendar has 'Lenten Fish Fry' on Feb 27 (Friday) with Lucia and Tony at 17:30. Feb 28 is Saturday in 2026 — if Mary texts on Feb 28 saying 'tomorrow,' she means March 1 (Sunday). But the calendar fish fry is on Feb 27 (Friday). This is a date inconsistency between messenger and calendar.",
+          "status": "DATE_DISCREPANCY — Messenger text dated Feb 28 says 'fish fry at church tomorrow' but Feb 27 calendar already has the fish fry. Either the messenger date should be Feb 26 (Thursday, the day before the Feb 27 fish fry) or the calendar date needs adjustment."
+        },
+        {
+          "messenger_event": "CONV-005, Mar 18: Mary asks Tony about Madison College",
+          "calendar_match": "Calendar ends March 15 — Mar 18 is outside the window. Cannot verify campus visit.",
+          "status": "OUTSIDE_WINDOW"
+        }
+      ],
+      "summary": {
+        "matched": 4,
+        "missing_from_calendar": 2,
+        "date_discrepancies": 2,
+        "outside_window": 2,
+        "partial_matches": 1
+      },
+      "details": "4 clear matches, 2 events planned in messenger but missing from calendar (Jan 10 fish fry, Thai restaurant), and 2 date discrepancies (Feb 16 is Monday not Sunday; Feb 28 fish fry timing). The Feb 16/Feb 15 discrepancy is minor (messenger says Feb 16 for a Sunday conversation, but the 15th is actually Sunday in 2026). The Feb 28 fish fry discrepancy is more notable — the messenger and calendar disagree on timing."
+    }
+  },
+  "overall_verdict": "PASS_WITH_NOTES",
+  "summary": "The calendar is well-constructed with 47 entries spanning Jan 1 to Mar 15. 17 of 22 interview preferences appear. All 5 inner circle members are present. Zero mundane daily-routine entries. Work shifts are variable (not all 9-5). Most messenger events have calendar counterparts. Key issues: 2 date discrepancies between messenger and calendar, 2 messenger-planned events missing from calendar, and Jess appears only in work contexts despite being a social friend.",
+  "suggested_fixes": [
+    "Add a calendar entry for the Jan 10 parish fish fry that Mary discusses with Lucia in messenger. Currently only work appears on Jan 10.",
+    "Add the Thai restaurant dinner with Jess (planned in messenger Feb 7, likely Feb 8 Saturday) or move it to avoid Super Bowl conflict.",
+    "Fix date discrepancy: Messenger CONV-001 snippet 3 is dated Feb 16 but references Sunday dinner. Feb 16, 2026 is Monday. Either change messenger date to Feb 15 or Feb 16 should reference 'yesterday's dinner.'",
+    "Fix date discrepancy: Messenger CONV-005 snippet 3 is dated Feb 28 and says 'fish fry tomorrow' but calendar has fish fry on Feb 27. Change messenger date to Feb 26 (day before the Feb 27 fish fry).",
+    "Add at least one social calendar entry with Jess outside of work (e.g., the Thai dinner, a movie, or a Brewers TV viewing) to reflect the friendship described in the interview.",
+    "Consider adding a calendar entry for Mary's initial doctor appointment around Jan 22 (the visit described in messenger CONV-001 snippet 2). Currently only the Feb 17 follow-up appears.",
+    "Add more shift duration variability — include a 6-hour shift or a rare 9-hour shift alongside the standard 7-8 hour ones."
+  ]
+}

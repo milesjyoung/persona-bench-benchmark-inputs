@@ -1,0 +1,345 @@
+{
+  "interview_metadata": {
+    "participant": "Mary Alberti",
+    "age": 28,
+    "gender": "Female",
+    "location": "Madison, WI 53717",
+    "interview_date": "2026-03-20",
+    "duration_minutes": 32,
+    "interviewer_id": "INT-0047",
+    "protocol": "Stanford Table 7 (12-question, ~30 min)",
+    "session_id": "SW-STEP2-ALBERTI-001"
+  },
+  "transcript": [
+    {
+      "question_id": "Q1",
+      "question_text": "Tell me the story of your life, starting anywhere you'd like.",
+      "target_duration_seconds": 625,
+      "response": "Okay, so, I grew up right here in Wisconsin. Second-gen Italian-American — my grandparents came over from Calabria, and my mom's side is all Madison. Catholic family, big Sunday dinners, the whole deal. My nonna made pasta from scratch every weekend and I'd just sit on the kitchen counter watching her roll it out. That's honestly where I got my love of cooking. I went to public school, did okay — not like a star student or anything, but I showed up every day. After high school I didn't really have the money for a four-year college, so I started working fast food pretty much right away. I've been at the same chain spot for about five years now, working my way up from crew. Right now I'm basically doing everything a shift supervisor does without the title, but I'm hoping that changes soon. My big dream is to own my own diner someday — like a real neighborhood place where people come for breakfast and know your name. I've been saving up, little by little. I started a bullet journal a couple years ago to keep my head straight, track my savings, my shifts, my runs. I'm kind of obsessive about routines, honestly. Like, I have my morning mapped out to the minute. I run three to five miles along Lake Mendota with the Madison Runners Club a few times a week, and that's like my therapy. I also got really into gardening — I have a raised bed out back where I grow tomatoes, basil, peppers. It keeps me grounded. Literally, I guess.",
+      "follow_ups": [
+        {
+          "question": "You mentioned your nonna making pasta — is that tradition still going in your family?",
+          "response": "Oh yeah, absolutely. My mom still does Sunday dinner almost every week. I try to make it whenever I'm not scheduled. We do homemade pasta, sometimes bratwurst if my dad's grilling — he went full Wisconsin on us. It's this funny mix of Italian and Midwestern. Like, cheddar-crusted bratwurst next to a plate of rigatoni. My mom would kill me for saying this, but I think I actually make better sauce than her now."
+        },
+        {
+          "question": "What does a typical Sunday look like for you?",
+          "response": "If I'm off, I try to catch Mass in the morning — I don't always make it, but I try. Then it's family dinner in the afternoon. If the Packers are on, my dad has the TV going the whole time. We'll yell at the screen together. After that I usually go home, meal prep for the week, and do my bullet journal for Monday. It's my reset day."
+        }
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "question_text": "Tell me about the important people in your life and how you spend time with them.",
+      "target_duration_seconds": 310,
+      "response": "My mom is probably the most important person. She's the one who taught me to cook, to work hard, to show up even when you don't feel like it. She's still in Madison, so I see her a lot. My dad's great too — he's more the quiet type, but he's always been steady. He works at a machine shop and he's never missed a day. I think I got my discipline from him. I have a younger brother, Tony, who's in community college right now. I try to help him when I can. And then my nonna — she's in her eighties now and slowing down, but she still wants to make Sunday gravy every week. Outside family, my running club people are huge for me. There's this woman, Dana, who I run with almost every time. She's like ten years older than me and she's done a bunch of half-marathons, so she pushes me. We grab coffee after sometimes. And at work, my coworker Jess is the one person I can actually vent to without it getting weird.",
+      "follow_ups": [
+        {
+          "question": "How often do you see your family during the week?",
+          "response": "I try to see my mom at least twice a week, more if our schedules line up. She works too, so sometimes it's just a quick stop after my shift. Tony I see maybe once a week — he's busy with school and his own stuff. My dad I mostly see on Sundays. Nonna I try to visit on Wednesdays if I can, just to check in."
+        }
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "question_text": "Tell me about your immediate family that you haven't mentioned yet.",
+      "target_duration_seconds": 25,
+      "response": "That's pretty much it for immediate family. It's a small crew — just my parents, Tony, and my nonna. I have some cousins in Milwaukee but we're not super close. We see them at holidays and stuff. My aunt Rosa is there too, my mom's sister. She's the loud one at every gathering.",
+      "follow_ups": [
+        {
+          "question": "Are you close with any of your cousins?",
+          "response": "Not really day-to-day close, but we get along fine when we see each other. My cousin Marco is around my age and we text sometimes, mostly about the Brewers. He's a bigger fan than I am, honestly."
+        }
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "question_text": "Tell me about friends or anyone outside your family who are important to you.",
+      "target_duration_seconds": 80,
+      "response": "Dana from running club is the big one. She's become like a real friend, not just a running buddy. We've gone to Door County together a couple times for weekend getaways — just hiking, eating cheese curds, hitting up wineries. Jess from work is important too. She's the one who covers for me when I need to swap shifts, and I do the same for her. There's also this guy Marcus at the farmers market who runs a cheese stall. I wouldn't say we're close friends exactly, but he always saves me the good curds and we talk for like twenty minutes every Saturday. It's one of those community connections that makes Madison feel like home.",
+      "follow_ups": [
+        {
+          "question": "Do you have any friendships that have been difficult or strained?",
+          "response": "There was this girl, Kaylee, who I used to work with. We were pretty tight for a while, but she got promoted to shift supervisor over me even though I'd been there longer. It got awkward. I don't think she handled it great — she started micromanaging me, and I'm not someone who responds well to that. We don't really talk anymore. No big blowup, it just kind of died."
+        }
+      ]
+    },
+    {
+      "question_id": "Q5",
+      "question_text": "How do your days vary across a typical week?",
+      "target_duration_seconds": 105,
+      "response": "I'm pretty regimented, honestly. Weekdays I'm usually up by five-thirty. I do my bullet journal check-in, have coffee, eat something simple. If it's a running day — Monday, Wednesday, Friday usually — I'm out the door by six-fifteen and do my three to five miles along the lake with the club. Then I shower, get to work by ten or eleven depending on my shift. I'm on my feet all day — register, drive-thru, prep, whatever they need. I get home around seven or eight most nights. I'll cook dinner, tend my garden if there's still light, maybe do some Sudoku or read a self-help book. Tuesdays and Thursdays I sometimes do a craft-brew tasting downtown if there's something good on tap. Weekends are a mix. Saturday is farmers market in the morning, then I might work an afternoon shift. Sundays are for family, Packers in the fall, and resetting for the week. In summer I try to catch a Brewers game when I can — usually just watching on TV, but sometimes Jess and I will drive down to Milwaukee for a game.",
+      "follow_ups": [
+        {
+          "question": "That sounds very structured. Has it always been that way?",
+          "response": "No, not at all. In my early twenties I was kind of a mess, honestly. I'd stay up too late, skip meals, show up to work dragging. The bullet journal changed everything for me about two years ago. I read this self-help book about habit stacking and I just went all in. Now if my routine gets disrupted I get kind of anxious. Like, if I miss my morning run, my whole day feels off."
+        }
+      ]
+    },
+    {
+      "question_id": "Q6",
+      "question_text": "How would you describe your general health?",
+      "target_duration_seconds": 80,
+      "response": "Pretty good, I think. I mean, I run regularly, I try to eat decent — though working in fast food makes that harder than you'd think. My last checkup my doctor told me to keep an eye on my blood pressure. She said it was a little elevated, not like danger zone, but enough that she wanted me to cut back on sodium and keep exercising. Which is kind of ironic because I'm surrounded by salt and grease all day at work. I also have to be careful with shellfish. My mom has the same thing — if she eats shrimp or crab she gets real puffy and sick. Mine's not as bad as hers, but I get stomach cramps and my lips tingle if I accidentally eat something with shrimp in it. Which is annoying because my family does a big fish fry for Christmas Eve — the Feast of the Seven Fishes, you know? I just have to make sure I stick to the non-shellfish dishes.",
+      "follow_ups": [
+        {
+          "question": "How do you manage that at work or when eating out?",
+          "response": "At work it's not really an issue — we don't serve shellfish. Eating out I just ask. Most places in Madison are pretty good about it. The annoying part is when people use fish sauce or shrimp paste in stuff and don't mention it. I always double-check menus. I'm a double-checker in general, honestly — I'm the same way with receipts."
+        }
+      ]
+    },
+    {
+      "question_id": "Q7",
+      "question_text": "What makes it easy or difficult to stay healthy?",
+      "target_duration_seconds": 65,
+      "response": "The running helps a ton. Having the club keeps me accountable — Dana will literally text me if I don't show up. The hard part is the food environment at work. I'm around fries and burgers all day, and when you're on a ten-hour shift and you get a fifteen-minute break, you're not making a salad. You're grabbing whatever's fast. I've gotten better about meal prepping so I bring my own lunch, but some weeks I slip. The sodium thing is tough too because I love Wisconsin food — cheese curds, bratwurst, all of it. My doctor said to watch the salt but she clearly hasn't tried a cheese-curd poutine. I'm trying to grow more of my own stuff in the garden so at least my dinners are healthier.",
+      "follow_ups": [
+        {
+          "question": "Do you track what you eat at all?",
+          "response": "Not in a strict calorie-counting way, but I have a section in my bullet journal where I note what I ate that day. It's more of an awareness thing. If I see three days in a row of fast food lunches I know I need to get my act together."
+        }
+      ]
+    },
+    {
+      "question_id": "Q8",
+      "question_text": "Have there been any big health events in the past couple of years?",
+      "target_duration_seconds": 80,
+      "response": "Nothing huge, thank God. The blood pressure thing was the main scare. I went in for a regular checkup and my numbers were higher than they'd been before. The doctor said it wasn't medication-level yet, but she wanted me to come back in six months and recheck. That freaked me out a little because my nonna has had heart stuff, and I don't want to go down that road at twenty-eight. That's actually what kicked me into running more seriously — I was jogging before, but after that appointment I joined the running club and got consistent about it. The only other thing was I had a bad reaction at a restaurant about a year ago. I ordered what I thought was a safe pasta dish, but it had some kind of shrimp stock in the sauce. I was sick the rest of the night — stomach cramps, the whole deal. My mom was like, 'I told you, always ask twice.' She's right.",
+      "follow_ups": [
+        {
+          "question": "Did you follow up with the doctor after that restaurant incident?",
+          "response": "Yeah, I called the next day and they said since I didn't have trouble breathing it was probably just a sensitivity reaction, not full anaphylaxis. They told me to be more careful and said I could take Benadryl if it happened again. I haven't had an issue since because now I'm basically paranoid about it."
+        }
+      ]
+    },
+    {
+      "question_id": "Q9",
+      "question_text": "Tell me about your religion or spirituality.",
+      "target_duration_seconds": 155,
+      "response": "I was raised Catholic — baptized, first communion, confirmation, the whole thing. My family's pretty traditional about it. My nonna goes to Mass every single day, my mom goes every Sunday. I go when I can, which honestly is maybe two or three Sundays a month. I believe in God, I pray sometimes, especially when I'm stressed. But I'm not like super devout compared to my nonna. I think for me it's more about the community and the tradition than the theology, if that makes sense. Like, the rhythm of the church year — Advent, Lent, Easter — that structures my life in a way I find comforting. The Christmas Eve fish fry, the Easter brunch — those are as much family traditions as religious ones. I've had moments where I've questioned things, like when my uncle got sick a few years back and I was like, okay, why does this happen to good people. But I always come back to it. It's part of who I am. I also think working in food service, you see a lot of people who are struggling, and it makes you want to believe there's something bigger, you know? Like, there has to be some purpose to all this.",
+      "follow_ups": [
+        {
+          "question": "Has your faith influenced any major decisions in your life?",
+          "response": "I think it's more of a background thing than a decision-maker. Like, I try to treat people the way I was taught in church — be kind, be patient, don't judge. That carries into my work. I'm the one who's nice to the difficult customers because I figure you don't know what someone's going through. But I'm not making career choices based on it or anything like that."
+        },
+        {
+          "question": "Do you participate in any church activities beyond Mass?",
+          "response": "Not really, not anymore. When I was younger I did CCD and youth group. Now it's just Mass when I can make it, and I help my mom bring food to the parish potluck a couple times a year. I keep saying I should get more involved but between work and everything else, it's hard to find the time."
+        }
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "question_text": "How have you been feeling over the past year, emotionally?",
+      "target_duration_seconds": 115,
+      "response": "Honestly, up and down. The past year has been mostly good. Getting serious about my routines helped a lot with my mood — like, when I'm running and journaling and eating decent, I feel pretty solid. But the work stuff has been frustrating. Watching Kaylee get the promotion I wanted was a gut punch. I don't think I've fully gotten over that. I try not to be bitter about it, but some days I'm like, why do I bust my butt if it doesn't matter? That said, I've been channeling it into my diner savings and my community college research. I'm looking into hospitality programs and getting my ServSafe certification. So the frustration is actually kind of motivating me, which is good. The other thing is I've been feeling this itch to travel. I keep looking at pictures of Napa Valley and Kyoto and thinking, when is it gonna be my turn? Dana went to California last year and I was so jealous. But I know I need to be smart with my money. Emotionally I'd say I'm like a seven out of ten most days. Grateful for what I have, impatient for what's next.",
+      "follow_ups": [
+        {
+          "question": "When you're feeling down, what do you usually do?",
+          "response": "Run. That's my number one. If I'm really in my head, I put on John Prine or Bon Iver and just go. There's something about running by the lake with good music that just resets me. If the weather's bad, I'll bake something — a spiced apple crumble is my go-to comfort bake. Or I'll do Sudoku. It sounds weird but the focus it takes kind of shuts off the anxious part of my brain."
+        }
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "question_text": "What were your biggest expenses last month?",
+      "target_duration_seconds": 50,
+      "response": "Rent is always the big one — that eats up like half my paycheck, which is rough. Then groceries, which I've been trying to keep under control by growing some of my own stuff. Car insurance. I had to get new running shoes last month, which was like a hundred and twenty bucks, and that hurt. I also put a little into my diner fund — I try to do at least a hundred a month, sometimes more if I pick up extra shifts. Oh, and I went to a Wes Anderson double feature at the indie theater downtown, so that was like twenty bucks with popcorn.",
+      "follow_ups": [
+        {
+          "question": "Do you track your spending closely?",
+          "response": "Yeah, in my bullet journal. I have a whole spread for it. Every receipt gets logged. My coworkers think I'm nuts because I'll literally stand at the register after buying coffee and write it down. But that's how I keep myself honest. I know exactly where every dollar goes, and that's the only way I'm ever gonna save enough for the diner."
+        }
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "question_text": "How do you feel about your overall financial situation?",
+      "target_duration_seconds": 105,
+      "response": "It's tight. I'm not gonna sugarcoat it. Fast food doesn't pay great, even after five years. I make enough to cover my bills and put a little away, but there's not a lot of cushion. If my car broke down tomorrow, I'd be in trouble. That's why the shift supervisor thing matters so much — it's not just the title, it's like a two-dollar-an-hour raise, which adds up. I'm trying to be strategic about it. The community college classes, the ServSafe cert — those are investments. I figure if I can get to manager within a few years, I'll be in a much better spot to actually start planning the diner seriously. Right now the diner fund is more of a dream jar than a business plan, but it keeps me going. I'm also trying to be smarter about groceries — the garden helps, the farmers market helps because I buy what's in season. I clip coupons, I double-check every receipt. I'm not in debt, which I'm proud of. A lot of people my age can't say that. But comfortable? No. Not yet.",
+      "follow_ups": [
+        {
+          "question": "Have you looked into any financial assistance or programs?",
+          "response": "A little. I know there are small business grants and stuff, but honestly I haven't had time to dig into it. Dana keeps telling me to look into SBA loans for when I'm ready. The community college thing might have some financial aid too — I need to fill out the FAFSA, which I keep putting off. I'm one of those people who's great at budgeting day-to-day but bad at the big-picture financial planning stuff."
+        }
+      ]
+    }
+  ],
+  "extracted_profile": {
+    "participant_id": "mary_alberti_001",
+    "name": "Mary Alberti",
+    "age": 28,
+    "gender": "Female",
+    "marital_status": "Never married",
+    "location": "Madison, WI 53717",
+    "education": "High school diploma (pursuing community college hospitality program)",
+    "occupation": "Fast food / counter worker (5 years, seeking shift supervisor promotion)",
+    "interests": [
+      "Bullet journaling (daily habit, tracks spending, meals, routines)",
+      "Running (3-5 miles, Lake Mendota, Madison Runners Club, 3x/week)",
+      "Cooking and baking (Italian-American family recipes, spiced apple crumble)",
+      "Raised-bed gardening (tomatoes, basil, peppers)",
+      "Craft-brew tastings (downtown Madison, Tuesdays/Thursdays)",
+      "Sudoku (stress relief, focus activity)",
+      "Self-help books (habit stacking, productivity)",
+      "Classic rock music",
+      "Wes Anderson films (attends indie theater screenings)",
+      "Art walks and museum exhibits",
+      "Farmers market (every Saturday)",
+      "Door County weekend getaways"
+    ],
+    "music_preferences": [
+      "John Prine",
+      "Bon Iver",
+      "Classic rock (general)"
+    ],
+    "food_preferences": [
+      "Cheddar-crusted bratwurst",
+      "Cheese-curd poutine",
+      "Spiced apple crumble",
+      "Homemade pasta (family tradition, Italian-American)",
+      "Wisconsin cheese and cheese curds",
+      "Seasonal produce from garden and farmers market",
+      "Italian-Midwestern fusion home cooking"
+    ],
+    "food_avoidances": [
+      "Shellfish (shrimp, crab — hereditary sensitivity from mother; behavioral clue: always asks twice at restaurants, double-checks menus, avoids shellfish dishes at family Feast of the Seven Fishes)"
+    ],
+    "sports_teams_and_activities": [
+      "Green Bay Packers (watches every Sunday with family in fall)",
+      "Milwaukee Brewers (summer viewer, occasional trips to Milwaukee for games)",
+      "Wisconsin Badgers basketball (fan)",
+      "Madison Runners Club (active member, runs 3-5 miles 3x/week)"
+    ],
+    "travel_aspirations": [
+      "Door County, WI (regular weekend trips)",
+      "Napa Valley, CA (dream destination, wine country)",
+      "Kyoto, Japan (dream destination)"
+    ],
+    "health_conditions": [
+      {
+        "condition": "Borderline hypertension",
+        "behavioral_clues": [
+          "Doctor told her to watch sodium intake and keep exercising",
+          "Numbers were elevated at routine checkup, recheck in six months",
+          "Family history: grandmother has cardiac issues",
+          "Increased running frequency and joined running club after the appointment",
+          "Tracks meals in bullet journal partly for sodium awareness",
+          "Acknowledges difficulty avoiding salt in fast food work environment and Wisconsin cuisine"
+        ],
+        "never_named_directly": true
+      },
+      {
+        "condition": "Shellfish sensitivity (hereditary)",
+        "behavioral_clues": [
+          "Mother has same reaction to shrimp and crab (gets puffy and sick)",
+          "Gets stomach cramps and lip tingling from accidental shellfish ingestion",
+          "Had a bad restaurant reaction from shrimp stock in pasta sauce (~1 year ago)",
+          "Doctor advised Benadryl for future reactions, ruled out full anaphylaxis",
+          "Always double-checks menus and asks about shellfish ingredients",
+          "Avoids shellfish dishes at family Feast of the Seven Fishes (Christmas Eve)",
+          "Described self as 'basically paranoid about it' now"
+        ],
+        "never_named_directly": true
+      }
+    ],
+    "religion": {
+      "affiliation": "Roman Catholic",
+      "behavioral_clues": [
+        "Raised Catholic: baptized, first communion, confirmation",
+        "Attends Mass 2-3 Sundays per month",
+        "Prays when stressed",
+        "Values liturgical calendar rhythm (Advent, Lent, Easter) as life structure",
+        "Participates in parish potluck a couple times a year",
+        "Christmas Eve Feast of the Seven Fishes is major family-religious tradition",
+        "Grandmother attends daily Mass",
+        "Describes faith as more community/tradition-oriented than theological",
+        "Previously involved in CCD and youth group"
+      ]
+    },
+    "political_leaning": {
+      "inferred": "Moderate / not strongly partisan",
+      "behavioral_clues": [
+        "No explicit political statements made during interview",
+        "Values community, tradition, and hard work (culturally conservative markers)",
+        "Concerned about wages and lack of financial cushion (economically progressive concerns)",
+        "Awareness of small business grants and SBA programs",
+        "Midwestern Catholic working-class background suggests centrist pragmatism",
+        "No political media consumption or activism mentioned"
+      ]
+    },
+    "financial_situation": {
+      "income_level": "Low (fast food wages, ~5 years experience)",
+      "constraints": [
+        "Rent consumes approximately half of paycheck",
+        "No financial cushion for emergencies (e.g., car breakdown)",
+        "Actively saving for long-term goal (diner ownership) at ~$100/month",
+        "Tracks every expense in bullet journal, logs all receipts",
+        "Uses garden and seasonal farmers market to reduce grocery costs",
+        "No debt (noted as point of pride)",
+        "Seeking shift supervisor promotion partly for ~$2/hr raise",
+        "Investigating community college financial aid and FAFSA",
+        "Aware of SBA loans but hasn't pursued yet"
+      ]
+    },
+    "personality_behaviors": {
+      "routine_obsessed": "Morning mapped to the minute; disrupted routine causes anxiety",
+      "disciplined": "Bullet journal tracks shifts, savings, meals, spending, running",
+      "competitive_edge": "Frustrated by being passed over for promotion; channeling into self-improvement",
+      "detail_oriented": "Double-checks receipts, logs every expense, verifies menus for allergens",
+      "community_minded": "Values neighborhood connections (farmers market vendor, running club, parish)",
+      "goal_driven": "Clear career ladder: crew to supervisor to manager to diner owner",
+      "self_aware": "Rates emotional state as 7/10; acknowledges strengths and weaknesses openly",
+      "craft_conscious": "Appreciates quality food, craft beer, indie film, and local arts"
+    },
+    "daily_routines": {
+      "weekday_morning": "Up 5:30am, bullet journal check-in, coffee, light breakfast; MWF run 6:15am (3-5 mi, Lake Mendota)",
+      "weekday_work": "Shift ~10am-7/8pm; POS, drive-thru, prep, cash handling; brings meal-prepped lunch when disciplined",
+      "weekday_evening": "Cook dinner, tend garden (if daylight), Sudoku or self-help reading; Tue/Thu occasional craft-brew tasting",
+      "saturday": "Farmers market morning, possible afternoon work shift, social time",
+      "sunday": "Mass (2-3x/month), family dinner (homemade pasta, bratwurst), Packers in fall, meal prep, bullet journal weekly reset"
+    },
+    "personal_conflicts": [
+      {
+        "person": "Kaylee (former coworker)",
+        "nature": "Kaylee was promoted to shift supervisor over Mary despite Mary having more seniority; Kaylee then micromanaged Mary; relationship deteriorated and they no longer speak",
+        "emotional_impact": "Described as a 'gut punch'; lingering frustration and sense of unfairness; motivating Mary to pursue certification and education to avoid being passed over again"
+      }
+    ],
+    "career_trajectory": {
+      "current": "Fast food crew member (effectively performing shift supervisor duties without title)",
+      "next_step": "Shift supervisor promotion (actively pursuing)",
+      "medium_term": "Restaurant manager; community college hospitality program + ServSafe certification",
+      "long_term": "Own a neighborhood diner ('a real neighborhood place where people come for breakfast and know your name')"
+    },
+    "cultural_identity": {
+      "ethnicity": "Second-generation Italian-American",
+      "regional_identity": "Midwestern / Wisconsin",
+      "cultural_practices": [
+        "Sunday family dinners (homemade pasta tradition from grandmother)",
+        "Christmas Eve Feast of the Seven Fishes",
+        "Easter brunch",
+        "Parish potluck contributions",
+        "Farmers market as weekly community ritual",
+        "Italian-Midwestern food fusion (rigatoni alongside cheddar-crusted bratwurst)"
+      ]
+    },
+    "social_network_summary": {
+      "family": [
+        "Mother (close; sees 2x/week; shared cooking tradition and shellfish sensitivity)",
+        "Father (steady, quiet; works machine shop; sees Sundays; Packers together)",
+        "Tony (younger brother; community college student; sees ~1x/week)",
+        "Nonna (grandmother, 80s; visits Wednesdays; daily Mass attendee; pasta tradition)",
+        "Aunt Rosa (mother's sister, Milwaukee; seen at holidays)",
+        "Cousin Marco (Milwaukee; text about Brewers occasionally)"
+      ],
+      "friends": [
+        "Dana (running club; close friend; Door County trips; ~10 years older; accountability partner)",
+        "Jess (coworker; shift-swap partner; Brewers games together; trusted confidante at work)",
+        "Marcus (farmers market cheese vendor; weekly 20-min Saturday chats; community acquaintance)"
+      ],
+      "strained": [
+        "Kaylee (former coworker; relationship ended after promotion conflict)"
+      ]
+    }
+  }
+}

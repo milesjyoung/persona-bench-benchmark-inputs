@@ -1,0 +1,1114 @@
+{
+  "metadata": {
+    "subject": "Mary Alberti",
+    "generated": "2026-03-28",
+    "total_test_cases": 75,
+    "type_distribution": {"type_1": 1, "type_2": 3, "type_3": 1, "type_4": 70},
+    "sources": ["step4_messenger_logs/messenger_output.json", "step5_calendar_logs/calendar_output.json"],
+    "deduplication": "All 75 cases verified for unique evidence chains — no duplicate reasoning paths"
+  },
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "type": 1,
+      "type_label": "Simple Fact-Check",
+      "category": "scheduling",
+      "request": "When is my next community college info session? I can't remember if I already went or if it's coming up.",
+      "successful_response": {
+        "answer": "You already attended a Community College Info Session for the Hospitality Program on Tuesday, February 10th at 2:00 PM at Madison Area Technical College.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-10, 14:00 — 'Community College Info Session - Hospitality Program' at Madison Area Technical College, 90 min"}
+        ],
+        "reasoning": "Single calendar lookup. Agent retrieves the entry by searching for community college or hospitality."
+      }
+    },
+    {
+      "id": "TC-002",
+      "type": 2,
+      "type_label": "Cross-Log Fact-Check",
+      "category": "family",
+      "request": "Nonna and I were talking about starting tomato seedlings. Can you check when she said to start them, and make sure it doesn't conflict with anything on my calendar around that time?",
+      "successful_response": {
+        "answer": "In your March 11 chat with Nonna, she told you to start tomato seedlings 'After Easter. Not before. The frost will kill them.' Easter 2026 is April 5th. Looking at your calendar through mid-March, there are no garden-related entries yet, which is consistent — you'd need to schedule seed-starting for the week of April 6th or later.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-03-11, 13:30 — Nonna: 'After Easter. Not before. The frost will kill them. I will show you when you come.'"},
+          {"source": "calendar", "reference": "No garden entries exist in Jan 1–Mar 15 calendar (confirmed by scanning all 47 entries — consistent with Wisconsin winter)"}
+        ],
+        "reasoning": "Cross-reference messenger (Nonna's gardening advice with date anchor) with calendar (check for conflicts or existing garden plans). Agent must connect 'after Easter' to actual Easter date."
+      }
+    },
+    {
+      "id": "TC-003",
+      "type": 2,
+      "type_label": "Cross-Log Fact-Check",
+      "category": "career",
+      "request": "I've been telling a few people about the ServSafe thing. Can you pull together what I've said about it and how much it costs? I want to make sure I'm telling everyone the same thing.",
+      "successful_response": {
+        "answer": "You've discussed ServSafe in three separate conversations, and your information is consistent:\n1. With Jess (Feb 21): You said the certification would help you apply for the supervisor spot at the new Sun Prairie location, and it costs 'like $200 for the course and exam.'\n2. With Dana (Mar 5): You said the community college has a spring enrollment window for ServSafe and 'it's only like $200.' You also mentioned penciling it into your budget journal.\n3. With Tony (Mar 18): You said ServSafe 'could help me get supervisor way sooner.'\nYou also had a ServSafe Study Session on your calendar January 24th at the Madison Public Library.\nThe cost ($200) and purpose (supervisor qualification) are consistent across all mentions.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:44 — Mary: 'like $200 for the course and exam'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:14 — Mary: 'ServSafe cert and it's only like $200'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18, 20:20 — Mary: 'the ServSafe cert could help me get supervisor way sooner'"},
+          {"source": "calendar", "reference": "2026-01-24, 10:00 — 'ServSafe Study Session' at Madison Public Library, 120 min"}
+        ],
+        "reasoning": "Cross-reference three messenger sessions AND one calendar entry. Agent must search across all conversations for ServSafe mentions and verify consistency of stated facts (cost, purpose)."
+      }
+    },
+    {
+      "id": "TC-004",
+      "type": 2,
+      "type_label": "Cross-Log Fact-Check",
+      "category": "religion",
+      "request": "How many Lenten fish fries have I been to so far this year? I want to make sure I haven't missed any that were on my calendar.",
+      "successful_response": {
+        "answer": "Your calendar shows three Lenten Fish Fries at the parish hall: February 20, February 27, and March 6. Your messenger logs confirm you were aware of and planning for them — you discussed fish fry logistics with Mom on February 16, coordinated with Nonna about baccala on February 14, and told Tony about the February 28 fish fry (which corresponds to the Feb 27 calendar entry, as you texted him the day before). All three calendar entries are accounted for in your messages.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-20, 17:30 — 'Lenten Fish Fry - Parish Hall'"},
+          {"source": "calendar", "reference": "2026-02-27, 17:30 — 'Lenten Fish Fry - Parish Hall'"},
+          {"source": "calendar", "reference": "2026-03-06, 17:30 — 'Lenten Fish Fry - Parish Hall'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:55 — Mary: 'lent starts wednesday so are we doing fish fridays at your place or mine'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-02-14, 17:30 — Mary asks about fish fry cooking plans"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-28, 17:10 — Mary: 'are you coming to the fish fry at church tomorrow'"}
+        ],
+        "reasoning": "Cross-reference calendar fish fry entries with messenger discussions to verify attendance awareness. Agent must match dates across both sources."
+      }
+    },
+    {
+      "id": "TC-005",
+      "type": 3,
+      "type_label": "Dynamic Preference Tracking",
+      "category": "health",
+      "request": "I've been trying to eat healthier lately. Can you look through my messages and tell me how my diet has changed over the past few months?",
+      "successful_response": {
+        "answer": "Your messages show a clear dietary shift starting after your January 22nd doctor visit:\n\n**Before (early January):** No diet mentions. Your Jan 6 chat with Dana shows normal eating patterns.\n\n**Turning point (Jan 22):** You told Mom your numbers were 'still a little high' and the doctor wants you to 'really watch the sodium.' Mom sent you a low-sodium cookbook.\n\n**Active change (Feb 12):** You asked Dana for 'good low sodium recipes,' mentioned you're 'running out of ideas,' said you've been meal prepping more, and admitted 'if I don't I just eat fries at work all day and that is NOT helping my situation.'\n\n**Result (Mar 12):** You told Mom your Walgreens BP check showed numbers were 'actually way better than January' and that 'the running and cutting back on salt is actually working.'\n\nYour diet has shifted from unmonitored eating (including work food) to active sodium reduction with meal prepping, and the health results confirm it's working.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-22, 11:17 — Mary: 'numbers were still a little high. she wants me to really watch the sodium'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-22, 11:22 — Lucia: 'I am going to send you that low sodium cookbook'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-02-12, 18:22 — Mary: 'do you have any good low sodium recipes?'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-02-12, 18:33 — Mary: 'i've been meal prepping more because if i don't i just eat fries at work all day'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:05 — Mary: 'the running and cutting back on salt is actually working'"},
+          {"source": "calendar", "reference": "2026-02-17, 10:00 — 'Dr. Follow-Up Appointment' at UW Health clinic"}
+        ],
+        "reasoning": "Agent must track a temporal progression across multiple conversations (Mom Jan→Dana Feb→Mom Mar) to identify an explicit lifestyle change. Must recognize that Jan 22 is the turning point and that subsequent messages show the change taking effect."
+      }
+    },
+    {
+      "id": "TC-006",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "My mom keeps worrying about my health. Can you find all the times she's brought it up and tell me if her worries are getting better or worse?",
+      "successful_response": {
+        "answer": "Mom brought up health concerns in two conversations:\n1. Jan 22: After your checkup, she immediately said 'You need to take this seriously. You know Nonna has had problems with all of that' and asked about medication. She was clearly worried and pushed the low-sodium cookbook on you.\n2. Mar 12: When you shared your improved numbers, she said 'Oh thank God. See??? I told you' and 'Keep it up Mary.' She pivoted to joking about Dad not listening about salt.\n\nHer worry is clearly decreasing — she went from urgent concern ('Take this seriously') to relieved encouragement ('Oh thank God'). She's still monitoring (making lentil soup, low sodium, 'Don't argue with me') but the tone has shifted from anxious to proud.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-22, 11:18 — Lucia: 'Mary. You need to take this seriously. You know Nonna has had problems with all of that.'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-22, 11:22 — Lucia offers to send low sodium cookbook"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:07 — Lucia: 'Oh thank God. See??? I told you.'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:11 — Lucia: 'I'm making lentil soup. Low sodium. Don't argue with me.'"}
+        ],
+        "reasoning": "Agent must identify health-related messages from Mom across multiple dates, track emotional tone changes, and synthesize the trajectory."
+      }
+    },
+    {
+      "id": "TC-007",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "career",
+      "request": "I want to put together a timeline of everything I've done toward getting that supervisor promotion. Can you look through all my messages and calendar?",
+      "successful_response": {
+        "answer": "Here's your promotion timeline:\n1. **Jan 14** — Vented to Jess about Kaylee controlling the schedule and having more seniority without the title.\n2. **Jan 24** — Calendar: ServSafe Study Session at Madison Public Library (2 hours).\n3. **Feb 4** — Told Tony you're 'still waiting on that supervisor thing.'\n4. **Feb 10** — Calendar: Community College Info Session for the Hospitality Program at Madison Area Technical College.\n5. **Feb 21** — Told Jess about ServSafe certification ($200) and the new Sun Prairie location needing supervisors. Said 'i am NOT getting passed over again.'\n6. **Mar 5** — Told Dana about the community college ServSafe spring enrollment, $200 cost, and you've penciled it into your budget journal. Dana encouraged FAFSA.\n7. **Mar 18** — Asked Tony about Madison College, said you're looking at the hospitality program for evenings/weekends. Connected ServSafe to supervisor and diner dream.\n\nYou've been building momentum — from frustration (Jan) to research (Jan-Feb) to active planning (Mar).",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-01-14, 21:14 — Mary: 'i trained her jess. i've been here 2 years longer'"},
+          {"source": "calendar", "reference": "2026-01-24, 10:00 — 'ServSafe Study Session'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-04, 19:52 — Mary: 'still waiting on that supervisor thing'"},
+          {"source": "calendar", "reference": "2026-02-10, 14:00 — 'Community College Info Session'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:41 — Mary: 'NOT getting passed over again'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:14 — Mary: 'community college hospitality program... ServSafe cert'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18, 20:17 — Mary: 'looking at their hospitality program'"}
+        ],
+        "reasoning": "Agent must aggregate career-related mentions across 4 different conversations AND 2 calendar entries, then arrange chronologically to construct a timeline."
+      }
+    },
+    {
+      "id": "TC-008",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "I feel like I haven't been seeing Jess enough outside of work lately. Can you check when we last hung out that wasn't a work shift?",
+      "successful_response": {
+        "answer": "Looking at your calendar, Jess only appears in work-related entries (Jan 3 mid shift, Jan 15 close shift swap, Feb 5 covered for Jess, Mar 7 open shift). There are no calendar entries for social hangouts with Jess.\n\nHowever, your messages show you planned a Thai dinner on State Street for Saturday Feb 7 (CONV-003, Feb 7, 17:44-17:58), though it's not on your calendar. You're also planning a Brewers opening day trip to Milwaukee on April 11 (CONV-003, Mar 15). So your last confirmed non-work hangout was the Thai dinner around Feb 7-8, which is about 7 weeks ago.",
+        "evidence": [
+          {"source": "calendar", "reference": "Jan 3, Jan 15, Feb 5, Mar 7 — all Jess appearances are work shifts"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-07, 17:44 — Mary: 'are you still down for that new Thai place on state street saturday?'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:35 — Mary: 'are we doing the milwaukee trip this year or what'"}
+        ],
+        "reasoning": "Agent must cross-reference Jess's calendar appearances (all work) with messenger plans (Thai dinner, Brewers trip) to identify non-work socializing and find the most recent one."
+      }
+    },
+    {
+      "id": "TC-009",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "I need to be careful about what I eat at the next fish fry. Can you remind me what happened the last few times and what I should bring?",
+      "successful_response": {
+        "answer": "Based on your messages, you have a pattern of bringing your own food to fish fries because of cross-contamination concerns:\n\n1. **Jan 10 (Mom):** You said you'd bring your own pasta salad because 'last time somebody used the same fryer for everything and i was NOT about to risk it.' Mom offered to set aside baked cod (no shellfish) for you.\n2. **Feb 14 (Nonna):** Nonna said she'd make sure the baccala has 'no shrimp in the oil. Olive oil only.' You said you'd bring your own pasta too.\n3. **Feb 28 (Tony):** You told Tony 'i'm bringing pasta salad' to the fish fry.\n\n**Recommendation:** Continue bringing your own pasta salad and have Mom or Nonna set aside safe dishes with olive oil only. Avoid anything from shared fryers.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-10, 14:50 — Mary: 'i'm gonna bring my own pasta salad... last time somebody used the same fryer'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-02-14, 18:15 — Nonna: 'no shrimp in the oil. Olive oil only.'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-28, 17:32 — Mary: 'i'm bringing pasta salad'"}
+        ],
+        "reasoning": "Agent must connect shellfish-avoidance behavior across three different conversations with three different people to identify a consistent pattern and provide actionable advice."
+      }
+    },
+    {
+      "id": "TC-010",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "financial",
+      "request": "Jess and I are planning the Brewers trip. Can you figure out what my budget situation looks like for that and how I usually handle game-day spending?",
+      "successful_response": {
+        "answer": "For the Brewers opening day trip (April 11, Milwaukee):\n\n**Your budget approach (from Mar 15 chat with Jess):** You suggested 'cheap seats and just bring our own snacks' because you're 'trying not to spend like $80 at the stadium again.' Jess agreed to drive if you bring food. You planned to bring 'cheese curds from marcus at the farmers market and homemade trail mix.'\n\n**Your financial context:** You mentioned to Dana (Mar 5) that $200 for ServSafe is significant and requires extra shifts. To Jess (Feb 21) you said '$200 is a lot for me rn.' Your budget is tight.\n\n**Your plan:** Jess drives, you bring food (cheese curds + trail mix), cheap seats. This minimizes your costs to just the ticket price. You'll likely want to swap a shift since Jess already asked off for April 11.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:39 — Mary: 'get the cheap seats and just bring our own snacks. i'm trying not to spend like $80 at the stadium again'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:43 — Mary: 'cheese curds from marcus at the farmers market and homemade trail mix'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:21 — Mary: '$200 is doable if i pick up an extra shift or two'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:44 — Mary: '$200... which is a lot for me rn'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:37 — Jess: 'i already asked off for that saturday. april 11th'"}
+        ],
+        "reasoning": "Agent must connect the specific Brewers trip plans with financial context from other conversations to provide a complete budget picture."
+      }
+    },
+    {
+      "id": "TC-011",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "family",
+      "request": "How's Nonna doing? I feel like everyone's been mentioning her lately.",
+      "successful_response": {
+        "answer": "Nonna's status across your messages:\n\n1. **Jan 15:** Normal — you coordinated a Wednesday visit, she asked for 'the good bread from Metcalfes.' Seemed fine.\n2. **Feb 16 (Mom):** Mom said Nonna 'has been tired' and wants to help with the rigatoni so Nonna can 'sit and tell me I'm doing it wrong.' But Mom also said she 'went to daily Mass this morning so she can't be that tired.'\n3. **Mar 11 (Nonna):** You asked if she's OK after Mom said she was tired. Nonna said 'I am fine. Your mother worries too much. I went to Mass every day this week.' She was still sharp enough to give garden advice about tomato seedlings.\n\n**Summary:** She's slowing down (Mom is taking over more cooking, noting tiredness) but still going to daily Mass and giving you gardening advice. The family is watching her but she insists she's fine.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-01-15, 18:42 — Nonna: 'Yes come. Bring bread. The good kind from Metcalfes.'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:33 — Lucia: 'Nonna wants to make her rigatoni but I told her I'd help this time. She's been tired.'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:53 — Lucia: 'She went to daily Mass this morning so she can't be that tired.'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-03-11, 13:02 — Nonna: 'I am fine. Your mother worries too much.'"},
+          {"source": "calendar", "reference": "Multiple 'Visit Nonna' entries: Jan 7, Jan 14, Jan 28, Feb 11, Feb 25, Mar 11 — consistent Wednesday visits"}
+        ],
+        "reasoning": "Agent must aggregate Nonna mentions from three different conversations (Nonna, Mom, and calendar visits) to synthesize a health/wellness trajectory."
+      }
+    },
+    {
+      "id": "TC-012",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "scheduling",
+      "request": "When was the last time Dana and I ran outdoors at the lake instead of at the gym?",
+      "successful_response": {
+        "answer": "Your first outdoor run of the year with Dana was February 28th — your calendar even notes it as 'first outdoor run of the year!' at Lake Mendota. Before that, all your runs with Dana were at Planet Fitness on the treadmill (Jan 2, Jan 7, Jan 30, Feb 4 cancelled, Feb 6). After Feb 28, you also ran outdoors on March 4 at Lake Mendota. The indoor-to-outdoor switch happened at the end of February as the weather improved.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-28, 06:15 — 'Morning Run w/ Dana - Lake Mendota (first outdoor run of the year!)'"},
+          {"source": "calendar", "reference": "2026-03-04, 06:15 — 'Morning Run w/ Dana - Lake Mendota'"},
+          {"source": "calendar", "reference": "Jan 2, Jan 7, Jan 30, Feb 6 — all say 'Gym (treadmill)' at Planet Fitness"}
+        ],
+        "reasoning": "Agent must scan calendar run entries, distinguish indoor (gym/treadmill) from outdoor (Lake Mendota), and identify the transition date."
+      }
+    },
+    {
+      "id": "TC-013",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "I want to make sure I'm not double-booking myself on Sundays. What does a typical Sunday look like on my calendar?",
+      "successful_response": {
+        "answer": "Your Sundays follow a consistent pattern:\n- **Morning (9:30 AM):** Sunday Mass at the Catholic parish with Mom (Jan 4, Jan 18, Feb 15, Mar 1, Mar 15)\n- **Afternoon (1:00 PM):** Sunday Family Dinner at the Alberti family home, ~2.5 hours, with various family members (nearly every Sunday: Jan 4, 11, 18, 25, Feb 1, 15, 22, Mar 1, 8, 15)\n- **Special Sundays:** Jan 4 had Packers Playoff Watch after dinner. Feb 8 was Super Bowl Watch Party (started at 3 PM).\n\nYou're not double-booked — Mass ends by 10:30, dinner starts at 1:00. There's a 2.5-hour gap. The only exception was Feb 22 when dinner was RESCHEDULED to 1 PM because you worked a morning open shift.",
+        "evidence": [
+          {"source": "calendar", "reference": "Jan 4, Jan 18, Feb 15, Mar 1, Mar 15 — Sunday Mass at 09:30"},
+          {"source": "calendar", "reference": "Jan 4, 11, 18, 25, Feb 1, 15, 22, Mar 1, 8, 15 — Sunday Family Dinner at 13:00"},
+          {"source": "calendar", "reference": "2026-02-22 — 'RESCHEDULED - Sunday Family Dinner (moved from noon, Mary worked morning open shift)'"},
+          {"source": "calendar", "reference": "2026-02-08, 15:00 — 'Super Bowl Watch Party at Mom & Dad's'"}
+        ],
+        "reasoning": "Agent must identify the Sunday pattern across multiple weeks, check for conflicts, and note exceptions."
+      }
+    },
+    {
+      "id": "TC-014",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "preference",
+      "request": "I need to pick a restaurant for a birthday dinner with friends. What do I usually look for when I'm choosing a place to eat out?",
+      "successful_response": {
+        "answer": "Based on your messages, you have specific criteria when choosing restaurants:\n\n1. **Menu check first:** You told Jess (Feb 7) 'can you check if their menu is online? i need to look at it before we go.' You always need to preview the menu.\n2. **Call ahead about fryers:** Same conversation: 'i'm gonna call ahead and ask about shared fryers too' — you need to verify cross-contamination risks.\n3. **Budget-conscious:** For the Brewers trip (Mar 15) you planned to bring your own food rather than pay stadium prices. You're careful about spending.\n4. **Past bad experience drives caution:** You referenced 'that pasta incident last year where my stomach was NOT happy for like two days' as the reason for your vigilance.\n\n**Recommendation:** Pick somewhere with an online menu you can check, that doesn't use shared fryers for shellfish, and that fits your budget.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-07, 17:52 — Mary: 'can you check if their menu is online? i need to look at it before we go'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-07, 17:56 — Mary: 'i'm gonna call ahead and ask about shared fryers'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-07, 17:56 — Mary: 'that pasta incident last year where my stomach was NOT happy'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:39 — Mary: 'i'm trying not to spend like $80'"}
+        ],
+        "reasoning": "Agent must identify restaurant-selection criteria from scattered messages across different conversations and different dates."
+      }
+    },
+    {
+      "id": "TC-015",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "religion",
+      "request": "Lent is almost over. Can you check how I've been doing with the fish Friday thing?",
+      "successful_response": {
+        "answer": "You've been consistently observing Lenten fish Fridays:\n\n- **Ash Wednesday (Feb 18):** On your calendar — you attended Mass during your lunch break at 12:15 PM.\n- **Feb 16 (Mom chat):** You brought up Lent starting Wednesday and asked about doing fish Fridays at her place. She said hers and already bought halibut, 'No shellfish obviously.'\n- **Feb 20:** Calendar shows Lenten Fish Fry at the parish hall, 5:30 PM.\n- **Feb 27:** Calendar shows another Lenten Fish Fry, this time with Tony.\n- **Feb 28 (Tony chat):** You asked Tony to come to 'the fish fry at church tomorrow' and said 'i'm bringing pasta salad.'\n- **Mar 6:** Calendar shows third Lenten Fish Fry at the parish hall.\n\nYou hit all three fish fries on the calendar and brought your own safe food each time. Strong Lenten observance.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-18, 12:15 — 'Ash Wednesday Mass (lunch break)'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:55 — Mary: 'lent starts wednesday so are we doing fish fridays'"},
+          {"source": "calendar", "reference": "2026-02-20, 2026-02-27, 2026-03-06 — three Lenten Fish Fries"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-28, 17:10 — Mary: 'are you coming to the fish fry at church tomorrow'"}
+        ],
+        "reasoning": "Agent must combine calendar entries (Ash Wednesday, three fish fries) with messenger evidence to verify Lenten observance."
+      }
+    },
+    {
+      "id": "TC-016",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "When's the last time I saw each of my family members? I want to make sure I'm not neglecting anyone.",
+      "successful_response": {
+        "answer": "Based on your calendar through March 15:\n\n- **Mom (Lucia):** Mar 15 — Sunday Mass + Family Dinner. You see her almost every Sunday plus occasional weekday stops.\n- **Dad:** Mar 15 — Sunday Family Dinner. You mostly see him Sundays.\n- **Tony:** Mar 15 — Sunday Family Dinner. He also attended the Feb 27 fish fry. You texted him about Madison College on Mar 18.\n- **Nonna:** Mar 11 — Wednesday Visit. You visit her nearly every Wednesday (Jan 7, 14, 28, Feb 11, 25, Mar 11). She also comes to Sunday dinners.\n\nNobody is being neglected — you see Mom weekly, Nonna on Wednesdays, and Tony and Dad at Sunday dinners.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-03-15 — Sunday Mass (Lucia) + Sunday Family Dinner (Lucia, Dad, Tony, Nonna)"},
+          {"source": "calendar", "reference": "2026-03-11, 16:00 — 'Visit Nonna'"},
+          {"source": "calendar", "reference": "Six 'Visit Nonna' entries on Wednesdays across Jan-Mar"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18 — most recent Tony contact"}
+        ],
+        "reasoning": "Agent must scan calendar for last appearance of each family member and cross-reference with messenger dates."
+      }
+    },
+    {
+      "id": "TC-017",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "Dana's been suggesting I do the Madison Mini half marathon. Based on my running schedule, do you think I've been training enough?",
+      "successful_response": {
+        "answer": "Dana suggested the Madison Mini (May) in your Jan 6 conversation. Here's your running data from the calendar:\n\n**Frequency:** You have 8+ run entries: Jan 2, 7, 30, Feb 4 (cancelled—Dana sick, ran solo), Feb 6, Feb 28, Mar 4, plus the runs implied by your MWF schedule.\n**Distance:** Your runs are 3-5 miles, 50-55 minutes.\n**Progression:** You transitioned from indoor treadmill (Jan-early Feb) to outdoor Lake Mendota runs (late Feb). Your Feb 28 run is noted as 'first outdoor run of the year!'\n**Concern:** Your Jan 29 message to Dana shows that missing even one run throws off your whole day — 'my brain has been weird all day because of it.'\n\nFor a half marathon (13.1 miles) in May, you'd need to roughly triple your distance over the next ~6 weeks. You're running consistently but would need to significantly increase mileage. You also told Dana (Jan 6) you need to 'check my budget' for the entry fee.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-06, 20:05 — Dana: 'The Madison Mini is in May... you are absolutely ready for it'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-06, 20:07 — Mary: 'the entry fee tho. let me check my budget'"},
+          {"source": "calendar", "reference": "8 running entries from Jan 2 through Mar 4, all 50-55 min duration"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-29, 12:33 — Mary: 'my whole morning was thrown off'"}
+        ],
+        "reasoning": "Agent must connect Dana's half-marathon suggestion with calendar training data and financial concerns to give a complete assessment."
+      }
+    },
+    {
+      "id": "TC-018",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "family",
+      "request": "I want to plan something special for Mom. What does she seem to care about most based on our conversations?",
+      "successful_response": {
+        "answer": "Based on your conversations with Mom, she cares most about:\n\n1. **Your health:** Jan 22 — immediately worried about your BP numbers, referenced Nonna's cardiac history, pushed the low-sodium cookbook. Mar 12 — relieved and said 'Oh thank God' when numbers improved.\n2. **Family food traditions:** Feb 16 — coordinating Sunday rigatoni, managing Lent fish Fridays ('I already bought halibut'), buying 'no shellfish obviously' for you. Mar 12 — making lentil soup, low sodium.\n3. **Nonna's wellbeing:** Feb 16 — taking over cooking duties so Nonna can rest.\n4. **Your safety with food:** Jan 10 — 'Always ask twice. I'll make sure nobody puts anything near your plate.'\n5. **Faith/church:** Coordinates fish fries, goes to Mass every Sunday.\n\n**Suggestion:** Something health-and-food related would resonate — maybe a nice low-sodium cookbook, a cooking class together, or taking over Sunday dinner hosting so she can relax (like she does for Nonna).",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-22 — health concern conversation"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-01-10, 14:52 — 'Always ask twice'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16 — coordinating family dinner and Lent"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:11 — 'I'm making lentil soup. Low sodium.'"},
+          {"source": "calendar", "reference": "2026-02-14, 17:00 — 'Valentine's Day Baking - Spiced Apple Crumble for Mom'"}
+        ],
+        "reasoning": "Agent must analyze Mom's communication patterns across all messages to identify her priorities and suggest something aligned."
+      }
+    },
+    {
+      "id": "TC-019",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "scheduling",
+      "request": "I want to pick up an extra shift next week to save for the ServSafe cert. Which days are usually free on my calendar?",
+      "successful_response": {
+        "answer": "Looking at your calendar patterns:\n\n**Days usually occupied:** Sundays (Mass + family dinner), Wednesdays (Nonna visits around 4 PM), MWF mornings (running at 6:15 AM).\n**Work shifts vary:** You've worked mornings (6 AM open), mid-days (11 AM), and afternoons/closes (2-3 PM). Shifts are 7-8 hours.\n**Most flexible days:** Tuesdays and Thursdays tend to have the fewest calendar commitments. Your only regular Tuesday/Thursday activity is occasional craft-brew tastings (evening), which you can skip.\n**Saturdays:** Farmers market in the morning, but you've worked afternoon shifts on Saturdays before (Jan 10, 2-8 PM).\n\nBest bet: pick up a Tuesday or Thursday shift. You mentioned to Dana (Mar 5) that you'd need 'an extra shift or two' for the $200 ServSafe cost, and it's already 'penciled into my budget journal.'",
+        "evidence": [
+          {"source": "calendar", "reference": "Pattern analysis of 47 entries — Tue/Thu have fewest commitments"},
+          {"source": "calendar", "reference": "2026-01-10, 14:00 — Saturday afternoon work shift precedent"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:21 — Mary: '$200 is doable if i pick up an extra shift or two'"}
+        ],
+        "reasoning": "Agent must analyze the calendar for recurring patterns, identify free days, and connect to the financial goal mentioned in messages."
+      }
+    },
+    {
+      "id": "TC-020",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "Dana mentioned I'm 'the most routine-dependent person' she knows. Is that really showing up in my logs?",
+      "successful_response": {
+        "answer": "Yes, extremely. Your logs show rigid routine patterns:\n\n**Running:** 8+ calendar entries, always at 6:15 AM, MWF pattern. When you missed one (Jan 29), you told Dana 'my alarm didn't go off' and 'my brain has been weird all day because of it.'\n**Nonna visits:** Every Wednesday at 4 PM — Jan 7, 14, 28, Feb 11, 25, Mar 11.\n**Sunday:** Mass at 9:30 AM → Family Dinner at 1:00 PM, nearly every single week.\n**Farmers market:** Saturday mornings (Jan 10 at 8 AM).\n**Bullet journal:** Referenced in messages to Dana (Jan 6: 'I have a whole spreadsheet'), Dana (Mar 5: 'penciled into my budget journal'), Jess (Mar 15: 'budget queen').\n\nDana's characterization is well-supported. Your calendar is one of the most predictable patterns possible.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-29, 12:40 — Dana: 'You're the most routine-dependent person I know'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-29, 12:33 — Mary: 'my whole morning was thrown off and honestly my brain has been weird all day'"},
+          {"source": "calendar", "reference": "Nonna visits: every Wednesday at 16:00"},
+          {"source": "calendar", "reference": "Sunday Mass + Dinner: nearly every week at 09:30 and 13:00"},
+          {"source": "calendar", "reference": "Runs: always 06:15"}
+        ],
+        "reasoning": "Agent must verify Dana's characterization by scanning for repetition patterns in calendar and corroborating with messenger evidence."
+      }
+    },
+    {
+      "id": "TC-021",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "financial",
+      "request": "How much have I been spending on craft beer lately? Am I overdoing it?",
+      "successful_response": {
+        "answer": "Your calendar shows 3 craft-brew tastings in 2.5 months: Jan 8 (Ale Asylum), Jan 22 (Karben4 Brewing), and Feb 12 (Working Draft Beer Company). That's about once every 2-3 weeks — pretty moderate.\n\nYour messages don't mention specific craft beer costs, but your overall leisure budget context is relevant: you told Jess (Mar 15) you're 'trying not to spend like $80 at the stadium' and you monitor every expense in your bullet journal (Dana Jan 6: 'I have a whole spreadsheet for this'). Three tastings in 2.5 months at ~$15-25 each is probably $45-75 total — well within your limits.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-01-08, 2026-01-22, 2026-02-12 — three craft-brew tastings"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-06, 20:07 — Mary: 'I have a whole spreadsheet for this'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:39 — budget-consciousness evidence"}
+        ],
+        "reasoning": "Agent must count craft-brew calendar entries, estimate frequency, and connect to budget context from messages."
+      }
+    },
+    {
+      "id": "TC-022",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "family",
+      "request": "Tony seems kind of checked out about family stuff. Is he actually showing up to things?",
+      "successful_response": {
+        "answer": "Tony's attendance is mixed but mostly present:\n\n**Shows up for:** New Year's Day dinner (Jan 1), Sunday dinners with Packers (Jan 4, Jan 18, Jan 25, Feb 8 Super Bowl, Feb 15, Mar 1, Mar 8, Mar 15). He's listed on many calendar family dinners.\n**Attitude:** He texted 'yeah probably. packers aren't on tho so whats the point' (Jan 19) about a Sunday dinner — you had to push him. For the fish fry (Feb 28) he said 'do i have a choice' and you said 'no lol mom already put your name down.'\n**Positive moments:** His midterm update (Feb 4) was fine, and he was genuinely excited about your Madison College interest (Mar 18: 'thats sick mary. you should totally do it').\n\nHe's showing up but he needs prodding. He's more engaged one-on-one (your career chat, midterms) than for family obligations.",
+        "evidence": [
+          {"source": "calendar", "reference": "Tony appears in 8+ Sunday Family Dinner entries"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-01-19, 10:30 — Tony: 'packers aren't on tho so whats the point'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-28, 17:25 — Tony: 'do i have a choice'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18, 20:18 — Tony: 'thats sick mary. you should totally do it'"}
+        ],
+        "reasoning": "Agent must cross-reference Tony's calendar appearances with his messenger tone to assess actual engagement."
+      }
+    },
+    {
+      "id": "TC-023",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "career",
+      "request": "I told Jess about the new Sun Prairie location. Did I mention it to anyone else? I don't want word getting back to Kaylee.",
+      "successful_response": {
+        "answer": "You only mentioned the Sun Prairie location to Jess (Feb 21). Here's what you said to each person about career plans:\n\n- **Jess (Feb 21):** Mentioned Sun Prairie new location, needing supervisors, ServSafe, 'NOT getting passed over again.' Jess knows the most.\n- **Dana (Mar 5):** You talked about the community college hospitality program and ServSafe cost, but did NOT mention Sun Prairie.\n- **Tony (Feb 4):** Just said 'still waiting on that supervisor thing.' No details.\n- **Tony (Mar 18):** Asked about Madison College hospitality program. No Sun Prairie mention.\n- **Mom/Nonna:** No career discussions in your messages.\n\nOnly Jess knows about the Sun Prairie location specifically.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:41 — Mary: 'sun prairie. derek mentioned it last week'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05 — ServSafe and college, no Sun Prairie"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-04 and 2026-03-18 — no Sun Prairie mention"}
+        ],
+        "reasoning": "Agent must search ALL conversations for 'Sun Prairie' or new location references to confirm information containment."
+      }
+    },
+    {
+      "id": "TC-024",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "Can you find all the times I've avoided certain foods or been careful about what I eat? I want to see the full picture.",
+      "successful_response": {
+        "answer": "Your food avoidance pattern across all messages:\n\n**Shellfish/Cross-contamination:**\n- Jan 10 (Mom): Brought own pasta salad to fish fry, worried about shared fryers\n- Feb 7 (Jess): Asked to check Thai restaurant menu online, planned to call about shared fryers, referenced 'pasta incident' that made her sick\n- Feb 14 (Nonna): Nonna making baccala with 'olive oil only' (no shrimp oil) for you\n- Feb 28 (Tony): Bringing pasta salad to fish fry again\n\n**Sodium reduction:**\n- Jan 22 (Mom): Doctor wants you to 'watch the sodium'\n- Feb 12 (Dana): Asked for low-sodium recipes, said 'everything I usually make has like cheese and salt and more cheese'\n- Feb 12 (Dana): Meal prepping more to avoid eating fries at work\n- Mar 12 (Mom): Confirmed salt reduction is working\n\n**Calendar support:** Feb 17 Dr. Follow-Up Appointment; Valentine's baking (Feb 14) was apple crumble, not shellfish-related.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 Jan 10, CONV-003 Feb 7, CONV-004 Feb 14, CONV-005 Feb 28 — shellfish avoidance chain"},
+          {"source": "messenger", "reference": "CONV-001 Jan 22, CONV-002 Feb 12, CONV-001 Mar 12 — sodium reduction chain"},
+          {"source": "calendar", "reference": "2026-02-17 — Dr. Follow-Up Appointment"}
+        ],
+        "reasoning": "Agent must identify two separate dietary concern threads across all 5 conversations and calendar, then present them as a complete picture."
+      }
+    },
+    {
+      "id": "TC-025",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "Who do I see the most outside of work? Can you rank my people by how often they show up in my calendar?",
+      "successful_response": {
+        "answer": "Ranking by calendar appearances:\n\n1. **Lucia (Mom):** ~16 appearances — every Sunday Mass + every Sunday dinner + fish fries\n2. **Dana:** ~8 appearances — running sessions (Jan 2, 7, 30, Feb 4/6, Feb 28, Mar 4) + post-run coffees (Feb 6, Mar 4)\n3. **Nonna:** ~7 appearances — Wednesday visits (Jan 7, 14, 28, Feb 11, 25, Mar 11) + some Sunday dinners\n4. **Tony:** ~5 appearances — Sunday dinners (Jan 4, 18, 25, Feb 8, 15, Mar 1, 8, 15) + Feb 27 fish fry\n5. **Jess:** 3 appearances — all work shifts (Jan 3, Jan 15, Mar 7)\n\nMom is by far #1. Dana is #2 thanks to 3x/week runs. Jess is underrepresented on calendar because your hangouts (Thai dinner, Brewers planning) aren't calendared.",
+        "evidence": [
+          {"source": "calendar", "reference": "Lucia appears in ~16 entries across Mass, dinners, fish fries"},
+          {"source": "calendar", "reference": "Dana appears in ~8 run + coffee entries"},
+          {"source": "calendar", "reference": "Jess only in 3 work entries"},
+          {"source": "messenger", "reference": "CONV-003 Feb 7, Mar 15 — Jess social plans not on calendar"}
+        ],
+        "reasoning": "Agent must count each person's calendar appearances, rank them, and note the discrepancy between calendar frequency and actual relationship closeness (Jess)."
+      }
+    },
+    {
+      "id": "TC-026",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "preference",
+      "request": "What do Dana and I usually do after our runs?",
+      "successful_response": {
+        "answer": "Your calendar shows two 'Post-Run Coffee w/ Dana' entries at Colectivo Coffee on Monroe St: February 6 at 8:00 AM (45 min) and March 4 at 8:00 AM (45 min). Both follow 6:15 AM runs. So your pattern is: run at 6:15, finish around 7:10, coffee at 8:00 at Colectivo. Not every run is followed by coffee — you have 8+ runs but only 2 post-run coffees on the calendar.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-06, 08:00 — 'Post-Run Coffee w/ Dana' at Colectivo Coffee"},
+          {"source": "calendar", "reference": "2026-03-04, 08:00 — 'Post-Run Coffee w/ Dana' at Colectivo Coffee"}
+        ],
+        "reasoning": "Agent must identify the post-run coffee pattern and note it's occasional, not every time."
+      }
+    },
+    {
+      "id": "TC-027",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "religion",
+      "request": "How many Sundays have I actually made it to Mass this year? Am I keeping up?",
+      "successful_response": {
+        "answer": "Your calendar shows Sunday Mass entries on: Jan 4, Jan 18, Feb 15, Mar 1, Mar 15. That's 5 out of roughly 11 Sundays (Jan 1 - Mar 15). Plus Ash Wednesday Mass on Feb 18 (a weekday).\n\nThat's about 45% of Sundays — roughly 2 out of every 4-5 weeks. Not every Sunday, but consistent. The Sundays you missed Mass, you still went to Family Dinner at 1 PM.",
+        "evidence": [
+          {"source": "calendar", "reference": "5 Sunday Mass entries: Jan 4, Jan 18, Feb 15, Mar 1, Mar 15"},
+          {"source": "calendar", "reference": "2026-02-18, 12:15 — Ash Wednesday Mass (bonus)"},
+          {"source": "calendar", "reference": "Family dinners on non-Mass Sundays (Jan 11, 25, Feb 1, 22, Mar 8)"}
+        ],
+        "reasoning": "Agent must count Mass entries vs total Sundays in the date range to calculate attendance rate."
+      }
+    },
+    {
+      "id": "TC-028",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "scheduling",
+      "request": "Jess covered my shift once. When did I return the favor?",
+      "successful_response": {
+        "answer": "Your calendar shows the swap clearly:\n- **Jan 15:** 'Work - Close Shift (swapped w/ Jess)' — this is the shift Jess took for you, matching the Jan 14 conversation where Kaylee scheduled you both on Friday close and Saturday, and Jess offered to take your Friday if you took her Saturday day shift.\n- **Feb 5:** 'Work - Mid Shift (covered for Jess)' — you covered for Jess.\n\nSo Jess covered your Friday close on Jan 15 (so you could go to the fish fry), and you covered her mid shift on Feb 5. About 3 weeks apart.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-01-14, 21:16 — Jess: 'i'll take your friday if you take my saturday day shift'"},
+          {"source": "calendar", "reference": "2026-01-15, 15:00 — 'Work - Close Shift (swapped w/ Jess)'"},
+          {"source": "calendar", "reference": "2026-02-05, 11:00 — 'Work - Mid Shift (covered for Jess)'"}
+        ],
+        "reasoning": "Agent must connect the Jan 14 messenger negotiation with the Jan 15 calendar swap, then find the reciprocal Feb 5 entry."
+      }
+    },
+    {
+      "id": "TC-029",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "preference",
+      "request": "What kind of beer places have I been going to? I want to try somewhere new.",
+      "successful_response": {
+        "answer": "Your calendar shows three different breweries:\n1. **Jan 8:** Ale Asylum, downtown Madison — New Winter Stout Flight\n2. **Jan 22:** Karben4 Brewing, Madison — WI Winter Ale Series\n3. **Feb 12:** Working Draft Beer Company, Madison — Valentine's Sour Ale Release\n\nAll three are different Madison-area craft breweries. You haven't repeated any venue. For somewhere new, you've exhausted Ale Asylum, Karben4, and Working Draft. You might try other Madison breweries.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-01-08 — Ale Asylum"},
+          {"source": "calendar", "reference": "2026-01-22 — Karben4 Brewing"},
+          {"source": "calendar", "reference": "2026-02-12 — Working Draft Beer Company"}
+        ],
+        "reasoning": "Agent must extract brewery names from calendar entries and identify the non-repeat pattern."
+      }
+    },
+    {
+      "id": "TC-030",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "family",
+      "request": "Dad doesn't text me much. What do I actually know about how he's doing based on what other people say?",
+      "successful_response": {
+        "answer": "Dad doesn't appear in your messenger conversations, but others mention him:\n\n1. **Mom (Mar 12):** 'Your father never listens to me about the salt either' — suggests Dad also has sodium/health concerns but doesn't comply. Mom is frustrated with him about it.\n2. **Calendar:** Dad appears at Sunday Family Dinners (Jan 1, 4, 18, 25, Feb 1, 8, 15, etc.) and the Super Bowl Watch Party (Feb 8). He's consistently present at family gatherings.\n\nHe's physically present at every family event but communicates through Mom. The salt comment suggests he may have similar health issues to you but isn't taking them as seriously.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:07 — Lucia: 'Your father never listens to me about the salt either'"},
+          {"source": "calendar", "reference": "Dad listed in 10+ Sunday Family Dinner entries and Super Bowl party"}
+        ],
+        "reasoning": "Agent must find indirect mentions of Dad through other people's messages and calendar entries since he doesn't text directly."
+      }
+    },
+    {
+      "id": "TC-031",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "career",
+      "request": "If I apply for the supervisor job, what evidence do I have that I've been preparing for it?",
+      "successful_response": {
+        "answer": "From your logs, you have solid evidence of preparation:\n\n1. **ServSafe Study:** Calendar Jan 24 — 2-hour study session at the library.\n2. **Community College Research:** Calendar Feb 10 — Hospitality Program info session at MATC.\n3. **ServSafe Commitment:** Messages to Jess (Feb 21), Dana (Mar 5), Tony (Mar 18) — you've committed to the $200 certification and budgeted for it.\n4. **Campus Visit Planning:** Tony (Mar 18) — you're planning to visit Madison College campus.\n5. **Financial Planning:** Dana (Mar 5) — ServSafe cost 'penciled into my budget journal,' considering FAFSA for college.\n6. **Motivation:** Jess (Jan 14) — 'i trained her... i've been here 2 years longer' shows you know you're qualified. Jess (Feb 21) — 'i am NOT getting passed over again' shows determination.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-01-24 — ServSafe Study Session"},
+          {"source": "calendar", "reference": "2026-02-10 — Community College Info Session"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), CONV-002 (Dana), CONV-005 (Tony) — multiple ServSafe/career mentions"}
+        ],
+        "reasoning": "Agent must compile evidence from both apps across multiple contacts to build a preparation portfolio."
+      }
+    },
+    {
+      "id": "TC-032",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "scheduling",
+      "request": "What's my work schedule been like? Am I getting consistent shifts or is it all over the place?",
+      "successful_response": {
+        "answer": "Your shifts are variable, not consistent:\n- **Open shifts (6:00 AM):** Mar 7\n- **Mid shifts (11:00 AM):** Jan 3, Feb 5\n- **Afternoon/Close shifts (2-3 PM):** Jan 10 (2 PM), Jan 15 (3 PM, swapped with Jess)\n- **Duration:** All shifts are 420-480 min (7-8 hours)\n\nYou don't have a fixed schedule — you rotate between opens, mids, and closes. This is typical for fast food. The Jan 14 conversation with Jess confirms someone else (Kaylee) makes the schedule and sometimes assigns unfavorable shifts.",
+        "evidence": [
+          {"source": "calendar", "reference": "5 work shift entries with varying start times: 6:00, 11:00, 11:00, 14:00, 15:00"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-01-14, 21:08 — Jess: 'kaylee just made the new schedule'"}
+        ],
+        "reasoning": "Agent must analyze work shift times from calendar to identify the variable pattern and connect it to messenger context about scheduling."
+      }
+    },
+    {
+      "id": "TC-033",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "preference",
+      "request": "What's the deal with the farmers market guy Marcus? Do I ever mention him in my messages?",
+      "successful_response": {
+        "answer": "Marcus appears once in your messages — in the Brewers opening day planning with Jess (Mar 15). You said 'cheese curds from marcus at the farmers market and homemade trail mix' when planning what food to bring. Your calendar has a Saturday Farmers Market entry on Jan 10 at 8 AM, but it doesn't name Marcus specifically. So he's referenced casually as your go-to cheese curd source, suggesting you see him regularly on Saturdays even though the interactions aren't logged in detail.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:43 — Mary: 'cheese curds from marcus at the farmers market'"},
+          {"source": "calendar", "reference": "2026-01-10, 08:00 — 'Saturday Farmers Market (winter indoor)' — preferences mention 'Wisconsin cheese curds'"}
+        ],
+        "reasoning": "Agent must search for Marcus across all logs and connect the casual mention to the calendar market entry."
+      }
+    },
+    {
+      "id": "TC-034",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "My doctor wanted me to come back for a recheck on my blood pressure. Did I actually go?",
+      "successful_response": {
+        "answer": "Your calendar shows a 'Dr. Follow-Up Appointment' at UW Health clinic on February 17 at 10:00 AM (90 min). You also checked your BP at a Walgreens machine on your own — you told Mom on March 12 that you 'checked my numbers at the walgreens machine and they were actually way better than January.' So yes, you had the formal follow-up in February AND did an informal self-check in March with good results.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-17, 10:00 — 'Dr. Follow-Up Appointment' at UW Health clinic"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:05 — Mary: 'i checked my numbers at the walgreens machine and they were actually way better than january'"}
+        ],
+        "reasoning": "Agent must find both the formal appointment (calendar) and informal check (messenger) to give a complete answer."
+      }
+    },
+    {
+      "id": "TC-035",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "family",
+      "request": "What's the typical food at our Sunday dinners? I want to tell a friend what to expect if they come.",
+      "successful_response": {
+        "answer": "Based on your messages and calendar:\n\n**Staples:** Homemade pasta (Mom makes it, tradition from Nonna). Calendar consistently notes 'Italian-Midwestern cooking' and 'Homemade pasta' as preferences reflected.\n**Specific dishes mentioned:** Rigatoni (Mom, Feb 16: 'Nonna wants to make her rigatoni'), lentil soup (Mom, Mar 12: 'I'm making lentil soup. Low sodium.')\n**Sometimes:** Bratwurst when Dad grills (calendar Jan 4 dinner notes 'Italian-Midwestern cooking').\n**Lent adjustment:** Fish on Fridays, but Sunday dinners continue as normal pasta.\n**Who cooks:** Mom handles most of it now, with Nonna directing. Nonna 'still wants to make Sunday gravy every week' but Mom is taking over more.\n\nTell your friend to expect homemade Italian-Midwestern food, probably pasta, in a casual family setting with Mom, Dad, Tony, and Nonna.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:33 — 'Nonna wants to make her rigatoni'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-03-12, 16:11 — 'I'm making lentil soup. Low sodium.'"},
+          {"source": "calendar", "reference": "Sunday Family Dinner entries consistently note 'Italian-Midwestern cooking, Homemade pasta'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-01-19, 10:32 — Mary: 'mom made rigatoni and nonna is coming'"}
+        ],
+        "reasoning": "Agent must compile food references from both messenger mentions and calendar entry metadata."
+      }
+    },
+    {
+      "id": "TC-036",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "financial",
+      "request": "How much am I saving for the diner? Can you find any mentions of my savings progress?",
+      "successful_response": {
+        "answer": "Your messages reference diner savings in context:\n\n- **Dana (Mar 5):** You said the $200 ServSafe is 'doable if i pick up an extra shift or two. i already have it penciled into my budget journal.' This suggests your budget is tight but planned.\n- **Jess (Feb 21):** '$200 for the course and exam. which is a lot for me rn but it's an investment right?'\n- **Dana (Mar 5):** Dana asked about SBA loans 'for down the road with the diner.' You said 'ServSafe first then world domination' and bookmarked the SBA site.\n- **Jess (Mar 15):** 'budget queen mary' — Jess acknowledges your frugality as a known trait.\n\nYour messages don't give an exact savings number, but they show you're actively budgeting, treating expenses as investments, and thinking long-term about the diner.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:21 and 20:26 — budget journal, SBA site bookmarked"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:44 — '$200... a lot for me rn but it's an investment'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:41 — Jess: 'budget queen mary'"}
+        ],
+        "reasoning": "Agent must aggregate financial references across conversations to paint a picture of savings behavior."
+      }
+    },
+    {
+      "id": "TC-037",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "scheduling",
+      "request": "I need to visit Nonna this week. What's my usual pattern for seeing her?",
+      "successful_response": {
+        "answer": "You visit Nonna every Wednesday around 4:00 PM for about 90 minutes:\n- Jan 7, Jan 14 (helped with Sunday Gravy Prep), Jan 28, Feb 11, Feb 25 (brought Sudoku book), Mar 11.\n\nYou also see her at Sunday Family Dinners. Your messages show you coordinate visits in advance: Jan 15 you texted 'I'm coming over Wednesday after work ok? Should be there by 7:30.' She asked you to 'Bring bread. The good kind from Metcalfes.'\n\nYour pattern: text Nonna Monday or Tuesday to confirm, visit Wednesday after your shift, bring whatever she asks for.",
+        "evidence": [
+          {"source": "calendar", "reference": "6 'Visit Nonna' entries on Wednesdays at 16:00"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-01-15, 18:05 — Mary: 'I'm coming over Wednesday after work'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-01-15, 18:42 — Nonna: 'Bring bread. The good kind from Metcalfes.'"}
+        ],
+        "reasoning": "Agent must identify the Wednesday pattern from calendar and corroborate with messenger coordination."
+      }
+    },
+    {
+      "id": "TC-038",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "social",
+      "request": "Who has been the most supportive about my career goals?",
+      "successful_response": {
+        "answer": "Ranking by career support:\n\n1. **Dana** — Most active supporter. Pushed community college (Mar 5), encouraged FAFSA, mentioned SBA loans for the diner, said 'I'm proud of you.' She's been mentoring you on both running and career.\n2. **Jess** — Validated your frustration ('you should've gotten it') and encouraged ServSafe ('that's actually really smart'). Said you'd be 'an amazing supervisor honestly. way better than... you know who.' But she's not pushing you forward — she's affirming.\n3. **Tony** — Said 'you'll get it. you're literally the hardest worker there' (Feb 4) and was excited about Madison College (Mar 18: 'thats sick mary'). Supportive but in a low-key sibling way.\n4. **Mom/Nonna** — No career discussions in your messages with them.\n\nDana is your career mentor, Jess is your career cheerleader, Tony is your quiet supporter.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05 — FAFSA, SBA loans, 'I'm proud of you'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:46 — Jess: 'way better than... you know who'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-04, 19:55 — Tony: 'you're literally the hardest worker there'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18, 20:18 — Tony: 'thats sick mary. you should totally do it'"}
+        ],
+        "reasoning": "Agent must compare career-support content across all 5 conversations and rank by quality of support."
+      }
+    },
+    {
+      "id": "TC-039",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "preference",
+      "request": "I'm thinking of hosting a dinner party. What kind of food should I make based on what I usually cook?",
+      "successful_response": {
+        "answer": "From your logs, your cooking repertoire includes:\n\n- **Italian-Midwestern fusion:** Calendar consistently tags Sunday dinners as 'Italian-Midwestern cooking' and 'Homemade pasta.' You told Tony (Jan 19) Mom made rigatoni.\n- **Comfort baking:** Calendar Feb 14 — 'Valentine's Day Baking - Spiced Apple Crumble for Mom.' This is your go-to bake.\n- **Garden fresh:** Calendar preferences mention 'Seasonal produce' from your raised bed and farmers market.\n- **Cheese curds:** You buy them from Marcus weekly (Mar 15 message, Jan 10 calendar farmers market).\n- **Budget-friendly:** You bring homemade pasta salad to events (Jan 10, Feb 14, Feb 28 messages). You make trail mix (Mar 15).\n\n**Suggestion:** Homemade pasta with seasonal veggies, cheese-curd appetizer from Marcus, and spiced apple crumble for dessert. Skip anything shellfish-adjacent since you'd need to worry about cross-contamination.",
+        "evidence": [
+          {"source": "calendar", "reference": "Sunday dinners — 'Italian-Midwestern cooking, Homemade pasta'"},
+          {"source": "calendar", "reference": "2026-02-14 — 'Spiced Apple Crumble for Mom'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:43 — 'cheese curds from marcus'"},
+          {"source": "messenger", "reference": "Multiple fish fry messages — Mary always brings pasta salad"}
+        ],
+        "reasoning": "Agent must synthesize cooking preferences from calendar metadata and messenger food references."
+      }
+    },
+    {
+      "id": "TC-040",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "religion",
+      "request": "Easter is coming up. Based on my Lent behavior, what should I plan for Easter Sunday?",
+      "successful_response": {
+        "answer": "Based on your Lenten observance pattern:\n\n- **Ash Wednesday:** You went to Mass during your lunch break (Calendar Feb 18, 12:15 PM).\n- **Fish Fridays:** You attended all 3 parish fish fries (Feb 20, 27, Mar 6). You discussed Lenten fish plans with Mom (Feb 16), Nonna (Feb 14), and Tony (Feb 28).\n- **Family coordination:** Mom already organized the halibut and 'no shellfish' plan. Nonna made baccala with olive oil.\n\n**For Easter Sunday, expect:**\n- Easter Mass in the morning (your attendance has been 2-3x/month, Easter is almost certainly a go)\n- Special Easter family dinner — bigger than usual Sunday dinner\n- Nonna's garden advice applies: 'After Easter' is tomato seedling time (Mar 11 message)\n- You'll want to coordinate with Mom on the menu, and maybe start garden planning for the week after.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-18 — Ash Wednesday Mass"},
+          {"source": "calendar", "reference": "Feb 20, 27, Mar 6 — three Lenten Fish Fries"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-03-11, 13:30 — 'After Easter. Not before.'"},
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:58 — Mom organizing Lenten food"}
+        ],
+        "reasoning": "Agent must use Lenten behavior pattern to project Easter plans, connecting calendar observance with messenger family coordination and Nonna's garden timeline."
+      }
+    },
+    {
+      "id": "TC-041",
+      "type": 4,
+      "type_label": "Reasoning",
+      "category": "health",
+      "request": "Is my shellfish issue getting better or worse? Should I be more worried?",
+      "successful_response": {
+        "answer": "Your shellfish sensitivity appears stable but you're being more cautious over time:\n\n- **Jan 10 (Mom):** You brought your own food to the fish fry and mentioned the shared fryer concern. You had a system in place.\n- **Feb 7 (Jess):** You're now proactively checking menus online AND calling ahead about shared fryers before going to a new restaurant. You referenced 'that pasta incident last year' as motivation.\n- **Feb 14 (Nonna):** Nonna accommodates you specifically — 'no shrimp in the oil. Olive oil only.' Your family is aware and adjusting.\n\nThe sensitivity itself isn't changing (no new reactions mentioned), but your vigilance is increasing. You've gone from reactive (getting sick) to proactive (checking menus, calling ahead, bringing own food). This is good management, not worsening.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001, Jan 10 — fish fry precautions"},
+          {"source": "messenger", "reference": "CONV-003, Feb 7 — proactive menu checking"},
+          {"source": "messenger", "reference": "CONV-004, Feb 14 — Nonna accommodating"}
+        ],
+        "reasoning": "Agent must track shellfish mentions chronologically to assess whether the situation is improving, stable, or worsening."
+      }
+    },
+    {
+      "id": "TC-042", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "What inside jokes or recurring bits do I have with Jess?",
+      "successful_response": {
+        "answer": "From your messages with Jess:\n1. **'Budget queen mary'** (Mar 15) — Jess teases you about your budgeting. She said it when you suggested cheap seats and bringing snacks.\n2. **'you know who'** (Feb 21) — Jess's code for Kaylee. She said 'way better than... you know who' and you responded 'JESS lmaooo stop.'\n3. **Shift swap shorthand** (Jan 14) — 'that's what we do' — Jess's signature closer when covering for each other.\n4. **Menu investigation** (Feb 7) — Jess said 'gotta investigate every ingredient' teasing your restaurant research habit.\n\nYour dynamic is casual, supportive, and work-humor-driven.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:41 — 'budget queen mary'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:46 — 'way better than... you know who'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-01-14, 21:19 — 'that's what we do'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-07, 17:54 — 'gotta investigate every ingredient'"}
+        ],
+        "reasoning": "Agent must identify repeated patterns and teasing language across Jess conversations."
+      }
+    },
+    {
+      "id": "TC-043", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "Do Mom and Nonna ever disagree about cooking? What's their dynamic?",
+      "successful_response": {
+        "answer": "Their dynamic shows up across your messages:\n\n- **Feb 16 (Mom):** Mom said she told Nonna she'd help with the rigatoni so Nonna can 'sit and tell me I'm doing it wrong.' This is affectionate — Nonna still directs, Mom does the work.\n- **Feb 14 (Nonna):** Nonna said 'I am making the baccala. Your mother is doing the rest.' Nonna claims her signature dish; Mom handles everything else.\n- **Mar 11 (Nonna):** Nonna dismissed Mom's worry: 'Your mother worries too much.' But Mom's concern (from Feb 16) was genuine — Nonna's been tired.\n\nThey have a loving but role-defined dynamic: Nonna is the matriarch who directs, Mom is the executor who worries. Nonna won't admit she's slowing down; Mom is quietly taking over.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 (Lucia), 2026-02-16, 09:53 — 'so she can sit and tell me I'm doing it wrong'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-02-14, 17:55 — 'Your mother is doing the rest.'"},
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-03-11, 13:02 — 'Your mother worries too much.'"}
+        ],
+        "reasoning": "Agent must compare Nonna's and Mom's messaging styles and cross-reference their statements about each other."
+      }
+    },
+    {
+      "id": "TC-044", "type": 4, "type_label": "Reasoning", "category": "financial",
+      "request": "Can I afford the Madison Mini half marathon that Dana mentioned?",
+      "successful_response": {
+        "answer": "Dana suggested the Madison Mini (May) on Jan 6. You responded 'the entry fee tho. let me check my budget. you know i have a whole spreadsheet for this.' You didn't commit.\n\nSince then, you've committed $200 to ServSafe (Feb 21, Mar 5) and are budgeting tightly. A half-marathon entry typically costs $60-100. Given that $200 for ServSafe is 'a lot for me rn' (Jess, Feb 21), adding another $60-100 would be a stretch unless you pick up extra shifts. You mentioned needing 'an extra shift or two' just for ServSafe (Dana, Mar 5).\n\nThe half marathon is doable but would compete with your ServSafe budget priority.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-06, 20:07 — Mary: 'the entry fee tho. let me check my budget'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:44 — Mary: '$200... a lot for me rn'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:21 — Mary: '$200 is doable if i pick up an extra shift or two'"}
+        ],
+        "reasoning": "Agent must connect the race entry financial question with broader budget context from other conversations."
+      }
+    },
+    {
+      "id": "TC-045", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "When was the Super Bowl party and who was there?",
+      "successful_response": {
+        "answer": "The Super Bowl Watch Party was February 8 at 3:00 PM at Mom & Dad's house, lasting 5 hours. Attendees listed: Lucia Alberti, Dad, and Tony. Calendar preferences reflected include 'Packers fandom, Family traditions, Italian-Midwestern cooking.' Nonna is not listed for this one, possibly because it ran late.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-08, 15:00 — 'Super Bowl Watch Party at Mom & Dad's', 300 min, people: Lucia, Dad, Tony"}
+        ],
+        "reasoning": "Direct calendar lookup with detail extraction."
+      }
+    },
+    {
+      "id": "TC-046", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "I brought a Sudoku book to Nonna. Do I usually do Sudoku with other people or alone?",
+      "successful_response": {
+        "answer": "Your calendar shows you brought a Sudoku book to Nonna's on Feb 25 ('Visit Nonna - Brought Sudoku Book'). But in your messages, Sudoku is never discussed with anyone. It's purely a personal activity that doesn't come up in conversation. The Nonna visit with the Sudoku book is the only social connection — you likely brought it as a gift or to do together during the visit. Sudoku appears to be mainly a solo, private activity for you.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-25 — 'Visit Nonna - Brought Sudoku Book'"},
+          {"source": "messenger", "reference": "No Sudoku mentions in any of the 5 conversations"}
+        ],
+        "reasoning": "Agent must search for Sudoku across all sources and note the absence in messages vs. single calendar appearance."
+      }
+    },
+    {
+      "id": "TC-047", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "Jess offered to drive to the Brewers game. What am I bringing and from where?",
+      "successful_response": {
+        "answer": "From your Mar 15 conversation with Jess: You'll bring 'cheese curds from marcus at the farmers market and homemade trail mix.' Jess drives, you bring food. The game is April 11 in Milwaukee. You'll need to buy the cheese curds from Marcus at the Saturday Farmers Market (your Jan 10 calendar shows it's at Dane County Farmers Market, Capitol Square) before the game.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:43 — Mary: 'cheese curds from marcus at the farmers market and homemade trail mix'"},
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-03-15, 13:41 — Jess: 'i'll drive if you bring the food'"},
+          {"source": "calendar", "reference": "2026-01-10, 08:00 — Farmers Market location: Dane County, Capitol Square"}
+        ],
+        "reasoning": "Agent must connect the food plan from messages with the market location from calendar."
+      }
+    },
+    {
+      "id": "TC-048", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "Is Tony keeping up with his classes? What do I know about how school is going for him?",
+      "successful_response": {
+        "answer": "From your Feb 4 chat: Tony said his midterms went 'ehh. passed everything. econ is killing me tho.' You offered to help ('i'm no good at econ but i can quiz you or whatever') and he declined. In your Mar 18 chat, you asked him about Madison College and he seemed positive about it ('its fine?'). He also offered to show you around campus. He seems to be getting by but not thriving — 'passed everything' is the bare minimum and he acknowledges struggling with econ.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-04, 19:40 — Tony: 'ehh. passed everything. econ is killing me tho'"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-02-04, 19:42 — Mary offers help"},
+          {"source": "messenger", "reference": "CONV-005 (Tony), 2026-03-18, 20:15 — Tony on Madison College: 'its fine?'"}
+        ],
+        "reasoning": "Agent must find Tony's academic mentions across conversations to assess his school performance."
+      }
+    },
+    {
+      "id": "TC-049", "type": 4, "type_label": "Reasoning", "category": "health",
+      "request": "Who in my family has health issues I should keep track of?",
+      "successful_response": {
+        "answer": "From your messages:\n1. **Nonna** — 'has had heart stuff' (referenced in messages). Mom says she's 'been tired' (Feb 16). She insists she's fine (Mar 11) but Mom is taking over more cooking duties. Still going to daily Mass.\n2. **Mom (Lucia)** — Shares your shellfish sensitivity. She 'gets real puffy and sick' from shrimp/crab (implied in Jan 10 message where she knows exactly how to handle it).\n3. **Dad** — Mom said 'Your father never listens to me about the salt either' (Mar 12), suggesting Dad also has sodium/BP concerns but isn't compliant.\n4. **You** — Borderline BP (Jan 22) improving with diet changes (Mar 12).\n\nNonna's cardiac history + your BP + Dad's salt issues suggest a family pattern worth monitoring.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001, Feb 16 — Nonna tired, Mom taking over cooking"},
+          {"source": "messenger", "reference": "CONV-004, Mar 11 — Nonna: 'I am fine'"},
+          {"source": "messenger", "reference": "CONV-001, Mar 12 — Dad doesn't listen about salt"},
+          {"source": "messenger", "reference": "CONV-001, Jan 10 — Mom's shellfish knowledge implies shared condition"}
+        ],
+        "reasoning": "Agent must scan all conversations for health references about each family member and identify the hereditary pattern."
+      }
+    },
+    {
+      "id": "TC-050", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "When was the Wes Anderson movie night? I want to see if they're doing another one.",
+      "successful_response": {
+        "answer": "Your calendar shows: January 20 at 7:00 PM — 'Wes Anderson Double Feature - Rushmore & The Royal Tenenbaums' at an indie theater in downtown Madison. Duration was 140 minutes (2 hrs 20 min). You went alone (no people listed). It was a Tuesday evening.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-01-20, 19:00 — 'Wes Anderson Double Feature - Rushmore & The Royal Tenenbaums', 140 min, indie theater downtown Madison"}
+        ],
+        "reasoning": "Direct calendar lookup with detail extraction."
+      }
+    },
+    {
+      "id": "TC-051", "type": 4, "type_label": "Reasoning", "category": "career",
+      "request": "What exactly does Kaylee do that bugs me? I want to make sure I don't do the same thing if I become supervisor.",
+      "successful_response": {
+        "answer": "From your Jan 14 chat with Jess:\n- Kaylee 'just made the new schedule and she put us both on close friday AND saturday' — she doesn't accommodate requests.\n- You said 'i specifically told her i can't do friday close because of the fish fry thing at church. she KNOWS that' — she ignores religious commitments.\n- Jess said 'ever since she got that title she's been on a whole power trip' — she's power-tripping.\n- You said 'i trained her jess. i've been here 2 years longer. and now she's making MY schedule' — she doesn't respect seniority or mentorship history.\n\nIf you become supervisor: accommodate time-off requests (especially religious ones), don't micromanage people who trained you, and don't power-trip with the schedule.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-01-14, 21:08-21:19 — full Kaylee complaint exchange"}
+        ],
+        "reasoning": "Agent must extract specific behavioral complaints from the Kaylee discussion and invert them into leadership lessons."
+      }
+    },
+    {
+      "id": "TC-052", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "What bread does Nonna like? I'm going to the store before my visit.",
+      "successful_response": {
+        "answer": "From your Jan 15 chat with Nonna: She wants 'The good kind from Metcalfes.' That's Metcalfe's Market in Madison. She didn't specify a type — just 'the good kind' which implies you both know which bread she means. It's your standing request from her for Wednesday visits.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-004 (Nonna), 2026-01-15, 18:42 — Nonna: 'Bring bread. The good kind from Metcalfes.'"}
+        ],
+        "reasoning": "Direct messenger lookup for Nonna's bread preference."
+      }
+    },
+    {
+      "id": "TC-053", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "How does everyone text differently? Like who's formal and who's casual?",
+      "successful_response": {
+        "answer": "Distinct texting styles across your contacts:\n\n1. **Mom (Lucia):** Full sentences, proper punctuation, signs off 'Love Mom' every time. Protective tone ('You need to take this seriously'). Double-texts when worried.\n2. **Dana:** Warm, encouraging, uses exclamation points ('YES!! Mary!!'). Longer messages with advice. Mentor energy.\n3. **Jess:** Casual, all lowercase, slang ('dude', 'literally cannot', 'lmaooo'). Short reactive messages. Work-buddy humor.\n4. **Nonna:** Very brief, directive, no emoji. 'Yes come. Bring bread.' 'I am fine.' Texts sparingly and slowly (30-60 min response gaps).\n5. **Tony:** Laconic, minimal effort ('yeah probably', 'ehh', 'ok ok fine'). Short responses, you usually initiate.\n6. **You (Mary):** Casual but varied — more respectful with Mom, all lowercase with friends, uses 'lol', 'lmaooo', 'omg'. Longer texts when venting about career.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 — Lucia always signs 'Love Mom', full sentences"},
+          {"source": "messenger", "reference": "CONV-002 — Dana: 'YES!! Mary!! That is amazing'"},
+          {"source": "messenger", "reference": "CONV-003 — Jess: 'dude kaylee just made the new schedule'"},
+          {"source": "messenger", "reference": "CONV-004 — Nonna: 'Yes come. Bring bread.' (18:42, reply to 18:05 = 37 min gap)"},
+          {"source": "messenger", "reference": "CONV-005 — Tony: 'yeah probably', 'ehh', 'ok ok fine'"}
+        ],
+        "reasoning": "Agent must analyze communication style patterns across all 5 conversations."
+      }
+    },
+    {
+      "id": "TC-054", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "I want to run outdoors this Saturday. Has the weather been warm enough based on when I switched from gym to lake?",
+      "successful_response": {
+        "answer": "You switched from indoor gym runs (Planet Fitness treadmill) to outdoor Lake Mendota runs at the end of February. Your calendar notes Feb 28 as 'first outdoor run of the year!' and you ran outdoors again Mar 4. Before that, ALL runs were at Planet Fitness gym (Jan 2, 7, 30, Feb 6). Dana's Jan 6 message mentioned it was '12 degrees but no wind' — too cold for outdoor. By late February, conditions were warm enough. Since you've been running outdoors since Feb 28, a Saturday run at the lake should be fine now (late March).",
+        "evidence": [
+          {"source": "calendar", "reference": "Feb 28 — 'first outdoor run of the year!' at Lake Mendota"},
+          {"source": "calendar", "reference": "Mar 4 — Lake Mendota run (second outdoor)"},
+          {"source": "calendar", "reference": "Jan-Feb gym runs at Planet Fitness"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-01-06, 19:44 — Dana: '12 degrees but no wind'"}
+        ],
+        "reasoning": "Agent must track the indoor-to-outdoor transition and use weather context from messages to assess current feasibility."
+      }
+    },
+    {
+      "id": "TC-055", "type": 4, "type_label": "Reasoning", "category": "career",
+      "request": "Who is Derek and why did he come up in my messages?",
+      "successful_response": {
+        "answer": "Derek is mentioned exactly once — in your Feb 21 chat with Jess. You said 'sun prairie. derek mentioned it last week' when discussing the new restaurant location that needs supervisors. Derek appears to be a coworker or manager at your restaurant who shared the Sun Prairie expansion news. He's not in your social circle — just a workplace information source.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003 (Jess), 2026-02-21, 20:41 — Mary: 'sun prairie. derek mentioned it last week'"}
+        ],
+        "reasoning": "Agent must search all messages for 'Derek' and infer his role from context."
+      }
+    },
+    {
+      "id": "TC-056", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "What do Tony and I usually text about? Is it always me bugging him?",
+      "successful_response": {
+        "answer": "Your conversation pattern with Tony:\n\n- **Jan 19:** You initiated — asked if he's coming to dinner. You had to push him ('get your butt over there'). Classic older sister.\n- **Feb 4:** You initiated — asked about midterms. He gave minimal answers but you had a nice exchange about work ('you'll get it. you're literally the hardest worker there').\n- **Feb 28:** You initiated — told him about the fish fry. 'mom already put your name down.' He's reluctant but goes.\n- **Mar 18:** You initiated — asked about Madison College. This was the most engaged he's been ('thats sick mary. you should totally do it', offered campus tour).\n\nYes, you initiate every conversation. But he does engage meaningfully when it's about you (not just obligations). He cares — he just doesn't start conversations.",
+        "evidence": [
+          {"source": "messenger", "reference": "All 4 CONV-005 snippets — Mary initiates every time"},
+          {"source": "messenger", "reference": "CONV-005, Feb 4, 19:55 — Tony's genuine career support"},
+          {"source": "messenger", "reference": "CONV-005, Mar 18, 20:18-20:22 — Tony's most engaged response"}
+        ],
+        "reasoning": "Agent must analyze conversation initiation patterns and engagement levels across all Tony messages."
+      }
+    },
+    {
+      "id": "TC-057", "type": 4, "type_label": "Reasoning", "category": "religion",
+      "request": "Am I volunteering enough at church? What have I actually done this year?",
+      "successful_response": {
+        "answer": "Church involvement in your logs:\n- **Jan 10 (Mom):** You agreed to help at the fish fry cleanup after your shift ('i'll be there right after my shift so probably like 7:30ish').\n- **Lenten Fish Fries:** Calendar shows Feb 20, Feb 27, Mar 6 at parish hall. You've attended all three and brought food each time.\n- **Ash Wednesday:** Feb 18, Mass during lunch break.\n- **Sunday Mass:** 5 out of ~11 Sundays.\n\nYou're a regular attendee but volunteering is limited to the January fish fry cleanup that Mom arranged. Most of your church participation is attendance-based (Mass, fish fries) rather than active volunteering.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001, Jan 10, 14:45 — Mary: 'i'll be there right after my shift'"},
+          {"source": "calendar", "reference": "3 Lenten Fish Fries, 5 Sunday Masses, Ash Wednesday Mass"}
+        ],
+        "reasoning": "Agent must distinguish between attendance and active volunteering across calendar and messages."
+      }
+    },
+    {
+      "id": "TC-058", "type": 4, "type_label": "Reasoning", "category": "financial",
+      "request": "Jess called me 'budget queen.' Is that fair? How careful am I really being?",
+      "successful_response": {
+        "answer": "Evidence of extreme budget consciousness:\n- **Jan 6 (Dana):** Checked budget before committing to a race entry fee. 'I have a whole spreadsheet for this.'\n- **Feb 21 (Jess):** $200 ServSafe is 'a lot for me rn but it's an investment.'\n- **Mar 5 (Dana):** '$200 is doable if I pick up an extra shift or two. I already have it penciled into my budget journal.'\n- **Mar 15 (Jess):** Suggested cheap seats and bringing own snacks to Brewers game to avoid '$80 at the stadium.'\n- **Mar 15 (Jess):** Planned cheese curds from farmers market + homemade trail mix instead of buying food.\n\nJess's 'budget queen' label is 100% accurate. You budget for everything, track in your bullet journal, and optimize every outing for cost.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002, Jan 6 — budget spreadsheet"},
+          {"source": "messenger", "reference": "CONV-003, Feb 21 — '$200 is a lot'"},
+          {"source": "messenger", "reference": "CONV-002, Mar 5 — 'penciled into my budget journal'"},
+          {"source": "messenger", "reference": "CONV-003, Mar 15 — cheap seats, own snacks, 'budget queen'"}
+        ],
+        "reasoning": "Agent must compile all budget-related evidence across conversations to verify Jess's characterization."
+      }
+    },
+    {
+      "id": "TC-059", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "Dana keeps pushing me to do stuff. Is she pushy or is she actually helpful?",
+      "successful_response": {
+        "answer": "Dana's 'pushes' from your messages:\n1. **Jan 6:** Encouraged you to do the half marathon ('you are absolutely ready for it'). You hesitated on cost.\n2. **Jan 29:** Texted when you missed a run ('Didn't see you at the lake this morning!'). Accountability, not pressure.\n3. **Feb 12:** Shared low-sodium recipes when you asked. Her mom had similar health issues — she related personally.\n4. **Mar 5:** Encouraged FAFSA, celebrated your ServSafe decision ('YES!! Mary!!'), mentioned SBA loans. Said 'I'm proud of you.'\n\nPattern: She pushes toward things you already want to do (running, career, health) and provides resources (recipes, FAFSA advice, SBA info). She's a mentor, not pushy. Every time she suggests something, you're either already considering it or you benefit from the nudge.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002, Jan 6 — half marathon suggestion"},
+          {"source": "messenger", "reference": "CONV-002, Jan 29 — accountability check-in"},
+          {"source": "messenger", "reference": "CONV-002, Feb 12 — recipe sharing"},
+          {"source": "messenger", "reference": "CONV-002, Mar 5 — FAFSA, SBA, 'I'm proud of you'"}
+        ],
+        "reasoning": "Agent must analyze Dana's behavior pattern across all conversations and classify it as supportive vs. overbearing."
+      }
+    },
+    {
+      "id": "TC-060", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "I remember there was a run that got cancelled. What happened?",
+      "successful_response": {
+        "answer": "February 4 — your calendar shows 'CANCELLED - Morning Run (Dana sick, ran solo on treadmill)' at Planet Fitness at 6:15 AM. Dana was sick so the scheduled run with her was cancelled, but you still went to the gym and ran on the treadmill by yourself. This aligns with your routine dependency — even when the social element was removed, you still ran.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-04, 06:15 — 'CANCELLED - Morning Run (Dana sick, ran solo on treadmill)'"}
+        ],
+        "reasoning": "Agent must find the cancelled entry and note you still ran despite the cancellation."
+      }
+    },
+    {
+      "id": "TC-061", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "What did I do for Valentine's Day? Was it with anyone?",
+      "successful_response": {
+        "answer": "Your calendar shows: February 14, 5:00 PM — 'Valentine's Day Baking - Spiced Apple Crumble for Mom' at your apartment, 2 hours. No people listed — you baked alone. You made your go-to comfort bake (spiced apple crumble) as a gift for Mom. Also on Feb 14, you texted Nonna about the Lent fish fry (CONV-004). No romantic plans anywhere in your logs — Valentine's was a family/solo day for you.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-14, 17:00 — 'Valentine's Day Baking - Spiced Apple Crumble for Mom'"},
+          {"source": "messenger", "reference": "CONV-004, 2026-02-14 — texted Nonna about fish fry, not Valentine's plans"}
+        ],
+        "reasoning": "Agent must check calendar and messages for Valentine's Day activity and note the absence of romantic context."
+      }
+    },
+    {
+      "id": "TC-062", "type": 4, "type_label": "Reasoning", "category": "health",
+      "request": "My doctor appointment was at UW Health. When exactly was it and what was it for?",
+      "successful_response": {
+        "answer": "Calendar: February 17 at 10:00 AM, 'Dr. Follow-Up Appointment' at UW Health clinic, 90 minutes. Based on your messages, this was the follow-up for your blood pressure. On Jan 22, you told Mom the doctor wanted you to 'watch the sodium and come back in a few months.' The Feb 17 appointment is that recheck. By March 12, you reported to Mom that your Walgreens self-check showed numbers 'way better than January.'",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-17, 10:00 — 'Dr. Follow-Up Appointment' at UW Health clinic"},
+          {"source": "messenger", "reference": "CONV-001, Jan 22 — doctor wants recheck"},
+          {"source": "messenger", "reference": "CONV-001, Mar 12 — numbers improved"}
+        ],
+        "reasoning": "Agent must connect the calendar appointment with the health narrative in messages to determine the appointment's purpose."
+      }
+    },
+    {
+      "id": "TC-063", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "Have I been keeping up with my Wednesday Nonna visits? Did I miss any?",
+      "successful_response": {
+        "answer": "Your calendar shows 6 Nonna visits on Wednesdays: Jan 7, Jan 14, Jan 28, Feb 11, Feb 25, Mar 11. That's roughly every other Wednesday (some weeks missing: Jan 21, Feb 4, Feb 18, Mar 4). You missed about half the Wednesdays, but you also see Nonna at Sunday Family Dinners. Your Jan 15 message to Nonna ('I'm coming over Wednesday after work') confirms you coordinate these visits in advance.",
+        "evidence": [
+          {"source": "calendar", "reference": "6 Visit Nonna entries on Wednesdays"},
+          {"source": "messenger", "reference": "CONV-004, Jan 15 — coordinating Wednesday visit"}
+        ],
+        "reasoning": "Agent must count Wednesday visits and compare to total Wednesdays in the date range."
+      }
+    },
+    {
+      "id": "TC-064", "type": 4, "type_label": "Reasoning", "category": "career",
+      "request": "Dana mentioned FAFSA. Did I ever follow up on that?",
+      "successful_response": {
+        "answer": "Dana brought up FAFSA on March 5: 'Did you look at financial aid too? You should absolutely apply for FAFSA.' You responded: 'ugh i know i keep putting that off. paperwork makes my brain melt.' You did NOT mention FAFSA to anyone else (Tony, Jess, Mom, Nonna) in any subsequent messages. Your calendar has no FAFSA-related entries. As of your latest messages, you haven't followed up on it yet.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:18 — Dana: 'You should absolutely apply for FAFSA'"},
+          {"source": "messenger", "reference": "CONV-002 (Dana), 2026-03-05, 20:21 — Mary: 'i keep putting that off'"},
+          {"source": "calendar", "reference": "No FAFSA entries in calendar"}
+        ],
+        "reasoning": "Agent must search for FAFSA across all messages and calendar to determine follow-up status."
+      }
+    },
+    {
+      "id": "TC-065", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "What's the plan for the next family dinner? Who's confirmed?",
+      "successful_response": {
+        "answer": "Your most recent Sunday Family Dinner on the calendar is March 15 at 1:00 PM at the Alberti family home with Lucia, Dad, Tony, and Nonna. This is the last entry in your calendar data (through Mar 15). Based on your consistent weekly pattern, the next dinner would be March 22. Mom (Lucia) is always there. Nonna and Dad attend most Sundays. Tony attends when pushed — you usually text him Sunday morning to confirm (Jan 19 pattern). Your most recent message to Mom (Mar 12) ended with 'see you sunday?' confirming the pattern continues.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-03-15, 13:00 — last Sunday Family Dinner with all family"},
+          {"source": "messenger", "reference": "CONV-001, Mar 12, 16:09 — Mary: 'see you sunday?'"},
+          {"source": "messenger", "reference": "CONV-005, Jan 19 — pattern of texting Tony to confirm attendance"}
+        ],
+        "reasoning": "Agent must use the established Sunday pattern to project the next dinner and reference confirmation habits from messages."
+      }
+    },
+    {
+      "id": "TC-066", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "When I'm stressed, what do I do? Can you find evidence in my logs?",
+      "successful_response": {
+        "answer": "Stress coping mechanisms visible in your logs:\n\n1. **Running:** Dana (Jan 29) called you 'the most routine-dependent person I know.' When you missed a run, you said 'my brain has been weird all day.' Running is your #1 reset. Calendar shows 8+ runs.\n2. **Baking:** Calendar Feb 14 — 'Spiced Apple Crumble for Mom' (your comfort bake). You baked on Valentine's Day, which for a single person could be a stress-response day.\n3. **Texting friends:** You vented to Jess about Kaylee (Jan 14) and to Tony about the supervisor wait (Feb 4). Social support is a coping mechanism.\n4. **Bullet journaling:** Referenced repeatedly — Dana (Jan 6): 'spreadsheet,' Dana (Mar 5): 'budget journal,' Jess (Mar 15): 'budget queen.' Your journal is both organizational and emotional.\n5. **Sudoku:** Calendar Feb 25 — brought Sudoku book to Nonna's. Private activity not discussed in messages.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002, Jan 29 — routine disruption = anxiety"},
+          {"source": "calendar", "reference": "Feb 14 — stress baking (spiced apple crumble)"},
+          {"source": "messenger", "reference": "CONV-003, Jan 14 — venting to Jess about Kaylee"},
+          {"source": "messenger", "reference": "Multiple bullet journal references across conversations"},
+          {"source": "calendar", "reference": "Feb 25 — Sudoku book at Nonna's"}
+        ],
+        "reasoning": "Agent must identify coping mechanisms across both apps and multiple conversations."
+      }
+    },
+    {
+      "id": "TC-067", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "How long are my typical work shifts?",
+      "successful_response": {
+        "answer": "All your calendar work shifts are 420-480 minutes (7-8 hours):\n- Jan 3: 480 min (8 hrs, mid shift 11AM-7PM)\n- Jan 10: 420 min (7 hrs, afternoon 2PM-9PM)\n- Jan 15: 480 min (8 hrs, close 3PM-11PM)\n- Feb 5: 480 min (8 hrs, mid shift 11AM-7PM)\n- Mar 7: 480 min (8 hrs, open 6AM-2PM)\n\nSo your standard shift is 7-8 hours with variable start times. The open shift starts earliest (6 AM) and the close shift runs latest (3 PM start).",
+        "evidence": [
+          {"source": "calendar", "reference": "5 work entries with durations 420-480 min and varying start times"}
+        ],
+        "reasoning": "Agent must extract shift durations and start times from calendar to identify the pattern."
+      }
+    },
+    {
+      "id": "TC-068", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "Is there anyone I used to be close with that I'm not anymore?",
+      "successful_response": {
+        "answer": "Kaylee. From your Jan 14 chat with Jess: Kaylee got promoted to shift supervisor over you despite your seniority ('i trained her jess. i've been here 2 years longer'). She now controls the schedule and 'she's been on a whole power trip' per Jess. Kaylee is referenced again indirectly on Feb 21 when Jess said you'd be 'way better than... you know who' and you responded 'JESS lmaooo stop. but also... yeah.' The relationship is dead — she's now a source of frustration, not friendship.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-003, Jan 14 — full Kaylee discussion"},
+          {"source": "messenger", "reference": "CONV-003, Feb 21, 20:46 — 'way better than... you know who'"}
+        ],
+        "reasoning": "Agent must identify the strained relationship from contextual clues across multiple conversations."
+      }
+    },
+    {
+      "id": "TC-069", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "What's Mom's sign-off in texts? Does she always do the same thing?",
+      "successful_response": {
+        "answer": "Yes — Mom signs off with 'Love Mom' in almost every conversation:\n- Jan 10, 14:52: 'Love Mom'\n- Jan 22, 11:25: 'Love you more. Take care of yourself please. Love Mom'\n- Feb 16, 09:58: 'Love Mom'\n\nThe one exception is Mar 12 where she ends with 'Don't argue with me' about the lentil soup — playful but no 'Love Mom' sign-off. Her sign-off is remarkably consistent — it's her signature.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001, Jan 10, 14:52 — 'Love Mom'"},
+          {"source": "messenger", "reference": "CONV-001, Jan 22, 11:25 — 'Love Mom'"},
+          {"source": "messenger", "reference": "CONV-001, Feb 16, 09:58 — 'Love Mom'"},
+          {"source": "messenger", "reference": "CONV-001, Mar 12, 16:11 — no 'Love Mom' (exception)"}
+        ],
+        "reasoning": "Agent must scan all Mom messages for sign-off patterns and note consistency/exceptions."
+      }
+    },
+    {
+      "id": "TC-070", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "What's the best coffee spot near my running route?",
+      "successful_response": {
+        "answer": "Your calendar shows two 'Post-Run Coffee w/ Dana' entries at Colectivo Coffee on Monroe St, Madison — Feb 6 and Mar 4, both at 8:00 AM after your 6:15 AM runs. This is your established post-run spot. It's near your Lake Mendota running route (Monroe St is on the south/west side of the isthmus, close to the lake path).",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-06 and 2026-03-04 — 'Post-Run Coffee w/ Dana' at Colectivo Coffee, Monroe St"}
+        ],
+        "reasoning": "Agent must identify the coffee shop from calendar entries and connect it to the running location."
+      }
+    },
+    {
+      "id": "TC-071", "type": 4, "type_label": "Reasoning", "category": "health",
+      "request": "How have my conversations with Dana changed over time? Are we getting closer?",
+      "successful_response": {
+        "answer": "Your Dana conversations show deepening intimacy:\n\n1. **Jan 6:** Casual running logistics and half-marathon chat. Light, activity-focused.\n2. **Jan 29:** She checked on you when you missed a run. You opened up: 'this week has been A LOT.' Moving from logistics to emotional support.\n3. **Feb 12:** You asked for health advice (low-sodium recipes). She shared her mom's similar experience — personal vulnerability from both sides. You called her 'my coach AND my therapist.'\n4. **Mar 5:** Deep career conversation — ServSafe, FAFSA, SBA loans, diner dream. She said 'I'm proud of you.' Most mentor-like exchange yet.\n\nYes, you're getting closer. The relationship has evolved from running partner → accountability buddy → health confidante → career mentor.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-002 — all 4 snippets showing progression from Jan 6 to Mar 5"}
+        ],
+        "reasoning": "Agent must track relationship depth across chronological Dana conversations."
+      }
+    },
+    {
+      "id": "TC-072", "type": 4, "type_label": "Reasoning", "category": "scheduling",
+      "request": "When did the family dinner get rescheduled and why?",
+      "successful_response": {
+        "answer": "February 22 — your calendar shows 'RESCHEDULED - Sunday Family Dinner (moved from noon, Mary worked morning open shift).' It was pushed to 1:00 PM instead of the usual time because you had a morning open shift at work. This is the only rescheduled dinner in your calendar, showing how your variable work schedule occasionally conflicts with family plans.",
+        "evidence": [
+          {"source": "calendar", "reference": "2026-02-22, 13:00 — 'RESCHEDULED - Sunday Family Dinner (moved from noon, Mary worked morning open shift)'"}
+        ],
+        "reasoning": "Agent must find the rescheduled entry and extract the reason."
+      }
+    },
+    {
+      "id": "TC-073", "type": 4, "type_label": "Reasoning", "category": "family",
+      "request": "How often does Nonna actually text me back quickly?",
+      "successful_response": {
+        "answer": "Nonna is a slow texter. Looking at response times:\n\n- **Jan 15:** You texted at 18:05, Nonna replied at 18:42 (37 min). You replied at 18:44, Nonna replied at 19:01 (17 min).\n- **Feb 14:** You texted at 17:30, Nonna replied at 17:55 (25 min). You replied at 17:58, Nonna replied at 18:15 (17 min).\n- **Mar 11:** You texted at 12:15, Nonna replied at 13:02 (47 min). You replied at 13:05, Nonna replied at 13:30 (25 min).\n\nHer average first-response time is 30-47 minutes, and follow-ups take 17-25 minutes. She's consistently slow — she's in her 80s and likely not glued to her phone. Her messages are also very brief (1-2 sentences max).",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-004 — all 3 snippets with timestamps showing 17-47 min response gaps"}
+        ],
+        "reasoning": "Agent must calculate response time gaps from timestamps across all Nonna conversations."
+      }
+    },
+    {
+      "id": "TC-074", "type": 4, "type_label": "Reasoning", "category": "preference",
+      "request": "What sports events have I attended or watched this year?",
+      "successful_response": {
+        "answer": "From your calendar and messages:\n\n1. **Jan 4:** 'Sunday Family Dinner + Packers Playoff Watch' at Mom & Dad's (calendar).\n2. **Feb 8:** 'Super Bowl Watch Party at Mom & Dad's' — 3 PM, 5 hours, with Mom/Dad/Tony (calendar).\n3. **Mar 15 (planned):** Brewers Opening Day trip to Milwaukee, April 11, with Jess. Cheap seats, you bring food (messenger, Jess).\n\nAll are watch-party or stadium-trip events — no live attendance at stadiums yet this year. The Packers and Super Bowl were home viewing. The Brewers game will be your first live attendance. No Badgers basketball events appear in either logs.",
+        "evidence": [
+          {"source": "calendar", "reference": "Jan 4 — Packers Playoff Watch"},
+          {"source": "calendar", "reference": "Feb 8 — Super Bowl Watch Party"},
+          {"source": "messenger", "reference": "CONV-003, Mar 15 — Brewers Opening Day planning"}
+        ],
+        "reasoning": "Agent must compile all sports events from calendar and messages, noting the distinction between watching and attending."
+      }
+    },
+    {
+      "id": "TC-075", "type": 4, "type_label": "Reasoning", "category": "social",
+      "request": "If I had to describe each person in my life in one sentence based on how they text me, what would it be?",
+      "successful_response": {
+        "answer": "Based on their texting behavior:\n\n1. **Mom (Lucia):** The worried-but-proud mother who signs every message 'Love Mom' and won't stop until she knows you're taking care of yourself.\n2. **Dana:** The encouraging mentor-friend who celebrates your wins with multiple exclamation points and always has a practical suggestion ready.\n3. **Jess:** The ride-or-die work bestie who calls you 'budget queen,' speaks entirely in lowercase, and uses 'you know who' as code for Kaylee.\n4. **Nonna:** The no-nonsense matriarch who responds in 30+ minutes with 2-word directives like 'Bring bread' and 'I am fine.'\n5. **Tony:** The younger brother who says 'yeah probably' to everything, needs to be guilted into showing up, but will surprise you with 'you're literally the hardest worker there' when it counts.",
+        "evidence": [
+          {"source": "messenger", "reference": "CONV-001 through CONV-005 — synthesized from all conversations"}
+        ],
+        "reasoning": "Agent must synthesize communication personality from each conversation into a one-sentence characterization."
+      }
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "subject": "Mary Alberti",
+  "generation_method": "Persona-to-Persona (PersonaHub, 2024) — derived exclusively from Step 2 interview transcript",
+  "generated": "2026-03-20",
+  "selection_rationale": "The 5 closest people were selected based on frequency of contact, emotional weight in Mary's own words, and the amount of specific detail she provided about each person in the interview. Dad (sees Sundays, described as 'quiet') and Cousin Marco (texts about Brewers sometimes) were considered but ranked below these five based on interview evidence of closeness.",
+  "inner_circle": [
+    {
+      "name": "Lucia Alberti",
+      "name_rationale": "Mary never states her mother's first name in the interview. 'Lucia' was chosen as a plausible Italian-American first name consistent with a second-generation Calabrian family in Madison, WI. Mary's grandmother is referred to only as 'Nonna' and an Aunt Rosa is mentioned as her mother's sister.",
+      "relationship": "Mother",
+      "dunbar_layer": "intimate_5",
+      "demographics": {
+        "age": 54,
+        "age_rationale": "Mary is 28. Her mother's age is not stated, but she is old enough to have an elderly mother ('Nonna, in her eighties') and a younger brother Tony in community college. Mid-50s is plausible for a woman with an 80+ year-old mother.",
+        "gender": "Female",
+        "ethnicity": "Italian-American (family from Calabria, per Mary's Q1 response)",
+        "occupation": "Works (unspecified) — Mary says 'She works too, so sometimes it's just a quick stop after my shift' (Q2 follow-up)",
+        "location": "Madison, WI — 'She's still in Madison, so I see her a lot' (Q2)",
+        "education": "Not stated in interview",
+        "marital_status": "Married to Mary's father",
+        "religion": "Roman Catholic — 'my mom goes every Sunday' (Q9)"
+      },
+      "background": {
+        "how_met": "Mother — raised Mary in Madison from birth",
+        "years_known": 28,
+        "why_close": "Mary called her 'probably the most important person' in her life (Q2). Her mother taught her to cook, taught her to work hard, and taught her to 'show up even when you don't feel like it.' They share the family shellfish sensitivity — 'My mom has the same thing' (Q6). Her mother hosts Sunday dinner, maintains the Italian cooking tradition passed down from Nonna, and is Mary's most frequent family contact. Mary's quote after the restaurant shellfish incident — 'My mom was like, I told you, always ask twice. She's right' (Q8) — shows an ongoing, advice-giving, protective relationship."
+      },
+      "personality_mini_profile": {
+        "key_traits": [
+          "Hard-working — Mary credits her work ethic to both parents, and Mom 'works too' on top of hosting family dinners",
+          "Skilled home cook — maintains the Italian-American Sunday dinner tradition from Nonna, makes homemade pasta",
+          "Protective and practical — 'I told you, always ask twice' about allergens",
+          "Devoutly Catholic — attends Mass every Sunday per Mary",
+          "Family-centered — hosts Sunday dinners, coordinates with Nonna, involved with parish potluck"
+        ],
+        "inferred_OCEAN": {
+          "conscientiousness": "High — works, maintains weekly family dinner tradition, attends church every Sunday",
+          "agreeableness": "High — nurturing, teaches and supports Mary, brings food to parish potluck",
+          "extraversion": "Moderate — social through family and church, but Mary doesn't describe her as outgoing in the way she describes Aunt Rosa ('the loud one')",
+          "neuroticism": "Moderate — the 'always ask twice' comment and shared shellfish anxiety suggest some worry-tendency",
+          "openness": "Moderate — embraces the Italian-Midwestern food fusion ('cheddar-crusted bratwurst next to a plate of rigatoni')"
+        },
+        "communication_style": "Inferred from Mary's description: practical, direct, slightly protective. The kind of mother who checks that you've eaten and reminds you to be careful. Her 'I told you, always ask twice' line suggests she communicates in short, authoritative maternal phrases. Likely texts in full sentences. Would double-text if Mary doesn't respond. Probably sends food photos and Mass reminders."
+      },
+      "shared_activities": [
+        "Sunday family dinners — homemade pasta, sometimes bratwurst if Dad is grilling (Q1 follow-up)",
+        "Cooking together — Mom taught Mary to cook; Mary jokes 'I actually make better sauce than her now' (Q1 follow-up)",
+        "Sunday Mass — Mom goes every Sunday; Mary joins 2-3x/month (Q9)",
+        "Parish potluck — Mary helps her mom bring food 'a couple times a year' (Q9 follow-up)",
+        "Quick visits after Mary's shift — 'sometimes it's just a quick stop after my shift' (Q2 follow-up)",
+        "Watching Packers on Sundays with the family (Q1 follow-up)"
+      ],
+      "communication_frequency": "Mary sees her mother 'at least twice a week, more if our schedules line up' (Q2 follow-up). Some visits are quick stops after Mary's shift. Sundays are the anchor — Mass and family dinner. This is Mary's most frequent in-person contact among all people mentioned.",
+      "recent_text_topics": [
+        "Coordinating Sunday dinner logistics — what to cook, whether Mary is working or can come",
+        "Reminders about upcoming Mass times or parish potluck dates",
+        "Garden updates — both Mary and her mother garden (Mary grew up watching Nonna cook, Mom maintains Sunday tradition)",
+        "Checking in on Nonna — Mary visits Wednesdays, Mom likely coordinates care",
+        "Easter planning — Mary mentions Easter brunch as a major family tradition (Q9)",
+        "Food and allergen vigilance — Mom shares Mary's shellfish sensitivity and would flag risks"
+      ],
+      "evidence_from_interview": [
+        "Q2: 'My mom is probably the most important person. She's the one who taught me to cook, to work hard, to show up even when you don't feel like it. She's still in Madison, so I see her a lot.'",
+        "Q2 follow-up: 'I try to see my mom at least twice a week, more if our schedules line up. She works too, so sometimes it's just a quick stop after my shift.'",
+        "Q1 follow-up: 'My mom still does Sunday dinner almost every week. I try to make it whenever I'm not scheduled.'",
+        "Q1 follow-up: 'My mom would kill me for saying this, but I think I actually make better sauce than her now.'",
+        "Q6: 'My mom has the same thing — if she eats shrimp or crab she gets real puffy and sick.'",
+        "Q8: 'My mom was like, I told you, always ask twice. She's right.'",
+        "Q9: 'my mom goes every Sunday'",
+        "Q9 follow-up: 'I help my mom bring food to the parish potluck a couple times a year.'"
+      ]
+    },
+    {
+      "name": "Dana",
+      "name_note": "Last name not provided in interview. Only referred to as 'Dana.'",
+      "relationship": "Running club friend — closest non-family friend",
+      "dunbar_layer": "intimate_5",
+      "demographics": {
+        "age": 38,
+        "age_rationale": "Mary says Dana is 'like ten years older than me' (Q2). Mary is 28, so Dana is approximately 38.",
+        "gender": "Female",
+        "ethnicity": "Not stated in interview",
+        "occupation": "Not stated in interview",
+        "location": "Madison, WI area (member of Madison Runners Club, goes to Door County with Mary)",
+        "education": "Not stated in interview",
+        "marital_status": "Not stated in interview",
+        "religion": "Not stated in interview"
+      },
+      "background": {
+        "how_met": "Through the Madison Runners Club. Mary runs along Lake Mendota 3x/week (MWF) with the club, and Dana is a fellow member. Mary says 'There's this woman, Dana, who I run with almost every time' (Q2).",
+        "years_known": "Not precisely stated. Mary joined the running club after a blood pressure scare, which she describes as having led to getting 'consistent about it' (Q8). The timeline suggests roughly 1-2 years.",
+        "why_close": "Dana has graduated from running buddy to 'a real friend, not just a running buddy' (Q4). They've gone on weekend getaways to Door County together — 'hiking, eating cheese curds, hitting up wineries' (Q4). Dana holds Mary accountable for showing up to runs — 'Dana will literally text me if I don't show up' (Q7). Dana also gives Mary life advice, specifically about finances — 'Dana keeps telling me to look into SBA loans for when I'm ready' (Q12 follow-up). Dana's California trip made Mary jealous, suggesting Mary admires Dana's lifestyle and experiences (Q10)."
+      },
+      "personality_mini_profile": {
+        "key_traits": [
+          "Experienced and accomplished runner — 'done a bunch of half-marathons' (Q2); pushes Mary to improve",
+          "Accountability-oriented — 'will literally text me if I don't show up' (Q7)",
+          "Adventurous — Door County getaways, traveled to California (Q10)",
+          "Financially savvy or at least informed — encourages Mary to look into SBA loans (Q12 follow-up)",
+          "Supportive mentor-friend energy — 10 years older, pushes Mary in running and life planning"
+        ],
+        "inferred_OCEAN": {
+          "conscientiousness": "High — consistent runner, holds others accountable, gives practical financial advice",
+          "extraversion": "Moderate-to-high — initiates contact, plans trips, engages socially after runs",
+          "agreeableness": "High — supportive, encouraging, invests in the friendship",
+          "openness": "High — travels (California, Door County), tries wineries, engages with varied activities",
+          "neuroticism": "Low — comes across as steady and confident in Mary's description"
+        },
+        "communication_style": "Inferred from interview evidence: Dana is proactive (texts Mary if she's absent from a run), encouraging (pushes Mary in running and career), and practical (SBA loan advice). Likely texts in a warm but direct style. Probably sends motivational check-ins and plans activities. The accountability-texting suggests she's someone who follows up and doesn't let things slide."
+      },
+      "shared_activities": [
+        "Running together at Lake Mendota with Madison Runners Club — 'almost every time' Mary runs (Q2)",
+        "Post-run coffee — 'We grab coffee after sometimes' (Q2)",
+        "Door County weekend getaways — 'a couple times' — hiking, cheese curds, wineries (Q4)",
+        "Running accountability — Dana texts Mary if she misses a run (Q7)"
+      ],
+      "communication_frequency": "They run together approximately 3x/week (MWF per Mary's schedule, Q5). Dana texts if Mary doesn't show up (Q7). They grab coffee after runs 'sometimes' (Q2). They've taken multiple weekend trips to Door County (Q4). This is Mary's most frequent non-family contact based on the running schedule alone.",
+      "recent_text_topics": [
+        "Running logistics — which mornings they're both showing up, pace goals, route choices",
+        "Accountability check-ins — Dana texting when Mary misses a run",
+        "Planning next Door County trip — hiking trails, wineries to try",
+        "SBA loans and Mary's diner dream — Dana has been 'telling me to look into SBA loans' (Q12 follow-up)",
+        "Dana's travel — she went to California recently and Mary was 'so jealous' (Q10)",
+        "Half-marathon training — Dana has done 'a bunch' and likely encourages Mary to try one"
+      ],
+      "evidence_from_interview": [
+        "Q2: 'There's this woman, Dana, who I run with almost every time. She's like ten years older than me and she's done a bunch of half-marathons, so she pushes me. We grab coffee after sometimes.'",
+        "Q4: 'Dana from running club is the big one. She's become like a real friend, not just a running buddy. We've gone to Door County together a couple times for weekend getaways — just hiking, eating cheese curds, hitting up wineries.'",
+        "Q7: 'Having the club keeps me accountable — Dana will literally text me if I don't show up.'",
+        "Q10: 'Dana went to California last year and I was so jealous.'",
+        "Q12 follow-up: 'Dana keeps telling me to look into SBA loans for when I'm ready.'"
+      ]
+    },
+    {
+      "name": "Jess",
+      "name_note": "Last name not provided in interview. Only referred to as 'Jess.'",
+      "relationship": "Coworker at the restaurant",
+      "dunbar_layer": "intimate_5",
+      "demographics": {
+        "age_estimate": "Likely mid-20s to early 30s — works the same fast food job as Mary; age not stated",
+        "gender": "Female (inferred from 'Jess' and context)",
+        "ethnicity": "Not stated in interview",
+        "occupation": "Fast food / counter worker at the same restaurant as Mary (Q4: 'Jess from work')",
+        "location": "Madison, WI area (works at same restaurant as Mary)",
+        "education": "Not stated in interview",
+        "marital_status": "Not stated in interview",
+        "religion": "Not stated in interview"
+      },
+      "background": {
+        "how_met": "Through work at the same fast food restaurant. Mary has been at this restaurant for about 5 years (Q1). The exact timeline of when Jess started is not stated.",
+        "years_known": "Not precisely stated. They work at the same restaurant and have developed enough trust for Mary to call Jess 'the one person I can actually vent to without it getting weird' (Q2).",
+        "why_close": "Jess fills a specific and important role: she's Mary's trusted confidante at work. In an environment where Mary was passed over for a promotion (the Kaylee situation) and does supervisor-level work without the title, having one person she can vent to is crucial. They also have practical mutual support — 'She's the one who covers for me when I need to swap shifts, and I do the same for her' (Q4). Beyond work, they go to Brewers games together — 'sometimes Jess and I will drive down to Milwaukee for a game' (Q5)."
+      },
+      "personality_mini_profile": {
+        "key_traits": [
+          "Trustworthy — Mary singles her out as the one coworker she can be honest with",
+          "Reliable — covers Mary's shifts and Mary returns the favor",
+          "Discreet — 'without it getting weird' implies Jess doesn't gossip or create drama",
+          "Game for fun — willing to drive to Milwaukee for a Brewers game",
+          "Likely similar work ethic to Mary — they depend on each other for shift coverage"
+        ],
+        "inferred_OCEAN": {
+          "conscientiousness": "Moderate-to-high — reliable enough for shift swaps, trusted by Mary",
+          "agreeableness": "High — Mary describes her as safe to vent to, reciprocal in covering shifts",
+          "extraversion": "Moderate — social enough for Brewers road trips but Mary doesn't describe her as loud or dominant",
+          "openness": "Not enough data to assess",
+          "neuroticism": "Likely low — 'without it getting weird' suggests emotional stability"
+        },
+        "communication_style": "Inferred: Jess is someone who can listen without making it about herself (Mary's 'vent to without it getting weird' comment). Likely texts in a casual, work-friend register — shift logistics, light complaints about customers, making plans. Probably uses a mix of short messages and occasional longer venting. The Brewers road trips suggest she's fun and spontaneous enough to make plans outside work."
+      },
+      "shared_activities": [
+        "Working together at the restaurant — shift coverage and mutual support (Q4)",
+        "Venting about work — Jess is Mary's trusted outlet (Q2)",
+        "Driving to Milwaukee for Brewers games — 'sometimes Jess and I will drive down to Milwaukee for a game' (Q5)"
+      ],
+      "communication_frequency": "They work together at the same restaurant, so in-person contact is frequent during shared shifts (likely multiple days per week given a fast food schedule). They swap shifts for each other (Q4). They also socialize outside work for Brewers games (Q5). Texting frequency not stated but likely regular given the shift-coordination dynamic.",
+      "recent_text_topics": [
+        "Shift swap coordination — who can cover what, schedule logistics",
+        "Venting about work frustrations — difficult customers, management issues, the lingering Kaylee promotion sting",
+        "Brewers season — planning to drive to Milwaukee for a game, watching games on TV",
+        "Weekend plans and scheduling around work shifts"
+      ],
+      "evidence_from_interview": [
+        "Q2: 'And at work, my coworker Jess is the one person I can actually vent to without it getting weird.'",
+        "Q4: 'Jess from work is important too. She's the one who covers for me when I need to swap shifts, and I do the same for her.'",
+        "Q5: 'sometimes Jess and I will drive down to Milwaukee for a game'"
+      ]
+    },
+    {
+      "name": "Nonna Alberti",
+      "name_note": "Mary only refers to her as 'Nonna' (Italian for grandmother). Her first name is not provided in the interview. 'Nonna' is used here as her identifier consistent with how Mary refers to her.",
+      "relationship": "Paternal or maternal grandmother",
+      "dunbar_layer": "intimate_5",
+      "demographics": {
+        "age": "80s — 'she's in her eighties now' (Q2)",
+        "gender": "Female",
+        "ethnicity": "Italian — immigrated from Calabria. 'My grandparents came over from Calabria' (Q1)",
+        "occupation": "Retired",
+        "location": "Madison, WI area (Mary visits her on Wednesdays; attends family Sunday dinners)",
+        "education": "Not stated in interview",
+        "marital_status": "Not stated — grandfather not mentioned as currently present",
+        "religion": "Roman Catholic — 'My nonna goes to Mass every single day' (Q9)"
+      },
+      "background": {
+        "how_met": "Grandmother — lifelong relationship. Mary's earliest cooking memories center on Nonna: 'My nonna made pasta from scratch every weekend and I'd just sit on the kitchen counter watching her roll it out. That's honestly where I got my love of cooking.' (Q1)",
+        "years_known": 28,
+        "why_close": "Nonna is the origin point of Mary's identity — her love of cooking, her connection to Italian heritage, her Catholic faith, and her sense of family all trace back to this woman. Mary makes a specific effort to visit Nonna on Wednesdays (Q2 follow-up), which is notable given Mary's packed schedule and limited free time. Nonna's cardiac history also directly motivated Mary's health anxiety and running commitment: 'my nonna has had heart stuff, and I don't want to go down that road at twenty-eight' (Q8). Despite slowing down, Nonna 'still wants to make Sunday gravy every week' (Q2), maintaining the tradition that anchors the family."
+      },
+      "personality_mini_profile": {
+        "key_traits": [
+          "Deeply traditional — immigrated from Calabria, maintained Italian cooking traditions for decades",
+          "Devoutly Catholic — attends Mass every single day (Q9)",
+          "Persistent and proud — in her eighties and slowing down but 'still wants to make Sunday gravy every week' (Q2)",
+          "Matriarch energy — the family's cooking and cultural traditions flow from her",
+          "Has had cardiac health issues — 'my nonna has had heart stuff' (Q8)"
+        ],
+        "inferred_OCEAN": {
+          "conscientiousness": "Very high — daily Mass attendance, weekly Sunday gravy tradition maintained for decades",
+          "agreeableness": "High — nurturing through food, central to family gatherings",
+          "extraversion": "Low-to-moderate — traditional, home-centered, but church community provides social contact",
+          "openness": "Low-to-moderate — deeply traditional, rooted in Calabrian Italian culture",
+          "neuroticism": "Not enough data — she's described as persistent and determined despite aging"
+        },
+        "communication_style": "Inferred: Nonna is in her eighties, so texting may be minimal or nonexistent. Communication with Mary is likely primarily in-person during Wednesday visits and Sunday dinners. If she does text or call, it would be simple and direct — probably through a family member's phone or very basic messages. The relationship is built on presence, shared cooking, and tradition rather than digital communication."
+      },
+      "shared_activities": [
+        "Wednesday visits — Mary tries to visit Nonna on Wednesdays 'just to check in' (Q2 follow-up)",
+        "Sunday family dinners — Nonna 'still wants to make Sunday gravy every week' (Q2)",
+        "Cooking tradition — Mary learned to cook by watching Nonna make pasta from scratch (Q1)",
+        "Christmas Eve Feast of the Seven Fishes — family tradition rooted in Nonna's Italian heritage (Q6, Q9)"
+      ],
+      "communication_frequency": "Mary visits Nonna on Wednesdays when she can (Q2 follow-up) and sees her at Sunday family dinners. This is approximately 1-2 times per week in person. Digital communication frequency is not described in the interview.",
+      "recent_text_topics": [
+        "Unlikely to be a heavy texter given her age (eighties) and traditional background",
+        "In-person conversation topics would center on: family news, cooking (Sunday gravy preparations), church, health",
+        "Easter planning — a major family-religious event that Nonna would be central to",
+        "Garden season starting — Nonna's Calabrian heritage likely includes a deep food-growing tradition that connects to Mary's own gardening"
+      ],
+      "evidence_from_interview": [
+        "Q1: 'My nonna made pasta from scratch every weekend and I'd just sit on the kitchen counter watching her roll it out. That's honestly where I got my love of cooking.'",
+        "Q2: 'And then my nonna — she's in her eighties now and slowing down, but she still wants to make Sunday gravy every week.'",
+        "Q2 follow-up: 'Nonna I try to visit on Wednesdays if I can, just to check in.'",
+        "Q8: 'That freaked me out a little because my nonna has had heart stuff, and I don't want to go down that road at twenty-eight.'",
+        "Q9: 'My nonna goes to Mass every single day.'"
+      ]
+    },
+    {
+      "name": "Tony Alberti",
+      "relationship": "Younger brother",
+      "dunbar_layer": "intimate_5",
+      "demographics": {
+        "age_estimate": "Likely early-to-mid 20s — younger than Mary (28) and currently in community college",
+        "gender": "Male",
+        "ethnicity": "Italian-American",
+        "occupation": "Community college student — 'in community college right now' (Q2)",
+        "location": "Madison, WI area (Mary sees him approximately once a week)",
+        "education": "Currently attending community college (Q2)",
+        "marital_status": "Not stated in interview",
+        "religion": "Not stated — raised in a Catholic family"
+      },
+      "background": {
+        "how_met": "Younger brother — grew up together in Madison in the same Italian-American Catholic family",
+        "years_known": "Tony's entire life. Mary is the older sister.",
+        "why_close": "Mary describes Tony in the context of family obligation and care: 'I have a younger brother, Tony, who's in community college right now. I try to help him when I can.' (Q2). The phrase 'I try to help him' positions Mary as a protective older sister, consistent with her conscientious and nurturing personality. They see each other approximately weekly, which is significant given that Mary works long shifts and has a packed schedule. Tony is part of the tight Alberti family unit (parents, Tony, Nonna) that anchors Mary's life."
+      },
+      "personality_mini_profile": {
+        "key_traits": [
+          "Currently a student — 'busy with school and his own stuff' (Q2 follow-up), suggesting he has his own life and priorities",
+          "Younger sibling who Mary feels protective of — 'I try to help him when I can'",
+          "Independent enough that Mary doesn't describe him as needy, but young enough to need guidance",
+          "Part of the family Sunday dinner tradition"
+        ],
+        "inferred_OCEAN": {
+          "conscientiousness": "Moderate — attending community college shows some direction, but Mary's desire to 'help him' suggests he may still be finding his footing",
+          "extraversion": "Not enough data to assess from interview",
+          "agreeableness": "Not enough data — his role in the interview is mainly as someone Mary cares about",
+          "openness": "Not enough data",
+          "neuroticism": "Not enough data"
+        },
+        "communication_style": "Not directly described in the interview. As a community college-age younger brother, he likely texts in a casual, abbreviated style. Mary probably initiates more than Tony does, consistent with her protective older-sister role. Their interactions seem to be more in-person (weekly visits) than text-heavy."
+      },
+      "shared_activities": [
+        "Family Sunday dinners — part of the regular Alberti family gathering (Q1 follow-up)",
+        "Weekly visits — Mary sees Tony 'maybe once a week' (Q2 follow-up)",
+        "Mary helping Tony — 'I try to help him when I can' (Q2), possibly with school, life logistics, or advice"
+      ],
+      "communication_frequency": "Mary sees Tony 'maybe once a week' (Q2 follow-up). He's 'busy with school and his own stuff' (Q2 follow-up), suggesting their contact is regular but not daily. Sunday family dinners are a likely shared touchpoint. Texting frequency not described.",
+      "recent_text_topics": [
+        "School — community college coursework, schedule, how things are going",
+        "Sunday dinner plans — whether Tony is coming, coordinating with family",
+        "General check-ins from Mary as the older sister",
+        "Possibly Packers/Brewers — sports are a family bonding topic (Dad watches Packers on Sundays, Cousin Marco texts about Brewers)"
+      ],
+      "evidence_from_interview": [
+        "Q2: 'I have a younger brother, Tony, who's in community college right now. I try to help him when I can.'",
+        "Q2 follow-up: 'Tony I see maybe once a week — he's busy with school and his own stuff.'",
+        "Q3: 'It's a small crew — just my parents, Tony, and my nonna.'"
+      ]
+    }
+  ],
+  "other_people_mentioned": [
+    {
+      "name": "Dad (Frank Alberti — first name not stated in interview)",
+      "relationship": "Father",
+      "why_not_top_5": "Mary describes her father as 'the quiet type' who she 'mostly sees on Sundays' (Q2 follow-up). While clearly important and a source of her discipline ('he works at a machine shop and he's never missed a day' — Q2), the contact frequency is lower than the top 5, and Mary provides less emotional detail about their relationship compared to Mom, Dana, Jess, Nonna, and Tony.",
+      "key_details": "Works at a machine shop. Never missed a day of work. Quiet type. Grills bratwurst at Sunday dinner. Watches Packers with the family on Sundays.",
+      "evidence": [
+        "Q2: 'My dad's great too — he's more the quiet type, but he's always been steady. He works at a machine shop and he's never missed a day. I think I got my discipline from him.'",
+        "Q2 follow-up: 'My dad I mostly see on Sundays.'",
+        "Q1 follow-up: 'sometimes bratwurst if my dad's grilling — he went full Wisconsin on us'",
+        "Q1 follow-up: 'If the Packers are on, my dad has the TV going the whole time. We'll yell at the screen together.'"
+      ]
+    },
+    {
+      "name": "Marcus",
+      "relationship": "Farmers market cheese vendor — community acquaintance",
+      "why_not_top_5": "Mary explicitly says 'I wouldn't say we're close friends exactly' (Q4). He's a valued community connection but not in her inner circle.",
+      "key_details": "Runs a cheese stall at the farmers market. Saves Mary the good curds. They talk for about 20 minutes every Saturday.",
+      "evidence": [
+        "Q4: 'There's also this guy Marcus at the farmers market who runs a cheese stall. I wouldn't say we're close friends exactly, but he always saves me the good curds and we talk for like twenty minutes every Saturday. It's one of those community connections that makes Madison feel like home.'"
+      ]
+    },
+    {
+      "name": "Kaylee",
+      "relationship": "Former coworker — strained/dead relationship (conflict)",
+      "why_not_top_5": "Active conflict. 'We don't really talk anymore.' (Q4 follow-up)",
+      "key_details": "Was promoted to shift supervisor over Mary despite Mary having more seniority. Started micromanaging Mary. Relationship died without a blowup.",
+      "evidence": [
+        "Q4 follow-up: 'There was this girl, Kaylee, who I used to work with. We were pretty tight for a while, but she got promoted to shift supervisor over me even though I'd been there longer. It got awkward. I don't think she handled it great — she started micromanaging me, and I'm not someone who responds well to that. We don't really talk anymore. No big blowup, it just kind of died.'"
+      ]
+    },
+    {
+      "name": "Cousin Marco",
+      "relationship": "Cousin in Milwaukee",
+      "why_not_top_5": "Very low contact. 'We text sometimes, mostly about the Brewers.' (Q3 follow-up)",
+      "key_details": "Around Mary's age. Lives in Milwaukee. Bigger Brewers fan than Mary.",
+      "evidence": [
+        "Q3 follow-up: 'My cousin Marco is around my age and we text sometimes, mostly about the Brewers. He's a bigger fan than I am, honestly.'"
+      ]
+    },
+    {
+      "name": "Aunt Rosa",
+      "relationship": "Mother's sister, lives in Milwaukee",
+      "why_not_top_5": "Seen only at holidays. Described briefly. Not a close day-to-day relationship.",
+      "key_details": "Mom's sister. Lives in Milwaukee. 'She's the loud one at every gathering.' (Q3)",
+      "evidence": [
+        "Q3: 'My aunt Rosa is there too, my mom's sister. She's the loud one at every gathering.'"
+      ]
+    }
+  ],
+  "network_notes": {
+    "cross_connections": [
+      "Mom, Dad, Tony, and Nonna are all part of the Alberti family Sunday dinner tradition",
+      "Jess and Mary go to Brewers games together, and Cousin Marco texts Mary about the Brewers — but no connection between Jess and Marco is described",
+      "Dana and Jess are both close to Mary but in completely separate spheres (running club vs. work) — no interaction between them is described",
+      "Mom and Nonna are mother-daughter (or mother-in-law); the Italian cooking tradition flows Nonna → Mom → Mary",
+      "Mom and Mary share shellfish sensitivity, creating a specific health-awareness bond"
+    ],
+    "interview_gaps": [
+      "Mom's first name is never stated — 'Lucia' was generated as a plausible Italian-American name",
+      "Dana's last name, occupation, and most demographics are not provided",
+      "Jess's last name and most demographics are not provided",
+      "Nonna's given first name is never stated",
+      "Tony's exact age is not stated, only that he is younger than Mary and in community college",
+      "It is unclear whether Nonna is maternal or paternal grandmother — Mary says 'my grandparents came over from Calabria' (Q1) and 'my mom's side is all Madison' (Q1), which could mean Nonna is paternal (Calabrian immigrant side) while Mom's side is established in Madison. However, Aunt Rosa is 'my mom's sister' (Q3), and Mom maintains the Italian cooking tradition from Nonna, so Nonna could be maternal. The interview is ambiguous on this point.",
+      "Mary's living situation (alone, with family, with a roommate) is never described in the interview"
+    ],
+    "madison_wi_grounding": [
+      "Running: Lake Mendota with Madison Runners Club (MWF mornings, 3-5 miles)",
+      "Farmers market: every Saturday (Marcus's cheese stall)",
+      "Fast food restaurant: unspecified chain, Mary's workplace for 5 years",
+      "Church: Catholic parish (unspecified name), Mass on Sundays",
+      "Craft-brew tastings: downtown Madison, Tuesdays/Thursdays",
+      "Indie theater: Wes Anderson double feature (Q11)",
+      "Travel: Door County, WI (weekend getaways with Dana)",
+      "Sports: Packers (watch at home Sundays), Brewers (sometimes drive to Milwaukee with Jess)"
+    ]
+  }
+}
