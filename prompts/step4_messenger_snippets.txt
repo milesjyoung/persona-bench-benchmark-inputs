@@ -1,0 +1,86 @@
+SYSTEM:
+
+You are generating realistic text message conversation snippets between
+Mary Alberti and one of her closest circle members. Each snippet should
+be 2-6 turns and should IMPLICITLY reveal one of Mary's preferences or
+hidden facts through natural conversation — never stating it directly.
+
+MARY'S FULL PERSONA:
+{step2_enriched_persona}
+
+CONVERSATION PARTNER:
+{circle_member_full_profile from Step 3}
+
+MARY'S PREFERENCES/FACTS TO EMBED (pick 1-2 per snippet):
+{list_of_preferences_and_hidden_facts}
+
+GENERATION RULES:
+
+1. IMPLICIT REVELATION ONLY
+   The preference must emerge naturally from context, NOT be stated.
+   GOOD: Mary: "Can we do somewhere other than Red Lobster? Last time I
+       had a bad reaction and I really don't want to risk it"
+   BAD: Mary: "I can't go there because I'm allergic to shellfish"
+
+   GOOD: Mary: "Omg the Packers game yesterday!! Did you see that
+       fourth quarter comeback??"
+   BAD: Mary: "As a Packers fan, I enjoyed the game"
+
+2. VOICE CONSISTENCY
+   - Mary (28, HS education, food service, Midwestern): Uses casual
+     texting language, occasional "lol" and "omg," avoids academic
+     vocabulary, Midwestern politeness ("oh for sure," "you betcha")
+   - Each circle member has THEIR OWN voice based on their mini-profile
+   - Texts between close friends are different from texts with mom
+     (more slang with friends, more respectful with mom)
+
+3. CONVERSATION MUST FEEL REAL
+   - Include small talk, emoji, reactions, topic changes
+   - Reference shared experiences and inside jokes
+   - Include planning logistics (times, places, "you free Saturday?")
+   - Not every message needs to carry a hidden fact — some are just
+     normal conversation that makes the hidden facts blend in
+
+4. TEMPORAL MARKERS
+   - Each snippet should have a rough date (within the past 2-3 months)
+   - Snippets with the same person should show chronological progression
+   - Events referenced should be consistent across all conversations
+
+5. NEEDLE INSERTION STRATEGY (from Sequential-NIAH):
+   For each hidden fact, create a chain of 2-3 messages across
+   DIFFERENT conversations that form a temporal or logical sequence:
+
+   TEMPORAL CHAIN example (health):
+     Feb 3, to Mom: "just got out of the doctor, she wants me to
+       watch my salt intake more"
+     Feb 10, to Jess: "hey do you know any good low-sodium recipes?
+       trying to cook healthier"
+     Feb 22, to Mom: "went back for the follow-up, numbers are better!
+       that low sodium thing is actually working"
+
+   LOGICAL CHAIN example (shellfish allergy):
+     To Jess: "can we not do seafood for girls night? my stomach does
+       NOT agree with that stuff"
+     To Mom: "I'll bring the pasta salad to the fish fry instead of
+       eating the fish this year"
+     To Danny: "one of the customers ordered the shrimp basket and
+       just the SMELL made me feel weird lol"
+
+GENERATE 3-5 CONVERSATION SNIPPETS (2-6 turns each) for Mary and
+this specific circle member. Each snippet should embed 1-2 preferences.
+
+OUTPUT FORMAT:
+{
+  "conversation_partner": "Name",
+  "snippets": [
+    {
+      "date": "2026-01-XX",
+      "embedded_facts": ["fact being implicitly revealed"],
+      "needle_type": "synthetic_temporal | real_temporal | real_logical",
+      "messages": [
+        {"sender": "Mary", "text": "message text", "time": "HH:MM"},
+        {"sender": "Partner", "text": "response", "time": "HH:MM"}
+      ]
+    }
+  ]
+}

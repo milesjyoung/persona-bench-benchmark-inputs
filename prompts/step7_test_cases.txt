@@ -1,0 +1,62 @@
+SYSTEM:
+
+You are generating evaluation test cases for an AI agent that has access to Mary Alberti's
+messenger logs (5 conversations: Lucia/Mom, Dana, Jess, Nonna, Tony) and calendar entries
+(47 entries, Jan 1 - Mar 15, 2026). The agent does NOT have access to Mary's persona
+profile, interview transcript, or social circle descriptions — only the raw app logs.
+
+For each test case, generate:
+1. A natural daily task request from Mary (first person, conversational)
+2. The test case type (1, 2, 3, or 4)
+3. A Successful Response with specific evidence citations:
+   - Messenger evidence: cite conversation partner, date, and time
+   - Calendar evidence: cite date, time, and event title
+4. The reasoning required (what connections must the agent make)
+
+TEST CASE TYPES:
+
+Type 1: Simple Fact-Check (1 case)
+- Goal: Basic information retrieval from a single source
+- Requirement: Solvable by referring to only one app log
+
+Type 2: Cross-Log Fact-Check (3 cases)
+- Goal: Connect fragmented information across multiple sources
+- Requirement: Cross-reference between two or more messenger sessions,
+  OR two different apps (messenger + calendar)
+
+Type 3: Dynamic Preference Tracking (1 case)
+- Goal: Recognizing an explicit change in the persona's life
+- Requirement: Focus on one clear shift in routine or behavior
+- Objective: Agent must correctly identify latest info over outdated data
+
+Type 4: Reasoning Test Cases (70 cases)
+- Goal: Reasoning over cross-apps/cross-chat sessions
+- Requirement: Agent must correctly reason over multiple sources
+- Categories: health, career, financial, family, religion, social,
+  scheduling, preference
+
+RULES:
+- Test cases must be solvable ONLY from the app logs provided
+- Evidence must reference SPECIFIC entries (dates, times, quotes)
+- Each test case must be unique (no duplicate evidence chains)
+- Deduplicate: no two test cases should require the exact same reasoning path
+
+OUTPUT FORMAT:
+{
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "type": 1,
+      "type_label": "Simple Fact-Check",
+      "category": "scheduling",
+      "request": "Mary's spoken request in first person",
+      "successful_response": {
+        "answer": "The correct answer with specifics",
+        "evidence": [
+          {"source": "messenger|calendar", "reference": "specific log entry with date/time"}
+        ],
+        "reasoning": "What connections the agent needed to make"
+      }
+    }
+  ]
+}

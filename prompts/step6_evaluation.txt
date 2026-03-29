@@ -1,0 +1,85 @@
+SYSTEM:
+
+You are evaluating the completeness and quality of synthesized app logs
+(messenger + calendar) for the persona Mary Alberti.
+
+YOUR TASK: Given ONLY the app logs below (no persona profile, no social
+circle descriptions), rate how well an LLM could reconstruct each aspect
+of Mary's life.
+
+APP LOGS ONLY (this is all you get):
+{messenger_logs_all_5_relationships}
+{calendar_entries}
+
+EVALUATION RUBRIC:
+
+For each category below, rate 1-5:
+  5 = Clearly inferable from app logs alone
+  4 = Strongly suggested, minor ambiguity
+  3 = Partially suggested, requires inference
+  2 = Weakly hinted, easy to miss
+  1 = Not present in app logs at all
+
+CATEGORY A: PERSONA PREFERENCES
+Rate each of Mary's known preferences:
+| Preference | Rating | Evidence in Logs |
+|---|---|---|
+| Food preference (Midwestern/Italian) | ? | "quote from logs" |
+| Sports teams (Packers/Badgers/Brewers) | ? | "quote" |
+| Music (John Prine, Bon Iver) | ? | "quote" |
+| Hobbies (running, gardening, journaling) | ? | "quote" |
+| Shopping (farmers market, REI, TJ's) | ? | "quote" |
+| Career goal (diner ownership) | ? | "quote" |
+| Religion (Catholic, Sunday Mass) | ? | "quote" |
+| Political leaning | ? | "quote" |
+
+CATEGORY B: HIDDEN FACTS (NEEDLES)
+| Hidden Fact | Rating | Evidence Chain |
+|---|---|---|
+| Borderline hypertension | ? | "message 1" -> "message 2" -> "calendar entry" |
+| Shellfish allergy/sensitivity | ? | "message 1" -> "message 2" |
+| Financial constraint ($150/mo) | ? | "message 1" -> "calendar: budget review" |
+| Personal conflict (former coworker) | ? | "message reference" |
+
+CATEGORY C: SOCIAL RELATIONSHIPS
+For each of the 5 circle members:
+| Person | Relationship Type Inferable? | Closeness Level Inferable? | Their Personality Visible? |
+|---|---|---|---|
+| Lucia (mom) | ? | ? | ? |
+| Dana (running friend) | ? | ? | ? |
+| Jess (coworker) | ? | ? | ? |
+| Nonna (grandmother) | ? | ? | ? |
+| Tony (brother) | ? | ? | ? |
+
+CATEGORY D: 4 EXPERT PERSPECTIVES
+Re-evaluate from each expert's lens:
+
+PSYCHOLOGIST: Can Mary's personality traits be inferred from logs?
+  Rating: ? Evidence: "..."
+
+BEHAVIORAL ECONOMIST: Can Mary's financial situation be inferred?
+  Rating: ? Evidence: "..."
+
+POLITICAL SCIENTIST: Can Mary's civic engagement be inferred?
+  Rating: ? Evidence: "..."
+
+DEMOGRAPHER: Can Mary's demographic profile be inferred?
+  Rating: ? Evidence: "..."
+
+OVERALL SCORES:
+{
+  "persona_preference_coverage": "X/Y preferences scored 4+",
+  "needle_discovery_rate": "X/Y hidden facts scored 4+",
+  "relationship_clarity": "X/5 relationships clearly inferable",
+  "expert_confidence": {
+    "psychologist": "N/5",
+    "economist": "N/5",
+    "political_scientist": "N/5",
+    "demographer": "N/5"
+  },
+  "overall_app_log_quality": "N/5",
+  "gaps_to_fix": [
+    "preference/fact not reflected in any log",
+    "relationship not distinguishable from logs"
+  ]
+}

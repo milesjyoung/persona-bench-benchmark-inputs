@@ -1,0 +1,77 @@
+SYSTEM:
+
+You are generating realistic calendar entries for Mary Alberti over the
+past 2-3 months (December 2025 — February 2026). These entries should
+reflect her actual life: work schedule, social plans, health appointments,
+hobbies, and recurring commitments.
+
+MARY'S PERSONA (from Step 2):
+{step2_enriched_persona}
+
+SOCIAL CIRCLES (from Step 3):
+{step3_five_people}
+
+GENERATION RULES:
+
+1. WHAT GOES ON A CALENDAR (include):
+   - Work shifts (she works variable schedules in food service)
+   - Social plans with specific people ("Dinner at Mom & Dad's",
+     "Running with Jess", "Packers game at Danny's")
+   - Appointments ("Dr. Chen follow-up", "ServSafe study session")
+   - Special events ("Parish Fish Fry", "Badgers game", "Art walk downtown")
+   - Recurring commitments ("Mass - St. Maria Goretti", "Running club")
+   - One-off plans ("Tony visiting for Packers game", "Craft brew tasting")
+
+2. WHAT DOES NOT GO ON A CALENDAR (exclude):
+   - Routine daily tasks: "breakfast," "shower," "drive to work"
+   - Things everyone does: "sleep," "lunch," "check phone"
+   - Vague intentions: "relax," "free time"
+   These would make the calendar unrealistic — real people only
+   calendar-block things that need scheduling.
+
+3. PREFERENCE MAPPING:
+   Every preference from Mary's profile should appear in at least one
+   calendar entry:
+   - Sports teams → game watch entries (Packers Sundays, Brewers games,
+     Badgers basketball)
+   - Running → recurring "Lake Mendota run" or "Running Club"
+   - Cooking → "Dinner party," "Meal prep Sunday"
+   - Gardening → "Garden center trip," "Seed starting"
+   - Religion → "Mass" recurring Sundays
+   - Health → "Dr. appointment," "BP check" (without naming condition)
+   - Career → "ServSafe study," "Hospitality program info session"
+   - Financial → "Budget review" (she's a bullet journaler)
+
+4. SOCIAL CIRCLE INTEGRATION:
+   - Each of the 5 circle members should appear in at least 2-3
+     calendar entries
+   - Mom: Sunday dinners, special occasions
+   - Jess: Running, girls' nights, shared apartment things
+   - Danny: Work shifts overlap, occasional hangout
+   - Tony: Monthly visits from Milwaukee
+   - Lisa: Running club, occasional coffee
+
+5. NATURALNESS CHECK:
+   - Vary the density: some weeks are busy, some are quiet
+   - Include cancellations or reschedules (real life)
+   - Holiday-specific entries (Christmas, New Year's, Super Bowl)
+   - Weather-dependent adjustments (indoor run vs. Lake Mendota in Jan)
+
+OUTPUT FORMAT:
+{
+  "calendar_entries": [
+    {
+      "date": "2026-01-05",
+      "time": "09:00",
+      "duration_minutes": 60,
+      "title": "Lake Mendota Run w/ Jess & Lisa",
+      "location": "Lake Mendota path",
+      "notes": "3 miles, dress warm",
+      "category": "fitness",
+      "people_involved": ["Jessica Torres", "Lisa Chen"],
+      "preferences_reflected": ["Running", "Madison Runners Club"]
+    }
+  ]
+}
+
+Generate 40-60 entries spanning December 2025 through February 2026.

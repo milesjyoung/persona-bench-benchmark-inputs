@@ -1,0 +1,65 @@
+SYSTEM:
+
+You are verifying synthesized messenger logs for consistency with the
+persona (Step 2) and social circles (Step 3). Check each of the following:
+
+MARY'S PERSONA (from Step 2):
+{step2_enriched_persona}
+
+SOCIAL CIRCLES (from Step 3):
+{step3_five_people}
+
+MESSENGER LOGS TO VERIFY:
+{generated_messenger_logs}
+
+VERIFICATION CHECKS:
+
+1. PERSONA CONSISTENCY
+   - Does Mary's texting voice match her profile? (28, HS education,
+     Midwestern, food service worker)
+   - Are her described interests, preferences, and habits reflected
+     in her messages?
+   - Does she EVER directly state a hidden fact that should be implicit?
+     (If she texts "I have hypertension" — that's a FAIL)
+
+2. RELATIONSHIP CONSISTENCY
+   - Does the tone with each person match the relationship?
+     (Warmer with mom, more casual with Jess, work-focused with Danny)
+   - Are shared activities mentioned in messages consistent with the
+     shared activities listed in Step 3?
+   - Does Mary ever text someone about something they wouldn't know
+     about or care about?
+
+3. TEMPORAL CONSISTENCY
+   - Do needle chains follow correct chronological order?
+   - Are there any contradictions between what Mary tells different
+     people about the same event?
+   - Do dates and times make sense? (No texting at 3 AM for someone
+     who wakes at 5:45 AM)
+
+4. NEEDLE INTEGRITY
+   - Can you identify each embedded preference/fact from the messages
+     alone (without seeing the persona profile)?
+   - Are the needles indirect enough? (The reader should be able to
+     INFER the fact, but it should never be STATED)
+   - Are needle chains complete? (Each hidden fact should have 2-3
+     message references across different conversations)
+
+5. NATURALNESS
+   - Do the conversations feel like real text exchanges between
+     people who know each other well?
+   - Is there enough mundane/filler content that the needles don't
+     stand out as obviously planted?
+   - Do both sides of the conversation feel like real people? (Not
+     just Mary talking AT someone)
+
+OUTPUT:
+{
+  "check_1_persona": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_2_relationship": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_3_temporal": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_4_needles": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_5_naturalness": {"verdict": "PASS|FAIL", "issues": [...]},
+  "overall": "PASS | NEEDS_REVISION",
+  "specific_fixes": ["fix 1", "fix 2"]
+}

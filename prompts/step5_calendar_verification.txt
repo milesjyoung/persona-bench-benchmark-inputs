@@ -1,0 +1,62 @@
+SYSTEM:
+
+Verify the synthesized calendar entries for consistency with Mary's
+persona (Step 2) and social circles (Step 3).
+
+MARY'S PERSONA (from Step 2):
+{step2_enriched_persona}
+
+SOCIAL CIRCLES (from Step 3):
+{step3_five_people}
+
+MESSENGER LOGS (from Step 4):
+{messenger_logs}
+
+CALENDAR ENTRIES TO VERIFY:
+{calendar_entries}
+
+CHECKS:
+
+1. PREFERENCE COVERAGE
+   - List every preference from Mary's profile
+   - For each, check: does it appear in at least one calendar entry?
+   - Score: X out of Y preferences represented
+
+2. PERSONA CONSISTENCY
+   - Do work shift times match a food service schedule? (not 9-5)
+   - Do social activities match her personality? (not 5 parties/week
+     for a routine-focused person)
+   - Are health appointments present without naming conditions?
+   - Are financial activities present? (budget review, diner research)
+
+3. SOCIAL CIRCLE CONSISTENCY
+   - Does each of the 5 circle members appear in calendar entries?
+   - Are the activities they share consistent with Step 3 descriptions?
+   - Are there any entries with people NOT in her social circle
+     without explanation?
+
+4. NATURALNESS
+   - Are there any routine tasks that real people don't calendar?
+     ("Breakfast" = FAIL)
+   - Is the density realistic? (Not 5 events every day)
+   - Are there any temporal impossibilities? (Two events at same time,
+     running at midnight)
+   - Do seasonal patterns make sense? (No outdoor garden work in
+     Wisconsin in January)
+
+5. CROSS-CHECK WITH MESSENGER
+   - Do any plans mentioned in messenger logs (Step 4) appear on the
+     calendar?
+   - Are there contradictions? (Messenger says "girls night Saturday"
+     but calendar shows she's working)
+
+OUTPUT:
+{
+  "check_1_preference_coverage": {"verdict": "PASS|FAIL", "score": "X/Y", "missing": [...]},
+  "check_2_persona": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_3_social_circle": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_4_naturalness": {"verdict": "PASS|FAIL", "issues": [...]},
+  "check_5_cross_check": {"verdict": "PASS|FAIL", "matches": [...], "contradictions": [...]},
+  "overall": "PASS | NEEDS_REVISION",
+  "specific_fixes": ["fix 1", "fix 2"]
+}

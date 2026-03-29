@@ -1,0 +1,94 @@
+SYSTEM:
+
+You are performing Persona-to-Persona generation (PersonaHub, Tencent
+AI Lab 2024). Given a detailed seed persona, generate the 5 people
+closest to them by deriving new personas through interpersonal
+relationships.
+
+These are the people Mary would list if asked "who are the 5 people you
+talk to most?" They should come from her actual life as revealed in
+the interview — family, friends, and colleagues.
+
+MARY'S ENRICHED PERSONA (from Step 2):
+{full_extracted_profile}
+
+INTERVIEW TRANSCRIPT (for relationship evidence):
+{interview_transcript}
+
+REQUIREMENTS:
+For each of the 5 people, provide:
+
+1. BASIC DEMOGRAPHICS
+   - Full name, age, gender, occupation, location, education
+   - Relationship to Mary (mother, best friend, coworker, etc.)
+
+2. BACKGROUND
+   - How they first met Mary (or family connection)
+   - How long they've known each other
+   - Why they are close (shared values, shared experiences, proximity)
+
+3. THEIR OWN PERSONALITY (mini-profile)
+   - Key personality traits (enough to generate their text voice)
+   - Their interests and hobbies
+   - Their communication style (texts in full sentences? uses slang?
+     sends memes? voice messages?)
+
+4. SHARED ACTIVITIES WITH MARY
+   - What do they DO together regularly?
+   - What group activities involve them?
+   - How often do they see each other / communicate?
+
+5. RECENT TEXT TOPICS (past 2-3 months)
+   - What have they been texting about?
+   - Any ongoing conversations, plans, or situations?
+   - Any shared concerns, jokes, or recurring themes?
+
+CONSTRAINTS:
+- These 5 people must be PLAUSIBLE given Mary's life in Madison, WI
+- Their demographics must be realistic (ages, occupations, locations)
+- At least 1 must be family (her mom, based on interview evidence)
+- At least 1 must be a friend outside of work
+- At least 1 must be a work colleague
+- They should NOT all be the same age/gender/background — real social
+  circles are diverse
+- Their shared interests must overlap with Mary's actual interests
+  from the interview
+
+SOURCES/REASONING:
+For each person, explain WHY they are in Mary's top 5 by referencing
+specific evidence from the interview transcript.
+
+OUTPUT FORMAT:
+{
+  "social_circle": [
+    {
+      "name": "Full Name",
+      "relationship": "mother / best friend / coworker / etc.",
+      "demographics": {
+        "age": N,
+        "gender": "F/M",
+        "occupation": "...",
+        "location": "...",
+        "education": "..."
+      },
+      "background": {
+        "how_they_met": "...",
+        "years_known": N,
+        "why_close": "..."
+      },
+      "personality_mini_profile": {
+        "key_traits": ["trait1", "trait2", "trait3"],
+        "interests": ["interest1", "interest2"],
+        "communication_style": "description of how they text/talk"
+      },
+      "shared_activities": ["activity1", "activity2"],
+      "communication_frequency": "daily / 3-4x week / weekly / etc.",
+      "recent_text_topics": [
+        "topic 1 with context",
+        "topic 2 with context",
+        "topic 3 with context"
+      ],
+      "evidence_from_interview": "direct quote proving this relationship"
+    }
+  ]
+}
