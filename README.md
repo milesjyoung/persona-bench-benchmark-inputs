@@ -20,19 +20,14 @@ We ran the pipeline on the **first 5 personas** from the NVIDIA dataset:
 | 4 | Maria Buendia | 34 | Lilburn, GA | 9th-12th no diploma | No occupation |
 | 5 | Julio Simmons | 49 | Rochester, NY | Graduate | Not in workforce |
 
-## Pipeline
+## Pipeline Steps
 
-```
-Step 1: Seed Data (NVIDIA Nemotron-Personas-USA, HuggingFace)
-  ↓
-Step 2: Full 109-Question Interview (Park et al. 2024, Table 7)
-  ↓       → interview transcript + extracted_profile
-Step 2b: 4-Expert Verification (Demographer, Behavioral Economist,
-  ↓       Political Scientist, Psychologist)
-  ↓       → verification observations + expert summaries
-Step 3: Social Circles (PersonaHub Persona-to-Persona, Ge et al. 2024)
-          → 5 closest people per persona
-```
+| Step | Input | Prompt | Output | Output File |
+|------|-------|--------|--------|-------------|
+| **1. Seed Data** | NVIDIA Nemotron-Personas-USA dataset (HuggingFace, first 5 rows) | Python script using `datasets` library | Raw persona JSON with 20+ demographic and narrative fields (age, sex, education, occupation, location, professional/sports/arts/travel/culinary/core personas, cultural background, skills, hobbies, career goals) | `data/step1_seed/{name}_seed.json` |
+| **2. Interview** | Seed JSON from Step 1 + 109 questions from `data/interview_questions_table7.json` | `prompts/step2_interview_full.txt` | (1) Full interview transcript with 109 Q&A pairs and 60-90 follow-ups. (2) Extracted profile containing: demographics header, 15 preference domains (each with summary, behavioral details, and Q## evidence citations), 4 expert summaries (free-text paragraphs), and 6 others/misc subcategories | `data/step2_interview/{name}_interview.json` |
+| **2b. Verification** | Seed JSON from Step 1 + Interview JSON from Step 2 | `prompts/step2b_expert_verification.txt` | 4-expert panel review (Demographer, Behavioral Economist, Political Scientist, Psychologist) with 30-40 observations per persona classified as CONSISTENT/INCONSISTENT/GAP, inconsistency resolutions, gap dispositions, updated expert summaries with Q## citations, and preference corrections | `data/step2b_verification/{name}_verification.json` |
+| **3. Social Circles** | Extracted profile + expert summaries from Steps 2/2b + interview transcript | `prompts/step3_social_circles.txt` | 5 closest people to the persona, each with: demographics (name, age, gender, occupation, location, education), relationship background, personality mini-profile (traits, interests, communication style), shared activities, communication frequency, recent text topics, and Q## interview evidence | `data/step3_social_circles/{name}_social_circles.json` |
 
 ## Repository Structure
 
