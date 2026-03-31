@@ -1,661 +1,849 @@
 {
-  "verification_metadata": {
+  "verification": {
+    "metadata": {
+      "participant_id": "e7c0574639a244c8972c92aab9501035",
+      "name": "Mary Alberti",
+      "verification_date": "2026-03-31",
+      "protocol": "4-direction expert panel verification (Demographer, Behavioral Economist, Political Scientist, Psychologist)",
+      "model": "Claude Opus 4.6 (1M context)",
+      "seed_source": "data/step1_seed/mary_alberti_seed.json",
+      "interview_source": "data/step2_interview/mary_alberti_interview.json"
+    },
+
+    "direction_1_seed_vs_interview": {
+      "description": "Seed data compared against interview transcript for consistency, enrichment, and contradiction.",
+      "demographer": [
+        {
+          "id": "D1-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Seed states age 28, female, never married, Madison WI 53717, high school education, fast food/counter worker. Interview confirms all of these identically (Q84, Q85, Q87, Q89, Q90, Q08)."
+        },
+        {
+          "id": "D1-DEM-02",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'second-generation Italian-American raised in Madison, Wisconsin.' Interview enriches: paternal grandparents came from a town south of Naples; maternal family is longstanding Wisconsin (Q01, Q28, Q89)."
+        },
+        {
+          "id": "D1-DEM-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'modest, Catholic, Midwestern upbringing.' Interview specifies St. Maria Goretti parish, family attendance since grandparents' generation, nonna was 'very devout' (Q47, Q94)."
+        },
+        {
+          "id": "D1-DEM-04",
+          "finding": "ENRICHED",
+          "detail": "Seed states parents with no detail. Interview provides: father Tony (63, retired machinist, chronic back injury), mother Linda (61, part-time bookkeeper at dental office), brother Marco (25, HVAC tech in Milwaukee) (Q05, Q100-Q107)."
+        },
+        {
+          "id": "D1-DEM-05",
+          "finding": "CONSISTENT",
+          "detail": "Seed gives DOB-implied age of 28. Interview gives DOB July 14, 1997, and explicitly states 'I'm twenty-eight now' (Q01, Q85). Consistent."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D1-BEH-01",
+          "finding": "ENRICHED",
+          "detail": "Seed describes 'habit of double-checking every receipt for hidden costs.' Interview traces this to dad's back injury period: 'I remember checking every receipt and cutting coupons -- that's actually where I got the habit' (Q02 follow-up). Provides causal origin story."
+        },
+        {
+          "id": "D1-BEH-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'saving for a future diner venture.' Interview quantifies: diner fund at $1,200, emergency fund at ~$600, credit card debt of $800, take-home ~$1,900/month. Provides full financial picture (Q56, Q57, Q61, Q63, Q72, Q82)."
+        },
+        {
+          "id": "D1-BEH-03",
+          "finding": "CONSISTENT",
+          "detail": "Seed states 'plans to enroll in community college hospitality program and obtain ServSafe manager certification.' Interview confirms both goals and adds detail about researching Madison College courses online (Q01 follow-up, Q18, Q91, Q108)."
+        },
+        {
+          "id": "D1-BEH-04",
+          "finding": "ENRICHED",
+          "detail": "Seed calls Mary 'routine-obsessed, bullet-journal aficionado.' Interview provides extensive detail: color-coded system (blue=work, green=personal, red=money), daily 20-minute ritual, 4+ years, full shelf of filled journals, tracks running miles, spending, garden tasks, meal plans (Q03, Q15, Q17, Q56)."
+        },
+        {
+          "id": "D1-BEH-05",
+          "finding": "MINOR GAP",
+          "detail": "Seed mentions 'occasional craft-brew indulgence' in persona. Interview confirms craft brewery tastings with Jess, 2-3 drinks/week max, tracks spending on it in journal (Q07, Q38). No contradiction, but seed understates regularity -- it is a consistent social ritual, not merely 'occasional.'"
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D1-POL-01",
+          "finding": "NO SEED DATA",
+          "detail": "Seed contains no political information. Interview provides rich political detail: votes in presidential elections, leans center-left on pocketbook issues, avoids partisan identification, reads NPR occasionally, relies on Jess for political information (Q23-Q30, Q95-Q96)."
+        },
+        {
+          "id": "D1-POL-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'Catholic Midwestern upbringing.' Interview shows religion is maintained through church attendance but does not drive political views -- Mary's civic orientation is pragmatic/economic rather than faith-based (Q47, Q95, Q96)."
+        },
+        {
+          "id": "D1-POL-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions no civic engagement. Interview reveals: votes in presidential elections, sometimes misses local elections due to work schedule, early votes when possible, participates in community garden, Madison Runners Club member, attends church (Q23, Q08, Q07, Q47)."
+        },
+        {
+          "id": "D1-POL-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions no racial or social justice engagement. Interview reveals empathy-from-exposure pattern: conversations with coworker DeShawn shifted awareness, reads articles Jess sends, pushes back on ignorant comments at work quietly (Q26-Q30)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D1-PSY-01",
+          "finding": "ENRICHED",
+          "detail": "Seed persona describes Mary as 'routine-obsessed' and 'disciplined.' Interview reveals underlying behavioral patterns: anticipatory rumination before decisions (lying awake running scenarios, 1-2x/month since high school), need for control through systems (Q03, Q31, Q45). The routines serve as self-regulation mechanisms."
+        },
+        {
+          "id": "D1-PSY-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'competitive edge.' Interview contextualizes: competitive with self rather than others (tracking miles, hitting performance targets, Sudoku for mental challenge), motivated by competence demonstration rather than social competition (Q15, Q16, Q65)."
+        },
+        {
+          "id": "D1-PSY-03",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'calmly resolve high-pressure customer issues.' Interview provides behavioral coping mechanism: 'I just take a breath and fix it. Getting upset doesn't help anything' -- consistent pattern of emotion regulation through action (Q16 follow-up, Q44, Q34)."
+        },
+        {
+          "id": "D1-PSY-04",
+          "finding": "NEW FINDING",
+          "detail": "Seed does not mention seasonal mood patterns. Interview reveals pronounced winter energy dips (late Jan-early Feb), reduced motivation, flattened engagement, bounces back with spring/outdoor activity (Q43, Q50). This is a significant behavioral pattern not captured in seed data."
+        },
+        {
+          "id": "D1-PSY-05",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions general self-help reading. Interview reveals this serves identity maintenance: picks up specific techniques (e.g., 'one good thing' gratitude entry) and integrates them into journal system, reflecting a pattern of structured self-improvement (Q50)."
+        },
+        {
+          "id": "D1-PSY-06",
+          "finding": "MINOR GAP",
+          "detail": "Seed arts_persona mentions 'attending local art walks and museum exhibits.' Interview provides no direct evidence of this behavior -- only Wes Anderson films and music are mentioned. This is flagged as an unresolved item in the existing extracted profile's others_misc section. The behavior may exist but was not elicited."
+        }
+      ]
+    },
+
+    "direction_2_interview_vs_extracted_profile": {
+      "description": "Interview transcript compared against extracted_profile for accuracy, omissions, and misrepresentations.",
+      "demographer": [
+        {
+          "id": "D2-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile header demographics (age 28, female, never_married, Madison WI 53717, high school diploma, fast food crew member) all match interview exactly (Q84-Q90, Q08, Q16)."
+        },
+        {
+          "id": "D2-DEM-02",
+          "finding": "CONSISTENT",
+          "detail": "Profile demographer summary correctly places Mary's annual household income at $23,000-$25,000 gross. Interview states take-home ~$1,900/month (Q72) and pre-deduction ~$2,200-$2,300/month (Q72), which yields $26,400-$27,600 gross annually. The profile estimate is slightly low but within reasonable range."
+        },
+        {
+          "id": "D2-DEM-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not record Mary's date of birth (July 14, 1997) from Q85. Should be included for completeness."
+        },
+        {
+          "id": "D2-DEM-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not record Mary's race/ethnicity explicitly in the header. Interview states 'White. Italian-American' (Q89). Should be in demographics."
+        },
+        {
+          "id": "D2-DEM-05",
+          "finding": "OMISSION",
+          "detail": "Profile demographer summary mentions mother's associate's degree but does not note father's education level (high school, Q100). Minor but should be recorded for completeness."
+        },
+        {
+          "id": "D2-DEM-06",
+          "finding": "CORRECTION NEEDED",
+          "detail": "Profile demographer summary states 'annual household income of approximately $23,000-$25,000 gross.' Actual calculation from interview: pre-deduction $2,200-$2,300/month x 12 = $26,400-$27,600 gross (Q72). Should be corrected to ~$26,000-$28,000."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D2-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures bullet-journal commitment device, loss aversion around emergency/diner funds, future-oriented time preferences, cost-minimization behaviors. All match interview evidence."
+        },
+        {
+          "id": "D2-BEH-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the tax refund ($300-$400) as a behavioral savings mechanism -- Mary directs it to the diner fund (Q75). This is a notable budgeting strategy."
+        },
+        {
+          "id": "D2-BEH-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the automatic savings transfer from direct deposit (Q73). This is a commitment device consistent with the behavioral economist's analysis."
+        },
+        {
+          "id": "D2-BEH-04",
+          "finding": "CONSISTENT",
+          "detail": "Profile correctly identifies identity utility tied to competence and self-reliance as barrier to government assistance (Q80). Interview confirms: 'I feel like those programs are for people who are worse off than me.'"
+        },
+        {
+          "id": "D2-BEH-05",
+          "finding": "OMISSION",
+          "detail": "Profile work_and_career section lists financial details but does not capture the credit card payoff target (zero by August) from Q63 follow-up. This is a concrete budgeting commitment."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D2-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures low-engagement, economically motivated voting pattern, center-left lean on pocketbook issues, avoidance of partisan identity. Matches Q23-Q25, Q95-Q96."
+        },
+        {
+          "id": "D2-POL-02",
+          "finding": "OMISSION",
+          "detail": "Profile community_and_civic section does not mention Mary's specific policy interests: minimum wage, healthcare costs, tipped wages and fast food worker protections (Q23 follow-up, Q24, Q25 follow-up). These are her primary political motivators."
+        },
+        {
+          "id": "D2-POL-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Mary's specific information sources for political decisions: NPR, local news accounts online, Jess as political information intermediary (Q23 follow-up, Q48). This is partially in media_and_information_diet but not connected to civic behavior."
+        },
+        {
+          "id": "D2-POL-04",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures empathy-from-exposure pattern on racial issues through coworker interactions (Q26-Q30) and internal processing style."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D2-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile psychologist summary accurately captures high conscientiousness, moderate introversion, anticipatory rumination, seasonal mood dips, and self-regulation through exercise/journaling/cooking. Matches Q03, Q31, Q43, Q44, Q45."
+        },
+        {
+          "id": "D2-PSY-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Mary's specific emotional processing pattern after the breakup: physical activity first (running at night), then tactile activity (cooking pasta while crying), then structured recovery (batch cooking, work focus) (Q44). This is a distinctive three-phase coping sequence."
+        },
+        {
+          "id": "D2-PSY-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Mary's comparison-to-peers pattern: 'I'll start comparing myself to people from high school who went to college and have real careers' (Q45 follow-up). This is a significant source of distress that she actively counters."
+        },
+        {
+          "id": "D2-PSY-04",
+          "finding": "CONSISTENT",
+          "detail": "Profile correctly identifies mild avoidance patterns around professional help intersecting financial constraints with identity-based resistance. Matches Q32, Q36, Q45 follow-up where Jess suggests sliding-scale therapy and Mary resists."
+        },
+        {
+          "id": "D2-PSY-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Mary's narrative identity link between father's physical deterioration and her own career motivation: 'He's a cautionary tale... I just don't want to end up where he is' (Q35 follow-up). This is a key motivational driver."
+        },
+        {
+          "id": "D2-PSY-06",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Mary's fear of stagnation as her primary anxiety: 'That I'll still be in the same place ten years from now... I'm afraid of hard work that doesn't lead anywhere' (Q108 follow-up). This is the central existential concern."
+        }
+      ]
+    },
+
+    "direction_3_profile_internal_consistency": {
+      "description": "Extracted profile checked for internal contradictions, logical inconsistencies, and cross-section coherence.",
+      "demographer": [
+        {
+          "id": "D3-DEM-01",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile demographer summary states annual income of '$23,000-$25,000 gross' but the work_and_career section states take-home of ~$1,900/month and pre-deduction of $2,200-$2,300/month (from Q72), which would yield $26,400-$27,600 gross. The summary understates income by ~$2,000-$3,000."
+        },
+        {
+          "id": "D3-DEM-02",
+          "finding": "CONSISTENT",
+          "detail": "All demographic fields in the header are internally consistent with the body of the profile. Age, location, education, occupation, and marital status are referenced consistently across all 15 preference categories and 4 summaries."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D3-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Financial figures across sections are internally consistent: rent $900, groceries $250-$300, car costs $200, insurance $120, utilities $70-$80, phone $50 = ~$1,590-$1,650 in fixed costs against $1,900 take-home, leaving $250-$310 for variable expenses and savings. Matches the 'hundred to two hundred for savings' stated in Q57."
+        },
+        {
+          "id": "D3-BEH-02",
+          "finding": "CONSISTENT",
+          "detail": "Behavioral patterns are internally coherent: loss aversion (emergency fund anxiety), present-bias mitigation (journal system), cost-minimization (receipt-checking, coupon use, cheap meals), identity-based resistance to assistance -- all form a unified behavioral profile."
+        },
+        {
+          "id": "D3-BEH-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile describes craft beer as 'small identity-affirming expenditures she carefully budgets' in the behavioral economist summary, but the hobbies section says 'approximately weekly when budget allows.' These are not contradictory but the framing differs -- one emphasizes the identity function, the other the frequency constraint. Both are accurate."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D3-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile's political characterization ('low-engagement, economically motivated voter') is consistent with the civic participation details (votes in presidential elections, misses some local ones, no rallies/protests, processes internally)."
+        },
+        {
+          "id": "D3-POL-02",
+          "finding": "CONSISTENT",
+          "detail": "The community_and_civic section and political_scientist summary are mutually reinforcing: both describe quiet participation, internal processing, and practical rather than ideological motivation."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D3-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Psychological profile is internally coherent: high conscientiousness drives the journaling, planning, and organizational systems; moderate introversion explains the small social circle and internal processing; the self-regulation mechanisms (running, cooking, journaling) are consistently described across multiple preference categories."
+        },
+        {
+          "id": "D3-PSY-02",
+          "finding": "CONSISTENT",
+          "detail": "The health_and_wellness section's mention of lying awake before decisions (1-2x/month) is consistent with the psychologist summary's 'anticipatory rumination' and the emotional well-being data from Q45. Cross-references are accurate."
+        },
+        {
+          "id": "D3-PSY-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile psychologist summary says 'moderate-low openness' and notes she 'gravitates toward routine, familiarity, and practical knowledge over novelty-seeking.' However, the same summary acknowledges she 'appreciates indie music and Wes Anderson films,' and interview reveals she tries new craft breweries, researches new recipes, reads self-help for new techniques. Openness may be better characterized as 'moderate' -- she seeks novelty within structured, familiar frameworks."
+        }
+      ]
+    },
+
+    "direction_4_completeness": {
+      "description": "Profile checked against full 109-question transcript for missing information that should be captured.",
+      "demographer": [
+        {
+          "id": "D4-DEM-01",
+          "finding": "GAP",
+          "detail": "Date of birth (July 14, 1997) from Q85 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-02",
+          "finding": "GAP",
+          "detail": "Race/ethnicity ('White, Italian-American') from Q89 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-03",
+          "finding": "GAP",
+          "detail": "Birth city and hospital (Madison, Wisconsin, St. Mary's Hospital) from Q87 not in profile."
+        },
+        {
+          "id": "D4-DEM-04",
+          "finding": "GAP",
+          "detail": "Religion (Catholic, attends St. Maria Goretti) from Q94 not in profile header -- only in preference sections and summaries."
+        },
+        {
+          "id": "D4-DEM-05",
+          "finding": "GAP",
+          "detail": "Not Hispanic/Latinx (Q88) confirmation not recorded."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D4-BEH-01",
+          "finding": "GAP",
+          "detail": "Tax refund as savings mechanism ($300-$400 directed to diner fund) from Q75 not captured in financial profile."
+        },
+        {
+          "id": "D4-BEH-02",
+          "finding": "GAP",
+          "detail": "Automatic savings transfer from direct deposit (Q73) not captured as a commitment device."
+        },
+        {
+          "id": "D4-BEH-03",
+          "finding": "GAP",
+          "detail": "Credit card payoff target (zero by August, $50/month payments) from Q63 not captured as a concrete goal."
+        },
+        {
+          "id": "D4-BEH-04",
+          "finding": "GAP",
+          "detail": "Garden season costs (~$50 for season for soil/seeds/plant food, plus $40 plot rental) from Q59 and Q08 follow-up not captured in budget detail."
+        },
+        {
+          "id": "D4-BEH-05",
+          "finding": "GAP",
+          "detail": "Holiday spending pattern (December deficit, recovery by February) from Q59 not captured as a seasonal financial cycle."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D4-POL-01",
+          "finding": "GAP",
+          "detail": "Specific policy priorities (minimum wage, healthcare costs, tipped wages/fast food worker protections) from Q23 follow-up, Q24, Q25 follow-up not listed in community_and_civic preferences."
+        },
+        {
+          "id": "D4-POL-02",
+          "finding": "GAP",
+          "detail": "Mary's father's more conservative/self-reliant political orientation vs. Mary's and Jess's more progressive lean (Q24 follow-up) not captured as intergenerational political dynamic."
+        },
+        {
+          "id": "D4-POL-03",
+          "finding": "GAP",
+          "detail": "Mary's specific racial awareness evolution (DeShawn's story about walking home from closing shifts, Q26 follow-up) is rich civic/social detail not fully captured."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D4-PSY-01",
+          "finding": "GAP",
+          "detail": "Three-phase emotional coping sequence (physical activity -> tactile/creative activity -> structured recovery) from Q44 not documented as a behavioral pattern."
+        },
+        {
+          "id": "D4-PSY-02",
+          "finding": "GAP",
+          "detail": "Social comparison pattern and active counter-strategy ('I'll start comparing myself to people from high school... then I have to snap out of it and remind myself I've got a plan') from Q45 follow-up not documented."
+        },
+        {
+          "id": "D4-PSY-03",
+          "finding": "GAP",
+          "detail": "Father-as-cautionary-tale motivation ('He's a cautionary tale... I just don't want to end up where he is') from Q35 follow-up not documented as a key motivational driver."
+        },
+        {
+          "id": "D4-PSY-04",
+          "finding": "GAP",
+          "detail": "Central existential fear of stagnation ('That I'll still be in the same place ten years from now... I'm afraid of hard work that doesn't lead anywhere') from Q108 follow-up not documented."
+        },
+        {
+          "id": "D4-PSY-05",
+          "finding": "GAP",
+          "detail": "Stoic work culture norm ('In food service, everybody's dealing with something -- sore feet, tired, hungry. You just push through') from Q34 follow-up not documented as a behavioral norm she internalizes."
+        }
+      ]
+    },
+
+    "expert_summaries": {
+      "demographer": "Mary Alberti is a 28-year-old (DOB July 14, 1997) never-married white female of Italian-American descent, born and raised in Madison, Wisconsin. She holds a high school diploma from East High (2015) and works as a fast food crew member performing de facto shift-lead duties, placing her in the service sector working class with an annual gross household income of approximately $26,000-$28,000. She lives alone in a rented one-bedroom apartment on Madison's west side (ZIP 53717), is not Hispanic/Latinx, and identifies as Catholic, attending St. Maria Goretti parish. She is second-generation Italian-American with paternal grandparents who immigrated from southern Italy (a town south of Naples); her maternal family has deep Wisconsin roots. Her father Tony (63) is a retired machinist with chronic back injury, her mother Linda (61) is a part-time bookkeeper with an associate's degree in accounting, and her brother Marco (25) works in HVAC in Milwaukee. Both parents hold high-school-level education, with Linda holding an additional associate's degree. The family's trajectory -- from immigrant manual labor through skilled manufacturing to service-sector employment, intersected by a disabling occupational injury -- reflects patterns common to blue-collar Midwestern families navigating deindustrialization. Mary is at a pivotal life-course juncture: pre-partnered, still in the parental orbit, and in the early phases of credentialing (planning Madison College hospitality program) that could shift her occupational trajectory from hourly service work to small business ownership.",
+
+      "behavioral_economist": "Mary displays strong present-bias mitigation through her bullet-journal system, which functions as a multi-domain commitment device for budgeting, scheduling, goal-tracking, and emotional regulation. She maintains two distinct savings pools -- an emergency fund (~$600) and a dedicated diner fund (~$1,200) -- and employs automatic savings transfers from direct deposit and channels annual tax refunds ($300-$400) directly to the diner fund (Q73, Q75). She exhibits pronounced loss aversion around fund depletion events, showing visible distress at emergency-fund drawdowns for brake repairs and sick-day income loss (Q60, Q63, Q64). Her time preferences are consistently future-oriented: she defers gratification by skipping social outings, substituting cheap meals (rice/beans, pasta e fagioli), and delaying purchases (running shoes) to maintain savings targets. She has set a concrete credit card payoff target of zero by August at $50/month (Q63). Peer influence operates through a single strong-tie channel (Jess) for both consumption (craft beer tastings) and information (political news, health advice). Her identity utility is heavily tied to competence and self-reliance, creating measurable resistance to government assistance programs despite likely eligibility -- she frames this as 'those programs are for people who are worse off than me' (Q80). She responds to financial constraint through cost-minimization (receipt-checking, coupon use, home cooking from garden produce, negotiating payment plans) rather than income-maximization (she rejected a second job due to burnout risk). Risk aversion is moderate: she declined the Milwaukee transfer despite higher pay, weighting social capital and local knowledge over income gains (Q02). Seasonal financial cycles show a December deficit from holiday spending with recovery by February (Q59). Small identity-affirming expenditures (craft beer, running shoes) are carefully budgeted and tracked in the journal.",
+
+      "political_scientist": "Mary is a low-engagement, economically motivated voter who participates in presidential elections and occasionally in local ones, using early voting when possible to work around her unpredictable shift schedule (Q23). She avoids partisan identification but leans center-left on pocketbook issues -- her primary policy motivators are minimum wage increases, healthcare affordability, and tipped wages/fast food worker protections (Q23 follow-up, Q24, Q25 follow-up). She expresses frustration with political polarization and gravitates toward candidates who 'help regular people who are working hard and still struggling to get ahead' (Q23 follow-up). Her political information diet is narrow: she reads NPR occasionally, follows local Madison news accounts online, and relies heavily on Jess as a political information intermediary (Q23 follow-up, Q48). Civic participation beyond voting is passive: she attends Catholic mass at St. Maria Goretti, participates in a community garden and running club, but does not attend protests, rallies, or political events, processing political and social issues internally and discussing them only with close friends (Q29). Her response to racial justice movements reflects an empathy-from-exposure pattern: direct workplace conversations with her coworker DeShawn about differential policing experiences shifted her awareness, and she will quietly push back on ignorant comments at work, but she has not translated this into public action (Q26-Q30). An intergenerational political dynamic is present: her father Tony holds more conservative, self-reliant views ('tough it out'), her mother Linda is more sympathetic to systemic difficulties, and Mary positions herself in the middle, pragmatic rather than ideological (Q24 follow-up). Institutional trust is low regarding healthcare and workplace protections, moderate regarding electoral participation, and strong regarding vaccination science. Community attachment to Madison is exceptionally strong, serving as both an identity anchor and a constraint on geographic mobility for economic opportunity.",
+
+      "psychologist": "Mary exhibits high conscientiousness expressed through meticulous planning, routine adherence, goal persistence, receipt-tracking, organizational systems, and a four-year bullet-journal practice that functions as her primary self-regulation tool (Q03, Q17). She displays moderate introversion: she prefers one-on-one interactions to group settings, processes emotions internally, maintains a small social circle of one close friend plus family, and dislikes public expression of personal views (Q07, Q29, Q49). Her stress response follows a distinctive three-phase behavioral coping sequence: first physical activity (running, even at night after the breakup), then tactile/creative engagement (cooking, gardening), then structured recovery through journaling and planning (Q44, Q37 follow-up, Q50). Anticipatory rumination manifests before significant decisions as racing thoughts and insomnia (1-2x/month, present since high school), and she experiences pronounced seasonal energy dips in late January-early February with reduced motivation and flattened engagement, recovering reliably with spring and renewed outdoor activity (Q31, Q43, Q45). She actively counters a social comparison pattern -- comparing herself to college-educated high school peers -- by redirecting attention to her own plan and progress (Q45 follow-up). Her self-concept is organized around competence, self-reliance, and delayed gratification, with a narrative identity that links her grandmother's immigrant work ethic ('A poco a poco') to her own aspirations (Q109 follow-up). A key motivational driver is her father's physical deterioration from decades of manual labor, which she explicitly frames as a cautionary parallel to her own situation and a reason to pursue management rather than remaining on the line (Q35 follow-up). Her central existential fear is stagnation: 'That I'll still be in the same place ten years from now... I'm afraid of hard work that doesn't lead anywhere' (Q108 follow-up). She internalizes a stoic workplace norm ('In food service, everybody's dealing with something... You just push through') that reinforces her resistance to seeking professional help, intersecting with financial constraints and identity-based reluctance to be seen as someone who needs external support (Q34 follow-up, Q45 follow-up). Agreeableness is moderate: empathetic and conflict-avoidant in social settings but firm about time boundaries and priorities. Openness is moderate -- she seeks novelty within structured, familiar frameworks (trying new craft breweries and recipes, reading self-help for applicable techniques, appreciating indie music and Wes Anderson films), but gravitates toward routine and practical knowledge over abstract exploration."
+    },
+
+    "inconsistencies_found": [
+      {
+        "id": "INC-01",
+        "source": "D3-DEM-01 / D2-DEM-06",
+        "description": "Demographer summary states annual gross income as $23,000-$25,000 but interview data yields $26,400-$27,600 gross based on $2,200-$2,300/month pre-deduction (Q72).",
+        "severity": "moderate",
+        "resolution": "Corrected to approximately $26,000-$28,000 gross in demographer summary and work_and_career details."
+      },
+      {
+        "id": "INC-02",
+        "source": "D3-PSY-03",
+        "description": "Psychologist summary rates openness as 'moderate-low' but interview evidence shows novelty-seeking within structured frameworks (new breweries, new recipes, self-help techniques). More accurately 'moderate.'",
+        "severity": "minor",
+        "resolution": "Corrected to 'moderate' in psychologist summary with qualification about structured novelty-seeking."
+      },
+      {
+        "id": "INC-03",
+        "source": "D1-BEH-05",
+        "description": "Seed describes craft beer as 'occasional' indulgence, but interview shows it is a regular weekly social ritual with Jess, carefully budgeted.",
+        "severity": "minor",
+        "resolution": "Profile already accurately reflects the weekly pattern. No correction needed in profile; noted for seed-to-interview reconciliation."
+      }
+    ],
+
+    "gaps_addressed": [
+      {
+        "id": "GAP-01",
+        "source": "D4-DEM-01, D4-DEM-02, D4-DEM-03, D4-DEM-04, D4-DEM-05",
+        "description": "Missing demographic header fields: date_of_birth, race_ethnicity, birth_city, religion, hispanic_latinx.",
+        "action": "Added to corrected_extracted_profile demographics header."
+      },
+      {
+        "id": "GAP-02",
+        "source": "D4-BEH-01, D4-BEH-02, D4-BEH-03",
+        "description": "Missing financial mechanisms: tax refund routing to diner fund, automatic savings transfer, credit card payoff target.",
+        "action": "Added to work_and_career details and behavioral_economist summary."
+      },
+      {
+        "id": "GAP-03",
+        "source": "D4-BEH-04, D4-BEH-05",
+        "description": "Missing seasonal financial patterns: garden costs, holiday spending cycle.",
+        "action": "Added to home_and_lifestyle details."
+      },
+      {
+        "id": "GAP-04",
+        "source": "D4-POL-01, D4-POL-02, D4-POL-03",
+        "description": "Missing political detail: specific policy priorities, intergenerational political dynamic, DeShawn anecdote.",
+        "action": "Added to community_and_civic details and political_scientist summary."
+      },
+      {
+        "id": "GAP-05",
+        "source": "D4-PSY-01 through D4-PSY-05",
+        "description": "Missing psychological patterns: three-phase coping sequence, social comparison pattern, father-as-cautionary-tale, stagnation fear, stoic work norm.",
+        "action": "Added to psychologist summary and others_misc behavioral_patterns subcategory."
+      },
+      {
+        "id": "GAP-06",
+        "source": "D2-PSY-02, D2-PSY-03, D2-PSY-05, D2-PSY-06",
+        "description": "Missing emotional/motivational detail from interview that should inform the profile.",
+        "action": "Incorporated into psychologist summary and health_and_wellness details."
+      },
+      {
+        "id": "GAP-07",
+        "source": "D2-DEM-03",
+        "description": "Date of birth from Q85 not in profile.",
+        "action": "Added date_of_birth field to demographics header."
+      }
+    ],
+
+    "overall_verdict": "The existing extracted_profile is substantially accurate and well-structured. No major contradictions were found between the seed data, interview transcript, and extracted profile. The primary issues are: (1) a moderate income estimate error in the demographer summary ($23K-$25K should be $26K-$28K), (2) several demographic fields missing from the header (DOB, race/ethnicity, religion, birth city, Hispanic/Latinx), (3) a number of meaningful behavioral and psychological patterns from the interview not captured in the profile (three-phase coping, social comparison, father-as-cautionary-tale, stagnation fear, stoic work norm), (4) missing financial detail (tax refund routing, auto-save, credit card target, seasonal cycles), and (5) the psychologist's openness rating adjusted from moderate-low to moderate. All 109 questions were reviewed. The corrected profile addresses all identified gaps and inconsistencies.",
+    "final_status": "PASS_WITH_CORRECTIONS"
+  },
+
+  "corrected_extracted_profile": {
     "participant_id": "e7c0574639a244c8972c92aab9501035",
     "name": "Mary Alberti",
-    "verification_date": "2026-03-31",
-    "model": "Claude Opus 4.6 (1M context)",
-    "seed_source": "NVIDIA Nemotron-Personas-USA",
-    "interview_source": "Step 2 interview output"
-  },
+    "age": 28,
+    "date_of_birth": "1997-07-14",
+    "gender": "Female",
+    "race_ethnicity": "White (Italian-American)",
+    "hispanic_latinx": false,
+    "marital_status": "never_married",
+    "location": "Madison, WI 53717",
+    "birth_city": "Madison, WI (St. Mary's Hospital)",
+    "religion": "Catholic (St. Maria Goretti parish)",
+    "education": "High school diploma (East High, 2015); planning to enroll at Madison College for hospitality management",
+    "occupation": "Fast food crew member (de facto shift lead), 3 years at current location, ~10 years total in food service",
 
-  "experts": {
-    "demographer": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed states age 28, female, never married, city Madison, WI 53717. Interview confirms age 28 (Q85: born July 14, 1997), female, never married (Q84), born and raised in Madison (Q87), living in 53717 zip code area (Q08).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: age, sex, marital_status, city, state, zipcode",
-            "source_b_ref": "Q84, Q85, Q87, Q08"
-          },
-          {
-            "id": 2,
-            "text": "Seed states education_level 'high_school'. Interview confirms high school diploma from East High, class of 2015 (Q90), no college enrollment (Q91, Q92).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: education_level",
-            "source_b_ref": "Q90, Q91, Q92"
-          },
-          {
-            "id": 3,
-            "text": "Seed states occupation 'fast_food_or_counter_worker'. Interview confirms fast food crew member at a chain restaurant (Q16, Q65).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: occupation",
-            "source_b_ref": "Q16, Q65"
-          },
-          {
-            "id": 4,
-            "text": "Seed describes cultural background as 'second-generation Italian-American raised in Madison, Wisconsin' with grandparents from Italy. Interview confirms: dad's side is Italian, grandparents came from a town south of Naples (Q01), identifies as White / Italian-American (Q89), nonna made pasta from scratch (Q01 follow-up).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: cultural_background",
-            "source_b_ref": "Q01, Q28, Q89"
-          },
-          {
-            "id": 5,
-            "text": "Seed mentions a brother in the family context indirectly (cultural_background references 'family'). Interview reveals brother Marco, age 25, in Milwaukee doing HVAC (Q05). This adds specificity not present in the seed but does not contradict it.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: cultural_background (family)",
-            "source_b_ref": "Q05, Q99"
-          },
-          {
-            "id": 6,
-            "text": "Seed describes Mary as living in a Catholic, Midwestern upbringing. Interview confirms Catholic affiliation through St. Maria Goretti (Q47, Q94) and Midwestern working-class household (Q01, Q98).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: cultural_background (Catholic, Midwestern)",
-            "source_b_ref": "Q47, Q94, Q01"
-          }
+    "preferences": {
+      "health_and_wellness": {
+        "summary": "Active runner who manages health through routine, home remedies, and budget-conscious choices; avoids medical visits due to cost and self-reliance identity. Uses a three-phase coping sequence (physical activity, tactile/creative engagement, structured planning) to process stress.",
+        "details": [
+          "Runs 3-5 miles multiple times per week, including Saturday mornings with the Madison Runners Club around Lake Mendota",
+          "Experiences tension headaches in temples/back of neck during stressful periods; manages with Advil and peppermint oil on temples",
+          "Knee soreness from running for about 3-4 months, especially past 4 miles; manages with 15-minute post-run stretching and icing",
+          "Dairy sensitivity causing bloating; self-diagnosed by tracking food intake, reduced dairy consumption (still eats cheese in moderation -- 'this is Wisconsin')",
+          "Switched from coffee to green tea (Bigelow, from Pick 'n Save) about a month ago to reduce jitteriness during early shifts",
+          "Uses Italian grandmother's home remedies: garlic-honey for sore throat, herbal compresses for muscle aches, garlic broth for colds",
+          "Peppermint oil on temples for headaches (discovered online, finds effective)",
+          "Hasn't had a dental visit in over a year; no regular checkup in about two years due to cost and high-deductible insurance ($2,000 deductible)",
+          "Gets flu shot annually at Walgreens; up to date on recommended vaccinations; trusts CDC website and healthcare providers",
+          "Anticipatory rumination before big decisions: lying awake running through scenarios, racing heart, 1-2 times per month, present since high school (Q31, Q45)",
+          "Seasonal energy dips in late January-early February: reduced motivation, flattened engagement, minimal journal entries; reliably recovers with spring and outdoor activity (Q43)",
+          "Three-phase emotional coping sequence: (1) physical activity (running), (2) tactile/creative engagement (cooking, gardening), (3) structured recovery (journaling, planning) (Q44, Q37 follow-up, Q50)",
+          "Finds gardening and running therapeutic for stress; explicitly says 'running is my therapy' (Q45 follow-up)",
+          "Foot soreness after long (8+ hour) shifts from standing all day (Q34)",
+          "Had a significant cold in January that cost 3 lost shifts (~$250 lost wages) and no paid sick days (Q33)"
         ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q15, Q18, Q31, Q32, Q33, Q34, Q35, Q37, Q41, Q42, Q43, Q44, Q45, Q50"
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q85 gives date of birth as July 14, 1997. Extracted profile records age as 28 but does not include the specific DOB. This is a minor gap -- the DOB could be useful for downstream persona modeling.",
-            "verdict": "GAP",
-            "source_a_ref": "Q85",
-            "source_b_ref": "extracted_profile: age"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q05 details brother Marco (25, HVAC tech, Milwaukee, weekly texts). Extracted profile captures this in social_and_relationships details. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q05",
-            "source_b_ref": "extracted_profile: preferences.social_and_relationships.details"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q87 confirms born at St. Mary's Hospital in Madison. Profile states 'Madison, WI 53717' as location. Birth hospital not captured in profile, which is a very minor omission.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q87",
-            "source_b_ref": "extracted_profile: location"
-          },
-          {
-            "id": 4,
-            "text": "Demographer summary estimates annual income as approximately $23,000-$25,000 gross. Interview Q72 states take-home ~$1,900/month after taxes, with gross ~$2,200-$2,300/month. Gross annual would be ~$26,400-$27,600. The summary underestimates slightly.",
-            "verdict": "INCONSISTENT",
-            "source_a_ref": "Q72",
-            "source_b_ref": "extracted_profile: summaries.demographer (income estimate)"
-          },
-          {
-            "id": 5,
-            "text": "Interview Q101 confirms mother has associate's degree in accounting. Demographer summary correctly notes 'mother has an associate's.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q101",
-            "source_b_ref": "extracted_profile: summaries.demographer"
-          }
+      "food_and_dining": {
+        "summary": "Accomplished home cook specializing in Italian-Midwestern fusion comfort food; meticulous meal prepper who grows herbs and vegetables in a community garden. Food is both a cultural connection to her Italian-American heritage and a coping mechanism during stress.",
+        "details": [
+          "Cooks most meals from scratch; Sunday meal prep is a weekly ritual (chopping vegetables, making sauces, portioning for the week)",
+          "Specialties: nonna's red sauce, braciole, cheddar-crusted bratwurst, cheese-curd poutine, spiced apple crumble, pasta e fagioli ($4 per pot, feeds her for 3 days)",
+          "Taught herself grandmother's recipes after nonna's passing to preserve the family tradition (Q01 follow-up)",
+          "Grows tomatoes, basil, green beans, and herbs in a rented raised-bed community garden plot ($40/season, 3 years running)",
+          "Shops at Hy-Vee and Pick 'n Save; visits Dane County Farmers Market on Capitol Square in season",
+          "Spends $250-$300/month on groceries; cuts to rice-and-beans meals, ramen-and-eggs, or pasta with garlic and oil when budget is tight",
+          "Employee meal discount (50% off) during shifts at fast food restaurant",
+          "Enjoys hosting low-key dinner gatherings with friend Jess (Jess brings wine, Mary cooks)",
+          "Italian-American Sunday dinner tradition from childhood; still cooks family recipes to maintain cultural connection",
+          "Views cooking cheap, satisfying meals as a small victory: 'Making a really good meal out of cheap ingredients feels like winning' (Q83 follow-up)",
+          "Breakfast varies by shift: quick (toast, banana, yogurt, oatmeal) for early shifts; bigger breakfast when on closing shift"
         ],
-        "summary": { "consistent": 3, "inconsistent": 1, "gaps": 1 }
+        "evidence": "Q01, Q05, Q08, Q15, Q17, Q56, Q57, Q60, Q64, Q65, Q83, Q108"
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "The demographer summary states 'annual household income of approximately $23,000-$25,000 gross,' but work_and_career details state take-home pay of ~$1,900/month. $1,900 x 12 = $22,800 take-home; gross at $2,200-$2,300/month = $26,400-$27,600. The gross income estimate in the demographer summary is slightly low relative to the work_and_career details.",
-            "verdict": "INCONSISTENT",
-            "field_a": "summaries.demographer (annual income $23K-$25K gross)",
-            "field_b": "preferences.work_and_career.details (take-home ~$1,900/mo, gross ~$2,200-$2,300/mo)"
-          },
-          {
-            "id": 2,
-            "text": "Profile lists education as 'High school diploma (East High, 2015)' and occupation as 'Fast food crew member (de facto shift lead), 3 years at current location.' These are internally consistent -- no degree required for the role, and tenure matches Q01's mention of ~10 years total in food service.",
-            "verdict": "CONSISTENT",
-            "field_a": "education",
-            "field_b": "occupation"
-          },
-          {
-            "id": 3,
-            "text": "Profile location states 'Madison, WI 53717' and home_and_lifestyle says 'west side Madison (53717).' Social_and_relationships mentions parents on the east side. These are geographically consistent -- Mary grew up on the east side and now lives on the west side.",
-            "verdict": "CONSISTENT",
-            "field_a": "location (53717)",
-            "field_b": "preferences.social_and_relationships (parents on east side)"
-          }
+      "travel": {
+        "summary": "Prefers affordable, planned weekend getaways within Wisconsin; travel aspirations constrained by tight budget and prioritization of diner savings. Has never left the Midwest for extended periods.",
+        "details": [
+          "Prefers meticulously planned weekend getaways balancing relaxation and culinary experiences",
+          "Door County lakeside trips as aspirational local destination",
+          "Napa Valley culinary adventure as a bigger dream trip",
+          "Kyoto as long-term overseas dream destination",
+          "Travel severely constrained by tight budget; balances costs against diner savings goal",
+          "Has never left the Midwest/Madison area for extended periods",
+          "Chose to stay in Madison over transferring to Milwaukee for higher pay, prioritizing roots over mobility (Q02)",
+          "Strong community attachment to Madison as identity anchor: 'Everything I care about is here' (Q10 follow-up)"
         ],
-        "summary": { "consistent": 2, "inconsistent": 1 }
+        "evidence": "Q01, Q02, Q10, Q108 (travel persona from seed data; limited direct interview evidence -- aspirational preferences from seed not contradicted but constrained by financial reality in interview)"
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q85 provides specific date of birth (July 14, 1997). This is not recorded anywhere in the extracted profile beyond the age field.",
-            "verdict": "MISSING",
-            "interview_ref": "Q85",
-            "should_be_in": "extracted_profile top-level field (date_of_birth)"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q86 confirms born in the U.S., Q87 specifies Madison, Wisconsin at St. Mary's Hospital. Place of birth not captured in profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q86, Q87",
-            "should_be_in": "extracted_profile top-level field (birth_city, birth_state)"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q88 confirms not Hispanic/Latinx, Q89 identifies as White / Italian-American. Race/ethnicity not captured as a structured field in extracted_profile (mentioned in demographer summary but not as a top-level field).",
-            "verdict": "MISSING",
-            "interview_ref": "Q88, Q89",
-            "should_be_in": "extracted_profile top-level field (race, ethnicity)"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q93 confirms no military service. This is present implicitly (not mentioned) but not captured as a structured field.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q93",
-            "should_be_in": "N/A (negative result, reasonable to omit)"
-          }
+      "social_and_relationships": {
+        "summary": "Small, tight social circle centered on one best friend, parents, and a running group; values deep one-on-one connections over large social gatherings. Processes relationship stress through physical activity and cooking rather than talking.",
+        "details": [
+          "Best friend Jess (dental hygienist, high school friend): weekly hangouts, craft brewery tastings, home dinners, primary emotional support, political information source, occasionally crashes on Mary's couch",
+          "Parents Tony (63, retired machinist, chronic back pain) and Linda (61, part-time bookkeeper at dental office): daily phone calls with mom (usually mom's lunch break or after Mary's shift), Sunday Packers games with dad, frequent visits 2-3x/week for errands/company",
+          "Brother Marco (25, HVAC tech, Milwaukee): weekly texts, holiday visits, amicable but not close -- 'He's more spontaneous, more social'; they argue about Brewers' pitching staff (Q05 follow-up)",
+          "Madison Runners Club: Saturday morning regulars Dave and Priya; social but not deep friendships -- 2 years of membership",
+          "Work friendships are shift-only; does not socialize with coworkers outside of work, though has meaningful conversations with coworker DeShawn about policing experiences (Q26)",
+          "Church congregation at St. Maria Goretti provides light social contact: the Morettis, the Petersons, old Mrs. Gustafson (Q47 follow-up)",
+          "Maternal grandparents alive in Wausau; seen at Thanksgiving and Christmas; aunts/uncles/cousins not close (Q06)",
+          "Single after 6-month relationship ended ~8 months ago; ex-boyfriend didn't understand her schedule rigidity; not actively dating (Q05)",
+          "Processes relationship stress through physical activity (night run after breakup), cooking (cried while making pasta), and batch-cooking/work focus (Q44)",
+          "Very private: never posts personal problems online, only confides in Jess and mom (Q49)"
         ],
-        "summary": { "present": 1, "missing": 3 }
+        "evidence": "Q05, Q06, Q07, Q11, Q13, Q26, Q44, Q47, Q49"
+      },
+      "home_and_lifestyle": {
+        "summary": "Lives alone in a modest one-bedroom apartment on Madison's west side; highly organized, routine-driven household with bullet-journal planning at its center. Seasonal cost variations (winter heating, holiday spending) create financial pressure.",
+        "details": [
+          "One-bedroom apartment, second floor of a two-story building, west side Madison (53717), near Midvale/beltline area",
+          "Rent: $900/month (up from $750 four years ago); decent landlord who fixes things",
+          "Drives a 2015 Honda Civic ('beat-up, gets the job done'); needed for variable shift times not on bus routes",
+          "Bullet journal system: color-coded daily/weekly/monthly spreads (blue=work, green=personal, red=money); tracks running miles, spending, garden tasks, meal plans; daily 20-minute ritual; 4+ years; full shelf of filled journals (Q17 follow-up)",
+          "Added gratitude practice: writes one thing that went well each day (Q50, from a self-help book)",
+          "Organized living space: alphabetized spice rack, running shoes by door, everything has its place (Q11 follow-up)",
+          "No pets (lease restriction and irregular work hours); has thought about a cat (Q11 follow-up)",
+          "Community garden plot one block from apartment building; gardening season April-October",
+          "Proximity to Hy-Vee, Pick 'n Save, Walgreens, UW Arboretum (15-minute drive to Capitol Square Farmers Market)",
+          "Winter heating bill spikes from ~$30 (summer) to $150+ (January/February); December holiday spending creates annual deficit recovered by February (Q59)",
+          "Garden season costs ~$50 for soil, seeds, plant food, plus $40 plot rental (Q59, Q08 follow-up)",
+          "Two routine versions: opening-shift routine (up 5:30, out 6:15, work 7-2/3) and closing-shift routine (sleep till 9, errands/run in morning, work 3-11); back-to-back close/open shifts yield ~5 hours sleep (Q15, Q78 follow-up)"
+        ],
+        "evidence": "Q08, Q10, Q11, Q15, Q17, Q50, Q56, Q58, Q59, Q78"
+      },
+      "entertainment": {
+        "summary": "Low-key entertainment preferences centered on indie/folk music, Wes Anderson films, self-help books, and Sudoku puzzles. Intentional about screen time; treats entertainment as relaxation and mental stimulation rather than a central life domain.",
+        "details": [
+          "Listens to John Prine (lyrical storytelling), Bon Iver (atmospheric indie folk), and classic rock",
+          "Watches Wes Anderson films as comfort/relaxation viewing -- 'Sunday evening Wes Anderson movie on the couch' (Q15 follow-up)",
+          "Reads practical self-help books about habits and productivity; picks up applicable techniques (e.g., 'one good thing' gratitude entry from a habits book) (Q50 follow-up)",
+          "Solves Sudoku puzzles for mental stimulation and competitive edge (Q15)",
+          "Deleted TikTok after one use -- 'sucked me in for two hours and I felt terrible after' (Q48)",
+          "Follows food, running, and local Madison accounts on Instagram; follows Bon Iver's page (Q48)",
+          "Total daily social media time: ~20-30 minutes; intentional usage, puts phone down when catching herself scrolling mindlessly (Q48 follow-up)"
+        ],
+        "evidence": "Q15, Q48, Q50"
+      },
+      "hobbies_and_recreation": {
+        "summary": "Structured hobby routine combining physical fitness, gardening, cooking, journaling, and craft beer exploration. All hobbies serve dual functions as both enjoyment and self-regulation.",
+        "details": [
+          "Running: 3-5 mile routes around Lake Mendota and UW Arboretum, 3+ times per week",
+          "Madison Runners Club: Saturday morning group runs (kept 'sacred') followed by farmers market in season",
+          "Raised-bed vegetable gardening: tomatoes, basil, green beans, herbs (April-October); goes after shifts many evenings to water and tend (Q08 follow-up)",
+          "Bullet journaling: daily 20-minute planning and review ritual, 4+ years running, color-coded system",
+          "Home cooking and baking: Midwestern-Italian comfort food, meal prep Sundays, recipe preservation",
+          "Craft brewery tastings: attends with Jess, approximately weekly when budget allows; Madison has many options (Q07 follow-up)",
+          "Sudoku puzzles for mental stimulation",
+          "Occasional attendance at local art walks and museum exhibits (seed data; not deeply explored in interview)",
+          "Visits Dane County Farmers Market on Saturday mornings during growing season",
+          "Cross-country running background from high school at East High (Q01)"
+        ],
+        "evidence": "Q01, Q07, Q08, Q15, Q17, Q38, Q50"
+      },
+      "work_and_career": {
+        "summary": "Ambitious food service worker with a detailed long-term plan to advance from crew to shift supervisor to restaurant manager to diner owner. Tracks performance evidence in her journal for review leverage.",
+        "details": [
+          "Current role: fast food crew member at a major chain, performing shift-lead duties (register, inventory, training new employees, line coordination, customer complaint resolution)",
+          "Manager Teresa recognizes Mary's reliability and leans on her for extra responsibilities without extra pay (Q77)",
+          "3 years at current restaurant; ~10 years total in food service (started right out of high school at a burger chain)",
+          "Pursuing promotion to shift supervisor -- 'expecting within the year'; tracks all contributions in journal for review leverage (Q16 follow-up)",
+          "Planning to enroll at Madison College for hospitality management program; researching courses online (Q18, Q91)",
+          "Planning to obtain ServSafe manager certification for running own kitchen (Q01 follow-up)",
+          "Long-term goal: own a small family-style diner (15-20 seats) in Madison serving Midwestern-Italian comfort food -- 'cheddar bratwurst, cheese curds, good pie, nonna's red sauce on Sundays' (Q108)",
+          "Diner fund currently at $1,200; realistic estimate of $50K-$100K needed; recognizes will need business loan or partner (Q61 follow-up)",
+          "Tax refund ($300-$400) directed straight to diner fund each year (Q75)",
+          "Credit card debt: $800 from brake repair; paying $50/month; payoff target zero by August (Q63)",
+          "Emergency 'oh no' fund: ~$600; tries to keep above $500 (Q40 follow-up)",
+          "Automatic savings transfer set up from biweekly direct deposit (Q73)",
+          "Take-home pay: ~$1,900/month; gross ~$2,200-$2,300/month (~$26,000-$28,000 annual gross)",
+          "Works 35-40 hours/week, sometimes 6 days; biweekly pay; no paid vacation or sick days",
+          "Schedule posted ~1 week in advance; rotating morning (7-2/3) and closing (3-11) shifts; sometimes split shifts",
+          "No union coverage; minimal benefits: high-deductible health insurance ($120/month premium, $2,000 deductible), 50% employee meal discount",
+          "Worked ~49-50 weeks in past year; missed ~1 week to illness in January",
+          "Motivation: father's physical deterioration from decades of manual labor drives desire to move into management -- 'I don't want to end up where he is' (Q35 follow-up)"
+        ],
+        "evidence": "Q01, Q02, Q16, Q18, Q33, Q35, Q56, Q57, Q61, Q62, Q63, Q65, Q66, Q67, Q68, Q72, Q73, Q75, Q76, Q77, Q78, Q80, Q91, Q108"
+      },
+      "arts_and_culture": {
+        "summary": "Casual arts consumer who appreciates indie folk music, film, and local art events; cultural engagement is relaxation-oriented and accessible rather than identity-central.",
+        "details": [
+          "Enjoys lyrical storytelling in music: John Prine, atmospheric indie folk: Bon Iver",
+          "Appreciates Wes Anderson's cinematography and quirky storytelling as comfort viewing",
+          "Attends local art walks and museum exhibits occasionally to unwind (seed data; frequency unconfirmed in interview)",
+          "Cultural engagement is moderate; prefers accessible, unpretentious art forms",
+          "Follows Bon Iver on Instagram (Q48)"
+        ],
+        "evidence": "Q15, Q48 (arts persona from seed data)"
+      },
+      "sports_and_fitness": {
+        "summary": "Dedicated recreational runner and passionate Wisconsin sports fan rooted in Packers, Badgers, and Brewers fandom. Fitness is motivated by health maintenance, routine, stress relief, and a desire to avoid her father's physical decline.",
+        "details": [
+          "Runs 3-5 miles regularly around Lake Mendota and UW Arboretum; member of Madison Runners Club (joined ~2 years ago via local Facebook group)",
+          "Saturday morning group runs are a weekly commitment: regulars Dave and Priya",
+          "Added 15-minute post-run stretching routine recently to address knee soreness",
+          "Ices knees after longer runs; aware she may need medical attention but delaying due to cost",
+          "Cross country runner at East High in high school (Q01)",
+          "Wisconsin Badgers basketball fan (winter); sees campus police around UW area when running (Q21)",
+          "Milwaukee Brewers fan (summer); discusses/argues pitching staff with brother Marco (Q05 follow-up)",
+          "Green Bay Packers fan: watches every Sunday game, often with father Tony -- 'that's kind of our thing' (Q05)",
+          "Fitness motivated by health maintenance, routine, stress relief, and explicitly by father's physical decline from manual labor (Q35 follow-up)",
+          "Recently bought new running shoes at outlet store ($80) after extended delay due to budget; recognized worn shoes contributing to knee issues (Q60)"
+        ],
+        "evidence": "Q01, Q05, Q07, Q15, Q18, Q35, Q60"
+      },
+      "nature_and_outdoors": {
+        "summary": "Deep connection to Madison's natural landscape through running, gardening, and seasonal outdoor activities. Outdoor access is a primary mood regulator, with seasonal deprivation in winter causing notable energy dips.",
+        "details": [
+          "Runs around Lake Mendota and in UW Arboretum regularly; sticks to paths with other people",
+          "Maintains raised-bed garden plot at community garden one block from apartment (April-October); goes many evenings to water and tend",
+          "Visits Dane County Farmers Market during growing season",
+          "Outdoor activity significantly reduced in Wisconsin winters; seasonal mood impact is pronounced (Q43)",
+          "Finds gardening therapeutic and calming: 'Getting my hands in the dirt, watching things grow -- it calms me down when I'm stressed' (Q37 follow-up)",
+          "Safety-conscious: runs during daylight, with group on Saturdays, sticks to populated paths (Q09 follow-up)",
+          "Walks to grocery store and garden in summer; drives in winter (Q08 follow-up)"
+        ],
+        "evidence": "Q07, Q08, Q09, Q17, Q37, Q43"
+      },
+      "technology": {
+        "summary": "Practical, minimal technology user who limits screen time intentionally and uses devices for functional purposes. Prefers analog tools (paper bullet journal) over digital alternatives.",
+        "details": [
+          "Uses smartphone primarily for calls, texts, and limited social media (~20-30 min/day)",
+          "Proficient with POS systems and kitchen equipment at work",
+          "Uses free online tax filing software for straightforward W-2/standard deduction return (Q75)",
+          "Deleted TikTok after one session due to time concern (Q48)",
+          "Researches Madison College courses online (Q18)",
+          "Uses paper bullet journal (not digital) for all planning -- 4+ years of filled journals (Q17 follow-up)",
+          "Direct deposit with automatic savings transfer configured (Q73)",
+          "Found Madison Runners Club through a local Facebook group (Q07 follow-up)"
+        ],
+        "evidence": "Q16, Q48, Q49, Q73, Q75"
+      },
+      "community_and_civic": {
+        "summary": "Quiet civic participant who votes in major elections and maintains church and community ties but avoids activism and public political expression. Policy interests are narrowly economic: wages, healthcare, worker protections.",
+        "details": [
+          "Votes in presidential elections; occasionally misses local elections due to work schedule conflicts",
+          "Early votes when possible to avoid shift conflicts (Q23)",
+          "Policy priorities: minimum wage increases, healthcare affordability, tipped wages and fast food worker protections (Q23 follow-up, Q24, Q25 follow-up)",
+          "Avoids partisan identification but leans center-left on pocketbook issues; votes for 'whoever seems like they're going to help regular people' (Q23 follow-up)",
+          "Attends Sunday morning services at St. Maria Goretti (family congregation since grandparents' generation); lights candle for deceased grandmother (Q47)",
+          "Does not attend church social events or small groups; goes for the service and leaves (Q47 follow-up)",
+          "Participates in community garden (3 years)",
+          "Madison Runners Club member (2 years)",
+          "Does not attend protests, rallies, or political events; Jess has invited her but she declines (Q29, Q30 follow-up)",
+          "Processes political and social issues internally; discusses only with Jess and occasionally family (Q29)",
+          "Quietly pushes back on ignorant comments at work: 'Not loudly, but I'll say something' (Q29)",
+          "Awareness of racial inequity developed through workplace conversations, especially with coworker DeShawn (Q26 follow-up)",
+          "Not receiving SNAP, housing vouchers, or other government benefits; may qualify based on income but resistant due to self-reliance identity (Q80)"
+        ],
+        "evidence": "Q23, Q24, Q25, Q26, Q27, Q29, Q30, Q47, Q80, Q07, Q08"
+      },
+      "music": {
+        "summary": "Appreciates indie folk and classic rock; music is a background accompaniment to daily life rather than a central passion. Strong affinity for Bon Iver as a Wisconsin-connected artist.",
+        "details": [
+          "Core artists: John Prine (lyrical storytelling), Bon Iver (atmospheric indie folk, Wisconsin connection)",
+          "Listens to classic rock (seed data; specific artists not elaborated in interview)",
+          "Follows Bon Iver on Instagram (Q48)",
+          "Music likely accompanies runs, cooking, and commuting but was not discussed as a primary activity in the interview"
+        ],
+        "evidence": "Q48 (arts and sports personas from seed data)"
+      },
+      "fashion_and_appearance": {
+        "summary": "Practical, low-maintenance approach to appearance consistent with budget constraints, physical work demands, and active lifestyle.",
+        "details": [
+          "Wears work uniform during shifts (Q15)",
+          "Running gear and comfortable everyday clothing implied by active lifestyle",
+          "Purchased running shoes at outlet store ($80) after extended delay due to budget -- felt guilty for a week but recognized necessity for injury prevention (Q56 follow-up, Q60)",
+          "Practical rather than fashion-oriented spending priorities"
+        ],
+        "evidence": "Q15, Q56, Q60"
       }
     },
 
-    "behavioral_economist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed mentions 'razor-sharp cash handling' and 'habit of double-checking every receipt for hidden costs.' Interview confirms: Q02 follow-up describes checking every receipt and cutting coupons during family financial strain; Q56 follow-up confirms tracking every purchase in bullet journal; Q17 follow-up details color-coded financial tracking.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: professional_persona, persona",
-            "source_b_ref": "Q02 follow-up, Q56 follow-up, Q17 follow-up"
-          },
-          {
-            "id": 2,
-            "text": "Seed mentions 'eyeing a promotion to shift supervisor' and career goal to 'advance from crew member to shift supervisor within the next year.' Interview extensively confirms this aspiration with detailed behavioral evidence: tracking contributions in journal (Q16 follow-up), planning for Madison College enrollment (Q01 follow-up, Q18, Q91), ServSafe certification goal (Q01 follow-up).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: career_goals_and_ambitions, professional_persona",
-            "source_b_ref": "Q01 follow-up, Q16 follow-up, Q18, Q91, Q108"
-          },
-          {
-            "id": 3,
-            "text": "Seed mentions 'saving for a future diner venture' in travel_persona. Interview confirms a diner fund at $1,200 (Q61), detailed vision for the diner (Q01 follow-up, Q108), and estimated $50K-$100K needed (Q61 follow-up).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: travel_persona, career_goals_and_ambitions",
-            "source_b_ref": "Q01 follow-up, Q61, Q61 follow-up, Q108"
-          },
-          {
-            "id": 4,
-            "text": "Seed mentions 'occasional craft-brew indulgence' in persona. Interview confirms craft brewery tastings with Jess, 2-3 drinks per week maximum, tracked in journal (Q38, Q38 follow-up). Spending is carefully budgeted.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: persona",
-            "source_b_ref": "Q07 follow-up, Q38, Q38 follow-up"
-          },
-          {
-            "id": 5,
-            "text": "Seed mentions 'meticulously planned weekend getaways' to Door County and Napa Valley. Interview reveals very limited actual travel due to severe budget constraints (Q10 follow-up: 'everything I care about is here'; Q56-Q64 detail tight finances). The seed's travel aspirations appear overstated relative to the interview's financial reality.",
-            "verdict": "GAP",
-            "source_a_ref": "seed: travel_persona",
-            "source_b_ref": "Q10 follow-up, Q56, Q57, Q64"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
-      },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q40 details 'oh no' fund at ~$600, diner fund at ~$1,200, automatic savings transfer from direct deposit (Q73). Profile work_and_career section captures diner fund at $1,200 but the emergency fund amount and automatic transfer are only partially captured. The behavioral economist summary accurately describes these dynamics.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q40, Q61, Q73",
-            "source_b_ref": "extracted_profile: preferences.work_and_career, summaries.behavioral_economist"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q63 describes $800 credit card debt from brake repair, paying $50/month, goal to pay off by August. Profile work_and_career section does not include credit card debt information. This is a significant financial detail omitted from the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q63",
-            "source_b_ref": "extracted_profile: preferences.work_and_career (missing debt info)"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q80 discusses potential eligibility for SNAP/benefits and identity-based resistance to applying. Profile does not capture this in any preference or detail. The behavioral_economist summary mentions resistance to government assistance, which is good.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q80",
-            "source_b_ref": "extracted_profile: summaries.behavioral_economist"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q57 specifies monthly take-home ~$1,900-$2,000 and total spending ~$1,700-$1,800 leaving $100-$200 for savings. Profile work_and_career captures take-home at ~$1,900 but doesn't capture the total spending figure. The tight margin is described in the behavioral_economist summary.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q57",
-            "source_b_ref": "extracted_profile: preferences.work_and_career, summaries.behavioral_economist"
-          },
-          {
-            "id": 5,
-            "text": "Interview Q82 reveals that a $400 emergency would wipe most of the emergency fund and that anything over $600 would require credit card use. This specific vulnerability is not captured in the profile details but is consistent with the behavioral_economist summary about loss aversion.",
-            "verdict": "GAP",
-            "source_a_ref": "Q82",
-            "source_b_ref": "extracted_profile (not captured specifically)"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
-      },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile travel preferences mention 'meticulously planned weekend getaways' to Door County and Napa Valley, but the behavioral_economist summary correctly notes 'deferring gratification' and 'cost-minimization behaviors.' The unresolved/ambiguous section flags the gap between seed travel aspirations and interview financial reality. This is internally noted and handled.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.travel",
-            "field_b": "summaries.behavioral_economist, others_misc.unresolved_or_ambiguous"
-          },
-          {
-            "id": 2,
-            "text": "Profile food_and_dining mentions $250-$300/month grocery spend; home_and_lifestyle mentions $900/month rent. Work_and_career shows ~$1,900 take-home. These budget figures are internally consistent and sum to a feasible monthly budget as described in Q56-Q57.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.food_and_dining ($250-300 groceries)",
-            "field_b": "preferences.home_and_lifestyle ($900 rent), preferences.work_and_career (~$1,900 take-home)"
-          },
-          {
-            "id": 3,
-            "text": "The behavioral_economist summary says Mary 'declined the Milwaukee transfer despite higher pay, weighting social capital and local knowledge over income gains.' This aligns with the social_and_relationships and home_and_lifestyle sections showing deep local rootedness. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.behavioral_economist (Milwaukee transfer)",
-            "field_b": "preferences.social_and_relationships, preferences.home_and_lifestyle"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q63 provides detailed credit card debt information ($800, brake repair, $50/month payments, August payoff target). This is not captured in the extracted_profile preferences or details.",
-            "verdict": "MISSING",
-            "interview_ref": "Q63",
-            "should_be_in": "preferences.work_and_career or a dedicated finances section"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q75 describes using free tax filing software and receiving $300-$400 refund that goes to diner fund. The tax refund-to-savings pipeline is not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q75",
-            "should_be_in": "preferences.work_and_career.details or others_misc"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q59 describes seasonal bill fluctuation (heating bill swing from $30 summer to $150+ winter, December holiday deficit). Profile mentions rent and take-home but doesn't capture seasonal financial stress patterns.",
-            "verdict": "MISSING",
-            "interview_ref": "Q59",
-            "should_be_in": "preferences.home_and_lifestyle or a finances subsection"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q38 follow-up: Mary tracks craft beer spending in her journal. This specific budget-tracking behavior for discretionary spending is captured in the behavioral_economist summary as 'identity-affirming expenditures she carefully budgets.'",
-            "verdict": "PRESENT",
-            "interview_ref": "Q38 follow-up",
-            "should_be_in": "summaries.behavioral_economist"
-          }
-        ],
-        "summary": { "present": 1, "missing": 3 }
-      }
+    "summaries": {
+      "demographer": "Mary Alberti is a 28-year-old (DOB July 14, 1997) never-married white female of Italian-American descent, born and raised in Madison, Wisconsin. She holds a high school diploma from East High (2015) and works as a fast food crew member performing de facto shift-lead duties, placing her in the service sector working class with an annual gross household income of approximately $26,000-$28,000. She lives alone in a rented one-bedroom apartment on Madison's west side (ZIP 53717), is not Hispanic/Latinx, and identifies as Catholic, attending St. Maria Goretti parish. She is second-generation Italian-American with paternal grandparents who immigrated from southern Italy (a town south of Naples); her maternal family has deep Wisconsin roots. Her father Tony (63) is a retired machinist with chronic back injury, her mother Linda (61) is a part-time bookkeeper with an associate's degree in accounting, and her brother Marco (25) works in HVAC in Milwaukee. Both parents hold high-school-level education, with Linda holding an additional associate's degree. The family's trajectory -- from immigrant manual labor through skilled manufacturing to service-sector employment, intersected by a disabling occupational injury -- reflects patterns common to blue-collar Midwestern families navigating deindustrialization. Mary is at a pivotal life-course juncture: pre-partnered, still in the parental orbit, and in the early phases of credentialing (planning Madison College hospitality program) that could shift her occupational trajectory from hourly service work to small business ownership.",
+
+      "behavioral_economist": "Mary displays strong present-bias mitigation through her bullet-journal system, which functions as a multi-domain commitment device for budgeting, scheduling, goal-tracking, and emotional regulation. She maintains two distinct savings pools -- an emergency fund (~$600) and a dedicated diner fund (~$1,200) -- and employs automatic savings transfers from direct deposit and channels annual tax refunds ($300-$400) directly to the diner fund (Q73, Q75). She exhibits pronounced loss aversion around fund depletion events, showing visible distress at emergency-fund drawdowns for brake repairs and sick-day income loss (Q60, Q63, Q64). Her time preferences are consistently future-oriented: she defers gratification by skipping social outings, substituting cheap meals (rice/beans, pasta e fagioli), and delaying purchases (running shoes) to maintain savings targets. She has set a concrete credit card payoff target of zero by August at $50/month (Q63). Peer influence operates through a single strong-tie channel (Jess) for both consumption (craft beer tastings) and information (political news, health advice). Her identity utility is heavily tied to competence and self-reliance, creating measurable resistance to government assistance programs despite likely eligibility -- she frames this as 'those programs are for people who are worse off than me' (Q80). She responds to financial constraint through cost-minimization (receipt-checking, coupon use, home cooking from garden produce, negotiating payment plans) rather than income-maximization (she rejected a second job due to burnout risk). Risk aversion is moderate: she declined the Milwaukee transfer despite higher pay, weighting social capital and local knowledge over income gains (Q02). Seasonal financial cycles show a December deficit from holiday spending with recovery by February (Q59). Small identity-affirming expenditures (craft beer, running shoes) are carefully budgeted and tracked in the journal.",
+
+      "political_scientist": "Mary is a low-engagement, economically motivated voter who participates in presidential elections and occasionally in local ones, using early voting when possible to work around her unpredictable shift schedule (Q23). She avoids partisan identification but leans center-left on pocketbook issues -- her primary policy motivators are minimum wage increases, healthcare affordability, and tipped wages/fast food worker protections (Q23 follow-up, Q24, Q25 follow-up). She expresses frustration with political polarization and gravitates toward candidates who 'help regular people who are working hard and still struggling to get ahead' (Q23 follow-up). Her political information diet is narrow: she reads NPR occasionally, follows local Madison news accounts online, and relies heavily on Jess as a political information intermediary (Q23 follow-up, Q48). Civic participation beyond voting is passive: she attends Catholic mass at St. Maria Goretti, participates in a community garden and running club, but does not attend protests, rallies, or political events, processing political and social issues internally and discussing them only with close friends (Q29). Her response to racial justice movements reflects an empathy-from-exposure pattern: direct workplace conversations with her coworker DeShawn about differential policing experiences shifted her awareness, and she will quietly push back on ignorant comments at work, but she has not translated this into public action (Q26-Q30). An intergenerational political dynamic is present: her father Tony holds more conservative, self-reliant views ('tough it out'), her mother Linda is more sympathetic to systemic difficulties, and Mary positions herself in the middle, pragmatic rather than ideological (Q24 follow-up). Institutional trust is low regarding healthcare and workplace protections, moderate regarding electoral participation, and strong regarding vaccination science. Community attachment to Madison is exceptionally strong, serving as both an identity anchor and a constraint on geographic mobility for economic opportunity.",
+
+      "psychologist": "Mary exhibits high conscientiousness expressed through meticulous planning, routine adherence, goal persistence, receipt-tracking, organizational systems, and a four-year bullet-journal practice that functions as her primary self-regulation tool (Q03, Q17). She displays moderate introversion: she prefers one-on-one interactions to group settings, processes emotions internally, maintains a small social circle of one close friend plus family, and dislikes public expression of personal views (Q07, Q29, Q49). Her stress response follows a distinctive three-phase behavioral coping sequence: first physical activity (running, even at night after the breakup), then tactile/creative engagement (cooking, gardening), then structured recovery through journaling and planning (Q44, Q37 follow-up, Q50). Anticipatory rumination manifests before significant decisions as racing thoughts and insomnia (1-2x/month, present since high school), and she experiences pronounced seasonal energy dips in late January-early February with reduced motivation and flattened engagement, recovering reliably with spring and renewed outdoor activity (Q31, Q43, Q45). She actively counters a social comparison pattern -- comparing herself to college-educated high school peers -- by redirecting attention to her own plan and progress (Q45 follow-up). Her self-concept is organized around competence, self-reliance, and delayed gratification, with a narrative identity that links her grandmother's immigrant work ethic ('A poco a poco') to her own aspirations (Q109 follow-up). A key motivational driver is her father's physical deterioration from decades of manual labor, which she explicitly frames as a cautionary parallel to her own situation and a reason to pursue management rather than remaining on the line (Q35 follow-up). Her central existential fear is stagnation: 'That I'll still be in the same place ten years from now... I'm afraid of hard work that doesn't lead anywhere' (Q108 follow-up). She internalizes a stoic workplace norm ('In food service, everybody's dealing with something... You just push through') that reinforces her resistance to seeking professional help, intersecting with financial constraints and identity-based reluctance to be seen as someone who needs external support (Q34 follow-up, Q45 follow-up). Agreeableness is moderate: empathetic and conflict-avoidant in social settings but firm about time boundaries and priorities. Openness is moderate -- she seeks novelty within structured, familiar frameworks (trying new craft breweries and recipes, reading self-help for applicable techniques, appreciating indie music and Wes Anderson films), but gravitates toward routine and practical knowledge over abstract exploration."
     },
 
-    "political_scientist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed does not contain explicit political information. Interview reveals Mary as an irregular voter who participates in presidential elections, leans center-left on economic issues (Q23, Q24, Q95, Q96). No contradiction since seed is silent on politics.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: (no political content)",
-            "source_b_ref": "Q23, Q24, Q95, Q96"
-          },
-          {
-            "id": 2,
-            "text": "Seed's cultural_background describes 'Catholic, Midwestern upbringing.' Interview confirms Catholic church attendance (Q47, Q94) but shows no faith-based political alignment. This is consistent -- the seed describes culture, not politics.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: cultural_background (Catholic)",
-            "source_b_ref": "Q47, Q94, Q24"
-          },
-          {
-            "id": 3,
-            "text": "Seed mentions 'community' in cultural_background and career_goals. Interview reveals community engagement through church (Q47), running club (Q07), community garden (Q08), but limited formal civic participation. The seed's 'community' emphasis is aspirational rather than deeply civic.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: cultural_background, career_goals_and_ambitions",
-            "source_b_ref": "Q07, Q08, Q47, Q29"
-          },
-          {
-            "id": 4,
-            "text": "Seed does not mention race or racial attitudes. Interview reveals nuanced racial awareness developed through workplace interactions with DeShawn (Q26, Q26 follow-up) and Italian-American immigrant family history (Q28). No contradiction.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: (no racial/political content)",
-            "source_b_ref": "Q26, Q26 follow-up, Q27, Q28, Q29"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 0 }
+    "others_misc": {
+      "cultural_and_linguistic": {
+        "description": "Languages, cultural practices, religious/spiritual observance patterns, heritage markers",
+        "items": [
+          "Second-generation Italian-American; paternal grandparents immigrated from a town south of Naples (Q01, Q28)",
+          "Maternal family has deep Wisconsin roots ('since the cheese factories opened') (Q01)",
+          "Maintains Italian cooking traditions from grandmother (nonna): red sauce, braciole, pasta from scratch (Q01 follow-up)",
+          "Uses Italian phrase 'A poco a poco' (little by little) as personal motto, learned from nonna (Q109 follow-up)",
+          "Attends Sunday morning services at St. Maria Goretti, family congregation since grandparents' generation (Q47, Q94)",
+          "Lights a candle for deceased grandmother at church most Sundays (Q47)",
+          "Sunday family dinner tradition maintained (now at mother's house, more casual -- lasagna instead of from-scratch pasta) (Q01 follow-up)",
+          "English-speaking; no evidence of Italian language fluency beyond isolated phrases",
+          "Was raised Catholic; returned to church voluntarily after nonna's death at age 19; takes 'what works for me and leaving the rest' approach to church teaching (Q47 follow-up)",
+          "Identifies as 'White, Italian-American' on forms (Q89); aware that Italian-American experience today differs from grandparents' era of discrimination (Q28 follow-up)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q23 states Mary votes in presidential elections, misses some local ones due to work schedule, early votes when possible. Profile community_and_civic section captures this accurately: 'Votes in presidential elections; occasionally misses local elections due to work schedule; Early votes when possible.'",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q23",
-            "source_b_ref": "extracted_profile: preferences.community_and_civic.details"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q24 provides detailed political views: supports minimum wage increase, affordable healthcare, personal responsibility, frustrated with polarization. The political_scientist summary captures this as 'economically motivated voter' leaning 'center-left on pocketbook issues.' Accurate.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q24, Q24 follow-ups",
-            "source_b_ref": "extracted_profile: summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q95 reveals Mary almost attended a minimum-wage rally organized by Jess. Profile states 'Does not attend protests, rallies, or political events.' While technically she did not attend, the near-miss reveals more ambivalence than the profile suggests.",
-            "verdict": "GAP",
-            "source_a_ref": "Q95 follow-up",
-            "source_b_ref": "extracted_profile: preferences.community_and_civic.details"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q25 follow-up discusses fast food worker protections and tipped wages as issues Mary follows closely. Profile does not specifically mention these workplace-specific political interests, though they are implied by the political_scientist summary.",
-            "verdict": "GAP",
-            "source_a_ref": "Q25 follow-up",
-            "source_b_ref": "extracted_profile: preferences.community_and_civic (no specific policy interests listed)"
-          },
-          {
-            "id": 5,
-            "text": "The political_scientist summary states 'Institutional trust is low regarding healthcare and workplace protections.' Interview Q36, Q66, Q76 support this -- frustration with insurance costs, no union, poor benefits. Accurate characterization.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q36, Q66, Q76",
-            "source_b_ref": "extracted_profile: summaries.political_scientist"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
+      "life_events_and_transitions": {
+        "description": "Significant past or anticipated events that shape current behavior",
+        "items": [
+          "Grandmother (nonna) passed when Mary was 19; catalyzed return to church attendance and preservation of family recipes (Q01 follow-up, Q47 follow-up)",
+          "Decision to skip college at 18 due to family financial strain during father's back injury; defining crossroads moment, conscious and deliberate (Q02, Q03)",
+          "Father Tony's chronic back injury from machine shop work leading to early retirement; ongoing family financial and emotional impact (Q02, Q05, Q35)",
+          "Declined transfer to Milwaukee ~2 years ago, choosing local social capital over higher income (Q02)",
+          "Breakup of 6-month relationship ~8 months ago (August); ex-boyfriend didn't understand her schedule rigidity; processed through running, cooking, and structure (Q05, Q44)",
+          "Anticipated enrollment at Madison College for hospitality management within the next year (Q91, Q108)",
+          "Anticipated shift supervisor promotion at current job (Q16 follow-up, Q108)",
+          "January illness: bad cold costing 3 shifts (~$250), highlighting financial fragility of paycheck-to-paycheck existence (Q33 follow-up)",
+          "Mother's parents still alive in Wausau; paternal grandparents both deceased (Q06)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "The political_scientist summary describes 'low-engagement' voter and community_and_civic section says she 'does not attend protests, rallies, or political events.' These are consistent with each other.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.political_scientist ('low-engagement')",
-            "field_b": "preferences.community_and_civic.details"
-          },
-          {
-            "id": 2,
-            "text": "The community_and_civic section lists St. Maria Goretti attendance and the political_scientist summary says 'no signs of faith-based political alignment.' These are consistent -- religious practice and political behavior are decoupled in the profile.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.community_and_civic (church attendance)",
-            "field_b": "summaries.political_scientist (no faith-based alignment)"
-          }
-        ],
-        "summary": { "consistent": 2, "inconsistent": 0 }
+      "sensory_and_physical_context": {
+        "description": "Non-clinical physical factors: chronic pain, mobility, sleep, dietary practices tied to non-preference reasons",
+        "items": [
+          "On feet 8+ hours per shift; foot soreness after long workdays (Q34)",
+          "Knee soreness after runs exceeding 4 miles (onset ~3-4 months ago); manages with stretching and icing; suspects pavement vs. softer paths as a factor; bought new shoes to help (Q18 follow-up, Q60)",
+          "Tension headaches in temples and back of neck during high-stress periods; manages with Advil and peppermint oil; more frequent in past year due to money/work stress (Q31, Q33)",
+          "Dairy sensitivity causing bloating; limits cheese and cream intake despite living in Wisconsin (Q31 follow-up)",
+          "Intermittent sleep disruption (1-2 times/month) tied to anticipatory rumination before big decisions; has been present since high school; chamomile tea provides slight relief (Q31 follow-up, Q45)",
+          "Seasonal energy dips in late January-early February: reduced motivation, flattened engagement, minimal journaling; recovers with spring and outdoor access (Q43)",
+          "Back-to-back close-then-open shifts yield ~5 hours sleep (Q78 follow-up)",
+          "Was jittery from coffee; switched to green tea a month ago for steadier focus during cash handling (Q18 follow-up)"
+        ]
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q25 follow-up mentions tipped wages and fast food worker protections as specific policy interests. These are not listed in the community_and_civic details or elsewhere in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q25 follow-up",
-            "should_be_in": "preferences.community_and_civic.details"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q30 follow-up reveals dynamic between Mary and Jess on political activism -- Jess respects Mary's quieter approach. This social-political dynamic is captured in social_and_relationships and the political_scientist summary.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q30 follow-up",
-            "should_be_in": "summaries.political_scientist, preferences.social_and_relationships"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q42 discusses trusted information sources (NPR, CDC, nurse practitioner, pharmacy). Profile media_and_information_diet captures NPR and CDC but does not mention the nurse practitioner or pharmacy as health information sources.",
-            "verdict": "MISSING",
-            "interview_ref": "Q42",
-            "should_be_in": "others_misc.media_and_information_diet"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q23 follow-up mentions early voting as a strategy to avoid shift conflicts. This specific civic behavior is captured in community_and_civic details.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q23 follow-up",
-            "should_be_in": "preferences.community_and_civic"
-          }
-        ],
-        "summary": { "present": 2, "missing": 2 }
-      }
-    },
-
-    "psychologist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed describes Mary as 'routine-obsessed, bullet-journal aficionado' with 'disciplined work ambition.' Interview provides extensive behavioral evidence: 20-minute nightly journal ritual (Q17 follow-up), 4+ years of filled journals, color-coded systems, pros-and-cons lists for decisions (Q03), rigorous daily planning. Strongly consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: persona",
-            "source_b_ref": "Q03, Q15, Q17 follow-up, Q56 follow-up"
-          },
-          {
-            "id": 2,
-            "text": "Seed describes a 'competitive edge.' Interview confirms competitive elements through Sudoku puzzles (Q15), running accountability (Q07 follow-up), and the pattern of tracking performance metrics at work (Q16 follow-up: 'I've got receipts').",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: persona ('competitive edge')",
-            "source_b_ref": "Q07 follow-up, Q15, Q16 follow-up"
-          },
-          {
-            "id": 3,
-            "text": "Seed describes 'disciplined, routine-driven work ethic' and 'calmly resolve high-pressure customer issues.' Interview provides detailed behavioral evidence: staying calm with difficult customers (Q16 follow-up), rush-hour composure (Q65 follow-up), pushing through headaches at work (Q34 follow-up).",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: professional_persona",
-            "source_b_ref": "Q16 follow-up, Q65, Q65 follow-up, Q34 follow-up"
-          },
-          {
-            "id": 4,
-            "text": "Seed describes 'reading practical self-help books' as a hobby. Interview confirms: Q50 follow-up mentions reading a self-help book about habits that inspired the 'one good thing' journal entry. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: hobbies_and_interests",
-            "source_b_ref": "Q50 follow-up"
-          },
-          {
-            "id": 5,
-            "text": "Seed mentions 'attending local art walks and museum exhibits to unwind.' Interview does not provide direct evidence of art walk or museum attendance. The closest reference is Wes Anderson films (Q15 follow-up) and Instagram browsing of food accounts (Q48). This seed claim lacks interview corroboration.",
-            "verdict": "GAP",
-            "source_a_ref": "seed: arts_persona",
-            "source_b_ref": "Q15 follow-up, Q48 (no art walk/museum evidence)"
-          },
-          {
-            "id": 6,
-            "text": "Seed mentions 'solving Sudoku puzzles for a competitive edge.' Interview Q15 mentions 'did some Sudoku' in the evening routine. The 'competitive edge' framing is from the seed, while the interview presents it as casual evening activity. Minor emphasis difference but not contradictory.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed: hobbies_and_interests_list",
-            "source_b_ref": "Q15"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 1 }
+      "media_and_information_diet": {
+        "description": "News sources, social media platforms, entertainment formats, information-seeking behavior",
+        "items": [
+          "Reads NPR occasionally for news (Q23 follow-up, Q42)",
+          "Follows local Madison news accounts online; follows what city council does, pays attention to ballot measures (Q25)",
+          "Facebook: member of Madison Runners Club group and Madison gardening group; rarely posts (monthly at most -- garden photos, food photos) (Q48)",
+          "Instagram: scrolls food, running, and local Madison accounts; follows Bon Iver's page; ~20-30 min/day total social media (Q48)",
+          "Deleted TikTok after one use (Q48)",
+          "Does not use Twitter (Q48)",
+          "Does not watch cable news (Q23 follow-up)",
+          "Gets political information primarily through friend Jess (sends articles, tells her what's going on) and local news (Q23 follow-up)",
+          "Trusts CDC website, healthcare providers, and pharmacists for medical information; distrusts social media health claims (Q42)",
+          "Reads practical self-help books about habits and productivity; integrates specific techniques into journal practice (Q50 follow-up)",
+          "Never engages in online debates or discussions -- 'number one rule' (Q48 follow-up)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q45 describes lying awake at night running through scenarios, heart racing, inability to shut brain off -- occurring since high school, before tests, job interviews, reviews. The psychologist summary accurately captures this as 'anticipatory rumination before decisions' and uses behavioral language only, avoiding clinical labels.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q45, Q31",
-            "source_b_ref": "extracted_profile: summaries.psychologist, preferences.health_and_wellness"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q43 describes winter low-energy periods: 2-3 weeks in late January/early February with flat energy, reduced motivation, minimal journal entries. Psychologist summary describes 'seasonal mood dips in winter' and profile health_and_wellness captures 'low-energy flat periods in deep winter.' Accurate behavioral description without clinical labeling.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q43, Q43 follow-up",
-            "source_b_ref": "extracted_profile: summaries.psychologist, preferences.health_and_wellness"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q45 follow-up describes self-doubt spirals ('what am I doing, I'm twenty-eight working fast food, am I ever going to get anywhere'), social comparison with high school classmates, and self-critical thinking when tired. The psychologist summary captures 'effective self-regulation' and 'narrative identity' but the specific self-doubt and social comparison patterns are underrepresented.",
-            "verdict": "GAP",
-            "source_a_ref": "Q45 follow-up",
-            "source_b_ref": "extracted_profile: summaries.psychologist (self-doubt spiral not specifically captured)"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q44 details emotional processing after breakup: went for a 9 PM run, cried while making pasta, channeled grief into cooking (froze 10 portions of red sauce). Profile social_and_relationships states 'Processes relationship stress through physical activity (running) and cooking.' Accurate.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q44",
-            "source_b_ref": "extracted_profile: preferences.social_and_relationships.details"
-          },
-          {
-            "id": 5,
-            "text": "Interview Q45 follow-up: Jess suggested therapy with sliding-scale fees; Mary acknowledges it might help but avoids it ('the idea of sitting in a room and talking about my feelings to a stranger sounds exhausting'). Psychologist summary captures this as 'mild avoidance patterns around professional help' intersecting financial constraints with identity-based resistance. Accurate.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q45 follow-up",
-            "source_b_ref": "extracted_profile: summaries.psychologist"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+      "behavioral_patterns": {
+        "description": "Recurring behavioral patterns that cut across multiple life domains",
+        "items": [
+          "Three-phase emotional coping sequence: (1) physical activity, (2) tactile/creative engagement, (3) structured recovery through planning (Q44, Q37 follow-up, Q50)",
+          "Social comparison pattern with active counter-strategy: compares self to college-educated peers, then redirects to own plan ('I've got a plan and I'm working it') (Q45 follow-up)",
+          "Father-as-cautionary-tale motivational driver: father's physical decline from manual labor explicitly motivates pursuit of management/ownership path (Q35 follow-up)",
+          "Central existential fear: stagnation -- 'I'm afraid of hard work that doesn't lead anywhere' (Q108 follow-up)",
+          "Stoic workplace norm: 'In food service, everybody's dealing with something... You just push through' -- reinforces help-avoidance patterns (Q34 follow-up)",
+          "Receipt-checking habit originated from family financial crisis during father's injury (Q02 follow-up)",
+          "Dual-routine system: opening-shift and closing-shift versions of daily routine mapped out in journal to eliminate decision fatigue (Q78 follow-up)",
+          "Identity-based resistance to government assistance despite likely eligibility: 'those programs are for people who are worse off than me' (Q80)",
+          "Small-wins framing for coping with financial constraint: making cheap meals feel like victories, tracking every dollar as empowerment (Q83 follow-up)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
+      "unresolved_or_ambiguous": {
+        "description": "Information that could not be confidently assigned or confirmed",
+        "items": [
           {
-            "id": 1,
-            "text": "The psychologist summary describes 'high conscientiousness' and 'moderate introversion,' while social_and_relationships shows weekly social outings (Jess), Saturday running group, 2-3x/week parent visits. The 'moderate introversion' is consistent -- she has regular social contact but prefers one-on-one or small group settings and processes emotions internally.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (moderate introversion)",
-            "field_b": "preferences.social_and_relationships"
+            "content": "Seed data mentions 'attending local art walks and museum exhibits' but interview only briefly references Wes Anderson films and music; specific art walk/museum behavior was not explored in depth",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Insufficient interview evidence to confirm frequency or significance of visual arts engagement; retained in arts_and_culture as 'occasional' per seed"
           },
           {
-            "id": 2,
-            "text": "The psychologist summary describes 'moderate-low openness' gravitating toward 'routine, familiarity, and practical knowledge over novelty-seeking.' The entertainment preferences include indie music (Bon Iver) and Wes Anderson films, which could suggest somewhat higher openness. However, these are comfort-oriented preferences rather than novelty-seeking, so the characterization holds.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (moderate-low openness)",
-            "field_b": "preferences.entertainment, preferences.arts_and_culture"
+            "content": "Seed data references Door County, Napa Valley, and Kyoto travel aspirations, but interview reveals very limited actual travel experience and severe budget constraints",
+            "candidate_owner": "behavioral_economist",
+            "reason_unresolved": "Aspirational travel preferences from seed may not reflect realistic near-term behavior; flagged as aspirational rather than actual in travel section"
           },
           {
-            "id": 3,
-            "text": "The health_and_wellness section lists 'lies awake running through scenarios before big decisions; occurs 1-2 times per month.' The sensory_and_physical_context in others_misc also lists 'Intermittent sleep disruption (1-2 times/month) tied to anticipatory rumination.' These are redundant entries of the same behavior in two different profile locations, but they are consistent with each other.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.health_and_wellness (sleep/rumination)",
-            "field_b": "others_misc.sensory_and_physical_context (sleep disruption)"
+            "content": "Seed data mentions 'listening to classic rock music' in hobbies list, but interview only surfaces John Prine and Bon Iver by name; classic rock tastes not elaborated",
+            "candidate_owner": "entertainment",
+            "reason_unresolved": "Retained as a listed preference but without specific artist detail from interview"
+          },
+          {
+            "content": "Mary mentions she was raised Catholic and 'doesn't agree with everything the church teaches' (Q47 follow-up) but does not specify which teachings she disagrees with",
+            "candidate_owner": "political_scientist",
+            "reason_unresolved": "Potential relevance to social/political views but not explored in interview"
           }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview Q39 follow-up describes witnessing a high school friend's descent into painkiller misuse and its formative impact on Mary's cautious attitude toward medications. This experience is not captured in the profile, though it partially explains her avoidance of prescriptions and substances.",
-            "verdict": "MISSING",
-            "interview_ref": "Q39 follow-up",
-            "should_be_in": "others_misc.life_events_and_transitions or health_and_wellness"
-          },
-          {
-            "id": 2,
-            "text": "Interview Q11 follow-up describes Mary's emotional reaction to disruption of her organized living space: 'If someone else was in here moving stuff around I'd lose it.' Profile home_and_lifestyle captures the organization (alphabetized spice rack, etc.) but not the emotional intensity of her attachment to environmental control.",
-            "verdict": "MISSING",
-            "interview_ref": "Q11 follow-up",
-            "should_be_in": "summaries.psychologist or preferences.home_and_lifestyle"
-          },
-          {
-            "id": 3,
-            "text": "Interview Q109 expresses core values: consistency, family, quiet hard work, routines as control, small pleasures, having a dream. Profile captures most of this across various sections. The psychologist summary alludes to these values through its behavioral analysis.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q109",
-            "should_be_in": "distributed across summaries and preferences (adequately covered)"
-          },
-          {
-            "id": 4,
-            "text": "Interview Q37 follow-up mentions gardening as 'kind of therapeutic' and running as a mental reset. Profile nature_and_outdoors captures 'finds gardening therapeutic and calming' and the psychologist summary mentions 'exercise, journaling, and cooking as behavioral coping mechanisms.' Adequately captured.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q37 follow-up",
-            "should_be_in": "preferences.nature_and_outdoors, summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Interview Q46 follow-up reveals Mary's worry about her mother's emotional wellbeing and her tendency to take on caregiving and emotional labor for both parents. This caregiving dynamic is partially captured in social_and_relationships but the emotional labor component is underrepresented.",
-            "verdict": "MISSING",
-            "interview_ref": "Q46 follow-up",
-            "should_be_in": "summaries.psychologist or preferences.social_and_relationships"
-          }
-        ],
-        "summary": { "present": 2, "missing": 3 }
+        ]
       }
     }
-  },
-
-  "overall_verdict": "PASS_WITH_REVISIONS",
-
-  "inconsistencies_found": [
-    "ISSUE: Demographer summary estimates gross annual income at $23,000-$25,000, but interview Q72 indicates gross monthly of $2,200-$2,300, yielding $26,400-$27,600 annually."
-  ],
-
-  "resolutions": [
-    {
-      "issue": "Demographer summary underestimates gross annual income",
-      "expert": "demographer",
-      "seed_says": "N/A (no income data in seed)",
-      "interview_says": "Gross monthly ~$2,200-$2,300 (Q72), implying ~$26,400-$27,600 gross annually",
-      "severity": "Minor",
-      "resolution": "The demographer summary should be updated to read 'approximately $26,000-$28,000 gross' to match interview-derived figures. Take-home of ~$1,900/month ($22,800/year) is the net figure.",
-      "action": "PARTIAL_UPDATE"
-    }
-  ],
-
-  "gaps_addressed": [
-    {
-      "gap": "Seed travel persona (Door County, Napa Valley, Kyoto) largely unsupported by interview evidence due to budget constraints",
-      "resolution": "Profile correctly flags this in others_misc.unresolved_or_ambiguous. Travel preferences should be understood as aspirational rather than behavioral. Carry forward with annotation.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Seed arts_persona mentions 'attending local art walks and museum exhibits' but no interview evidence confirms this behavior",
-      "resolution": "Profile correctly flags this in others_misc.unresolved_or_ambiguous. The arts_and_culture preference section includes it with the note '(arts persona from seed data).' Carry forward as seed-originated but unverified.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Credit card debt ($800), tax refund to diner fund, and seasonal bill fluctuation not captured in extracted_profile details",
-      "resolution": "These financial details from Q63, Q75, Q59 should be added to a finances subsection or to work_and_career details for completeness.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "DOB, birthplace, race/ethnicity not captured as structured top-level fields in extracted_profile",
-      "resolution": "These demographic details from Q85, Q87, Q88, Q89 are available in the interview but were not extracted as structured fields. Adding them would improve downstream usability.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "High school friend's substance misuse experience (Q39 follow-up) not captured as formative event",
-      "resolution": "This explains Mary's cautious attitude toward medications and is relevant to her health behavior profile. Minor enrichment opportunity.",
-      "action": "CARRY_FORWARD"
-    }
-  ],
-
-  "expert_summaries": {
-    "demographer": "Mary Alberti is a 28-year-old never-married white female of second-generation Italian-American descent, born and raised in Madison, Wisconsin. She holds a high school diploma and has worked in food service for approximately ten years, currently earning roughly $26,000-$28,000 gross annually as a fast food crew member in the 53717 zip code. Her family's socioeconomic trajectory -- father as a disabled machinist, mother as a part-time bookkeeper, both with high-school-level education -- situates her firmly in the Midwestern working class. She is at a demographic inflection point, pursuing credentialing through Madison College's hospitality program that could alter her occupational trajectory, while her strong attachment to Madison and her family constrains geographic mobility.",
-
-    "behavioral_economist": "Mary demonstrates sophisticated present-bias mitigation through her bullet-journal commitment device, which tracks every expenditure and organizes savings goals across emergency and diner-fund accounts (Q17, Q56, Q61). She exhibits strong loss aversion around her $600 emergency fund and $1,200 diner fund, showing visible distress at depletion events from brake repairs and lost sick-day wages (Q62, Q63, Q64). Her consumption decisions reflect future-orientation: she consistently defers gratification by cutting social spending, eating cheaply, and picking up extra shifts to maintain savings targets (Q57, Q60, Q81). Her identity utility is heavily tied to self-reliance, creating a revealed preference gap where she forgoes likely-eligible government benefits due to identity cost (Q80). Risk aversion is modulated by social capital -- she declined a Milwaukee transfer with higher pay because local knowledge, relationships, and the diner dream were place-dependent (Q02).",
-
-    "political_scientist": "Mary is a low-engagement, economically driven voter who participates in presidential elections and occasionally in local ones, using early voting to navigate irregular work schedules (Q23). She gravitates toward candidates advocating minimum wage increases, affordable healthcare, and worker protections, positioning her as center-left on pocketbook issues without partisan self-identification (Q24, Q95, Q96). Her civic footprint is small: she attends a Catholic church, participates in a community garden and running club, but avoids rallies, protests, and public political expression (Q29, Q47). Her racial awareness evolved through direct workplace exposure to a Black coworker's experiences with policing (Q26), producing an internal attitudinal shift rather than external activism. Institutional trust is low regarding healthcare and employment protections, shaped by direct experience with inadequate benefits and unpaid sick leave (Q36, Q66, Q76).",
-
-    "psychologist": "Mary shows high conscientiousness through her pervasive planning behavior -- a four-year bullet-journal practice with color-coded daily, weekly, and monthly systems for tracking work, finances, fitness, and meals (Q17 follow-up). She displays moderate introversion, preferring one-on-one connections with Jess and her mother over group social settings, and processes emotions internally before sharing them (Q29, Q43 follow-up, Q49). Anticipatory rumination before major decisions -- lying awake with a racing heart, running through every scenario -- has been a stable behavioral pattern since high school (Q45), occurring approximately twice monthly. She experiences seasonal energy and motivation dips in deep winter that resolve with warmer weather and outdoor activity resumption (Q43). Her primary behavioral coping mechanisms are physical activity (running), structured productivity (journaling, cooking, meal prep), and social support from a single strong-tie friend (Q37 follow-up, Q44, Q50). She exhibits mild avoidance of professional support services, attributing this to both financial barriers and a self-reliance orientation transmitted through family values (Q45 follow-up, Q80)."
-  },
-
-  "preferences_updates": {
-    "additions": [
-      "Add credit card debt details ($800, $50/month payments, August payoff target) to work_and_career or a finances subsection",
-      "Add tax refund (~$300-$400) to diner fund pipeline to work_and_career details",
-      "Add seasonal financial stress pattern (winter heating spikes from ~$30 to $150+, December holiday deficits) to home_and_lifestyle",
-      "Add specific policy interests (tipped wages, fast food worker protections) to community_and_civic",
-      "Add DOB (July 14, 1997), birthplace (Madison, WI), and race/ethnicity (White, Italian-American, not Hispanic) as structured top-level fields",
-      "Add formative experience of witnessing high school friend's substance misuse to life_events_and_transitions",
-      "Add emotional intensity of environmental control needs (distress at disruption of organized space) to psychologist summary or home_and_lifestyle"
-    ],
-    "corrections": [
-      "Update demographer summary income estimate from '$23,000-$25,000 gross' to '$26,000-$28,000 gross'"
-    ],
-    "removals": []
-  },
-
-  "final_status": "Mary Alberti's interview and extracted profile are strongly consistent with the NVIDIA seed data across all four expert domains. One minor inconsistency was found (demographer income estimate slightly low). Several completeness gaps were identified -- primarily missing financial details (credit card debt, seasonal bill patterns, tax refund pipeline) and missing structured demographic fields (DOB, birthplace, race). Seed-originated claims about travel behavior and art walk attendance remain unverified by interview evidence but are appropriately flagged in the profile's unresolved section. The psychologist domain uses behavioral language throughout without clinical labels. Overall, the profile faithfully represents the interview data with high accuracy and no major contradictions. Verdict: PASS_WITH_REVISIONS."
+  }
 }

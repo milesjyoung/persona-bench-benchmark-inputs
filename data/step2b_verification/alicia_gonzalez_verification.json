@@ -1,682 +1,931 @@
 {
-  "verification_metadata": {
+  "verification": {
+    "metadata": {
+      "participant_id": "50f90a6f17de473f9ca15f00afdedf7a",
+      "name": "Alicia Gonzalez",
+      "verification_date": "2026-03-31",
+      "protocol": "4-direction expert panel verification (Demographer, Behavioral Economist, Political Scientist, Psychologist)",
+      "model": "Claude Opus 4.6 (1M context)",
+      "seed_source": "data/step1_seed/alicia_gonzalez_seed.json",
+      "interview_source": "data/step2_interview/alicia_gonzalez_interview.json"
+    },
+
+    "direction_1_seed_vs_interview": {
+      "description": "Seed data compared against interview transcript for consistency, enrichment, and contradiction.",
+      "demographer": [
+        {
+          "id": "D1-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Seed states age 29, female, divorced, Chico CA 95928, bachelor's in STEM, computer/information research scientist. Interview confirms all: DOB July 14, 1996 (Q85), references being 29 (Q05, Q43), divorced ~2 years ago (Q01, Q84), apartment off Mangrove Ave in Chico (Q08, Q51), BS in Computer Science from Chico State (Q90), research scientist at lab in Chico (Q16, Q65)."
+        },
+        {
+          "id": "D1-DEM-02",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'Colombian household, parents who immigrated to the United States before she was born.' Interview enriches: father Carlos (60) from Bogota, mother Rosa (57) from a town near Cali, family lived in Sacramento area, parents became citizens when Alicia was a child, brother Diego (25) in LA. Mom worked at daycare (Little Stars), dad is maintenance supervisor at Valley Properties for 20 years. Maternal grandmother (82) still in Colombia (Q01, Q05, Q06, Q97-Q107)."
+        },
+        {
+          "id": "D1-DEM-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'bilingual Colombian household' and 'cumbia and vallenato.' Interview elaborates: Spanish spoken exclusively at home per mother's insistence ('En esta casa se habla espanol'), code-switching between school and home, church attendance at St. John the Baptist (Spanish-language Mass with Colombian priest Father Ruben), extended family network in Sacramento area (tia Lucia, tia Marta, cousins Sofia and Andres), weekly FaceTime with abuela (Q01, Q05, Q06, Q47)."
+        },
+        {
+          "id": "D1-DEM-04",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'Chico, California' as location. Interview enriches with 7 years of context: grew up in Sacramento, attended Chico State, stayed after graduation, chose lower-paying research position over Bay Area industry job. Apartment off Mangrove between downtown and university. Born in Sacramento, CA (Q87). Lived in Sacramento at age 16 (Q97)."
+        },
+        {
+          "id": "D1-DEM-05",
+          "finding": "CONSISTENT",
+          "detail": "Seed states education as 'bachelors' in 'stem.' Interview specifies Bachelor's in Computer Science from Chico State (Q90). Father completed high school in Colombia (Q100), mother did some college in Colombia in early childhood education but didn't finish (Q101). Alicia considering PhD (Q91, Q108)."
+        },
+        {
+          "id": "D1-DEM-06",
+          "finding": "CONSISTENT",
+          "detail": "Seed states marital_status as 'divorced.' Interview provides extensive elaboration: married at 23 to college boyfriend, together ~3 years total, married less than 2, divorce finalized ~2 years ago (~age 27). Career choice was a contributing factor (Q01, Q02, Q84)."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D1-BEH-01",
+          "finding": "ENRICHED",
+          "detail": "Seed describes career choice broadly ('competitive drive' + 'relaxed, sometimes disorganized work style'). Interview provides a pivotal revealed-preference moment: Alicia turned down a software engineering job in San Jose (~40% more pay, stock options) for a lower-paying research position under Dr. Patel in Chico. This demonstrates strong intrinsic motivation and willingness to accept large income penalties for autonomy and intellectual freedom (Q02, Q02 follow-up)."
+        },
+        {
+          "id": "D1-BEH-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions no financial information. Interview provides full financial picture: gross ~$5,800/mo (~$69,600/yr), take-home ~$4,200/mo, rent $1,250, student loans $18,000 ($220/mo), emergency fund at ~2.5 months expenses, retirement contributions at 3% employer match, savings rate $300-$400/mo, no credit card debt. Financial management via spreadsheet, no-credit-card-debt rule, mothers envelope-system influence (Q56-Q64, Q72-Q83)."
+        },
+        {
+          "id": "D1-BEH-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'modest travel budget.' Interview quantifies: conference travel partially lab-funded (registration, sometimes partial travel), personal Colombia trip budget $2,000-$2,500, reimbursement lag of $800-$1,000 creates cash-flow pressure, cuts eating out and non-essentials before conferences (Q62, Q81)."
+        },
+        {
+          "id": "D1-BEH-04",
+          "finding": "ENRICHED",
+          "detail": "Seed persona describes 'relaxed, sometimes disorganized work style' with 'project timelines occasionally slip.' Interview confirms: late-night work sessions, staying up until 1-2 AM, deadline-week schedule collapse (55-60 hr weeks), sleep deprivation cascades into diet deterioration (crackers/cheese, excess coffee). But also shows deliberate counter-measures: yoga, breathing exercises, learning to say no (Q15, Q32, Q50, Q68)."
+        },
+        {
+          "id": "D1-BEH-05",
+          "finding": "ENRICHED",
+          "detail": "Seed describes startup ambition ('launching a startup that offers AI-driven creative tools'). Interview enriches: 20-page notes document, informal market research, recognizes need for co-founder with business skills, plans to build prototype within a year. PhD as potential enabling step. Concrete but pre-execution stage (Q108 follow-up)."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D1-POL-01",
+          "finding": "NO SEED DATA",
+          "detail": "Seed contains no political information. Interview provides rich detail: votes in every election including local/special, leans Democratic but rejects strong party identity, issue-based voter (immigration, education, climate/wildfire, tech policy), reads CalMatters, NPR, voter guides, policy newsletters. Parents' naturalization story motivates civic participation (Q23-Q30, Q95-Q96)."
+        },
+        {
+          "id": "D1-POL-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'navigating the innovative tech ecosystem of Chico' and 'champion inclusive research practices.' Interview reveals concrete civic actions: Technolatinas mentoring, tutoring center volunteering, lab reading group on AI bias and equity, blog post on algorithmic fairness, participation in peaceful local marches, writing to representatives about immigration bills (Q04, Q17, Q24, Q26-Q29)."
+        },
+        {
+          "id": "D1-POL-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'online network of Colombian scientists' as community connection. Interview reveals this is a 200-member Discord server where policy discussions occur, especially around immigration and STEM visa issues. Combined with her engagement in Technolatinas and the lab reading group, her civic participation is substantially more extensive than seed suggests (Q07, Q10, Q24, Q48)."
+        },
+        {
+          "id": "D1-POL-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions no racial or social justice perspectives. Interview reveals substantial engagement: experiences as a Latina in tech spaces (asked to 'prove' qualifications, only brown person at conferences), participated in BLM-related lab conversations, developed equity-focused research practices (bias audits, diverse training data), reads Latinx scholars Roberto Gonzales and Cristina Mora (Q26-Q30)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D1-PSY-01",
+          "finding": "ENRICHED",
+          "detail": "Seed persona describes 'fuses scientific precision with artistic chaos' and 'spontaneous bursts of creativity.' Interview provides behavioral texture: analytical-then-intuitive decision style (spreadsheet followed by gut check on a hike, Q03), performance anxiety manifesting as chest tightness and racing thoughts before deadlines/presentations (Q45), nighttime rumination about career progress (Q43 follow-up)."
+        },
+        {
+          "id": "D1-PSY-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'competitive drive.' Interview contextualizes: competitive primarily in board games ('something about board games flips a switch,' Q07 follow-up), peer comparison on career milestones causing distress (Q43 follow-up), but collaborative rather than competitive at work (Q77). Competition is self-directed and context-specific."
+        },
+        {
+          "id": "D1-PSY-03",
+          "finding": "ENRICHED",
+          "detail": "Seed persona mentions 'occasionally losing track of deadlines.' Interview reveals the post-divorce identity reconstruction: threw herself into work, rediscovered painting, joined hiking club, adopted Luna, reconnected with friends. Describes moving from 'unmoored' to 'grounded' over two years (Q01 follow-up, Q43). This is a significant resilience narrative not in the seed."
+        },
+        {
+          "id": "D1-PSY-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'vivid imagination' and 'love for storytelling.' Interview reveals multi-modal emotional regulation: painting ('shuts off the anxious part of my brain'), cooking elaborate recipes as meditation ('can't think about anything else'), journaling for cognitive clarity, yoga for physical stress relief, verbal processing with trusted friends. Systematic coping toolkit developed largely post-divorce (Q38 follow-up, Q45 follow-up)."
+        },
+        {
+          "id": "D1-PSY-05",
+          "finding": "NEW FINDING",
+          "detail": "Seed does not mention vulnerability to loneliness. Interview reveals episodic loneliness since divorce, especially on unplanned weekend evenings. She has developed active counter-strategies: calling friends, going to coffee shops for ambient presence, reframing as 'chosen solitude,' relying on Luna. This is a significant behavioral pattern not in the seed (Q43 follow-up)."
+        },
+        {
+          "id": "D1-PSY-06",
+          "finding": "NEW FINDING",
+          "detail": "Seed does not address family caretaking orientation. Interview reveals anticipatory financial planning for parents' retirement, concern about father's knee problems and physical deterioration, monitoring mother's health avoidance behavior. Alicia carries intergenerational caretaking responsibility she frames as 'non-negotiable' (Q05 follow-up, Q35, Q36, Q40)."
+        }
+      ]
+    },
+
+    "direction_2_interview_vs_extracted_profile": {
+      "description": "Interview transcript compared against extracted_profile for accuracy, omissions, and misrepresentations.",
+      "demographer": [
+        {
+          "id": "D2-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile header demographics (age 29, female, divorced, Chico CA 95928, BS in Computer Science, computer/information research scientist) all match interview exactly (Q84-Q90, Q08, Q16, Q65)."
+        },
+        {
+          "id": "D2-DEM-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not include date of birth (July 14, 1996) from Q85. Should be in demographics header."
+        },
+        {
+          "id": "D2-DEM-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not include race/ethnicity. Interview: 'I usually say Latina or Hispanic' (Q89), of Colombian origin (Q88). Should be recorded."
+        },
+        {
+          "id": "D2-DEM-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not include birth city. Interview states born in Sacramento, California (Q87). Should be in demographics."
+        },
+        {
+          "id": "D2-DEM-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not include Hispanic/Latinx confirmation. Q88 confirms Colombian origin. Should be recorded explicitly."
+        },
+        {
+          "id": "D2-DEM-06",
+          "finding": "OMISSION",
+          "detail": "Profile does not include religion in header. Q94 and Q47 establish Catholic upbringing with continued occasional attendance at St. John the Baptist (Spanish-language Mass). Behavioral rather than labeled, but parish attendance should be noted."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D2-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures career-over-income revealed preference, intrinsic motivation, disciplined savings, spreadsheet tracking, no-credit-card-debt rule, and financial management approach. All match interview evidence from Q56-Q64, Q72-Q83."
+        },
+        {
+          "id": "D2-BEH-02",
+          "finding": "OMISSION",
+          "detail": "Profile work_and_career section lists gross/take-home salary but does not capture the monthly spending breakdown: rent $1,250, groceries ~$350, car insurance/gas/utilities $50-$150 each, Luna expenses ~$60/mo, coffee ~$40/mo beans plus coffee shop visits, student loan $220/mo, health insurance $120/mo. Total normal spend $2,200-$2,500. This detailed budget picture is available from Q56-Q57."
+        },
+        {
+          "id": "D2-BEH-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the retirement account with 3% employer match as a specific commitment device (Q61). It is mentioned in work_and_career but not framed as a behavioral strategy."
+        },
+        {
+          "id": "D2-BEH-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the reimbursement lag problem: conference travel costs $800-$1,000 upfront before lab reimbursement, creating cash-flow pressure and triggering budget-cutting behavior (Q81). This is a significant financial friction."
+        },
+        {
+          "id": "D2-BEH-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture art print sales as supplementary income ($150 from prints, Q60, Q74). While minor and irregular, it represents a diversification behavior and connects economic activity to artistic practice."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D2-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures consistent voting, issue-based evaluation, lean-Democratic orientation, engagement with CalMatters/NPR/voter guides, and civic participation through Technolatinas and tutoring. Matches Q23-Q30, Q95-Q96."
+        },
+        {
+          "id": "D2-POL-02",
+          "finding": "OMISSION",
+          "detail": "Profile community_and_civic section does not capture Alicia's specific priority on algorithmic accountability and tech policy as a political concern (Q25). This is a distinctive policy interest emerging from her professional expertise."
+        },
+        {
+          "id": "D2-POL-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the Camp Fire (2018) as a catalytic event that shifted her political engagement toward local issues -- housing policy, wildfire preparedness, emergency management (Q25 follow-up). This is a defining political development."
+        },
+        {
+          "id": "D2-POL-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Alicia's cross-aisle engagement style: interacting with conservative ranchers and small business owners at hiking club and farmers market, finding common ground on local issues despite ideological disagreement, explicitly avoiding social media arguments (Q24 follow-up)."
+        },
+        {
+          "id": "D2-POL-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture her direct political actions: writing to representatives about specific immigration bills, helping tia Marta navigate vaccine misinformation in Spanish-language Facebook groups (Q24 follow-up, Q42 follow-up)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D2-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile psychologist summary accurately captures high openness, moderate-to-high conscientiousness undermined by night-owl tendencies, rich social network with solitude needs, family devotion, and multi-modal emotional regulation. Matches Q01-Q03, Q43-Q45, Q109."
+        },
+        {
+          "id": "D2-PSY-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the 48-hour grace period after paper rejections as a structured coping mechanism (Q44 follow-up). This is a deliberate self-regulation strategy developed from experience."
+        },
+        {
+          "id": "D2-PSY-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the specific vulnerability pattern: paper rejection + father's health flare-up + wedding anniversary converging in one week, leading to a 5-day withdrawal episode (Q44). The convergence pattern and recovery through friend intervention (Priya showing up with soup) is psychologically significant."
+        },
+        {
+          "id": "D2-PSY-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Alicia's family-of-origin emotional processing norms: parents show care through actions rather than words (mom sends food, dad fixes things), neither would suggest therapy, 'handling things yourself' is the cultural norm. She is 'warming up to the idea' of therapy (Q45 follow-up). This cultural context shapes her help-seeking behavior."
+        },
+        {
+          "id": "D2-PSY-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the self-worth pattern tied to career milestones: comparing herself to peers with professorships or startups, 'ambient hum of am I doing enough,' nighttime brain spirals about undone tasks (Q43 follow-up). This is a persistent source of distress."
+        },
+        {
+          "id": "D2-PSY-06",
+          "finding": "OMISSION",
+          "detail": "Profile does not document alcohol pattern during divorce (nightly wine for several weeks) and her self-correction: recognized the pattern, pulled back, redirected to yoga and hiking (Q38). This demonstrates self-monitoring and deliberate behavioral adjustment."
+        }
+      ]
+    },
+
+    "direction_3_profile_internal_consistency": {
+      "description": "Extracted profile checked for internal contradictions, logical inconsistencies, and cross-section coherence.",
+      "demographer": [
+        {
+          "id": "D3-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "All demographic fields in header are internally consistent with the body of the profile. Age 29, Chico CA, divorced, BS in CS, research scientist -- referenced consistently across all 15 preference categories and 4 summaries."
+        },
+        {
+          "id": "D3-DEM-02",
+          "finding": "CONSISTENT",
+          "detail": "Salary figure ($69,600/yr gross, $4,200/mo take-home) in work_and_career is consistent with the spending profile in home_and_lifestyle ($1,250 rent) and the savings capacity ($300-$400/mo) mentioned in behavioral_economist summary. The math holds: $4,200 - $1,250 rent - $220 loans - $120 insurance - ~$350 food - ~$300 utilities/gas/misc = ~$1,960, leaving room for $300-$400 savings plus incidentals."
+        },
+        {
+          "id": "D3-DEM-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Demographer summary states 'approximately $69,600 gross annually' derived from $5,800/mo x 12. Interview states take-home ~$4,200 and gross ~$5,800/mo (Q72). These are self-reported figures that are internally consistent but the gross annual could range from ~$69,600 to ~$70,000 depending on rounding. Not a material issue."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D3-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Financial figures across sections are internally coherent: rent $1,250 + normal spending $2,200-$2,500/mo total against $4,200 take-home leaves $1,700-$2,000 for all other expenses and savings. Savings of $300-$400/mo plus $220/mo student loans plus retirement contributions all fit within this envelope."
+        },
+        {
+          "id": "D3-BEH-02",
+          "finding": "CONSISTENT",
+          "detail": "Behavioral patterns are internally coherent: intrinsic motivation (choosing research over industry), disciplined savings (spreadsheet, no-debt rule), present-bias in sleep and self-care, identity-based motivation (scientist/artist/mentor). All form a unified behavioral portrait."
+        },
+        {
+          "id": "D3-BEH-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile behavioral_economist summary describes her as having 'limited financial margin' and emergency fund at ~2.5 months, but the work_and_career section implies some flexibility through the savings rate. These are not contradictory but the framing differs -- the economist emphasizes constraint while the career section emphasizes steady progress. Both are accurate."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D3-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile's political characterization (consistent voter, issue-based, lean-Democratic, high civic engagement) is internally consistent across the community_and_civic preferences, political_scientist summary, and media_and_information_diet sections."
+        },
+        {
+          "id": "D3-POL-02",
+          "finding": "CONSISTENT",
+          "detail": "The community_and_civic section and political_scientist summary are mutually reinforcing: both describe active participation across multiple civic domains (voting, mentoring, tutoring, online communities, peaceful protests, workplace advocacy)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D3-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Psychological profile is internally coherent: high openness drives the art/science integration, novel-seeking, and diverse interests; moderate-to-high conscientiousness drives the savings, career commitment, and self-care routines; the tension between these (staying up late to create vs. needing to be at work by 8:30) is accurately captured as an ongoing struggle rather than a contradiction."
+        },
+        {
+          "id": "D3-PSY-02",
+          "finding": "CONSISTENT",
+          "detail": "Health_and_wellness mentions sleep issues and neck tension; psychologist summary mentions performance anxiety and rumination; emotional_well-being data from Q43-Q45 connects all three. Cross-references are accurate and form a coherent stress-response pattern."
+        },
+        {
+          "id": "D3-PSY-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Psychologist summary rates Neuroticism as 'moderate' with 'effective coping strategies,' but the interview reveals several vulnerability patterns (loneliness episodes, 5-day withdrawal after convergent setbacks, nighttime rumination, peer comparison distress) that suggest the effective coping strategies are hard-won and not always sufficient. A more precise characterization would note that emotional regulation is effortful and context-dependent rather than stable."
+        },
+        {
+          "id": "D3-PSY-04",
+          "finding": "CONSISTENT",
+          "detail": "The dual-identity theme (scientist/artist, Colombian/American) is consistently maintained across arts_and_culture, work_and_career, cultural_and_linguistic, and the psychologist summary. No contradictions in how these identities are presented."
+        }
+      ]
+    },
+
+    "direction_4_completeness": {
+      "description": "Profile checked against full 109-question transcript for missing information that should be captured.",
+      "demographer": [
+        {
+          "id": "D4-DEM-01",
+          "finding": "GAP",
+          "detail": "Date of birth (July 14, 1996) from Q85 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-02",
+          "finding": "GAP",
+          "detail": "Race/ethnicity (Latina/Hispanic, Colombian origin) from Q88-Q89 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-03",
+          "finding": "GAP",
+          "detail": "Birth city (Sacramento, California) from Q87 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-04",
+          "finding": "GAP",
+          "detail": "Hispanic/Latinx confirmation from Q88 not included in profile header."
+        },
+        {
+          "id": "D4-DEM-05",
+          "finding": "GAP",
+          "detail": "Religion/spirituality (Catholic upbringing, occasional attendance at St. John the Baptist, Spanish-language Mass) from Q47, Q94 not in profile header. Only appears in preference sections."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D4-BEH-01",
+          "finding": "GAP",
+          "detail": "Monthly budget breakdown not aggregated: rent $1,250, groceries ~$350, student loan $220, health insurance $120, car insurance/gas ~$100-150, utilities ~$100, Luna ~$60, phone/internet ~$80, coffee beans ~$40. Total fixed ~$2,320-$2,370 against $4,200 take-home (Q56, Q57, Q63, Q40)."
+        },
+        {
+          "id": "D4-BEH-02",
+          "finding": "GAP",
+          "detail": "Seasonal spending variation not captured: summer electricity bills up to $180 vs. ~$60 winter (PG&E), Christmas gifts $300-$400, air filter costs during smoke season, conference travel reimbursement lag (Q59, Q81)."
+        },
+        {
+          "id": "D4-BEH-03",
+          "finding": "GAP",
+          "detail": "Art print sales as supplementary income ($150 from prints, Q60, Q74) not captured. Also sold prints to offset tire expense -- connects artistic activity to economic function."
+        },
+        {
+          "id": "D4-BEH-04",
+          "finding": "GAP",
+          "detail": "Emergency fund target of 3 months expenses (currently at ~2.5 months, needs ~$1,500 more) from Q62 not captured as a concrete savings goal. Three parallel savings goals: (1) rebuild emergency fund, (2) Colombia trip $2,000, (3) long-term down payment $40K-$50K (Q83 follow-up)."
+        },
+        {
+          "id": "D4-BEH-05",
+          "finding": "GAP",
+          "detail": "Parents' financial situation and Alicia's anticipated role not captured: father's employer insurance has $3,000 deductible, mother delays checkups to save money, father not yet eligible for Medicare (needs to reach 65), Alicia and Diego discussed chipping in for retirement (Q36, Q40, Q05 follow-up)."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D4-POL-01",
+          "finding": "GAP",
+          "detail": "Camp Fire (2018) as political awakening event not captured in profile: transformed her political engagement from national to local, specifically around housing policy, wildfire preparedness, and emergency management (Q25 follow-up)."
+        },
+        {
+          "id": "D4-POL-02",
+          "finding": "GAP",
+          "detail": "Specific political actions not fully captured: writing to representatives about immigration bills, helping tia Marta navigate Spanish-language vaccine misinformation on Facebook, voting for an independent city council candidate based on housing competence (Q24 follow-up, Q42 follow-up, Q95 follow-up)."
+        },
+        {
+          "id": "D4-POL-03",
+          "finding": "GAP",
+          "detail": "Algorithmic accountability and tech policy as political interests not captured. She explicitly names this as a shift in her views: 'I've become more interested in tech policy, algorithmic accountability' (Q25). This connects her professional expertise to civic engagement."
+        },
+        {
+          "id": "D4-POL-04",
+          "finding": "GAP",
+          "detail": "Cross-partisan engagement style not documented: interacts with conservative ranchers and business owners at hiking club and farmers market, finds common ground on local issues, redirects from ideology to specific problems (Q24 follow-up, Q30 follow-up)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D4-PSY-01",
+          "finding": "GAP",
+          "detail": "48-hour grace period as structured rejection-coping mechanism not documented: allows 2 days of disappointment, then actively responds with revision plan and peer consultation. Developed after convergent setback episode (Q44 follow-up)."
+        },
+        {
+          "id": "D4-PSY-02",
+          "finding": "GAP",
+          "detail": "Convergent-setback vulnerability pattern not documented: paper rejection + father's health + anniversary week triggered 5-day withdrawal (binge TV, cereal for dinner, social isolation). Recovery catalyzed by Priya's unsolicited visit with soup (Q44)."
+        },
+        {
+          "id": "D4-PSY-03",
+          "finding": "GAP",
+          "detail": "Family emotional processing norms not documented: parents show love through actions not words (food, fixing things), neither would suggest therapy, 'handling things yourself' is cultural expectation. Alicia is gradually departing from this norm ('warming up to the idea' of therapy) (Q45, Q45 follow-up)."
+        },
+        {
+          "id": "D4-PSY-04",
+          "finding": "GAP",
+          "detail": "Career milestone comparison as persistent distress source not documented: sees peers with professorships or startups, feels 'pang,' nighttime spirals about incomplete tasks, 'ambient hum of am I doing enough.' Manages through yoga and journaling but not resolved (Q43 follow-up)."
+        },
+        {
+          "id": "D4-PSY-05",
+          "finding": "GAP",
+          "detail": "Alcohol self-monitoring during divorce not documented: noticed increased nightly wine consumption for several weeks, recognized the pattern, deliberately redirected to yoga and hiking. Demonstrates high self-awareness and proactive behavioral adjustment (Q38)."
+        }
+      ]
+    },
+
+    "expert_summaries": {
+      "demographer": "Alicia Gonzalez is a 29-year-old (DOB July 14, 1996) divorced Latina woman of Colombian origin, born in Sacramento, California, to immigrant parents (father Carlos, 60, from Bogota; mother Rosa, 57, from near Cali). She holds a bachelor's degree in computer science from Chico State (STEM) and works as a computer and information research scientist at a small lab in Chico, CA (ZIP 95928), earning approximately $69,600 gross annually ($4,200/month take-home). She lives alone in a rented one-bedroom apartment off Mangrove Avenue ($1,250/month) with her cat Luna. She is Hispanic/Latinx of Colombian origin, fluently bilingual in Spanish and English, and maintains strong transnational ties through weekly FaceTime with her maternal grandmother (82, in Colombia), an online Colombian scientist community, and planned return travel (Q01, Q05, Q06, Q62, Q88). She grew up Catholic, attending Spanish-language Mass at St. John the Baptist parish in Chico occasionally, primarily for cultural and familial reasons (Q47, Q94). Her parents are working-class: father is a maintenance supervisor at Valley Properties in Sacramento (20 years, nearing retirement with physical health concerns), mother worked as a daycare teaching assistant and now does part-time babysitting/housekeeping. Her brother Diego (25) works in music production in LA (Q100-Q107). Her educational attainment represents upward intergenerational mobility -- her father completed high school in Colombia and her mother had some college -- and she is considering a PhD to further her trajectory. She resides in a mid-sized California college town chosen deliberately for quality of life, outdoor access, and research autonomy over higher-paying Bay Area opportunities (Q02), which constrains her professional network but enables an affordable lifestyle relative to coastal California.",
+
+      "behavioral_economist": "Alicia demonstrates strong intrinsic motivation over extrinsic rewards, as evidenced by the defining career choice to accept a ~40% pay cut for research autonomy and intellectual freedom over an industry software engineering position in San Jose (Q02). She employs disciplined financial management through a personal budget spreadsheet (updated weekly-biweekly), a strict no-credit-card-debt rule, and a retirement contribution matched at 3% by her employer (Q56, Q61, Q63). Her savings rate of $300-$400/month against $4,200 take-home reflects moderate-to-strong future orientation, with three parallel savings goals: rebuilding emergency fund to 3 months ($1,500 needed), Colombia trip ($2,000), and long-term home down payment ($40K-$50K) (Q62, Q83 follow-up). She manages cash-flow friction from conference reimbursement lags ($800-$1,000) through preemptive spending cuts (Q81). Seasonal cost variation is significant: summer PG&E bills spike to $180 (vs. $60 winter), Christmas gifts cost $300-$400, and air filters add recurring costs during wildfire season (Q59). She supplements income occasionally through art print sales (~$150, Q60). Present-bias manifests in sleep habits (staying up until 1-2 AM for creative work despite 7 AM wake-up) and deadline-driven self-care collapse (diet deterioration to crackers/cheese and 4-5 cups of coffee, Q32). She has developed counter-measures: Sunday meal prep, morning breathing exercises, learning to decline overcommitment (Q50). Her parents' financial precariousness -- father's $3,000 insurance deductible, mother delaying checkups, approaching retirement without adequate savings -- creates anticipatory caretaking spending that she and Diego frame as 'non-negotiable' (Q05 follow-up, Q35, Q40). Identity-based motivation drives career and financial choices: she builds her portfolio around being a scientist, artist, and community mentor, accepting income penalties that align with this self-concept rather than optimizing purely for financial returns.",
+
+      "political_scientist": "Alicia is a highly engaged civic participant who votes in every election including local specials and ballot measures, placing her in the most active segment of the electorate (Q23). She leans Democratic but rejects strong partisan identification, describing herself as 'left of center' with issue-based evaluation of candidates: immigration policy (personal family history), education funding and STEM access, climate/wildfire preparedness (Camp Fire 2018 as catalytic event), and algorithmic accountability emerging from her AI research (Q24, Q25, Q95-Q96). She exhibits high institutional literacy, reading CalMatters, NPR, Chico Enterprise-Record, the California voter guide cover-to-cover, and policy newsletters, while avoiding cable news for health information (Q23 follow-up, Q42). Her civic engagement extends well beyond voting: she mentors two undergraduates through Technolatinas (monthly one-on-ones, quarterly group meetups), volunteers as a math/programming tutor twice monthly, maintains a lab reading group on AI bias and equity, has written to representatives about specific immigration bills, helped her tia Marta navigate Spanish-language vaccine misinformation, and has participated in peaceful local marches (Q04, Q17, Q24 follow-up, Q29, Q42 follow-up). She practices deliberate cross-partisan engagement at the hiking club and farmers market, finding common ground with conservative rural community members on specific local issues while avoiding ideological debates -- 'we can disagree about a national movement but maybe agree that Chico's police review board should be more transparent' (Q24 follow-up, Q30 follow-up). The Camp Fire fundamentally redirected her political energy toward local governance: 'I realized that the stuff happening at city hall matters more to my daily life than most of what happens in Congress' (Q25 follow-up). Her trust in institutions is conditional and domain-specific: high trust in scientific and public health institutions (reads primary sources, CDC data, peer-reviewed journals), moderate trust in electoral processes, and nuanced skepticism toward law enforcement based on personal and family experiences (Q20, Q21, Q42).",
+
+      "psychologist": "Alicia exhibits high Openness to Experience expressed through intellectual curiosity across domains (ML/NLP research, generative art, DIY electronics, speculative fiction), aesthetic sensitivity (abstract painting in blues/oranges, attention to visual beauty in nature and algorithms), and active integration of dual cultural identities -- Colombian/American, scientist/artist (Q01, Q15, Q109). Her Conscientiousness is moderate-to-high but domain-specific: disciplined about financial tracking, savings, and career obligations, yet consistently undermined by night-owl creative sessions that sacrifice sleep (5-6.5 hours on bad nights, twice weekly) and occasional deadline slippage from exploratory detours (Q15, Q31, Q32, Q68). Extraversion is moderate: she maintains a rich social network (Priya, Tom, board game group, hiking club, Discord communities, family) and enjoys social engagement, but requires substantial solitude for creative and intellectual work and deliberately reframes post-divorce aloneness as 'chosen solitude' (Q07, Q11, Q43 follow-up). Agreeableness is high: she is mentoring-oriented, family-devoted, community-serving, and conflict-avoidant in cross-partisan interactions, though she speaks up on equity issues in professional settings when the context supports it (Q26 follow-up, Q28 follow-up, Q30 follow-up). Neuroticism is moderate and effortfully managed: performance anxiety before deadlines manifests as chest tightness and racing thoughts (Q45), nighttime rumination centers on career comparison with peers (Q43 follow-up), and convergent stressors can trigger multi-day withdrawal episodes (paper rejection + father's health + anniversary week led to 5-day isolation, Q44). Her emotional regulation toolkit is multi-modal and largely self-developed post-divorce: physical activity (yoga, hiking), creative expression (painting as anxiolytic, elaborate cooking as meditation), social support (verbal processing with Priya and Diego), cognitive strategies (journaling, gratitude practice, 48-hour grace period after rejections), and a morning breathing exercise (Q38 follow-up, Q44 follow-up, Q45 follow-up, Q50). Family-of-origin emotional norms emphasize action over verbal expression -- parents show love through food and physical help rather than emotional conversation, and therapy is outside their cultural frame -- but Alicia is gradually shifting toward openness to professional support, influenced by Priya's example (Q45 follow-up). She carries intergenerational caretaking responsibility (father's retirement planning, mother's health avoidance) that provides purpose but creates subtle burden (Q05 follow-up, Q35, Q40). Her motivational architecture is driven by curiosity ('the drive to understand things, to build things'), connection (family, community, mentees), and meaning-making (blending art and science, paying forward the mentorship she wished she had) rather than status or material accumulation (Q109). She demonstrates an analytical-then-intuitive decision style: gathers data systematically, then checks in with embodied feeling ('if something still feels wrong even when it looks right on paper, I listen to that,' Q03 follow-up). Post-divorce identity reconstruction has been largely successful, moving from 'unmoored' to 'grounded' over two years, though episodic loneliness and career-comparison distress persist as managed rather than resolved vulnerabilities (Q43)."
+    },
+
+    "inconsistencies_found": [
+      {
+        "id": "INC-01",
+        "source": "D3-PSY-03",
+        "description": "Psychologist summary rates Neuroticism as 'moderate' with 'effective coping strategies.' Interview evidence reveals coping is effortful and context-dependent: convergent stressors can overwhelm defenses (5-day withdrawal, Q44), nighttime rumination is ongoing (Q43 follow-up), and she has not yet sought professional support despite recognizing the potential benefit (Q45). More accurate to say 'moderate, with effortful and context-dependent regulation' rather than implying stable effectiveness.",
+        "severity": "minor",
+        "resolution": "Corrected psychologist summary to characterize emotional regulation as multi-modal but effortful, with acknowledged vulnerabilities to convergent stressors and unresolved career-comparison distress."
+      },
+      {
+        "id": "INC-02",
+        "source": "D3-BEH-03",
+        "description": "Profile behavioral_economist summary describes 'limited financial margin' while work_and_career section shows steady savings progress. Not contradictory but framing differs. The margin is real ($400 emergency would 'sting' per Q82) but so is the discipline.",
+        "severity": "minor",
+        "resolution": "Corrected behavioral_economist summary to characterize financial position as 'disciplined with limited margin' -- acknowledging both the constraint and the active management."
+      },
+      {
+        "id": "INC-03",
+        "source": "D3-DEM-03",
+        "description": "Profile states gross salary as ~$5,800/mo ($69,600/yr). Self-reported, internally consistent, but worth noting this is a rough estimate. Not a material issue.",
+        "severity": "negligible",
+        "resolution": "No correction needed. Retained as approximate figure with 'approximately' qualifier."
+      }
+    ],
+
+    "resolutions": [
+      {
+        "id": "RES-01",
+        "finding_refs": ["INC-01", "D3-PSY-03"],
+        "action": "Updated psychologist summary to state 'moderate, effortfully managed' Neuroticism with explicit acknowledgment of convergent-stressor vulnerability and unresolved career-comparison pattern."
+      },
+      {
+        "id": "RES-02",
+        "finding_refs": ["INC-02", "D3-BEH-03"],
+        "action": "Updated behavioral_economist summary to use 'disciplined with limited margin' framing."
+      }
+    ],
+
+    "gaps_addressed": [
+      {
+        "id": "GAP-01",
+        "source": "D4-DEM-01 through D4-DEM-05",
+        "description": "Missing demographic header fields: date_of_birth, race_ethnicity, birth_city, hispanic_latinx, religion.",
+        "action": "Added to corrected_extracted_profile demographics header."
+      },
+      {
+        "id": "GAP-02",
+        "source": "D4-BEH-01, D4-BEH-02",
+        "description": "Missing detailed monthly budget breakdown and seasonal spending variation.",
+        "action": "Added to home_and_lifestyle details and work_and_career details in corrected profile."
+      },
+      {
+        "id": "GAP-03",
+        "source": "D4-BEH-03, D4-BEH-04, D4-BEH-05",
+        "description": "Missing art print income, concrete savings goals, and parents' financial situation.",
+        "action": "Added to work_and_career details, home_and_lifestyle details, and others_misc life_events_and_transitions."
+      },
+      {
+        "id": "GAP-04",
+        "source": "D4-POL-01 through D4-POL-04",
+        "description": "Missing Camp Fire political catalysis, specific political actions, algorithmic accountability interest, cross-partisan engagement style.",
+        "action": "Added to community_and_civic details and political_scientist summary."
+      },
+      {
+        "id": "GAP-05",
+        "source": "D4-PSY-01 through D4-PSY-05",
+        "description": "Missing 48-hour grace period, convergent-setback vulnerability, family emotional norms, career-comparison distress, alcohol self-monitoring.",
+        "action": "Added to psychologist summary and others_misc sections."
+      },
+      {
+        "id": "GAP-06",
+        "source": "D2-DEM-02 through D2-DEM-06",
+        "description": "Missing demographic header fields identified in Direction 2.",
+        "action": "Merged with GAP-01; addressed in corrected profile header."
+      },
+      {
+        "id": "GAP-07",
+        "source": "D2-BEH-02 through D2-BEH-05",
+        "description": "Missing budget detail, reimbursement lag, art print income, retirement match framing.",
+        "action": "Merged with GAP-02 and GAP-03; addressed in corrected profile."
+      },
+      {
+        "id": "GAP-08",
+        "source": "D2-POL-02 through D2-POL-05",
+        "description": "Missing political detail: tech policy interest, Camp Fire catalysis, cross-partisan engagement, direct political actions.",
+        "action": "Merged with GAP-04; addressed in corrected profile."
+      },
+      {
+        "id": "GAP-09",
+        "source": "D2-PSY-02 through D2-PSY-06",
+        "description": "Missing psychological detail: 48-hour grace period, convergent-setback pattern, family emotional norms, career-comparison, alcohol self-monitoring.",
+        "action": "Merged with GAP-05; addressed in corrected profile."
+      }
+    ],
+
+    "overall_verdict": "The existing extracted_profile is substantially accurate and well-structured. No major contradictions were found between the seed data, interview transcript, and extracted profile. The profile correctly captures Alicia's dual scientist-artist identity, Colombian heritage, post-divorce lifestyle reconstruction, and core personality dynamics. The primary issues are: (1) several demographic fields missing from the header (DOB, race/ethnicity, birth city, Hispanic/Latinx, religion), (2) detailed monthly budget and seasonal spending variations not aggregated, (3) significant behavioral and psychological patterns from the interview not captured (48-hour rejection coping, convergent-stressor vulnerability, family emotional norms, career-comparison distress, Camp Fire political catalysis, alcohol self-monitoring), (4) political engagement depth understated (specific actions, cross-partisan style, tech policy interest), and (5) a minor neuroticism characterization adjustment from 'effective coping' to 'effortful, context-dependent coping.' All 109 questions were reviewed. The corrected profile addresses all identified gaps and inconsistencies while preserving everything that was accurate in the original.",
+    "final_status": "PASS_WITH_CORRECTIONS"
+  },
+
+  "corrected_extracted_profile": {
     "participant_id": "50f90a6f17de473f9ca15f00afdedf7a",
     "name": "Alicia Gonzalez",
-    "verification_date": "2026-03-31",
-    "model": "Claude Opus 4.6 (1M context)",
-    "seed_source": "NVIDIA Nemotron-Personas-USA",
-    "interview_source": "Step 2 interview output"
-  },
+    "age": 29,
+    "date_of_birth": "1996-07-14",
+    "gender": "Female",
+    "race_ethnicity": "Latina/Hispanic (Colombian origin)",
+    "hispanic_latinx": true,
+    "marital_status": "divorced",
+    "location": "Chico, CA 95928",
+    "birth_city": "Sacramento, CA",
+    "religion": "Catholic (cultural; occasional attendance at St. John the Baptist parish, Spanish-language Mass)",
+    "education": "Bachelor's degree in Computer Science (Chico State); considering PhD",
+    "occupation": "Computer and Information Research Scientist",
 
-  "experts": {
-    "demographer": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age: Seed states age 29. Interview confirms DOB July 14, 1996 (Q85) and Alicia references being 29 years old at multiple points (Q05, Q43). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.age: 29",
-            "source_b_ref": "Q85, Q05, Q43"
-          },
-          {
-            "id": 2,
-            "text": "Gender: Seed states Female. Interview consistently references experiences as a woman of color in tech (Q26, Q28) and is addressed/self-identifies as female throughout. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.sex: Female",
-            "source_b_ref": "Q26, Q28, Q84"
-          },
-          {
-            "id": 3,
-            "text": "Marital status: Seed states 'divorced.' Interview elaborates: married at 23, less than 2 years of marriage, divorce finalized about 2 years ago (Q01, Q84). Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.marital_status: divorced",
-            "source_b_ref": "Q01, Q84"
-          },
-          {
-            "id": 4,
-            "text": "Education: Seed states 'bachelors' in 'stem.' Interview specifies Bachelor's in Computer Science from Chico State (Q90). Consistent with STEM bachelor's.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.education_level: bachelors, seed.bachelors_field: stem",
-            "source_b_ref": "Q90"
-          },
-          {
-            "id": 5,
-            "text": "Location: Seed states Chico, CA 95928. Interview places Alicia in Chico throughout -- apartment off Mangrove Avenue, biking to the lab and downtown (Q08, Q51). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.city: Chico, seed.state: CA, seed.zipcode: 95928",
-            "source_b_ref": "Q08, Q51"
-          },
-          {
-            "id": 6,
-            "text": "Cultural background: Seed says parents immigrated from Colombia before she was born, bilingual household. Interview confirms: parents from Colombia (dad from Bogota, mom from near Cali), Spanish spoken at home, born in Sacramento (Q01, Q86, Q87, Q88). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.cultural_background",
-            "source_b_ref": "Q01, Q86, Q87, Q88"
-          }
+    "preferences": {
+      "health_and_wellness": {
+        "summary": "Active lifestyle centered on yoga, hiking, biking, and soccer, with ongoing sleep challenges, seasonal allergies, and deliberate stress-management practices developed largely post-divorce. Uses multi-modal coping (physical, creative, social, cognitive) with effortful regulation that can be overwhelmed by convergent stressors.",
+        "details": [
+          "Attends vinyasa yoga classes twice weekly (Monday/Wednesday at 6:30 PM) at Chico Yoga Studio with instructor Mei; started ~2 years ago during marriage breakdown (Q15 follow-up)",
+          "Hikes most Saturdays through the Chico Outdoor Club in Butte County trails and Ishi Wilderness (Q07 follow-up, Q15)",
+          "Bikes as primary in-town transportation on a beat-up road bike; daily use for commute, errands, downtown (Q08 follow-up)",
+          "Returning to amateur soccer league this summer (played in college); Sunday morning pickup games to prepare (Q18)",
+          "Chronic undersleeping: typically 6.5 hours on good nights (midnight to 7 AM), 5 hours on bad nights (1:30-2 AM to 7 AM), bad nights ~twice weekly. Driven by night-owl creative sessions. Headaches and focus loss when sleep-deprived (Q31, Q31 follow-up)",
+          "Takes OTC antihistamine during spring allergy season (oak pollen in Central Valley); causes mild drowsiness; avoids morning hikes during peak pollen (Q31 follow-up)",
+          "Uses air purifier at home year-round for both allergies and wildfire smoke; keeps N95 masks stocked for smoke season (Q09 follow-up, Q31)",
+          "Morning 5-minute breathing exercise before checking phone -- recent addition (Q50)",
+          "Hourly stretch reminders set on computer per physical therapist recommendation; uses ergonomically adjusted chair/monitor and specialized neck-support pillow (Q33 follow-up)",
+          "Uses herbal teas (chamomile for sleep, ginger for digestion) and turmeric capsules for inflammation; combines traditional Colombian remedies with Western medicine (Q37, Q37 follow-up)",
+          "Mother Rosa's home remedies: agua de panela with lime for colds, chamomile tea and warm compress for stomachache, arnica cream for bruises (Q37)",
+          "History of severe neck/shoulder tension from prolonged computer work (~1 year ago); resolved with 6 sessions of physical therapy; ongoing management through stretching, yoga, ergonomic adjustments (Q33)",
+          "Stomach bug last winter that knocked her out for ~1 week (Q33)",
+          "Moderate social drinker: 1-2 craft beers or wine weekly, more on social weekends. During divorce, noticed increased nightly wine pattern for several weeks; self-corrected by redirecting to yoga and hiking (Q38)",
+          "Recreational marijuana use: handful of times, last ~4 months ago at friend's birthday (Q39)",
+          "No regular prescriptions; occasional ibuprofen for headaches (Q39)",
+          "Fully up to date on vaccinations including all COVID rounds; trusts CDC, peer-reviewed journals, and her doctor (Q41, Q42)",
+          "Stress eating pattern during deadline weeks: reverts to crackers/cheese at desk, frequent taqueria burritos, and dark chocolate from desk drawer; coffee intake increases from 2 to 4-5 cups (Q32 follow-up)",
+          "Performance anxiety before deadlines/presentations: chest tightness, racing thoughts, lying awake running scenarios (Q45)",
+          "Episodic loneliness since divorce, especially unplanned weekend evenings; manages through calling friends, coffee shop ambient presence, reframing as chosen solitude, Luna's companionship (Q43 follow-up)"
         ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q01, Q09, Q15, Q18, Q31, Q32, Q33, Q37, Q38, Q39, Q41, Q42, Q43, Q45, Q50"
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Education: Interview states 'Bachelor's degree in computer science from Chico State' (Q90). Extracted profile states 'Bachelor's degree in Computer Science (Chico State).' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q90",
-            "source_b_ref": "extracted_profile.education"
-          },
-          {
-            "id": 2,
-            "text": "Birth city: Interview states born in Sacramento, California (Q87). Extracted profile's demographer summary correctly notes 'born in Sacramento, California.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q87",
-            "source_b_ref": "summaries.demographer"
-          },
-          {
-            "id": 3,
-            "text": "Father's occupation: Interview states Carlos is a maintenance supervisor at a property management company, been there ~20 years (Q106, Q107). Demographer summary describes father as 'maintenance supervisor nearing retirement.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q106, Q107",
-            "source_b_ref": "summaries.demographer"
-          },
-          {
-            "id": 4,
-            "text": "Mother's work: Interview says Rosa worked at daycare as teaching assistant, now does part-time babysitting and housekeeping (Q103, Q104). Demographer summary says 'mother worked in childcare.' Consistent but slightly abbreviated -- her current part-time work is not captured.",
-            "verdict": "GAP",
-            "source_a_ref": "Q103, Q104",
-            "source_b_ref": "summaries.demographer"
-          },
-          {
-            "id": 5,
-            "text": "Salary: Interview states gross ~$5,800/mo (Q72), take-home ~$4,200/mo. Profile's work_and_career section accurately captures '$69,600/year' and '$4,200/mo take-home.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q72, Q74",
-            "source_b_ref": "preferences.work_and_career"
-          }
+      "food_and_dining": {
+        "summary": "Intermediate-to-advanced home cook specializing in Colombian dishes and fusion experiments, committed to fresh farmers market ingredients and craft coffee. Food serves as cultural connection, creative outlet, stress management, and social ritual.",
+        "details": [
+          "Cooks traditional Colombian dishes: arepas, bandeja paisa, empanadas, chimichurri-marinated plantains (Q01, seed culinary_persona)",
+          "Grinds fresh Colombian single-origin coffee beans every morning from a local roaster; serious about coffee ritual (Q15)",
+          "Shops at the Saturday farmers market regularly; also uses co-op grocery store near apartment (Q08, Q15)",
+          "Frequents a taqueria near her apartment at least once a week; also a taqueria near the lab for lunch (Q08, Q15)",
+          "Meal-preps on Sundays when routine is stable; plans meals for the week, buys from farmers market (Q18)",
+          "Photographs dishes she is proud of; posts to Instagram (Q48)",
+          "Elaborate cooking as stress relief/meditation: 'Making empanadas from scratch... is so engaging that I can't think about anything else' (Q45 follow-up)",
+          "Stress eating pattern: reverts to crackers/cheese, taqueria burritos 3 days running, dark chocolate during deadline weeks (Q32 follow-up)",
+          "Coffee consumption: 2 cups normally, 4-5 during stressful periods (Q32 follow-up)",
+          "Monthly grocery spending: ~$350 (higher during farmers market stocking-up months) (Q56)",
+          "Coffee bean spending: ~$40/month plus occasional coffee shop visits (Naked Lounge) (Q57)",
+          "Mother Rosa sends food via cooler bag on the bus when Alicia can't visit (Q05 follow-up)"
         ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+        "evidence": "Q01, Q05, Q08, Q15, Q18, Q32, Q45, Q48, Q56, Q57"
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile states 'age: 29' and demographer summary references '29-year-old.' DOB July 14, 1996 is consistent with being 29 at the time of interview (March 2026). Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "extracted_profile.age",
-            "field_b": "summaries.demographer"
-          },
-          {
-            "id": 2,
-            "text": "Profile gives salary as ~$69,600/yr gross and rent as $1,250/mo. Monthly spending ~$2,200-$2,500 on take-home of ~$4,200. Leaves ~$1,700-$2,000 margin, aligning with $300-$400/mo savings and $220/mo student loan. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.work_and_career (salary)",
-            "field_b": "preferences.home_and_lifestyle (rent), Q56, Q57, Q61, Q63"
-          },
-          {
-            "id": 3,
-            "text": "Location 'Chico, CA 95928' in profile header matches 'mid-sized California college town' in demographer summary and all neighborhood details. Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "extracted_profile.location",
-            "field_b": "summaries.demographer"
-          }
+      "travel": {
+        "summary": "Budget-conscious traveler drawn to culturally immersive and rugged outdoor experiences, with strong desire to revisit Colombia and conference travel as regular professional obligation.",
+        "details": [
+          "Last trip to Colombia 3 years ago with parents and Diego (Bogota, Cartagena, mother's hometown); grandmother cried on seeing them (Q62 follow-up)",
+          "Saving $2,000-$2,500 for a return trip to visit grandmother (82) -- urgency driven by grandmother's advancing age (Q62)",
+          "Attends 2-3 academic conferences per year: NeurIPS, ACL, and usually one smaller workshop (Q10 follow-up)",
+          "Conference travel partially lab-funded (registration, sometimes partial travel); upfront costs of $800-$1,000 create cash-flow pressure before reimbursement (Q81)",
+          "Plans coastal trips during peak wildfire/smoke season as coping strategy (Q09 follow-up)",
+          "Seed data mentions hiking Patagonia's Torres del Paine and exploring Granada's Alhambra as aspirational destinations; weekend getaways to Lake Tahoe and Portland's street-art neighborhoods (seed travel_persona -- not directly discussed in interview)",
+          "Has visited Colombia, travels to Sacramento twice monthly to see parents (~1.5 hours each way) (Q05 follow-up)",
+          "Budget constraint: dreams of buying a house but down payment ($40K-$50K) is years away; travel spending carefully managed against savings goals (Q83 follow-up)"
         ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
+        "evidence": "Q05, Q09, Q10, Q59, Q62, Q81, Q83"
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview confirms parents became citizens so they could vote (Q23). This naturalization detail is not captured anywhere in the extracted profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q23",
-            "should_be_in": "others_misc.cultural_and_linguistic or summaries.demographer"
-          },
-          {
-            "id": 2,
-            "text": "Father's age (60) and mother's age (57) are stated in Q05. Father's age and retirement timeline are partially captured in life_events_and_transitions but specific ages are not recorded in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q05",
-            "should_be_in": "summaries.demographer or others_misc.life_events_and_transitions"
-          },
-          {
-            "id": 3,
-            "text": "Brother Diego's age (25), location (LA), and occupation (music producer) are discussed extensively in Q05 and Q01. These family demographics appear only tangentially in social_and_relationships. Present but could be richer.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q05, Q01",
-            "should_be_in": "summaries.demographer"
-          },
-          {
-            "id": 4,
-            "text": "Grandmother (abuela) is 82, lives in Colombia, FaceTimed every Sunday (Q06, Q62). Captured in others_misc.cultural_and_linguistic. Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q06, Q62",
-            "should_be_in": "others_misc.cultural_and_linguistic"
-          }
+      "social_and_relationships": {
+        "summary": "Rich social life centered on close friendships, deep family bonds, and community involvement despite living alone post-divorce. Processes stress through verbal engagement with trusted friends and deliberate social outreach.",
+        "details": [
+          "Closest friend Priya (data engineer, Indian American, met at hackathon 3 years ago): board game nights every other Friday, mutual support through 'immigrant family expectations in tech' bond, Priya was critical during emotional low point (showed up with soup, Q44) (Q07, Q44)",
+          "Board game group at Priya's: Priya, her partner James, friend Marcus (teaches at Chico State), rotating others. Games: Wingspan, Terraforming Mars, Catan, Codenames. Alicia is most competitive player (Q07, Q07 follow-up)",
+          "Daily texts with brother Diego (25, music production in LA); calls a few times per week; running midnight meme exchange; Diego drove up from LA 3 weekends after divorce; relationship shifted from protective older sister to equals (Q01 follow-up, Q05)",
+          "Near-daily phone calls with mother Rosa (57); sometimes real conversations, sometimes just daily check-ins (Q05)",
+          "Father Carlos (60): quieter, shows love through action (drives to Chico to fix things unprompted); more frequent calls since divorce (Q05, Q45 follow-up)",
+          "Visits parents in Sacramento ~twice monthly; holiday gatherings at parents' house (25+ people at Christmas) (Q05 follow-up)",
+          "Extended family in Sacramento: tia Lucia, tia Marta, cousins Sofia and Andres (around her age, group chat); dad's family mostly in Colombia (Q05 follow-up)",
+          "Abuela (maternal grandmother, 82, Colombia): weekly Sunday FaceTime calls; 'Mi nieta la cientifica' (Q06)",
+          "Hiking buddy Tom (~65, retired, trail encyclopedia) from Chico Outdoor Club; hikes most Saturdays (Q07, Q07 follow-up)",
+          "Friendly with immediate neighbors: the Hendersons (older couple, watch her place), Jenny (grad student below, shares leftovers) (Q08 follow-up)",
+          "Cat Luna: 3-year-old tabby adopted from Butte Humane Society ~1.5 years ago; curls up on desk while coding, vocal (Q11)",
+          "Online community: Discord server for Colombian scientists abroad (~200 members, close with ~12); shares papers, discusses grants, vents about impostor syndrome (Q07, Q49)",
+          "Handles loneliness through active reframing ('chosen solitude'), calling Diego or Priya, going to Naked Lounge for ambient human presence, painting or reading (Q43 follow-up)",
+          "Processes emotions better verbally; learned during divorce that having people who listen without fixing is essential (Q38 follow-up)",
+          "Not currently dating; 'not closed off but not actively looking.' Small dating pool in Chico acknowledged (Q05, Q10)"
         ],
-        "summary": { "present": 2, "missing": 2 }
+        "evidence": "Q01, Q05, Q06, Q07, Q08, Q10, Q11, Q13, Q38, Q43, Q44, Q49"
+      },
+      "home_and_lifestyle": {
+        "summary": "Solo renter in a modest one-bedroom apartment with painting studio corner, bike-centric lifestyle in a walkable college-town neighborhood. Values personal space highly after divorce.",
+        "details": [
+          "One-bedroom apartment off Mangrove Avenue, Chico, between downtown and university ($1,250/month rent) (Q08, Q56)",
+          "Small apartment complex (~12 units), local family landlord (responsive, no aggressive rent increases); 2 years at current apartment (Q58)",
+          "Lives alone with cat Luna (3-year-old tabby, adopted from Butte Humane Society) (Q11)",
+          "Painting studio corner set up in apartment; art supplies spread out on dining table (Q11 follow-up)",
+          "Bikes as primary in-town transportation on a beat-up road bike; owns a 2017 Honda Civic (paid off) for longer trips (Q08 follow-up, Q63)",
+          "Runs air purifier year-round (allergies and wildfire smoke); specialized neck-support pillow per PT recommendation (Q09 follow-up, Q33 follow-up)",
+          "Prefers and values solitude for creative work post-divorce; can paint at 2 AM, leave supplies out (Q11 follow-up)",
+          "Monthly spending breakdown: rent $1,250, groceries ~$350, student loan $220, health insurance $120, car insurance/gas ~$100-150, utilities ~$60-180 (seasonal), Luna ~$60, phone/internet ~$80, coffee beans ~$40. Normal total $2,200-$2,500; spikes with tires ($400), conferences, or holiday gifts ($300-$400) (Q56, Q57, Q59)",
+          "Summer electricity bills up to $180 (PG&E, poor insulation, 100+ degree heat) vs. ~$60 in winter (Q59)",
+          "Wildfire smoke season: stocks air filters (~$30 each, multiple per season), N95 masks; plans indoor projects or coastal trips (Q09 follow-up, Q59)",
+          "Saturday farmers market is a 5-minute walk; Naked Lounge coffee shop and co-op grocery store within walking distance; Bidwell Park 10 minutes by bike (Q08)",
+          "Neighborhood is mix of college-town vibes and residential; mostly renters, young professionals, grad students, some families; quiet at night (Q08)"
+        ],
+        "evidence": "Q08, Q09, Q11, Q15, Q55, Q56, Q57, Q58, Q59"
+      },
+      "entertainment": {
+        "summary": "Eclectic consumer drawn to speculative fiction, ambient/experimental music, cumbia, and live cultural events. Entertainment choices bridge Colombian heritage and avant-garde creative interests.",
+        "details": [
+          "Reads speculative fiction (Ted Chiang referenced in seed; aligns with generative narrative research interests)",
+          "Attends live music events and poetry slams/open mics, typically Thursday evenings at downtown bars (Q15)",
+          "Listens to cumbia and vallenato (childhood soundtrack), Bjork and experimental soundscapes, and ambient music while painting (Q01, Q38 follow-up, seed arts_persona)",
+          "Watches TV shows as comfort activity during emotional low periods (binge-watched with Luna during 5-day withdrawal, Q44)",
+          "Strategy board games as primary group entertainment: Wingspan, Terraforming Mars, Catan, Codenames (Q07 follow-up)",
+          "Attends gallery openings/art shows at least once monthly in Chico (Q17)",
+          "Reads Latinx scholars (Roberto Gonzales, Cristina Mora) on race and identity (Q28)",
+          "Follows science communicators on social media; listens to podcasts from epidemiologists and public health researchers (Q42)"
+        ],
+        "evidence": "Q01, Q07, Q15, Q17, Q28, Q42, Q44, Q48"
+      },
+      "hobbies_and_recreation": {
+        "summary": "Deeply creative hobbyist spanning abstract painting, generative digital art, photography, DIY electronics, and strategic gaming. Art practice integrates code and canvas, serving as both creative expression and emotional regulation.",
+        "details": [
+          "Abstract acrylic painting: blues and oranges, heavy texture, layered. Studio corner in apartment; paints Tuesday evenings and Saturday afternoons (Q15, Q17 follow-up)",
+          "Generative digital art using custom algorithms: dot-based photo recreation printed as gifts; algorithm-generated patterns printed large-format (Q15 follow-up, Q17 follow-up)",
+          "Has exhibited at Avenue 9 gallery in Chico: 2 group shows (one digital, one acrylic). Gallery owner Sandra encourages solo show; Alicia planning series blending generative and hand-painted elements (Q17 follow-up)",
+          "Photography of food and everyday moments, shared on Instagram; time-lapse painting videos perform well (Q48, Q48 follow-up)",
+          "DIY electronics: currently building Raspberry Pi weather station with temperature, humidity, and AQI sensors, logging to custom dashboard (Q15 follow-up)",
+          "Tinkering with Arduino projects at hackathons (seed hobbies_and_interests)",
+          "Strategy board games: most competitive player in group; 'something about board games flips a switch in me' (Q07 follow-up)",
+          "Journaling: intermittent, used for working through difficult emotions; 'writing it out helps me see it more clearly' (Q38 follow-up)",
+          "Summer amateur soccer league (played in college); doing Sunday morning pickup games to get back in shape (Q18)",
+          "Painting as primary anxiolytic: 'Something about working with my hands and focusing on color and texture just shuts off the anxious part of my brain' (Q38 follow-up)",
+          "Occasional art print sales online (~$150 from recent sales, Q60)"
+        ],
+        "evidence": "Q01, Q07, Q15, Q17, Q18, Q38, Q48, Q60"
+      },
+      "work_and_career": {
+        "summary": "Mission-driven research scientist balancing rigorous ML/NLP work with interdisciplinary creative ambitions, remote collaboration, and mentorship commitments. Chose research autonomy over substantially higher industry pay.",
+        "details": [
+          "5 years at current lab under Dr. Patel; team of 5 (PI, 2 research scientists including Alicia and Kai, 2 rotating grad students) (Q16 follow-up, Q76)",
+          "Core skills: Python, R, C++, MATLAB, AWS/GCP, statistical modeling, NLP, deep learning, data visualization (Q16, Q65)",
+          "Current main project: generative models for visual narratives from unstructured data (Q16, Q65)",
+          "Active UC Davis collaboration on multilingual generative language models (started ~3 months ago); standing meetings Mon/Wed/Thu; her bilingual background is an asset; learning to be more disciplined about documentation (Q18, Q18 follow-up)",
+          "15-20% of time spent on grant writing and proposals (Q65)",
+          "Publishes papers and presents at NeurIPS, ACL, and smaller workshops; co-authoring paper with UC Davis collaborator (Q10 follow-up)",
+          "Works ~45 hrs/week normally, 55-60 during deadline weeks (Q68)",
+          "Flexible hours; no rigid schedule beyond team meetings and UC Davis standing calls (Q78)",
+          "Gross salary ~$5,800/month (~$69,600/year); take-home ~$4,200/month after taxes, health insurance ($120/mo), and retirement contributions (3% employer match) (Q72, Q76)",
+          "15 days PTO plus sick leave and university holidays; dental/vision bundled into health plan (Q76)",
+          "Paid twice monthly (1st and 15th) (Q73)",
+          "Occasional supplementary income from art print sales (~$150 recently) (Q60, Q74)",
+          "Student loan: $18,000 balance, $220/month, standard 10-year repayment, ~4 years in (~6 years remaining) (Q63)",
+          "Uses TurboTax; filed as single post-divorce; received ~$600 refund (Q75)",
+          "Considering PhD to deepen technical expertise and expand professional network; may enable startup ambitions (Q91, Q108)",
+          "Long-term startup dream: AI-driven creative tools for designers and musicians; 20-page notes doc, informal market research, needs co-founder with business skills; plans to build prototype within a year (Q108 follow-up)",
+          "Chose current research position over ~40% higher-paying software engineering job in San Jose post-graduation; defining career decision that also contributed to marital strain (Q02)",
+          "Wrote blog post on algorithmic fairness for lab website; became part of professional identity ('I'm the person who asks the equity question') (Q27 follow-up)",
+          "Lab reading group on bias in AI and equity in tech, initiated after George Floyd-related lab conversation (Q26 follow-up)"
+        ],
+        "evidence": "Q02, Q10, Q16, Q18, Q26, Q27, Q56, Q60, Q63, Q65, Q66, Q68, Q72, Q73, Q74, Q75, Q76, Q77, Q78, Q83, Q91, Q108"
+      },
+      "arts_and_culture": {
+        "summary": "Active participant in Chico's art scene and deeply grounded in Colombian cultural traditions. Art practice integrates generative algorithms with physical painting, bridging her scientist and artist identities.",
+        "details": [
+          "Abstract painter and generative digital artist; blends code and canvas as 'happy place' (Q15 follow-up)",
+          "Influenced by James Turrell (immersive installations), Yayoi Kusama (vibrant patterns), Bjork (experimental soundscapes), Ted Chiang (speculative narratives) (seed arts_persona)",
+          "Two group exhibitions at Avenue 9 gallery (one generative digital, one acrylic); planning solo show blending both media this year (Q17 follow-up)",
+          "Posts art on Instagram (~800 followers); connected with generative art community; invited to online group shows through Instagram contacts; some interest in buying prints (Q48, Q48 follow-up)",
+          "Participates in poetry slams and open mic nights, typically Thursdays (Q15)",
+          "Attends monthly gallery openings in Chico's 'surprisingly active art scene for its size' (Q17)",
+          "Colombian cultural heritage expressed through music (cumbia, vallenato), food (arepas, bandeja paisa, empanadas), language (Spanish at home, bilingual communication), and family rituals (Sunday lunches, holiday gatherings, FaceTime with abuela) (Q01, Q05, Q47)",
+          "Spanish-language Mass at St. John the Baptist with Colombian priest Father Ruben; attends ~once a month and on holidays (Q47 follow-up)",
+          "Lights votive candles as personal spiritual ritual when loved ones face difficulties (Q47 follow-up)",
+          "Wears crucifix necklace from grandmother as heritage marker and connection (Q47)",
+          "Interactive gallery exhibits and weaving creative influences into work (seed arts_persona)"
+        ],
+        "evidence": "Q01, Q05, Q15, Q17, Q47, Q48"
+      },
+      "sports_and_fitness": {
+        "summary": "Active in hiking, yoga, biking, and recreational soccer, with a preference for outdoor and community-based activities. Competitive spirit emerges in games and sports.",
+        "details": [
+          "Hikes Butte County trails and Ishi Wilderness most Saturdays with Chico Outdoor Club; ranges from easy nature walks to serious day hikes (Q07 follow-up)",
+          "Vinyasa yoga twice weekly (Mon/Wed 6:30 PM) at Chico Yoga Studio; instructor Mei adjusts pace well; helps posture, stress, and sleep. Missing both classes in a week noticeably increases stress (Q15 follow-up)",
+          "Daily biking for transportation on beat-up road bike (Q08 follow-up)",
+          "Returning to amateur soccer league this summer; played in college; doing Sunday morning pickup games at the park to get back in shape (Q18)",
+          "Follows Sacramento Kings (basketball) and San Francisco 49ers (football) (seed sports_persona)",
+          "Competitive spirit in board games and sports: 'surprises people because I'm pretty laid back otherwise. But something about board games flips a switch in me' (Q07 follow-up)"
+        ],
+        "evidence": "Q07, Q15, Q18, Q31"
+      },
+      "nature_and_outdoors": {
+        "summary": "Nature is central to well-being, stress management, spirituality, and sense of place. Bidwell Park and Butte County trails are anchor points that factored into her decision to stay in Chico.",
+        "details": [
+          "Bidwell Park is 10 minutes by bike; 'honestly one of the main reasons I stayed in Chico' (Q08)",
+          "Regular hiker in Ishi Wilderness and Butte County trails through Chico Outdoor Club (Q07 follow-up)",
+          "Hiking partner Tom (~65, retired) serves as trail mentor; 'knows every trail in Butte County'; started chatting about wildflowers on first hike (Q07, Q07 follow-up)",
+          "Finds spiritual/meditative experience in nature: 'standing at the top of a trail looking out over the valley' provides sense of awe and connection that has replaced traditional religious observance (Q47 follow-up)",
+          "Key decision made on a hike: chose research career over industry while hiking Upper Bidwell Park ('I just thought, I can't leave this') (Q03)",
+          "Wildfire smoke season significantly impacts outdoor activity, mood, and health; triggers emotional weight in community post-Camp Fire (Q09 follow-up)",
+          "Farmers market attendance tied to outdoor seasonal rhythm (Q15)",
+          "Plans coastal trips during peak smoke season as alternative (Q09 follow-up)"
+        ],
+        "evidence": "Q03, Q07, Q08, Q09, Q10, Q47"
+      },
+      "technology": {
+        "summary": "Power user across research computing, DIY hardware, and curated social media. Maintains intentional digital boundaries to protect mental health and creative time.",
+        "details": [
+          "Uses Python, R, C++, MATLAB professionally; AWS/GCP for cloud computing and heavy processing (Q16, Q65)",
+          "Builds personal projects with Raspberry Pi and Arduino; current project: weather station with AQI sensor and custom dashboard (Q15 follow-up)",
+          "Active on Instagram (art, ~800 followers), Twitter/X (professional networking, science communication), Discord (Colombian scientists server, generative art channels), Slack (5+ workspaces: lab, UC Davis, professional communities) (Q48)",
+          "Facebook used minimally: Chico Outdoor Club group and Colombian scientist group only (Q48)",
+          "FaceTime for weekly calls with grandmother in Colombia (Q06)",
+          "Zoom for remote research collaboration with UC Davis (Q10 follow-up)",
+          "App timer limits: 20 min per platform per session; no social media after 10 PM rule (70% compliance). Curates feeds aggressively; mutes inflammatory political content on Twitter (Q48 follow-up)",
+          "Uses TurboTax for annual tax filing (Q75)",
+          "Tracks spending via personal budget spreadsheet (weekly-biweekly updates), developed post-divorce (Q56 follow-up)",
+          "Hourly stretch-reminder timer on work computer per physical therapist (Q33 follow-up)",
+          "Large-format printing for generative art pieces (Q17 follow-up)",
+          "Attempted alarm-based wind-down reminders for bedtime but just snoozes them (Q31 follow-up)"
+        ],
+        "evidence": "Q06, Q10, Q15, Q16, Q33, Q48, Q56, Q65, Q75"
+      },
+      "community_and_civic": {
+        "summary": "Highly engaged civic participant through consistent voting, mentorship of Latinx youth, volunteer tutoring, community organizations, and cross-partisan local engagement. Camp Fire (2018) catalyzed shift toward local political focus.",
+        "details": [
+          "Votes in every election including local special elections and ballot measures; parents' naturalization story is foundational motivation ('my mom made a big deal about it when I turned 18, drove me to the polling place') (Q23)",
+          "Reads CalMatters (state policy), Chico Enterprise-Record (local), NPR (national), California voter guide cover-to-cover, policy newsletters, and specific journalist accounts for immigration/tech policy (Q23 follow-up)",
+          "Leans Democratic on immigration, healthcare, education, climate; rejects strong party identity; issue-based evaluation; has voted for independent local candidates (Q95, Q95 follow-up, Q96)",
+          "Camp Fire (2018) as political awakening: shifted engagement from national to local -- housing policy, wildfire preparedness, emergency management, zoning (Q25 follow-up)",
+          "Algorithmic accountability and tech policy as emerging political interest from AI research work (Q25)",
+          "Mentors 2 undergrads through Technolatinas (monthly one-on-ones, quarterly group meetups); helps with career navigation and family-expectation navigation (Q04 follow-up)",
+          "Volunteer tutor at community center every other Tuesday (3-5 PM): math and programming for 3-4 high school students; one student (Maria) building Python science fair project (Q17, Q17 follow-up)",
+          "Member of Chico Outdoor Club (joined post-divorce via coffee shop flyer) (Q07 follow-up)",
+          "Active in online Colombian scientist community on Discord (~200 members, close with ~12): shares papers, discusses grants, vents about impostor syndrome, discusses immigration policy (Q07, Q24)",
+          "Attended peaceful local marches/protests in Chico (Q29)",
+          "Participated in lab reading group on bias in AI and equity in tech (still ongoing, Q26 follow-up)",
+          "Wrote blog post on algorithmic fairness for lab website (Q27 follow-up)",
+          "Written to representatives about specific immigration bills (Q24 follow-up)",
+          "Helped tia Marta navigate Spanish-language vaccine misinformation on Facebook; walked through clinical trial data in person (Q42 follow-up)",
+          "Cross-partisan engagement: interacts with conservative ranchers/business owners at hiking club and farmers market; redirects from ideology to local specifics ('we can disagree about a national movement but agree that Chico's police review board should be more transparent') (Q24 follow-up, Q30 follow-up)"
+        ],
+        "evidence": "Q04, Q07, Q17, Q23, Q24, Q25, Q26, Q27, Q29, Q30, Q42, Q48, Q95, Q96"
+      },
+      "music": {
+        "summary": "Music is woven into daily life through Colombian genres, live performances, and creative practice. Serves as cultural connection, creative fuel, and emotional regulation.",
+        "details": [
+          "Grew up with cumbia and vallenato playing in the household (Saturday mornings, mom singing along) (Q01)",
+          "Listens to Bjork and ambient/experimental music while painting (Q38 follow-up, seed arts_persona)",
+          "Attends live music events in Chico regularly, typically Thursday evenings at downtown bars (Q15)",
+          "Brother Diego is a music producer in LA; they bond over creative/music topics frequently (Q01 follow-up, Q05)",
+          "Poetry slams and open mics are part of regular entertainment rotation (Q15)",
+          "Uses music as emotional regulation: puts on cumbia or ambient music during painting sessions to 'shut off the anxious part of my brain' (Q38 follow-up)"
+        ],
+        "evidence": "Q01, Q05, Q15, Q38"
+      },
+      "fashion_and_appearance": {
+        "summary": "Minimal focus on fashion in interview; notable cultural accessory and practical style aligned with bike-centric, outdoor-oriented lifestyle.",
+        "details": [
+          "Wears a crucifix necklace given by her grandmother; 'more about connection to her than theological belief' (Q47)",
+          "Practical, bike-friendly lifestyle suggests casual dress; no other fashion details emerged in 109 questions"
+        ],
+        "evidence": "Q47"
       }
     },
 
-    "behavioral_economist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed describes 'competitive drive' and 'relaxed, sometimes disorganized work style.' Interview confirms: competitive in board games (Q07 follow-up), laid-back but admits deadlines occasionally slip and describes herself as disorganized with sleep (Q31, Q32, Q65 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.professional_persona",
-            "source_b_ref": "Q07 follow-up, Q31, Q32, Q65"
-          },
-          {
-            "id": 2,
-            "text": "Seed career goals reference 'launching a startup that offers AI-driven creative tools for designers and musicians.' Interview confirms this ambition with 20-page notes doc and desire to build prototype within a year (Q108 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.career_goals_and_ambitions",
-            "source_b_ref": "Q108, Q108 follow-up"
-          },
-          {
-            "id": 3,
-            "text": "Seed mentions 'modest travel budget.' Interview confirms budget-consciousness: saves $2,000-$2,500 for Colombia trip, cuts back on spending before conference travel, generally frugal approach (Q60, Q62). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.travel_persona",
-            "source_b_ref": "Q60, Q62, Q83"
-          },
-          {
-            "id": 4,
-            "text": "Seed lists 'documenting each dish through vivid photography' in culinary persona. Interview confirms food photography shared on Instagram (Q48). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.culinary_persona",
-            "source_b_ref": "Q48"
-          },
-          {
-            "id": 5,
-            "text": "Seed describes 'pairing meals with craft coffee.' Interview elaborates: grinds fresh Colombian single-origin beans every morning from a local roaster, serious about coffee (Q15). Consistent and enriched.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.culinary_persona",
-            "source_b_ref": "Q15"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals detailed financial behavior: no-credit-card-debt rule, pays off in full monthly (Q63), spending tracked via spreadsheet (Q56 follow-up). Profile's behavioral_economist summary captures this as 'commitment devices (spreadsheet tracking, no-credit-card rule).' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q56 follow-up, Q63",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes the career crossroads: chose lower-paying research over higher-paying industry (Q02). Profile summary captures this as 'prioritizes intrinsic motivation over extrinsic rewards.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q02",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 3,
-            "text": "Interview details emergency fund at ~2.5 months expenses (Q62, Q82). Profile summary mentions 'loss aversion around emergency fund.' Consistent characterization.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q62, Q82",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 4,
-            "text": "Interview describes selling art prints for $150 to offset tire expense (Q60). This supplemental income behavior is not captured in the profile's financial or work sections.",
-            "verdict": "GAP",
-            "source_a_ref": "Q60",
-            "source_b_ref": "preferences.work_and_career"
-          },
-          {
-            "id": 5,
-            "text": "Interview describes mother's envelope budgeting system as formative influence on Alicia's financial habits (Q61 follow-up). Profile's behavioral_economist summary does not reference this intergenerational transmission of financial discipline.",
-            "verdict": "GAP",
-            "source_a_ref": "Q61 follow-up",
-            "source_b_ref": "summaries.behavioral_economist"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
-      },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile describes 'present-bias management through structured savings' in the economist summary, but also notes 'present-bias in sleep habits and occasional deadline-driven neglect of self-care.' These are not contradictions but complementary observations about domain-specific self-control. Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.behavioral_economist (savings discipline)",
-            "field_b": "summaries.behavioral_economist (sleep present-bias)"
-          },
-          {
-            "id": 2,
-            "text": "Profile lists '$300-$400/month savings' in work_and_career evidence and describes her as 'cautiously okay' financially (Q83). Emergency fund at 2.5 months. All consistent with moderate financial buffer and disciplined but constrained savings.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.work_and_career (salary)",
-            "field_b": "summaries.behavioral_economist (savings behavior)"
-          }
-        ],
-        "summary": { "consistent": 2, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Student loan details ($18,000 balance, $220/month, 4 years into 10-year plan) from Q63 are not captured in the extracted profile's financial or work sections.",
-            "verdict": "MISSING",
-            "interview_ref": "Q63",
-            "should_be_in": "preferences.home_and_lifestyle or new 'finances' preference category"
-          },
-          {
-            "id": 2,
-            "text": "Retirement contributions (employer match up to 3%) from Q61 are mentioned in the behavioral_economist summary but not in the detailed preferences.",
-            "verdict": "MISSING",
-            "interview_ref": "Q61",
-            "should_be_in": "preferences.work_and_career"
-          },
-          {
-            "id": 3,
-            "text": "Health insurance details ($120/mo premium, employer-sponsored, copays) from Q40 are not captured in extracted profile preferences.",
-            "verdict": "MISSING",
-            "interview_ref": "Q40",
-            "should_be_in": "preferences.health_and_wellness or others_misc"
-          },
-          {
-            "id": 4,
-            "text": "PhD consideration as a financial decision (lower income during program, higher ceiling after) from Q83 follow-up is captured in work_and_career. Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q83 follow-up",
-            "should_be_in": "preferences.work_and_career"
-          }
-        ],
-        "summary": { "present": 1, "missing": 3 }
-      }
+    "summaries": {
+      "demographer": "Alicia Gonzalez is a 29-year-old (DOB July 14, 1996) divorced Latina woman of Colombian origin, born in Sacramento, California, to immigrant parents (father Carlos, 60, from Bogota; mother Rosa, 57, from near Cali). She is Hispanic/Latinx, fluently bilingual in Spanish and English, and grew up Catholic, now attending Spanish-language Mass at St. John the Baptist parish in Chico occasionally for cultural/familial reasons. She holds a bachelor's degree in computer science from Chico State and works as a computer and information research scientist at a small lab in Chico, CA (ZIP 95928), earning approximately $69,600 gross annually ($4,200/month take-home). She lives alone in a rented one-bedroom apartment off Mangrove Avenue ($1,250/month) with her cat Luna (Q01, Q05, Q08, Q47, Q56, Q72, Q85, Q87, Q88, Q90). Her parents are working-class: father is a maintenance supervisor at Valley Properties in Sacramento (20 years, nearing retirement at 62 with chronic knee problems); mother worked as a daycare teaching assistant at Little Stars for 12 years and now does part-time babysitting/housekeeping. Her brother Diego (25) works in music production in LA (Q100-Q107). Her educational attainment represents significant upward intergenerational mobility -- her father completed high school in Colombia and her mother had partial college. She maintains strong transnational ties through weekly FaceTime with her maternal grandmother (82, in Colombia), a Colombian scientist Discord community, and planned return travel. She resides in a mid-sized California college town chosen deliberately over higher-paying Bay Area opportunities for quality of life, outdoor access, and research autonomy (Q02), which constrains her professional network and dating pool but enables an affordable lifestyle relative to coastal California.",
+
+      "behavioral_economist": "Alicia demonstrates strong intrinsic motivation over extrinsic rewards, as evidenced by the defining career choice to accept a ~40% pay cut for research autonomy over an industry software engineering position in San Jose (Q02). She employs disciplined financial management through a personal budget spreadsheet (weekly-biweekly updates, developed post-divorce), a strict no-credit-card-debt rule, and retirement contributions matched at 3% by her employer (Q56, Q61, Q63). Her savings rate of $300-$400/month against $4,200 take-home reflects moderate future orientation, with three parallel savings goals: (1) rebuild emergency fund to 3 months (~$1,500 needed), (2) Colombia trip (~$2,000), and (3) long-term home down payment ($40K-$50K) (Q62, Q83 follow-up). She manages cash-flow friction from conference reimbursement lags of $800-$1,000 through preemptive spending cuts (Q81). Her financial position is disciplined with limited margin: a $400 emergency is 'uncomfortable but not catastrophic' (Q82), and she carries $18,000 in student loan debt at $220/month (Q63). Seasonal cost variation is significant: summer PG&E bills spike to $180 from ~$60 winter, Christmas gifts cost $300-$400, air filters add recurring costs during wildfire season, and conference travel creates temporary deficits (Q59). She supplements income occasionally through art print sales (~$150 recently, Q60). Present-bias manifests in sleep habits (staying up until 1-2 AM for creative work despite 7 AM wake-up) and deadline-driven self-care collapse (diet deterioration, coffee escalation from 2 to 4-5 cups, Q32). Counter-measures include Sunday meal prep, morning breathing exercises, and learning to decline overcommitment (Q50). Her parents' financial precariousness -- father's $3,000 insurance deductible, mother delaying checkups, retirement planning uncertainty -- creates anticipated caretaking expenditures that she and Diego frame as 'non-negotiable' (Q05 follow-up, Q35, Q40). Identity-based motivation drives career and financial choices: she builds her life around being a scientist, artist, and community mentor, accepting income penalties that align with this self-concept (Q02, Q108, Q109).",
+
+      "political_scientist": "Alicia is a highly engaged civic participant who votes in every election including local specials and ballot measures, placing her in the most active segment of the electorate. Her parents' naturalization story is a foundational motivation: 'My mom drove me to the polling place when I turned 18' (Q23). She leans Democratic but rejects strong partisan identification, describing herself as 'left of center' with issue-based evaluation of candidates across four core domains: immigration policy (personal family history, follows NILC and FWD.us, has written to representatives), education funding and STEM access, climate/wildfire preparedness (catalyzed by Camp Fire 2018), and algorithmic accountability emerging from her AI research (Q24, Q25, Q95-Q96). She exhibits high institutional literacy, reading CalMatters, NPR, Chico Enterprise-Record, the California voter guide cover-to-cover, policy newsletters, and researcher accounts on Twitter/X, while explicitly avoiding cable news for health information (Q23 follow-up, Q42). The Camp Fire fundamentally redirected her political energy toward local governance: housing, zoning, wildfire preparedness, emergency management -- 'the stuff happening at city hall matters more to my daily life than most of what happens in Congress' (Q25 follow-up). Her civic engagement extends well beyond voting: she mentors two undergraduates through Technolatinas, volunteers as a math/programming tutor twice monthly, maintains a lab reading group on AI bias, wrote a blog post on algorithmic fairness, has written to representatives about immigration bills, helped her tia Marta navigate Spanish-language vaccine misinformation, and has participated in peaceful local marches (Q04, Q17, Q24 follow-up, Q27 follow-up, Q29, Q42 follow-up). She practices deliberate cross-partisan engagement at the hiking club and farmers market, finding common ground with conservative community members on local issues while avoiding ideological debates and social media arguments entirely (Q24 follow-up, Q30 follow-up). Her trust in institutions is domain-specific: high trust in scientific and public health institutions (reads primary sources), moderate trust in electoral processes, and nuanced skepticism toward law enforcement based on personal experience (protest with heavy police presence) and family stories (father's traffic stops, cousin Andres's car searched) (Q20, Q21, Q42).",
+
+      "psychologist": "Alicia exhibits high Openness to Experience expressed through intellectual curiosity across domains (ML/NLP research, generative art, DIY electronics, speculative fiction), aesthetic sensitivity (abstract painting in blues/oranges, attention to visual beauty in nature and algorithms), and active integration of dual cultural identities -- Colombian/American, scientist/artist (Q01, Q15, Q109). Her Conscientiousness is moderate-to-high but domain-specific: disciplined about financial tracking, savings, and career obligations, yet consistently undermined by night-owl creative sessions that sacrifice sleep (5-6.5 hours on bad nights, ~twice weekly) and occasional deadline slippage from exploratory tangents (Q15, Q31, Q32, Q68). Extraversion is moderate: she maintains a rich social network (Priya, Tom, board game group, hiking club, Discord communities, family) and thrives on connection, but requires substantial solitude for creative and intellectual work, deliberately reframing post-divorce aloneness as 'chosen solitude' rather than isolation (Q07, Q11, Q43 follow-up). Agreeableness is high: mentoring-oriented, family-devoted, community-serving, conflict-avoidant in cross-partisan interactions, though she speaks up on equity issues in professional settings (Q04, Q26 follow-up, Q28 follow-up). Neuroticism is moderate and effortfully managed rather than stably regulated: performance anxiety before deadlines manifests as chest tightness and racing thoughts (Q45), nighttime rumination centers on career comparison with peers who have professorships or startups (Q43 follow-up), and convergent stressors can overwhelm coping -- paper rejection + father's health flare-up + wedding anniversary week triggered a 5-day withdrawal episode with social isolation, binge TV, and cereal-for-dinner regression (Q44). Her emotional regulation toolkit is multi-modal and largely self-developed post-divorce: physical activity (yoga as 'breaking the cycle,' hiking as decompression), creative expression (painting as primary anxiolytic, elaborate cooking as active meditation), social support (verbal processing with Priya and Diego), cognitive strategies (journaling, 48-hour grace period after rejections, gratitude practice, morning breathing exercise), and self-monitoring (caught her own increased wine consumption during divorce and redirected to yoga/hiking) (Q38, Q38 follow-up, Q44 follow-up, Q45 follow-up, Q50). Family-of-origin emotional norms shape her help-seeking: parents show love through actions (food, fixing things) rather than emotional conversation, neither would suggest therapy, and 'handling things yourself' is the cultural expectation -- but Alicia is gradually shifting, influenced by Priya's positive therapy experience, and is 'warming up to the idea' (Q45, Q45 follow-up). She carries intergenerational caretaking responsibility (father's retirement, mother's health avoidance) that provides purpose but creates subtle burden (Q05 follow-up, Q35, Q40). Her motivational architecture is driven by curiosity, connection, and meaning-making rather than status or material accumulation -- 'the drive to understand things, to build things, to ask what if' (Q109). She demonstrates an analytical-then-intuitive decision style: gathers data systematically then checks in with embodied feeling ('if something still feels wrong even when it looks right on paper, I listen to that,' Q03 follow-up). Post-divorce identity reconstruction has been largely successful over two years, moving from 'unmoored' to 'grounded' (Q43), though episodic loneliness and career-comparison distress persist as managed rather than resolved vulnerabilities."
     },
 
-    "political_scientist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed career goals mention desire to 'champion inclusive research practices and shape policy that supports open, collaborative science.' Interview confirms engagement with algorithmic fairness, bias audits, lab reading group on equity in tech (Q27, Q27 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.career_goals_and_ambitions",
-            "source_b_ref": "Q27, Q27 follow-up"
-          },
-          {
-            "id": 2,
-            "text": "Seed career goals reference 'mentor Latinx women in technology.' Interview describes Technolatinas mentoring program with two mentees (Q04 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.career_goals_and_ambitions",
-            "source_b_ref": "Q04, Q04 follow-up"
-          },
-          {
-            "id": 3,
-            "text": "Seed cultural_background describes 'stays connected to the Latinx community through local cultural events, volunteer tutoring programs, and an online network of Colombian scientists.' Interview confirms all three: tutoring center (Q17), Technolatinas (Q04), Discord server (Q07, Q48). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.cultural_background",
-            "source_b_ref": "Q04, Q07, Q17, Q48"
-          },
-          {
-            "id": 4,
-            "text": "Seed does not specify political party affiliation. Interview reveals she leans Democratic but avoids strong party identity (Q95, Q96). No contradiction; interview enriches the seed.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed (no political data)",
-            "source_b_ref": "Q95, Q96"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 0 }
+    "others_misc": {
+      "cultural_and_linguistic": {
+        "description": "Languages, cultural practices, religious/spiritual observance patterns, heritage markers",
+        "items": [
+          "Fluently bilingual in Spanish and English; grew up speaking Spanish at home exclusively per mother's insistence ('En esta casa se habla espanol'); code-switched between home (Spanish) and school (English) without thinking about it (Q01 follow-up)",
+          "Colombian cultural identity expressed through cooking (bandeja paisa, arepas, empanadas), music (cumbia, vallenato), and family rituals (Sunday lunches, holiday gatherings with 25+ extended family, church followed by big lunch) (Q01, Q05 follow-up)",
+          "Attends Spanish-language Mass at St. John the Baptist parish in Chico occasionally (~once a month and holidays), primarily for cultural/familial reasons; congregation is mostly Latino families; priest Father Ruben is Colombian (Q47, Q47 follow-up)",
+          "Lights votive candles in apartment as personal spiritual ritual when loved ones face difficulties (Q47 follow-up)",
+          "Wears grandmother's crucifix necklace as heritage marker; 'more about connection to her than theological belief' (Q47)",
+          "Weekly Sunday FaceTime calls with maternal grandmother (82) in Colombia after church; 'Mi nieta la cientifica' (Q06)",
+          "Maintains Colombian identity through online Colombian scientist Discord community (~200 members), local cultural events, and volunteer tutoring programs (Q07, Q04 follow-up, seed cultural_background)",
+          "Last visited Colombia 3 years ago (Bogota, Cartagena, mother's hometown); planning return to see grandmother before she 'gets much older' (Q62 follow-up)",
+          "Family follows Colombian traditions: Carnaval de Barranquilla referenced in seed; Saturday morning cumbia and arepas; mother sends food via cooler bag on bus to Chico (Q01, Q05 follow-up, seed cultural_background)",
+          "Gratitude practice before hiking or painting: 'not prayer exactly, but intentional' appreciation of where she is (Q47 follow-up)",
+          "Finds spiritual awe in nature rather than traditional religious practice; 'standing at the top of a trail looking out over the valley' (Q47 follow-up)",
+          "Ethics from religious upbringing inform her commitment to fairness in AI, mentoring, and community service, even without traditional religious expression (Q47 follow-up)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview describes consistent voting in all elections including special elections and ballot measures (Q23). Profile's community_and_civic section captures 'Votes in every election including local special elections and ballot measures.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q23",
-            "source_b_ref": "preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes attending peaceful marches in Chico (Q29). Profile captures 'Attended peaceful local marches/protests.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q29",
-            "source_b_ref": "preferences.community_and_civic"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes political views as issue-based rather than party-loyal, with core concerns: immigration, education funding, climate/wildfire, tech policy (Q24). Profile's political_scientist summary captures 'core political concerns -- immigration, education funding, climate/wildfire policy, and algorithmic accountability.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q24",
-            "source_b_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 4,
-            "text": "Interview describes Camp Fire catalyzing shift to local political engagement (Q25 follow-up). Profile's political_scientist summary captures 'place-based political engagement catalyzed by the Camp Fire.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q25 follow-up",
-            "source_b_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 5,
-            "text": "Interview mentions writing to representatives about specific immigration bills (Q24 follow-up). This direct lobbying activity is not captured in the community_and_civic preferences or political_scientist summary.",
-            "verdict": "GAP",
-            "source_a_ref": "Q24 follow-up",
-            "source_b_ref": "preferences.community_and_civic"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+      "life_events_and_transitions": {
+        "description": "Significant past or anticipated events that shape current behavior",
+        "items": [
+          "Divorce finalized approximately 2 years ago after less than 2 years of marriage (married at 23 to college boyfriend). Catalyzed major identity reconstruction: threw herself into work, rediscovered painting, joined hiking club, adopted Luna, reconnected with friends. Describes moving from 'unmoored' to 'grounded' (Q01, Q01 follow-up, Q43)",
+          "Career crossroads post-graduation: chose lower-paying research position under Dr. Patel over ~40% higher-paying software engineering job in San Jose. Defining life decision, first crack in marriage, validated by mother ('Mija, you can always make more money'), father came around after seeing publications (Q02, Q02 follow-up)",
+          "Camp Fire (2018) profoundly affected regional community: displaced people from Paradise, housing crisis in Chico, emotional weight of smoke season; shifted her political engagement toward local governance (Q25 follow-up)",
+          "Considering PhD program as next career transition; would deepen technical expertise, expand network, potentially enable startup. Undecided on timing and financial implications (Q91, Q108 follow-up)",
+          "Father Carlos (60) approaching retirement with chronic knee problems and physical deterioration from 20+ years of maintenance work; hoping to retire at 62 but finances uncertain. Alicia and Diego plan to contribute; 'non-negotiable' (Q05 follow-up, Q35)",
+          "Grandmother's advancing age (82) creating urgency around planned Colombia visit; last trip was 3 years ago (Q62 follow-up)",
+          "Paper rejection ~6 months ago with harsh feedback, coinciding with father's knee flare-up and wedding anniversary week; triggered 5-day withdrawal. Recovery through Priya's intervention led to 48-hour grace period coping strategy (Q44, Q44 follow-up)",
+          "Neck/shoulder injury ~1 year ago from 3 consecutive days at desk without moving; resolved with 6 PT sessions; prompted ergonomic changes and yoga commitment (Q33)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile's political_scientist summary describes 'moderate political sophistication' and 'high institutional literacy.' These are consistent -- she reads primary policy sources and voter guides but does not engage in organized political party activity.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.political_scientist (institutional literacy)",
-            "field_b": "summaries.political_scientist (political sophistication)"
-          },
-          {
-            "id": 2,
-            "text": "Profile describes her as having 'conditional' trust in institutions -- trusting scientific institutions while maintaining skepticism toward law enforcement. This aligns with community_and_civic details about protests and lab reading group on equity. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.political_scientist (conditional trust)",
-            "field_b": "preferences.community_and_civic"
-          }
-        ],
-        "summary": { "consistent": 2, "inconsistent": 0 }
+      "sensory_and_physical_context": {
+        "description": "Non-clinical physical factors: chronic patterns, sleep, sensory environment, dietary practices tied to non-preference reasons",
+        "items": [
+          "Chronic sleep insufficiency (~twice weekly): driven by night-owl creative sessions (painting, coding to 1:30-2 AM) against 7 AM wake-up. Has tried wind-down alarms but just snoozes them. Headaches and reduced focus when sleep-deprived (Q31, Q31 follow-up)",
+          "History of neck/shoulder tension from prolonged computer work; resolved with PT but requires ongoing management through hourly stretches, ergonomic chair/monitor, specialized neck-support pillow (Q33, Q33 follow-up)",
+          "Spring seasonal allergies (oak pollen in Central Valley): itchy eyes, runny nose, general fogginess. Daily OTC antihistamine causes mild drowsiness. Avoids morning hikes during peak pollen; keeps windows closed, runs air purifier (Q31 follow-up)",
+          "Wildfire smoke exposure (summer/fall): AQI can exceed 200, confining her indoors. Air purifier and N95 masks stocked. Smoke triggers emotional/collective response post-Camp Fire ('You see that haze and you think, is it happening again'). Plans indoor projects or coastal trips during peak (Q09 follow-up)",
+          "Chico heat: regular summer temperatures over 100-110 degrees; apartment has poor insulation, AC drives electricity bills to $180+ in peak months (Q10, Q59)",
+          "Sedentary job (8+ hours at computer) partially counteracted by yoga, hiking, biking. Tried standing desk but couldn't focus as well (Q32)"
+        ]
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview describes experience at a protest with heavy police presence that changed her view of power dynamics (Q20). This is captured in the political_scientist summary as 'skepticism toward law enforcement practices.' Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q20",
-            "should_be_in": "summaries.political_scientist"
-          },
-          {
-            "id": 2,
-            "text": "Interview details engagement with Latinx scholars on race (Roberto Gonzales, Cristina Mora) in Q28. These specific intellectual influences are not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q28",
-            "should_be_in": "others_misc.media_and_information_diet or summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes cross-party local voting (voted for independent city council member on housing, Q95 follow-up). This specific behavior is captured in the summary as issue-based evaluation. Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q95 follow-up",
-            "should_be_in": "summaries.political_scientist"
-          },
-          {
-            "id": 4,
-            "text": "Interview describes cousin Andres's car being searched (Q21) and father's fraught traffic stop experiences (Q20). These secondhand law enforcement encounters that shape her political perspective are not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q20, Q21",
-            "should_be_in": "others_misc.life_events_and_transitions or summaries.political_scientist"
-          }
-        ],
-        "summary": { "present": 2, "missing": 2 }
-      }
-    },
-
-    "psychologist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed persona describes 'fuses scientific precision with artistic chaos, chasing novelty in code and canvas.' Interview confirms dual creative-scientific identity extensively: painting, generative art, NLP research, coding projects (Q01, Q15, Q17, Q65, Q109). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.persona",
-            "source_b_ref": "Q01, Q15, Q17, Q65, Q109"
-          },
-          {
-            "id": 2,
-            "text": "Seed describes 'occasionally losing track of deadlines.' Interview confirms: self-described disorganized sleep, deadlines absorb weekends, paper deadlines cause stress spirals (Q31, Q32, Q43, Q65 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.persona",
-            "source_b_ref": "Q31, Q32, Q43, Q65 follow-up"
-          },
-          {
-            "id": 3,
-            "text": "Seed describes 'vivid imagination' and 'competitive drive.' Interview shows competitive nature in board games ('something about board games flips a switch in me,' Q07 follow-up) and vivid imagination in generative art and startup dreaming (Q15, Q108). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.professional_persona",
-            "source_b_ref": "Q07 follow-up, Q15, Q108"
-          },
-          {
-            "id": 4,
-            "text": "Seed hobbies list 'Board Games (Strategy).' Interview confirms strategy board games at Priya's biweekly (Wingspan, Terraforming Mars, Catan; Q07, Q07 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.hobbies_and_interests_list",
-            "source_b_ref": "Q07, Q07 follow-up"
-          },
-          {
-            "id": 5,
-            "text": "Seed hobbies list includes 'DIY Electronics (Arduino/Raspberry Pi).' Interview confirms: Raspberry Pi weather station project with AQI sensor, mentions hackathons (Q15 follow-up, Q07). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.hobbies_and_interests_list",
-            "source_b_ref": "Q15 follow-up"
-          },
-          {
-            "id": 6,
-            "text": "Seed's sports_persona references 'plays in a local amateur soccer league during summer.' Interview confirms returning to soccer league starting in May, doing Sunday pickup games (Q18). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.sports_persona",
-            "source_b_ref": "Q18"
-          }
-        ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+      "media_and_information_diet": {
+        "description": "News sources, social media platforms, entertainment formats, information-seeking behavior",
+        "items": [
+          "NPR for national news and health coverage (Q23 follow-up, Q42)",
+          "CalMatters for California state policy (Q23 follow-up)",
+          "Chico Enterprise-Record for local news (Q23 follow-up)",
+          "Policy newsletters and researcher accounts on Twitter/X for tech policy and immigration; follows NILC and FWD.us (Q24, Q24 follow-up)",
+          "CDC publications and peer-reviewed journals for health/vaccine information; has training to read primary sources directly (Q42)",
+          "California voter guide read cover-to-cover before elections (Q23 follow-up)",
+          "Avoids cable news entirely for health information: 'Too much spin, too little substance' (Q42)",
+          "Curates social media feeds aggressively; mutes inflammatory political content; unfollows accounts that 'make me feel bad about myself or angry without being informative' (Q48 follow-up)",
+          "Spanish-language misinformation in Facebook groups identified as community challenge; personally intervened with tia Marta on vaccine hesitancy by translating clinical trial data (Q42 follow-up)",
+          "Podcasts from epidemiologists and public health researchers (Q42)",
+          "Reads Latinx scholars on race/identity: Roberto Gonzales, Cristina Mora (Q28)",
+          "Self-help/productivity content: reads practical articles and books from which she extracts applicable techniques (breathing exercise) (Q50)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview describes emotional regulation strategies: painting, yoga, hiking, calling friends, elaborate cooking, journaling, 5-minute morning breathing exercise (Q38 follow-up, Q45 follow-up, Q50). Profile's psychologist summary captures 'multi-modal emotional regulation toolkit.' Consistent and well-synthesized.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q38 follow-up, Q45 follow-up, Q50",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes five-day depressive episode with isolation, binge-watching, cereal dinners (Q44). Profile's psychologist summary references 'vulnerability to loneliness' and 'moderate Neuroticism.' The episode itself is captured in life_events_and_transitions indirectly through divorce aftermath. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q44",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes analytical-then-gut decision-making style (Q03, Q03 follow-up). Profile captures this as 'analytical-then-intuitive decision-making style.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q03, Q03 follow-up",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Interview reveals specific rumination pattern: lying in bed at night running through scenarios, performance anxiety before deadlines (Q43 follow-up, Q45). Profile captures 'performance anxiety before deadlines and presentations, rumination patterns at night.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q43 follow-up, Q45",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Interview describes considering therapy but not yet making an appointment, influenced by family culture of self-reliance (Q45). Profile does not capture this specific therapy consideration or the cultural barrier to help-seeking.",
-            "verdict": "GAP",
-            "source_a_ref": "Q45",
-            "source_b_ref": "summaries.psychologist"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+      "technology_and_tool_use": {
+        "description": "Device preferences, app usage, digital communication norms",
+        "items": [
+          "Instagram as primary art-sharing platform (~800 followers): paintings, generative art, food photos, hiking stories, time-lapse painting videos. Has connected with generative artists and received online group show invitations (Q48, Q48 follow-up)",
+          "Twitter/X for professional networking, science communication, and following researchers/journals. Shares papers, comments on AI ethics. Tries to avoid arguments (Q48)",
+          "Discord as primary community platform: Colombian scientists server (~200 members, close with ~12) and generative art channels. Vents about career frustrations, shares papers, gets emotional support after rejections (Q07, Q48, Q49)",
+          "Facebook used minimally: Chico Outdoor Club group and Colombian scientist group only (Q48)",
+          "Slack across 5+ workspaces: lab, UC Davis collaboration, professional communities (Q48)",
+          "FaceTime for weekly Sunday calls with grandmother in Colombia (Q06)",
+          "Zoom for remote research collaboration with UC Davis team (Q10 follow-up)",
+          "TurboTax for annual tax filing (Q75)",
+          "Personal budget spreadsheet (developed post-divorce, updated weekly-biweekly); tracks spending by category (Q56 follow-up)",
+          "App timers on social media: 20 min per platform per session (Q48 follow-up)",
+          "10 PM digital cutoff (70% compliance); intent is to have last hour be painting, reading, or quiet (Q48 follow-up)",
+          "Large-format printing for generative art pieces and mounted digital prints (Q17 follow-up)",
+          "Attempted alarm-based bedtime wind-down reminders; admits to snoozing them: 'It's a discipline issue, honestly' (Q31 follow-up)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
+      "unresolved_or_ambiguous": {
+        "description": "Information that could not be confidently assigned to preferences or summaries",
+        "items": [
           {
-            "id": 1,
-            "text": "Profile psychologist summary describes 'high Openness' and 'moderate-to-high Conscientiousness.' The 'moderate-to-high' qualification is appropriate given evidence of structured routines offset by night-owl tendencies and deadline slippage. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (Openness)",
-            "field_b": "summaries.psychologist (Conscientiousness)"
+            "content": "Seed data references 'Portland street-art-rich neighborhoods' as a travel interest, but this never surfaced in the interview",
+            "candidate_owner": "drop",
+            "reason_unresolved": "No interview evidence; seed narrative only"
           },
           {
-            "id": 2,
-            "text": "Profile describes 'moderate Extraversion (rich social network but strong need for solitude).' This matches the detailed social_and_relationships section showing many relationships alongside home_and_lifestyle emphasis on valuing personal space. Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (Extraversion)",
-            "field_b": "preferences.social_and_relationships, preferences.home_and_lifestyle"
+            "content": "Seed data mentions 'Lake Tahoe weekend getaways' but this was not discussed in interview responses",
+            "candidate_owner": "travel",
+            "reason_unresolved": "Retained in travel section as seed-only aspiration, flagged as not interview-confirmed"
           },
           {
-            "id": 3,
-            "text": "Profile describes 'high Agreeableness (conflict-avoidant communication style).' This is consistent with her description of redirecting political disagreements at the hiking club to local issues rather than confronting ideological differences (Q30 follow-up) and listening before reacting in political conversations (Q24 follow-up).",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (Agreeableness)",
-            "field_b": "preferences.community_and_civic"
+            "content": "Seed data references 'aji amarillo-spiced pork' and 'quinoa-infused empanadas' as specific culinary items, but interview only discussed empanadas and arepas generically",
+            "candidate_owner": "drop",
+            "reason_unresolved": "Partially covered in interview but specific recipes not mentioned; seed detail level exceeds interview confirmation"
+          },
+          {
+            "content": "Exact nature of religious identification left deliberately behavioral per protocol rules; persona attends Mass occasionally and maintains cultural rituals but declined to name a specific religion label in Q94",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Behavioral pattern clearly indicates Catholic upbringing and ongoing cultural practice, but explicit label withheld per behaviors-never-labels rule. Profile notes 'Catholic (cultural)' based on observable behavior (parish attendance, crucifix, candle ritual)."
+          },
+          {
+            "content": "PhD consideration mentioned multiple times (Q91, Q108 follow-up, Q83 follow-up) but no concrete timeline, target programs, or application status. Could significantly reshape financial, career, and location profile.",
+            "candidate_owner": "work_and_career",
+            "reason_unresolved": "Aspiration without concrete action; noted in career section and life_events as anticipated transition"
           }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview describes 48-hour grace period strategy for handling paper rejections (Q44 follow-up). This specific coping structure is not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q44 follow-up",
-            "should_be_in": "summaries.psychologist or preferences.work_and_career"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes noticing increased wine consumption during divorce and deliberately pulling back, recognizing the pattern (Q38). This self-monitoring behavior is an important indicator of emotional self-awareness but is not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q38",
-            "should_be_in": "summaries.psychologist or others_misc.sensory_and_physical_context"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes family dynamic where love is shown through actions rather than words -- dad drives up to fix things, mom sends care packages (Q45 follow-up). Profile captures 'secure family bonds' but misses this specific behavioral love-language pattern.",
-            "verdict": "MISSING",
-            "interview_ref": "Q45 follow-up",
-            "should_be_in": "summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Interview describes identity integration of dual roles (scientist/artist, Colombian/American) and post-divorce identity reconstruction (Q01, Q43, Q109). Profile captures this as 'self-concept integrates dual identities' and 'post-divorce identity reconstruction.' Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q01, Q43, Q109",
-            "should_be_in": "summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Interview describes comparing self to peers and feeling inadequate ('I'll see someone my age who's already an assistant professor,' Q43 follow-up). This social comparison pattern is captured implicitly in 'performance anxiety' but the specific peer comparison mechanism is not explicit.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q43 follow-up",
-            "should_be_in": "summaries.psychologist"
-          }
-        ],
-        "summary": { "present": 2, "missing": 3 }
+        ]
       }
     }
-  },
-
-  "overall_verdict": "PASS_WITH_REVISIONS",
-
-  "inconsistencies_found": [],
-
-  "resolutions": [],
-
-  "gaps_addressed": [
-    {
-      "gap": "Mother Rosa's current part-time work (babysitting, housekeeping) not captured in demographer summary",
-      "resolution": "Demographer summary abbreviates to 'mother worked in childcare.' The current occupation is a minor detail that does not change the demographic picture.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Art print sales as supplemental income ($150) not captured in work or financial preferences",
-      "resolution": "Interview itself notes this is not regular income (Q70, Q74). However, it reveals entrepreneurial behavior relevant to the startup dream.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "Mother's envelope budgeting system as formative financial influence not in profile",
-      "resolution": "This intergenerational transmission detail enriches the behavioral economist picture but is not essential to the profile.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Student loan details ($18K balance, $220/mo, 4 years into 10-year plan) missing from profile",
-      "resolution": "This is significant financial data that affects her disposable income and financial planning. Should be added to a financial preferences section.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "Health insurance details ($120/mo, employer-sponsored, copays) missing from profile",
-      "resolution": "Relevant to understanding healthcare access and financial picture. Minor gap.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Retirement contribution details (3% employer match) missing from preferences",
-      "resolution": "Important for financial completeness but captured in behavioral economist summary.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Writing to representatives about immigration bills not captured in civic engagement",
-      "resolution": "This is a specific form of political action worth noting in community_and_civic.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "Latinx scholars (Roberto Gonzales, Cristina Mora) as intellectual influences missing",
-      "resolution": "Minor omission from media/information diet. Not essential.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Family law enforcement experiences (father's traffic stops, cousin Andres's car search) not captured",
-      "resolution": "These secondhand experiences shaped her political perspective on policing. Worth noting.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Therapy consideration and cultural barrier to help-seeking not captured",
-      "resolution": "This is behaviorally significant -- reveals both self-awareness and culturally mediated help-seeking barriers.",
-      "action": "NEEDS_ENRICHMENT"
-    },
-    {
-      "gap": "48-hour rejection grace period coping strategy not captured",
-      "resolution": "A specific, structured coping mechanism that enriches the psychological portrait.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Self-monitoring of alcohol use during divorce (noticing and correcting increased wine consumption) not captured",
-      "resolution": "Important behavioral self-regulation data; demonstrates metacognitive health awareness.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Parents' naturalization history not captured in profile",
-      "resolution": "Relevant to civic and cultural identity. Minor omission.",
-      "action": "CARRY_FORWARD"
-    },
-    {
-      "gap": "Parents' specific ages (Carlos 60, Rosa 57) not recorded",
-      "resolution": "Useful demographic data but not essential given retirement timeline is captured.",
-      "action": "CARRY_FORWARD"
-    }
-  ],
-
-  "expert_summaries": {
-    "demographer": "Alicia Gonzalez is a 29-year-old divorced Latina woman of Colombian descent, born in Sacramento to immigrant parents who became naturalized citizens. She holds a bachelor's in computer science (STEM) from Chico State, representing intergenerational educational mobility relative to her father's high school completion and her mother's incomplete college degree in Colombia. She lives alone in a rented one-bedroom apartment in Chico, CA (95928) earning approximately $69,600 gross annually as a research scientist -- a salary that is workable given Chico's lower cost of living but leaves limited margin. Her demographic profile is fully consistent between the seed data and interview, with no contradictions found across age (Q85), gender, marital status (Q84), education (Q90), location (Q08, Q51), occupation, and cultural background (Q01, Q86-Q88).",
-
-    "behavioral_economist": "Alicia demonstrates a clear preference for intrinsic motivation over extrinsic reward, having chosen a research position at 40% less pay over a lucrative industry offer (Q02). She employs multiple commitment devices: a personal spending spreadsheet, a strict no-credit-card-debt rule (Q63), and app timers for social media (Q48). Her savings rate of $300-400/month is disciplined given her constrained income, and she maintains a 2.5-month emergency fund that she is actively rebuilding after an unexpected expense (Q62). She shows domain-specific self-control variation -- strong in finances, weaker in sleep discipline -- suggesting present-bias operates selectively rather than globally. Her financial decision-making shows intergenerational influence from her mother's envelope system (Q61 follow-up). The interview and profile are well-aligned, with gaps primarily in granular financial details (student loans, insurance costs, retirement match) that would strengthen the economic picture.",
-
-    "political_scientist": "Alicia is among the most civically engaged citizens in her demographic, voting in every election type including special elections and local ballot measures (Q23). She leans Democratic (Q96) but evaluates candidates issue-by-issue, having voted for an independent city council member on housing policy (Q95 follow-up). Her core policy concerns -- immigration, education funding, wildfire/climate resilience, and algorithmic accountability -- map directly to her biography as a child of immigrants working in AI in California wildfire country (Q24). Her political engagement extends to direct advocacy (writing to representatives on immigration bills, Q24 follow-up), community organizing (Technolatinas, Q04 follow-up), and workplace activism (lab reading group on equity, Q26 follow-up). The Camp Fire of 2018 served as a critical juncture that redirected her political attention from national to local governance (Q25 follow-up).",
-
-    "psychologist": "Alicia displays a personality profile characterized by high openness to experience -- she integrates scientific rigor with artistic expression across multiple domains and actively seeks novelty in both her research and creative pursuits (Q01, Q15, Q65, Q109). She demonstrates effective multi-modal emotional regulation, deploying physical activity, creative expression, social connection, and cognitive reframing depending on the stressor (Q38 follow-up, Q45 follow-up). Her post-divorce period reveals a pattern of initial withdrawal followed by deliberate rebuilding -- she recognized increased alcohol consumption and corrected course, joined new social groups, and reframed solitude as chosen rather than imposed (Q01 follow-up, Q38, Q43 follow-up). She carries intergenerational caretaking orientation (concern for father's retirement, monitoring mother's health appointments, planning grandmother visit) that provides meaning but also generates background worry (Q35, Q36, Q46). Her decision-making follows an analytical-then-intuitive pattern (Q03), and she shows metacognitive awareness of her own patterns -- identifying rumination triggers, creating structured coping protocols like the 48-hour rejection grace period (Q44 follow-up), and recognizing cultural barriers to help-seeking around therapy (Q45)."
-  },
-
-  "preferences_updates": {
-    "additions": [
-      "Student loan: ~$18,000 balance, $220/month payment, standard 10-year plan, ~4 years in (Q63)",
-      "Occasional supplemental income from art print sales (Q60, Q70)",
-      "Writes to elected representatives about immigration policy (Q24 follow-up)",
-      "Considering therapy; Priya's recommendation is a positive influence; cultural self-reliance norm is a barrier (Q45)"
-    ],
-    "corrections": [],
-    "removals": []
-  },
-
-  "final_status": "The Step 2 interview and extracted profile for Alicia Gonzalez are strongly consistent with the NVIDIA seed data. All four expert panels found zero inconsistencies between seed and interview or within the profile itself. Gaps identified are primarily minor omissions of granular financial details and specific behavioral coping strategies that would enrich but do not contradict the existing profile. The profile faithfully represents the interview content across all expert domains. Verdict: PASS WITH REVISIONS -- the identified gaps (student loan data, therapy consideration, direct advocacy behavior, art-sale income) should be added to the profile to improve completeness, but no corrections to existing content are needed."
+  }
 }

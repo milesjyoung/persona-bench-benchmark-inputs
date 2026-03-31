@@ -1,657 +1,1089 @@
 {
-  "verification_metadata": {
+  "verification": {
+    "verification_metadata": {
+      "participant_id": "5237e90a0ca3460dbbcba20adb61922f",
+      "name": "Maria Buendia",
+      "verification_date": "2026-03-31",
+      "model": "Claude Opus 4.6 (1M context)",
+      "seed_source": "NVIDIA Nemotron-Personas-USA",
+      "interview_source": "Step 2 interview output"
+    },
+
+    "experts": {
+      "demographer": {
+        "direction_1_seed_vs_interview": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Age: Seed states 34; interview confirms age 34 with DOB August 14, 1991 (Q85), and Maria references being thirty-four in Q03 ('I'm thirty-four now so that GED thing is getting real close'). Fully consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.age: 34",
+              "source_b_ref": "Q03, Q85"
+            },
+            {
+              "id": 2,
+              "text": "Gender: Seed states Female; interview consistently presents Maria as a woman, mother, and wife throughout all responses (Q01, Q05, Q84, Q88). Fully consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.sex: Female",
+              "source_b_ref": "Q01, Q05, Q84, Q88"
+            },
+            {
+              "id": 3,
+              "text": "Marital status: Seed states married_present; interview confirms married twelve years to Carlos, living together with two children (Q05, Q84). Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.marital_status: married_present",
+              "source_b_ref": "Q05, Q84"
+            },
+            {
+              "id": 4,
+              "text": "Education: Seed states 9th_12th_no_diploma; interview specifies Maria dropped out during 11th grade ('my junior year') and has no diploma (Q01, Q90). Currently self-studying for GED (Q91). Consistent and enriched.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.education_level: 9th_12th_no_diploma",
+              "source_b_ref": "Q01, Q90, Q91"
+            },
+            {
+              "id": 5,
+              "text": "Occupation: Seed states no_occupation; interview confirms no formal employment -- Maria describes herself as at-home with children, performing informal catering and volunteer event planning (Q16, Q65, Q76). Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.occupation: no_occupation",
+              "source_b_ref": "Q16, Q65, Q76"
+            },
+            {
+              "id": 6,
+              "text": "Location: Seed states Lilburn, GA 30047; interview confirms lifelong residence in Lilburn, Gwinnett County, with detailed neighborhood descriptions (Q01, Q08, Q87, Q97). Born at hospital in Lawrenceville but raised in Lilburn. Fully consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.city: Lilburn, seed.state: GA, seed.zipcode: 30047",
+              "source_b_ref": "Q01, Q08, Q87, Q97"
+            }
+          ],
+          "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+        },
+        "direction_2_interview_vs_profile": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Household composition: Interview describes four-person household (Maria, Carlos age 36, Diego age 10, Sofia age 7) plus dog Canela (Q05, Q11, Q51). Extracted profile captures location and some household details in home_and_lifestyle but does not include a dedicated household section with all members' ages. Partial capture.",
+              "verdict": "GAP",
+              "source_a_ref": "Q05, Q11, Q51",
+              "source_b_ref": "extracted_profile.home_and_lifestyle"
+            },
+            {
+              "id": 2,
+              "text": "Rent amount and trajectory: Interview specifies $1,450/month rent, up from $1,100 five years ago (Q10, Q56, Q58). Profile accurately captures both current rent and the increase trajectory in home_and_lifestyle. Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q10, Q56, Q58",
+              "source_b_ref": "extracted_profile.preferences.home_and_lifestyle.details"
+            },
+            {
+              "id": 3,
+              "text": "Parents' education and father's details: Interview provides father's education (~6th-7th grade in Mexico, Q100), occupation (landscaping and construction, Q105-Q107), parents' separation (Q05), and father's current location ('other side of town,' Q05). Brother Luis's details (age 28, community college, car dealership, Q05). Profile's demographer summary mentions brother and mother but omits father's education level and current situation entirely.",
+              "verdict": "GAP",
+              "source_a_ref": "Q05, Q98, Q100, Q105, Q106, Q107",
+              "source_b_ref": "extracted_profile.summaries.demographer"
+            },
+            {
+              "id": 4,
+              "text": "PeachCare for children: Interview mentions kids on PeachCare, Georgia's children's health program (Q40, Q80). Also notes the family is marginally over SNAP income limits (Q80). Neither detail appears in the extracted profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q40, Q80",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 5,
+              "text": "Birth location: Interview states Maria was born at the hospital in Lawrenceville but grew up in Lilburn (Q87). Profile lists location as Lilburn, GA 30047 but does not note the Lawrenceville birth detail. Minor gap.",
+              "verdict": "GAP",
+              "source_a_ref": "Q87",
+              "source_b_ref": "extracted_profile.location"
+            }
+          ],
+          "summary": { "consistent": 1, "inconsistent": 0, "gaps": 4 }
+        },
+        "direction_3_profile_internal_consistency": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Age and life timeline: Profile states age 34, married 12 years (married at 22), met Carlos at 19. Diego is 10 (born when Maria was ~23, one year after marriage). Sofia is 7 (born when Maria was ~27). These timelines are internally consistent across the demographer summary and life_events_and_transitions.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.age, summaries.demographer",
+              "source_b_ref": "extracted_profile.others_misc.life_events_and_transitions"
+            },
+            {
+              "id": 2,
+              "text": "Income figures: Profile states $400-$800/month catering income in work_and_career details. Demographer summary states the same range. Household income described as ~$3,200 from Carlos plus Maria's contribution. These are internally consistent across sections.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.preferences.work_and_career.details",
+              "source_b_ref": "extracted_profile.summaries.demographer"
+            },
+            {
+              "id": 3,
+              "text": "Education status: Profile states '11th grade, no diploma; self-studying for GED' in education field. Work_and_career preferences mention GED study and Gwinnett Tech. Life_events says 'plans to earn GED by age 35.' All internally consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.education",
+              "source_b_ref": "extracted_profile.preferences.work_and_career, others_misc.life_events_and_transitions"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        },
+        "direction_4_completeness": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Father's background and current status: Interview provides father's education (~6th-7th grade in Mexico, Q100), occupation (landscaping and construction, Q105-Q107), and current relationship status with Maria (separated from mother when Maria was in her twenties, lives across town, 'we talk but it's not like it was,' Q05). None of this appears in the extracted profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q05, Q100, Q105, Q106, Q107",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 2,
+              "text": "Brother Luis's details: Interview identifies Luis as 28, finished school, attended community college, works at car dealership (Q05). He also serves as a political information source for Maria (Q23 follow-up). Not captured in any profile section.",
+              "verdict": "GAP",
+              "source_a_ref": "Q05, Q23",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 3,
+              "text": "Government benefits: PeachCare enrollment for children and SNAP ineligibility (marginally over income threshold, Q80) are significant economic details absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q40, Q80",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 4,
+              "text": "Specific debt and savings figures: Interview details $1,800 credit card debt, ~$600 medical debt, $200 owed to mother, $400 savings, $100-$150 emergency cash (Q61, Q63, Q82). Profile does not capture these specific figures in any section.",
+              "verdict": "GAP",
+              "source_a_ref": "Q61, Q63, Q82",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 5,
+              "text": "Mother's specific health situation: Interview describes mother's debilitating knee problems requiring potential replacement surgery she cannot afford, her age (62), and Maria's caregiving role (groceries, appointments, housework, 2-3 visits/week) (Q05, Q35). Profile's demographer summary mentions mother broadly but without these specifics.",
+              "verdict": "GAP",
+              "source_a_ref": "Q05, Q35",
+              "source_b_ref": "extracted_profile.summaries.demographer"
+            }
+          ],
+          "summary": { "consistent": 0, "inconsistent": 0, "gaps": 5 }
+        }
+      },
+
+      "behavioral_economist": {
+        "direction_1_seed_vs_interview": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Budgeting expertise: Seed mentions 'methodical budgeting expertise' and 'household budgeting and finance management.' Interview confirms through detailed descriptions of meal planning, coupon use, bulk purchasing, and Sunday night budget-planning sessions with Carlos (Q56, Q61, Q83 follow-up). Consistent and richly elaborated.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.skills_and_expertise: household budgeting and finance management",
+              "source_b_ref": "Q56, Q61, Q83 follow-up"
+            },
+            {
+              "id": 2,
+              "text": "Event planning and financial management: Seed describes event budgeting at an arts center. Interview confirms Maria managed a $2,000 budget for Dia de los Muertos, secured five business donations, coordinated twenty volunteers, and tracks all expenses in a notebook (Q02, Q02 follow-up, Q16, Q65). Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.professional_persona, seed.skills_and_expertise",
+              "source_b_ref": "Q02, Q02 follow-up, Q16, Q65"
+            },
+            {
+              "id": 3,
+              "text": "Catering business: Seed's career_goals mentions launching a home-based catering business. Interview confirms Maria is already doing this informally, charging $150-$600 per event, earning $400-$800/month (Q03 follow-up, Q16, Q72). The seed frames it as aspiration; the interview reveals it is partially realized.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.career_goals_and_ambitions",
+              "source_b_ref": "Q03 follow-up, Q16, Q72"
+            },
+            {
+              "id": 4,
+              "text": "Travel and leisure spending: Seed's travel_persona describes weekend road trips to Appalachian foothills, annual cultural escapes to Savannah's historic district, and occasional European getaways to Barcelona and Lisbon. Interview reveals zero discretionary travel beyond local outings; the only notable trip was Six Flags using tax refund money (Q75). Budget constraints render seed travel aspirations implausible for current economic situation.",
+              "verdict": "INCONSISTENT",
+              "source_a_ref": "seed.travel_persona",
+              "source_b_ref": "Q10, Q56, Q57, Q64, Q75"
+            },
+            {
+              "id": 5,
+              "text": "Certification pursuit: Seed's professional_persona states Maria is 'actively pursuing certification in community development.' Interview reveals she has not enrolled in any program (Q91, Q92) and is self-studying for GED only with library workbooks and YouTube (Q18, Q91). The seed overstates the formality and stage of her educational pursuit.",
+              "verdict": "INCONSISTENT",
+              "source_a_ref": "seed.professional_persona: actively pursuing certification",
+              "source_b_ref": "Q18, Q91, Q92"
+            },
+            {
+              "id": 6,
+              "text": "Cost-effective decision-making: Seed mentions Maria finding 'cost-effective solutions.' Interview provides multiple concrete examples: shopping at Mexican markets for cheaper produce, growing garden herbs, buying rice/beans/flour in bulk, stretching one chicken into three days of soup, clipping coupons (Q15 follow-up, Q17 follow-up, Q56 follow-up). Consistent and deeply elaborated.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.skills_and_expertise: cost-effective solutions",
+              "source_b_ref": "Q15 follow-up, Q17 follow-up, Q56 follow-up"
+            }
+          ],
+          "summary": { "consistent": 4, "inconsistent": 2, "gaps": 0 }
+        },
+        "direction_2_interview_vs_profile": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Loss aversion around savings: Interview describes Maria's distress at depleting the $400 savings buffer, the rule with Carlos to maintain at least $200, and the feeling of 'going backwards' when withdrawing (Q61, Q82). Profile's behavioral_economist summary accurately captures this as 'strong loss aversion around her small savings buffer' and 'acute psychological distress at the prospect of depleting it.' Faithfully represented.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q61, Q61 follow-up, Q82",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 2,
+              "text": "Income shock response: Interview details Maria's multi-pronged response to Carlos's reduced hours: selling tamales through Facebook ($10/dozen, ~30 dozen sold), borrowing $200 from mother, cutting all discretionary spending including yoga, cancelling non-essentials (Q60, Q81). Profile's behavioral_economist summary mentions all these strategies. Accurately captured.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q60, Q81",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 3,
+              "text": "Health care trade-offs: Interview reveals Maria skipped her own checkups for two years to fund children's appointments, refused ER visit during 3-day headache due to cost, and owes $600 from Sofia's ear infection (Q36, Q40, Q63). Profile accurately characterizes this as 'systematic self-sacrifice pattern in household resource allocation.' Faithfully captured.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q36, Q40, Q63",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 4,
+              "text": "Tax refund behavior: Interview describes the $2,800 refund as a critical annual mechanism for catching up -- paying credit card, saving, kids' clothes, porch repair, Six Flags trip (Q75). This important economic pattern is absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q75, Q75 follow-up",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 5,
+              "text": "Credit card debt and minimum-payment trap: Maria acknowledges paying minimums on ~$1,800 in credit card debt and recognizes the interest problem (Q63). This specific debt instrument and its compounding cost are not captured in the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q63",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 6,
+              "text": "Sunday night financial planning ritual: Interview reveals Carlos and Maria sit down Sunday nights to review upcoming bills and expenses (Q83 follow-up). This structured household financial management behavior is not captured in the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q83 follow-up",
+              "source_b_ref": "extracted_profile (absent)"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 3 }
+        },
+        "direction_3_profile_internal_consistency": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Catering income range: Profile's work_and_career section says $400-$800/month from catering. The specific month reported in Q72 yielded $650 from catering plus $100 arts center stipend, consistent with the range. Behavioral_economist summary describes the same entrepreneurial pattern. Internally consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.preferences.work_and_career.details",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 2,
+              "text": "GED as human capital investment: Behavioral_economist summary calls GED pursuit 'a calculated human capital investment despite high opportunity cost.' Work_and_career preferences describe self-study. Life_events mentions timeline goal (by age 35). All three sections consistently characterize the same pursuit from complementary angles.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.behavioral_economist",
+              "source_b_ref": "extracted_profile.preferences.work_and_career, others_misc.life_events_and_transitions"
+            },
+            {
+              "id": 3,
+              "text": "Budget stretching behaviors: Behavioral_economist summary mentions 'meticulously manages food costs through bulk buying, garden cultivation, and strategic shopping at ethnic markets.' Food_and_dining preferences list the same strategies. No contradiction between the economic analysis and the preference detail.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.behavioral_economist",
+              "source_b_ref": "extracted_profile.preferences.food_and_dining.details"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        },
+        "direction_4_completeness": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Monthly expense breakdown: Interview provides detailed monthly costs -- $1,450 rent, $320 car payment, ~$250 utilities, $500-$600 groceries, $50 medical payment, plus gas and vehicle insurance (Q56, Q57). Profile does not capture this granular expense data anywhere.",
+              "verdict": "GAP",
+              "source_a_ref": "Q56, Q57",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 2,
+              "text": "Seasonal expense fluctuation: Interview describes summer electric bills of $180-$200, Christmas costing extra $300-$400, back-to-school expenses in August for clothes, supplies, and activity fees (Q59). Profile does not capture seasonal budget variation.",
+              "verdict": "GAP",
+              "source_a_ref": "Q59",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 3,
+              "text": "Informal lending networks: Interview reveals bidirectional lending -- borrowed $200 from mother (Q63, Q81), $200 from Lupita for car brakes (Q64). Profile's behavioral_economist summary mentions 'family lending networks' generally but does not capture specific amounts or reciprocity patterns.",
+              "verdict": "GAP",
+              "source_a_ref": "Q63, Q64, Q81, Q82",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 4,
+              "text": "Carlos's income variability: Interview details Carlos earning ~$3,200/month after taxes but hours subject to weather delays and construction cycles, with income dropping significantly during cut-back periods (Q38, Q74, Q81). Profile mentions husband's wages but not the variability or its economic impact.",
+              "verdict": "GAP",
+              "source_a_ref": "Q38 follow-up, Q74, Q81",
+              "source_b_ref": "extracted_profile.summaries.demographer"
+            },
+            {
+              "id": 5,
+              "text": "Filing taxes jointly: Interview reveals they file jointly using Carlos's brother-in-law as informal tax preparer, receive ~$2,800 refund primarily from child tax credits, which functions as critical annual catch-up mechanism (Q75). Not captured.",
+              "verdict": "GAP",
+              "source_a_ref": "Q75",
+              "source_b_ref": "extracted_profile (absent)"
+            }
+          ],
+          "summary": { "consistent": 0, "inconsistent": 0, "gaps": 5 }
+        }
+      },
+
+      "political_scientist": {
+        "direction_1_seed_vs_interview": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Community organizing: Seed's professional_persona describes Maria designing 'inclusive festivals, workshops, and cultural programs for a local arts center.' Interview confirms extensive event planning: Dia de los Muertos festival with $2,000 budget and 20 volunteers (Q02), spring art walk (Q16, Q71), neighborhood potlucks drawing diverse cultural groups (Q08), church festivals and Las Posadas (Q47). Consistent and deeply elaborated.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.professional_persona",
+              "source_b_ref": "Q02, Q08, Q16, Q47, Q65"
+            },
+            {
+              "id": 2,
+              "text": "Civic engagement: Seed mentions no political or civic engagement. Interview reveals Maria is a registered voter since age 26-27 (Q23), attends county commission meetings (Q25), discusses race and policing issues in her community (Q26-Q30), and is engaged with local zoning debates (Q25). Interview significantly enriches a civic dimension absent from seed.",
+              "verdict": "GAP",
+              "source_a_ref": "seed (no political content)",
+              "source_b_ref": "Q23, Q24, Q25, Q26, Q29"
+            },
+            {
+              "id": 3,
+              "text": "Social media community moderation: Seed lists 'social media community moderation' as a skill. Interview confirms Maria moderates three Facebook groups (Lilburn neighborhood, Mexican families in Gwinnett, arts center events) and actively connects community members with resources such as Spanish-speaking doctors and mechanics (Q48, Q49). Consistent and enriched.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.skills_and_expertise_list: social media community moderation",
+              "source_b_ref": "Q48, Q49"
+            },
+            {
+              "id": 4,
+              "text": "Cross-cultural bridge-building: Seed's cultural_background mentions 'fostering cross-cultural exchange in her everyday life.' Interview confirms multicultural potlucks (Korean BBQ next to tamales next to samosas, Q08 follow-up), diverse book club membership, and inclusive event planning philosophy ('I want everybody to feel welcome, not just Mexican people,' Q29). Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.cultural_background",
+              "source_b_ref": "Q08, Q08 follow-up, Q29"
+            },
+            {
+              "id": 5,
+              "text": "Church as institutional hub: Seed mentions 'Catholic upbringing influences her participation in church activities, which serve as a hub for both spiritual and social connections.' Interview confirms extensive church involvement at St. Patrick's in Lilburn: volunteering, event planning, youth programs, Las Posadas, Dia de los Muertos altars, and Father Morales as trusted community figure and information source for vaccination (Q42, Q47). Fully consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.cultural_background: Catholic upbringing, church activities",
+              "source_b_ref": "Q42, Q47, Q47 follow-up"
+            }
+          ],
+          "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+        },
+        "direction_2_interview_vs_profile": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Voting behavior: Interview specifies Maria registered at 26-27, votes in presidential elections, inconsistently in smaller races due to information costs ('I try to look stuff up before I go but I don't always have time,' Q23). Profile's political_scientist summary accurately describes this as 'inconsistently in lower-ballot races, reflecting an information-cost barrier rather than apathy.' Faithfully represented.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q23",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            },
+            {
+              "id": 2,
+              "text": "County commission attendance: Interview describes Maria attending 4-5 county meetings after being introduced by Janet from book club (Q25, Q25 follow-up). Profile's community_and_civic preferences and political_scientist summary both capture this. Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q25, Q25 follow-up",
+              "source_b_ref": "extracted_profile.preferences.community_and_civic, summaries.political_scientist"
+            },
+            {
+              "id": 3,
+              "text": "Political identity complexity: Interview reveals Maria is issue-driven rather than party-identified, leans toward the party supporting working families and health care, but holds traditional family values on social issues and disagrees with her preferred side on some social matters (Q24, Q95, Q95 follow-up, Q96). Profile accurately describes this as 'economically progressive, culturally traditional, institutionally pragmatic.' Well captured.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q24, Q95, Q95 follow-up, Q96",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            },
+            {
+              "id": 4,
+              "text": "Immigration-related awareness and policing anxiety: Interview reveals a persistent background anxiety about documentation and policing for the Mexican community, including neighbors who avoid calling police due to status fears (Q20, Q26 follow-up). Maria ensures family documents are in order and instructs Carlos to cooperate with police (Q20). Profile mentions 'fair treatment of immigrant-origin families' as a political issue but does not capture the day-to-day dimension of this awareness.",
+              "verdict": "GAP",
+              "source_a_ref": "Q20, Q20 follow-up, Q26 follow-up",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            },
+            {
+              "id": 5,
+              "text": "Information sources for political decisions: Interview describes Maria consulting trusted network members (Lupita, brother Luis, church ladies) and phone research for voting decisions, explicitly avoiding party-line thinking (Q23 follow-up). Profile does not capture these specific information-seeking pathways for political decision-making.",
+              "verdict": "GAP",
+              "source_a_ref": "Q23 follow-up",
+              "source_b_ref": "extracted_profile (absent)"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
+        },
+        "direction_3_profile_internal_consistency": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Civic engagement characterization: Profile's community_and_civic preferences list 'recently started attending Gwinnett County commission meetings' and 'registered voter; votes in presidential and some local elections.' The political_scientist summary describes an 'engagement trajectory moving from disengagement to increasing participation.' These are consistent -- the preferences describe behavior, the summary explains the trend.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.preferences.community_and_civic",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            },
+            {
+              "id": 2,
+              "text": "Facebook community management as civic infrastructure: Profile's technology preferences describe managing three Facebook groups. Political_scientist summary characterizes this as 'informal civic infrastructure even though she does not frame it politically.' These assessments are compatible and complementary.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.preferences.technology",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            },
+            {
+              "id": 3,
+              "text": "Cultural traditionalism and social progressivism: Political_scientist summary says 'economically progressive, culturally traditional.' Psychologist summary references faith and family values as core identity components. Both summaries acknowledge the same values-tension without contradicting each other.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.political_scientist",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        },
+        "direction_4_completeness": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Carlos's political stance: Interview describes Carlos as politically disengaged ('just let me work and take care of my family') but occasionally fired up about construction worker or immigration issues (Q24 follow-up). This household political dynamic is absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q24 follow-up",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 2,
+              "text": "Generational divide on racial justice in Mexican community: Interview describes older generation's reluctance to engage ('that's their business') versus younger generation's vocal support, with Maria positioning herself in between (Q27 follow-up, Q30). This intracommunity dynamic is absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q27 follow-up, Q30",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 3,
+              "text": "Neighbor's college-age daughter as political influence: Interview identifies this young woman as someone who taught Maria about solidarity and intersectionality, and whom Maria encouraged to run for office someday (Q30 follow-up). This cross-generational political learning relationship is absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q30 follow-up",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 4,
+              "text": "School funding as political catalyst: Interview reveals that seeing Diego's teacher buying supplies out of her own pocket was the catalyst for Maria's political awakening and voter registration (Q23 follow-up). This specific motivating experience is not captured in the political_scientist summary.",
+              "verdict": "GAP",
+              "source_a_ref": "Q23 follow-up",
+              "source_b_ref": "extracted_profile.summaries.political_scientist"
+            }
+          ],
+          "summary": { "consistent": 0, "inconsistent": 0, "gaps": 4 }
+        }
+      },
+
+      "psychologist": {
+        "direction_1_seed_vs_interview": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Caretaking as core identity: Seed's persona describes Maria channeling 'curiosity and methodical energy into weaving art, food, and community together.' Interview reveals a deeply embedded caretaker pattern originating in childhood -- caring for brother after school while mother worked two jobs (Q01), extending through adulthood as caregiver to mother (Q05, Q35), children, church community, and neighborhood (Q17, Q44, Q109). Maria's self-concept is structured around being needed. Consistent with seed's community-focused framing but significantly deeper.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.persona, seed.professional_persona",
+              "source_b_ref": "Q01, Q05, Q17, Q35, Q44, Q109"
+            },
+            {
+              "id": 2,
+              "text": "Kitchen gadget hoarding: Seed mentions Maria 'occasionally hoards seldom-used kitchen gadgets.' This specific behavioral detail does not appear in the interview. Neither confirmed nor contradicted.",
+              "verdict": "GAP",
+              "source_a_ref": "seed.persona: hoarding kitchen gadgets",
+              "source_b_ref": "interview (not mentioned)"
+            },
+            {
+              "id": 3,
+              "text": "Forgetting to water garden during busy weeks: Seed mentions this habit. Interview confirms it directly -- 'Sometimes I forget to water everything when I'm really busy with event planning and stuff comes back kind of sad looking' (Q17 follow-up). Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.persona: forget to water garden",
+              "source_b_ref": "Q17 follow-up"
+            },
+            {
+              "id": 4,
+              "text": "Artistic engagement breadth: Seed's arts_persona mentions watercolor, pottery, folk dance, specific artist inspirations (O'Keeffe, Monet, Pollock), and a multicultural book club with Morrison, Murakami, and Adichie. Interview confirms folk dance (Q01, Q15), book club with Morrison and Adichie (Q07), watercolor and pottery workshops at the School of the Arts (from seed, not explicitly in interview). The specific artist names and Murakami did not surface in the interview.",
+              "verdict": "GAP",
+              "source_a_ref": "seed.arts_persona",
+              "source_b_ref": "Q01, Q07, Q15"
+            },
+            {
+              "id": 5,
+              "text": "Cooking as emotional regulation: Seed mentions Maria 'channels curiosity and methodical energy' through food. Interview vividly confirms cooking as a primary coping mechanism -- making 60 tamales at midnight during financial stress, the kitchen described as 'like therapy for me' (Q38, Q38 follow-up). Behavioral pattern deeply consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "seed.persona, seed.culinary_persona",
+              "source_b_ref": "Q38, Q38 follow-up, Q43 follow-up"
+            },
+            {
+              "id": 6,
+              "text": "Co-ed recreational soccer: Seed's sports_persona states Maria 'participates in a co-ed recreational soccer league each spring.' Interview contains no mention of Maria playing soccer -- only her son Diego plays in a rec league (Q05, Q19). This seed element appears unsubstantiated by the interview.",
+              "verdict": "INCONSISTENT",
+              "source_a_ref": "seed.sports_persona: co-ed recreational soccer league",
+              "source_b_ref": "Q05, Q15, Q19 (only Diego's soccer)"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 1, "gaps": 2 }
+        },
+        "direction_2_interview_vs_profile": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Emotional breakdown episode: Interview provides a detailed account of the fall 2025 crisis -- sitting on bathroom floor crying, feeling overwhelmed by converging financial stress, Diego's bullying, and mother's health episode (Q44). Profile's psychologist summary accurately captures this as revealing 'her emotional regulation system can be overwhelmed when multiple role demands converge simultaneously.' Faithfully represented.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q44",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            },
+            {
+              "id": 2,
+              "text": "Nighttime rumination pattern: Interview describes lying awake running through financial worries, children's futures, and mother's health (Q43, Q43 follow-up). Profile captures this in sensory_and_physical_context ('poor sleep quality: lies awake ruminating') and psychologist summary ('Neuroticism manifests as nighttime rumination'). Accurately represented.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q43, Q43 follow-up, Q45",
+              "source_b_ref": "extracted_profile.others_misc.sensory_and_physical_context, summaries.psychologist"
+            },
+            {
+              "id": 3,
+              "text": "Full coping mechanism inventory: Interview identifies five coping strategies: cooking as emotional regulation (Q38), yoga breathing for chest tightness (Q45 follow-up), garden time as solitary restoration (Q43 follow-up), weekly check-in texts with Lupita (Q44 follow-up), and Mass attendance as centering ritual (Q44 follow-up, Q47). Profile's psychologist summary names only cooking, yoga breathing, and Lupita -- omitting garden time and Mass as explicit coping mechanisms.",
+              "verdict": "GAP",
+              "source_a_ref": "Q38, Q43 follow-up, Q44 follow-up, Q45 follow-up, Q47",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            },
+            {
+              "id": 4,
+              "text": "Self-concept evolution from helper to leader: Interview traces Maria's shift from 'just a helper' to recognizing herself as capable of leading after the Dia de los Muertos festival: 'I was like, wait, I actually ran this whole thing... People came to me with questions and I had answers' (Q02 follow-up). Profile's psychologist summary captures the tension between caretaker identity and emerging self-investment. Faithfully represented.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "Q02, Q02 follow-up",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            },
+            {
+              "id": 5,
+              "text": "Children's behavioral stress responses: Interview describes Diego becoming withdrawn and drawing for hours, Sofia becoming clingy when household tension rises (Q46). This family stress-response pattern is entirely absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q46",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 6,
+              "text": "Recurrent guilt pattern: Interview reveals Maria feels guilt when she cannot provide shoes for Diego (Q64 follow-up: 'Like I'm failing'), guilt when others cover for her during illness (Q33 follow-up: 'I felt so guilty that everybody had to pick up my slack'), and guilt about 'dropping the ball' as a mother (Q43). This consistent guilt pattern is not explicitly named in the psychologist summary.",
+              "verdict": "GAP",
+              "source_a_ref": "Q33 follow-up, Q43, Q64 follow-up",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 3 }
+        },
+        "direction_3_profile_internal_consistency": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Conscientiousness characterization: Psychologist summary describes 'high Conscientiousness through meticulous event budgeting, meal planning, and household management.' Behavioral_economist summary describes the same meticulous budgeting and planning. Cross-expert consistency confirmed.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.psychologist",
+              "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            },
+            {
+              "id": 2,
+              "text": "Openness to Experience: Psychologist summary states this is 'notable in her artistic pursuits (dance, watercolor, pottery, multicultural reading) and willingness to experiment with fusion cooking, though constrained by economic realities.' Hobbies_and_recreation and arts_and_culture preference sections list all these activities. Consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.psychologist",
+              "source_b_ref": "extracted_profile.preferences.hobbies_and_recreation, arts_and_culture"
+            },
+            {
+              "id": 3,
+              "text": "Relational style: Psychologist summary says 'clear attachment to a small number of deep relationships (Lupita, mother, Ana) rather than broad shallow networks.' Social_and_relationships preferences list the same core relationships while also noting broader community ties (book club, church, Facebook groups). The psychologist correctly distinguishes depth from breadth. Internally consistent.",
+              "verdict": "CONSISTENT",
+              "source_a_ref": "extracted_profile.summaries.psychologist",
+              "source_b_ref": "extracted_profile.preferences.social_and_relationships"
+            }
+          ],
+          "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        },
+        "direction_4_completeness": {
+          "observations": [
+            {
+              "id": 1,
+              "text": "Guilt as recurrent emotional pattern: Interview reveals guilt when unable to provide materially (Q64 follow-up), guilt when others must compensate during her illness (Q33 follow-up), and guilt about perceived parenting failures (Q43). This consistent pattern warrants explicit naming in the psychologist domain.",
+              "verdict": "GAP",
+              "source_a_ref": "Q33 follow-up, Q43, Q64 follow-up",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            },
+            {
+              "id": 2,
+              "text": "Cultural barriers shifting toward practical barriers in help-seeking: Interview describes Maria's awareness of her culture's stigma against therapy ('you're supposed to be strong, pray about it,' Q45) but notes her own barrier has shifted from shame to practical obstacles (cost, time, Spanish-speaking availability, Q45 follow-up). This nuanced shift is not captured in the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q45, Q45 follow-up",
+              "source_b_ref": "extracted_profile (partially absent)"
+            },
+            {
+              "id": 3,
+              "text": "Motherhood as central motivational axis: Interview frames nearly every major decision through children's futures -- staying in neighborhood for schools, pursuing GED as modeling for children, wanting college for Diego and Sofia (Q01, Q43 follow-up, Q62, Q108, Q109). Profile touches this in multiple places but the psychologist summary does not foreground motherhood as the primary motivational driver.",
+              "verdict": "GAP",
+              "source_a_ref": "Q01, Q43 follow-up, Q62, Q108, Q109",
+              "source_b_ref": "extracted_profile.summaries.psychologist"
+            },
+            {
+              "id": 4,
+              "text": "Diego's ethnic bullying and Maria's protective advocacy: Interview details kids making 'jokes about tacos' at Diego, him coming home crying, Maria talking to his teacher, explaining to Diego to be proud of being Mexican (Q28, Q28 follow-up, Q44). This parenting challenge and cultural-identity transmission moment are absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q28, Q28 follow-up, Q44",
+              "source_b_ref": "extracted_profile (absent)"
+            },
+            {
+              "id": 5,
+              "text": "Carlos's emotional pattern under stress: Interview describes Carlos as 'strong silent type' who gets 'even quieter than usual' and sleeps poorly when stressed, worrying about providing for the family (Q46). This partner dynamic shapes the household emotional environment but is absent from the profile.",
+              "verdict": "GAP",
+              "source_a_ref": "Q46",
+              "source_b_ref": "extracted_profile (absent)"
+            }
+          ],
+          "summary": { "consistent": 0, "inconsistent": 0, "gaps": 5 }
+        }
+      }
+    },
+
+    "expert_summaries": {
+      "demographer": "Maria Buendia is a 34-year-old US-born Mexican-American woman who has lived her entire life in Lilburn, Georgia (Gwinnett County), a diverse suburban community east of Atlanta (Q01, Q87, Q97). She was born at a hospital in Lawrenceville but raised in Lilburn (Q87). She is married to Carlos, age 36, a construction worker earning approximately $3,200/month after taxes, and they have two school-age children: Diego (10, 4th grade) and Sofia (7, 2nd grade), in a four-person household renting a three-bedroom home for $1,450/month (Q05, Q11, Q56, Q58). Her education stopped at 11th grade with no diploma when she dropped out to help care for her younger brother while her mother worked two jobs (Q01, Q90). She has no formal occupation and relies on informal catering income of $400-$800/month plus small arts center stipends, supplementing Carlos's wages (Q16, Q72, Q74). The household income of $3,000-$4,000/month places them near the lower-middle-income threshold for a family of four in the Atlanta metro area, with children enrolled in PeachCare but the family marginally over SNAP income limits (Q40, Q80). Her parents immigrated from Mexico before her birth; her father (~6th-7th grade education, former landscaper/construction worker) separated from her mother when Maria was in her twenties and lives across town (Q05, Q98, Q100, Q105-Q107). Her mother Rosa, age 62, lives 15 minutes away with debilitating knee problems, requiring Maria's caregiving support 2-3 times weekly (Q05, Q35). Her brother Luis, 28, completed community college and works at a car dealership (Q05).",
+
+      "behavioral_economist": "Maria's economic behavior reflects constrained optimization under persistent scarcity rather than preference-driven choices (Q56, Q61, Q83). She demonstrates strong loss aversion around her small savings buffer of approximately $400, with a joint household rule to maintain at least $200 as a floor, and describes acute distress when forced to deplete it (Q61, Q61 follow-up, Q82). Her household carries $1,800 in credit card debt (minimum payments only), $600 in medical debt from Sofia's ear infection, and $200 owed to her mother, against $400 in savings and $100-$150 in emergency cash (Q63, Q61). Her informal catering business demonstrates entrepreneurial resourcefulness: she scales labor supply based on need, including selling tamales at $10/dozen through Facebook during income shocks (Q81), uses social networks for client acquisition, and meticulously manages food costs through bulk purchasing, garden cultivation, and strategic shopping at ethnic markets on Buford Highway (Q56 follow-up). Her decision to forgo personal health care for over two years -- skipping checkups, refusing an ER visit during a three-day headache, delaying back pain treatment -- while maintaining children's PeachCare coverage reveals systematic self-sacrifice in household resource allocation (Q36, Q40). She and Carlos conduct Sunday-night financial planning sessions reviewing upcoming bills (Q83 follow-up), and the annual tax refund of approximately $2,800 functions as a critical catch-up mechanism for deferred needs (Q75).",
+
+      "political_scientist": "Maria exhibits a civic engagement trajectory moving from youthful disengagement to increasing participation, catalyzed by parental stakes in public institutions -- specifically, witnessing Diego's teacher buying classroom supplies out of pocket (Q23, Q23 follow-up). She registered to vote at 26-27 and participates in presidential elections but inconsistently in lower-ballot races, reflecting information-cost barriers rather than apathy; she researches candidates through trusted personal networks including Lupita, brother Luis, and church contacts (Q23, Q23 follow-up). Her political orientation is issue-driven rather than party-identified, clustering around affordable health care, adequately funded schools, cost of living, and fair treatment of immigrant-origin families, while holding culturally traditional positions on family and faith that create cross-pressures (Q24, Q95, Q96). She recently expanded her civic repertoire to include attending 4-5 Gwinnett County commission meetings, prompted by book club member Janet (Q25, Q25 follow-up). Her community organizing work -- moderating three Facebook groups, planning multicultural events, organizing neighborhood potlucks that bring together Korean, Mexican, Indian, Black, and white families (Q08, Q48) -- functions as informal civic infrastructure. Her response to racial justice movements is empathetic and solidarity-oriented, acknowledging shared experiences of discrimination between Mexican and Black communities, but behaviorally cautious, promoting inclusion through events and private conversations rather than protest (Q26, Q27, Q29).",
+
+      "psychologist": "Maria displays high conscientiousness through meticulous event budgeting, meal planning, and household management, paired with high agreeableness evident in her lifelong caretaking across family and community spheres -- a pattern originating in childhood when she became 'a second mom in the house' after dropping out of school to care for her brother (Q01, Q01 follow-up). Her self-concept centers on a caretaker identity that extends to her mother, children, church community, and neighborhood, with a persistent guilt pattern emerging when she cannot meet these demands -- expressing feelings of 'failing' when unable to buy Diego shoes (Q64 follow-up) and guilt when others compensate during her illness (Q33 follow-up). A critical tension exists between this caretaker orientation and her emerging recognition of self-investment needs, catalyzed by the Dia de los Muertos festival that shifted her self-perception from 'just a helper' to a capable leader (Q02 follow-up). Her emotional regulation system handles routine stress through five functional coping mechanisms: cooking as emotional processing (Q38), yoga breathing for acute stress (Q45 follow-up), garden time as solitary restoration (Q43 follow-up), weekly honest check-in texts with Lupita (Q44 follow-up), and Mass attendance as spiritual centering (Q44 follow-up, Q47). However, when multiple role demands converge simultaneously -- as during the fall 2025 crisis combining financial stress, Diego's ethnic bullying at school, and her mother's health episode -- her system can become overwhelmed, as evidenced by the bathroom-floor crying episode where she was unable to speak when Carlos found her (Q44). Her attitude toward professional help has shifted from cultural stigma to practical barriers (cost, time, Spanish-speaking availability), reflecting generational change in her community (Q45, Q45 follow-up). Motherhood is her primary motivational axis: nearly every major decision is framed through her children's futures, from staying in the neighborhood for school continuity to pursuing her GED as modeling behavior for Diego and Sofia (Q01, Q108, Q109)."
+    },
+
+    "inconsistencies_found": [
+      {
+        "id": 1,
+        "description": "Seed's travel_persona describes active travel habits (Appalachian road trips, annual Savannah escapes, European getaways to Barcelona and Lisbon) that are financially implausible given interview-revealed household economics of $3,000-$4,000/month income with $400 in savings. Only local outings and one Six Flags trip (using tax refund) were reported in the interview.",
+        "severity": "MINOR",
+        "experts": ["behavioral_economist"],
+        "source_refs": "seed.travel_persona vs. Q10, Q56, Q57, Q64, Q75"
+      },
+      {
+        "id": 2,
+        "description": "Seed's professional_persona states Maria is 'actively pursuing certification in community development,' but interview reveals she has not enrolled in any program (Q91, Q92) and is only self-studying for GED with library workbooks and YouTube tutorials (Q18). The certification is a future aspiration contingent on GED completion, not an active pursuit.",
+        "severity": "MINOR",
+        "experts": ["behavioral_economist"],
+        "source_refs": "seed.professional_persona vs. Q18, Q91, Q92"
+      },
+      {
+        "id": 3,
+        "description": "Seed's sports_persona states Maria 'participates in a co-ed recreational soccer league each spring.' Interview contains no mention of Maria playing soccer herself -- only her son Diego plays in a rec league (Q05, Q19). This seed element appears unsubstantiated and may be aspirational or a past activity.",
+        "severity": "MINOR",
+        "experts": ["psychologist"],
+        "source_refs": "seed.sports_persona vs. Q05, Q15, Q19"
+      }
+    ],
+
+    "resolutions": [
+      {
+        "inconsistency_id": 1,
+        "resolution": "Travel preferences are reframed as aspirational seed data that does not reflect current economic reality. The corrected profile marks these explicitly as seed-derived aspirations rather than active travel patterns. Interview-supported local activities (parks, Buford Highway, Six Flags) are foregrounded."
+      },
+      {
+        "inconsistency_id": 2,
+        "resolution": "The corrected profile establishes the GED as the current active educational pursuit, with community development certification positioned as a subsequent goal contingent on GED completion. The word 'actively pursuing' is replaced with accurate staging."
+      },
+      {
+        "inconsistency_id": 3,
+        "resolution": "Personal soccer league participation is moved to the unresolved_or_ambiguous section with a note that it was not confirmed in the interview. The sports_and_fitness preference section is corrected to reflect only interview-supported activities."
+      }
+    ],
+
+    "gaps_addressed": [
+      "Father's background (education, occupation, separation, current location) added to demographer summary and social_and_relationships details.",
+      "Brother Luis's demographic details (age 28, community college, car dealership) and role as political information source added to social_and_relationships and political_scientist contexts.",
+      "PeachCare enrollment for children and SNAP ineligibility (marginally over income threshold) added to home_and_lifestyle details.",
+      "Specific debt figures ($1,800 credit card, $600 medical, $200 to mother) and savings ($400 + $100-$150 cash) added to home_and_lifestyle financial details.",
+      "Monthly expense breakdown ($1,450 rent, $320 car, ~$250 utilities, $500-$600 groceries, $50 medical) added to home_and_lifestyle.",
+      "Seasonal expense variation (summer electric $180-$200, Christmas +$300-$400, back-to-school in August) noted in home_and_lifestyle.",
+      "Tax refund behavior ($2,800, used as annual catch-up mechanism) added to home_and_lifestyle.",
+      "Children's behavioral stress responses (Diego withdrawing/drawing, Sofia becoming clingy) added to others_misc sensory_and_physical_context.",
+      "Maria's guilt pattern added to psychologist summary.",
+      "Cultural barriers shifting to practical barriers for professional help-seeking added to psychologist summary.",
+      "Diego's ethnic bullying experience and Maria's protective advocacy response added to others_misc life_events_and_transitions.",
+      "Carlos's emotional pattern under stress (withdrawing, sleeping poorly) added to others_misc sensory_and_physical_context.",
+      "Garden time and Mass attendance explicitly listed as coping mechanisms in psychologist summary.",
+      "Immigration-related awareness and policing anxiety added to political_scientist summary.",
+      "School funding as political catalyst added to political_scientist summary.",
+      "Carlos's political stance (disengaged but occasionally fired up on construction/immigration) noted in community_and_civic.",
+      "Sunday-night financial planning sessions with Carlos noted in home_and_lifestyle.",
+      "Informal lending network specifics (mother, Lupita, amounts) captured in home_and_lifestyle."
+    ],
+
+    "overall_verdict": "PASS_WITH_REVISIONS",
+
+    "final_status": "PASS_WITH_REVISIONS. The interview is richly consistent with seed data across all four expert domains. Three minor inconsistencies were identified between seed aspirational content and interview-revealed economic reality (travel habits, certification status, soccer league). The extracted_profile faithfully represents the interview across most domains but has completeness gaps in financial granularity (debts, savings, expense breakdown, seasonal variation, tax refund), family demographics (father's background, brother Luis's details), government benefits (PeachCare, SNAP ineligibility), and several behavioral patterns (guilt, children's stress responses, help-seeking attitudes, immigration awareness). All gaps are addressable through profile amendments captured in the corrected_extracted_profile below without requiring re-interview."
+  },
+
+  "corrected_extracted_profile": {
     "participant_id": "5237e90a0ca3460dbbcba20adb61922f",
     "name": "Maria Buendia",
-    "verification_date": "2026-03-31",
-    "model": "Claude Opus 4.6 (1M context)",
-    "seed_source": "NVIDIA Nemotron-Personas-USA",
-    "interview_source": "Step 2 interview output"
-  },
+    "age": 34,
+    "date_of_birth": "August 14, 1991",
+    "gender": "Female",
+    "ethnicity": "Mexican-American (Hispanic/Latina)",
+    "marital_status": "married_present",
+    "location": "Lilburn, GA 30047",
+    "birthplace": "Lawrenceville, GA (raised in Lilburn)",
+    "education": "Some high school (11th grade), no diploma; self-studying for GED with library workbooks and YouTube tutorials",
+    "occupation": "No formal occupation; informal caterer ($400-$800/month) and community event planner/volunteer",
 
-  "experts": {
-    "demographer": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age: Seed states 34; interview confirms age 34 with DOB August 14, 1991 (Q85), and Maria references being thirty-four in Q03 (goal to get GED 'by the time I'm thirty-five' and 'I'm thirty-four now'). Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "age: 34",
-            "source_b_ref": "Q03, Q85"
-          },
-          {
-            "id": 2,
-            "text": "Gender: Seed states Female; interview consistently presents Maria as a woman, mother, wife throughout all responses. Confirmed explicitly in Q84 and Q88. Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "sex: Female",
-            "source_b_ref": "Q01, Q05, Q84"
-          },
-          {
-            "id": 3,
-            "text": "Marital status: Seed states married_present; interview confirms married for twelve years to Carlos, living together with two children (Q05, Q84). Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "marital_status: married_present",
-            "source_b_ref": "Q05, Q84"
-          },
-          {
-            "id": 4,
-            "text": "Education: Seed states 9th_12th_no_diploma; interview specifies Maria dropped out during 11th grade ('my junior year') and has no diploma (Q01, Q90). Currently self-studying for GED (Q91). Consistent and enriched.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "education_level: 9th_12th_no_diploma",
-            "source_b_ref": "Q01, Q90, Q91"
-          },
-          {
-            "id": 5,
-            "text": "Occupation: Seed states no_occupation; interview confirms no formal employment -- Maria describes herself as at-home with children, doing informal catering and volunteer event planning (Q16, Q65, Q76). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "occupation: no_occupation",
-            "source_b_ref": "Q16, Q65, Q76"
-          },
-          {
-            "id": 6,
-            "text": "Location: Seed states Lilburn, GA 30047; interview confirms lifelong residence in Lilburn, Gwinnett County, with detailed neighborhood descriptions (Q01, Q08, Q87, Q97). Born at hospital in Lawrenceville but raised in Lilburn. Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "city: Lilburn, state: GA, zipcode: 30047",
-            "source_b_ref": "Q01, Q08, Q87, Q97"
-          }
+    "preferences": {
+      "health_and_wellness": {
+        "summary": "Relies on weekly yoga, traditional Mexican herbal remedies, and an active lifestyle rather than formal medical care, largely due to cost barriers. Has not had a medical checkup in over two years.",
+        "details": [
+          "Attends gentle yoga class once a week on Saturday mornings ($15/class) at a small studio in downtown Lilburn",
+          "Takes ibuprofen 2-3 times per week for chronic lower back pain (ongoing ~18 months)",
+          "Uses traditional Mexican herbal remedies passed down from mother and grandmother: chamomile (manzanilla) tea for sleep and stomach, mint tea for headaches, ginger tea for digestion, lime-honey-cinnamon tea for colds",
+          "Mother also practices sobadas (traditional abdominal massage) and egg limpia (passing raw egg to cleanse bad energy)",
+          "Grows herbs (cilantro, mint) in home garden partly for medicinal use",
+          "Has not had a checkup in over two years due to cost and time constraints",
+          "Suspects low iron based on mother's similar experience with afternoon fatigue; tries to eat more spinach and meat but has not gotten blood work done",
+          "Uses 4-count breathing technique from yoga to manage chest tightness during acute stress episodes (10-15 minute duration)",
+          "Takes birth control pills (only prescription medication)",
+          "Children on PeachCare (Georgia children's health program); Maria herself has minimal coverage",
+          "Uses community health center in Lawrenceville with sliding-scale fees when necessary, but long wait times (2-3 hours) make it impractical with school pickup schedule",
+          "Pro-vaccination: children fully vaccinated on schedule; Maria got COVID vaccine as soon as available"
         ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q31, Q31 follow-up, Q32, Q33, Q34, Q36, Q36 follow-up, Q37, Q37 follow-up, Q39, Q40, Q41, Q42, Q45 follow-up"
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Household composition: Interview describes four-person household (Maria, Carlos 36, Diego 10, Sofia 7) plus dog Canela (Q05, Q11, Q51). Extracted profile captures location and household structure in home_and_lifestyle but does not include a dedicated 'household' section with all members' ages. Partial capture.",
-            "verdict": "GAP",
-            "source_a_ref": "Q05, Q11, Q51",
-            "source_b_ref": "extracted_profile.home_and_lifestyle"
-          },
-          {
-            "id": 2,
-            "text": "Rent amount and trajectory: Interview specifies $1,450/month rent, up from $1,100 five years ago (Q10, Q56, Q58). Profile accurately captures both current rent and the increase trajectory. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q10, Q56, Q58",
-            "source_b_ref": "extracted_profile.preferences.home_and_lifestyle.details"
-          },
-          {
-            "id": 3,
-            "text": "Parents' education and father's details: Interview provides father's education (~6th-7th grade, Q100), parents' separation (Q05), father's current location ('other side of town,' Q05), and brother Luis's details (age 28, community college, car dealership, Q05). Profile's demographer summary mentions brother and mother but omits father's education level and current situation.",
-            "verdict": "GAP",
-            "source_a_ref": "Q05, Q98, Q100, Q105, Q106",
-            "source_b_ref": "extracted_profile.summaries.demographer"
-          },
-          {
-            "id": 4,
-            "text": "Renting versus owning: Interview confirms renting (Q58), homeownership is a distant dream. Profile captures renting status accurately. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q58, Q62",
-            "source_b_ref": "extracted_profile.preferences.home_and_lifestyle.details"
-          },
-          {
-            "id": 5,
-            "text": "PeachCare for children: Interview mentions kids on PeachCare, Georgia's children's health program (Q40, Q80). Profile does not explicitly mention PeachCare as a government benefit in any preference section.",
-            "verdict": "GAP",
-            "source_a_ref": "Q40, Q80",
-            "source_b_ref": "extracted_profile (no mention)"
-          }
+      "food_and_dining": {
+        "summary": "Passionate home cook blending traditional Mexican recipes with contemporary experiments; stretches grocery budget skillfully through meal planning, bulk buying, couponing, and garden cultivation. Cooking doubles as emotional regulation.",
+        "details": [
+          "Cooks dinner from scratch most nights: rice and beans with meat, tacos, enchiladas, chicken with vegetables, quesadillas, pasta for kids",
+          "Experiments with fusion recipes like herb-crusted chicken with citrus glaze and cilantro-lime rice",
+          "Makes tamales in large batches (up to 60 at a time) both for income and as stress relief/emotional processing",
+          "Hosts themed dinner nights for friends and neighbors",
+          "Shops at Mexican markets on Buford Highway for produce (cheaper than chain grocery stores)",
+          "Grows tomatoes (including heirloom varieties), cilantro, jalapenos, sweet bell peppers, and mint in backyard garden",
+          "Weakness for pan dulce (sweet bread) from the Mexican bakery; has piece after dinner",
+          "Drinks coffee with sugar throughout the day (acknowledges this is not ideal)",
+          "Plans weekly meals and makes grocery list before shopping; clips coupons from circulars",
+          "Buys rice, beans, and flour in bulk; stretches one chicken into three days of soup",
+          "Typical breakfast: eggs with tortillas and salsa, or oatmeal; lunch: leftovers or quesadilla; dinner: the main cooked meal",
+          "Sunday or Monday batch cooking (chicken soup, rice and beans) for multi-day use",
+          "Learned core cooking skills from mother, who worked in a Mexican restaurant kitchen",
+          "Dreams of formalizing catering into a named business, possibly a food truck with cooking classes"
         ],
-        "summary": { "consistent": 2, "inconsistent": 0, "gaps": 3 }
+        "evidence": "Q01, Q05 follow-up, Q15, Q15 follow-up, Q16, Q17, Q17 follow-up, Q32, Q32 follow-up, Q38, Q38 follow-up, Q56 follow-up, Q108"
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age and life timeline: Profile states age 34, married 12 years (married at 22), met Carlos at 19. Diego is 10 (born when Maria was ~23, one year after marriage). Sofia is 7 (born when Maria was ~27). These ages and timelines are internally consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.age, summaries.demographer",
-            "source_b_ref": "extracted_profile.others_misc.life_events_and_transitions"
-          },
-          {
-            "id": 2,
-            "text": "Income figures: Profile states $400-$800/month catering income in work_and_career details, while demographer summary says the same range. Household income described as ~$3,200 from Carlos plus Maria's contribution. These are internally consistent across profile sections.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.preferences.work_and_career.details",
-            "source_b_ref": "extracted_profile.summaries.demographer"
-          },
-          {
-            "id": 3,
-            "text": "Education status: Profile states '11th grade, no diploma; self-studying for GED' in the education field, and work_and_career preferences mention GED study and Gwinnett Technical College. Others_misc life_events says 'plans to earn GED by age 35.' All internally consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.education",
-            "source_b_ref": "extracted_profile.preferences.work_and_career, others_misc.life_events_and_transitions"
-          }
+      "travel": {
+        "summary": "Travel is limited to local outings due to budget constraints. Seed data mentions aspirational travel to Appalachian foothills, Savannah, Barcelona, and Lisbon, but none of this was supported in the interview.",
+        "details": [
+          "Family outings to local parks and neighborhood areas",
+          "Shops and socializes along Buford Highway corridor (Mexican markets, restaurants, bakery)",
+          "Took family to Six Flags as a special occasion funded by tax refund (Q75 follow-up)",
+          "Saturday morning trips to farmers market or Mexican market",
+          "Visits mother's house (15 minutes away) 2-3 times per week",
+          "Seed-only aspirational travel: Appalachian foothill road trips, Savannah historic district, Barcelona and Lisbon -- not confirmed by interview; likely suppressed by financial constraints"
         ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q08, Q10, Q15, Q75 follow-up; seed.travel_persona (aspirational only)"
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Father's background and current status: Interview provides father's education (~6th-7th grade in Mexico, Q100), occupation (landscaping and construction, Q105-Q107), and current relationship status with Maria (split from mother when Maria was in her twenties, lives across town, 'we talk but it's not like it was,' Q05). None of this appears in the extracted profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q05, Q100, Q105, Q106, Q107",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 2,
-            "text": "Brother Luis's details: Interview identifies Luis as 28, finished school, attended community college, works at car dealership (Q05). He also served as a political information source (Q23 follow-up). Not captured in any profile section.",
-            "verdict": "GAP",
-            "source_a_ref": "Q05, Q23",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 3,
-            "text": "Government benefits: PeachCare enrollment for children, and the fact that the family was over the SNAP income limit by a small margin (Q80), are significant economic details absent from the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q40, Q80",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 4,
-            "text": "Specific debt and savings figures: Interview details $1,800 credit card debt, ~$600 medical debt, $200 owed to mother, $400 savings, $100-$150 emergency cash (Q61, Q63). Profile's behavioral_economist summary references financial stress but does not capture these specific figures.",
-            "verdict": "GAP",
-            "source_a_ref": "Q61, Q63, Q82",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          }
+      "social_and_relationships": {
+        "summary": "Deeply embedded in family and community networks. Maintains close friendships, church ties, extended family connections, and organized social groups. Relational style favors a small number of deep attachments over broad shallow networks.",
+        "details": [
+          "Husband Carlos, 36: construction worker, together 15 years, married 12. Described as dependable, quiet, 'my rock.' Watches sports together, co-parents, Sunday-night financial planning sessions",
+          "Son Diego, 10 (4th grade): smart, good grades especially in math and art, plays rec soccer, draws for hours, protective of sister. Experienced ethnic bullying at school",
+          "Daughter Sofia, 7 (2nd grade): outgoing, social leader in class, does hip-hop dance, talks a lot, catching up on reading. Preparing for First Communion",
+          "Dog Canela: chihuahua mix, beloved by the kids",
+          "Best friend Lupita (since childhood, lives in Norcross): talks almost daily by phone/text, shops together at Mexican market on Buford Highway, weekly honest check-in texts, mutual support including lending $200 for car brakes",
+          "Friend Ana from Ballet Folklorico troupe: practices weekly together, 'become like a sister'",
+          "Mother Rosa, 62: lives 15 minutes away, severe knee problems needing replacement surgery she cannot afford. Maria visits 2-3 times/week for groceries, appointments, housework. Stays overnight occasionally. 'My best friend in a lot of ways.' Taught Maria cooking",
+          "Father: separated from mother when Maria was in her twenties, lives across town. Relationship is distant ('we talk but it's not like it was'). ~6th-7th grade education in Mexico, former landscaper and construction worker",
+          "Brother Luis, 28: finished school, attended community college, works at car dealership. Maria is proud of him. Serves as political information source",
+          "Sister-in-law Patricia: frequent phone calls, close relationship",
+          "Mother-in-law Dona Elena: comes for Sunday dinners, stayed with family three weeks for stomach health issues. 'A sweetheart'",
+          "Book club women (5-6 members, diverse backgrounds): meets monthly at library or homes, reads multicultural literature",
+          "Church community: Father Morales (trusted spiritual leader), volunteer ladies, youth program participants",
+          "Neighbor Miss Kim: informal neighborhood watch via text",
+          "Janet from book club: introduced Maria to county commission meetings",
+          "Rosa (arts center director): mentor figure for Maria's community development aspirations",
+          "Neighbor's college-age daughter: taught Maria about solidarity and intersectionality; Maria encouraged her to run for office"
         ],
-        "summary": { "consistent": 0, "inconsistent": 0, "gaps": 4 }
+        "evidence": "Q01, Q05, Q05 follow-ups, Q06, Q07, Q07 follow-ups, Q09, Q11, Q25 follow-up, Q28, Q30 follow-up, Q35, Q44 follow-up, Q47, Q64, Q77"
+      },
+      "home_and_lifestyle": {
+        "summary": "Manages a tight three-bedroom rental household on a constrained budget. Meticulous financial recordkeeping with creative resource-stretching. Family marginally above government assistance thresholds.",
+        "details": [
+          "Rents a three-bedroom house in Lilburn subdivision ($1,450/month, up from $1,100 five years ago, annual increases)",
+          "Monthly expense breakdown: $1,450 rent, $320 car payment (~2 years remaining), ~$250 utilities, $500-$600 groceries, $50 medical bill payment, plus gas and vehicle insurance. Total typical month: $3,200-$3,500; higher with surprises (~$3,800)",
+          "Household income: Carlos ~$3,200/month after taxes (variable due to weather-related construction delays) + Maria's $400-$800/month catering. Good month ~$4,000; bad month ~$3,000",
+          "Debts: ~$1,800 credit card (minimum payments, aware of interest problem), ~$600 remaining on Sofia's ear infection bill ($50/month), $200 owed to mother",
+          "Savings: ~$400 in bank account (rule with Carlos: try not to go below $200), $100-$150 emergency cash hidden at home",
+          "Annual tax refund ~$2,800 (mostly from child tax credits) serves as critical catch-up mechanism: credit card payoff, savings, deferred purchases, one family outing",
+          "Seasonal expense spikes: summer electric $180-$200 (AC), Christmas +$300-$400, August back-to-school (clothes, supplies, activity fees)",
+          "Children on PeachCare (Georgia children's health program); family marginally over SNAP income limits",
+          "No formal employment benefits, paid time off, or retirement savings",
+          "Informal lending network: borrows small amounts from mother and Lupita during emergencies, repays over weeks",
+          "Plans and budgets using physical notebook and phone calendar app; Sunday-night budget sessions with Carlos",
+          "Kitchen table doubles as workspace for event planning and GED studying",
+          "Small backyard vegetable and herb garden (tomatoes, cilantro, jalapenos, bell peppers, mint, heirloom tomatoes)",
+          "Has a chihuahua mix named Canela",
+          "Small altar in bedroom with Virgen de Guadalupe image, candles, and family photos",
+          "Filed taxes jointly last year using Carlos's brother-in-law (informal tax preparer)"
+        ],
+        "evidence": "Q08, Q10, Q10 follow-up, Q11, Q11 follow-up, Q17, Q40, Q47 follow-up, Q56, Q56 follow-up, Q57, Q58, Q58 follow-up, Q59, Q60, Q61, Q61 follow-up, Q63, Q75, Q80, Q82, Q83 follow-up"
+      },
+      "entertainment": {
+        "summary": "Follows Atlanta sports teams casually with husband in the evenings; engages heavily with cooking and art content on social media; reads multicultural literary fiction through book club.",
+        "details": [
+          "Watches Atlanta Falcons (NFL) and Atlanta Hawks (NBA) games with Carlos in the evening; has 'gotten into the Hawks a little bit'",
+          "Follows cooking videos and food bloggers on Instagram for recipe ideas",
+          "Follows art accounts (watercolor, pottery) on social media for creative inspiration",
+          "Follows Falcons and Hawks on social media",
+          "Reads multicultural literature through monthly book club: Toni Morrison ('Beloved'), Chimamanda Ngozi Adichie ('Americanah', currently reading), Haruki Murakami",
+          "Kids watch TV after homework; family watches shows together on evenings without activities",
+          "Scrolls Instagram approximately 30 minutes before bed (acknowledges it is bad for sleep)"
+        ],
+        "evidence": "Q05 follow-up, Q07 follow-up, Q48, Q48 follow-up"
+      },
+      "hobbies_and_recreation": {
+        "summary": "Balances creative pursuits (dance, art, photography, gardening) with community service as primary leisure activities. Creative activities serve dual purposes of personal fulfillment and cultural preservation.",
+        "details": [
+          "Performs in a Ballet Folklorico troupe of ~12 women (mostly Mexican, some Guatemalan, one Salvadoran); practices Wednesday evenings 7-9pm at a community center in Duluth, ~20 minutes away. 'My favorite thing I do all week'",
+          "Attends watercolor and pottery workshops at the School of the Arts (from seed data; workshops not specifically discussed in interview but arts center involvement confirmed)",
+          "Photographs everyday life and food with phone camera; posts to Instagram; takes event photos for church and community groups",
+          "Tends home vegetable and herb garden as a daily morning ritual with coffee -- finds it meditative and restorative",
+          "Leads monthly multicultural book club of 5-6 women at library or homes",
+          "Experiments with new recipes as creative outlet and stress relief, separate from catering obligations",
+          "Organizes neighborhood potlucks as both social and creative events"
+        ],
+        "evidence": "Q07, Q07 follow-ups, Q15, Q15 follow-up, Q17, Q17 follow-ups, Q38, Q43 follow-up"
+      },
+      "work_and_career": {
+        "summary": "Aspires to formalize her informal community event planning and catering into a salaried career, beginning with earning her GED. Currently operates an informal catering business while volunteering extensively.",
+        "details": [
+          "Studying for GED independently with library workbooks and YouTube tutorials (math is hardest; reading/writing stronger due to book club). Goal: pass by age 35",
+          "Looking into Gwinnett Technical College for GED program and certificate programs; also aware of Latin American Association workforce programs in Atlanta",
+          "Key barrier to enrollment: cost, scheduling around children, and childcare logistics ('who watches my kids while I'm in class')",
+          "Dreams of becoming a community outreach coordinator or cultural programming assistant at a county arts/recreation center in Gwinnett",
+          "Wants to start a formalized catering business (named business, possibly food truck or small kitchen space) with cooking classes",
+          "Long-term vision: multicultural community hub combining kitchen for cooking classes, dance practice room, art gallery, and community gathering space -- open to all cultures",
+          "Currently earns $400-$800/month from informal catering (prices: $150-$200 for small events, $400-$600 for quinceañeras/baby showers; profit less after ingredient costs)",
+          "Receives small stipends ($100-$150) from local arts center for event planning after major events",
+          "Skills developed informally: bilingual communication, event budgeting ($2,000+ events), sponsor acquisition, volunteer coordination (20+ people), social media promotion, vendor negotiation",
+          "Works an estimated 30-40 hours/week total (paid + unpaid); paid catering alone ~10-15 hours in active weeks",
+          "Rosa, the arts center director, serves as informal mentor and was the first to suggest Maria could have a career in community development"
+        ],
+        "evidence": "Q02, Q02 follow-ups, Q03, Q03 follow-up, Q04 follow-up, Q16, Q16 follow-ups, Q18, Q18 follow-up, Q65, Q65 follow-ups, Q67, Q68, Q72, Q77, Q108, Q108 follow-ups"
+      },
+      "arts_and_culture": {
+        "summary": "Deeply invested in Mexican cultural preservation through dance, cooking, holiday celebrations, and cross-cultural community building. Arts engagement spans performance, visual arts, and literary appreciation.",
+        "details": [
+          "Performs traditional Ballet Folklorico with a 12-woman troupe at community events, festivals, and school cultural presentations",
+          "Plans and organizes Dia de los Muertos celebrations with ofrendas featuring marigolds, candles, pan de muerto, and photos of deceased relatives (grandmother, abuelo, young cousin)",
+          "Organizes Las Posadas reenactment at church each Christmas -- her favorite time of year",
+          "Celebrates Mexican Independence Day and Catholic feast days for saints",
+          "Attends monthly exhibitions at the School of the Arts",
+          "Takes watercolor painting and pottery workshops (seed data; arts center involvement confirmed in interview)",
+          "Inspired by Georgia O'Keeffe, Claude Monet, and Jackson Pollock (seed data; specific artist names did not surface in interview)",
+          "Leads book club exploring multicultural literature: Toni Morrison ('Beloved'), Chimamanda Ngozi Adichie ('Americanah'), Haruki Murakami (Murakami from seed; Morrison and Adichie confirmed in interview Q07)",
+          "Teaches children cultural traditions, prayers in Spanish, and Mexican holiday celebrations to preserve heritage",
+          "Diego's drawing talent likely inherited interest from Maria's love of visual arts"
+        ],
+        "evidence": "Q01, Q02, Q07, Q07 follow-up, Q15, Q28 follow-up, Q47, Q47 follow-ups; seed.arts_persona (for specific artist names)"
+      },
+      "sports_and_fitness": {
+        "summary": "Stays active primarily through dance and yoga; follows Atlanta sports teams as a family activity. No personal team sport participation confirmed in interview.",
+        "details": [
+          "Weekly Ballet Folklorico practice (2 hours, Wednesday evenings 7-9pm in Duluth)",
+          "Weekly gentle yoga class (1 hour, Saturday mornings, $15/class) -- primarily for back pain relief and stress management",
+          "Follows Atlanta Falcons (NFL) and Atlanta Hawks (NBA) with Carlos; has developed her own interest in the Hawks",
+          "Son Diego plays in a recreational soccer league (Mondays and Wednesdays, 4-5:30pm)",
+          "Daughter Sofia does hip-hop dance (Tuesdays and Thursdays, 4-5pm)",
+          "Active lifestyle from daily housework, cooking (standing for hours), gardening, and chasing kids",
+          "Note: Seed data mentions Maria participating in a co-ed recreational soccer league each spring; this was not confirmed in the interview and may be aspirational or past activity"
+        ],
+        "evidence": "Q05, Q05 follow-up, Q15, Q15 follow-up, Q19, Q31, Q31 follow-up"
+      },
+      "nature_and_outdoors": {
+        "summary": "Finds peace and solitude in her backyard garden; enjoys local parks with the family. Garden serves as both practical food source and meditative retreat.",
+        "details": [
+          "Tends a small vegetable and herb garden as a daily morning ritual with coffee, before the rest of the house wakes up ('the world is quiet for a second and everything is okay,' Q43 follow-up)",
+          "Takes family to the neighborhood park regularly; kids play in front yard and backyard",
+          "Garden doubles as practical food source (tomatoes, cilantro, jalapenos, herbs) and emotional restoration space",
+          "Considering expanding garden to include squash and corn but needs more space",
+          "Interest in Appalachian foothill road trips (seed data; not confirmed in interview, likely aspirational given budget constraints)"
+        ],
+        "evidence": "Q17, Q17 follow-ups, Q43 follow-up; seed.travel_persona (aspirational)"
+      },
+      "technology": {
+        "summary": "Heavy smartphone user for social media community management, communication, photography, and self-directed learning. Phone is primary device; no computer or home office.",
+        "details": [
+          "Manages three Facebook community groups: Lilburn neighborhood, Mexican families in Gwinnett, arts center events. Answers questions, shares resources (Spanish-speaking doctors, mechanics), posts updates",
+          "Uses Instagram for food and event photography; has a few hundred local followers",
+          "Communicates via WhatsApp with multiple group chats (school, church, dance group, family) -- primary communication tool for Mexican community",
+          "Uses phone calendar app to organize family and event schedules (started recently due to increasing busyness)",
+          "Studies for GED using YouTube math tutorials ('this one guy explains math in a way I can actually understand')",
+          "Takes all photos with phone camera; no professional camera",
+          "Plans events with physical notebook supplemented by phone",
+          "No computer or home office; works from kitchen table",
+          "Spends approximately 2-3 hours daily on social media (majority on Facebook community management, ~30 min Instagram before bed)",
+          "Avoids conspiracy content and political arguments on social media; keeps feeds positive"
+        ],
+        "evidence": "Q17 follow-up, Q18, Q18 follow-up, Q48, Q48 follow-ups, Q49"
+      },
+      "community_and_civic": {
+        "summary": "Deeply rooted community organizer who bridges cultural groups through events, food, and social media resource-sharing. Civic engagement growing from voter to local meeting attendee.",
+        "details": [
+          "Volunteers at St. Patrick's Church (Lilburn) organizing festivals, youth programs, holiday celebrations, posadas, and Dia de los Muertos altars",
+          "Plans cultural events at local Gwinnett arts center (Dia de los Muertos, spring art walk) with budgets up to $2,000 and 20+ volunteers",
+          "Organizes neighborhood potlucks bringing together diverse cultural groups (Korean, Mexican, Indian, Black, white families)",
+          "Moderates three Facebook groups connecting community members with resources",
+          "Mentors teens interested in culinary arts through church youth programs",
+          "Recently started attending Gwinnett County commission meetings (4-5 so far), introduced by book club member Janet",
+          "Registered voter since age 26-27; votes in presidential elections, inconsistently in local races due to information costs",
+          "Political catalyst: seeing Diego's underfunded school (teacher buying supplies out of pocket) prompted voter registration and engagement",
+          "Issue-driven voter: prioritizes health care affordability, school funding, cost of living, and fair treatment of immigrant-origin families",
+          "Responds to racial justice issues through inclusive event planning and private conversations rather than protest",
+          "Carlos is politically disengaged but occasionally engages on construction worker and immigration issues",
+          "Promotes cross-cultural understanding as explicit philosophy: 'I want everybody to feel welcome, not just Mexican people' (Q29)"
+        ],
+        "evidence": "Q02, Q08, Q08 follow-up, Q16, Q23, Q23 follow-ups, Q24, Q25, Q25 follow-up, Q26, Q27, Q29, Q47, Q48, Q65, Q95"
+      },
+      "music": {
+        "summary": "Engages with music primarily through cultural dance performance and church services; music is woven into family and cultural life rather than consumed as standalone entertainment.",
+        "details": [
+          "Dances to traditional Mexican folk music through Ballet Folklorico performances and practice",
+          "Grew up with music always playing in the house (Q01: 'My mom was always cooking, always had music going')",
+          "Organized mariachi group performances at community events (negotiated reduced rate for Dia de los Muertos festival, Q02 follow-up)",
+          "Attends Mass with music/hymns at St. Patrick's weekly",
+          "Cultural music integral to celebrations she organizes: posadas, fiestas, quinceañeras"
+        ],
+        "evidence": "Q01, Q02 follow-up, Q15, Q47"
+      },
+      "fashion_and_appearance": {
+        "summary": "No strong fashion preferences surfaced in the interview. Appearance investment is limited by budget; traditional dance costumes are the main noted clothing item.",
+        "details": [
+          "Wears traditional trajes (folk dance costumes) for Ballet Folklorico performances (Q43 follow-up: 'When we're all dancing together in our trajes')",
+          "Budget constraints limit clothing purchases; kids' clothes (school, activities) prioritized over personal shopping",
+          "Tax refund used in part to buy children's spring clothes (Q75 follow-up)"
+        ],
+        "evidence": "Q43 follow-up, Q64, Q75 follow-up"
       }
     },
 
-    "behavioral_economist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Budgeting expertise: Seed's professional_persona and skills_and_expertise mention 'methodical budgeting expertise' and 'household budgeting and finance management.' Interview confirms through detailed descriptions of meal planning, coupon use, bulk purchasing, and Sunday budget-planning sessions with Carlos (Q56, Q61, Q83). Consistent and richly elaborated.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "skills_and_expertise: household budgeting and finance management",
-            "source_b_ref": "Q56, Q61, Q83"
-          },
-          {
-            "id": 2,
-            "text": "Event planning and financial management: Seed describes event budgeting at an arts center; interview confirms Maria managed a $2,000 budget for Dia de los Muertos, secured five business donations, and tracks all expenses in a notebook (Q02, Q16, Q65). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "professional_persona, skills_and_expertise",
-            "source_b_ref": "Q02, Q16, Q65"
-          },
-          {
-            "id": 3,
-            "text": "Catering income: Seed's career_goals mentions launching a home-based catering business. Interview confirms Maria is already doing this informally, charging $150-$600 per event, earning $400-$800/month (Q16, Q72). The seed describes an aspiration; the interview reveals it is already partially realized.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "career_goals_and_ambitions",
-            "source_b_ref": "Q16, Q72"
-          },
-          {
-            "id": 4,
-            "text": "Travel and leisure spending: Seed's travel_persona describes weekend road trips to Appalachian foothills, annual Savannah trips, and European getaways to Barcelona and Lisbon. Interview reveals zero discretionary travel beyond local outings and one Six Flags trip using tax refund money (Q75). Budget constraints make seed travel aspirations unrealistic for current economic situation.",
-            "verdict": "INCONSISTENT",
-            "source_a_ref": "travel_persona",
-            "source_b_ref": "Q10, Q56, Q64, Q75"
-          },
-          {
-            "id": 5,
-            "text": "Certification pursuit: Seed mentions 'actively pursuing certification in community development.' Interview reveals Maria is self-studying for GED with workbooks and YouTube but has not enrolled in any program (Q18, Q91, Q92). The seed overstates the formality of her educational pursuit.",
-            "verdict": "INCONSISTENT",
-            "source_a_ref": "professional_persona: actively pursuing certification",
-            "source_b_ref": "Q18, Q91, Q92"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 2, "gaps": 0 }
-      },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Loss aversion around savings: Interview describes Maria's distress at depleting the $400 savings buffer, the rule with Carlos to not go below $200, and the feeling of 'going backwards' when withdrawing (Q61). Profile's behavioral_economist summary accurately captures this as 'extreme present-orientation driven by necessity rather than preference' and 'acute psychological distress at the prospect of depleting' savings. Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q61, Q82",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          },
-          {
-            "id": 2,
-            "text": "Income shock response: Interview details Maria's multi-pronged response to Carlos's reduced hours: selling tamales through Facebook ($10/dozen, ~30 dozen), borrowing $200 from mother, cutting all discretionary spending, cancelling yoga (Q81). Profile's behavioral_economist summary mentions 'immediate behavioral adjustments' including all these strategies. Accurately captured.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q60, Q81",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          },
-          {
-            "id": 3,
-            "text": "Health care trade-offs: Interview reveals Maria skipped her own checkups for two years to fund children's appointments, refused ER visit during 3-day headache due to cost, and owes $600 from Sofia's ear infection (Q36, Q40). Profile accurately characterizes this as 'systematic self-sacrifice pattern in household resource allocation.' Faithfully captured.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q36, Q40, Q63",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          },
-          {
-            "id": 4,
-            "text": "Tax refund allocation: Interview describes spending the $2,800 refund on credit card payoff, savings, kids' clothes, porch repair, and Six Flags (Q75). Profile does not capture tax refund behavior or the fact that it functions as the family's primary mechanism for catching up on deferred needs.",
-            "verdict": "GAP",
-            "source_a_ref": "Q75",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 5,
-            "text": "Credit card debt and interest awareness: Maria acknowledges paying minimums on ~$1,800 in credit card debt and knowing 'the interest' is a problem (Q63). Profile's behavioral_economist summary does not mention credit card debt or interest burden specifically.",
-            "verdict": "GAP",
-            "source_a_ref": "Q63",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
-      },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Catering income range: Profile's work_and_career section says $400-$800/month from catering. The behavioral_economist summary references her 'entrepreneurial resourcefulness' and mentions scaling work based on need. In the same month she reports $750 total (including $100 arts center stipend), so ~$650 from catering, which falls within the stated range. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.preferences.work_and_career.details",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          },
-          {
-            "id": 2,
-            "text": "GED as human capital investment: Profile's behavioral_economist summary calls GED pursuit 'a calculated human capital investment despite high opportunity cost.' Profile's work_and_career preferences describe it as self-study. Profile's others_misc mentions the timeline goal (by age 35). All three references consistently characterize the same effort from different angles.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.summaries.behavioral_economist",
-            "source_b_ref": "extracted_profile.preferences.work_and_career, others_misc.life_events_and_transitions"
-          }
-        ],
-        "summary": { "consistent": 2, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Specific monthly expense breakdown: Interview provides detailed monthly costs -- $1,450 rent, $320 car payment, ~$250 utilities, $500-$600 groceries, $50 medical payment, plus gas and insurance (Q56). Profile does not capture this granular expense data anywhere.",
-            "verdict": "GAP",
-            "source_a_ref": "Q56, Q57",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 2,
-            "text": "Seasonal expense fluctuation: Interview describes summer electric bills of $180-$200, Christmas costing extra $300-$400, back-to-school expenses in August (Q59). Profile does not capture seasonal budget variation patterns.",
-            "verdict": "GAP",
-            "source_a_ref": "Q59",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 3,
-            "text": "Informal lending networks: Interview reveals bidirectional lending -- borrowed $200 from mother (Q63, Q81), $200 from Lupita for car brakes (Q64), and describes this as a normal coping mechanism. Profile mentions 'family lending networks' in behavioral_economist summary but does not capture specific amounts or reciprocity patterns.",
-            "verdict": "GAP",
-            "source_a_ref": "Q63, Q64, Q81, Q82",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
-          },
-          {
-            "id": 4,
-            "text": "Carlos's income variability: Interview details Carlos earning ~$3,200/month after taxes but hours being subject to weather delays and construction cycles (Q38, Q74, Q81). Profile mentions husband's wages but not the variability or its impact on household economic stability.",
-            "verdict": "GAP",
-            "source_a_ref": "Q38, Q74, Q81",
-            "source_b_ref": "extracted_profile.summaries.demographer"
-          }
-        ],
-        "summary": { "consistent": 0, "inconsistent": 0, "gaps": 4 }
-      }
+    "summaries": {
+      "demographer": "Maria Buendia is a 34-year-old US-born Mexican-American woman who has lived her entire life in Lilburn, Georgia (Gwinnett County), a diverse suburban community east of Atlanta (Q01, Q87, Q97). She was born at a hospital in Lawrenceville but raised in Lilburn (Q87). She is married to Carlos, age 36, a construction worker earning approximately $3,200/month after taxes, and they have two school-age children: Diego (10, 4th grade) and Sofia (7, 2nd grade), in a four-person household renting a three-bedroom home for $1,450/month (Q05, Q11, Q56, Q58). Her education stopped at 11th grade with no diploma when she dropped out to help care for her younger brother while her mother worked two jobs (Q01, Q90). She has no formal occupation and relies on informal catering income of $400-$800/month plus small arts center stipends, supplementing Carlos's wages (Q16, Q72, Q74). The household income of $3,000-$4,000/month places them near the lower-middle-income threshold for a family of four in the Atlanta metro area, with children enrolled in PeachCare but the family marginally over SNAP income limits (Q40, Q80). Her parents immigrated from Mexico before her birth; her father (~6th-7th grade education in Mexico, former landscaper/construction worker) separated from her mother when Maria was in her twenties and lives across town with a distant relationship (Q05, Q98, Q100, Q105-Q107). Her mother Rosa, age 62, lives 15 minutes away with debilitating knee problems requiring potential replacement surgery she cannot afford, and Maria serves as her primary caregiver visiting 2-3 times weekly (Q05, Q35). Her brother Luis, 28, completed community college and works at a car dealership (Q05).",
+
+      "behavioral_economist": "Maria's economic behavior reflects constrained optimization under persistent scarcity rather than preference-driven choices (Q56, Q61, Q83). She demonstrates strong loss aversion around her small savings buffer of approximately $400, with a joint household rule to maintain at least $200 as a floor, and describes acute distress when forced to deplete it (Q61, Q61 follow-up, Q82). Her household carries $1,800 in credit card debt (minimum payments only, aware of compounding interest), $600 in medical debt from Sofia's ear infection, and $200 owed to her mother, against $400 in savings and $100-$150 in emergency cash (Q63, Q61). Her informal catering business demonstrates entrepreneurial resourcefulness: she scales labor supply based on need -- selling tamales at $10/dozen through Facebook during income shocks, yielding approximately 30 dozen in one crisis month (Q81) -- uses social networks for client acquisition, and meticulously manages food costs through bulk purchasing, garden cultivation, couponing, and strategic shopping at ethnic markets on Buford Highway (Q56 follow-up). Her decision to forgo personal health care for over two years while maintaining children's PeachCare coverage reveals systematic self-sacrifice in household resource allocation; she refused an ER visit during a three-day headache and delays back pain and blood work due to cost (Q36, Q40). She and Carlos conduct Sunday-night financial planning sessions reviewing upcoming bills and expenses (Q83 follow-up). The annual tax refund of approximately $2,800, primarily from child tax credits, functions as the household's critical catch-up mechanism for deferred needs including debt reduction, savings replenishment, and deferred purchases (Q75). She responds to income shocks (Carlos's weather-related hour cuts) with immediate multi-pronged behavioral adjustments: increasing informal labor supply, cutting all discretionary spending (including yoga class), and activating bidirectional lending networks with her mother ($200) and Lupita ($200 for car brakes) (Q60, Q64, Q81).",
+
+      "political_scientist": "Maria exhibits a civic engagement trajectory moving from youthful disengagement to increasing participation, catalyzed by parental stakes in public institutions -- specifically, witnessing Diego's teacher buying classroom supplies out of pocket, which prompted her voter registration at age 26-27 (Q23, Q23 follow-up). She participates in presidential elections but inconsistently in lower-ballot races, reflecting information-cost barriers; she researches candidates through trusted personal networks including Lupita, brother Luis, and church contacts rather than through party affiliation (Q23, Q23 follow-up). Her political orientation is issue-driven, clustering around affordable health care, adequately funded schools, cost of living, and fair treatment of immigrant-origin families, while holding culturally traditional positions on family and faith that create cross-pressures with either major party (Q24, Q95, Q96). She recently expanded her civic repertoire to include attending 4-5 Gwinnett County commission meetings, prompted by book club member Janet, and engages with local zoning debates affecting her neighborhood (Q25, Q25 follow-up). Her community organizing work -- moderating three Facebook groups, planning multicultural events, organizing potlucks that bring together Korean, Mexican, Indian, Black, and white families (Q08, Q48) -- functions as informal civic infrastructure even though she does not frame it politically. Her response to racial justice movements is empathetic and solidarity-oriented, acknowledging shared experiences of discrimination between Mexican and Black communities in Gwinnett County, but behaviorally cautious -- she promotes inclusion through event work and private conversations rather than protest (Q26, Q27, Q29). She navigates a persistent background awareness about immigration-related policing anxiety in the Mexican community, where some neighbors avoid calling police due to documentation fears (Q20, Q26 follow-up).",
+
+      "psychologist": "Maria displays high conscientiousness through meticulous event budgeting, meal planning, and household management, paired with high agreeableness evident in her lifelong caretaking across family and community spheres -- a pattern originating in childhood when she became 'a second mom in the house' after dropping out of school to care for her brother while her mother worked two jobs (Q01, Q01 follow-up). Her self-concept centers on a caretaker identity that extends to her mother, children, church community, and neighborhood, accompanied by a persistent guilt pattern when she cannot meet these demands -- expressing feelings of 'failing' when unable to buy Diego shoes (Q64 follow-up) and guilt when others compensate during her illness (Q33 follow-up). A critical tension exists between this caretaker orientation and her emerging recognition of self-investment needs, catalyzed by the pivotal Dia de los Muertos festival that shifted her self-perception from 'just a helper' to a capable leader: 'I actually ran this whole thing... People came to me with questions and I had answers' (Q02 follow-up). Motherhood is her primary motivational axis: nearly every major decision is framed through her children's futures, from neighborhood stability for school continuity to pursuing the GED as modeling behavior for Diego and Sofia (Q01, Q108, Q109 follow-up). Her emotional regulation system handles routine stress through five functional coping mechanisms: cooking as emotional processing (making 60 tamales at midnight, Q38 follow-up), yoga breathing for acute chest-tightness episodes (Q45 follow-up), garden time as solitary morning restoration (Q43 follow-up), weekly honest check-in texts with Lupita (Q44 follow-up), and Mass attendance as spiritual centering (Q44 follow-up, Q47). However, when multiple role demands converge simultaneously -- as during the fall 2025 crisis combining Carlos's hour cuts, Diego's ethnic bullying at school, and her mother's health episode -- her system becomes overwhelmed, evidenced by the bathroom-floor crying episode where she was unable to speak when Carlos found her (Q44). Her attitude toward professional mental health help has shifted from cultural stigma ('you're supposed to be strong, pray about it,' Q45) to primarily practical barriers (cost, time, Spanish-speaking availability), reflecting generational change in her community; her friend Lupita's positive counseling experience has normalized the idea (Q45 follow-up)."
     },
 
-    "political_scientist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Community organizing: Seed's professional_persona describes Maria designing 'inclusive festivals, workshops, and cultural programs for a local arts center.' Interview confirms extensive event planning: Dia de los Muertos festival (Q02), spring art walk (Q16, Q71), neighborhood potlucks (Q08), church festivals (Q47). Consistent and deeply elaborated.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "professional_persona",
-            "source_b_ref": "Q02, Q08, Q16, Q47, Q65"
-          },
-          {
-            "id": 2,
-            "text": "Civic engagement: Seed mentions no political or civic engagement. Interview reveals Maria is a registered voter (Q23), attends county commission meetings (Q25), and discusses race and policing issues (Q26-Q30). Interview significantly enriches the civic dimension absent from seed.",
-            "verdict": "GAP",
-            "source_a_ref": "seed (no political content)",
-            "source_b_ref": "Q23, Q24, Q25, Q26, Q29"
-          },
-          {
-            "id": 3,
-            "text": "Social media community moderation: Seed lists 'social media community moderation' as a skill. Interview confirms Maria moderates three Facebook groups (Lilburn neighborhood, Mexican families in Gwinnett, arts center events) and actively connects community members with resources (Q48, Q49). Consistent and enriched.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "skills_and_expertise_list: social media community moderation",
-            "source_b_ref": "Q48, Q49"
-          },
-          {
-            "id": 4,
-            "text": "Cross-cultural bridge-building: Seed's cultural_background mentions 'fostering cross-cultural exchange.' Interview confirms multicultural potlucks (Korean BBQ next to tamales, Q08), diverse book club membership, and inclusive event planning philosophy (Q29). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "cultural_background",
-            "source_b_ref": "Q08, Q29"
-          },
-          {
-            "id": 5,
-            "text": "Church as community hub: Seed mentions 'Catholic upbringing influences her participation in church activities, which serve as a hub for both spiritual and social connections.' Interview confirms extensive church involvement -- volunteering, event planning, youth programs, Las Posadas, Dia de los Muertos altars, and Father Morales as trusted community figure (Q47). Fully consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "cultural_background: Catholic upbringing, church activities",
-            "source_b_ref": "Q47, Q42"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+    "others_misc": {
+      "cultural_and_linguistic": {
+        "description": "Languages, cultural practices, religious/spiritual observance patterns, heritage markers",
+        "items": [
+          "Bilingual Spanish-English; spoke Spanish first at home, learned English upon starting school (was behind initially, Q01)",
+          "Maintains home altar with Virgen de Guadalupe image, candles, and photos of grandparents (Q47 follow-up)",
+          "Celebrates Dia de los Muertos with community ofrenda featuring marigolds, candles, pan de muerto, and photos of deceased relatives (grandmother, abuelo, young cousin who passed, Q47)",
+          "Participates in and organizes Las Posadas reenactment at church each Christmas -- her favorite time of year (Q47)",
+          "Celebrates Mexican Independence Day (seed.cultural_background)",
+          "Says grace before dinner every night as a family; prays with children before bedtime (Q47 follow-up)",
+          "Teaches children prayers in Spanish first, then English (Q47 follow-up)",
+          "Attends Spanish-language Mass at St. Patrick's in Lilburn every Sunday (Q47, Q94)",
+          "Son Diego completed First Communion two years ago; daughter Sofia preparing for hers next year (Q47 follow-up)",
+          "Mother practices traditional Mexican remedies including sobadas and egg limpia (Q37)",
+          "Maria uses herbal teas (chamomile, mint, ginger, lime-honey-cinnamon) as first-line treatment before considering doctors (Q37 follow-up)",
+          "Communicates with family and friends primarily via WhatsApp in multiple group chats (Q48)",
+          "Father Morales is trusted authority on both spiritual and practical matters (vaccine advocacy, community issues, Q42, Q47)",
+          "Teaches children about Mexican culture, food, language, and traditions to preserve heritage: 'I want them to know where they come from' (Q47 follow-up)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Voting behavior: Interview specifies Maria registered to vote at 26-27, votes in presidential elections, misses smaller ones (Q23). Profile's political_scientist summary accurately describes her as participating in presidential elections 'but inconsistently in lower-ballot races, reflecting an information-cost barrier rather than apathy.' Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q23",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          },
-          {
-            "id": 2,
-            "text": "County commission attendance: Interview describes Maria attending 4-5 county commission meetings after being introduced by Janet from book club (Q25). Profile's community_and_civic preferences and political_scientist summary both capture this. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q25",
-            "source_b_ref": "extracted_profile.preferences.community_and_civic, summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Political identity: Interview reveals Maria is issue-driven rather than party-identified, leans toward the party that supports working families, health care, and schools, but holds traditional family values on social issues (Q24, Q95, Q96). Profile's political_scientist summary accurately describes this as 'economically progressive, culturally traditional, institutionally pragmatic.' Faithfully captured.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q24, Q95, Q96",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          },
-          {
-            "id": 4,
-            "text": "Response to racial justice: Interview details Maria's empathetic but cautious stance -- discusses issues privately, shares Facebook posts, builds inclusive events rather than protesting (Q26, Q27, Q29). Profile's political_scientist summary describes this as 'behaviorally cautious -- she discusses issues privately and promotes inclusion through her event work rather than engaging in protest.' Accurate.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q26, Q27, Q29",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          },
-          {
-            "id": 5,
-            "text": "Immigration-related anxiety: Interview reveals background awareness about documentation and policing for Mexican families (Q20, Q26 follow-up), including neighbors who avoid calling police due to status fears. Profile mentions 'fair treatment of immigrant-origin families' as a political issue but does not fully capture the day-to-day dimension of this awareness.",
-            "verdict": "GAP",
-            "source_a_ref": "Q20, Q26 follow-up",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+      "life_events_and_transitions": {
+        "description": "Significant past or anticipated events that shape current behavior",
+        "items": [
+          "Parents immigrated from Mexico before Maria's birth; she is first-generation American (Q01, Q86)",
+          "Grew up in multigenerational household with grandmother (mother's mother) who has since passed (Q99)",
+          "Dropped out of high school in 11th grade (age 16-17) to help care for younger brother Luis while mother worked two jobs cleaning houses and in a restaurant kitchen (Q01, Q01 follow-ups)",
+          "Met husband Carlos at a friend's sister's quinceañera at age 19; Carlos was one of the chambelanes (Q01 follow-up)",
+          "Married at 22 -- small ceremony with family and close friends at church, food prepared by Carlos's mother (Q01 follow-up)",
+          "Diego born when Maria was ~23 (one year after marriage); Sofia born when Maria was ~27 (Q05)",
+          "Dia de los Muertos festival organization at age 24-25 was pivotal turning point, shifting self-concept from 'helper' to 'leader' and sparking community development aspirations (Q02, Q02 follow-ups)",
+          "Parents separated when Maria was in her twenties; relationship with father is now distant (Q05, Q98)",
+          "Diego experienced ethnic bullying at school (taco jokes, Q28), came home crying; Maria advocated with teacher and coached Diego on cultural pride (Q28 follow-up, Q44)",
+          "Emotional breakdown fall 2025: converging financial stress from Carlos's reduced hours, Diego's school bullying, and mother's severe knee episode triggered bathroom-floor crying episode (Q44)",
+          "Plans to earn GED by age 35 (deadline approaching) and pursue community development certificate within two years (Q03 follow-up, Q108)",
+          "Aspires to launch formalized catering business and eventually a multicultural community hub combining food, art, dance, and cross-cultural gathering (Q108 follow-ups)",
+          "Wrote down three life goals: GED by 35, job at community center, start catering business (Q03 follow-up)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Civic engagement characterization: Profile's community_and_civic preferences list 'recently started attending Gwinnett County commission meetings' and 'registered voter; votes in presidential and some local elections.' The political_scientist summary describes an 'engagement trajectory moving from disengagement to increasing participation.' These are consistent -- the preferences show the behavior, the summary explains the trend.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.preferences.community_and_civic",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          },
-          {
-            "id": 2,
-            "text": "Facebook community management as civic infrastructure: Profile's technology preferences describe managing three Facebook groups. Profile's political_scientist summary characterizes this as 'informal civic infrastructure.' These assessments are compatible and complementary.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.preferences.technology",
-            "source_b_ref": "extracted_profile.summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Cultural traditionalism and social progressivism: Profile's political_scientist summary says 'economically progressive, culturally traditional,' which is consistent with the psychologist summary's mention of faith and family values. Both summaries acknowledge the same tension without contradicting each other.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.summaries.political_scientist",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+      "sensory_and_physical_context": {
+        "description": "Non-clinical physical factors: chronic pain, mobility, sleep, dietary practices tied to non-preference reasons, family stress patterns",
+        "items": [
+          "Chronic lower back pain for ~18 months, worse in mornings and after prolonged standing (cooking for events); manages with ibuprofen 2-3x/week and weekly yoga; has not seen a doctor due to cost (Q31, Q31 follow-up, Q34)",
+          "Persistent afternoon fatigue: suspects iron deficiency based on mother's similar experience; copes with coffee and sweets; has not obtained blood work (Q33, Q33 follow-up)",
+          "Poor sleep quality: lies awake ruminating about finances, children's futures, and mother's health; falls asleep quickly from exhaustion but wakes with racing thoughts; has tried yoga breathing with inconsistent success (Q43, Q43 follow-up)",
+          "Carries extra weight since pregnancies; acknowledges need for more activity but constrained by time and cost (Q31)",
+          "Tension headaches during high-stress periods; one episode lasted three days but refused ER due to cost (Q31, Q36)",
+          "Chest tightness episodes during acute financial or planning stress: 10-15 minute duration, managed with 4-count yoga breathing and stopping activity (Q45 follow-up)",
+          "High coffee consumption with sugar throughout the day as energy management (Q32 follow-up)",
+          "Does not smoke; drinks alcohol rarely (beer or wine at parties, maybe once every couple months); no substance use (Q38, Q39)",
+          "Carlos's stress pattern: becomes even quieter than usual, sleeps poorly, worries about providing for family (Q46)",
+          "Diego's stress response: becomes withdrawn, retreats to room, draws for hours (Q46)",
+          "Sofia's stress response: becomes clingy, wants to be right next to Maria constantly (Q46)",
+          "Family flu episode last winter knocked out entire household; Maria was in bed five days; Carlos missed two days of work; mother came over despite risk to help; Lupita delivered medicine (Q33, Q33 follow-up)"
+        ]
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Carlos's political stance: Interview describes Carlos as politically disengaged ('just let me work and take care of my family') but occasionally fired up about construction worker or immigration issues (Q24 follow-up). This household political dynamic is absent from the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q24 follow-up",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 2,
-            "text": "Generational divide on BLM in Mexican community: Interview describes older generation's reluctance to engage ('that's their business') versus younger generation's vocal support, with Maria positioning herself in between (Q27, Q30). This intracommunity political dynamic is not captured in the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q27, Q30",
-            "source_b_ref": "extracted_profile (absent)"
-          },
-          {
-            "id": 3,
-            "text": "Neighbor's college-age daughter as political influence: Interview identifies this young woman as someone who taught Maria about solidarity and intersectionality (Q30 follow-up). This cross-generational political learning relationship is absent from the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q30 follow-up",
-            "source_b_ref": "extracted_profile (absent)"
-          }
-        ],
-        "summary": { "consistent": 0, "inconsistent": 0, "gaps": 3 }
-      }
-    },
-
-    "psychologist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Caretaking pattern: Seed's persona describes Maria channeling 'curiosity and methodical energy into weaving art, food, and community together.' Interview reveals a deeply embedded caretaker pattern -- caring for brother as a teenager, mother as an adult, children, church community, neighborhood. Maria's identity is structured around being needed (Q01, Q05, Q17, Q35, Q44, Q109). Consistent with seed's community-focused framing but significantly deeper.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "persona, professional_persona",
-            "source_b_ref": "Q01, Q05, Q17, Q35, Q44, Q109"
-          },
-          {
-            "id": 2,
-            "text": "Quirky detail -- hoarding kitchen gadgets: Seed mentions Maria 'occasionally hoards seldom-used kitchen gadgets.' This specific behavioral detail does not appear anywhere in the interview. It was neither confirmed nor contradicted.",
-            "verdict": "GAP",
-            "source_a_ref": "persona: hoarding kitchen gadgets",
-            "source_b_ref": "interview (not mentioned)"
-          },
-          {
-            "id": 3,
-            "text": "Forgetting to water garden: Seed mentions Maria 'forgets to water their garden during particularly busy weeks.' Interview confirms this behavior -- 'Sometimes I forget to water everything when I'm really busy with event planning and stuff comes back kind of sad looking' (Q17 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "persona: forget to water garden",
-            "source_b_ref": "Q17 follow-up"
-          },
-          {
-            "id": 4,
-            "text": "Artistic engagement: Seed's arts_persona mentions watercolor, pottery, folk dance, artists (O'Keeffe, Monet, Pollock), and a multicultural book club with specific authors (Morrison, Murakami, Adichie). Interview confirms folk dance (Q01, Q15), book club with Morrison and Adichie (Q07), and watercolor/pottery at the School of the Arts (seed reference, not directly in interview). The specific artist names (O'Keeffe, Monet, Pollock) and Murakami as book club author do not surface in the interview.",
-            "verdict": "GAP",
-            "source_a_ref": "arts_persona",
-            "source_b_ref": "Q01, Q07, Q15"
-          },
-          {
-            "id": 5,
-            "text": "Coping through cooking: Seed mentions Maria 'channels curiosity and methodical energy' through food and community. Interview vividly confirms cooking as emotional regulation -- making 60 tamales at midnight during financial stress (Q38), the kitchen as 'therapy' (Q38). Behavioral pattern is consistent with seed's description and deeply elaborated.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "persona, culinary_persona",
-            "source_b_ref": "Q38, Q43"
-          },
-          {
-            "id": 6,
-            "text": "Co-ed recreational soccer league: Seed's sports_persona states Maria 'participates in a co-ed recreational soccer league each spring.' Interview never mentions Maria playing soccer herself -- only son Diego plays soccer (Q05, Q19). This may be a seed element that does not represent current behavior.",
-            "verdict": "INCONSISTENT",
-            "source_a_ref": "sports_persona: co-ed recreational soccer league",
-            "source_b_ref": "Q05, Q15, Q19 (only Diego's soccer mentioned)"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 1, "gaps": 2 }
+      "media_and_information_diet": {
+        "description": "News sources, social media platforms, entertainment formats, information-seeking behavior",
+        "items": [
+          "Facebook (primary platform): manages 3 community groups, shares posts and resources, browses 1-2 hours daily for community management (Q48)",
+          "Instagram: posts food and garden photos, follows cooking and art accounts, ~30 min before bed (Q48 follow-up)",
+          "WhatsApp: multiple group chats for school, church, dance group, family -- primary communication tool for Mexican community (Q48)",
+          "YouTube: watches GED math tutorials from a specific creator she finds effective, plus cooking videos (Q18 follow-up)",
+          "Follows Atlanta Falcons and Hawks on social media (Q48 follow-up)",
+          "Gets health information from children's pediatrician (trusted) and government health websites (Q42)",
+          "Gets political information through personal network (Lupita, brother Luis, church ladies, book club member Janet) and phone research -- explicitly issue-driven rather than party-driven (Q23 follow-up)",
+          "Father Morales trusted for guidance on health decisions (vaccine advocacy) and community matters (Q42, Q42 follow-up)",
+          "Avoids conspiracy content, political arguments, and drama on social media; keeps feeds positive (Q48 follow-up)",
+          "Reads multicultural literary fiction through monthly book club: currently 'Americanah' by Chimamanda Ngozi Adichie; previously 'Beloved' by Toni Morrison (Q07 follow-up)"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Emotional breakdown episode: Interview provides a detailed account of the fall 2025 crisis -- sitting on the bathroom floor crying, feeling overwhelmed by converging financial, parenting, and caregiving demands (Q44). Profile's psychologist summary accurately captures this as revealing 'her emotional regulation system can be overwhelmed when multiple role demands converge simultaneously.' Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q44",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          },
-          {
-            "id": 2,
-            "text": "Nighttime rumination: Interview describes lying awake running through financial worries, children's futures, and mother's health (Q43). Profile's others_misc captures 'poor sleep quality: lies awake ruminating about finances and family concerns' and psychologist summary mentions 'Neuroticism manifests as nighttime rumination.' Accurately represented in both sections.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q43, Q45",
-            "source_b_ref": "extracted_profile.others_misc.sensory_and_physical_context, summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Coping mechanisms inventory: Interview identifies cooking (Q38), yoga breathing (Q45 follow-up), garden time (Q43 follow-up), Lupita check-ins (Q44 follow-up), and Mass attendance (Q44 follow-up) as coping strategies. Profile's psychologist summary mentions 'cooking as emotional regulation, yoga breathing, social support from Lupita.' Garden time and Mass are mentioned in preferences but not explicitly in the psychologist's coping framework.",
-            "verdict": "GAP",
-            "source_a_ref": "Q38, Q43 follow-up, Q44 follow-up, Q45 follow-up",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Self-concept evolution: Interview traces a shift from 'just a helper' to recognizing herself as a leader after the Dia de los Muertos festival (Q02 follow-up). Profile's psychologist summary captures the 'tension between her caretaker identity (always helping others) and her emerging recognition that she must invest in herself (GED, career).' Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q02, Q02 follow-up",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Children's behavioral responses to household stress: Interview describes Diego becoming withdrawn and drawing for hours, Sofia becoming clingy (Q46). This family stress-response pattern is absent from the profile entirely.",
-            "verdict": "GAP",
-            "source_a_ref": "Q46",
-            "source_b_ref": "extracted_profile (absent)"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 2 }
+      "technology_and_tool_use": {
+        "description": "Device preferences, app usage, digital communication norms",
+        "items": [
+          "Smartphone is primary and likely only personal device for social media, photography, communication, and learning",
+          "Uses phone calendar app to manage family schedules, children's activities, and event planning (started recently as life became busier, Q18)",
+          "Uses phone camera for food photography, event documentation, and everyday life captures; asked to photograph church events regularly (Q17 follow-up)",
+          "Plans events using physical notebook (budgets, vendor contacts, to-do lists) supplemented by phone for digital tasks",
+          "No computer or home office mentioned; works from kitchen table with notebook and phone (Q11 follow-up)",
+          "Carlos teases her about being 'addicted to my phone' (Q48 follow-up)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
+      "unresolved_or_ambiguous": {
+        "description": "Information that could not be confidently assigned to preferences or summaries; includes seed data not confirmed by interview",
+        "items": [
           {
-            "id": 1,
-            "text": "Conscientiousness characterization: Psychologist summary describes 'high Conscientiousness through meticulous event budgeting, meal planning, and household management.' Behavioral_economist summary describes the same meticulous budgeting and planning. These cross-expert characterizations are consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.summaries.psychologist",
-            "source_b_ref": "extracted_profile.summaries.behavioral_economist"
+            "content": "Seed data mentions interest in artists Georgia O'Keeffe, Claude Monet, and Jackson Pollock. These specific names did not surface in the interview.",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Artistic influences from seed not directly expressed in interview responses. Retained in arts_and_culture with seed attribution."
           },
           {
-            "id": 2,
-            "text": "Openness to Experience: Psychologist summary states 'Openness to Experience is notable in her artistic pursuits (dance, watercolor, pottery, multicultural reading) and willingness to experiment with fusion cooking, though constrained by economic realities.' This is consistent with the hobbies_and_recreation and arts_and_culture preference sections which list all these activities. No contradiction.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.summaries.psychologist",
-            "source_b_ref": "extracted_profile.preferences.hobbies_and_recreation, arts_and_culture"
+            "content": "Seed data mentions weekend road trips to Appalachian foothills, annual cultural escapes to Savannah's historic district, and occasional European travel to Barcelona and Lisbon.",
+            "candidate_owner": "behavioral_economist",
+            "reason_unresolved": "Travel aspirations from seed did not surface in interview. Given household economics ($400 savings, $3,000-$4,000/month income), these trips are financially implausible in the current situation. Marked as aspirational in corrected travel preferences."
           },
           {
-            "id": 3,
-            "text": "Relational style: Psychologist summary says 'clear attachment to a small number of deep relationships (Lupita, mother, Ana) rather than broad shallow networks.' Social_and_relationships preferences list the same core relationships. However, the preference section also lists broader ties (book club, church community, Facebook groups), which the psychologist correctly distinguishes from the deep attachment pattern. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "extracted_profile.summaries.psychologist",
-            "source_b_ref": "extracted_profile.preferences.social_and_relationships"
+            "content": "Seed data states Maria participates in a co-ed recreational soccer league each spring.",
+            "candidate_owner": "drop",
+            "reason_unresolved": "Personal soccer participation not mentioned in interview; only son Diego's recreational soccer league discussed. May be aspirational in seed or a past activity that was dropped."
+          },
+          {
+            "content": "Seed describes Maria as occasionally hoarding seldom-used kitchen gadgets.",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Quirky behavioral detail from seed narrative did not naturally surface during interview. Neither confirmed nor contradicted."
+          },
+          {
+            "content": "Nature of Carlos's mother Dona Elena's stomach health issue (resolved but vague).",
+            "candidate_owner": "demographer",
+            "reason_unresolved": "Deliberately kept vague in interview per behaviors-never-labels rule. Maria noted she 'was losing weight and couldn't keep food down' and 'they eventually figured out what was going on and she's doing better' (Q35). No clinical detail provided."
+          },
+          {
+            "content": "Haruki Murakami listed in seed as a book club author but did not surface in interview.",
+            "candidate_owner": "arts_and_culture",
+            "reason_unresolved": "Book club's current and previous selections (Americanah, Beloved) were discussed but Murakami not mentioned. May be a past selection or seed embellishment. Retained in arts_and_culture with seed note."
           }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Guilt pattern: Interview reveals Maria feels guilt when unable to provide (shoes for Diego, Q64 follow-up), guilt when others cover for her during illness (Q33 follow-up), and guilt about 'dropping the ball' as a mother (Q43). This recurrent guilt pattern is not explicitly named in the psychologist summary.",
-            "verdict": "GAP",
-            "source_a_ref": "Q33 follow-up, Q43, Q64 follow-up",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          },
-          {
-            "id": 2,
-            "text": "Cultural barriers to help-seeking: Interview describes Maria's awareness that her culture discourages professional help ('you're supposed to be strong, pray about it, keep going,' Q45) but her own attitude is shifting. She identifies practical barriers (cost, time, Spanish-speaking availability) over stigma. This nuanced shift in help-seeking attitudes is captured only briefly ('I'm starting to think differently about that') and not fully in the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q45, Q45 follow-up",
-            "source_b_ref": "extracted_profile (partially absent)"
-          },
-          {
-            "id": 3,
-            "text": "Parenting motivation as primary driver: Interview repeatedly frames Maria's decisions through the lens of her children's future -- staying in the neighborhood for schools, pursuing GED so children see her succeed, wanting children to attend college (Q01, Q43, Q62, Q108, Q109). Profile captures this in multiple places but the psychologist summary could more explicitly foreground motherhood as the central motivational axis.",
-            "verdict": "GAP",
-            "source_a_ref": "Q01, Q43, Q62, Q108, Q109",
-            "source_b_ref": "extracted_profile.summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Diego's bullying experience and Maria's response: Interview reveals Diego was being made fun of at school, came home crying; Maria talked to his teacher, explaining racial jokes ('taco comments,' Q28). This parenting challenge and Maria's protective advocacy response are not captured in the profile.",
-            "verdict": "GAP",
-            "source_a_ref": "Q28, Q44",
-            "source_b_ref": "extracted_profile (absent)"
-          }
-        ],
-        "summary": { "consistent": 0, "inconsistent": 0, "gaps": 4 }
+        ]
       }
     }
-  },
-
-  "overall_verdict": "PASS_WITH_REVISIONS",
-
-  "inconsistencies_found": [
-    {
-      "id": 1,
-      "description": "Seed's travel_persona describes active travel (Appalachian road trips, Savannah, Barcelona, Lisbon) that is financially implausible given interview-revealed household economics. The profile acknowledges this gap in unresolved_or_ambiguous but the travel preference section still references these seed destinations.",
-      "severity": "MINOR",
-      "experts": ["behavioral_economist"]
-    },
-    {
-      "id": 2,
-      "description": "Seed's professional_persona states Maria is 'actively pursuing certification in community development,' but interview reveals she has not enrolled in any program and is self-studying for GED only (Q91, Q92).",
-      "severity": "MINOR",
-      "experts": ["behavioral_economist"]
-    },
-    {
-      "id": 3,
-      "description": "Seed's sports_persona states Maria participates in a co-ed recreational soccer league each spring. Interview contains no mention of Maria playing soccer -- only her son Diego plays. This seed element appears to be unsubstantiated.",
-      "severity": "MINOR",
-      "experts": ["psychologist"]
-    }
-  ],
-
-  "resolutions": [
-    {
-      "inconsistency_id": 1,
-      "resolution": "Travel preferences should be clearly marked as aspirational seed data that does not reflect current economic reality. The profile already notes this in unresolved_or_ambiguous, which is appropriate."
-    },
-    {
-      "inconsistency_id": 2,
-      "resolution": "The interview establishes that the GED is the current active educational pursuit; community development certification is a future goal contingent on GED completion. Profile's work_and_career section correctly reflects this sequencing."
-    },
-    {
-      "inconsistency_id": 3,
-      "resolution": "The unresolved_or_ambiguous section already flags this ('Personal soccer participation not mentioned in interview; only son Diego's soccer league discussed. May be aspirational in seed data or a past activity'). This is an appropriate resolution."
-    }
-  ],
-
-  "gaps_addressed": [
-    "Father's background, education, and current relationship with Maria should be added to the profile for demographic completeness.",
-    "Brother Luis's demographic details (age 28, community college, car dealership) and role as political information source should be captured.",
-    "PeachCare enrollment and SNAP ineligibility (marginally over income threshold) should be noted in a financial or government benefits section.",
-    "Specific debt figures ($1,800 credit card, $600 medical, $200 to mother) and savings ($400 + $100-$150 cash) should be captured.",
-    "Monthly expense breakdown ($1,450 rent, $320 car, ~$250 utilities, $500-$600 groceries) should be noted.",
-    "Children's behavioral stress responses (Diego withdrawing, Sofia clinging) should be added to the psychologist domain.",
-    "Maria's guilt pattern and cultural barriers to professional help-seeking should be more explicitly addressed."
-  ],
-
-  "expert_summaries": {
-    "demographer": "Maria Buendia is a 34-year-old US-born Mexican-American woman living in Lilburn, Georgia (Gwinnett County), where she has resided her entire life (Q01, Q87, Q97). She is married to Carlos, age 36, a construction worker, and they have two children -- Diego (10) and Sofia (7) -- in a four-person household renting a three-bedroom home for $1,450/month (Q05, Q11, Q56, Q58). Her education stopped at 11th grade with no diploma (Q01, Q90), and she has no formal occupation, relying on informal catering income of $400-$800/month to supplement Carlos's construction wages of approximately $3,200/month (Q16, Q72, Q74). The household income places them near the lower-middle-income threshold for a family of four in the Atlanta metro area. Her mother Rosa, age 62, lives 15 minutes away with significant knee problems requiring Maria's caregiving support 2-3 times weekly (Q05, Q35). Her father lives across town following a separation, and her brother Luis, 28, completed community college and works at a car dealership (Q05).",
-
-    "behavioral_economist": "Maria's economic behavior reflects constrained optimization under persistent scarcity rather than preference-driven choices (Q56, Q61, Q83). She demonstrates strong loss aversion around her small savings buffer of approximately $400, describing acute distress when forced to deplete it (Q61, Q82). Her informal catering business shows entrepreneurial resourcefulness: she scales labor supply based on need (selling tamales through Facebook at $10/dozen during income shocks, Q81), uses social networks for client acquisition, and meticulously manages food costs through bulk purchasing, garden cultivation, and strategic shopping at ethnic markets on Buford Highway (Q56). Her decision to forgo personal health care for two or more years while maintaining children's PeachCare coverage reveals systematic self-sacrifice in household resource allocation (Q36, Q40). She responds to income shocks with immediate multi-pronged behavioral adjustments including increased informal labor, discretionary spending cuts, and activation of family lending networks with her mother and Lupita (Q60, Q64, Q81). Her GED pursuit represents a calculated human capital investment despite high opportunity cost from caregiving and household demands (Q18, Q108).",
-
-    "political_scientist": "Maria exhibits a civic engagement trajectory moving from youthful disengagement to increasing participation, catalyzed by parental stakes in public institutions (Q23, Q25). She registered to vote at 26-27 and participates in presidential elections but inconsistently in lower-ballot races, reflecting information-cost barriers rather than apathy (Q23). Her political orientation is issue-driven rather than party-identified, clustering around affordable health care, adequately funded schools, cost of living, and fair treatment of immigrant-origin families (Q24, Q95, Q96). She has recently expanded her civic repertoire to include attending county commission meetings, prompted by social network influence from book club member Janet (Q25). Her community organizing -- moderating three Facebook groups, planning multicultural events, bridging ethnic groups through neighborhood potlucks (Q08, Q48) -- functions as informal civic infrastructure even though she does not frame it politically. Her response to racial justice movements is empathetic and solidarity-oriented but behaviorally cautious, promoting inclusion through event work rather than protest attendance (Q26, Q27, Q29).",
-
-    "psychologist": "Maria displays high conscientiousness through meticulous event budgeting, meal planning, and household management, paired with high agreeableness evident in her relentless caregiving across family and community spheres (Q02, Q15, Q56, Q65). Her emotional world is organized around a caretaker identity that extends from childhood (caring for her brother after her mother worked two jobs, Q01) through adulthood (caring for her mother, children, church community, and neighborhood). A tension exists between this caretaker orientation and her emerging recognition that she must invest in herself, visible in her GED pursuit and career aspirations (Q02 follow-up, Q108). When multiple role demands converge simultaneously -- as during the fall 2025 crisis combining financial stress, Diego's school difficulties, and her mother's health episode -- her emotional regulation system can become overwhelmed, as evidenced by the bathroom-floor crying episode (Q44). She has since developed functional coping mechanisms including cooking as emotional regulation (Q38), yoga breathing techniques (Q45 follow-up), weekly honest check-ins with Lupita (Q44 follow-up), and garden time as a solitary restorative activity (Q43 follow-up). Her relational style is warm and reciprocal, with deep attachments to a small network (Lupita, her mother, Ana from dance) rather than broad shallow connections (Q07, Q05)."
-  },
-
-  "preferences_updates": {
-    "additions": [
-      "Add father's details: separated from mother, lives across town in Lilburn area, ~6th-7th grade education from Mexico, former landscaper and construction worker",
-      "Add brother Luis's details: age 28, community college graduate, works at car dealership, serves as political information source",
-      "Add PeachCare enrollment for children and SNAP ineligibility (marginally over income limit) to a benefits/government assistance section",
-      "Add specific financial figures: $1,800 credit card debt, $600 medical debt (Sofia's ear infection), $200 owed to mother, $400 savings, $100-$150 emergency cash",
-      "Add monthly expense breakdown: $1,450 rent, $320 car payment, ~$250 utilities, $500-$600 groceries, $50 medical payment",
-      "Add children's stress response patterns: Diego withdraws and draws for hours, Sofia becomes clingy",
-      "Add Diego's school bullying experience (racial/ethnic taunting about Mexican heritage) and Maria's advocacy response"
-    ],
-    "corrections": [
-      "Travel preferences section should explicitly state that Appalachian, Savannah, and European travel references come from seed data only and were not supported by interview content",
-      "Sports preferences should note that Maria's personal soccer league participation (from seed) was not confirmed in the interview"
-    ],
-    "removals": []
-  },
-
-  "final_status": "PASS_WITH_REVISIONS. The interview is richly consistent with seed data across all four expert domains. Three minor inconsistencies were identified between seed aspirational content and interview-revealed economic reality (travel, certification status, soccer). The extracted_profile faithfully represents the interview across most domains but has completeness gaps in financial details, father/brother demographics, government benefits, and several behavioral patterns (guilt, children's stress responses, help-seeking attitudes). These are addressable through profile amendments without requiring re-interview."
+  }
 }

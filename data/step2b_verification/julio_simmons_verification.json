@@ -1,702 +1,926 @@
 {
-  "verification_metadata": {
+  "verification": {
+    "metadata": {
+      "participant_id": "e7035edf5bc744c9912694a7d4b2a99c",
+      "name": "Julio Simmons",
+      "verification_date": "2026-03-31",
+      "protocol": "4-direction expert panel verification (Demographer, Behavioral Economist, Political Scientist, Psychologist)",
+      "model": "Claude Opus 4.6 (1M context)",
+      "seed_source": "data/step1_seed/julio_simmons_seed.json",
+      "interview_source": "data/step2_interview/julio_simmons_interview.json"
+    },
+
+    "direction_1_seed_vs_interview": {
+      "description": "Seed data compared against interview transcript for consistency, enrichment, and contradiction.",
+      "demographer": [
+        {
+          "id": "D1-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Seed states age 49, male, divorced, Rochester NY 14618, graduate education, not_in_workforce. Interview confirms all identically: age 49 (Q85: DOB October 14, 1976), male (Q89), divorced ~6 years ago (Q84), Brighton/Rochester 14618 (Q08), master's degree (Q90), not currently employed (Q16)."
+        },
+        {
+          "id": "D1-DEM-02",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'German-Irish descent' and 'middle-class family' in Rochester. Interview enriches with specific detail: dad Karl worked in Kodak-adjacent tooling/die manufacturing, mom Eileen was medical records clerk at Strong Memorial Hospital for 20+ years, grandparents on dad's side made sauerkraut, mom's side had big Irish Christmas gatherings (Q01, Q05, Q100-Q107)."
+        },
+        {
+          "id": "D1-DEM-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions RIT and creative coding but no specifics. Interview specifies: B.S. in Applied Mathematics from RIT, M.S. in Computational Science from University of Rochester, attended Brighton High School (Q01, Q90)."
+        },
+        {
+          "id": "D1-DEM-04",
+          "finding": "ENRICHED",
+          "detail": "Seed provides no family details beyond marital status. Interview identifies full family: parents Karl and Eileen (mid-70s, Brighton), younger sister Greta (44, nurse practitioner, Syracuse, married to Paul, children Milo 12 and Sophie 9), ex-wife Diana (social worker), Uncle Frank (Buffalo, retired electrician), cousin Heinrich (vineyard near Seneca Lake) (Q05, Q06)."
+        },
+        {
+          "id": "D1-DEM-05",
+          "finding": "CONSISTENT",
+          "detail": "Seed states bachelors_field as 'stem.' Interview confirms: applied mathematics at RIT, computational science at U of R (Q01, Q90). Both STEM fields."
+        },
+        {
+          "id": "D1-DEM-06",
+          "finding": "ENRICHED",
+          "detail": "Seed states occupation as 'not_in_workforce.' Interview provides trajectory: left workforce ~3 years ago after burnout cycles, previously freelanced data visualization, adjuncted at RIT, worked at analytics firm. Currently draws down savings supplemented by sporadic freelance at $500-800/month (Q01, Q16, Q65)."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D1-BEH-01",
+          "finding": "ENRICHED",
+          "detail": "Seed describes 'competitive drive pushes them to secure grant funding.' Interview reveals the grant pursuit is real but marked by devastating failure: 42-page application, 3 months of work, form rejection with zero feedback. The competitive framing from the seed is tempered by the interview's revelation of how grant rejection produces identity-level crisis (Q04, Q24 follow-up, Q44)."
+        },
+        {
+          "id": "D1-BEH-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'leveraging Python, MATLAB, and creative coding to design immersive workshops.' Interview quantifies the economic reality: workshops bring $100-120/session at Rochester Brainery, freelance gigs pay $400-800/project, total monthly earned income $500-800 in good months, zero in bad months (Q16, Q71, Q72)."
+        },
+        {
+          "id": "D1-BEH-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions career goals of launching a makerspace and securing grants. Interview provides granular financial picture: business plan 70% complete, $30K-50K estimated startup cost, targeting Monroe County community development grant with June deadline, pop-up workshops planned for summer demand validation (Q108 follow-up)."
+        },
+        {
+          "id": "D1-BEH-04",
+          "finding": "ENRICHED",
+          "detail": "Seed persona references 'budget constraints keep most trips regional.' Interview quantifies: monthly fixed costs ~$1,700, income ~$500-800/month, drawing down savings at several hundred dollars/month, emergency fund covers 3-4 months of expenses, $8,000 out-of-pocket insurance maximum equals entire emergency fund (Q56, Q57, Q40, Q82)."
+        },
+        {
+          "id": "D1-BEH-05",
+          "finding": "CONSISTENT",
+          "detail": "Seed culinary_persona describes experimental cooking with specialty ingredients (miso-glazed black cod, sous-vide duck breast, Sichuan pepper chocolate truffles, heirloom tomatoes from farmers' market). Interview confirms sourcing from Rochester Public Market and farmers' market weekly, but adds budget-constrained fallback: rice, beans, pasta, Aldi vegetables during lean months (Q15, Q18, Q56, Q81)."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D1-POL-01",
+          "finding": "NO SEED DATA",
+          "detail": "Seed contains no explicit political information beyond 'progressive Midwestern values' in cultural_background. Interview provides extensive political detail: votes in every election including school board, leans strongly Democratic, issue-driven (education, environment, healthcare, arts funding), donates to local candidates and Rochester Environmental Action League, has done phone banking (Q23-Q30, Q95-Q96)."
+        },
+        {
+          "id": "D1-POL-02",
+          "finding": "ENRICHED",
+          "detail": "Seed's 'progressive Midwestern values that emphasize education, self-reliance, and community participation' is confirmed and elaborated. Interview shows these translate into specific policy positions: strong social safety net, aggressive climate action, institutional skepticism tempered by data trust, equity-focused community building (Q24, Q25)."
+        },
+        {
+          "id": "D1-POL-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'social equity and environmental stewardship.' Interview provides concrete actions: pushed STEM outreach into underserved neighborhoods (Beechwood, Northeast), offered scholarship workshop spots, reduced meat consumption for environmental reasons, bikes when possible, buys local (Q24, Q26, Q29)."
+        },
+        {
+          "id": "D1-POL-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions no civic engagement specifics. Interview reveals: League of Women Voters guide user, creates candidate research spreadsheets with weighted issue scores, cross-references Democrat and Chronicle and Rochester Beacon coverage, emails candidates directly for small races (Q23 follow-ups)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D1-PSY-01",
+          "finding": "ENRICHED",
+          "detail": "Seed persona describes 'anxiety and a competitive streak often drive them between bursts of creative brilliance and bouts of self-critical burnout.' Interview provides the full behavioral cycle: idea triggers intense focus (10-12 hour sessions, skipping meals, chest tightness), followed by 2-3 days of marathon work, then 12-14 hour sleep crashes with feelings of hollowness and 'why did I bother' (Q01 follow-up). This is richly detailed beyond seed's summary."
+        },
+        {
+          "id": "D1-PSY-02",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'mindfulness meditation to manage his anxiety.' Interview describes a comprehensive coping scaffold: 20-minute daily meditation (Insight Timer, body-scan preferred), mood/sleep journal (1-10 rating), full-spectrum light therapy lamp (30 min/morning Oct-Apr), acupuncture for jaw tension, low-dose prescription for sleep/racing thoughts, social commitments treated as non-negotiable behavioral activation (Q31, Q37, Q39, Q45, Q50)."
+        },
+        {
+          "id": "D1-PSY-03",
+          "finding": "ENRICHED",
+          "detail": "Seed describes 'restless polymath' who is 'interested in everything but never seemed to settle.' Interview reveals this is both identity-affirming (the lab experience with Dr. Tanaka: 'your weird combination of skills isn't weird -- it's exactly what we need') and self-sabotaging (portfolio website redesign loop, constant project-jumping that strained marriage) (Q01, Q02 follow-up, Q16 follow-up)."
+        },
+        {
+          "id": "D1-PSY-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions divorce with no behavioral detail. Interview reveals post-divorce avoidant relational pattern: replays conversations, catalogues dating missteps obsessively, paces apartment, drafts and deletes texts 4-5 times, lets follow-up window close. Friend Marcus has identified the pattern. Physical symptoms accompany rumination: knotted stomach, inability to settle (Q05, Q05 follow-up)."
+        },
+        {
+          "id": "D1-PSY-05",
+          "finding": "MINOR GAP",
+          "detail": "Seed sports_persona mentions desire to 'improve lap times' and a 'competitive edge.' Interview acknowledges the competitive streak but presents it as subordinate to the collaborative/community orientation. The seed's competitive framing is somewhat overstated relative to interview self-presentation, which is more self-deprecating and uncertainty-driven (Q07 follow-up, Q109)."
+        },
+        {
+          "id": "D1-PSY-06",
+          "finding": "ENRICHED",
+          "detail": "Seed describes the persona broadly but interview reveals a three-week functional shutdown (Jan-Feb 2026): sleeping until 9-10am, catastrophic thoughts ('nobody would notice if I disappeared'), eating one meal/day (toast or cereal), unable to engage with work, 8-pound weight loss. Sister Greta intervened, stocked fridge, sat with him. This severity of behavioral disruption is not captured in the seed (Q33, Q33 follow-ups)."
+        }
+      ]
+    },
+
+    "direction_2_interview_vs_extracted_profile": {
+      "description": "Interview transcript compared against extracted_profile for accuracy, omissions, and misrepresentations.",
+      "demographer": [
+        {
+          "id": "D2-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile header demographics (age 49, male, divorced, Rochester NY 14618, master's degree, not in workforce) match interview exactly (Q84-Q90, Q08, Q16, Q65)."
+        },
+        {
+          "id": "D2-DEM-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not record date of birth (October 14, 1976) from Q85. Should be included in demographics header."
+        },
+        {
+          "id": "D2-DEM-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not record race/ethnicity explicitly in header. Interview states 'White. German-Irish background' (Q89). Should be in demographics."
+        },
+        {
+          "id": "D2-DEM-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not record birthplace (Rochester, New York, Q87) or U.S.-born status (Q86) in header."
+        },
+        {
+          "id": "D2-DEM-05",
+          "finding": "CONSISTENT",
+          "detail": "Profile demographer summary accurately captures the downward mobility narrative: graduate-educated but not in workforce, drawing down savings, income well below poverty threshold relative to credentials. Matches Q16, Q56, Q61, Q83."
+        },
+        {
+          "id": "D2-DEM-06",
+          "finding": "OMISSION",
+          "detail": "Profile demographer summary mentions parents' ages (mid-70s) but does not record their education: dad has trade certificate in tool and die making (Q100), mom has associate's degree in health information management from Monroe Community College (Q101). Should be included."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D2-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile behavioral economist summary accurately captures present-bias (choosing passion over pay), identity-based loss aversion, risk-tolerant on income/risk-averse on debt, mental accounting, and consumption-mood feedback loops. All match interview evidence."
+        },
+        {
+          "id": "D2-BEH-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the deliberate no-credit-card commitment device. Interview explicitly states this is intentional self-regulation: 'I know myself well enough to know that easy access to credit would be a problem for me' (Q60). This is a significant behavioral-economic finding."
+        },
+        {
+          "id": "D2-BEH-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the bartering behavior within the maker community (built a website in exchange for woodworking, Q60). This demonstrates alternative exchange norms and community reciprocity."
+        },
+        {
+          "id": "D2-BEH-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the car payment ($270/month, 8 months remaining) from Q63 as a significant budget item and near-term financial relief opportunity."
+        },
+        {
+          "id": "D2-BEH-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not record the tax filing behavior: TurboTax Self-Employed, tracks 1099 income and deductions (home office, art supplies, software, mileage), makes estimated quarterly payments, directs ~$300 refund to savings (Q75). This demonstrates sophisticated self-employed financial management."
+        },
+        {
+          "id": "D2-BEH-06",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately identifies the financial countdown clock anxiety and the monthly savings-check ritual. Interview confirms: checks balance once monthly during budget spreadsheet session, 'ruins the next hour,' previously checked compulsively before establishing monthly cadence (Q61 follow-up)."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D2-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile political scientist summary accurately captures consistent voting, Democratic lean, issue-driven orientation, moderate institutional skepticism, and shift from partisan activism toward localized community building. Matches Q23-Q30, Q95-Q96."
+        },
+        {
+          "id": "D2-POL-02",
+          "finding": "OMISSION",
+          "detail": "Profile community_and_civic section does not list Julio's specific priority policy issues: education funding, Great Lakes/Finger Lakes water quality, healthcare access for non-traditionally-employed, NEA/state arts council budgets (Q23 follow-up). These are his primary political motivators."
+        },
+        {
+          "id": "D2-POL-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture Julio's self-identified evolution from ardent partisan (volunteered for campaigns, yard signs in 20s-30s) to 'critical ally' focused on local competence over party (Q95 follow-up). This is a significant political trajectory."
+        },
+        {
+          "id": "D2-POL-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the intergenerational political negotiation with father Karl: dad more conservative on fiscal issues, Julio uses specific human stories rather than data/abstract arguments to bridge the gap, improv 'yes and' technique applied to political disagreements (Q25 follow-up, Q30 follow-up)."
+        },
+        {
+          "id": "D2-POL-05",
+          "finding": "CONSISTENT",
+          "detail": "Profile accurately captures concrete racial equity actions: STEM outreach pop-ups in Beechwood/Northeast neighborhoods, workshop scholarships, adjusting volunteer approach to be less instructional and more listening-centered (Q26 follow-up, Q29)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D2-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile psychologist summary accurately captures high Openness, variable Conscientiousness, moderate Extraversion with crowd sensitivity, competitive self-evaluation, and low Emotional Stability with somatic manifestations. Matches Q01, Q05, Q31, Q43, Q45."
+        },
+        {
+          "id": "D2-PSY-02",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the full-body presentation shutdown during graduate thesis colloquium: vision narrowing, inability to speak, hand trembling, sat on bathroom floor for 20 minutes (Q45 follow-up). This was the pivotal moment of self-recognition that physical stress responses were beyond normal nervousness."
+        },
+        {
+          "id": "D2-PSY-03",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the selective disclosure pattern: Marcus knows most, Greta understands from clinical standpoint, Priya recognizes in-the-moment signs and provides breathing exercises, parents lack framework entirely -- mom says 'relax more,' dad thinks willpower should suffice (Q45 follow-up). This differential vulnerability map is psychologically significant."
+        },
+        {
+          "id": "D2-PSY-04",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the post-divorce relational avoidance cycle: good date triggers exhaustive post-mortem replay, physical pacing, stomach knots, drafts-and-deletes texts 4-5 times, window for natural follow-up closes, pattern repeats. Marcus has named this pattern explicitly (Q05 follow-ups)."
+        },
+        {
+          "id": "D2-PSY-05",
+          "finding": "OMISSION",
+          "detail": "Profile does not capture the family emotional communication deficit: 'love but not language for feeling,' mother proxies emotional information ('your father had a hard week'), Julio attempts to model honesty with Greta as pattern-breaking, wishes father could say 'I'm scared about getting old' (Q46 follow-up). This family system dynamic shapes his own emotional processing."
+        },
+        {
+          "id": "D2-PSY-06",
+          "finding": "CONSISTENT",
+          "detail": "Profile correctly identifies the creativity-as-vulnerability paradox: flow states are both greatest resource and greatest risk, triggering unsustainable intensity cycles. Interview confirms with specific example: 8-hour coding session skipping meals, jaw clenched all day, worked until 3am, followed by next-day crash on couch feeling depleted (Q15 follow-up)."
+        }
+      ]
+    },
+
+    "direction_3_profile_internal_consistency": {
+      "description": "Extracted profile checked for internal contradictions, logical inconsistencies, and cross-section coherence.",
+      "demographer": [
+        {
+          "id": "D3-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "All demographic fields in the header are internally consistent with the body of the profile. Age 49, Rochester NY 14618, divorced, master's degree, not in workforce are referenced consistently across all 15 preference categories, 4 summaries, and 6 others_misc subcategories."
+        },
+        {
+          "id": "D3-DEM-02",
+          "finding": "CONSISTENT",
+          "detail": "Family details referenced across sections are consistent: parents Karl and Eileen (Brighton, mid-70s) appear in social_and_relationships, cultural_and_linguistic, and life_events_and_transitions without contradiction."
+        },
+        {
+          "id": "D3-DEM-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile sports_and_fitness section states cycling group is 'April-October, Sunday mornings.' However, Q18 describes cycling starting back up and Q15 says the cycling group runs in summer. The profile's date range is reasonable but the day is inconsistent: Q18 says 'Sunday mornings' for cycling but Q15's weekly schedule puts cycling on 'Saturdays' for physical activity. Seed sports_persona does not specify a day. Need to reconcile -- Q18 explicitly says 'Sunday mornings on the Erie Canal towpath,' so the profile should use Sunday."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D3-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Financial figures across sections are internally consistent: rent $950, health insurance $450, car payment $270, groceries $300-350, utilities $100-150, prescription $30, cat supplies ~$40, acupuncture $60 occasional = ~$2,200 typical month against $500-800/month income + savings draw. The profile's financial picture is internally coherent."
+        },
+        {
+          "id": "D3-BEH-02",
+          "finding": "CONSISTENT",
+          "detail": "The behavioral patterns are internally coherent across sections: spreadsheet tracking appears in finances (budget), politics (candidate research), health (mood journal), and work (project management). This systematic data-tracking behavior is consistently represented as a core trait."
+        },
+        {
+          "id": "D3-BEH-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile food_and_dining section lists 'Genny Cream Ale at D&D nights' but does not mention Bloody Mary at brunch (Q38). The profile's music section mentions Spotify subscription paused during financial crunch. Home_and_lifestyle mentions 'pauses subscriptions when tight' which is consistent. No contradiction but the food_and_dining evidence citations are slightly incomplete -- Q38 provides significant drinking-behavior detail."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D3-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile political scientist summary's characterization as 'issue-driven rather than partisan' is consistent with community_and_civic section's emphasis on local action and the behavioral economist's description of institutional skepticism. No contradictions across sections."
+        },
+        {
+          "id": "D3-POL-02",
+          "finding": "CONSISTENT",
+          "detail": "The racial equity engagement described in community_and_civic (outreach pop-ups in underserved neighborhoods, scholarship spots) is consistent with the political scientist summary's characterization of 'concrete, if modest, steps.' No inflation or deflation of engagement level across sections."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D3-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "The coping scaffold described across health_and_wellness (meditation, light therapy, acupuncture, prescription), social_and_relationships (commitments as 'non-negotiable'), and the psychologist summary (external commitments as behavioral activation) are mutually reinforcing and internally coherent."
+        },
+        {
+          "id": "D3-PSY-02",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile psychologist summary characterizes Agreeableness as 'low-to-moderate' citing 'competitive streak, critical self-evaluation, willingness to disagree.' However, the interview shows high prosocial behavior: workshop scholarships, STEM volunteering, adjusting to be less instructional with minority families, phone banking despite discomfort, bartering, mentoring students. Agreeableness is better characterized as 'moderate-to-high' with the self-critical pattern being an inward rather than interpersonal trait."
+        },
+        {
+          "id": "D3-PSY-03",
+          "finding": "CONSISTENT",
+          "detail": "The relational avoidance pattern in social_and_relationships (Hinge dating, struggles with follow-through) is consistent with the psychologist summary's 'avoidant tendencies in romantic contexts' and the life_events section's divorce listing. Cross-section coherence holds."
+        }
+      ]
+    },
+
+    "direction_4_completeness": {
+      "description": "Profile checked for gaps where interview provided information that the extracted profile failed to capture.",
+      "demographer": [
+        {
+          "id": "D4-DEM-01",
+          "finding": "MISSING",
+          "detail": "Date of birth (October 14, 1976, Q85) not in profile header."
+        },
+        {
+          "id": "D4-DEM-02",
+          "finding": "MISSING",
+          "detail": "Race/ethnicity (White, German-Irish, Q89) not in profile header."
+        },
+        {
+          "id": "D4-DEM-03",
+          "finding": "MISSING",
+          "detail": "Birthplace (Rochester, NY, Q87) and U.S.-born status (Q86) not in profile header."
+        },
+        {
+          "id": "D4-DEM-04",
+          "finding": "MISSING",
+          "detail": "Parents' education: father Karl -- high school + trade certificate in tool and die making (Q100); mother Eileen -- associate degree in health information management from Monroe Community College (Q101). Not recorded in profile."
+        },
+        {
+          "id": "D4-DEM-05",
+          "finding": "MISSING",
+          "detail": "Household members at age 16: both parents and sister Greta in Brighton; childhood dog Fritz (German Shepherd) (Q98, Q99). Not in profile."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D4-BEH-01",
+          "finding": "MISSING",
+          "detail": "Car payment: $270/month with 8 months remaining on a used Subaru Outback purchased ~3 years ago (Q63). This is a significant budget item and imminent expense elimination. Not in profile financial details."
+        },
+        {
+          "id": "D4-BEH-02",
+          "finding": "MISSING",
+          "detail": "No-credit-card commitment device: deliberate choice to avoid credit access as self-regulation (Q60). Not captured in profile."
+        },
+        {
+          "id": "D4-BEH-03",
+          "finding": "MISSING",
+          "detail": "Bartering within maker community: exchanged website development for woodworking (Q60). Not in profile."
+        },
+        {
+          "id": "D4-BEH-04",
+          "finding": "MISSING",
+          "detail": "Art sales as occasional income: sold painting for $400 at Makers' Row holiday craft fair, sold couple of paintings for ~$300 (Q60, Q81). Not in work_and_career income sources."
+        },
+        {
+          "id": "D4-BEH-05",
+          "finding": "MISSING",
+          "detail": "Financial security threshold self-identified as $36,000/year plus employer health insurance (Q83 follow-up). This is a key behavioral anchor for decision-making. Not in profile."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D4-POL-01",
+          "finding": "MISSING",
+          "detail": "Specific priority policy issues: education funding, Great Lakes/Finger Lakes water quality, healthcare access for non-traditionally-employed, NEA/state arts council budgets (Q23 follow-up). Not listed in community_and_civic."
+        },
+        {
+          "id": "D4-POL-02",
+          "finding": "MISSING",
+          "detail": "Political trajectory: ardent partisan in 20s-30s (campaign volunteering, yard signs) evolving to issue-driven pragmatist focused on local competence (Q95 follow-up). Not in political scientist summary."
+        },
+        {
+          "id": "D4-POL-03",
+          "finding": "MISSING",
+          "detail": "Intergenerational political negotiation: father Karl more conservative on fiscal issues, Julio bridges gap using specific human stories rather than data or abstract arguments (Q25 follow-up, Q30 follow-up). Not captured."
+        },
+        {
+          "id": "D4-POL-04",
+          "finding": "MISSING",
+          "detail": "Institutional trust hierarchy: trusts scientific institutions (CDC, peer-reviewed research, PubMed), skeptical of grant bureaucracies and party machinery, moderate trust in local journalism, skeptical of social media as information source (Q24 follow-up, Q42). Not explicitly mapped in profile."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D4-PSY-01",
+          "finding": "MISSING",
+          "detail": "Thesis colloquium presentation shutdown: first recognition that stress responses exceeded normal nervousness -- vision narrowing, inability to speak, trembling hands, 20 minutes on bathroom floor (Q45 follow-up). Not in profile."
+        },
+        {
+          "id": "D4-PSY-02",
+          "finding": "MISSING",
+          "detail": "Selective emotional disclosure map: Marcus (most), Greta (clinical framework), Priya (in-moment recognition), parents (no framework, mom says 'relax more,' dad believes in willpower) (Q45 follow-up). Not captured."
+        },
+        {
+          "id": "D4-PSY-03",
+          "finding": "MISSING",
+          "detail": "Post-date rumination cycle with specific physical markers: replays conversation, magnifies pauses, paces apartment, stomach knotted, drafts/deletes texts 4-5 times, uses meditation or Brian Eno to reset but by then follow-up window has closed (Q05 follow-up). Partially noted but behavioral specificity missing."
+        },
+        {
+          "id": "D4-PSY-04",
+          "finding": "MISSING",
+          "detail": "Family emotional communication deficit: 'love but not language for feeling,' mother proxies father's emotions, Julio models honesty with Greta as deliberate pattern-breaking (Q46 follow-up). Not in profile."
+        },
+        {
+          "id": "D4-PSY-05",
+          "finding": "MISSING",
+          "detail": "Three core values self-identified in order: creation ('the core of who I am'), connection (fears losing most -- 'without people who anchor me, creation becomes hollow'), and learning ('if I'm not learning I feel like I'm dying'). These constitute Julio's explicit identity architecture (Q109). Not in profile."
+        }
+      ]
+    },
+
+    "expert_summaries": {
+      "demographer": "Julio Simmons is a 49-year-old white male of German-Irish descent, born October 14, 1976, in Rochester, NY (14618/Brighton area), where he has lived his entire life (Q01, Q85-Q89, Q97). He holds a master's degree in computational science from the University of Rochester and a B.S. in applied mathematics from RIT (Q90), placing him in the upper tier of educational attainment for Monroe County. Despite these credentials, he has been out of the workforce for approximately three years, having exited due to cyclical burnout after stints in freelance data visualization and adjunct teaching (Q01, Q16, Q65). He is divorced from Diana (finalized ~6 years ago, Q84) after an 8-year marriage, lives alone with a cat, and has no children (Q05, Q11). His parents Karl (mid-70s, retired tool-and-die maker with trade certificate, Q100, Q106) and Eileen (mid-70s, retired medical records clerk with associate degree from MCC, Q101, Q103) live nearby in Brighton; his younger sister Greta (44, nurse practitioner) lives in Syracuse with husband Paul and children Milo (12) and Sophie (9) (Q05). His socioeconomic trajectory represents significant downward mobility relative to his education: he draws down savings to supplement sporadic freelance income of $500-800/month, with total monthly expenses of ~$1,900-2,200 and an emergency fund covering only 3-4 months (Q56, Q57, Q61, Q82). He represents a growing demographic of highly educated individuals who have exited traditional employment due to misalignment between their skill profiles, health needs, and available labor market structures.",
+
+      "behavioral_economist": "Julio exhibits classic present-bias in career decisions, consistently choosing intrinsically rewarding creative work over financially optimal alternatives -- turning down the Boston job offer after grad school (Q02), choosing the unfunded art-science lab, and ultimately leaving the workforce (Q01, Q34). His loss aversion operates not around financial losses per se but around identity loss: he would rather deplete savings at several hundred dollars per month than take a position that compromises his interdisciplinary maker/creator identity (Q83). He demonstrates sophisticated self-awareness through systematic tracking -- mood journals, budget spreadsheets, candidate research spreadsheets, sleep logs (Q39 follow-up, Q56, Q23 follow-up, Q61 follow-up) -- but limited ability to override the patterns this data reveals. His financial decision-making is risk-tolerant on income (accepting irregular freelance at $500-800/month, Q72) but risk-averse on debt (deliberate no-credit-card policy, paid off student loans, Q60, Q63). He engages in mental accounting separating survival funds from project funds and shows strong reciprocity norms: bartering website work for woodworking, offering workshop scholarships (Q60, Q24 follow-up). His consumption is highly mood-responsive -- quality local ingredients during stable periods, rice/beans/Aldi during dips (Q56, Q81). Time preferences are bifurcated: he delays gratification on macro goals (makerspace, graphic novel) but cannot resist immediate creative flow, sacrificing sleep, meals, and physical health for in-the-moment artistic satisfaction (Q15 follow-up). His self-identified financial security threshold is remarkably modest: $36,000/year and employer health insurance (Q83 follow-up).",
+
+      "political_scientist": "Julio is a consistent voter across all election levels -- federal, state, local, and school board -- having missed only one local election due to illness in his adult life (Q23). He prepares methodically using candidate spreadsheets with weighted issue scores, League of Women Voters guides, local journalism from the Democrat and Chronicle and Rochester Beacon, and direct candidate outreach for small races (Q23 follow-ups). He leans strongly toward the Democratic Party but self-identifies as issue-driven rather than partisan, calling himself a 'critical ally' (Q95, Q96). His priority issues are education funding, Great Lakes environmental protection, healthcare access for non-traditionally-employed workers, and NEA/state arts council budgets (Q23 follow-up). His political trajectory has evolved from ardent partisanship in his 20s-30s (campaign volunteering, yard signs) toward localized pragmatism focused on what can be built at the community level outside formal political structures (Q25, Q95 follow-up). He exhibits moderate institutional skepticism -- deeply critical of grant bureaucracies and party machinery -- while maintaining trust in scientific institutions (CDC, PubMed, peer-reviewed research) (Q24 follow-up, Q42). His civic participation extends substantially beyond voting: STEM outreach pop-ups in underserved neighborhoods, workshop scholarships, small-dollar donations to local candidates and Rochester Environmental Action League, and occasional phone banking despite personal discomfort (Q17, Q24 follow-up, Q29). He navigates political disagreements with his more conservative father through specific human stories rather than data or abstract arguments, applying improv's 'yes, and' technique to bridge ideological gaps (Q25 follow-up, Q30 follow-up).",
+
+      "psychologist": "Julio presents a behavioral profile characterized by exceptionally high Openness to Experience -- voracious intellectual curiosity spanning STEM and arts, comfort with abstraction, deep aesthetic sensitivity, and active novelty-seeking across multiple creative domains (Q01, Q02, Q109). His Conscientiousness is domain-dependent: high in structured analytical tasks (spreadsheet tracking, research rigor, workshop preparation spending 10 hours per 2-hour session, Q16 follow-up) but markedly impaired during emotional dysregulation, when basic self-care collapses (Q33 follow-up). Extraversion is moderate: he values deep connection intensely and maintains a carefully structured social scaffold (D&D biweekly, improv Mondays, frisbee Saturdays, Sunday dinners), but crowds and social unpredictability produce somatic distress -- chest tightness, neck tension (Q29, Q23). Agreeableness is moderate-to-high: he demonstrates strong prosocial behavior through volunteering, mentoring, workshop scholarships, and deliberate adjustment of his teaching approach for equity (Q17, Q26 follow-up), while his competitive streak and self-criticism are directed inward rather than interpersonally. Emotional Stability is notably low, with chronic somatic stress manifestations: jaw clenching requiring night guard and causing a cracked molar (Q31 follow-up), tension headaches from skull base to temples, racing thoughts preventing sleep for days, and a pronounced intensity-crash cycle where creative flow states trigger 10-12 hour work marathons followed by 12-14 hour sleep crashes and feelings of hollowness (Q01 follow-up, Q15 follow-up). His first recognition that this pattern exceeded normal nervousness came during a graduate thesis presentation where he experienced vision narrowing, speech failure, and hand trembling (Q45 follow-up). His coping architecture rests on: (1) external behavioral activation through non-negotiable social commitments, (2) data-tracking as emotion regulation (mood journal, spreadsheets), (3) daily meditation, (4) prescribed medication for sleep and racing thoughts, and (5) Oliver the cat as minimum-functioning anchor (Q11, Q32 follow-up). His selective disclosure pattern reveals a vulnerability hierarchy: Marcus knows most, Greta understands clinically, Priya recognizes in-the-moment signs, and parents lack any framework for emotional struggle (Q45 follow-up). In romantic contexts, he exhibits avoidant patterns: post-date rumination spirals with physical pacing, stomach knots, and text-drafting paralysis that consistently causes missed connection windows (Q05 follow-up). His identity architecture, explicitly self-articulated, rests on three pillars: creation (core), connection (most feared loss), and learning (existential necessity) (Q109). The family system he emerged from features 'love but not language for feeling' -- emotional information is proxied through mother, and Julio attempts to model directness with Greta as deliberate pattern-breaking (Q46 follow-up)."
+    },
+
+    "inconsistencies_found": [
+      {
+        "id": "INC-01",
+        "type": "SEED-INTERVIEW TENSION",
+        "description": "Seed professional_persona and sports_persona use they/them pronouns; seed cultural_background and career_goals use he/him. Interview consistently uses he/him. Sex field says 'Male.'",
+        "resolution": "Treat as seed generation artifact. Interview defaulted to he/him based on sex field and cultural_background text. Profile uses he/him throughout.",
+        "severity": "LOW"
+      },
+      {
+        "id": "INC-02",
+        "type": "SEED-INTERVIEW TENSION",
+        "description": "Seed professional_persona frames Julio as confidently 'positioning themselves as a thought-leader' with a 'competitive drive.' Interview self-presentation is far more self-deprecating, uncertain, and marked by self-doubt.",
+        "resolution": "The seed captures aspirational public-facing identity; the interview reveals private self-assessment. Both are valid facets. Profile should note the public/private identity gap rather than defaulting to either framing alone.",
+        "severity": "MODERATE"
+      },
+      {
+        "id": "INC-03",
+        "type": "PROFILE INTERNAL",
+        "description": "Profile sports_and_fitness says cycling group is 'Sunday mornings' but Q15 daily routine places Saturday as the physical activity day (frisbee morning, then hiking/cycling afternoon). Q18 explicitly says cycling group 'Sunday mornings on the Erie Canal towpath.'",
+        "resolution": "Q18 is the most direct statement. Cycling group = Sunday mornings. Saturday = frisbee morning + afternoon physical activity (hiking when weather permits). Profile sports_and_fitness is correct; Q15 Saturday reference is to hiking/other activity, not the cycling group. No change needed.",
+        "severity": "LOW"
+      },
+      {
+        "id": "INC-04",
+        "type": "PROFILE INTERNAL",
+        "description": "Profile psychologist summary characterizes Agreeableness as 'low-to-moderate' but interview evidence shows substantial prosocial behavior: volunteering, mentoring, scholarships, equity-driven teaching adjustments, phone banking despite discomfort.",
+        "resolution": "Correct to 'moderate-to-high.' The competitive streak and self-criticism are inward-directed rather than interpersonal. Prosocial evidence is strong across Q17, Q24 follow-up, Q26 follow-up, Q29.",
+        "severity": "MODERATE"
+      }
+    ],
+
+    "resolutions": [
+      {
+        "inconsistency_id": "INC-01",
+        "action": "Use he/him throughout corrected profile. Note pronoun variation in unresolved_or_ambiguous."
+      },
+      {
+        "inconsistency_id": "INC-02",
+        "action": "Corrected psychologist summary acknowledges both the aspirational thought-leader identity and the private self-doubt, framing them as public/private facets rather than contradiction."
+      },
+      {
+        "inconsistency_id": "INC-03",
+        "action": "No change needed. Profile's Sunday cycling is correct per Q18. Clarify Saturday as frisbee + hiking/other activity."
+      },
+      {
+        "inconsistency_id": "INC-04",
+        "action": "Corrected psychologist summary changes Agreeableness from 'low-to-moderate' to 'moderate-to-high' with explanation."
+      }
+    ],
+
+    "gaps_addressed": [
+      {
+        "gap_id": "D4-DEM-01 through D4-DEM-05",
+        "action": "Added date_of_birth, race_ethnicity, birthplace, born_in_us, parents_education, and childhood_household to corrected profile demographics header."
+      },
+      {
+        "gap_id": "D4-BEH-01 through D4-BEH-05",
+        "action": "Added car payment detail, no-credit-card commitment device, bartering behavior, art sales income, and financial security threshold to corrected profile under home_and_lifestyle and work_and_career."
+      },
+      {
+        "gap_id": "D4-POL-01 through D4-POL-04",
+        "action": "Added priority policy issues, political trajectory, intergenerational negotiation pattern, and institutional trust hierarchy to corrected profile under community_and_civic and political_scientist summary."
+      },
+      {
+        "gap_id": "D4-PSY-01 through D4-PSY-05",
+        "action": "Added thesis colloquium incident, selective disclosure map, post-date rumination detail, family emotional deficit, and three-pillar identity architecture to corrected profile under psychologist summary and others_misc."
+      },
+      {
+        "gap_id": "D2-DEM-06",
+        "action": "Added parents' education levels to demographer summary."
+      },
+      {
+        "gap_id": "D2-BEH-02 through D2-BEH-05",
+        "action": "Added no-credit-card device, bartering, car payment, and tax filing behavior to relevant preference sections."
+      },
+      {
+        "gap_id": "D2-POL-02 through D2-POL-04",
+        "action": "Added policy priorities, political evolution, and intergenerational negotiation to community_and_civic and political_scientist summary."
+      },
+      {
+        "gap_id": "D2-PSY-02 through D2-PSY-05",
+        "action": "Added thesis incident, selective disclosure map, post-date cycle specifics, and family emotional communication deficit to psychologist summary and others_misc."
+      }
+    ],
+
+    "overall_verdict": "The Step 2 extracted profile for Julio Simmons is fundamentally sound: the 15 preference categories are well-organized, evidence citations are generally accurate, and the four expert summaries capture the core dynamics of this persona. The demographer summary is strong on socioeconomic positioning. The behavioral economist summary is the most analytically impressive, correctly identifying present-bias, identity-based loss aversion, and the consumption-mood feedback loop. The political scientist summary accurately captures the issue-driven pragmatist orientation. The psychologist summary is largely excellent but contains one substantive error (Agreeableness rated too low) and several significant omissions (thesis colloquium incident, selective disclosure map, post-date rumination specifics, family emotional communication deficit, explicit three-pillar identity architecture). The profile header is missing standard demographic fields (DOB, race, birthplace). The financial picture, while thorough, omits the car payment and the deliberate no-credit-card commitment device. The community_and_civic section omits specific policy priorities. The unresolved_or_ambiguous section correctly flags the pronoun inconsistency and the competitive-drive tension. Overall, this is a high-quality extraction that requires targeted corrections rather than wholesale revision.",
+
+    "final_status": "CONDITIONALLY APPROVED -- corrections applied in corrected_extracted_profile below. All identified gaps filled, all inconsistencies resolved, all expert summaries rewritten with Q## citations and behavioral-only framing for psychologist."
+  },
+
+  "corrected_extracted_profile": {
     "participant_id": "e7035edf5bc744c9912694a7d4b2a99c",
     "name": "Julio Simmons",
-    "verification_date": "2026-03-31",
-    "model": "Claude Opus 4.6 (1M context)",
-    "seed_source": "NVIDIA Nemotron-Personas-USA",
-    "interview_source": "Step 2 interview output"
-  },
+    "age": 49,
+    "date_of_birth": "1976-10-14",
+    "gender": "Male",
+    "race_ethnicity": "White (German-Irish)",
+    "birthplace": "Rochester, NY",
+    "born_in_us": true,
+    "marital_status": "divorced",
+    "location": "Rochester, NY 14618 (Brighton area)",
+    "education": "Master's degree in Computational Science (University of Rochester); B.S. in Applied Mathematics (RIT)",
+    "occupation": "Not in workforce; occasional freelance data visualization/creative coding; workshop facilitator",
+    "parents_education": {
+      "father_karl": "High school diploma + trade certificate in tool and die making",
+      "mother_eileen": "Associate degree in Health Information Management (Monroe Community College)"
+    },
+    "childhood_household": "Both parents (Karl and Eileen), younger sister Greta, and a German Shepherd named Fritz, in Brighton neighborhood of Rochester, NY",
 
-  "experts": {
-    "demographer": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age/gender/marital status: Seed states age 49, Male, divorced. Interview confirms DOB October 14, 1976 (age 49) at Q85, Male at Q89, divorced ~6 years ago at Q84. Fully consistent across all demographic core fields.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "age: 49, sex: Male, marital_status: divorced",
-            "interview_ref": "Q84, Q85, Q89"
-          },
-          {
-            "id": 2,
-            "text": "Education: Seed states graduate-level education with bachelor's in STEM. Interview specifies B.S. in Applied Mathematics from RIT and master's in Computational Science from University of Rochester (Q01, Q90). Applied mathematics is unambiguously STEM. Consistent and enriched.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "education_level: graduate, bachelors_field: stem",
-            "interview_ref": "Q01, Q90"
-          },
-          {
-            "id": 3,
-            "text": "Location: Seed states Rochester, NY, 14618. Interview confirms Brighton/14618 residence (Q08), born and raised in Rochester (Q86, Q87), lifelong resident aside from possible brief absences. Fully consistent.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "city: Rochester, state: NY, zipcode: 14618",
-            "interview_ref": "Q08, Q86, Q87, Q97"
-          },
-          {
-            "id": 4,
-            "text": "Occupation: Seed states not_in_workforce. Interview confirms he left the workforce ~3 years ago due to cyclical burnout (Q01, Q34), currently picks up sporadic freelance gigs (Q16, Q65). The 'not_in_workforce' classification is accurate per Bureau of Labor Statistics criteria -- his freelance activity is too irregular and low-volume to constitute employment.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "occupation: not_in_workforce",
-            "interview_ref": "Q01, Q16, Q34, Q65, Q69"
-          },
-          {
-            "id": 5,
-            "text": "Cultural background: Seed states German-Irish descent, parents in manufacturing and healthcare sectors. Interview confirms German-Irish roots (Q01, Q89), dad in Kodak-adjacent tooling/die work (Q01, Q106), mom as medical records clerk at Strong Memorial (Q01, Q103). Rochester cultural institutions mentioned in seed (George Eastman Museum, Strong National Museum of Play, live-music scene) are partially confirmed in interview -- Eastman Museum, Memorial Art Gallery, Fringe Festival, Eastman School concerts, maker community all referenced. Strong National Museum of Play is not mentioned in the interview.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "cultural_background",
-            "interview_ref": "Q01, Q10, Q89, Q100, Q101, Q103, Q106, Q107"
-          },
-          {
-            "id": 6,
-            "text": "Seed uses they/them pronouns in professional_persona, sports_persona, arts_persona, culinary_persona, and travel_persona, but switches to he/him in cultural_background and career_goals_and_ambitions. The seed sex field is 'Male.' Interview consistently uses he/him throughout all 109 questions. This is a pronoun inconsistency within the seed data itself (likely a Nemotron generation artifact using generic they/them in narrative fields) rather than a seed-to-interview contradiction.",
-            "verdict": "GAP",
-            "seed_ref": "professional_persona (they/them) vs cultural_background (he/him) vs sex: Male",
-            "interview_ref": "Entire transcript (he/him consistently)"
-          }
+    "preferences": {
+      "health_and_wellness": {
+        "summary": "Active outdoorsman who manages cyclical stress-related physical symptoms through a comprehensive multi-layered routine including meditation, exercise, acupuncture, prescription medication, and systematic self-monitoring.",
+        "details": [
+          "Daily 20-minute guided meditation using Insight Timer app (body-scan preferred during difficult periods); practice established ~5 years ago after 8-week mindfulness course at Zen Center on Arnold Park Boulevard",
+          "Uses a full-spectrum light therapy lamp 30 minutes every morning October through April to counter seasonal energy/motivation decline",
+          "Takes glucosamine for knee pain, fish oil for blood pressure, vitamin D in winter; occasional melatonin for sleep but tries not to rely on it",
+          "Monitors blood pressure at home with wrist cuff (typically ~135/85); doctor recommends continued lifestyle management with potential for further intervention",
+          "Wears a custom night guard for jaw clenching/grinding; cracked a molar ~18 months ago requiring $1,200 crown -- headaches less frequent since consistent night guard use",
+          "Visits acupuncturist on Monroe Avenue for jaw tension and headaches (~$60/session, a few times per year, not covered by insurance)",
+          "Keeps a daily mood and sleep journal (1-10 rating plus notes) to track patterns and provide data for doctor visits",
+          "Low-dose prescription medication for sleep and racing thoughts (started ~2 years ago, $30/month); initially resistant but sister Greta's reframe ('you wouldn't refuse a cast for a broken arm') helped",
+          "Marketplace silver-tier health insurance ($450/month premium with subsidy); $8,000 out-of-pocket maximum equals entire emergency fund",
+          "Reduced sodium intake; switched snacking from crackers/cheese to carrots/hummus for blood pressure management",
+          "Tried marijuana edibles once (party, ~1 year ago); too foggy next day to work, has not repeated",
+          "Fully up-to-date on vaccinations (flu, COVID boosters); reads CDC guidance and peer-reviewed papers before each; motivated partly by protecting elderly parents"
         ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 1 }
+        "evidence": "Q31, Q31 follow-ups, Q32, Q33, Q36, Q37, Q37 follow-up, Q38, Q39, Q39 follow-up, Q41, Q42, Q45"
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Core demographics: Extracted profile states age 49, Male, divorced, Rochester NY 14618, master's degree in Computational Science (U of R) and B.S. in Applied Mathematics (RIT), not in workforce. All match interview data from Q84, Q85, Q86, Q87, Q89, Q90, Q08, Q65. Fully consistent.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q84, Q85, Q86, Q87, Q89, Q90, Q08, Q65",
-            "profile_ref": "participant_id, name, age, gender, marital_status, location, education, occupation"
-          },
-          {
-            "id": 2,
-            "text": "Family details: Interview extensively describes parents Karl and Eileen (mid-70s, Brighton), sister Greta (44, Syracuse, nurse practitioner, husband Paul, kids Milo 12 and Sophie 9), ex-wife Diana. Extracted profile captures these in social_and_relationships and others_misc.life_events_and_transitions. All details faithfully represented.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q05, Q06, Q84",
-            "profile_ref": "preferences.social_and_relationships, others_misc.life_events_and_transitions"
-          },
-          {
-            "id": 3,
-            "text": "Financial data: Interview provides monthly rent $950 (Q58), health insurance $450 (Q56), freelance income $500-800/month (Q16), emergency fund 3-4 months (Q61), car payment $270 with 8 months left (Q63). Profile captures rent and insurance in home_and_lifestyle details, income in work_and_career, and car in travel. Financial picture is accurately reflected.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q56, Q57, Q58, Q61, Q63, Q72, Q83",
-            "profile_ref": "preferences.home_and_lifestyle, preferences.work_and_career, preferences.travel"
-          },
-          {
-            "id": 4,
-            "text": "Demographer summary in extracted profile accurately synthesizes the downward-mobility narrative from interview data -- graduate-educated but earning well below poverty threshold, drawing down savings, representing a growing demographic of educated labor-force exiters. The summary's claim about being 'well below the poverty threshold for Monroe County' is supported by the ~$520/month earned income figure from Q72 and the $1,700+ monthly expenses from Q57.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q56, Q57, Q72, Q83",
-            "profile_ref": "summaries.demographer"
-          },
-          {
-            "id": 5,
-            "text": "Profile lists Uncle Frank (Buffalo, retired electrician) and cousin Heinrich (vineyard near Seneca Lake) in others_misc.cultural_and_linguistic items referencing German heritage. Interview confirms both at Q06. Accurately captured.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q06",
-            "profile_ref": "others_misc.cultural_and_linguistic"
-          }
+      "food_and_dining": {
+        "summary": "Experimental home cook who sources local ingredients and treats cooking as a creative practice, with dramatic budget-conscious fallbacks during lean periods.",
+        "details": [
+          "Shops weekly at Rochester Public Market (Saturday mornings before frisbee) and Finger Lakes farmers' market for produce, eggs, and sometimes flowers",
+          "Specialty pantry items: agar-agar, kelp powder, fresh herbs, miso, Sichuan peppercorns",
+          "Signature dishes: miso-glazed black cod, sous-vide duck breast with cherry-balsamic reduction, homemade Sichuan pepper chocolate truffles",
+          "Sources heirloom tomatoes from local farms during growing season",
+          "Falls back to rice, beans, pasta, and Aldi vegetables during financially tight months; frozen pizza during low-mood periods",
+          "Brunch at South Wedge Diner after Saturday frisbee games; occasional Bloody Mary",
+          "Reduced meat consumption to a few times per week (environmental motivation)",
+          "Occasional glass of wine while cooking (ritual, not numbing); Genny Cream Ale at D&D nights (1-2 per session)",
+          "Deliberately avoids drinking alone during low periods after tracking correlation between evening drinks and worse next-day mood/sleep post-divorce",
+          "Cousin Heinrich sends bottles of Riesling from his Seneca Lake vineyard"
         ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q05 follow-up, Q06, Q15, Q18, Q24, Q38, Q38 follow-up, Q56, Q81"
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile states 'not in workforce' in occupation field but work_and_career details list 'Current freelance: $500-800/month variable, project-based' and workshop facilitation. These are not contradictory -- the Bureau of Labor Statistics classification of not_in_workforce is appropriate for someone with irregular, low-volume gig work who is not actively seeking traditional employment. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "occupation vs preferences.work_and_career"
-          },
-          {
-            "id": 2,
-            "text": "Profile lists cycling group as 'April-October, Sunday mornings' in sports_and_fitness but the interview (Q18) specifies the cycling group is restarting after winter and runs 'usually Sunday mornings on the Erie Canal towpath.' However, the demographer summary says Julio visits parents for Sunday dinner. There is no conflict since cycling is described as morning activity and dinners are at 4pm per Q05 follow-up.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.sports_and_fitness vs preferences.social_and_relationships"
-          },
-          {
-            "id": 3,
-            "text": "The unresolved_or_ambiguous section notes tension between seed's 'competitive drive' framing and interview's self-deprecating voice. This is properly flagged and does not create an internal contradiction in the profile itself -- the profile acknowledges both the aspiration and the emotional reality.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "others_misc.unresolved_or_ambiguous item 1"
-          }
+      "travel": {
+        "summary": "Regional traveler with purposeful, curiosity-driven trips constrained by budget; prefers nature destinations and maker/art events.",
+        "details": [
+          "Frequent hiker in the Finger Lakes region, especially Watkins Glen trails",
+          "Explored Adirondack park remote cabins",
+          "Weekend trip to Portland, Maine for maker festivals",
+          "Visited MoMA immersive art installations in NYC",
+          "Visits sister Greta in Syracuse every couple of months; takes Milo and Sophie to MOST (Museum of Science and Technology) or does art projects at kitchen table",
+          "Wish list: Kyoto art cafes, Burning Man (to test interdisciplinary installations)",
+          "Budget constraints keep most travel regional; hopes to take niece and nephew to Adirondacks when finances allow",
+          "Drives a used Subaru Outback ($270/month payment, 8 months remaining)"
         ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q01, Q05, Q05 follow-up, Q08, Q63, Q108"
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals childhood dog Fritz (German Shepherd) at Q99. This is captured in others_misc.cultural_and_linguistic items ('Dog named Fritz (childhood, German Shepherd) reflects German heritage naming'). Complete.",
-            "verdict": "COMPLETE",
-            "interview_ref": "Q99",
-            "profile_ref": "others_misc.cultural_and_linguistic"
-          },
-          {
-            "id": 2,
-            "text": "Interview reveals parents' education: Dad had high school plus trade certificate in tool and die making (Q100), Mom got associate degree in health information management from MCC (Q101). These are not in the extracted profile's main demographic fields but are present implicitly in the demographer summary ('manufacturing and healthcare sectors'). The specific education levels are missing from the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q100, Q101",
-            "profile_ref": "not found in preferences or others_misc"
-          },
-          {
-            "id": 3,
-            "text": "Interview reveals the landlord Mr. Petrosian is Armenian, lives downstairs, brings dolma occasionally (Q08 follow-up). Profile mentions Mr. Petrosian in home_and_lifestyle but not his ethnicity or the dolma detail. Minor omission -- culturally relevant but not high-priority.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q08 follow-up",
-            "profile_ref": "preferences.home_and_lifestyle"
-          },
-          {
-            "id": 4,
-            "text": "Interview reveals specific date-of-birth October 14, 1976 (Q85). Profile states age 49 but does not include the specific DOB. This is a standard omission -- the age field is sufficient for most purposes.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q85",
-            "profile_ref": "age field (no DOB)"
-          }
+      "social_and_relationships": {
+        "summary": "Deeply values a small, tight-knit social circle; treats scheduled social commitments as critical non-negotiable anchors against isolation and withdrawal.",
+        "details": [
+          "Best friend Marcus (from grad school, now software engineer at Paychex): D&D every other Thursday, emotional lifeline, brings pad thai during crashes, uses deadpan humor to interrupt spirals",
+          "Close friend Priya (met through Rochester Fringe Festival): improv troupe collaborator, graphic designer, recognizes in-moment stress and provides breathing exercises",
+          "Co-ed ultimate frisbee league at South Wedge Park: close with Derek and Lena, brunch group after games",
+          "D&D group: Marcus, Theo (high school physics teacher), Jess (central branch librarian) -- Julio is DM, campaign running ~2 years, meets at Marcus's house, wife Amy makes coffee",
+          "Sunday dinners with parents Karl and Eileen in Brighton -- arrives ~4pm, heavy oak dining table, mom's cooking, dad's career questions, leaves ~7pm; emotional afterglow mixed with tension about not meeting expectations",
+          "Wednesday 30-minute structured phone calls with mother Eileen",
+          "Video chats with nephew Milo (12) about Arduino projects; takes Milo and Sophie on MOST trips",
+          "Drives father Karl to doctor appointments when needed (mobility declining, uses cane)",
+          "Ex-wife Diana: amicable, text on birthdays; no ongoing relationship",
+          "On Hinge but struggles with follow-through: post-date rumination cycle involves exhaustive replay, physical pacing, stomach knots, drafting/deleting texts 4-5 times until connection window closes",
+          "Treats social commitments as non-negotiable behavioral activation: 'like taking medication'; if forced to cancel improv, texts Priya to ensure at least a phone call"
         ],
-        "summary": { "complete": 1, "missing": 1, "minor_omission": 2 }
+        "evidence": "Q01 follow-up, Q05, Q05 follow-ups, Q07, Q07 follow-ups, Q11 follow-up, Q15, Q17, Q44, Q44 follow-ups, Q109"
+      },
+      "home_and_lifestyle": {
+        "summary": "Lives alone with a cat in a modest rental, maintaining a structured but flexible domestic routine oriented around creative deep-work mornings and varied afternoons.",
+        "details": [
+          "Rents upper floor of two-family house ($950/month, unchanged in 2 years) in Brighton/14618",
+          "Landlord Mr. Petrosian (Armenian, lives downstairs): quiet, reliable, fixes things promptly, wife occasionally brings dolma; 'friendly distance'",
+          "Orange tabby cat Oliver adopted from Lollypop Farm ~3 years ago (coincided with workforce exit); serves as minimum-functioning anchor -- forces morning routine, interrupts spiraling by sitting in path and meowing",
+          "Home office/studio at desk; meditation corner with cushion and candle in living room",
+          "Stationary bike in living room for winter exercise substitute",
+          "Walks to Twelve Corners library twice a week for focused work (coding, grant writing, sketching); librarians know him by name",
+          "Pomodoro timer for productivity (25 on/5 off); successful ~60% of mornings",
+          "Systematic spreadsheet use: budget tracking, candidate research, mood/sleep journal, project management",
+          "Frugal by necessity and choice: no credit card (deliberate self-regulation), pauses subscriptions during tight months (paused Spotify Nov-Dec), barters within maker community",
+          "Monthly budget review: opens bank app, updates spreadsheet, calculates months of runway remaining; process takes 20 minutes and 'ruins the next hour'",
+          "Morning routine: up ~7:30 (Oliver wakes him), feed cat, coffee, 30 min light therapy lamp + reading/email, 20 min meditation, 9-noon deep creative work block"
+        ],
+        "evidence": "Q08, Q08 follow-ups, Q11, Q11 follow-ups, Q15, Q15 follow-up, Q56, Q58, Q60, Q61 follow-up"
+      },
+      "entertainment": {
+        "summary": "Prefers independent and cerebral media; reads speculative fiction and popular science; watches nature documentaries as comfort content; information diet is curated toward depth over breadth.",
+        "details": [
+          "Reads speculative fiction: recently reread Ursula K. Le Guin's The Dispossessed; first time in ages getting lost in a book before bed instead of phone",
+          "Reads popular science: quantum physics research for graphic novel; gets 'electric feeling in chest' from encountering new ideas",
+          "Reads for racial/social understanding: Ta-Nehisi Coates (Between the World and Me), Ibram X. Kendi, Richard Rothstein (The Color of Law)",
+          "Independent film screenings",
+          "Nature documentaries as comfort viewing (Planet Earth during crash periods -- requires no emotional investment)",
+          "Graphic novels: browses Twelve Corners library's collection regularly; influenced by Alan Moore's narrative pacing",
+          "Artistic influences: Brian Eno (ambient music/soundscapes), Yayoi Kusama (surrealist visual art), Alan Moore (graphic narrative structure)",
+          "Listens to NPR every morning with coffee; Code Switch podcast regularly",
+          "Kurzgesagt YouTube channel for science communication",
+          "Ars Technica (science coverage), STAT News (health reporting), ProPublica (investigative journalism)"
+        ],
+        "evidence": "Q01, Q28 follow-up, Q42, Q44, Q48, Q50"
+      },
+      "hobbies_and_recreation": {
+        "summary": "Prolific creative hobbyist spanning visual art, music composition, improv theater, tabletop gaming, and puzzle-solving; creative activities serve both as identity expression and emotional regulation.",
+        "details": [
+          "Acrylic landscape painting inspired by Finger Lakes (completed a series in past year he is proud of)",
+          "Digital illustration using p5.js and Processing; creative coding as both hobby and professional skill",
+          "Experimental ambient music composition on modular synthesizer (Brian Eno influence)",
+          "Improv theater with Rochester Fringe troupe: Monday night rehearsals at Avenue Blackbox Theatre, performs at Fringe Festival every September plus smaller shows; joined ~4 years ago at Priya's urging; functions as 'exposure therapy for need to plan everything'",
+          "Dungeon Master for biweekly D&D campaign (~2 years running): elaborate world-building, spends extensive weekly prep time on maps and storylines, one of few things that 'quiets brain in a good way'",
+          "Puzzle-solving: escape rooms and advanced Sudoku",
+          "Working on quantum-physics graphic novel series (illustration + narrative, grant-funded aspiration)",
+          "Data visualization as artistic practice: built interactive Finger Lakes water quality map, gallery-shown particle simulation pieces"
+        ],
+        "evidence": "Q01, Q02, Q07, Q07 follow-ups, Q15, Q43, Q48, Q65 follow-up"
+      },
+      "work_and_career": {
+        "summary": "Former adjunct and freelancer building toward a community makerspace; driven by an interdisciplinary art-science mission but constrained by financial precarity and cyclical productivity patterns.",
+        "details": [
+          "Last steady employment ~3 years ago (freelance data visualization and computational modeling for local organizations)",
+          "Former adjunct at RIT: Intro to Computational Modeling and Creative Coding elective; loved mentoring but pay was ~$3,000/course/semester with no benefits",
+          "Earlier: analytics firm in Rochester; bookstore during post-grad lab years",
+          "Foundational career decision: chose unfunded art-science lab with Dr. Tanaka over stable Boston data firm job; lab produced interactive installations, received NYSCA grant, showed at Fringe; collapsed when funding dried up and Tanaka left",
+          "Current freelance: $500-800/month variable in good months, zero in bad; word-of-mouth pipeline through Maker's Row and Marcus; portfolio website exists but unupdated >1 year due to perfectionist redesign loops",
+          "Runs occasional workshops at Rochester Brainery ($100-120 per session after venue cut); spends ~10 hours prep per 2-hour workshop",
+          "Additional income: occasional art sales (~$300-400 at Makers' Row holiday craft fair)",
+          "Developing business plan for community makerspace: 70% complete, 3 potential locations identified, 2 landlords contacted, targeting Monroe County community development grant (June deadline), summer pop-up workshop series planned for demand validation",
+          "Backup plan: adjunct teaching return, part-time data analyst at local nonprofit, or data management at Syracuse hospital system where Greta works (would require relocating)",
+          "Grant writing: NYSCA past success; 42-page application to regional arts-science foundation rejected with zero feedback",
+          "Mentors RIT students informally over coffee about creative coding careers",
+          "Skills: Python, MATLAB, R, p5.js, Processing, D3, Max/MSP, scientific writing, curriculum design, interdisciplinary workshop facilitation, public speaking",
+          "Self-identified financial security threshold: $36,000/year + employer health insurance",
+          "Ideal work structure: part-time teaching anchor with benefits + creative freedom remainder of week"
+        ],
+        "evidence": "Q01, Q02, Q02 follow-ups, Q16, Q16 follow-ups, Q65, Q65 follow-ups, Q71, Q72, Q78 follow-up, Q81, Q83 follow-up, Q108, Q108 follow-ups"
+      },
+      "arts_and_culture": {
+        "summary": "Deeply embedded in Rochester's cultural scene; attends galleries, museums, and live performances; sees art and science as fundamentally inseparable and builds his life around their intersection.",
+        "details": [
+          "Attends Eastman School concerts and Memorial Art Gallery exhibitions",
+          "Active participant in Rochester Fringe Festival: performs improv, previously showed interactive art-science installations from lab years",
+          "Visits George Eastman Museum; engaged with Rochester's cultural infrastructure since childhood",
+          "Participated in Dr. Tanaka's experimental art-science lab (post-grad school): built installations where particle simulations responded to audience movement, wrote physics engine and designed visual aesthetic",
+          "Creating quantum-physics graphic novel series (illustration + narrative): aims to 'demystify quantum physics for a general audience'",
+          "Plans data-driven art installations for gallery shows: recently completed a data visualization piece for a local gallery",
+          "Influences: Yayoi Kusama (surrealism/visual), Alan Moore (graphic narrative/pacing), Brian Eno (ambient textures/soundscapes)",
+          "Attended local author talks and digital literacy workshops at Twelve Corners library",
+          "Built interactive water quality visualization map for Finger Lakes environmental group that moved community members to tears at presentation",
+          "Rochester cultural touchstones: George Eastman Museum, Strong National Museum of Play, Memorial Art Gallery, vibrant live-music scene"
+        ],
+        "evidence": "Q01, Q02, Q02 follow-up, Q08 follow-up, Q10, Q43, Q47, Q65 follow-up"
+      },
+      "sports_and_fitness": {
+        "summary": "Regular participant in group and individual physical activities; fitness serves critical dual purpose as physical health maintenance and psychological stabilization.",
+        "details": [
+          "Co-ed ultimate frisbee league at South Wedge Park (Saturday mornings); close with Derek and Lena",
+          "Summer community cycling group on Erie Canal towpath (April-October, Sunday mornings); tracks lap times with competitive edge",
+          "Avid hiker: Watkins Glen trails (favorite), broader Finger Lakes region; tweaked knee on steep wet-rock section at Watkins Glen last fall (still clicks, untreated due to cost avoidance)",
+          "Stationary bike at home during winter months (substitute for outdoor cycling, 'not the same as being on the canal path with the sun on my face')",
+          "Follows Rochester Red Wings (minor league baseball) and Rochester Americans (hockey) -- dad watches games in recliner during Sunday dinners",
+          "Physical activity drops in winter, contributing to seasonal mood/energy decline; social activities (improv, D&D) become more critical as compensating structure",
+          "Weight fluctuates ~10 lbs seasonally: gains in winter from reduced activity + comfort food, loses in warmer months"
+        ],
+        "evidence": "Q05, Q10 follow-up, Q15, Q18, Q31, Q32, Q33"
+      },
+      "nature_and_outdoors": {
+        "summary": "Finds the Finger Lakes region spiritually and creatively restorative; hiking and nature are primary coping mechanisms, artistic inspiration, and sources of transcendent experience.",
+        "details": [
+          "Weekly hiking during warmer months, primarily Finger Lakes region and Watkins Glen trails",
+          "Finger Lakes landscapes directly inspire acrylic painting series",
+          "Erie Canal towpath for summer cycling",
+          "Explored Adirondack park remote cabins; hopes to take niece and nephew there",
+          "Experiences transcendence in natural settings: 'When I come around a corner to a waterfall that's existed for thousands of years, I feel something I'd call transcendent' -- describes this as what religion 'tries to offer, however imperfectly' (Q47)",
+          "Attentive to environmental changes: shifting growing seasons, invasive species in Finger Lakes, increased severe storm frequency over 20 years of observation",
+          "Environmental concern translates to behavior: bikes when possible, buys local produce, reduced meat consumption, supports aggressive emissions/renewable policy",
+          "Rochester Public Market Saturday morning visits include seasonal flowers for the apartment"
+        ],
+        "evidence": "Q10, Q15, Q18, Q24, Q47, Q108"
+      },
+      "technology": {
+        "summary": "Proficient across multiple programming languages and creative coding platforms; uses technology as both professional tool and artistic medium; selective about consumer technology to protect mental health.",
+        "details": [
+          "Primary languages: Python, MATLAB, R (computational modeling, data analysis)",
+          "Creative coding: p5.js, Processing, Max/MSP (interactive installations, generative art)",
+          "Data visualization: D3.js (interactive dashboards, infographics)",
+          "Modular synthesizer for ambient music composition",
+          "Health technology: light therapy lamp (daily Oct-Apr), blood pressure wrist cuff monitor, night guard",
+          "Insight Timer app for guided meditation",
+          "Pomodoro timer for focus sessions",
+          "Hinge dating app (active but low engagement)",
+          "Arduino projects with nephew Milo (bought beginner kit for birthday)",
+          "TurboTax Self-Employed for tax filing with 1099 tracking",
+          "M&T Bank app checked monthly for budget spreadsheet",
+          "Basic portfolio website (exists but unupdated >1 year; perfectionist redesign loop prevents updates)",
+          "Moved social media apps off phone home screen; set 30-minute daily limits after January 2026 screen-time wake-up call (averaging 2+ hours/day)",
+          "Prefers Discord for community interaction (creative coding server ~200 members, D&D homebrew server) over broadcast social media -- 'like being at a table with friends'",
+          "Laptop as primary work device for coding, grant writing, and illustration"
+        ],
+        "evidence": "Q05 follow-up, Q11 follow-up, Q15, Q16, Q18, Q18 follow-up, Q31, Q37 follow-up, Q48, Q48 follow-ups, Q65, Q75"
+      },
+      "community_and_civic": {
+        "summary": "Highly engaged community volunteer and consistent civic participant who votes in every election, contributes through STEM outreach and maker community building, and translates political values into tangible local action.",
+        "details": [
+          "Volunteers at Rochester Museum & Science Center STEM outreach (~twice monthly, Saturday afternoons): runs hands-on science stations, adapts to age range 5-13, finds it 'low-stakes and joyful'",
+          "Advocated for and implemented STEM outreach pop-ups in underserved neighborhoods (Beechwood, Northeast) via community center partnerships",
+          "Adjusted volunteer teaching approach: listens more, instructs less, lets kids lead -- motivated by reflection on racial equity and institutional positionality",
+          "Active in Maker's Row Rochester monthly meetups; primary source of freelance referrals",
+          "Offers scholarship spots in paid workshops for participants who cannot afford fees",
+          "Votes in every election: federal, state, local, school board; missed only one (illness) in adult life",
+          "Researches candidates methodically: spreadsheet with positions, endorsements, funding sources; League of Women Voters guide; Democrat and Chronicle and Rochester Beacon coverage; emails candidates directly for small races",
+          "Votes early to avoid unpredictable Election Day lines (crowd discomfort)",
+          "Priority policy issues: education funding, Great Lakes/Finger Lakes water quality, healthcare access for non-traditionally-employed, NEA/state arts council budgets",
+          "Small-dollar donations to local candidates and Rochester Environmental Action League",
+          "Has done phone banking for local elections despite significant personal discomfort ('terrible at calling strangers')",
+          "Workshop facilitator at Rochester Brainery (community education)",
+          "Informal mentor to RIT creative coding students (coffee meetings, portfolio review, career guidance)",
+          "Political trajectory: ardent partisan in 20s-30s (campaign volunteering, yard signs) evolved to issue-driven pragmatist focused on local competence and community-built institutions"
+        ],
+        "evidence": "Q17, Q17 follow-ups, Q23, Q23 follow-ups, Q24, Q24 follow-ups, Q25, Q26, Q26 follow-up, Q29, Q65, Q95, Q95 follow-up"
+      },
+      "music": {
+        "summary": "Composes experimental ambient music on modular synth; listens across ambient and eclectic genres; uses music both as creative practice and emotional regulation tool.",
+        "details": [
+          "Composes ambient textures on modular synthesizer (Brian Eno influence); part of broader creative practice alongside visual art and coding",
+          "Listens to Brian Eno records to reset during stress spirals and post-date rumination",
+          "Appreciates Rochester's live-music scene (cultural touchstone from childhood)",
+          "Had Spotify subscription (paused during Nov-Dec financial crunch, reinstated)",
+          "NPR on in the morning while making coffee",
+          "Musical engagement connects to both the arts_and_culture and emotional well-being domains"
+        ],
+        "evidence": "Q01, Q05 follow-up, Q10, Q43, Q50, Q81"
+      },
+      "fashion_and_appearance": {
+        "summary": "Minimal attention to fashion; pragmatic and low-key in personal presentation; appearance tracks mood state.",
+        "details": [
+          "During low periods: same sweatshirt for four days, sister noticed on video call and drove to check on him",
+          "Social commitments force minimum presentability: showers, puts on 'real clothes' before D&D even when feeling terrible",
+          "No evidence of fashion spending, brand preferences, or style investment",
+          "Appearance serves as a barometer of functioning -- decline in self-care is an early indicator of mood dip recognized by sister and close friends"
+        ],
+        "evidence": "Q32 follow-up, Q33 follow-up"
       }
     },
 
-    "behavioral_economist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Makerspace ambition: Seed career_goals_and_ambitions describes goal to 'launch a community-centered makerspace in Rochester.' Interview extensively confirms at Q108 (detailed vision of physical space), Q78 (ideal work structure), Q34 (accommodating work life), Q62 (seed money estimate of $30-50K). Business plan is 70% complete. Fully consistent.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "career_goals_and_ambitions (community-centered makerspace)",
-            "interview_ref": "Q34, Q62, Q78, Q108"
-          },
-          {
-            "id": 2,
-            "text": "Competitive drive framing: Seed professional_persona states 'competitive drive pushes them to secure grant funding and position themselves as a thought-leader.' Interview reveals a far more anxious, self-deprecating relationship with grant-seeking -- the 42-page application rejection triggered a multi-day shutdown (Q44), and the process is described as stress-inducing rather than strategically competitive. The 'competitive' element manifests as internal perfectionism (10-hour workshop prep, portfolio redesign paralysis) rather than confident external positioning.",
-            "verdict": "INCONSISTENT",
-            "seed_ref": "professional_persona ('competitive drive...thought-leader')",
-            "interview_ref": "Q02, Q16, Q43, Q44, Q83"
-          },
-          {
-            "id": 3,
-            "text": "Graphic novel grant: Seed career_goals_and_ambitions mentions hope to 'secure a grant from a regional arts-science foundation to produce a series of illustrated graphic novels that demystify quantum physics.' Interview confirms the aspiration and adds that a prior application was rejected with zero feedback (Q24 follow-up, Q44), and he is now targeting a Monroe County community development grant with a June deadline (Q108 follow-up). Consistent and enriched.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "career_goals_and_ambitions (grant for graphic novel series)",
-            "interview_ref": "Q24, Q44, Q108"
-          },
-          {
-            "id": 4,
-            "text": "Culinary persona: Seed describes experimental cooking (miso-glazed black cod, sous-vide duck breast, Sichuan pepper chocolate truffles). Interview confirms farmers' market shopping and cooking as creative practice but also reveals budget-constrained fallback to rice, beans, pasta, and Aldi vegetables during lean months (Q56, Q81). Seed presents only aspirational identity; interview reveals dual-mode behavior responsive to financial state.",
-            "verdict": "GAP",
-            "seed_ref": "culinary_persona (experimental high-end dishes only)",
-            "interview_ref": "Q15, Q56, Q81"
-          },
-          {
-            "id": 5,
-            "text": "Travel persona: Seed mentions budget constraints keeping most trips regional with wish list including Kyoto and Burning Man. Interview confirms strictly regional travel due to financial precarity -- Finger Lakes hiking, Syracuse visits, Rochester cultural venues (Q56, Q64, Q108). Kyoto and Burning Man remain purely aspirational. Consistent.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "travel_persona ('budget constraints keep most trips regional')",
-            "interview_ref": "Q56, Q62, Q64, Q108"
-          },
-          {
-            "id": 6,
-            "text": "Burnout cycles: Seed persona describes 'bouts of self-critical burnout.' Interview extensively elaborates the productivity-crash cycle -- intense creative sessions of 10-12 hours followed by multi-day physical and emotional shutdown, including a three-week January-February episode (Q01 follow-up, Q15 follow-up, Q33, Q34, Q43). Fully consistent with seed's compressed description.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "persona ('bouts of self-critical burnout')",
-            "interview_ref": "Q01, Q15, Q33, Q34, Q43"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 1, "gaps": 1 }
-      },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Financial data fidelity: Interview provides specific figures -- $950 rent (Q58), $450 insurance (Q56), $500-800 freelance income (Q16), $520 earned last month (Q72), $30 prescription (Q39), $60 acupuncture (Q56), 3-4 months savings (Q61), $270 car payment with 8 months left (Q63). Profile captures all major financial parameters accurately across home_and_lifestyle, work_and_career, health_and_wellness, and travel sections.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q56, Q57, Q58, Q61, Q63, Q72",
-            "profile_ref": "preferences.home_and_lifestyle, preferences.work_and_career, preferences.health_and_wellness"
-          },
-          {
-            "id": 2,
-            "text": "Self-monitoring behaviors: Interview reveals extensive self-tracking -- mood/sleep journal (Q39 follow-up), budget spreadsheets (Q56, Q61), candidate research spreadsheets (Q23 follow-up), alcohol consumption tracking (Q38 follow-up), blood pressure monitoring (Q31 follow-up). Profile captures mood journal in health_and_wellness, spreadsheets in home_and_lifestyle, BP monitoring in health_and_wellness. The alcohol tracking and candidate spreadsheets are not explicitly in the profile preferences but are reflected in the behavioral_economist summary.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q23, Q31, Q38, Q39, Q56, Q61",
-            "profile_ref": "preferences.health_and_wellness, preferences.home_and_lifestyle, summaries.behavioral_economist"
-          },
-          {
-            "id": 3,
-            "text": "Credit card avoidance: Interview at Q60 explains deliberate choice not to carry a credit card ('I know myself well enough to know that easy access to credit would be a problem'). Profile captures this in home_and_lifestyle: 'no credit card (deliberate).' Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q60",
-            "profile_ref": "preferences.home_and_lifestyle"
-          },
-          {
-            "id": 4,
-            "text": "Behavioral economist summary in profile accurately characterizes present-bias, identity-driven loss aversion, asymmetric risk profile (income-risk-tolerant, debt-risk-averse), state-dependent consumption, and time-preference paradox (delays large goals but cannot delay creative impulses). These are well-supported by the interview evidence cited.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q02, Q34, Q56, Q60, Q63, Q81, Q83",
-            "profile_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 5,
-            "text": "Bartering behavior: Interview at Q60 mentions bartering (built a website for a local artisan in exchange for woodworking). This is not captured in the profile preferences. Minor omission reflecting an alternative economic strategy relevant to the behavioral economist perspective.",
-            "verdict": "GAP",
-            "interview_ref": "Q60",
-            "profile_ref": "not in preferences"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
-      },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile lists freelance income as '$500-800/month variable' in work_and_career but also states 'maybe twelve to fifteen hundred a month' (savings + freelance) at Q56 follow-up and '$520 last month' at Q72. The $500-800 range and the specific $520 figure are consistent -- $520 is within a reasonable range allowing for month-to-month variation. No contradiction.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.work_and_career (freelance income range)"
-          },
-          {
-            "id": 2,
-            "text": "Profile captures both experimental cooking identity (specialty pantry items, signature dishes) and budget fallback (rice, beans, Aldi) in food_and_dining. These coexist without contradiction as state-dependent behaviors, which is internally consistent with the behavioral economist framing.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.food_and_dining"
-          },
-          {
-            "id": 3,
-            "text": "Profile describes health insurance as '$450/month premium' in health_and_wellness and rent as '$950/month' in home_and_lifestyle. Combined with car payment $270, these fixed costs total $1,670/month minimum before food, utilities, and other expenses, against $500-800 freelance income. The savings drawdown narrative in the summaries is mathematically consistent with this gap.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.health_and_wellness, preferences.home_and_lifestyle, preferences.travel"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals healthcare cost-benefit calculus -- knee injury untreated because estimated $300-400 imaging cost was a barrier (Q33, Q64 follow-up). Profile mentions the untreated knee in sensory_and_physical_context but does not explicitly capture the economic decision-making process that led to foregoing care. This is a significant behavioral economics data point missing from the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q33, Q36, Q64",
-            "profile_ref": "others_misc.sensory_and_physical_context (knee mentioned but not economic reasoning)"
-          },
-          {
-            "id": 2,
-            "text": "Interview reveals painting sold for $400 at Makers' Row holiday craft fair (Q60) and bartering for services. These alternative income/exchange behaviors are not captured in the work_and_career preferences. Minor gap for understanding his full economic strategy.",
-            "verdict": "MISSING",
-            "interview_ref": "Q60",
-            "profile_ref": "preferences.work_and_career (no art sales or bartering)"
-          },
-          {
-            "id": 3,
-            "text": "Interview reveals the emergency fund math -- out-of-pocket maximum on marketplace plan is ~$8,000, essentially the entirety of his emergency fund (Q40 follow-up). This catastrophic exposure is not explicitly captured in the profile. Important for understanding financial vulnerability.",
-            "verdict": "MISSING",
-            "interview_ref": "Q40",
-            "profile_ref": "not in preferences or summaries"
-          },
-          {
-            "id": 4,
-            "text": "Financial security threshold: Interview reveals Julio defines financial security as '$36,000/year and employer health insurance' (Q83 follow-up). This concrete benchmark is absent from the profile, though the general narrative of financial precarity is well-captured.",
-            "verdict": "MISSING",
-            "interview_ref": "Q83",
-            "profile_ref": "not in preferences"
-          }
-        ],
-        "summary": { "complete": 0, "missing": 4, "minor_omission": 0 }
-      }
+    "summaries": {
+      "demographer": "Julio Simmons is a 49-year-old white male of German-Irish descent, born October 14, 1976, in Rochester, NY (14618/Brighton area), where he has lived his entire life (Q01, Q85-Q89, Q97). He holds a master's degree in computational science from the University of Rochester and a B.S. in applied mathematics from RIT (Q90), placing him in the upper tier of educational attainment for Monroe County. His parents are Karl (mid-70s, retired tool-and-die maker, trade certificate, Brighton) and Eileen (mid-70s, retired medical records clerk, associate degree from MCC, Brighton) (Q05, Q100-Q107). His younger sister Greta (44) is a nurse practitioner in Syracuse, married to Paul, with children Milo (12) and Sophie (9) (Q05). Despite his graduate credentials, Julio has been out of the workforce for approximately three years, having exited due to cyclical burnout after stints in freelance data visualization, adjunct teaching at RIT, and analytics work (Q01, Q16, Q65). He is divorced from Diana (finalized ~6 years ago, Q84) after an 8-year marriage, lives alone with a cat, and has no children (Q05, Q11). His socioeconomic trajectory represents significant downward mobility relative to his education: he draws down savings to supplement sporadic freelance income of $500-800/month, with total monthly expenses of ~$1,900-2,200 and an emergency fund covering only 3-4 months (Q56, Q57, Q61, Q82). He represents a growing demographic of highly educated individuals who have exited traditional employment due to misalignment between their multi-domain skill profiles, mental health needs, and available labor market structures.",
+
+      "behavioral_economist": "Julio exhibits classic present-bias in career decisions, consistently choosing intrinsically rewarding creative work over financially optimal alternatives -- turning down the Boston data firm job for an unfunded art-science lab (Q02), adjuncting at below-market rates for teaching satisfaction (Q65 follow-up), and ultimately leaving the workforce when burnout cycles made traditional employment untenable (Q01, Q34). His loss aversion operates around identity rather than money: he would rather deplete savings at several hundred dollars per month than accept a position that compromises his interdisciplinary maker/creator identity (Q83). He demonstrates sophisticated self-monitoring through systematic tracking -- mood/sleep journals, budget spreadsheets, candidate research matrices, screen-time reports (Q39 follow-up, Q56, Q23 follow-up, Q18 follow-up, Q61 follow-up) -- but limited ability to override the patterns this data reveals. His financial decision-making is risk-tolerant on income (accepting irregular freelance at $500-800/month with zero some months, Q72) but risk-averse on debt (deliberate no-credit-card policy as self-regulation commitment device, student loans fully paid, only debt is car payment at $270/month with 8 months remaining, Q60, Q63). He engages in mental accounting separating survival funds from project funds and shows strong community reciprocity norms: bartering website work for woodworking, offering workshop scholarships, selling paintings at community craft fairs (Q60, Q24 follow-up, Q81). His consumption is highly mood-responsive -- quality local farmers' market ingredients during stable periods, rice/beans/Aldi and frozen pizza during dips (Q56, Q81, Q32). Time preferences are bifurcated: he delays gratification on macro goals (makerspace business plan at 70%, graphic novel series) but cannot resist immediate creative flow, sacrificing sleep, meals, and physical health (Q15 follow-up). His financial management includes TurboTax Self-Employed filing with tracked deductions and estimated quarterly payments (Q75). His self-identified financial security threshold is remarkably modest: $36,000/year and employer health insurance (Q83 follow-up).",
+
+      "political_scientist": "Julio is a highly consistent voter across all election levels -- federal, state, local, and school board -- having missed only one local election due to illness in his adult life (Q23). He prepares methodically using candidate spreadsheets with weighted issue scores, League of Women Voters guides, local journalism from the Democrat and Chronicle and Rochester Beacon, and direct candidate emails for small races (Q23 follow-ups). He leans strongly toward the Democratic Party but self-identifies as issue-driven rather than partisan, calling himself a 'critical ally' who has frustrations with the party's bureaucratic inefficiency (Q95, Q96). His priority issues are education funding, Great Lakes/Finger Lakes environmental protection (water quality, invasive species), healthcare access for non-traditionally-employed workers, and NEA/state arts council budgets -- the last being 'lifelines for people like me' (Q23 follow-up). His political trajectory has evolved from ardent partisanship in his 20s-30s (campaign volunteering, yard signs) toward localized pragmatism focused on what can be built at the community level, partly driven by his own experience of economic precarity that has given him 'visceral understanding of why people feel left behind' (Q25, Q95 follow-up). He exhibits a differentiated institutional trust hierarchy: trusts scientific institutions (CDC, PubMed, peer-reviewed research) and some journalism (ProPublica, Ars Technica, STAT News), is deeply skeptical of grant bureaucracies and party machinery, and distrusts social media as primary information source (Q24 follow-up, Q42, Q48). His civic participation extends substantially beyond voting: STEM outreach pop-ups in underserved neighborhoods (Beechwood, Northeast), workshop scholarships, small-dollar donations to local candidates and Rochester Environmental Action League, and occasional phone banking despite personal discomfort (Q17, Q24 follow-up, Q29). On racial equity, he has shifted from awareness to concrete action within his sphere: advocated for community-center partnerships over museum-centric outreach, adjusted his volunteer approach from instructing to listening, and navigates political disagreements with his more conservative father through specific human stories and improv-learned 'yes, and' technique rather than data or abstract arguments (Q25 follow-up, Q26 follow-up, Q30 follow-up).",
+
+      "psychologist": "Julio presents a behavioral profile characterized by exceptionally high Openness to Experience -- voracious intellectual curiosity spanning STEM and arts, comfort with abstraction and ambiguity, deep aesthetic sensitivity, and active novelty-seeking across creative coding, visual art, music composition, improv theater, and tabletop world-building (Q01, Q02, Q07, Q109). His Conscientiousness is domain-dependent: high in structured analytical tasks (spreadsheet tracking, 10-hour workshop prep for 2-hour sessions, candidate research matrices, mood/sleep journaling) but markedly impaired during emotional dysregulation, when basic self-care collapses -- as demonstrated by the January-February 2026 three-week period of eating one meal/day, 8-pound weight loss, and inability to engage with work despite open projects (Q15 follow-up, Q16 follow-up, Q23 follow-up, Q33 follow-up). Extraversion is moderate: he maintains and values a carefully structured social scaffold (biweekly D&D, Monday improv, Saturday frisbee, Sunday family dinner, Wednesday mother calls) but becomes somatically distressed by crowds, social unpredictability, and performance scrutiny -- chest tightness at Election Day lines, phone banking, and the foundational graduate thesis colloquium where he experienced vision narrowing, speech failure, and hand trembling requiring 20 minutes on the bathroom floor (Q23, Q29, Q45 follow-up). Agreeableness is moderate-to-high: substantial prosocial behavior including volunteering, mentoring, workshop scholarships, equity-driven teaching adjustments, phone banking despite discomfort, and bartering (Q17, Q24 follow-up, Q26 follow-up, Q29, Q60); the competitive streak noted in seed data manifests as internal self-benchmarking (cycling lap times, comparison to peers on Instagram) rather than interpersonal antagonism (Q18 follow-up). Emotional Stability is notably low, with chronic somatic stress manifestations: jaw clenching requiring night guard and causing cracked molar (Q31 follow-up), tension headaches from skull base to temples correlated with deadlines and financial crunch (Q31), racing thoughts preventing sleep for days (Q33), and a pronounced intensity-crash cycle where creative flow triggers 10-12 hour work marathons with skipped meals and chest tightness, followed by 12-14 hour sleep crashes and feelings of hollowness (Q01 follow-up, Q15 follow-up). His coping architecture rests on five pillars: (1) non-negotiable social commitments as forced behavioral activation against withdrawal (Q11 follow-up, Q109 follow-up), (2) data-tracking as emotion regulation through externalization (mood journal, spreadsheets -- Q39 follow-up, Q61 follow-up), (3) daily meditation with body-scan preference during difficult periods (Q37 follow-up), (4) prescribed medication for sleep and racing thoughts (Q39), and (5) Oliver the cat as minimum-functioning anchor who forces basic routine and interrupts spiraling by sitting in his path (Q11 follow-up). His emotional disclosure is selectively distributed: Marcus receives the most (longstanding trust, deadpan humor as interruption), Greta understands from her clinical standpoint, Priya recognizes in-moment signs and provides breathing exercises, and parents lack any framework -- mother advises 'relaxing more,' father believes in willpower (Q45 follow-up). In romantic contexts, he exhibits avoidant patterns rooted in post-divorce identity questioning: post-date rumination spirals involving exhaustive conversational replay, physical pacing, stomach knots, text-drafting paralysis (4-5 drafts deleted), and consistent missed connection windows -- a pattern Marcus has explicitly named (Q05, Q05 follow-up). His self-concept is organized around three explicitly articulated pillars: creation ('the core of who I am'), connection (most feared loss -- 'without people who anchor me, creation becomes hollow and learning becomes escapism'), and learning ('if I'm not learning I feel like I'm dying') -- and threats to any pillar, especially creation via grant rejection or financial inability, produce the most severe dysregulation (Q44, Q109). The family system features 'love but not language for feeling' -- emotional information is proxied through mother, and Julio attempts to model directness with Greta as deliberate intergenerational pattern-breaking (Q46 follow-up). His aspirational identity as 'thought-leader at the intersection of STEM and visual culture' (seed) coexists with private self-doubt and imposter narratives ('a forty-nine-year-old man who has figured out nothing,' Q43), reflecting a public/private identity gap rather than simple contradiction."
     },
 
-    "political_scientist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Progressive values: Seed cultural_background identifies 'progressive Midwestern values that emphasize education, self-reliance, and community participation' and 'commitment to social equity and environmental stewardship.' Interview confirms: Q24 lists education, environment, healthcare, and arts funding as key voting issues; Q95-Q96 place him as strongly Democratic-leaning but issue-driven; Q60 confirms self-reliance (no credit cards, reluctance to accept help). Fully consistent.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "cultural_background ('progressive Midwestern values')",
-            "interview_ref": "Q23, Q24, Q25, Q60, Q95, Q96"
-          },
-          {
-            "id": 2,
-            "text": "Environmental stewardship: Seed mentions 'environmental stewardship.' Interview provides extensive behavioral evidence: Q24 identifies Great Lakes water quality and climate policy as voting priorities, Q24 follow-up mentions donations to Rochester Environmental Action League, Q24 describes reduced meat consumption and local produce purchasing, Q65 follow-up describes Finger Lakes water quality data visualization project. Consistent and richly developed.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "cultural_background ('environmental stewardship')",
-            "interview_ref": "Q24, Q65"
-          },
-          {
-            "id": 3,
-            "text": "Community participation: Seed mentions 'community participation.' Interview confirms through multiple channels: Maker's Row Rochester meetups (Q04 follow-up), Rochester Brainery workshops (Q16 follow-up), Science Center volunteering (Q17), improv troupe at Fringe Festival (Q07), pop-up science in underserved neighborhoods (Q26 follow-up). Consistent and multi-dimensional.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "cultural_background ('community participation')",
-            "interview_ref": "Q04, Q07, Q16, Q17, Q26"
-          },
-          {
-            "id": 4,
-            "text": "Seed provides no explicit political party affiliation or voting data. Interview reveals thorough civic engagement: votes every election including school board (Q23), researches candidates via spreadsheets and League of Women Voters guide (Q23 follow-up), donates small amounts to local candidates and Rochester Environmental Action League (Q24 follow-up), has done phone banking despite discomfort (Q24 follow-up). This is significant enrichment consistent with the seed's progressive values.",
-            "verdict": "GAP",
-            "seed_ref": "not in seed",
-            "interview_ref": "Q23, Q24, Q95, Q96"
-          },
-          {
-            "id": 5,
-            "text": "Seed social equity: Seed mentions 'embracing the region's commitment to social equity.' Interview provides extensive evidence through Q26-Q30: engagement with racial equity issues, Science Center outreach in underserved neighborhoods (Beechwood, Northeast), workshop scholarships, conversations about race with friends and family, reading Coates/Kendi/Rothstein. Richly consistent.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "cultural_background ('social equity')",
-            "interview_ref": "Q26, Q27, Q28, Q29, Q30"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+    "others_misc": {
+      "cultural_and_linguistic": {
+        "description": "Languages, cultural practices, religious/spiritual observance patterns, heritage markers",
+        "items": [
+          "German-Irish heritage with specific cultural practices: grandmother's sauerkraut tradition (dad's side, fall), big Irish Christmas gatherings (mom's side)",
+          "German family apple cake recipe maintained across generations (mom makes at Sunday dinners)",
+          "Childhood German Shepherd named Fritz -- heritage naming convention",
+          "Cousin Heinrich runs vineyard near Seneca Lake; sends Riesling bottles",
+          "Raised attending church on East Avenue; did full youth program progression",
+          "Currently attends Christmas Eve candlelight service and Easter with parents ('partly for them, partly because it still gives me goosebumps')",
+          "Secular spirituality: transcendence through nature (Watkins Glen waterfalls) and creative flow states ('borders on sacred')",
+          "Eight-week mindfulness course at Zen Center on Arnold Park Boulevard (~5 years ago); daily practice stuck but no longer attends center",
+          "Mother Eileen lights candles for him at church",
+          "English only; no indication of other language proficiency",
+          "Rochester cultural identity: 'scrappy city that builds things,' Kodak-era industrial heritage, maker community ethos"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Voting behavior: Interview reveals votes in every election, early voting preference, spreadsheet-based research (Q23, Q23 follow-up). Profile's community_and_civic section captures 'Votes in every election (federal, state, local, school board)' and 'Researches candidates via League of Women Voters guide, local journalism.' The spreadsheet detail is captured in home_and_lifestyle. Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q23",
-            "profile_ref": "preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Institutional skepticism: Interview reveals nuanced trust profile -- high trust in CDC/WHO/peer-reviewed research (Q41, Q42) but significant skepticism of grant bureaucracy (Q24 follow-up) and party machinery (Q25, Q95 follow-up). Profile's political_scientist summary captures the 'critical ally' posture and institutional skepticism accurately.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q24, Q25, Q41, Q42, Q95",
-            "profile_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Media diet: Interview reveals detailed media consumption -- NPR, Code Switch, ProPublica, STAT News, Ars Technica, Democrat and Chronicle, Rochester Beacon, Finger Lakes Times, Rochester For All on Twitter (Q24, Q28, Q42, Q48). Profile captures all of these in others_misc.media_and_information_diet. Comprehensive and accurate.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q24, Q28, Q42, Q48",
-            "profile_ref": "others_misc.media_and_information_diet"
-          },
-          {
-            "id": 4,
-            "text": "Political scientist summary claims Julio's 'political trajectory has shifted from partisan activism in his twenties toward pragmatic, localized community building.' This is supported by Q95 follow-up ('In my twenties and thirties I was more ardently partisan... volunteered for campaigns, put up yard signs') and Q25 (now more focused on local). Accurate synthesis.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q25, Q95",
-            "profile_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 5,
-            "text": "Racial equity engagement: Profile captures Science Center outreach in underserved neighborhoods, workshop scholarships in community_and_civic. Interview also describes the D&D group pausing a session to discuss 2020 events (Q26 follow-up) and Julio's strategy of sharing stories rather than data with his conservative father (Q30 follow-up). The nuanced interpersonal strategies are captured in the summary but not in the preferences list.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q26, Q29, Q30",
-            "profile_ref": "preferences.community_and_civic, summaries.political_scientist"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
+      "life_events_and_transitions": {
+        "description": "Significant past or anticipated events that shape current behavior and identity",
+        "items": [
+          "Chose unfunded art-science lab with Dr. Tanaka over stable Boston job offer (post-grad school) -- foundational career decision; first experience of full professional alignment ('every part of me was being used')",
+          "Lab closure when Dr. Tanaka left the university and NYSCA funding dried up (~2 years) -- loss of ideal work environment, scrambled into analytics job",
+          "Marriage to Diana (social worker) right after grad school; ~8 years together, no children ('I kept saying not yet'); project-jumping and financial instability wore on relationship",
+          "Divorce from Diana finalized ~6 years ago -- 'wasn't ugly but left a mark'; still text on birthdays; replays conversations and regrets",
+          "Post-divorce period of nightly 2-3 drinks; self-tracked correlation to worse sleep/mood, established rule: no drinking alone during low periods",
+          "Left workforce ~3 years ago due to cyclical burnout making traditional employment untenable",
+          "Adopted cat Oliver ~3 years ago coinciding with workforce exit; preceded by stretches of going 2-3 days without speaking to anyone",
+          "Three-week functional shutdown (January-February 2026): 3-4 hours broken sleep, one meal/day, 8-pound weight loss, catastrophic thoughts ('nobody would notice if I disappeared'), unable to engage with work; sister Greta drove from Syracuse, stocked fridge, stayed weekend, prompted doctor call",
+          "Major grant rejection: 42-page application (3 months work, budget, illustrations, letters of rec), form rejection with zero feedback -- identity-level blow that confirmed internal 'not good enough' narrative; shut down for 3 days until Marcus showed up with Thai food",
+          "Cracked molar from jaw grinding (~18 months ago, $1,200 crown) -- catalyzed consistent night guard use",
+          "Father Karl's declining mobility: both knees replaced ~7 years ago, one failing, uses cane, potential revision surgery; Greta has raised assisted living/apartment option, dad refused",
+          "Started prescription medication ~2 years ago after rough patch; initially resistant, Greta's 'broken arm' reframe helped acceptance",
+          "Social media reduction (January 2026): 1am Instagram comparison spiral over grad school peer's tenure-track/Nature publication triggered screen-time audit (2+ hours/day average); moved apps off home screen, set 30-minute limits"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile describes Julio as 'strongly Democratic-leaning' (summaries.political_scientist) and also 'skeptical of large institutions' (community_and_civic, summaries). These are not contradictory -- the profile accurately captures his 'critical ally' stance: policy alignment with Democratic platform combined with frustration at institutional bureaucracy. Internally coherent.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "summaries.political_scientist, preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Profile lists 'Has done phone banking for local elections (despite discomfort)' in community_and_civic. This is consistent with the psychologist summary's description of crowd/social-unpredictability aversion. The parenthetical acknowledges the tension. No contradiction.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.community_and_civic vs summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Profile lists environmental concern as a voting priority and also lists 'Reduced meat consumption to a few times per week (environmental motivation)' in food_and_dining. These reinforce each other. Internally consistent values-to-behavior alignment.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "preferences.community_and_civic, preferences.food_and_dining"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0, "gaps": 0 }
+      "sensory_and_physical_context": {
+        "description": "Non-clinical physical factors: chronic pain, mobility, sleep, sensory sensitivities, and somatic stress responses",
+        "items": [
+          "Chronic jaw clenching/grinding requiring custom night guard; cracked molar history ($1,200 crown); headaches less frequent since consistent guard use",
+          "Tension headaches from base of skull wrapping to temples, clearly correlated with stress patterns (deadlines, financial crunch)",
+          "Knee pain/clicking after hiking injury at Watkins Glen (slipped on wet rock, knee torqued, significant swelling); untreated due to cost avoidance ($300-400 estimated); still clicks on stairs",
+          "Sleep disturbance: racing thoughts (code logic, project timelines, financial scenarios, conversation replays), 3-4 hour broken nights during bad stretches; baseline improved with prescription (~1 hour to fall asleep vs 2-3 pre-medication)",
+          "Weight fluctuates ~10 lbs seasonally (winter gain from reduced activity + comfort food, summer loss)",
+          "Borderline blood pressure (~135/85); home monitoring, sodium reduction, doctor watching",
+          "Energy and motivation significantly affected by Rochester winters (short days, gray skies) -- 'By February I'm a different person': sleeps more, eats more comfort food, motivation craters",
+          "Physical tension response to crowds, unpredictable social environments, and scrutiny: chest tightness, neck tension, heart pounding (felt 'in throat' during Boston job phone call), jaw clenching, dry mouth before workshops, hands shake before performances",
+          "Teeth-clenching during intense creative work sessions (8+ hours) -- discovered only by jaw tension afterward",
+          "Full-body stress response at graduate colloquium: vision narrowing, speech failure, hand trembling"
+        ]
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals Julio's strategy for engaging with his conservative father on racial issues -- sharing specific human stories rather than data or abstract arguments, influenced by improv's 'yes, and' approach (Q25 follow-up, Q30 follow-up). This interpersonal political navigation strategy is captured in the political_scientist summary but not as a discrete profile data point.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q25, Q30",
-            "profile_ref": "summaries.political_scientist (mentioned but not in preferences)"
-          },
-          {
-            "id": 2,
-            "text": "Interview reveals Julio has not attended protests due to crowd-related physical tension (Q29). This is captured in the political_scientist summary. Complete.",
-            "verdict": "COMPLETE",
-            "interview_ref": "Q29",
-            "profile_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 3,
-            "text": "Interview reveals the D&D group paused a session in 2020 to discuss racial justice issues for several hours (Q26 follow-up). This is a notable civic/social moment not captured in the profile. Minor omission.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q26 follow-up",
-            "profile_ref": "not in preferences or summaries"
-          },
-          {
-            "id": 4,
-            "text": "Interview reveals Uncle Frank's DUI in the 1990s and the family culture of not discussing it (Q22). This reflects family communication patterns around shame/difficulty relevant to political scientist's understanding of civic/institutional trust, but is correctly placed as minor context. Not captured in profile. Very minor omission.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q22",
-            "profile_ref": "not in profile"
-          }
-        ],
-        "summary": { "complete": 1, "missing": 0, "minor_omission": 3 }
-      }
-    },
-
-    "psychologist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Core persona description: Seed states 'a 49-year-old restless polymath whose analytical mind fuels bold artistic experiments, yet anxiety and a competitive streak often drive them between bursts of creative brilliance and bouts of self-critical burnout.' Interview provides behavioral evidence for every element: restless polymathy (Q01, Q109), analytical mind (Q03, Q23 follow-up), creative experiments (Q02, Q15 follow-up, Q43), intensity cycles (Q01 follow-up, Q15 follow-up), and self-critical rumination (Q05 follow-up, Q44, Q45). The seed's compressed description is richly validated through behavioral evidence.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "persona",
-            "interview_ref": "Q01, Q02, Q03, Q05, Q15, Q43, Q44, Q45, Q109"
-          },
-          {
-            "id": 2,
-            "text": "Competitive streak: Seed mentions 'competitive streak' and 'competitive drive.' Interview reveals this as primarily internal perfectionism rather than interpersonal competition: cycling lap time tracking (seed sports_persona), 10-hour workshop prep for 2-hour sessions (Q16 follow-up), portfolio website redesign paralysis (Q16 follow-up), elaborate D&D world-building (Q07 follow-up). The interview reframes 'competition' as relentless self-standards rather than external positioning.",
-            "verdict": "INCONSISTENT",
-            "seed_ref": "persona ('competitive streak'), professional_persona ('competitive drive')",
-            "interview_ref": "Q07, Q16, Q43, Q48"
-          },
-          {
-            "id": 3,
-            "text": "Seed hobbies_and_interests mentions 'practice mindfulness meditation to manage his anxiety.' Interview describes the same practice through behavior only -- racing thoughts, jaw clenching, chest tightness, and the meditation practice as mitigation (Q37, Q37 follow-up, Q45) -- without using the clinical term. This is consistent with the behavioral-description protocol and does not represent an actual inconsistency.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "hobbies_and_interests ('mindfulness meditation to manage his anxiety')",
-            "interview_ref": "Q37, Q45"
-          },
-          {
-            "id": 4,
-            "text": "Improv theater: Seed lists it as a hobby. Interview reveals improv serves a deeper psychological function -- 'exposure therapy for my need to plan everything' (Q07 follow-up), training present-moment responsiveness and 'yes, and' thinking that transfers to interpersonal contexts including political conversations with his father (Q25 follow-up). The hobby is a coping mechanism with transfer effects.",
-            "verdict": "CONSISTENT",
-            "seed_ref": "hobbies_and_interests ('Improv theater')",
-            "interview_ref": "Q07, Q25, Q45"
-          },
-          {
-            "id": 5,
-            "text": "Seed does not mention romantic relationship patterns post-divorce. Interview reveals a clear avoidant pattern: post-date rumination cycles with physical symptoms (stomach knotting, pacing), text-drafting-and-deleting behavior, consistent failure to follow up (Q05, Q05 follow-up). Pattern attributed to divorce and reinforced by fear of repeating failure. Significant enrichment of seed's 'divorced' status.",
-            "verdict": "GAP",
-            "seed_ref": "marital_status: divorced (no post-divorce relational data)",
-            "interview_ref": "Q05, Q01, Q84"
-          },
-          {
-            "id": 6,
-            "text": "Seed does not describe somatic stress responses. Interview reveals extensive somatization: jaw clenching cracking a molar (Q31), tension headaches skull-to-temple (Q31), chest tightness (Q01 follow-up, Q03 follow-up), hand trembling before workshops (Q16 follow-up, Q45 follow-up), dry mouth pre-performance (Q45), neck tension in crowds (Q23). This is a crucial behavioral dimension absent from the seed.",
-            "verdict": "GAP",
-            "seed_ref": "not in seed",
-            "interview_ref": "Q01, Q03, Q16, Q23, Q31, Q45"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 1, "gaps": 2 }
+      "media_and_information_diet": {
+        "description": "News sources, social media platforms, entertainment formats, information-seeking behavior, and trust criteria",
+        "items": [
+          "NPR (morning radio while making coffee), Code Switch podcast (regularly)",
+          "ProPublica (investigative), Ars Technica (science), STAT News (health reporting)",
+          "Democrat and Chronicle, Rochester Beacon (local journalism), Finger Lakes Times",
+          "Twitter/X: follows Rochester For All (city council tracking), state education advocacy groups, epidemiologists, data visualization professionals; rarely posts (~1 retweet/week); avoids arguments ('combative tone makes my chest tight')",
+          "Instagram: posts paintings and digital art, follows artists/creative coders/makerspaces; 30-minute daily limit after comparison spiral; primary trigger for self-comparison and inadequacy feelings",
+          "Facebook: minimal use, mainly Rochester Makers group page and Uncle Frank's posts",
+          "Reddit: r/creativecoding, r/dataisbeautiful, r/tabletopRPG (browse occasionally)",
+          "Discord: creative coding server (~200 active members), D&D homebrew server -- preferred community platform ('feels like being at a table with friends,' no follower count, no likes)",
+          "YouTube: Kurzgesagt for science communication",
+          "PubMed for primary research literature (has statistical training to read clinical trials critically)",
+          "League of Women Voters guide for election research; cross-references with local reporting",
+          "Books: Ta-Nehisi Coates (Between the World and Me), Ibram X. Kendi, Richard Rothstein (The Color of Law), Ursula K. Le Guin (The Dispossessed recently reread)",
+          "Information trust filter: 'Does this person or outlet cite primary sources and acknowledge uncertainty? If they're selling certainty, I don't trust them' (Q42)",
+          "Institutional trust hierarchy: trusts scientific institutions (CDC, WHO, peer-reviewed journals), moderate trust in quality journalism, skeptical of social media as primary source, deeply skeptical of grant bureaucracies"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Somatic stress profile: Interview describes jaw clenching (Q31), tension headaches (Q31), chest tightness (Q01 follow-up), hand trembling (Q16 follow-up), sleep disruption (Q33, Q45). Profile captures all of these in others_misc.sensory_and_physical_context (8 items covering each symptom) and health_and_wellness (night guard, acupuncture for jaw tension). Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q01, Q03, Q16, Q31, Q33, Q45",
-            "profile_ref": "others_misc.sensory_and_physical_context, preferences.health_and_wellness"
-          },
-          {
-            "id": 2,
-            "text": "Social scaffold as behavioral activation: Interview at Q11 follow-up describes social commitments as 'non-negotiable, like taking medication' and Q109 follow-up describes D&D and improv as 'an act of defiance against the part of me that wants to disappear.' Profile's social_and_relationships captures the 'like taking medication' quote. Psychologist summary accurately describes the scaffold function. Faithfully represented.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q11, Q109",
-            "profile_ref": "preferences.social_and_relationships, summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Romantic avoidance pattern: Interview describes post-date rumination, text paralysis, and pattern recognition (Q05, Q05 follow-up on dates). Profile captures this in social_and_relationships: 'On Hinge but struggles with follow-through after dates due to post-date rumination cycles.' Psychologist summary describes 'avoidant tendencies in romantic contexts.' Accurate.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q05",
-            "profile_ref": "preferences.social_and_relationships, summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Identity-threat response: Interview reveals grant rejection as identity-level blow -- 'It confirmed the voice in my head that says I'm not good enough' (Q44 follow-up). Psychologist summary captures: 'threats to this identity (grant rejection, financial inability to create) produce the most severe emotional dysregulation.' Accurately synthesized.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q44",
-            "profile_ref": "summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Psychologist summary uses Big Five trait language (high Openness, domain-dependent Conscientiousness, moderate Extraversion, low-to-moderate Agreeableness, low Emotional Stability). While the interview does not use this framework, the behavioral evidence maps convincingly: Q109 (Openness -- values creation and learning), Q15 (Conscientiousness -- pomodoro timer vs. schedule collapse during creative phases), Q29 (Extraversion -- deep connection valued but crowds aversive), Q25 (Agreeableness -- willing to disagree, competitive), Q45 (Emotional Stability -- chronic stress responses). The summary's trait attributions are well-supported by behavioral evidence and avoid clinical labels per protocol.",
-            "verdict": "CONSISTENT",
-            "interview_ref": "Q01, Q15, Q25, Q29, Q45, Q109",
-            "profile_ref": "summaries.psychologist"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
+      "technology_and_tool_use": {
+        "description": "Device preferences, app usage, digital communication norms, and technology relationship",
+        "items": [
+          "Laptop as primary work device (coding, grant writing, illustration, data visualization)",
+          "Insight Timer app for guided meditation (body-scan or simple timer with interval bell)",
+          "Pomodoro timer for focus sessions (25 on/5 off; successful ~60% of mornings)",
+          "Hinge dating app (active but low engagement due to post-date rumination)",
+          "Blood pressure wrist cuff monitor (checked couple times/week)",
+          "Full-spectrum light therapy lamp (daily 30 min, October-April)",
+          "TurboTax Self-Employed (1099 tracking, home office deduction, art supplies, software, mileage)",
+          "M&T Bank app (checked monthly for budget spreadsheet; previously compulsive daily checking)",
+          "Basic portfolio website (exists but unupdated >1 year; perfectionist redesign loop prevents updates -- 'every time I sit down to update it, I start redesigning the whole thing from scratch')",
+          "Moved social media apps off phone home screen; set 30-minute daily limits (January 2026)",
+          "Prefers Discord for community interaction over broadcast social media platforms",
+          "Screen time tracking: became aware of 2+ hour daily social media average, used as data point for behavioral change",
+          "Modular synthesizer for music composition (hardware creative tool)",
+          "Arduino kits (educational tool with nephew Milo; bought beginner kit as birthday gift)"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
+      "unresolved_or_ambiguous": {
+        "description": "Information that could not be confidently assigned to preferences or summaries, or where source data is in tension",
+        "items": [
           {
-            "id": 1,
-            "text": "Profile describes 'high Openness' and comfort with abstraction in the psychologist summary, while also describing physical tension responses to novelty and scrutiny (hand trembling before workshops, crowd aversion). These are not contradictory -- Openness to experience is an intellectual/aesthetic trait, while somatic stress responses reflect a separate behavioral dimension related to emotional regulation rather than curiosity. Internally consistent.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "summaries.psychologist vs others_misc.sensory_and_physical_context"
+            "content": "Seed professional_persona and sports_persona use they/them pronouns; cultural_background and career_goals use he/him. Interview consistently uses he/him. Sex field is 'Male.'",
+            "candidate_owner": "demographer",
+            "reason_unresolved": "Pronoun inconsistency in seed data appears to be generation artifact. Interview defaulted to he/him based on sex field and cultural_background narrative voice. Profile uses he/him throughout."
           },
           {
-            "id": 2,
-            "text": "Profile describes 'moderate Extraversion' but also states he went 2-3 days without speaking to anyone before adopting Oliver. This is consistent -- moderate Extraversion means he values connection but can function in isolation for short periods, and the profile correctly notes the cost of prolonged isolation (worse sleep, second-guessing, poor mental state per Q11 follow-up).",
-            "verdict": "CONSISTENT",
-            "profile_ref": "summaries.psychologist vs preferences.social_and_relationships"
+            "content": "Seed professional_persona frames Julio as confidently 'positioning themselves as a thought-leader' with a 'competitive drive.' Interview self-presentation is markedly more self-deprecating, uncertain, and vulnerability-centered.",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Reflects public vs. private self-presentation. Seed captures aspirational professional identity; interview reveals private self-assessment. Both are valid facets. Profile psychologist summary acknowledges the gap explicitly."
           },
           {
-            "id": 3,
-            "text": "Profile's unresolved_or_ambiguous section flags the tension between seed's confident competitive framing and interview's self-deprecating voice. The psychologist summary integrates both: 'relentless self-standards' rather than only one framing. This self-aware handling of the ambiguity is internally coherent.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "others_misc.unresolved_or_ambiguous item 1 vs summaries.psychologist"
+            "content": "Exact nature of prescription medication not specified in interview (behavioral effects described only: helps with sleep and racing thoughts, baseline improvement, bad crashes less frequent).",
+            "candidate_owner": "psychologist",
+            "reason_unresolved": "Deliberately omitted clinical specifics per behaviors-never-labels rule. Behavioral description is complete and sufficient."
           },
           {
-            "id": 4,
-            "text": "Profile states flow states are 'both his greatest resource and his greatest vulnerability' (psychologist summary). This is consistent with health_and_wellness (20-minute meditation, structured routines) and work_and_career (schedule collapse during creative phases, Q15 follow-up). The dual nature of creativity as resource/vulnerability is coherently presented across sections.",
-            "verdict": "CONSISTENT",
-            "profile_ref": "summaries.psychologist vs preferences.health_and_wellness, preferences.work_and_career"
+            "content": "Seed mentions 'mindfulness meditation to manage his anxiety' using the clinical term explicitly. Interview describes the same practice through behavioral description without clinical labeling.",
+            "candidate_owner": "drop",
+            "reason_unresolved": "Successfully converted to behavioral description in transcript. No residual information lost. Profile maintains behavioral framing."
+          },
+          {
+            "content": "Church denomination on East Avenue never specified. Seed says parents 'exposed him to technical rigor and craftsmanship of artisanal trades' but church tradition is unspecified. Mother's 'Irish' side and the Christmas/Easter attendance pattern suggest Catholic or mainline Protestant but this is inferential.",
+            "candidate_owner": "demographer",
+            "reason_unresolved": "Interview did not specify denomination (Q47, Q94). Profile records behavioral observance pattern without denomination label."
+          },
+          {
+            "content": "Julio's exact savings balance and burn-rate timeline are deliberately vague in interview: 'three to four months of expenses' and 'enough to cover about three to four months.' Whether he has reached or is approaching critical threshold is unclear.",
+            "candidate_owner": "behavioral_economist",
+            "reason_unresolved": "Julio deliberately avoids specifics ('without being too specific,' Q61). The 3-4 month figure and monthly drawdown of several hundred dollars are the firmest data points available. No contradiction, just deliberate privacy."
           }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals the grad school colloquium shutdown -- vision narrowing, inability to speak, hand trembling, retreating to bathroom floor for 20 minutes (Q45 follow-up). This pivotal moment of self-awareness ('That was the moment I realized this wasn't something everyone dealt with') is not captured in the profile as a discrete life event. It appears only implicitly through the somatic symptom descriptions.",
-            "verdict": "MISSING",
-            "interview_ref": "Q45 follow-up",
-            "profile_ref": "others_misc.life_events_and_transitions (not listed)"
-          },
-          {
-            "id": 2,
-            "text": "Interview reveals the family emotional communication pattern -- 'a family that functions but doesn't necessarily thrive emotionally' with avoidance of direct emotional expression (Q46, Q46 follow-up). Julio's attempt to model different behavior by answering Greta honestly instead of saying 'fine' is captured implicitly in the psychologist summary but not as a discrete behavioral pattern in preferences.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q46",
-            "profile_ref": "summaries.psychologist (implicitly)"
-          },
-          {
-            "id": 3,
-            "text": "Interview reveals Oliver the cat serves multiple behavioral functions beyond companionship: forced morning routine (Q11 follow-up), minimum functioning anchor during bad days (Q32 follow-up, Q33 follow-up), interruption of spiraling through physical presence (Q11 follow-up). Profile mentions Oliver in home_and_lifestyle but does not capture his psychological scaffolding role.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q11, Q32, Q33",
-            "profile_ref": "preferences.home_and_lifestyle (Oliver mentioned but not psychological function)"
-          },
-          {
-            "id": 4,
-            "text": "Interview reveals Julio's relationship with the concept of 'failure' -- the divorce as a persistent internal narrative of relationship incapacity (Q01 follow-up on divorce), the grant rejection as confirmation of inadequacy (Q44 follow-up), the financial situation as evidence of poor life choices (Q83). This failure-schema is a core psychological dynamic captured in the psychologist summary but could be more explicitly documented.",
-            "verdict": "MINOR_OMISSION",
-            "interview_ref": "Q01, Q44, Q83",
-            "profile_ref": "summaries.psychologist (distributed across text)"
-          },
-          {
-            "id": 5,
-            "text": "Interview reveals post-divorce alcohol monitoring behavior: period of 2-3 drinks nightly, tracked correlation between drinking and next-day mood, created a personal rule ('no drinking alone when in a low period'; Q38 follow-up). This self-regulation development through data-tracking is a significant behavioral pattern not captured in the profile beyond the brief mention in food_and_dining ('Occasional glass of wine while cooking').",
-            "verdict": "MISSING",
-            "interview_ref": "Q38",
-            "profile_ref": "preferences.food_and_dining (alcohol mentioned but not the self-regulation history)"
-          }
-        ],
-        "summary": { "complete": 0, "missing": 2, "minor_omission": 3 }
+        ]
       }
     }
-  },
-
-  "overall_verdict": "PASS_WITH_REVISIONS",
-
-  "inconsistencies_found": [
-    {
-      "issue": "COMPETITIVE_FRAMING",
-      "experts": ["behavioral_economist", "psychologist"],
-      "seed_says": "Competitive drive pushes them to secure grant funding and position themselves as a thought-leader at the crossroads of STEM and visual culture",
-      "interview_says": "Grant-seeking is portrayed as anxious striving with significant self-doubt; competitive behaviors manifest as perfectionism (10-hour workshop prep, portfolio redesign cycles) rather than confident external positioning; grant rejection triggered identity-level crisis rather than strategic recalibration",
-      "severity": "Minor",
-      "resolution": "The seed's professional_persona represents an idealized public-facing narrative; the interview captures the private psychological experience. Both are valid -- Julio does pursue grants and thought-leadership, but the internal experience is anxious perfectionism. The profile should carry both framings with the interview's nuanced version taking precedence for behavioral simulation.",
-      "action": "REINTERPRET_SEED"
-    }
-  ],
-
-  "resolutions": [
-    {
-      "issue": "COMPETITIVE_FRAMING",
-      "expert": "behavioral_economist, psychologist",
-      "seed_says": "Competitive drive pushes them to secure grant funding and position themselves as a thought-leader",
-      "interview_says": "Anxious striving, self-doubt, identity-level vulnerability to rejection; competitive edge manifests as perfectionism not confident positioning",
-      "severity": "Minor",
-      "resolution": "Both framings coexist. Seed represents aspirational public identity; interview reveals private emotional reality. No data correction needed; this is a depth-of-characterization enrichment.",
-      "action": "REINTERPRET_SEED"
-    },
-    {
-      "issue": "PRONOUN_INCONSISTENCY",
-      "expert": "demographer",
-      "seed_says": "they/them in several persona narrative fields; he/him in cultural_background and career_goals; sex field: Male",
-      "interview_says": "Consistently he/him throughout",
-      "severity": "Minor",
-      "resolution": "The they/them usage is a stylistic artifact of the NVIDIA Nemotron generation process. The sex field and majority of seed text use he/him. Interview confirms he/him. No correction needed.",
-      "action": "NO_CHANGE"
-    }
-  ],
-
-  "gaps_addressed": [
-    {
-      "gap": "Parents' specific education levels (Dad: HS + trade certificate; Mom: associate degree from MCC) not captured in extracted profile",
-      "resolution": "Add to others_misc or a family demographics section for completeness.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Healthcare cost-benefit calculus (economic reasoning behind foregoing knee treatment) not captured as behavioral economic data point",
-      "resolution": "The decision-making process behind foregone care is significant for behavioral simulation. Add to work_and_career or create a financial_decision_patterns section.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Financial security threshold ($36K/year + employer insurance) not captured",
-      "resolution": "Concrete benchmark important for understanding aspiration level. Add to work_and_career preferences.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Painting sold at craft fair ($400) and bartering behavior not captured as income sources",
-      "resolution": "These alternative economic strategies are relevant to the behavioral economist perspective. Add to work_and_career.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Grad school colloquium shutdown (pivotal self-awareness moment) not in life_events_and_transitions",
-      "resolution": "This is the origin event for Julio's recognition of his stress response pattern. Add to life_events_and_transitions.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Post-divorce alcohol self-regulation history (tracking, rule creation) not captured",
-      "resolution": "Significant behavioral self-regulation development through data-tracking. Add to health_and_wellness or others_misc.",
-      "action": "ADD_TO_PROFILE"
-    },
-    {
-      "gap": "Oliver's psychological scaffolding function (forced routine, spiral interruption) not captured beyond companion mention",
-      "resolution": "Oliver serves as a behavioral activation tool, not just a pet. Enrich the home_and_lifestyle entry or add to psychologist-relevant section.",
-      "action": "ENRICH_EXISTING"
-    }
-  ],
-
-  "expert_summaries": {
-    "demographer": "Julio Simmons is a 49-year-old white male of German-Irish descent, born and raised in Rochester, NY (14618/Brighton area), holding a master's degree in computational science from the University of Rochester and a B.S. in applied mathematics from RIT (Q90). Despite upper-tier educational attainment, he is currently not in the workforce, having exited approximately three years ago due to cyclical burnout (Q01, Q34). He is divorced with no children (Q84, Q52), living alone in a rented upper-floor unit at $950/month (Q58) with a cat. His family of origin is nearby -- parents Karl and Eileen (mid-70s) in Brighton, sister Greta (44, nurse practitioner) in Syracuse with husband Paul and children Milo (12) and Sophie (9) (Q05). His socioeconomic trajectory represents significant downward mobility relative to his credentials: he draws down savings to supplement sporadic freelance income of approximately $500-800/month (Q72, Q83), placing his effective household income well below the median for Monroe County. He represents a growing demographic of highly educated individuals who have exited the traditional labor market due to misalignment between health patterns, skill profiles, and available employment structures.",
-
-    "behavioral_economist": "Julio exhibits strong present-bias and identity-driven decision-making, consistently choosing intrinsically rewarding creative work over financially optimal alternatives -- from turning down a stable Boston job offer after graduate school (Q02) to leaving the workforce entirely rather than accepting misaligned employment (Q34). His loss aversion is organized around identity rather than finances: he would rather deplete savings than accept work that compromises his interdisciplinary creator identity (Q83). He demonstrates sophisticated self-monitoring through spreadsheets tracking mood, sleep, spending, alcohol consumption, and candidate research (Q23, Q38, Q39, Q61), yet shows limited ability to override the behavioral patterns he documents. His financial decision-making shows an asymmetric risk profile: risk-tolerant on the income side (accepting irregular freelance income, pursuing the makerspace) but risk-averse on the debt side (deliberate credit card avoidance, student loans paid off; Q60, Q63). His consumption behavior is highly state-dependent, oscillating between experimental cooking with local farmers' market ingredients and rice-and-beans austerity during financial stress (Q56, Q81). He engages in mental accounting that separates survival money from project money, and shows strong reciprocity norms through bartering, scholarship offerings, and community volunteering (Q24 follow-up, Q60).",
-
-    "political_scientist": "Julio is a highly engaged civic actor who votes in every election across all levels -- federal, state, local, and school board -- approaching candidate selection with systematic rigor through weighted spreadsheets and cross-referencing the League of Women Voters guide, local journalism, and candidate websites (Q23, Q23 follow-up). He leans strongly Democratic but identifies as issue-driven rather than partisan, with primary concerns in education funding, environmental protection (particularly Great Lakes water quality), healthcare access, and arts funding (Q24, Q95, Q96). His civic engagement extends beyond voting to community-level action: advocating for Science Center outreach in underserved Rochester neighborhoods (Beechwood, Northeast), offering workshop scholarships for low-income participants, donating to local candidates and the Rochester Environmental Action League, and occasional phone banking despite significant personal discomfort (Q24 follow-up, Q26 follow-up, Q29). He exhibits differentiated institutional trust -- high confidence in scientific institutions and peer-reviewed research (Q41, Q42) combined with significant skepticism toward bureaucratic grant processes (Q24 follow-up). His political trajectory has shifted from partisan activism in his twenties toward pragmatic, localized community building, driven partly by personal experience of economic precarity that has deepened his empathy across political divides (Q25).",
-
-    "psychologist": "Julio presents a behavioral profile characterized by high Openness to experience -- voracious intellectual curiosity spanning STEM and arts, comfort with abstraction, and aesthetic sensitivity expressed through painting, coding, and music composition (Q01, Q109). His Conscientiousness is domain-dependent: rigorous in structured analytical tasks like spreadsheet tracking and research but prone to self-regulatory collapse under emotional distress, when routines disintegrate and basic functioning deteriorates (Q33, Q43). His stress response is heavily somatized: chronic jaw clenching that cracked a molar (Q31), tension headaches from skull base to temples, chest tightness during uncertainty, hand trembling before presentations, and disrupted sleep with racing catastrophic thoughts (Q01 follow-up, Q31, Q45). He maintains psychological stability through a carefully constructed external scaffold of social commitments -- biweekly D&D, weekly improv, Saturday frisbee, Sunday family dinners -- which he treats as 'non-negotiable, like taking medication' because they serve as behavioral activation against powerful withdrawal tendencies (Q11 follow-up, Q109). His self-concept is organized around the identity of maker/creator, and threats to this identity (grant rejection with zero feedback, financial inability to pursue projects) produce the most severe emotional dysregulation, including multi-day shutdown episodes (Q44). His relational pattern shows secure, deep attachment to a small inner circle (Marcus, Greta, Priya) but consistent avoidance in romantic contexts, driven by post-interaction rumination cycles including physical pacing, stomach knotting, and text-drafting paralysis (Q05, Q05 follow-up). Creativity and flow states function as both his greatest resource and greatest vulnerability, triggering unsustainable intensity cycles followed by depletion (Q01 follow-up, Q15 follow-up)."
-  },
-
-  "preferences_updates": {
-    "additions": [
-      "work_and_career: Add financial security threshold of $36K/year plus employer health insurance as concrete aspiration benchmark (Q83 follow-up)",
-      "work_and_career: Add painting sales at craft fairs and bartering as supplementary income/exchange strategies (Q60)",
-      "health_and_wellness: Add post-divorce alcohol self-regulation development -- tracked correlation, created 'no drinking alone in low periods' rule (Q38 follow-up)",
-      "home_and_lifestyle: Enrich Oliver entry to capture psychological scaffolding function (forced morning routine, spiral interruption) beyond companion status (Q11 follow-up, Q32 follow-up)",
-      "others_misc.life_events_and_transitions: Add grad school colloquium shutdown as pivotal self-awareness moment for stress response recognition (Q45 follow-up)",
-      "others_misc: Add parents' education levels -- Dad: HS + trade certificate in tool and die making; Mom: associate degree in health information management from MCC (Q100, Q101)"
-    ],
-    "corrections": [
-      "Reframe seed's 'competitive drive' language: interview reveals this as perfectionism and anxious striving rather than confident competitive positioning; both framings should coexist with interview version taking precedence for behavioral simulation"
-    ],
-    "removals": []
-  },
-
-  "final_status": "PASS WITH REVISIONS. All core demographic, biographical, and behavioral data from the NVIDIA seed is confirmed by the 109-question interview across all four verification directions. Two minor inconsistencies were identified: (1) the seed's 'competitive drive/thought-leader' framing is reinterpreted as anxious perfectionism based on extensive interview evidence, and (2) the seed's pronoun inconsistency is resolved in favor of he/him per the sex field and interview usage. Direction 2 (interview-to-profile) found strong fidelity across all four expert domains with one minor gap (bartering behavior). Direction 3 (internal consistency) found no contradictions within the extracted profile. Direction 4 (completeness) identified seven actionable gaps where interview data should be added to the profile: parents' education, healthcare cost-benefit reasoning, financial security benchmark, alternative income sources, grad school shutdown event, alcohol self-regulation history, and Oliver's psychological function. No major inconsistencies or data integrity failures were found. The persona is verified and ready for downstream steps with the recommended additions applied."
+  }
 }

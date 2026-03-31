@@ -1,629 +1,874 @@
 {
-  "verification_metadata": {
+  "verification": {
+    "metadata": {
+      "participant_id": "f2f5dbaf4d3d43f68adeb7f318afa3a2",
+      "name": "Deeva Cintron",
+      "verification_date": "2026-03-31",
+      "protocol": "4-direction expert panel verification (Demographer, Behavioral Economist, Political Scientist, Psychologist)",
+      "model": "Claude Opus 4.6 (1M context)",
+      "seed_source": "data/step1_seed/deeva_cintron_seed.json",
+      "interview_source": "data/step2_interview/deeva_cintron_interview.json"
+    },
+
+    "direction_1_seed_vs_interview": {
+      "description": "Seed data compared against interview transcript for consistency, enrichment, and contradiction.",
+      "demographer": [
+        {
+          "id": "D1-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Seed states age 85, Female, married_present, Saline MI 48176, some_college, not_in_workforce. Interview confirms all: DOB March 14 1941 (Q85), references being 85 throughout (Q01, Q27, Q45, Q109), married to Harold 64 years (Q84), lives in Saline (Q08), attended community college but did not finish (Q90), no paid work (Q69-Q72)."
+        },
+        {
+          "id": "D1-DEM-02",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'mid-western white family in Michigan' with 'second-generation descendants of German immigrants.' Interview enriches: born in Tecumseh MI (Q87), father worked at grain elevator/feed mill (Q106), mother worked at Woolworth's five-and-dime (Q103), both parents had high school education (Q100, Q101), family emphasized thrift, hard work, church attendance, and Sunday dinners (Q01)."
+        },
+        {
+          "id": "D1-DEM-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions marital status 'married_present.' Interview provides extensive context: married Harold in 1962 after meeting at church social in 1961 (Q01, Q02), Harold worked at Ford plant with union membership (Q01, Q66), three children: Robert (62, Ann Arbor), James (59, Ohio), Patricia (56, Ypsilanti), seven grandchildren, three great-grandchildren (Q05)."
+        },
+        {
+          "id": "D1-DEM-04",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions Saline, Washtenaw County as current location. Interview adds: moved to Saline in 1978 from Tecumseh area (Q02), bought house that year (Q58), mortgage paid off in 2003. Household income approximately $3,000/month from Ford pension and government retirement benefits (Q74). Three-bedroom home (Q11)."
+        },
+        {
+          "id": "D1-DEM-05",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'partial college studies in business administration.' Interview specifies: attended community college for about two years (Q90), left to marry Harold in 1962 at age 20 (Q02), aspires to finish certificate online (Q01 follow-up, Q91). Father's educational attainment (high school, Q100) and mother's (high school, Q101) contextualize her as first in family to attempt higher education."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D1-BEH-01",
+          "finding": "ENRICHED",
+          "detail": "Seed states 'meticulous budgeting, record-keeping, and methodical planning.' Interview provides deep behavioral evidence: handwritten ledger maintained 50+ years, envelope system for different expense categories (house fund, holiday fund, medical fund), monthly reconciliation against budget (Q56, Q59, Q61). Traces origin to watching mother discuss store economics (Q103 follow-up)."
+        },
+        {
+          "id": "D1-BEH-02",
+          "finding": "ENRICHED",
+          "detail": "Seed describes 'competitive edge drives her to double-check every detail.' Interview confirms and contextualizes: keeps running score notebook at bridge (Q07 follow-up), double-checks crossword answers (Q01), checks every receipt and ledger entry (Q56, Q65), verifies pill compliance with refrigerator chart (Q31 follow-up). Competition is self-directed and accuracy-focused, not interpersonally aggressive."
+        },
+        {
+          "id": "D1-BEH-03",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'senior discounts to keep expenses predictable.' Interview quantifies financial picture: ~$3,000/month fixed income (Q74), ~$2,000/month typical spending excluding quarterly property tax (Q57), $60-70/month medication co-pays (Q36, Q40), $50/month house repair fund (Q58 follow-up), small savings contributions of $40-50/month (Q61 follow-up). Zero debt (Q63). Can absorb $400 emergency (Q82)."
+        },
+        {
+          "id": "D1-BEH-04",
+          "finding": "CONSISTENT",
+          "detail": "Seed describes 'thrift-driven palate' and 'simple, seasonal dishes.' Interview confirms loss-aversion-driven food behavior: cooks from garden to reduce grocery costs (Q64, Q81), delays fabric purchases when budget is tight (Q60), chose cheaper medication over more effective but expensive alternative (Q36). Every spending decision framed as opportunity cost analysis."
+        },
+        {
+          "id": "D1-BEH-05",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions 'community finance volunteer.' Interview reveals scope: 8 years at senior center reconciling donations, tracking expenses, preparing event budgets, maintaining paper ledger alongside Linda's computer records (Q16 follow-up). Also managed Harold's carpentry side-business books (Q65 follow-up) and church women's group treasury for 20+ years (Q01, Q47)."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D1-POL-01",
+          "finding": "NO SEED DATA",
+          "detail": "Seed contains no political information. Interview provides rich civic profile: votes in every election since age 21 (Q23), researches candidates via local paper, voter guides, TV debates (Q23 follow-up), writes letters to representatives on prescription costs and road funding (Q27 follow-up). Avoids partisan identification, describes self as issue-oriented (Q95, Q96)."
+        },
+        {
+          "id": "D1-POL-02",
+          "finding": "ENRICHED",
+          "detail": "Seed cultural_background mentions 'church, local civic groups.' Interview elaborates deep civic embedding: 48-year Saline resident, church fellowship organizer, library volunteer for 12 years, senior center finance volunteer for 8 years, walking club member (Q07, Q16, Q47). Civic participation is institutional and habitual rather than activist-oriented."
+        },
+        {
+          "id": "D1-POL-03",
+          "finding": "NO SEED DATA",
+          "detail": "Seed has no media/information data. Interview reveals information diet: Saline Post (delivered), Ann Arbor News (library), broadcast evening news at 6 PM, local morning radio; stopped watching cable news due to partisan tone (Q24 follow-up). Bridge group imposed 'no politics' rule (Q24 follow-up). Trusts doctor and local pharmacist over internet for health information (Q42)."
+        },
+        {
+          "id": "D1-POL-04",
+          "finding": "NO SEED DATA",
+          "detail": "Seed has no racial/social justice content. Interview reveals limited but reflective engagement: acknowledges homogeneous upbringing (Q26, Q28), listens to grandchildren's perspectives on BLM and racial justice (Q26 follow-up, Q30), signed church statement on human dignity (Q27 follow-up). Default framework is 'treat everyone with respect' rather than structural analysis (Q27, Q29)."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D1-PSY-01",
+          "finding": "ENRICHED",
+          "detail": "Seed describes 'quiet competitive streak' and 'double-checking crossword answers and recipe measurements.' Interview reveals deep behavioral pattern: keeps 20-year running bridge scorebook (Q07 follow-up), tracks bird sightings in notebook (Q17), maintains handwritten ledger and pill compliance chart (Q31, Q56). The double-checking behavior is pervasive across domains -- quilting stitches, tax returns, crosswords -- and tied to identity as someone who 'does things right' (Q106 follow-up, Q109)."
+        },
+        {
+          "id": "D1-PSY-02",
+          "finding": "ENRICHED",
+          "detail": "Seed persona states 'steadfast dedication to order' and 'rigid daily routine.' Interview reveals this is a self-regulation mechanism: routine is 'my anchor' (Q43 follow-up), sticking to schedule combats low mood (Q45, Q50), loss of routine during illness triggered crying episode and existential fear (Q44). The rigidity is functional, not merely preferential."
+        },
+        {
+          "id": "D1-PSY-03",
+          "finding": "ENRICHED",
+          "detail": "Seed skills mention 'questioning assumptions to ensure quality.' Interview contextualizes: challenges doctors on pill necessity (Q39 follow-up), told grandson to get vaccinated despite his hesitancy (Q41 follow-up), questioned moving to Ohio despite son's suggestion (Q10 follow-up). Pattern is assertive within trusted relationships but avoidant in public/political contexts (Q29)."
+        },
+        {
+          "id": "D1-PSY-04",
+          "finding": "NEW FINDING",
+          "detail": "Seed mentions no emotional distress patterns. Interview reveals: nighttime worry spirals about health, finances, Harold's mortality (Q45 follow-up), seasonal mood decline in winter (Q32, Q43, Q45), crying episode during illness reflecting fear of dependency and uselessness (Q44), generational survivor grief (Q43). Coping is exclusively behavioral: cleaning, organizing, quilting, list-making (Q38, Q45). Actively resists discussing feelings with family (Q44 follow-up, Q45 follow-up)."
+        },
+        {
+          "id": "D1-PSY-05",
+          "finding": "ENRICHED",
+          "detail": "Seed mentions preference for 'predictable, low-intensity exercise.' Interview reveals the predictability need extends to all domains: same breakfast daily (Q15), supper at 5:00 sharp (Q15), bed by 9 PM (Q15 follow-up), appointments at same time each week (Q78), grocery shopping by list aisle-by-aisle (Q18). Deviation from predictability causes measurable distress (Q18 follow-up)."
+        },
+        {
+          "id": "D1-PSY-06",
+          "finding": "MINOR GAP",
+          "detail": "Seed arts_persona mentions 'crocheted patterns' as a creative outlet. Interview focuses exclusively on quilting and knitting (Q11, Q17); crochet is never mentioned by the persona. This may indicate crochet is inactive or conflated with knitting in the seed. Flagged as unresolved in extracted profile."
+        }
+      ]
+    },
+
+    "direction_2_interview_vs_extracted_profile": {
+      "description": "Interview transcript compared against the extracted_profile for completeness, accuracy, and misattribution.",
+      "demographer": [
+        {
+          "id": "D2-DEM-01",
+          "finding": "ACCURATE",
+          "detail": "Profile header correctly states: participant_id, name, age 85, gender Female, married_present, Saline MI 48176, some college (business administration, not completed), not in workforce (retired homemaker, active volunteer). All match interview data (Q84-Q90, Q01, Q16)."
+        },
+        {
+          "id": "D2-DEM-02",
+          "finding": "ACCURATE",
+          "detail": "Demographer summary correctly identifies: white woman of German descent, born/raised Tecumseh MI, now Saline; 64-year marriage, three children, seven grandchildren, three great-grandchildren; some college not completed; fixed income ~$3,000/month; home owned outright. All supported by Q01, Q05, Q58, Q74, Q89."
+        },
+        {
+          "id": "D2-DEM-03",
+          "finding": "MINOR GAP",
+          "detail": "Profile others_misc life_events lists 'father ~1992' for death. Interview says 'my father a few years before that' relative to mother's 1995 death (Q06). The ~1992 is an approximation that could be off; Deeva never gives an exact date. Should note as estimated."
+        },
+        {
+          "id": "D2-DEM-04",
+          "finding": "ACCURATE",
+          "detail": "Profile correctly captures birthplace as Tecumseh, Michigan (Q87), childhood at age 16 in Tecumseh (Q97), parents' education levels (Q100, Q101), mother's occupation at Woolworth's (Q102-Q104), father's occupation at grain elevator (Q105-Q107)."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D2-BEH-01",
+          "finding": "ACCURATE",
+          "detail": "Profile home_and_lifestyle correctly captures envelope system, handwritten ledger, $50/month house fund. Financial data in work_and_career and home_and_lifestyle accurately reflects interview (Q56, Q58, Q61). No misattributions found."
+        },
+        {
+          "id": "D2-BEH-02",
+          "finding": "MINOR GAP",
+          "detail": "Profile does not include a dedicated 'finances' preference category. Financial behaviors are scattered across home_and_lifestyle, work_and_career, and the behavioral_economist summary. Interview provides rich standalone financial data: $3,000/month income (Q74), ~$2,000/month expenses (Q57), zero debt (Q63), $400 emergency capacity (Q82), medication cost management (Q36), grocery cost-cutting strategies (Q60, Q81). This warrants consolidation or at minimum cross-referencing."
+        },
+        {
+          "id": "D2-BEH-03",
+          "finding": "ACCURATE",
+          "detail": "Profile behavioral_economist summary correctly identifies: loss aversion, high need for financial control, needs-over-wants prioritization, low risk tolerance (declined expensive medication), identity tied to financial competence. All supported by Q36, Q56, Q61, Q64, Q83."
+        },
+        {
+          "id": "D2-BEH-04",
+          "finding": "MINOR GAP",
+          "detail": "Profile does not capture the specific coping-through-austerity sequence Deeva describes: when unexpected expenses hit, she follows a strict hierarchy of cuts (fabric > books/meals out > grocery reduction > never medications/utilities) (Q64 follow-up). This reveals a clear preference ordering that the behavioral_economist summary should reference."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D2-POL-01",
+          "finding": "ACCURATE",
+          "detail": "Profile community_and_civic correctly captures: votes in every election since age 21, researches candidates via local paper/voter guides/TV debates, writes letters to representatives on prescription costs and road funding, organizes church fellowship, volunteers weekly. All match Q23, Q24, Q27, Q16, Q47."
+        },
+        {
+          "id": "D2-POL-02",
+          "finding": "MINOR GAP",
+          "detail": "Profile political_scientist summary correctly describes her as 'issue-oriented rather than party-loyal' and identifies fiscal conservatism as primary value. However, it does not capture her specific policy priorities as stated in Q24 follow-up: retirement benefits, senior program funding, prescription drug costs, property taxes, local school board quality, road infrastructure. These are her voting decision criteria."
+        },
+        {
+          "id": "D2-POL-03",
+          "finding": "ACCURATE",
+          "detail": "Profile others_misc media_and_information_diet accurately lists: Saline Post, Ann Arbor News, broadcast evening news, local morning radio, stopped cable news, passive Facebook, trusts doctor/pharmacist over internet. Matches Q24 follow-up, Q42, Q48."
+        },
+        {
+          "id": "D2-POL-04",
+          "finding": "ACCURATE",
+          "detail": "Profile others_misc unresolved correctly flags the party lean ambiguity: 'behavioral signals suggest moderate-to-center-right but not confirmed.' This accurately reflects Q95 and Q96 where Deeva avoids labeling herself."
+        },
+        {
+          "id": "D2-POL-05",
+          "finding": "MINOR GAP",
+          "detail": "Profile political_scientist summary does not mention Deeva's growing disillusionment with partisan polarization (Q24 follow-up, Q25) or her specific concern that 'nothing gets done because everyone's fighting' (Q25). This is a significant attitudinal shift that contextualizes her civic engagement pattern."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D2-PSY-01",
+          "finding": "ACCURATE",
+          "detail": "Profile psychologist summary correctly identifies Big Five behavioral patterns: high Conscientiousness, moderate-to-low Openness, moderate Agreeableness with competitive streak, moderate-to-low Extraversion, moderate Neuroticism. All behavioral evidence is properly cited. The summary is behavioral-only with no clinical labels."
+        },
+        {
+          "id": "D2-PSY-02",
+          "finding": "ACCURATE",
+          "detail": "Profile correctly identifies behavioral activation as primary coping mechanism (cleaning, organizing, quilting during Harold's hospital stay per Q38 follow-up), self-reliance/resistance to dependency (Q18 follow-up, Q44 follow-up), and quiet endurance over verbal expression (Q43 follow-up, Q45 follow-up)."
+        },
+        {
+          "id": "D2-PSY-03",
+          "finding": "MINOR GAP",
+          "detail": "Profile psychologist summary mentions 'nighttime rumination' but does not capture the specific behavioral pattern Deeva describes: lying in bed running through worst-case health/financial scenarios, then getting up to write lists as a coping mechanism (Q45 follow-up). The list-making-as-anxiety-management is a distinctive and therapeutically relevant behavioral pattern."
+        },
+        {
+          "id": "D2-PSY-04",
+          "finding": "MINOR GAP",
+          "detail": "Profile does not capture the generational survivor dimension of Deeva's emotional landscape: she is aware of being 'one of the last ones standing' from her generation (Q43), both brothers gone, many friends gone. This chronic low-level grief shapes her daily emotional baseline and is separate from the acute worry about Harold's health."
+        },
+        {
+          "id": "D2-PSY-05",
+          "finding": "ACCURATE",
+          "detail": "Profile correctly identifies self-concept built around competence, reliability, and usefulness, with loss of these capacities as deepest vulnerability. This is powerfully confirmed by Q44 (crying episode: 'Is this what the rest of my life is going to be? Sitting in a chair') and Q18 follow-up (frustration at dependency)."
+        }
+      ]
+    },
+
+    "direction_3_profile_internal_consistency": {
+      "description": "Extracted profile checked for internal contradictions across sections.",
+      "demographer": [
+        {
+          "id": "D3-DEM-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile header states 'married_present.' Social_and_relationships details confirm 64-year marriage to Harold. Home_and_lifestyle confirms two-person household. Work_and_career references Harold's carpentry books. All internally consistent."
+        },
+        {
+          "id": "D3-DEM-02",
+          "finding": "CONSISTENT",
+          "detail": "Profile header states age 85. Health_and_wellness references age-appropriate conditions (knee issues, vision decline). Travel details mention needing family to drive. Work_and_career notes volunteer-only status. All age-consistent."
+        },
+        {
+          "id": "D3-DEM-03",
+          "finding": "MINOR INCONSISTENCY",
+          "detail": "Profile sports_and_fitness states 'Occasionally participates in senior softball league' (from seed data). Profile health_and_wellness and others_misc sensory_and_physical describe bilateral knee stiffness limiting mobility, requiring medication change 18 months ago, and inability to garden for extended periods. Active softball participation at 85 with this knee condition is internally inconsistent. The unresolved section flags this but the sports_and_fitness section still lists it as active."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D3-BEH-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile financial behaviors are internally coherent: envelope system (home_and_lifestyle) aligns with zero debt (not explicitly in profile but in summary), $50/month house fund (home_and_lifestyle), medication budgeting (health_and_wellness). No contradictions in spending or saving patterns across sections."
+        },
+        {
+          "id": "D3-BEH-02",
+          "finding": "CONSISTENT",
+          "detail": "Profile food_and_dining (thrift-driven, garden-based meals) aligns with nature_and_outdoors (garden as food source) and health_and_wellness (low-salt diet using garden herbs). The cross-section references are mutually reinforcing."
+        },
+        {
+          "id": "D3-BEH-03",
+          "finding": "CONSISTENT",
+          "detail": "Profile work_and_career (volunteer rigor, punctuality) aligns with psychologist summary (high Conscientiousness, meticulous record-keeping). The behavioral economist summary's identification of identity tied to financial competence is consistent with work_and_career's emphasis on bookkeeping expertise."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D3-POL-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile community_and_civic (votes every election, writes to representatives) aligns with political_scientist summary (highly engaged civic participant, conventional participation). Media diet in others_misc (avoids cable news, reads local paper) is consistent with the 'information-moderate' characterization."
+        },
+        {
+          "id": "D3-POL-02",
+          "finding": "CONSISTENT",
+          "detail": "Profile others_misc unresolved correctly flags party lean as ambiguous, while political_scientist summary describes her as 'issue-oriented rather than party-loyal.' These are mutually consistent framings of the same deliberate ambiguity."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D3-PSY-01",
+          "finding": "CONSISTENT",
+          "detail": "Profile psychologist summary's 'moderate-to-low Extraversion' is consistent with social_and_relationships (small-group preference, four-person bridge group, handwritten letters over digital) and technology (minimal social media, distrusts internet, prefers in-person). No contradictions."
+        },
+        {
+          "id": "D3-PSY-02",
+          "finding": "CONSISTENT",
+          "detail": "Profile psychologist summary's 'moderate Neuroticism' (nighttime rumination, health worry, effective coping) is consistent with health_and_wellness (strict pill routine, careful about illness prevention) and the behavioral economist summary's identification of loss aversion. The worry drives preventive behavior, which is coherent."
+        },
+        {
+          "id": "D3-PSY-03",
+          "finding": "MINOR TENSION",
+          "detail": "Profile psychologist summary states 'moderate Agreeableness' with competitive streak. The social_and_relationships section emphasizes warmth and community care. These are not contradictory but the nuance could be sharper: Deeva is highly agreeable in community service contexts but competitive in task/accuracy contexts (bridge scores, budget precision, quilting quality). The competitive streak is domain-specific, not a general interpersonal pattern."
+        }
+      ]
+    },
+
+    "direction_4_completeness": {
+      "description": "Checking whether the extracted profile captures all significant information from the interview.",
+      "demographer": [
+        {
+          "id": "D4-DEM-01",
+          "finding": "GAP",
+          "detail": "Profile does not capture Deeva's birthplace of Tecumseh, Michigan (Q87) or that she lived there until the 1978 move to Saline (Q97). This is important demographic context -- she grew up in a different Michigan town, not Saline."
+        },
+        {
+          "id": "D4-DEM-02",
+          "finding": "GAP",
+          "detail": "Profile does not capture parents' specific occupations: father at grain elevator/feed mill (Q106), mother at Woolworth's five-and-dime (Q103). These occupations contextualize the working-class Midwestern background and the origin of Deeva's financial literacy."
+        },
+        {
+          "id": "D4-DEM-03",
+          "finding": "GAP",
+          "detail": "Profile does not capture sibling details: two older brothers Walter (died 2010) and Frank (died 2016, in care facility for 2 years before death) (Q06, Q35). Harold's sister in Indiana is also not mentioned (Q06). These family losses shape her current emotional state."
+        },
+        {
+          "id": "D4-DEM-04",
+          "finding": "GAP",
+          "detail": "Profile demographer summary does not mention Harold's age (87, per Q05) or his hearing decline and limited mobility (Q18 follow-up). As a two-person household where both members are elderly, Harold's health status is demographically significant."
+        },
+        {
+          "id": "D4-DEM-05",
+          "finding": "GAP",
+          "detail": "Profile does not capture that Deeva was born in 1941 (Q85) or that Harold worked specifically at a Ford plant (Q01, Q66), which provided union benefits and pension that currently sustain the household. The Ford pension is a critical income source."
+        }
+      ],
+      "behavioral_economist": [
+        {
+          "id": "D4-BEH-01",
+          "finding": "GAP",
+          "detail": "Profile does not capture the specific expense hierarchy Deeva would cut in financial distress: fabric and books first, then meals out, then grocery reduction via soups/garden meals, with medications and utilities as untouchable (Q64 follow-up). This is a revealed preference ordering."
+        },
+        {
+          "id": "D4-BEH-02",
+          "finding": "GAP",
+          "detail": "Profile does not capture the children's financial support pattern: Robert and Patricia split Harold's uncovered procedure costs (Q40, Q60 follow-up) without being asked. Deeva finds this 'grateful but uncomfortable' (Q40 follow-up). This intergenerational transfer pattern is a significant financial behavior."
+        },
+        {
+          "id": "D4-BEH-03",
+          "finding": "GAP",
+          "detail": "Profile does not capture Deeva's tax filing behavior: files paper returns herself, Patricia double-checks math, enjoys the process as a 'puzzle with a right answer,' has never made an error (Q75). This reinforces the identity-as-financial-competence pattern."
+        },
+        {
+          "id": "D4-BEH-04",
+          "finding": "PARTIAL",
+          "detail": "Profile mentions small savings account and emergency fund in home_and_lifestyle details, but does not quantify: savings at credit union for decades, cash reserve at home, contributions of $40-50/month down from $100+ when Harold worked, account depleted by procedure and roof repair but being rebuilt (Q61, Q61 follow-up). The quantification matters for understanding their financial precarity."
+        }
+      ],
+      "political_scientist": [
+        {
+          "id": "D4-POL-01",
+          "finding": "GAP",
+          "detail": "Profile does not list Deeva's specific policy priorities: retirement/Social Security benefits, senior program funding, prescription drug costs, property taxes, local school board quality, Michigan road infrastructure (Q24 follow-up, Q25, Q83 follow-up). These are her concrete voting decision criteria."
+        },
+        {
+          "id": "D4-POL-02",
+          "finding": "GAP",
+          "detail": "Profile does not capture Deeva's growing political disillusionment: 'more discouraged than I used to be,' 'nothing gets done because everyone's fighting,' frustrated by rising costs with no government action (Q25). This is a significant attitudinal shift in recent years."
+        },
+        {
+          "id": "D4-POL-03",
+          "finding": "GAP",
+          "detail": "Profile does not capture the intergenerational political learning: granddaughter opened her eyes to student loan costs and environmental concerns, Deeva now brings reusable bags to store (Q25 follow-up). This shows late-life openness to new civic perspectives despite generally traditional orientation."
+        }
+      ],
+      "psychologist": [
+        {
+          "id": "D4-PSY-01",
+          "finding": "GAP",
+          "detail": "Profile does not capture the specific list-making-as-anxiety-management behavior: Deeva gets out of bed during nighttime worry spirals, writes down fears and actionable steps, then can sleep (Q45 follow-up). This is a distinctive cognitive-behavioral strategy she developed independently."
+        },
+        {
+          "id": "D4-PSY-02",
+          "finding": "GAP",
+          "detail": "Profile does not capture the generational survivor grief dimension: awareness of being 'one of the last ones standing,' both brothers gone, many friends gone, 'loneliness of being one of the last ones standing, it's real' (Q43). This is distinct from the worry about Harold and shapes her daily baseline mood."
+        },
+        {
+          "id": "D4-PSY-03",
+          "finding": "GAP",
+          "detail": "Profile does not capture Deeva's relationship with dependency and burden: 'I don't like being a burden, even though Patricia says I'm not one' (Q18 follow-up), hid tears from Patricia during illness (Q44 follow-up), reluctance to accept financial help from children (Q40 follow-up, Q60 follow-up). This burden-avoidance is a core behavioral driver, not just a preference."
+        },
+        {
+          "id": "D4-PSY-04",
+          "finding": "GAP",
+          "detail": "Profile does not capture the faith-as-coping dimension in behavioral terms: evening prayers asking for family health and guidance (Q47), devotional booklet nightly (Q47 follow-up), spiritual grounding in garden and seasonal cycles (Q47 follow-up), church community as practical support network during crises (Q47 follow-up). These are active behavioral practices, not merely stated beliefs."
+        },
+        {
+          "id": "D4-PSY-05",
+          "finding": "GAP",
+          "detail": "Profile does not capture the emotional significance of routine loss: during the 3-week illness, missing bridge, volunteering, and gardening caused more distress than the physical illness itself (Q44). Deeva's self-worth is so tied to activity and usefulness that inactivity itself becomes the primary psychological threat."
+        }
+      ]
+    },
+
+    "expert_summaries": {
+      "demographer": "Deeva Cintron is an 85-year-old white woman of German descent, born in Tecumseh, Michigan in 1941 (Q85, Q87, Q89), now living in Saline, Washtenaw County since 1978 (Q02, Q08). She has been married to Harold (87) for 64 years (Q84); they have three adult children -- Robert (62, Ann Arbor), James (59, Ohio), Patricia (56, Ypsilanti) -- seven grandchildren, and three great-grandchildren (Q05). She completed approximately two years of community college in business administration before leaving to marry in 1962 (Q01, Q02, Q90). The household income is approximately $3,000/month from Harold's Ford union pension and government retirement benefits (Q66, Q74), with a mortgage-free three-bedroom home purchased in 1978 and paid off in 2003 (Q58). Her demographic profile is characteristic of aging Midwestern white working-class women: second/third-generation European immigrant heritage, strong church and civic ties, modest education interrupted by marriage, long-duration stable marriage, and deep rootedness in a small community.",
+
+      "behavioral_economist": "Deeva exhibits pronounced loss aversion and an exceptionally high need for financial control, manifested through a handwritten ledger maintained for 50+ years, an envelope system for categorical budgeting (house fund, holiday fund, medical fund), and monthly reconciliation against planned budgets (Q56, Q59, Q61). Her spending hierarchy in financial distress reveals clear preference ordering: discretionary items (fabric, books) are cut first, followed by grocery reduction via garden and pantry meals, while medications and utilities are treated as inviolable (Q64 follow-up). She declined a more effective but expensive knee medication in favor of a cheaper alternative, demonstrating risk-averse cost optimization over health maximization (Q36). Her financial identity is self-sustaining -- she derives visible satisfaction from being 'the numbers person' (Q11, Q65, Q83), files her own paper tax returns as an enjoyable activity (Q75), and experiences accepting financial help from children as a threat to autonomy (Q40 follow-up). The Ford pension and government benefits provide approximately $3,000/month against ~$2,000/month in regular expenses (Q57, Q74), with zero debt (Q63) and a modest savings buffer that can absorb a $400 emergency without borrowing (Q82).",
+
+      "political_scientist": "Deeva is a highly engaged conventional civic participant who has voted in every election since age 21 -- federal, state, local, and school board -- reflecting a deep sense of civic duty transmitted through family socialization: 'If you don't vote, you don't get to complain' (Q23, Q23 follow-up). She researches candidates via the Saline Post, Ann Arbor News, voter guides, and broadcast evening news, having abandoned cable news due to partisan tone (Q24 follow-up). Her policy priorities center on bread-and-butter issues affecting her daily life: prescription drug costs, retirement benefit protection, property taxes, school board quality, and Michigan road infrastructure (Q24 follow-up, Q25, Q83 follow-up). She describes herself as issue-oriented rather than party-loyal, with fiscal conservatism as her primary value tempered by support for community programs benefiting seniors (Q95, Q96). She writes occasional letters to representatives but engages in no protest activity (Q27 follow-up). On racial justice issues, she defaults to an interpersonal 'treat everyone with respect' framework rather than structural analysis, acknowledging the limits of her homogeneous small-town perspective (Q26, Q27, Q28). She expresses growing disillusionment with partisan polarization -- 'nothing gets done because everyone's fighting' -- and has experienced late-life perspective shifts through conversations with grandchildren about student debt and environmentalism (Q25, Q25 follow-up).",
+
+      "psychologist": "Deeva's behavioral profile centers on exceptionally high Conscientiousness expressed across every life domain: meticulous record-keeping (50-year ledger, bridge scorebook, bird-watching notebook, pill compliance chart), rigid temporal structuring (same wake time, meal times, bed time daily; fixed weekly schedule with each day assigned specific tasks), and pervasive double-checking (crossword answers, quilting stitches, tax returns, budget reconciliation) (Q03, Q07 follow-up, Q15, Q17, Q56). Her routine functions as a self-regulation mechanism rather than mere preference -- during a 3-week illness that disrupted all activities, she experienced an acute identity crisis ('Is this what the rest of my life is going to be?'), demonstrating that activity and usefulness are constitutive of her self-concept, not accessories to it (Q44). She manages nighttime worry spirals (health catastrophizing, financial scenarios, Harold's mortality) through a self-developed behavioral strategy: getting out of bed and writing itemized lists of fears and actionable steps (Q45 follow-up). She exhibits strong self-reliance and burden-avoidance, hiding tears from Patricia during illness and experiencing discomfort when accepting financial help from children (Q44 follow-up, Q40 follow-up). She processes the chronic grief of generational survivorship -- both brothers, both parents, and many friends gone -- through quiet endurance, faith practices (evening prayer, devotional reading, church attendance), and commitment to remaining useful to her community (Q43, Q47). Her competitive streak is domain-specific (bridge scores, budget precision, quilting quality) rather than interpersonally aggressive, serving as competence demonstration rather than social dominance (Q07 follow-up, Q65)."
+    },
+
+    "inconsistencies_found": [
+      {
+        "id": "INC-01",
+        "description": "Senior softball league listed as active in sports_and_fitness despite severe bilateral knee condition requiring medication change 18 months ago. At 85 with documented mobility limitations (cannot garden for extended periods, limits stair use, cannot stand long in grocery store), active softball is implausible.",
+        "source_refs": "Seed sports_persona; Q31, Q33, Q34, Q18",
+        "resolution": "Remove from active activities in sports_and_fitness. Note as historically participated but likely inactive given current physical condition. This aligns with the unresolved flag already present in the profile."
+      },
+      {
+        "id": "INC-02",
+        "description": "Profile arts_and_culture mentions 'integrates artistic influences into quilting and crochet patterns.' Interview only discusses quilting and knitting; crochet is never mentioned by Deeva (Q11, Q17). Seed arts_persona mentions 'crocheted patterns' but this may be conflated with knitting.",
+        "source_refs": "Seed arts_persona; Q11, Q17",
+        "resolution": "Change 'crochet' to 'knitting' in arts_and_culture to match interview evidence. Note crochet as unresolved/possibly inactive in others_misc."
+      },
+      {
+        "id": "INC-03",
+        "description": "Profile travel evidence cites 'Q108 (seed data: travel_persona)' -- the travel preferences come almost entirely from seed data rather than interview evidence. Q108 confirms the Quilt Museum dream and Mackinac Island wish, but other destinations (Pictured Rocks, Charleston SC) are seed-only.",
+        "source_refs": "Seed travel_persona; Q108",
+        "resolution": "Retain all travel details but update evidence to distinguish seed-sourced items from interview-confirmed items. Add Q10 follow-up (rejected moving from Saline) as evidence of strong place attachment relevant to travel behavior."
+      }
+    ],
+
+    "resolutions": [
+      {
+        "inconsistency_id": "INC-01",
+        "action": "Removed 'Occasionally participates in senior softball league' from sports_and_fitness active details. Added note that softball was referenced in seed but is likely inactive given current knee condition and mobility limitations documented in Q31, Q33, Q34."
+      },
+      {
+        "inconsistency_id": "INC-02",
+        "action": "Changed 'crochet patterns' to 'knitting patterns' in arts_and_culture. Retained crochet in others_misc unresolved section with note that it may be conflated with knitting or no longer practiced."
+      },
+      {
+        "inconsistency_id": "INC-03",
+        "action": "Updated travel evidence citations to distinguish seed-sourced (Pictured Rocks, Charleston SC) from interview-confirmed (Mackinac Island return, National Quilt Museum dream). Added Q10 follow-up as evidence for place attachment."
+      }
+    ],
+
+    "gaps_addressed": [
+      {
+        "gap_id": "D4-DEM-01",
+        "action": "Added birthplace Tecumseh, Michigan and pre-1978 residence history to demographics header and demographer summary."
+      },
+      {
+        "gap_id": "D4-DEM-02",
+        "action": "Added parents' occupations (father: grain elevator/feed mill; mother: Woolworth's five-and-dime) to others_misc life_events_and_transitions."
+      },
+      {
+        "gap_id": "D4-DEM-03",
+        "action": "Added sibling details (Walter d.2010, Frank d.2016 after 2 years in care facility) and Harold's sister in Indiana to social_and_relationships and others_misc life_events_and_transitions."
+      },
+      {
+        "gap_id": "D4-DEM-04",
+        "action": "Added Harold's age (87), hearing decline, and reduced mobility to social_and_relationships details."
+      },
+      {
+        "gap_id": "D4-DEM-05",
+        "action": "Added DOB 1941, Harold's Ford plant employment, and Ford pension as income source to demographics and work_and_career."
+      },
+      {
+        "gap_id": "D4-BEH-01",
+        "action": "Added expense-cutting hierarchy (discretionary first, then groceries, medications/utilities untouchable) to home_and_lifestyle details."
+      },
+      {
+        "gap_id": "D4-BEH-02",
+        "action": "Added children's financial support pattern (Robert and Patricia splitting uncovered medical costs) to social_and_relationships details."
+      },
+      {
+        "gap_id": "D4-BEH-03",
+        "action": "Added paper tax filing behavior and enjoyment of the process to work_and_career details."
+      },
+      {
+        "gap_id": "D4-BEH-04",
+        "action": "Added savings quantification (credit union account, cash at home, $40-50/month contributions, depleted by procedure/roof but rebuilding) to home_and_lifestyle details."
+      },
+      {
+        "gap_id": "D4-POL-01",
+        "action": "Added specific policy priorities (prescription costs, retirement benefits, property taxes, school board, road infrastructure) to community_and_civic details."
+      },
+      {
+        "gap_id": "D4-POL-02",
+        "action": "Added growing political disillusionment to community_and_civic details and political_scientist summary."
+      },
+      {
+        "gap_id": "D4-POL-03",
+        "action": "Added intergenerational civic learning (granddaughter's influence on environmental awareness) to community_and_civic details."
+      },
+      {
+        "gap_id": "D4-PSY-01",
+        "action": "Added list-making-as-anxiety-management behavior to psychologist summary and health_and_wellness details."
+      },
+      {
+        "gap_id": "D4-PSY-02",
+        "action": "Added generational survivor grief to psychologist summary and others_misc life_events_and_transitions."
+      },
+      {
+        "gap_id": "D4-PSY-03",
+        "action": "Added burden-avoidance pattern (hiding tears, reluctance to accept help) to psychologist summary and social_and_relationships."
+      },
+      {
+        "gap_id": "D4-PSY-04",
+        "action": "Added faith-as-coping behavioral practices to others_misc cultural_and_linguistic and psychologist summary."
+      },
+      {
+        "gap_id": "D4-PSY-05",
+        "action": "Added emotional significance of routine loss to psychologist summary."
+      }
+    ],
+
+    "overall_verdict": "The Step 2 extracted profile for Deeva Cintron is fundamentally sound. The demographics header, 15 preference categories, 4 expert summaries, and 6 others_misc subcategories are all present and structurally complete. The interview transcript is richly detailed across all 109 questions and the profile captures the core persona accurately. However, three categories of issues require correction: (1) One factual inconsistency -- senior softball listed as active despite documented severe knee condition at age 85; (2) One seed-vs-interview discrepancy -- crochet referenced in seed but only quilting and knitting discussed in interview; (3) Approximately 17 completeness gaps where significant interview data was not captured in the profile, concentrated in financial detail quantification, family background specifics, policy priorities, and psychological coping mechanisms. The corrected profile addresses all three categories while preserving everything that was correct in the original.",
+
+    "final_status": "PASS WITH CORRECTIONS"
+  },
+
+  "corrected_extracted_profile": {
     "participant_id": "f2f5dbaf4d3d43f68adeb7f318afa3a2",
     "name": "Deeva Cintron",
-    "verification_date": "2026-03-31",
-    "model": "Claude Opus 4.6 (1M context)",
-    "seed_source": "NVIDIA Nemotron-Personas-USA",
-    "interview_source": "Step 2 interview output"
-  },
+    "age": 85,
+    "date_of_birth": "1941-03-14",
+    "gender": "Female",
+    "race": "White (German descent, both sides)",
+    "hispanic_origin": false,
+    "marital_status": "married_present",
+    "location": "Saline, MI 48176",
+    "birthplace": "Tecumseh, MI",
+    "education": "Some college (business administration at community college, ~2 years, not completed; left in 1962 to marry)",
+    "occupation": "Not in workforce (retired homemaker; active volunteer at senior center, library, and church)",
+    "household_income": "~$3,000/month (Ford union pension + government retirement benefits)",
+    "household_composition": "Two-person household: Deeva (85) and Harold (87)",
+    "military_service": false,
 
-  "experts": {
-    "demographer": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age: Seed states age 85. Interview confirms DOB March 14, 1941 (Q85), and Deeva references being 85 at multiple points (Q01, Q27, Q45, Q65, Q109). She states she will turn 86 'next March' (Q85). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.age: 85",
-            "source_b_ref": "Q01, Q85, Q109"
-          },
-          {
-            "id": 2,
-            "text": "Gender: Seed states Female. Interview consistently presents Deeva as a woman, wife, mother, and grandmother throughout all questions. No discrepancy.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.sex: Female",
-            "source_b_ref": "Q01, Q05, Q84"
-          },
-          {
-            "id": 3,
-            "text": "Marital status: Seed states 'married_present.' Interview confirms 64-year marriage to Harold since 1962 (Q05, Q11, Q51, Q84). Harold is living and co-resident. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.marital_status: married_present",
-            "source_b_ref": "Q05, Q11, Q51, Q84"
-          },
-          {
-            "id": 4,
-            "text": "Education: Seed states 'some_college.' Interview confirms she attended community college for about two years studying business administration but did not finish (Q01, Q04, Q90). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.education_level: some_college",
-            "source_b_ref": "Q01, Q04, Q90"
-          },
-          {
-            "id": 5,
-            "text": "Location: Seed states Saline, MI, 48176. Interview places Deeva in Saline throughout, describes moving there in 1978, references proximity to Ann Arbor and Washtenaw County (Q02, Q08, Q10, Q51). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.city: Saline, seed.state: MI, seed.zipcode: 48176",
-            "source_b_ref": "Q02, Q08, Q10, Q51"
-          },
-          {
-            "id": 6,
-            "text": "Cultural background: Seed describes 'mid-western white family in Michigan' with German immigrant grandparents. Interview confirms she was born in Tecumseh, MI, of German descent on both sides, and identifies as white (Q01, Q87, Q89). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.cultural_background",
-            "source_b_ref": "Q01, Q87, Q89"
-          }
+    "preferences": {
+      "health_and_wellness": {
+        "summary": "Maintains strict daily pill routine and low-salt diet; walks twice weekly; avoids unnecessary medications; manages nighttime worry through list-making",
+        "details": [
+          "Takes joint medication and cardiovascular-related pills morning and evening using a weekly pill organizer filled every Sunday night",
+          "Follows low-salt diet prescribed by doctor, substituting garden herbs (rosemary, thyme, garlic, lemon juice) for salt",
+          "Walks 1.5-2 miles twice weekly (Tuesdays and Thursdays, 8 AM) with senior walking club on flat trail behind library; 30-40 minutes at steady pace",
+          "Does gentle knee stretches at kitchen counter on cold mornings; walks inside house when ice prevents outdoor walking",
+          "Gets flu shot and all recommended vaccinations annually; got every pandemic vaccine round",
+          "Takes doctor-recommended immune supplement since chest illness recovery",
+          "Uses home remedies passed down from mother: chamomile tea for sleep, peppermint oil for headaches, honey-lemon for colds, salt water gargle for sore throat",
+          "Sees Dr. Hendricks in Ann Arbor every few months for blood-level checks (15-year patient relationship)",
+          "Manages nighttime health/financial worry spirals by getting up and writing itemized lists of fears and actionable steps",
+          "Takes warm shower on cold mornings to loosen joints before activity",
+          "Avoids people with cold symptoms; increased hand-washing after serious chest illness"
         ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+        "evidence": "Q31, Q32, Q33, Q37, Q39, Q41, Q42, Q45"
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Birth city: Interview states born in Tecumseh, Michigan (Q87). Extracted profile demographer summary correctly notes 'born and raised in rural Michigan (Tecumseh).' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q87",
-            "source_b_ref": "summaries.demographer"
-          },
-          {
-            "id": 2,
-            "text": "Family composition: Interview describes three children -- Robert (62, Ann Arbor), James (59, Ohio), Patricia (56, Ypsilanti) -- seven grandchildren and three great-grandchildren (Q05, Q06). Profile's social_and_relationships correctly lists all three children with locations and ages. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q05, Q06",
-            "source_b_ref": "preferences.social_and_relationships"
-          },
-          {
-            "id": 3,
-            "text": "Household income: Interview states approximately $3,000/month from Ford pension and government retirement benefits (Q74). Demographer summary correctly states '$3,000/month.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q72, Q74",
-            "source_b_ref": "summaries.demographer"
-          },
-          {
-            "id": 4,
-            "text": "Occupation: Interview describes lifelong homemaker with no paid employment since the 1960s, active volunteer (Q16, Q65, Q67-Q71). Profile correctly states 'Not in workforce (retired homemaker; active volunteer).' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q16, Q65, Q67",
-            "source_b_ref": "extracted_profile.occupation"
-          },
-          {
-            "id": 5,
-            "text": "Parents' education: Interview states father finished high school (Q100) and mother finished high school (Q101). These details are not captured in the extracted profile's preferences or summaries.",
-            "verdict": "GAP",
-            "source_a_ref": "Q100, Q101",
-            "source_b_ref": "N/A (absent from extracted_profile)"
-          }
+      "food_and_dining": {
+        "summary": "Home-cook who favors simple, seasonal, thrift-driven meals using garden produce and traditional German-Midwestern recipes; adapts to medical dietary restrictions",
+        "details": [
+          "Cooks chicken pot pie with garden-grown carrots, rosemary, and thyme",
+          "Bakes apple cobbler with fresh orchard apples",
+          "Cans sauerkraut annually from homegrown cabbage (tradition from mother)",
+          "Eats oatmeal with cinnamon every morning for breakfast",
+          "Prepares casseroles, soups, and simple weeknight meals; warms up earlier-in-week meals",
+          "Adapts recipes to low-salt constraints using garden herbs; reports some dishes now taste better",
+          "Eats supper at 5:00 PM sharp every day; Harold does dishes after",
+          "Rarely eats out; occasionally goes to a local diner with Patricia",
+          "Plans weekly meal schedules on Sunday afternoon",
+          "Relies heavily on garden produce and pantry/freezer stocks to reduce grocery costs during tight months",
+          "Learned canning and cooking traditions from mother, who canned green beans, tomatoes, and sauerkraut"
         ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 1 }
+        "evidence": "Q01, Q01 follow-ups, Q15, Q15 follow-up, Q31 follow-up, Q56, Q60, Q64, Q81"
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Age 85 in top-level field and demographer summary both state 85. Consistent internally.",
-            "verdict": "CONSISTENT",
-            "field_a": "extracted_profile.age",
-            "field_b": "summaries.demographer"
-          },
-          {
-            "id": 2,
-            "text": "Marriage duration is stated as 64 years in social_and_relationships and the demographer summary does not contradict this. Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.social_and_relationships",
-            "field_b": "summaries.demographer"
-          },
-          {
-            "id": 3,
-            "text": "Saline residence since 1978 is mentioned in home_and_lifestyle ('Owns mortgage-free home in Saline since 1978') and demographer summary ('Saline, Washtenaw County'). Community_and_civic states '48 years,' which is consistent with 2026 minus 1978. Consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "preferences.home_and_lifestyle",
-            "field_b": "preferences.community_and_civic"
-          }
+      "travel": {
+        "summary": "Prefers meticulously planned road trips within driving distance; travels with family support and senior discounts; strong place attachment to Saline",
+        "details": [
+          "Has visited Mackinac Island, Pictured Rocks (Upper Peninsula), and Charleston, SC (seed data; not elaborated in interview)",
+          "Dreams of visiting the National Quilt Museum in Paducah, Kentucky -- Patricia would drive; would plan every stop along the way (Q108, Q108 follow-up)",
+          "Wants to return to Mackinac Island one more time (Q108)",
+          "Travels by car only; dependent on family (Patricia, Robert) for driving on longer trips",
+          "Plans every stop in advance; uses senior discounts to keep costs predictable",
+          "Strongly attached to Saline: rejected son James's suggestion to move to Ohio, saying 'This is our home' (Q10 follow-up)",
+          "Views travel as proving she 'can still do something special' at her age"
         ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
+        "evidence": "Seed travel_persona; Q10 follow-up, Q108, Q108 follow-up"
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Parents' education levels (both high school graduates) from Q100 and Q101 are not recorded in the extracted profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q100, Q101",
-            "should_be_in": "others_misc or summaries.demographer"
-          },
-          {
-            "id": 2,
-            "text": "Father's occupation at grain elevator/feed mill (Q106, Q107) is not included in the extracted profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q106, Q107",
-            "should_be_in": "others_misc.life_events_and_transitions or summaries.demographer"
-          },
-          {
-            "id": 3,
-            "text": "Mother's occupation at Woolworth's five-and-dime (Q102, Q103, Q104) is not included in the extracted profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q102, Q103, Q104",
-            "should_be_in": "others_misc.life_events_and_transitions or summaries.demographer"
-          },
-          {
-            "id": 4,
-            "text": "Birth city of Tecumseh, Michigan (Q87) is referenced in the demographer summary but not captured as a standalone field in the extracted profile.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q87",
-            "should_be_in": "summaries.demographer (already present)"
-          }
+      "social_and_relationships": {
+        "summary": "Anchored by 64-year marriage, three adult children, and a tight circle of long-term friends; prefers small-group structured socializing; resistant to being perceived as a burden",
+        "details": [
+          "Married to Harold (87) for 64 years since 1962; complementary routines ('he's quiet and steady, I'm organized and a little bossy'); never gone to bed angry",
+          "Harold has hearing decline and reduced mobility; had heart procedure ~5 years ago; Deeva managed his recovery",
+          "Three adult children: Robert (62, Ann Arbor, brings groceries, mows lawn), James (59, Ohio, calls every Sunday), Patricia (56, Ypsilanti, visits Tuesdays and Saturdays)",
+          "Seven grandchildren (late teens to mid-thirties), three great-grandchildren; holidays at Deeva's house",
+          "Both brothers deceased: Walter (d.2010), Frank (d.2016 after 2 years in care facility); Harold's sister in Indiana seen at Christmas",
+          "Weekly bridge group of four women (Dorothy, Helen, Margaret) for 20 years; rotates homes, competitive scoring",
+          "Dorothy is closest non-family friend, lives three streets away; walks together, provides emotional support without pressing for disclosure",
+          "Church fellowship community provides practical support network (meals during Harold's hospitalization, cards, presence)",
+          "Linda at senior center is finance volunteer partner; Joan at library is reading program coordinator",
+          "Robert and Patricia split Harold's uncovered medical procedure costs without being asked; Deeva 'grateful but uncomfortable'",
+          "Hides emotional distress from Patricia to avoid being a burden; reluctant to accept rides/help but learning to accept",
+          "Prefers in-person connection over digital; writes handwritten letters to grandchildren; prints digital photos for refrigerator"
         ],
-        "summary": { "present": 1, "missing": 3 }
+        "evidence": "Q01, Q05, Q06, Q07, Q07 follow-ups, Q11, Q15, Q18 follow-up, Q35, Q40 follow-up, Q44 follow-up, Q47, Q84"
+      },
+      "home_and_lifestyle": {
+        "summary": "Owns mortgage-free home in Saline since 1978; rigid daily routine centered on household management and crafts; meticulous financial tracking through analog systems",
+        "details": [
+          "Three-bedroom house purchased 1978, mortgage paid off 2003; property taxes, insurance, and maintenance only",
+          "Dedicated sewing room upstairs with quilting frame by window, fabric organized by color, yarn basket, corkboard with patterns, small radio",
+          "Raised garden beds built by Harold ~10 years ago; grows carrots, tomatoes, herbs (rosemary, thyme), cabbage, chamomile, peppermint",
+          "Three bird feeders in backyard, refilled every morning after garden check",
+          "Kitchen wall calendar tracks all appointments, volunteer shifts, and bridge games -- 'If something isn't on the calendar, it might as well not exist'",
+          "Weekly cleaning schedule: Monday laundry and housework, structured tasks each remaining day",
+          "Envelope budgeting system for household finances: house fund ($50/month), holiday fund (starts saving September), medical fund",
+          "Handwritten expense ledger maintained 50+ years; every expense logged by date, item, amount; monthly reconciliation against budget",
+          "Savings at local credit union: deposits every month ($40-50 currently, down from $100+ when Harold worked); small cash reserve at home",
+          "In financial distress, cuts in strict hierarchy: fabric/books first, then meals out, then grocery reduction via garden/pantry, never medications/utilities",
+          "Car is 10 years old, paid off; no longer drives at night; dependent on children for some errands",
+          "Limits stair trips due to knee issues; brings knitting downstairs to avoid multiple climbs to sewing room"
+        ],
+        "evidence": "Q03 follow-up, Q08, Q11, Q11 follow-ups, Q15, Q17, Q18, Q56, Q58, Q59, Q61, Q64 follow-up"
+      },
+      "entertainment": {
+        "summary": "Enjoys historical fiction, crossword puzzles, evening news and sports with Harold, classic films, and local radio",
+        "details": [
+          "Reads approximately two historical fiction novels per month; prefers stories about ordinary women in hard times",
+          "Library holds books for her based on known preferences; currently reading a Civil War novel about women",
+          "Especially liked a recent novel set during the Depression about a Michigan farm family",
+          "Completes crossword puzzles daily, often in the evening; double-checks answers",
+          "Watches broadcast evening news at 6 PM (whichever channel Harold has on)",
+          "Harold watches ball games after supper; Deeva quilts or knits in the same room",
+          "Enjoys classic John Ford films (from seed data arts_persona)",
+          "Listens to local radio in the morning while in the kitchen",
+          "Plays small radio in sewing room while quilting"
+        ],
+        "evidence": "Q05 follow-up, Q15, Q15 follow-up, Q17, Q17 follow-up, Q24 follow-up; Seed arts_persona"
+      },
+      "hobbies_and_recreation": {
+        "summary": "Prolific quilter and knitter who also gardens, bird-watches, and plays competitive bridge; all hobbies serve functional and emotional purposes",
+        "details": [
+          "Quilts daily (20-30 min minimum); currently working on log cabin pattern in blues and yellows for great-grandchild",
+          "Plans quilts on graph paper before cutting; prefers traditional patterns (log cabin, nine-patch, double wedding ring)",
+          "Makes quilts as gifts: for grandchildren, new babies at church, annual church fundraiser",
+          "Finds quilting calming -- 'the repetition, the precision; every stitch has to be just so'",
+          "Knits in the living room to avoid extra stair trips to sewing room",
+          "Vegetable garden with raised beds: carrots, tomatoes, rosemary, thyme, cabbage, chamomile, peppermint",
+          "Bird-watching with notebook logging species spotted (cardinals, blue jays, chickadees, sparrows; notes unusual spring/fall sightings)",
+          "Bridge every Thursday at 2 PM (sacred, nothing else scheduled); rotates homes among four women; keeps running scorebook for 20 years",
+          "Bridge host makes coffee and something sweet; Helen's lemon bars are the best; 'no politics' rule implemented",
+          "Cans sauerkraut every fall from garden cabbage, continuing mother's tradition",
+          "Crossword puzzles daily, often in evening; enjoys not looking up answers"
+        ],
+        "evidence": "Q07, Q07 follow-ups, Q11, Q11 follow-up, Q15, Q17, Q17 follow-ups, Q38, Q108, Q109 follow-up"
+      },
+      "work_and_career": {
+        "summary": "Retired homemaker who treats volunteer bookkeeping and event coordination as professional-grade commitments; aspires to complete unfinished college certificate",
+        "details": [
+          "Managed household finances and Harold's carpentry side-business books for decades (tracked expenses, sent invoices, followed up payments, organized by client)",
+          "Church women's group treasurer for 20+ years before stepping back ~8 years ago",
+          "Senior center finance volunteer for 8 years (Fridays, 2-3 hours): reconciles donations, tracks expenses, prepares event budgets, maintains paper ledger alongside Linda's computer records",
+          "Library children's reading program volunteer for 12 years (Wednesdays, 2 hours): organizes materials, sets up room, sometimes reads to children",
+          "Church fellowship meeting organizer (twice monthly after Sunday service): plans schedule, topics, speakers, sign-up sheets, supplies, coffee setup; keeps organizational binder",
+          "Files paper tax returns herself; Patricia double-checks math; enjoys the process as 'a puzzle with a right answer'; has never made an error",
+          "Aspires to complete business administration certificate via online courses; aware of option through grandchild's suggestion",
+          "Treats volunteer commitments with professional rigor: punctuality (arrives 10 min early), record-keeping, accountability; 'reliability is one of the most important qualities a person can have'",
+          "8-10 hours/week total volunteer work across all commitments; approximately 45 weeks/year"
+        ],
+        "evidence": "Q01, Q16, Q16 follow-ups, Q47 follow-up, Q65, Q65 follow-ups, Q67, Q68, Q75, Q78"
+      },
+      "arts_and_culture": {
+        "summary": "Draws artistic inspiration from Andrew Wyeth paintings, Carter Family folk music, and church choir hymns; integrates influences into quilting and knitting patterns",
+        "details": [
+          "Admires Andrew Wyeth's paintings (seed data)",
+          "Enjoys The Carter Family folk songs (seed data)",
+          "Appreciates the local church choir's piano renditions of old hymns; finds Sunday music among the most peaceful moments of her week (Q47)",
+          "Integrates artistic influences into quilting and knitting patterns",
+          "Enjoys classic films, particularly John Ford westerns (seed data)",
+          "Prefers traditional quilt patterns (log cabin, nine-patch, double wedding ring) planned on graph paper with deliberate color selection"
+        ],
+        "evidence": "Q47, Q17 follow-up; Seed arts_persona"
+      },
+      "sports_and_fitness": {
+        "summary": "Devoted Detroit Tigers and Michigan Wolverines women's basketball fan; participates in senior walking club; prefers low-intensity predictable exercise",
+        "details": [
+          "Harold is dedicated Tigers fan; Deeva follows along during evening games (Q05 follow-up)",
+          "Follows Michigan Wolverines women's basketball (seed data)",
+          "Senior walking club meets twice weekly (Tuesdays and Thursdays, 8 AM), 6-7 regular members",
+          "Walks 1.5-2 miles on flat trail behind the library at steady pace; 30-40 minutes",
+          "Prefers low-intensity, predictable exercise; knees require morning warm-up before walking",
+          "Historically participated in senior softball league (seed data), but likely inactive given current bilateral knee condition requiring medication change 18 months ago (Q33)"
+        ],
+        "evidence": "Q05 follow-up, Q15, Q15 follow-up, Q32; Seed sports_persona"
+      },
+      "nature_and_outdoors": {
+        "summary": "Daily gardener and backyard bird-watcher who finds spiritual and emotional grounding in seasonal cycles and outdoor routine",
+        "details": [
+          "Tends raised vegetable beds every morning after breakfast as first outdoor activity, rain or shine (except winter)",
+          "Maintains three bird feeders; logs bird sightings in dedicated notebook (cardinals, blue jays, chickadees, sparrows; notes unusual spring/fall sightings)",
+          "Finds spiritual/meditative quality in watching seeds grow and seasons change -- 'it reminds me that there's an order to things that's bigger than my little worries' (Q47 follow-up)",
+          "Grows chamomile, peppermint, rosemary, thyme alongside vegetables for both culinary and home remedy use",
+          "Garden is simultaneously food source, wellness practice, connection to mother's tradition, and morning routine anchor",
+          "Garden size reduced from peak; uses raised beds Harold built when knees became problematic"
+        ],
+        "evidence": "Q01, Q01 follow-up, Q17, Q37, Q37 follow-up, Q47 follow-up"
+      },
+      "technology": {
+        "summary": "Minimal but functional technology user who strongly prefers analog methods; uses email, video calls, and passive Facebook browsing",
+        "details": [
+          "Uses desktop computer for email and video calls (not mobile)",
+          "Video calls James in Ohio every couple of weeks; Patricia helped set up",
+          "Has Facebook account set up by Patricia; browses 1-2 times per week (family photos, quilting group, Saline community page)",
+          "Has never posted on Facebook; afraid of accidentally sharing personal information",
+          "Prints digital photos and posts them on refrigerator",
+          "Uses basic word processing and email from partial college computer training",
+          "Strongly prefers analog systems: handwritten ledger over financial software, paper tax forms over electronic filing, kitchen wall calendar over digital",
+          "Writes handwritten letters to grandchildren; considers this more personal than digital communication",
+          "Distrusts internet for medical information; relies on doctor and pharmacist",
+          "Interested in online courses to finish business administration certificate but not yet enrolled",
+          "Critical of younger generation's screen time; enforces 'put that thing away' rule at family dinners"
+        ],
+        "evidence": "Q01 follow-up, Q05 follow-up, Q42, Q48, Q48 follow-ups, Q49, Q75, Q91"
+      },
+      "community_and_civic": {
+        "summary": "Deeply embedded in Saline's civic and church life for 48 years; votes in every election; conventional civic participant with growing disillusionment about partisan politics",
+        "details": [
+          "Votes in every election (federal, state, local, school board) since age 21; has never missed one",
+          "Researches candidates via Saline Post, Ann Arbor News, voter guides, and TV debates; prepares written cheat sheet for polling place",
+          "Votes early in the morning with Harold at polling place",
+          "Policy priorities: prescription drug costs, retirement/Social Security benefits, senior program funding, property taxes, local school board quality, Michigan road infrastructure",
+          "Writes occasional letters to elected representatives (recent: prescription costs, road funding)",
+          "Signed church statement on human dignity; does not participate in protests",
+          "Describes self as issue-oriented, not party-loyal; has split ticket in past; leans toward fiscal responsibility but supports senior community programs",
+          "Growing disillusionment: 'nothing gets done because everyone's fighting'; frustrated by rising costs with no government action",
+          "Granddaughter opened her eyes to student loan crisis and environmental concerns; now brings reusable bags to store",
+          "Organizes church fellowship meetings (twice monthly) and previously managed women's group treasury (20+ years)",
+          "Volunteers weekly at senior center (finance) and library (reading program); member of senior walking club",
+          "48-year Saline resident with deep neighborhood identity; knows people at church, library, senior center, grocery store"
+        ],
+        "evidence": "Q23, Q23 follow-ups, Q24, Q24 follow-ups, Q25, Q25 follow-up, Q27 follow-up, Q47, Q95, Q96"
+      },
+      "music": {
+        "summary": "Appreciates traditional folk and church hymns; music serves as ambient companion and spiritual comfort",
+        "details": [
+          "Enjoys The Carter Family folk songs (seed data)",
+          "Finds deep comfort in the church choir's piano renditions of old hymns; 'some Sundays it's the most peaceful I feel all week' (Q47)",
+          "Listens to local radio in the morning while in the kitchen (Q24 follow-up)",
+          "Plays small radio in sewing room while quilting (Q11 follow-up)",
+          "Music is ambient and integrated into daily activities rather than a primary entertainment focus"
+        ],
+        "evidence": "Q11 follow-up, Q24 follow-up, Q47; Seed arts_persona"
+      },
+      "fashion_and_appearance": {
+        "summary": "No significant fashion or appearance preferences surfaced in the interview; practical and modest in presentation",
+        "details": [
+          "No discussion of clothing, style, or appearance preferences in any of the 109 questions",
+          "Contextual inference: practical, modest presentation consistent with thrift-driven lifestyle, Midwestern cultural norms, and generational cohort"
+        ],
+        "evidence": "No direct evidence"
       }
     },
 
-    "behavioral_economist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed describes 'meticulous budgeting, record-keeping, and methodical planning.' Interview extensively confirms: handwritten ledger for 50+ years (Q56), envelope budgeting system (Q59, Q61), penny-level tracking (Q01, Q65), Sunday meal planning (Q03). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.professional_persona, seed.skills_and_expertise",
-            "source_b_ref": "Q01, Q03, Q56, Q59, Q61, Q65"
-          },
-          {
-            "id": 2,
-            "text": "Seed describes 'competitive edge drives her to double-check every detail.' Interview confirms competitive bridge scorekeeping (Q07), double-checking crossword answers (Q01, Q109), and meticulous financial reconciliation (Q16). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.professional_persona, seed.persona",
-            "source_b_ref": "Q07, Q16, Q109"
-          },
-          {
-            "id": 3,
-            "text": "Seed describes 'community finance volunteer.' Interview confirms 8 years of senior center finance work: reconciling donations, tracking expenses, balancing the checking account (Q16). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.professional_persona",
-            "source_b_ref": "Q16"
-          },
-          {
-            "id": 4,
-            "text": "Seed describes 'senior discounts to keep expenses predictable.' Interview confirms she uses pharmacy senior discount program (Q36) and seeks predictable costs in all financial domains. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.travel_persona",
-            "source_b_ref": "Q36"
-          },
-          {
-            "id": 5,
-            "text": "Seed skills list includes 'basic accounting.' Interview demonstrates advanced household accounting: tracking every penny in a ledger, managing Harold's carpentry business books (Q01, Q65), comparing medication prices (Q36), filing own taxes on paper forms (Q75). Behavior exceeds seed claim.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.skills_and_expertise_list: basic accounting",
-            "source_b_ref": "Q01, Q36, Q65, Q75"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview describes declining expensive knee medication ($100+/month) in favor of cheaper alternative (Q36). Behavioral economist summary correctly identifies this as low risk tolerance: 'she declined a more effective but expensive medication, preferring the predictable cost.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q36",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes emergency fund and rainy-day savings strategy (Q61, Q62, Q82). Behavioral economist summary correctly captures dual time orientation: 'present-oriented in terms of daily structure but maintains a modest savings buffer for future health emergencies.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q61, Q62, Q82",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes cutting grocery spending, delaying fabric purchases, and making garden-based meals to recover from roof expense (Q60). Profile's home_and_lifestyle mentions 'Envelope budgeting system' but does not specifically document the loss-aversion-driven spending cuts. The behavioral economist summary does capture this pattern. Consistent overall.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q60, Q64",
-            "source_b_ref": "summaries.behavioral_economist"
-          },
-          {
-            "id": 4,
-            "text": "Interview describes approximately $2,000/month regular spending and $3,000/month income (Q57, Q74). Profile does not have a dedicated financial summary field beyond preferences, but behavioral economist summary references 'fixed income' and 'loss aversion.' The specific dollar amounts are in the demographer summary. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q57, Q74",
-            "source_b_ref": "summaries.demographer, summaries.behavioral_economist"
-          },
-          {
-            "id": 5,
-            "text": "Interview describes filing taxes on paper forms, computing them by hand, and enjoying the process (Q75). Profile's technology_and_tool_use correctly includes 'Paper tax forms preferred over electronic filing.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q75",
-            "source_b_ref": "others_misc.technology_and_tool_use"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
-      },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Profile states household spending of approximately $2,000/month (not explicitly in profile, but implied by financial descriptions) against income of $3,000/month (demographer summary). Home_and_lifestyle states mortgage paid off in 2003. No debt (Q63). These figures are internally consistent: surplus allows for the savings described.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.demographer (income)",
-            "field_b": "preferences.home_and_lifestyle (no mortgage)"
-          },
-          {
-            "id": 2,
-            "text": "Behavioral economist summary describes her as 'internally motivated by discipline instilled by parents' and 'derives self-worth from being the numbers person.' Profile's work_and_career describes 'professional-grade commitment' to volunteer bookkeeping. These two descriptions are mutually reinforcing and consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.behavioral_economist",
-            "field_b": "preferences.work_and_career"
-          },
-          {
-            "id": 3,
-            "text": "Profile describes $60-70/month in medication costs (not explicitly in profile preferences but in behavioral economist's summary context) and also describes willingness to decline expensive medication. No contradiction between these data points.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.behavioral_economist",
-            "field_b": "preferences.health_and_wellness"
-          }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Monthly household spending amount (~$2,000) from Q57 is not explicitly captured in the extracted profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q57",
-            "should_be_in": "summaries.behavioral_economist or a financial_details field"
-          },
-          {
-            "id": 2,
-            "text": "Specific medication out-of-pocket costs ($60-70/month for two people) from Q36 and Q40 are not recorded in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q36, Q40",
-            "should_be_in": "preferences.health_and_wellness or summaries.behavioral_economist"
-          },
-          {
-            "id": 3,
-            "text": "Emergency fund capacity ($400 manageable, $2,000+ would require family help) from Q82 is not in the profile. Behavioral economist summary mentions 'modest savings buffer' but omits the quantified threshold.",
-            "verdict": "MISSING",
-            "interview_ref": "Q82",
-            "should_be_in": "summaries.behavioral_economist or others_misc"
-          },
-          {
-            "id": 4,
-            "text": "Quarterly property tax as the single most painful recurring expense (Q56, Q59) is not specifically called out in the profile, though property taxes are mentioned as a political concern (Q24).",
-            "verdict": "PRESENT",
-            "interview_ref": "Q56, Q59",
-            "should_be_in": "partially present in preferences.community_and_civic via Q24 reference"
-          }
-        ],
-        "summary": { "present": 1, "missing": 3 }
-      }
+    "summaries": {
+      "demographer": "Deeva Cintron is an 85-year-old white woman of German descent, born in Tecumseh, Michigan in 1941 (Q85, Q87, Q89), now living in Saline, Washtenaw County since 1978 (Q02, Q08). She has been married to Harold (87) for 64 years (Q84); they have three adult children -- Robert (62, Ann Arbor), James (59, Ohio), Patricia (56, Ypsilanti) -- seven grandchildren, and three great-grandchildren (Q05). Both brothers are deceased: Walter (d.2010) and Frank (d.2016 after two years in a care facility) (Q06, Q35). She completed approximately two years of community college in business administration before leaving to marry in 1962 (Q01, Q02, Q90), following both parents who had high school educations -- her father worked at a grain elevator/feed mill and her mother at Woolworth's five-and-dime (Q100-Q107). The household income is approximately $3,000/month from Harold's Ford union pension and government retirement benefits (Q66, Q74), with a mortgage-free three-bedroom home purchased in 1978 and paid off in 2003 (Q58). Her demographic profile is characteristic of aging Midwestern white working-class women: second/third-generation European immigrant heritage, strong church and civic ties, modest education interrupted by marriage, long-duration stable marriage, and deep rootedness in a small community.",
+
+      "behavioral_economist": "Deeva exhibits pronounced loss aversion and an exceptionally high need for financial control, manifested through a handwritten ledger maintained for 50+ years, an envelope system for categorical budgeting (house fund, holiday fund, medical fund), and monthly reconciliation against planned budgets (Q56, Q59, Q61). Her spending hierarchy in financial distress reveals clear preference ordering: discretionary items (fabric, books) are cut first, followed by grocery reduction via garden and pantry meals, while medications and utilities are treated as inviolable (Q64 follow-up). She declined a more effective but expensive knee medication in favor of a cheaper alternative, demonstrating risk-averse cost optimization over health maximization (Q36). Her financial identity is self-sustaining -- she derives visible satisfaction from being 'the numbers person' (Q11, Q65, Q83), files her own paper tax returns as an enjoyable activity (Q75), and experiences accepting financial help from children as a threat to autonomy (Q40 follow-up). The Ford pension and government benefits provide approximately $3,000/month against ~$2,000/month in regular expenses (Q57, Q74), with zero debt (Q63) and a modest savings buffer that can absorb a $400 emergency without borrowing (Q82). The primary financial risk is a major health event: Harold's prior procedure required children to cover uncovered costs of ~$2,000 (Q60 follow-up), and Deeva's biggest financial fear is 'running out of money before we run out of time' (Q83).",
+
+      "political_scientist": "Deeva is a highly engaged conventional civic participant who has voted in every election since age 21 -- federal, state, local, and school board -- reflecting a deep sense of civic duty transmitted through family socialization: 'If you don't vote, you don't get to complain' (Q23, Q23 follow-up). She researches candidates via the Saline Post, Ann Arbor News, voter guides, and broadcast evening news, having abandoned cable news due to partisan tone (Q24 follow-up). Her policy priorities center on bread-and-butter issues affecting her daily life: prescription drug costs, retirement benefit protection, property taxes, school board quality, and Michigan road infrastructure (Q24 follow-up, Q25, Q83 follow-up). She describes herself as issue-oriented rather than party-loyal, with fiscal conservatism as her primary value tempered by support for community programs benefiting seniors (Q95, Q96). She writes occasional letters to representatives but engages in no protest activity (Q27 follow-up). On racial justice issues, she defaults to an interpersonal 'treat everyone with respect' framework rather than structural analysis, acknowledging the limits of her homogeneous small-town perspective (Q26, Q27, Q28). She expresses growing disillusionment with partisan polarization -- 'nothing gets done because everyone's fighting' -- and has experienced late-life perspective shifts through conversations with grandchildren about student debt and environmentalism (Q25, Q25 follow-up).",
+
+      "psychologist": "Deeva's behavioral profile centers on exceptionally high Conscientiousness expressed across every life domain: meticulous record-keeping (50-year ledger, bridge scorebook, bird-watching notebook, pill compliance chart), rigid temporal structuring (same wake time, meal times, bed time daily; fixed weekly schedule with each day assigned specific tasks), and pervasive double-checking (crossword answers, quilting stitches, tax returns, budget reconciliation) (Q03, Q07 follow-up, Q15, Q17, Q56). Her routine functions as a self-regulation mechanism rather than mere preference -- during a 3-week illness that disrupted all activities, she experienced an acute identity crisis ('Is this what the rest of my life is going to be?'), demonstrating that activity and usefulness are constitutive of her self-concept, not accessories to it (Q44). She manages nighttime worry spirals (health catastrophizing, financial scenarios, Harold's mortality) through a self-developed behavioral strategy: getting out of bed and writing itemized lists of fears and actionable steps (Q45 follow-up). She exhibits strong self-reliance and burden-avoidance, hiding tears from Patricia during illness and experiencing discomfort when accepting financial help from children (Q44 follow-up, Q40 follow-up). She processes the chronic grief of generational survivorship -- both brothers, both parents, and many friends gone -- through quiet endurance, faith practices (evening prayer, devotional reading, church attendance), and commitment to remaining useful to her community (Q43, Q47). Her competitive streak is domain-specific (bridge scores, budget precision, quilting quality) rather than interpersonally aggressive, serving as competence demonstration rather than social dominance (Q07 follow-up, Q65)."
     },
 
-    "political_scientist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed's cultural_background describes 'strong ties to church, local civic groups.' Interview confirms: votes in every election since age 21 (Q23), organizes church fellowship (Q47), volunteers at library and senior center (Q16). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.cultural_background",
-            "source_b_ref": "Q23, Q47, Q16"
-          },
-          {
-            "id": 2,
-            "text": "Seed describes values of 'thrift, hard work, and community involvement.' Interview confirms fiscal conservatism in political views (Q24), strong civic engagement (Q23), and letters to representatives about prescription costs and roads (Q27). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.cultural_background",
-            "source_b_ref": "Q23, Q24, Q27"
-          },
-          {
-            "id": 3,
-            "text": "Seed describes Deeva as living in Saline, Washtenaw County, a small Michigan town. Interview's political engagement is deeply local: reads Saline Post, researches school board candidates, cares about road funding and property taxes (Q23, Q24). Consistent with small-town civic profile.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.city: Saline, seed.cultural_background",
-            "source_b_ref": "Q23, Q24, Q25"
-          },
-          {
-            "id": 4,
-            "text": "Seed does not mention political affiliation. Interview describes Deeva as issue-oriented, not strongly partisan, leans toward fiscal conservatism but splits tickets (Q95, Q96). No contradiction since seed is silent on politics.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed (no political data)",
-            "source_b_ref": "Q95, Q96"
-          }
-        ],
-        "summary": { "consistent": 4, "inconsistent": 0, "gaps": 0 }
+    "others_misc": {
+      "cultural_and_linguistic": {
+        "description": "Languages, cultural practices, religious/spiritual observance patterns, heritage markers",
+        "items": [
+          "English-only speaker, monolingual",
+          "German-American heritage (second/third generation on both sides); core transmitted values: thrift, hard work, community involvement, self-reliance",
+          "Attends church every Sunday since childhood; same Saline congregation since 1978",
+          "Organizes church fellowship meetings (twice monthly) and previously managed women's group treasury (20+ years)",
+          "Evening prayer practice before bed: asks for family health, guidance when worried, gives thanks for good days",
+          "Reads devotional booklet on nightstand nightly; provided by church",
+          "Finds spiritual grounding in garden and seasonal cycles: 'reminds me that there's an order to things bigger than my little worries'",
+          "Seasonal canning tradition (sauerkraut) passed down from mother who also canned green beans and tomatoes",
+          "Post-war Midwestern small-town culture: self-reliance, punctuality, quiet service, 'do it right or don't do it at all'",
+          "Church community as practical crisis support: brought meals during Harold's hospitalization, provided presence without Deeva having to ask"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview: Deeva votes in every election since age 21, researches candidates via local paper and voter guides, writes cheat sheets (Q23). Profile's community_and_civic correctly captures: 'Votes in every election (federal, state, local, school board) since age 21' and 'Researches candidates via local paper, voter guides, and TV debates.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q23",
-            "source_b_ref": "preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Interview: Deeva writes letters to representatives about prescription costs and road funding (Q27). Profile correctly includes 'Writes occasional letters to elected representatives (prescription costs, road funding).' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q27",
-            "source_b_ref": "preferences.community_and_civic"
-          },
-          {
-            "id": 3,
-            "text": "Interview: Deeva describes avoiding partisan cable news and sticking to broadcast news and local paper (Q24 follow-up). Profile's media_and_information_diet correctly captures 'Stopped watching cable news due to partisan tone' and lists Saline Post, Ann Arbor News, broadcast evening news. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q24",
-            "source_b_ref": "others_misc.media_and_information_diet"
-          },
-          {
-            "id": 4,
-            "text": "Interview: Bridge group instituted a 'no politics' rule because discussions got heated (Q24 follow-up). Political scientist summary correctly references this as evidence of polarization discomfort. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q24",
-            "source_b_ref": "summaries.political_scientist"
-          },
-          {
-            "id": 5,
-            "text": "Interview: Deeva signed a card at church about treating all people with dignity (Q27 follow-up) and had private conversations with Dorothy about race and policing (Q26). Political scientist summary captures her as defaulting to a 'treat everyone with respect' framework. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q26, Q27",
-            "source_b_ref": "summaries.political_scientist"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
+      "life_events_and_transitions": {
+        "description": "Significant past or anticipated events that shape current behavior",
+        "items": [
+          "Born 1941 in Tecumseh, MI; grew up with two older brothers (Walter, Frank) on small land with garden and chickens",
+          "Father worked at grain elevator/feed mill for 30+ years; mother worked at Woolworth's five-and-dime for ~8 years",
+          "Attended community college studying business administration; left after ~2 years to marry Harold in 1962",
+          "Harold worked at Ford plant (union member) while Deeva raised three children and managed household/side-business books",
+          "Move from Tecumseh area to Saline in 1978; decision made jointly at kitchen table with pro/con list and budget analysis",
+          "Harold's heart procedure approximately 5 years ago: Deeva managed his pills, tracked doctor instructions in notebook, didn't sleep well for months",
+          "Loss of both parents (father ~early 1990s, mother 1995) and both brothers (Walter 2010, Frank 2016 after 2 years in care facility)",
+          "Serious chest illness last winter requiring 3 weeks of recovery; triggered crying episode and fear of permanent dependency",
+          "Progressive knee deterioration requiring medication change 18 months ago; limits stair use, extended standing, gardening duration",
+          "Transition from full driver to dependent on family for night driving and some errands",
+          "Generational survivorship: awareness of being 'one of the last ones standing' from her generation; shapes daily emotional baseline",
+          "Aspiration to finish college certificate online and visit National Quilt Museum before becoming unable to travel"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Political scientist summary describes 'fiscal conservatism as primary political value, tempered by support for community programs benefiting seniors.' Community_and_civic mentions 'volunteers at senior center.' These are complementary and consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.political_scientist",
-            "field_b": "preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Political scientist summary describes Deeva as an 'information-moderate' who consumes local news and avoids partisan cable. Media_and_information_diet lists the same sources. No contradiction.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.political_scientist",
-            "field_b": "others_misc.media_and_information_diet"
-          }
-        ],
-        "summary": { "consistent": 2, "inconsistent": 0 }
+      "sensory_and_physical_context": {
+        "description": "Non-clinical physical factors: chronic pain, mobility, sleep, dietary practices tied to non-preference reasons",
+        "items": [
+          "Bilateral knee stiffness and pain, worse in cold weather and mornings; limits stair use and extended standing",
+          "Knee medication changed to stronger formulation ~18 months ago; declined expensive alternative in favor of cheaper option",
+          "Reduced visual acuity requiring magnifying glass for fine quilting stitches",
+          "Mild hearing decline (less severe than Harold's; both turn TV up louder than they should)",
+          "No longer drives at night due to combined age-related vision concerns (both Deeva and Harold)",
+          "Low-salt diet prescribed by doctor (not preference-based); adapted cooking with herbs",
+          "Sleep pattern: bed by 9 PM, up by 6-6:15 AM; occasional insomnia from worry/rumination managed by list-making",
+          "Energy depletion from extended standing (limits grocery shopping to shorter trips or phone orders via Patricia)",
+          "Cold Michigan winters exacerbate joint pain and limit outdoor activity; worst months for both physical and emotional well-being",
+          "Doctor discussed possible knee procedure; Deeva declined, preferring pills and exercises"
+        ]
       },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals Deeva's granddaughter's influence on her environmental awareness -- bringing reusable bags, paying attention to sustainability (Q25 follow-up). This intergenerational political influence is not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q25 follow-up",
-            "should_be_in": "summaries.political_scientist or preferences.community_and_civic"
-          },
-          {
-            "id": 2,
-            "text": "Interview describes Deeva's views on protests vs. working within the system (Q27): she believes in voting and letter-writing but understands why others feel compelled to protest. This nuanced position is captured in the political scientist summary. Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q27",
-            "should_be_in": "summaries.political_scientist (already present)"
-          },
-          {
-            "id": 3,
-            "text": "Interview describes Deeva's view that her grandchildren are too focused on internet activism rather than voting (Q30 follow-up). This generational tension in civic participation is not captured.",
-            "verdict": "MISSING",
-            "interview_ref": "Q30 follow-up",
-            "should_be_in": "summaries.political_scientist"
-          },
-          {
-            "id": 4,
-            "text": "Interview reveals Deeva's specific concern about student loan burden through her granddaughter (Q25 follow-up). This is not captured in the profile.",
-            "verdict": "MISSING",
-            "interview_ref": "Q25 follow-up",
-            "should_be_in": "summaries.political_scientist or others_misc"
-          }
-        ],
-        "summary": { "present": 1, "missing": 3 }
-      }
-    },
-
-    "psychologist": {
-      "direction_1_seed_vs_interview": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Seed persona describes 'a quiet competitive streak.' Interview confirms: keeps a running tally notebook of bridge wins for years (Q07 follow-up), admits 'I do like to win -- don't tell them I said that' (Q07), and double-checks crossword answers (Q01, Q109). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.persona: 'quiet competitive streak'",
-            "source_b_ref": "Q07, Q109"
-          },
-          {
-            "id": 2,
-            "text": "Seed persona describes 'steadfast dedication to order' and 'insisting on a rigid daily routine.' Interview confirms: structured weekly schedule with specific activities on each day (Q15), calendar on kitchen wall (Q03), 'If something isn't on the calendar, it might as well not exist' (Q03 follow-up). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.persona: 'steadfast dedication to order... rigid daily routine'",
-            "source_b_ref": "Q03, Q15"
-          },
-          {
-            "id": 3,
-            "text": "Seed persona describes 'double-checking crossword answers and recipe measurements.' Interview confirms double-checking crosswords (Q01, Q109) and precise recipe adaptations (Q31 follow-up on low-salt cooking). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.persona",
-            "source_b_ref": "Q01, Q31, Q109"
-          },
-          {
-            "id": 4,
-            "text": "Seed skills describe 'questioning assumptions to ensure quality.' Interview confirms: Deeva asks doctor 'Is this really necessary?' when new pills are added (Q39 follow-up), questions whether expenses are justified (Q56), and verifies candidates' records before voting (Q23). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.skills_and_expertise: 'questioning assumptions'",
-            "source_b_ref": "Q23, Q39, Q56"
-          },
-          {
-            "id": 5,
-            "text": "Seed hobbies describe 'bird-watching in her backyard satisfies her curiosity while remaining a calm, solitary pursuit.' Interview confirms: three bird feeders, a notebook logging species, daily morning ritual (Q17). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.hobbies_and_interests",
-            "source_b_ref": "Q17"
-          },
-          {
-            "id": 6,
-            "text": "Seed career goals describe desire to 'preserve her independence and maintain a well-ordered home environment.' Interview confirms this as a central concern: frustration with physical limitations (Q18, Q34), fear of losing control during illness (Q44), statement that independence 'is who I am' (Q109). Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "seed.career_goals_and_ambitions",
-            "source_b_ref": "Q18, Q34, Q44, Q109"
-          }
-        ],
-        "summary": { "consistent": 6, "inconsistent": 0, "gaps": 0 }
+      "media_and_information_diet": {
+        "description": "News sources, social media platforms, entertainment formats, information-seeking behavior",
+        "items": [
+          "Saline Post (local newspaper, delivered to home)",
+          "Ann Arbor News (picks up at library when available)",
+          "Broadcast network evening news at 6 PM (whichever channel Harold has on)",
+          "Local morning radio in the kitchen",
+          "Stopped watching cable news due to partisan tone: 'it was making me upset'",
+          "Facebook (passive browsing 1-2x/week on desktop: family photos, quilting group, Saline community page)",
+          "Does not use Instagram, Twitter/X, or other social platforms",
+          "Trusts Dr. Hendricks and pharmacist Carol at Rite Aid over internet for medical information",
+          "Voter guides received by mail; TV debates for major elections; writes candidate notes on notepad night before election",
+          "Prefers information from known, trusted individuals over anonymous online sources"
+        ]
       },
-      "direction_2_interview_vs_profile": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview: Deeva describes nighttime worry spirals -- lying in bed running through catastrophic scenarios about Harold's heart, falling, running out of money (Q45 follow-up). She combats this by getting up and writing worry lists. Psychologist summary correctly captures 'nighttime rumination' and 'effective coping through activity and routine.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q45 follow-up",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 2,
-            "text": "Interview: Deeva describes cleaning the house at 10 PM during Harold's hospitalization as a stress response (Q38 follow-up). Psychologist summary identifies 'behavioral activation' as primary coping mechanism. Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q38 follow-up",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Interview: Deeva hid her tears from Patricia during illness recovery, stating she doesn't want to be 'a burden physically or emotionally' (Q44 follow-up). Psychologist summary captures 'strong self-reliance and resistance to dependency, viewing burden on others as a threat to identity.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q44 follow-up",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Interview: Deeva describes grief for lost generation -- brothers Walter (2010) and Frank (2016), parents, friends -- and feelings of being 'one of the last ones standing' (Q43). Psychologist summary captures 'emerging grief and existential awareness as a last-surviving member of her generation.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q43, Q06",
-            "source_b_ref": "summaries.psychologist"
-          },
-          {
-            "id": 5,
-            "text": "Interview: Deeva declined Patricia's suggestion to see a counselor, stating 'I have my routine, my activities, and my faith' as her coping system (Q45 follow-up). Psychologist summary describes processing through 'faith, routine, and quiet endurance rather than verbal expression.' Consistent.",
-            "verdict": "CONSISTENT",
-            "source_a_ref": "Q45 follow-up",
-            "source_b_ref": "summaries.psychologist"
-          }
-        ],
-        "summary": { "consistent": 5, "inconsistent": 0, "gaps": 0 }
+      "technology_and_tool_use": {
+        "description": "Device preferences, app usage, digital communication norms",
+        "items": [
+          "Desktop computer for email and video calls (Patricia helped set up)",
+          "Video calls with James in Ohio every couple of weeks",
+          "Facebook on computer only (not mobile); has never posted",
+          "Prints digital photos for physical display on refrigerator",
+          "Handwritten ledger preferred over financial software; has used same system 50+ years",
+          "Paper tax forms preferred over electronic filing; does own taxes with calculator and instruction booklet",
+          "Kitchen wall calendar (paper) as primary scheduling tool for all appointments and commitments",
+          "Weekly pill organizer filled every Sunday night; compliance chart on refrigerator",
+          "Writes handwritten letters to grandchildren; considers this more personal",
+          "Interested in online courses to finish business administration certificate but not yet enrolled (Q91)",
+          "Graph paper for quilting pattern planning"
+        ]
       },
-      "direction_3_profile_internal_consistency": {
-        "observations": [
+      "unresolved_or_ambiguous": {
+        "description": "Information that could not be confidently assigned to preferences or summaries",
+        "items": [
           {
-            "id": 1,
-            "text": "Psychologist summary describes 'moderate-to-low Openness (preference for the familiar, traditional patterns, skepticism of unfamiliar approaches).' However, profile also captures Deeva's willingness to learn from her granddaughter about environmentalism (Q25 follow-up), adapt to video calls, and consider online courses. These show some openness to experience within a generally traditional framework. Not contradictory but nuanced -- low Openness in abstract domains, moderate when motivated by family connection.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist (Openness assessment)",
-            "field_b": "preferences.technology, preferences.work_and_career (aspires to online courses)"
+            "content": "Specific denominational affiliation of church (attends same Saline congregation since 1978; church choir with piano renditions of old hymns; fellowship meetings, women's group, potlucks; but denomination never named)",
+            "candidate_owner": "demographer",
+            "reason_unresolved": "Behavioral rule prevents naming religion directly; church attendance and practices described but label withheld. Q94 response avoids stating denomination."
           },
           {
-            "id": 2,
-            "text": "Psychologist summary describes 'moderate Agreeableness (community-oriented but with a competitive streak).' Profile's hobbies_and_recreation describes the competitive bridge scorekeeping. These are mutually consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist",
-            "field_b": "preferences.hobbies_and_recreation"
+            "content": "Exact nature of cardiovascular condition requiring regular level checks and medication (described behaviorally as 'keeping numbers in a good range' and 'making sure the ticker is doing what it should')",
+            "candidate_owner": "demographer",
+            "reason_unresolved": "Health condition described only through behavioral proxies per protocol rules. Q31 and Q31 follow-up provide behavioral detail without clinical label."
           },
           {
-            "id": 3,
-            "text": "Psychologist summary states 'self-concept is built around competence, reliability, and usefulness.' Work_and_career describes 'professional-grade commitment' and 'punctuality, record-keeping, accountability.' These are mutually reinforcing and consistent.",
-            "verdict": "CONSISTENT",
-            "field_a": "summaries.psychologist",
-            "field_b": "preferences.work_and_career"
+            "content": "Exact party lean (described as fiscally conservative, issue-oriented, has split ticket, leans toward 'keeping spending in check and letting people run their own lives' but explicitly avoids party label)",
+            "candidate_owner": "political_scientist",
+            "reason_unresolved": "Persona deliberately avoids firm party identification in Q95 and Q96; behavioral signals suggest moderate-to-center-right but not confirmed."
+          },
+          {
+            "content": "Senior softball league participation status (mentioned in seed sports_persona but not explored in interview; implausible given bilateral knee condition at age 85)",
+            "candidate_owner": "sports_and_fitness",
+            "reason_unresolved": "Seed data mentions 'modest senior softball league' but persona did not reference it in interview. Given documented knee issues (Q31, Q33), almost certainly inactive. Listed as historical rather than current in corrected profile."
+          },
+          {
+            "content": "Crochet activity (seed arts_persona mentions 'crocheted patterns' but interview focused exclusively on quilting and knitting; crochet never mentioned by persona)",
+            "candidate_owner": "hobbies_and_recreation",
+            "reason_unresolved": "Seed mentions crochet but Q11, Q17, and all craft-related responses discuss only quilting and knitting. May be conflated with knitting in seed, or may be a discontinued activity."
           }
-        ],
-        "summary": { "consistent": 3, "inconsistent": 0 }
-      },
-      "direction_4_completeness": {
-        "observations": [
-          {
-            "id": 1,
-            "text": "Interview reveals Deeva's specific fear of uselessness during illness -- 'Is this what the rest of my life is going to be? Sitting in a chair, waiting for someone to bring me soup?' (Q44). This specific vulnerability trigger is referenced in the psychologist summary's description of 'loss of capacities as deepest psychological vulnerability.' Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q44",
-            "should_be_in": "summaries.psychologist (already present)"
-          },
-          {
-            "id": 2,
-            "text": "Interview: Deeva describes her father's work ethic as a direct behavioral model -- 'Do it right or don't do it at all' (Q106 follow-up). This intergenerational behavioral transmission is not captured in the psychologist summary, which references parental discipline only indirectly.",
-            "verdict": "MISSING",
-            "interview_ref": "Q106 follow-up",
-            "should_be_in": "summaries.psychologist"
-          },
-          {
-            "id": 3,
-            "text": "Interview: Deeva describes a clear behavioral pattern of self-talk as a morning mobilization strategy -- 'Get up, Deeva. You have things to do' (Q43). This cognitive self-regulation technique is not explicitly named in the psychologist summary.",
-            "verdict": "MISSING",
-            "interview_ref": "Q43",
-            "should_be_in": "summaries.psychologist"
-          },
-          {
-            "id": 4,
-            "text": "Interview: Deeva's relationship with Harold is characterized by complementary silence -- 'We don't talk a lot during that time, but we're together in the room, and that's enough' (Q05 follow-up). Psychologist summary mentions 'stable and complementary' relational style. Present.",
-            "verdict": "PRESENT",
-            "interview_ref": "Q05 follow-up",
-            "should_be_in": "summaries.psychologist (already present)"
-          }
-        ],
-        "summary": { "present": 2, "missing": 2 }
+        ]
       }
     }
-  },
-
-  "overall_verdict": "PASS_WITH_REVISIONS",
-
-  "inconsistencies_found": [],
-
-  "resolutions": [],
-
-  "gaps_addressed": [
-    {
-      "gap": "Parents' education and occupations (Q100-Q107) not captured in extracted profile",
-      "recommendation": "Add parents' education (both high school graduates) and occupations (father: grain elevator/feed mill worker; mother: Woolworth's five-and-dime clerk) to others_misc.life_events_and_transitions or create a 'family_of_origin' sub-section."
-    },
-    {
-      "gap": "Specific financial figures ($2,000/month spending, $60-70/month medication costs, $400 emergency threshold) not captured",
-      "recommendation": "Add these quantified financial parameters to the behavioral economist summary or create a dedicated financial profile sub-section."
-    },
-    {
-      "gap": "Granddaughter's influence on environmental awareness and Deeva's adoption of reusable bags (Q25 follow-up) not captured",
-      "recommendation": "Add to political_scientist summary or community_and_civic as emerging intergenerational influence on civic behavior."
-    },
-    {
-      "gap": "Father's work ethic as direct behavioral model ('Do it right or don't do it at all') and self-talk mobilization strategy not in psychologist summary",
-      "recommendation": "Add intergenerational behavioral transmission and cognitive self-regulation strategy to psychologist summary."
-    }
-  ],
-
-  "expert_summaries": {
-    "demographer": "Deeva Cintron is an 85-year-old white woman of German descent, born in Tecumseh, Michigan, and resident of Saline, Washtenaw County since 1978. Her demographic profile -- second/third-generation German-American, some college education interrupted by marriage, lifelong homemaker, 64-year marriage, three adult children and ten descendants, household income of $3,000/month on fixed retirement benefits -- is highly consistent across seed data, interview transcript, and extracted profile (Q01, Q05, Q84, Q85, Q87, Q89, Q90, Q74). Minor completeness gaps exist: parents' education levels (Q100, Q101) and occupations (Q102-Q107) are discussed extensively in the interview but not recorded in the extracted profile. The demographer finds no factual inconsistencies across any verification direction.",
-
-    "behavioral_economist": "Deeva exhibits textbook loss aversion and a preference for predictability that is consistent across all three data sources. Her envelope budgeting system, handwritten ledger, and refusal to carry debt (Q56, Q59, Q61, Q63) are faithfully captured in the behavioral economist summary. Her decision to decline expensive medication in favor of a cheaper alternative (Q36) is correctly identified as low risk tolerance. The profile accurately characterizes her financial identity -- she derives self-worth from being 'the numbers person' (Q83 follow-up). Completeness gaps include the absence of specific dollar amounts ($2,000/month spending, $60-70/month medications, $400 emergency threshold from Q57, Q40, Q82) which would strengthen the quantitative basis of the behavioral analysis.",
-
-    "political_scientist": "Deeva is a highly engaged civic participant whose political profile -- universal voter since age 21, local news consumer, issue-oriented moderate, conventional participation through voting and letter-writing -- is consistently represented across seed data, interview, and extracted profile (Q23, Q24, Q27, Q95, Q96). The political scientist summary accurately captures her fiscal conservatism tempered by support for senior programs, her discomfort with partisan polarization, and her limited but evolving perspective on racial justice issues (Q26, Q28). Missing from the profile is the intergenerational political influence of her granddaughter on environmental awareness (Q25 follow-up) and her observation about internet activism versus voting as civic engagement (Q30 follow-up).",
-
-    "psychologist": "Deeva presents a behavioral profile marked by high conscientiousness, strong self-reliance, and behavioral activation as a primary coping mechanism -- patterns that are consistent across seed data, interview transcript, and extracted profile (Q03, Q07, Q15, Q38, Q44, Q45). The psychologist summary accurately identifies the connection between routine and emotional regulation, the threat that dependency poses to her identity, and her processing of generational grief through quiet endurance rather than verbal expression (Q43, Q44, Q45). The competitive streak noted in the seed persona is well-documented through bridge scorekeeping behavior (Q07 follow-up). Minor completeness gaps include the specific role of her father's work ethic as a behavioral model (Q106 follow-up) and her use of self-directed speech as a morning mobilization strategy (Q43)."
-  },
-
-  "preferences_updates": {
-    "additions": [
-      "Add parents' education and occupations to others_misc or demographer summary",
-      "Add specific financial figures ($2,000/month spending, $60-70 medication, $400 emergency capacity) to behavioral economist summary",
-      "Add granddaughter's environmental influence to political scientist summary",
-      "Add father's 'Do it right or don't do it at all' maxim as behavioral model in psychologist summary",
-      "Add self-talk mobilization ('Get up, Deeva') as cognitive coping strategy in psychologist summary"
-    ],
-    "corrections": [],
-    "removals": []
-  },
-
-  "final_status": "PASS_WITH_REVISIONS — No inconsistencies found across any of the four verification directions. All seed data points are faithfully elaborated in the interview and accurately captured in the extracted profile. Four minor completeness gaps identified (parents' background, financial specifics, intergenerational political influence, psychological coping details) are recommended for addition but do not constitute errors. The profile is structurally sound and ready for Step 3 use with the noted additions."
+  }
 }

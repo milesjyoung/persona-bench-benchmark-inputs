@@ -124,7 +124,7 @@ The end goal (Steps 4-7, future work) is to:
 
 ---
 
-## The 5 People We Built
+## The 5 Personas (from NVIDIA's dataset)
 
 | # | Name | Age | Location | Education | Occupation |
 |---|------|-----|----------|-----------|------------|
