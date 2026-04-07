@@ -1,0 +1,765 @@
+{
+  "metadata": {
+    "persona": "Julio Simmons",
+    "persona_id": "e7035edf5bc744c9912694a7d4b2a99c",
+    "total_test_cases": 70,
+    "generation_date": "2026-04-06",
+    "input_sources": {
+      "preferences": "data/step2b_verification/julio_simmons_verification.json (corrected_extracted_profile)",
+      "dynamic_events": "anmol/julio_simmons_app_logs (1).json (theme_plan.dynamic_events)",
+      "app_logs": "anmol/julio_simmons_app_logs (1).json"
+    },
+    "type_distribution": {
+      "type_1_simple_fact_check": 5,
+      "type_2_cross_log_fact_check": 8,
+      "type_3_dynamic_preference_tracking": 5,
+      "type_4_reasoning": 52
+    },
+    "target_accuracy": "40-50%"
+  },
+
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T1",
+      "source_preference": "social_and_relationships",
+      "question": "Julio has a recurring social commitment on Thursday evenings. What is it, and who participates?",
+      "ground_truth": "Biweekly D&D campaign at Marcus Chen's house. Participants include Marcus, Theo Vasquez (high school physics teacher), and Jess (central branch librarian). Julio is the Dungeon Master.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'D&D Night' or 'Campaign Night at Marcus's' appearing on Thursdays biweekly"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Julio has a daily morning wellness routine that involves a specific device. What is it and when does he use it?",
+      "ground_truth": "Full-spectrum light therapy lamp, used for 30 minutes every morning from October through April to counter seasonal energy and motivation decline.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Lamp Reset + Guided Meditation' appearing regularly in morning slots"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "question": "Julio facilitates workshops at a community education venue. What is the venue called?",
+      "ground_truth": "Rochester Brainery. He runs creative coding workshops there, earning approximately $100-120 per session after venue cut.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entry for 'Rochester Brainery Creative Coding Workshop' or messenger references to Brainery"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Julio has a recurring weekly commitment with his parents. What is it and when?",
+      "ground_truth": "Sunday dinners with parents Karl and Eileen at their home in Brighton. Julio typically arrives around 4pm and leaves around 7pm.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Sunday Dinner with Eileen and Karl' appearing weekly on Sundays"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T1",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Julio participates in a performing arts activity on Monday evenings. What is it?",
+      "ground_truth": "Improv theater rehearsals with a Rochester Fringe Festival troupe at Avenue Blackbox Theatre. He joined about 4 years ago at his friend Priya Nair's urging.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Monday Rehearsal with Priya' or 'Improv Rehearsal'"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Julio has been working on a major grant application this month. What is the grant for, and what evidence in both his messages and calendar suggests it's a significant time commitment?",
+      "ground_truth": "Monroe County Makerspace Grant. He is building a community makerspace business plan (70% complete). The grant application is a major project consuming multiple calendar focus blocks and discussed extensively across chat sessions with Marcus and Priya.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'Grant / Freelance Focus Block' and 'Grant Narrative Draft Block' + messenger sessions discussing Monroe County Makerspace Grant with Marcus and Priya"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D2",
+      "question": "A family member had a medical appointment this month. Who was it, what was it for, and how did Julio help?",
+      "ground_truth": "Father Karl had an orthopedic consult for his knee (both knees replaced ~7 years ago, one failing, uses a cane). Julio handled ride timing, grocery stops, and compiled a list of surgery questions. He coordinated with sister Greta.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entry for 'Karl Orthopedic Consult' + 'Pharmacy + Easy Groceries for Karl and Eileen' + messenger sessions with Greta (coordination) and Eileen (logistics)"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Julio experienced a health setback mid-month. What symptoms appeared, and what adjustments did he make to his routine? Cite evidence from both messages and calendar.",
+      "ground_truth": "He experienced 'staticy chest feeling' and too-late sleep after overextended nights. He adjusted by prioritizing morning lamp time, shorter canal walks instead of intense activity, booking acupuncture as maintenance rather than optional, and focusing on meals that aren't 'assembled from panic.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Messenger sessions with Marcus (M22) and Priya (M24) describing symptoms + calendar entries for 'Acupuncture Reset', 'Canal Walk - Short Loop', 'Quiet Dinner + Lamp Reset'"
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D3",
+      "question": "Julio prepared for a public-facing event at a community education venue. What was it, and what logistical details did he handle beforehand?",
+      "ground_truth": "Rochester Brainery Creative Coding Workshop. He handled handout edits, projector adapters, keeping examples friendly enough for beginners, and room setup. He discussed prep with Theo and reflected on it with Priya.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'Workshop Handout + Cable Check', 'Brainery Room Setup', 'Rochester Brainery Creative Coding Workshop' + messenger sessions about prep logistics"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D5",
+      "question": "Julio dealt with a cash-flow issue this month related to his freelance work. What triggered it, and how is it connected to his calendar?",
+      "ground_truth": "Invoice timing problems and workshop deck cleanup created a cash-flow crunch. He had delayed invoices from freelance work ($500-800/month variable) and needed to clean up presentation materials for paid workshops.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'Invoice Cleanup + Deck Revision', 'Invoice Send + Asset Review', 'Invoice Pass + Budget Reality Check' + messenger sessions discussing money pressure"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D6",
+      "question": "Julio's D&D night served a dual purpose this month beyond gaming. What else was discussed, and who was involved?",
+      "ground_truth": "D&D night doubled as a Fringe Festival brainstorming session. Julio, Marcus, and likely Theo discussed ideas for the upcoming Rochester Fringe Festival, connecting Julio's creative/art-science work with collaborative performance planning.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entry for 'D&D Night + Fringe Idea Debrief' and 'Dice, Character Sheets, and Fringe Notes' + messenger sessions discussing Fringe planning"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Julio coordinates with a family member about their father's care. Who is this person, what is their profession, and what evidence shows their coordination?",
+      "ground_truth": "Sister Greta Simmons-Novak, a nurse practitioner in Syracuse. They coordinate around Karl's medical appointments, grocery runs, and family logistics. A calendar entry 'Greta + Julio Family Notes Check' and messenger sessions show this.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entry for 'Greta + Julio Family Notes Check' + messenger sessions with Greta about Karl's care"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Julio uses multiple wellness practices in combination. Based on the app logs, identify at least three distinct health management practices and show how they appear across different sources.",
+      "ground_truth": "At least: (1) Light therapy lamp (calendar: 'Lamp Reset + Guided Meditation' entries), (2) Acupuncture (calendar: 'Community Acupuncture' + 'Acupuncture Reset' + messenger discussions), (3) Canal walks as gentler exercise (calendar: 'Canal Walk - Short Loop' + messenger mentions), (4) Meditation (calendar: 'Guided Meditation' entries + messenger references to calmer routines).",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Multiple calendar event types + corresponding messenger discussions about health adjustments"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Julio's approach to the makerspace grant changed over the month. How did his strategy evolve from early March to late March?",
+      "ground_truth": "Early March: intense, trying to handle everything at once ('every finished task reveals three smaller ones'). Mid-March: narrowed scope, cut 'decorative complexity,' focused on core deliverables. Late March: adopted a cleaner, more honest approach — 'the work got smaller, clearer, and more honest once I stopped pretending every possibility had to survive the same week.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early messenger sessions (M1, M3) showing overwhelm vs. later sessions showing scope reduction and acceptance"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Julio's health routine shifted mid-month. What was his routine before the shift, and what did it look like after?",
+      "ground_truth": "Before: pushing through with full-intensity schedules, overextended nights, skipping recovery. After: switched to lighter version — morning lamp time prioritized, shorter canal walks instead of intense exercise, acupuncture treated as maintenance not luxury, deliberate meal planning. He described the calmer version as 'more useful than the stubborn version.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Pre-D4 calendar showing intense scheduling vs. post-D4 entries like 'Canal Walk - Short Loop', 'Quiet Dinner + Lamp Reset', 'Acupuncture Reset' + messenger sessions describing the shift"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D2",
+      "question": "How did the family's approach to Karl's health situation change over the month? Track the progression from initial concern to concrete planning.",
+      "ground_truth": "Progression: Initial vague family concern ('floating around the family as concern and vague intentions') → practical pieces written down (ride timing, grocery stops, surgery question list) → Greta + Julio coordination check → post-consult follow-up with errands handled. The emotional weight shifted from 'static' worry to 'ordinary things that need to happen on ordinary days.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early sessions with Greta (M4) showing initial coordination → calendar entries for consult + pharmacy → later sessions with Greta showing follow-up → Eileen session (M7) showing concrete logistics"
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D5",
+      "question": "Julio's financial situation showed signs of strain this month. What evidence suggests a cash-flow crunch developed, and how did his behavior adapt?",
+      "ground_truth": "Invoice timing created a gap — freelance payments were delayed while workshop prep costs accumulated. His calendar shifted from creative focus blocks to 'Invoice Pass + Budget Reality Check' entries appearing every few days. Messages show him becoming more deliberate about separating 'money work and mission work' and trying to 'keep the cleaner parts of the routine instead of sliding right back into my messier habits.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Increasing frequency of 'Invoice Pass + Budget Reality Check' calendar entries + D5 messenger sessions about financial pressure + shift in calendar from creative blocks to admin blocks"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D3",
+      "question": "The Brainery workshop went from preparation to execution this month. What changed in Julio's messaging about it before vs. after the event?",
+      "ground_truth": "Before: focused on logistics and anxiety ('which pieces belong on paper and which ones can stay in my head'). After: reflected on invisible competence ('the effort becomes atmosphere, the work disappears into a calmer room') and expressed desire to 'keep getting better at that version of work, the kind that leaves ease behind rather than evidence of strain.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Pre-workshop messenger sessions about prep logistics (with Theo) vs. post-workshop reflection sessions (with Priya) + calendar progression from 'Workshop Handout + Cable Check' → 'Brainery Room Setup' → 'Rochester Brainery Creative Coding Workshop'"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "question": "Based on the app logs, what are Julio's sources of income and how stable are they? Provide evidence for each source you identify.",
+      "ground_truth": "Sources: (1) Freelance data visualization/creative coding ($500-800/month variable), evidenced by invoice-related calendar entries and discussions about client work; (2) Rochester Brainery workshops ($100-120/session), evidenced by workshop calendar entries; (3) Occasional art sales, evidenced in profile but may not appear explicitly in logs. Income is unstable — invoice timing issues (D5), budget reality checks appearing frequently, discussions about 'money work' vs. 'mission work.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for freelance blocks + workshop events + invoice entries + messenger discussions about cash flow"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "social_and_relationships",
+      "question": "Julio uses social commitments as a deliberate coping mechanism. What evidence across the logs supports this interpretation, and which commitments serve this function?",
+      "ground_truth": "D&D biweekly (social anchor, 'quiets brain in a good way'), improv Monday (behavioral activation, 'exposure therapy for need to plan everything'), frisbee Saturdays, Sunday family dinners. Evidence: he explicitly schedules these as non-negotiable ('if I leave the recovery part to chance, chance usually votes for more work'), he discusses with Priya how keeping D&D on the schedule prevents worse weeks, and calendar shows these as recurring immovable commitments even during intense grant/work periods.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Recurring calendar commitments maintained during D1/D5 stress periods + messenger sessions where Julio explicitly discusses keeping social events as protection against isolation"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Julio appears to have a stress response pattern that manifests physically. Based on the logs, what physical symptoms appear, what triggers them, and how does he respond?",
+      "ground_truth": "Symptoms: 'staticy chest feeling', too-late sleep, jaw tension (implied by acupuncture for jaw area). Triggers: overextended work nights, deadline pressure from grant (D1) and invoices (D5). Response: switches to lighter routine — lamp therapy, shorter canal walks, acupuncture 'treated as maintenance instead of optional luxury', deliberate meal planning. Pattern visible across calendar shifts and messenger discussions with Marcus and Priya.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 messenger sessions describing symptoms + calendar shift to recovery-focused entries + messenger discussions about choosing 'smarter week instead of stubborn one'"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "question": "Julio is building toward a long-term professional goal. What is it, what concrete steps has he taken this month, and what obstacles has he encountered?",
+      "ground_truth": "Goal: community makerspace combining art, science, and technology education. Steps this month: (1) Monroe County Makerspace Grant application (D1), (2) Brainery workshop as public-facing validation (D3), (3) Fringe Festival brainstorming for creative programming (D6), (4) STEM outreach at RMSC. Obstacles: grant scope creep requiring painful cuts, cash-flow crunch from delayed invoices (D5), perfectionist tendencies slowing progress.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for grant blocks + workshop + RMSC outreach + Fringe planning + messenger discussions about scope cuts, financial pressure, and perfectionism"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "What role does Julio play in his family's caregiving dynamics? How do his relationships with his mother, father, and sister each function differently in this context?",
+      "ground_truth": "Julio is the local caregiver for aging parents Karl and Eileen in Brighton. He handles logistics: driving Karl to appointments, grocery runs, compiling medical questions. Greta (nurse practitioner, Syracuse) provides clinical perspective and coordinates remotely — they do 'family notes checks.' Eileen appreciates practical help ('fewer little steps') but doesn't want fuss. Karl's declining mobility (cane, potential knee revision) is the central concern driving the sibling coordination system.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Eileen sessions showing her preferences + Greta sessions showing coordination + calendar entries for Karl's consult + pharmacy runs + family notes checks"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence in the logs suggests Julio is under financial pressure, even if no specific dollar amounts are mentioned?",
+      "ground_truth": "Indicators: (1) Frequent 'Invoice Pass + Budget Reality Check' calendar entries (near-daily), suggesting constant money monitoring; (2) Cash-flow crunch from invoice timing (D5); (3) References to needing 'money work and mission work' to coexist; (4) Workshop income as a revenue source he actively pursues; (5) Grant application as both creative AND financial strategy; (6) Market shopping described alongside budget concerns; (7) Discussions about the 'annoying' but necessary admin of financial management.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "High frequency of budget-check calendar entries + D5 invoice discussions + T2 messenger sessions showing money anxiety interwoven with creative work"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Julio maintains multiple creative and social activities simultaneously. Map out his typical weekly schedule based on the app logs. What does a normal week look like?",
+      "ground_truth": "Typical week: Morning lamp + meditation daily, deep creative work blocks (grant/freelance) on weekdays, Monday improv rehearsal with Priya, biweekly Thursday D&D at Marcus's, Saturday market + frisbee, RMSC STEM outreach (some Saturdays), Sunday dinner with parents, intermittent invoice/budget admin, occasional acupuncture. Canal walks and recovery blocks scattered throughout.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar event patterns across multiple weeks showing recurring activities on specific days"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "question": "Julio volunteers at a science museum. What is it called, what does he do there, and how does this connect to his larger professional goals?",
+      "ground_truth": "Rochester Museum & Science Center (RMSC). He runs hands-on STEM outreach stations for kids ages 5-13, approximately twice monthly on Saturdays. This connects to his makerspace dream — he's testing community engagement formats, developing workshop facilitation skills, and building credibility for his grant application. The outreach pop-ups in underserved neighborhoods (Beechwood, Northeast) also connect to his equity and civic engagement values.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for 'RMSC STEM Outreach' + connections to makerspace grant discussions in messenger + workshop prep themes"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "social_and_relationships",
+      "question": "Who is Julio's closest friend, and what evidence across the logs demonstrates the depth of this relationship?",
+      "ground_truth": "Marcus Chen — software engineer at Paychex, friend from grad school. Evidence: (1) D&D at Marcus's house (biweekly anchor), (2) Marcus is the person Julio discusses grant struggles, financial pressure, and health adjustments with most candidly, (3) Campaign nights appear as recurring calendar events, (4) Marcus provides practical grounding ('deadline pressure always tries to trick people into doing impressive-looking work before necessary work'), (5) Multiple sessions across different themes all route through Marcus.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "High frequency of Marcus sessions across multiple themes + calendar entries at Marcus's place + range of topics discussed"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Julio manages his wellbeing through both proactive routines and reactive adjustments. Based on the logs, distinguish between his regular maintenance practices and his crisis-response adjustments.",
+      "ground_truth": "Regular maintenance: daily lamp therapy (Oct-Apr), daily meditation, Saturday market, Sunday family dinner, weekly improv/D&D/frisbee, periodic acupuncture, canal walks. Crisis-response (visible in D4): shortened walks instead of intense activity, acupuncture upgraded from 'optional luxury' to maintenance, deliberate meal planning ('not assembled from panic'), reduced work intensity ('smarter week instead of stubborn one'), leaning on social commitments as behavioral activation.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Regular calendar patterns (lamp, meditation, recurring social) vs. D4-period calendar additions (Acupuncture Reset, Canal Walk - Short Loop, Quiet Dinner + Lamp Reset) + messenger tone shift"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "arts_and_culture",
+      "question": "Julio is involved with a local arts festival. What festival, what is his involvement, and how does it connect to his other activities this month?",
+      "ground_truth": "Rochester Fringe Festival. He performs improv with a troupe (rehearsals Monday nights), and this month used D&D night to brainstorm Fringe ideas with Marcus and Theo (D6). His involvement connects his improv practice, his science-art creative work, and his makerspace community-building goals. Calendar entries include 'D&D Night + Fringe Idea Debrief' and 'Dice, Character Sheets, and Fringe Notes.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar D6 entries + improv rehearsal entries + messenger sessions about Fringe brainstorming"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "question": "Julio describes a tension between creative aspirations and financial realities. What specific evidence in the logs shows these two forces in conflict, and how does he try to reconcile them?",
+      "ground_truth": "Conflict: Grant work (creative mission, D1) competes with invoice/admin work (financial survival, D5) for the same time blocks. Workshop prep (D3) is both creative expression and income source. He explicitly talks about 'money work and mission work' being 'married whether he likes it or not.' Reconciliation attempts: calendar blocks that separate grant/creative time from admin/invoice time, cutting 'decorative complexity' from the grant to focus on what works, treating the Brainery workshop as both mission validation and revenue.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Separate calendar blocks for grant vs. invoice work + messenger sessions explicitly discussing the tension + D1/D3/D5 events showing creative and financial threads interweaving"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "What can you infer about Julio's cooking habits and how they change based on his mood or financial state? Cite specific evidence.",
+      "ground_truth": "During stable periods: experimental home cook using local farmers' market ingredients (Rochester Public Market, Saturday mornings), specialty items like miso and Sichuan peppercorns, signature dishes like miso-glazed black cod. During lean/low periods: falls back to rice, beans, pasta, Aldi vegetables, frozen pizza. His cooking tracks his emotional and financial state — 'meals not assembled from panic' is a sign of recovery. He also reduces meat for environmental reasons.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for 'Saturday Market + Flowers' and 'Public Market Loop' + messenger references to meal quality as mood indicator + D4/D5 sessions mentioning food adjustments"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "Where does Julio shop for groceries, and what does his shopping pattern reveal about his values?",
+      "ground_truth": "Primary: Rochester Public Market (Saturday mornings, local produce, eggs, flowers) and Finger Lakes farmers' market. Fallback: Aldi during tight months. His shopping pattern reveals: (1) preference for local/seasonal over convenience, (2) environmental values (reduced meat, local sourcing), (3) financial constraint forcing practical compromises, (4) the market trip is also a social ritual tied to Saturday frisbee.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for market visits + proximity to frisbee events + messenger references to market shopping and budget-driven food choices"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sports_and_fitness",
+      "question": "What physical activities does Julio participate in, and how do they vary by season? What evidence shows seasonal patterns?",
+      "ground_truth": "Summer/warm: co-ed ultimate frisbee (Saturday mornings, South Wedge Park), community cycling on Erie Canal towpath (April-October, Sunday mornings), hiking (Watkins Glen, Finger Lakes). Winter: stationary bike at home as cycling substitute, reduced outdoor activity contributing to seasonal mood decline. Social activities (improv, D&D) become more critical as compensating structure in winter. Weight fluctuates ~10 lbs seasonally.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for canal walks appearing in March + messenger discussions about returning to outdoor activity + references to seasonal mood/energy patterns"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sports_and_fitness",
+      "question": "Julio follows local sports teams. Which ones, and in what context does he engage with sports?",
+      "ground_truth": "Rochester Red Wings (minor league baseball) and Rochester Americans (hockey). He doesn't attend games regularly — his dad Karl watches games in his recliner during Sunday dinners. Sports fandom is a shared family activity rather than a personal passion. His own sports participation (frisbee, cycling, hiking) is about community and health, not spectating.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Sunday dinner calendar entries + any messenger references to sports in context of family dinners or casual conversation"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "nature_and_outdoors",
+      "question": "What is Julio's relationship with nature, and how does it serve multiple functions in his life?",
+      "ground_truth": "Nature serves three functions: (1) Physical health — hiking, cycling, canal walks as exercise and stress relief; (2) Creative inspiration — Finger Lakes landscapes directly inspire his acrylic painting series; (3) Spiritual/transcendent experience — 'When I come around a corner to a waterfall that's existed for thousands of years, I feel something I'd call transcendent.' He also cares about environmental issues (Great Lakes water quality, invasive species) which translate to behavioral choices (bikes, buys local, reduced meat).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for canal walks + market visits + messenger sessions where nature/outdoors comes up in context of recovery or creative work"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "entertainment",
+      "question": "What can you infer about Julio's media consumption habits from the logs? What does he read, watch, or listen to?",
+      "ground_truth": "Reads: speculative fiction (Le Guin's The Dispossessed), popular science (quantum physics research for graphic novel), racial/social justice (Ta-Nehisi Coates, Kendi, Rothstein). Watches: nature documentaries as comfort viewing during crash periods (Planet Earth). Listens: NPR every morning, Code Switch podcast, Brian Eno for stress relief. Browses: Kurzgesagt (YouTube), Ars Technica, STAT News, ProPublica. Graphic novels from Twelve Corners library.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to reading, podcasts, or media + calendar entries that might reference library visits or media consumption"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "music",
+      "question": "What role does music play in Julio's life, and how does it connect to his other activities?",
+      "ground_truth": "Music functions as: (1) Creative practice — composes experimental ambient music on modular synthesizer (Brian Eno influence); (2) Emotional regulation — listens to Brian Eno records to reset during stress spirals and post-date rumination; (3) Cultural participation — appreciates Rochester's live music scene; (4) Background ritual — NPR on in the morning while making coffee. Had Spotify subscription (paused during Nov-Dec financial crunch, reinstated).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to music, synth, or Eno + calendar entries that might reference creative sessions"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology",
+      "question": "Julio has a complex relationship with technology — he's highly proficient but selective about consumer tech. What evidence shows both his technical skills and his deliberate technology boundaries?",
+      "ground_truth": "Technical proficiency: Python, MATLAB, R, p5.js, Processing, D3, Max/MSP — uses these for data visualization, creative coding, and music composition. Selective boundaries: moved social media apps off phone home screen, set 30-minute daily limits after January 2026 screen-time wake-up call (2+ hours/day average), prefers Discord over broadcast social media ('feels like being at a table with friends'), portfolio website perpetually unupdated due to perfectionist redesign loops.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to coding or technical work + any social media/screen-time discussions + calendar entries for 'Studio Desk Work' implying technical creative work"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "community_and_civic",
+      "question": "What evidence suggests Julio is civically engaged beyond just voting? What specific community activities does he participate in?",
+      "ground_truth": "Beyond voting: (1) RMSC STEM outreach ~twice monthly, including pop-ups in underserved neighborhoods; (2) Rochester Brainery workshop facilitation; (3) Small-dollar donations to local candidates and Rochester Environmental Action League; (4) Maker's Row Rochester monthly meetups; (5) Informal mentoring of RIT creative coding students; (6) Offers scholarship spots in paid workshops. His political approach is 'issue-driven pragmatist focused on local competence and community-built institutions.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for RMSC outreach + Brainery workshops + Maker's Row + messenger discussions about community engagement"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "cultural_and_linguistic",
+      "question": "What cultural heritage does Julio come from, and how does it manifest in his current life?",
+      "ground_truth": "German-Irish heritage. German side: grandmother's sauerkraut tradition in fall, cousin Heinrich's vineyard near Seneca Lake (sends Riesling), childhood dog Fritz (German name). Irish side: big Christmas gatherings. Current practice: attends Christmas Eve candlelight service and Easter with parents ('partly for them, partly because it still gives me goosebumps'). Secular spirituality through nature and creative flow states. Rochester cultural identity: 'scrappy city that builds things,' Kodak-era industrial heritage.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Sunday dinner references + any holiday or family tradition mentions + calendar entries for church or family gatherings"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "life_events_and_transitions",
+      "question": "What major life transitions has Julio experienced, and how do their effects show up in his current behavior patterns visible in the logs?",
+      "ground_truth": "Key transitions: (1) Divorce from Diana ~6 years ago — visible in avoidance patterns around dating, post-date rumination; (2) Left workforce ~3 years ago — visible in freelance/grant hustle, financial monitoring; (3) January-February 2026 three-week functional shutdown — visible in the D4 health-reset pattern, increased reliance on layered wellness routines; (4) Major grant rejection — visible in cautious approach to current Monroe County application. Cat Oliver adopted coinciding with workforce exit — serves as minimum-functioning anchor.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Pattern of financial monitoring calendar entries + wellness routine emphasis + messenger discussions about maintaining routines and avoiding past mistakes"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Describe Julio's living situation and daily structure based on the app logs. Where does he live, what anchors his days, and what tools does he use to stay organized?",
+      "ground_truth": "Lives alone with cat Oliver in upper floor of a two-family house ($950/month) in Brighton/Rochester 14618. Landlord Mr. Petrosian lives downstairs. Daily structure: up ~7:30 (Oliver wakes him), feed cat, coffee, 30 min light therapy + reading, 20 min meditation, 9-noon deep creative work block, afternoons variable (admin, errands, social). Uses Pomodoro timer (25 on/5 off, successful ~60% of mornings), systematic spreadsheets for everything (budget, mood, candidates, projects).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries showing morning wellness blocks + creative work blocks + evening social events + messenger references to apartment life and daily routines"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Julio's relationship with his sister Greta differ from his relationship with his friend Marcus? What evidence shows each relationship serves a different function?",
+      "ground_truth": "Greta: practical/logistical family coordination (Karl's care, medical knowledge as nurse practitioner, drove from Syracuse during January shutdown, stocked fridge). Their communication is about caregiving, family obligations, and health. Marcus: emotional anchor and creative sounding board (D&D, grant discussions, deadline support, 'deadpan humor to interrupt spirals,' brings pad thai during crashes). Their communication spans work, creativity, stress, and social life. Greta understands clinically; Marcus understands emotionally.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Greta sessions focused on Karl/family logistics vs. Marcus sessions spanning grant work, D&D, health adjustments, and creative projects"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What is Priya Nair's role in Julio's life, and what activities connect them?",
+      "ground_truth": "Priya is a close friend met through Rochester Fringe Festival. She's a graphic designer and his improv troupe collaborator. They connect through: Monday improv rehearsals, Fringe Festival planning, creative work discussions, emotional check-ins. Priya recognizes his in-moment stress signs and provides breathing exercises. She is the person he most frequently messages about daily processing and routine maintenance.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "High frequency of Priya sessions across all themes + calendar entries for improv rehearsals + messenger discussions spanning creative, health, and daily life topics"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What is Theo Vasquez's connection to Julio, and what activities do they share?",
+      "ground_truth": "Theo is a high school physics teacher. Connected through D&D (regular player in Julio's campaign), shared interest in STEM education, and community involvement. They discuss workshop logistics, Fringe brainstorming, and the intersection of teaching and creative work. Theo provides a 'teacherly' perspective — practical, methodical, focused on what works in educational settings.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Theo sessions discussing workshop prep, D&D, and educational themes + calendar entries for campaign nights and canal walks together"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_economist_summary",
+      "question": "What evidence suggests Julio prioritizes meaningful work over financial stability? Is this a deliberate choice or a circumstance?",
+      "ground_truth": "Deliberate choice with costly consequences. Evidence: he left the workforce rather than take misaligned work, pursued makerspace dream despite savings drawdown, chose unfunded art-science lab over stable Boston job (career history). Current behavior: treats grant and workshop work as both financial and mission-critical, maintains creative blocks even during cash crunch, explicitly talks about keeping 'money work and mission work' balanced rather than abandoning creative work for stable income.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar showing creative blocks maintained alongside financial admin + messenger sessions about balancing mission and money + D1/D5 tensions between creative and financial priorities"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Julio appears to have a pattern of intense creative work followed by periods of exhaustion. What evidence in the logs supports this cycle?",
+      "ground_truth": "The intensity-crash cycle: creative flow triggers long work sessions (skipping meals, chest tightness), followed by sleep crashes and feelings of depletion. Visible in logs: grant deadline pressure (D1) leading to health wobble (D4), with calendar shifting from intense 'Grant / Freelance Focus Block' entries to recovery-focused 'Short Recovery Block', 'Acupuncture Reset', and 'Quiet Dinner + Lamp Reset' entries. Messenger tone shifts from project excitement to acknowledging need for 'smarter week instead of stubborn one.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Temporal pattern: intense calendar blocks (D1 period) → recovery calendar blocks (D4 period) + messenger tone shifts across the same timeline"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "How does Julio handle perfectionism, and where does it show up in the logs?",
+      "ground_truth": "Perfectionism manifests in: (1) Grant application scope creep — trying to keep 'every possibility' alive before cutting 'decorative complexity'; (2) Workshop over-preparation — spending ~10 hours prep for 2-hour session; (3) Portfolio website unupdated because he restarts the redesign every time; (4) Post-event processing where he replays details obsessively. He combats it through Marcus's grounding influence ('nobody on the outside will miss the flourish if the core thing works cleanly') and deliberate scope reduction.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions about cutting grant scope + workshop prep discussions + references to overthinking or over-preparing + Marcus providing pragmatic counterweight"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sensory_and_physical_context",
+      "question": "What physical stress symptoms does Julio experience, and what triggers them? Cite evidence from the logs.",
+      "ground_truth": "Symptoms: chest tightness/static feeling (triggered by overextension and deadlines), jaw clenching (stress, requires night guard), tension headaches (base of skull to temples, correlated with deadlines and financial crunch), racing thoughts preventing sleep, too-late sleep. Triggers visible in logs: D1 grant deadline pressure, D5 invoice/cash crunch. The D4 dynamic event specifically tracks his shift from pushing through to accepting a gentler routine.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 messenger sessions describing 'staticy chest feeling' and sleep issues + calendar shift to recovery entries + temporal correlation with D1/D5 stress periods"
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "media_and_information_diet",
+      "question": "How does Julio consume news and information? What can you infer about his trust in different information sources?",
+      "ground_truth": "NPR every morning (radio), Code Switch podcast, local journalism (Democrat and Chronicle, Rochester Beacon), investigative journalism (ProPublica), science reporting (Ars Technica, STAT News), primary research (PubMed — has statistical training to read clinical trials). Trust hierarchy: trusts scientific institutions (CDC, peer-reviewed), moderate trust in quality journalism, skeptical of social media as info source, deeply skeptical of grant bureaucracies. Filter: 'Does this outlet cite primary sources and acknowledge uncertainty?'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to news, articles, or information sources + discussion patterns showing analytical rather than reactive engagement"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology_and_tool_use",
+      "question": "What apps and digital tools does Julio use regularly, and what does each one serve?",
+      "ground_truth": "Insight Timer (meditation), Pomodoro timer (focus), Hinge (dating — low engagement), M&T Bank app (monthly budget check), TurboTax Self-Employed (tax filing), Discord (creative coding server, D&D homebrew server — preferred community platform), blood pressure wrist cuff monitor. Paused then reinstated Spotify. Moved social media off home screen with 30-min daily limits. Laptop as primary work device for coding, grant writing, illustration.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries implying digital tool use (meditation, focus blocks) + messenger discussions about screen time, apps, or technology habits"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "community_and_civic",
+      "question": "What political values does Julio hold, and how do they translate into concrete actions visible in the logs?",
+      "ground_truth": "Leans Democratic, issue-driven ('critical ally'). Priority issues: education funding, Great Lakes environmental protection, healthcare access for non-traditionally-employed, arts council budgets. Actions: votes in every election (votes early to avoid crowd discomfort), STEM outreach in underserved neighborhoods (Beechwood, Northeast), workshop scholarships, small-dollar donations, occasional phone banking. Environmental values visible in reduced meat, local shopping, biking when possible.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "RMSC outreach calendar entries + Brainery scholarship mentions + market/local shopping patterns + messenger discussions touching on community values"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "travel",
+      "question": "What can you infer about Julio's travel habits and constraints from the logs?",
+      "ground_truth": "Travel is regional, budget-constrained, and purposeful. He visits Greta in Syracuse every couple of months (takes niece/nephew to MOST museum), hikes Finger Lakes and Watkins Glen, explored Adirondack cabins. Drives a used Subaru Outback with $270/month payment (8 months remaining). Wish list includes Kyoto and Burning Man but finances prevent it. Even the canal walks visible in the calendar represent his preference for nature-based local movement over expensive travel.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Canal walk and outdoor calendar entries + any messenger references to travel plans or constraints + regional nature of all activities"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Julio has a creative project he's been developing long-term. What is it, and what evidence suggests it's important to him?",
+      "ground_truth": "A quantum-physics graphic novel series combining his illustration skills with his computational science background. Aims to 'demystify quantum physics for a general audience.' Connected to his broader art-science mission and influenced by Alan Moore's narrative pacing. Previously applied for (and was rejected from) a grant to fund it — the 42-page application, 3 months of work, form rejection with zero feedback was an 'identity-level blow.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to creative projects, graphic novel, or art-science work + calendar 'Studio Desk Work' entries that may involve illustration"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Julio is a Dungeon Master for a tabletop RPG campaign. What does this activity reveal about his personality and skills?",
+      "ground_truth": "DMing reveals: (1) Creative world-building capacity (elaborate maps, storylines, extensive weekly prep); (2) Leadership in structured social settings; (3) That this is one of few activities that 'quiets his brain in a good way' — therapeutic function; (4) Community hub — D&D night also serves as Fringe brainstorming venue; (5) Methodical preparation (spends extensive time on prep, reflecting his conscientiousness in structured tasks). The campaign has been running ~2 years.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D&D calendar entries + D6 Fringe brainstorming overlap + messenger sessions referencing campaign prep or D&D social function"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "What backup career plans does Julio have if his makerspace dream doesn't work out? What evidence suggests he's thought about this?",
+      "ground_truth": "Backup plans: (1) Return to adjunct teaching at RIT; (2) Part-time data analyst at a local nonprofit; (3) Data management at Syracuse hospital system where Greta works (would require relocating). His ideal structure is 'part-time teaching anchor with benefits + creative freedom remainder of week.' Self-identified financial security threshold: $36,000/year + employer health insurance. The urgency is visible in the financial monitoring (D5) and grant pursuit (D1).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions about career/financial concerns + grant pursuit intensity + references to needing stability alongside creative freedom"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What can you infer about Julio's romantic life from the logs?",
+      "ground_truth": "Divorced from Diana ~6 years ago (amicable, text on birthdays, no ongoing relationship). Currently on Hinge but struggles with follow-through — post-date rumination cycle involves exhaustive replay, physical pacing, stomach knots, drafting/deleting texts 4-5 times until the connection window closes. Friend Marcus has identified this pattern. Julio is 49 and the avoidance pattern is rooted in post-divorce identity questioning.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to dating, relationships, or post-date processing + absence of romantic partner in calendar/social patterns indicating single status"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Julio has a pet. What evidence in the logs reveals this, and what role does the pet play in his daily life?",
+      "ground_truth": "Orange tabby cat named Oliver, adopted from Lollypop Farm ~3 years ago coinciding with workforce exit. Oliver serves as a minimum-functioning anchor: wakes Julio at ~7:30, forces basic morning routine (feeding), interrupts spiraling by sitting in his path and meowing. Having Oliver prevents stretches of going 2-3 days without speaking to anyone. Social commitments serve a similar anchor function.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to Oliver or cat care + calendar morning routine entries that imply pet-driven schedule"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Julio monitors his blood pressure at home. What other evidence suggests cardiovascular health is a concern, and what behavioral changes has he made?",
+      "ground_truth": "Borderline blood pressure (~135/85), monitors at home with wrist cuff couple times/week. Doctor recommends continued lifestyle management. Behavioral changes: reduced sodium intake (switched snacking from crackers/cheese to carrots/hummus), reduced meat consumption, takes fish oil supplements, exercises regularly (frisbee, cycling, hiking, canal walks). The D4 health reset also shows him prioritizing gentler activity when stressed rather than pushing through.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Health-related calendar entries + messenger discussions about wellness adjustments + canal walk and exercise patterns + food-related references suggesting dietary awareness"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "What role does meditation play in Julio's life, and how is it integrated into his daily routine?",
+      "ground_truth": "Daily 20-minute guided meditation using Insight Timer app (body-scan preferred during difficult periods). Practice established ~5 years ago after 8-week mindfulness course at Zen Center on Arnold Park Boulevard. Integrated into morning routine after light therapy lamp session. Functions as emotion regulation through externalization — part of his multi-layered coping scaffold alongside mood journaling, social commitments, and medication.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for 'Lamp Reset + Guided Meditation' appearing daily + messenger references to morning routine or calmer practices"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "Julio has experience with grant writing. What does the evidence suggest about his grant history and current application?",
+      "ground_truth": "Past: received NYSCA grant for art-science lab work with Dr. Tanaka. Also wrote a 42-page application to a regional arts-science foundation over 3 months — rejected with zero feedback, which was an identity-level blow. Current: Monroe County community development grant targeting June deadline for makerspace startup ($30K-50K estimated need). This month he worked on the grant narrative, narrowed scope, and treated it as a major project (D1). His approach evolved from overwhelmed to focused.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 messenger sessions about grant work + calendar grant focus blocks + references to scope narrowing and deadline pressure"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "arts_and_culture",
+      "question": "What artistic influences shape Julio's creative work, and in what mediums does he work?",
+      "ground_truth": "Influences: Brian Eno (ambient music/soundscapes), Yayoi Kusama (surrealist visual art), Alan Moore (graphic narrative structure). Mediums: (1) Acrylic landscape painting (Finger Lakes series), (2) Digital illustration using p5.js and Processing, (3) Experimental ambient music on modular synthesizer, (4) Data visualization as artistic practice (interactive Finger Lakes water quality map), (5) Improv theater performance. His work exists at the intersection of STEM and visual culture.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Studio Desk Work calendar entries + improv rehearsal entries + messenger discussions about creative projects + Fringe brainstorming (D6)"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Julio's relationship with his parents manifest in the logs? What specific patterns show his involvement in their lives?",
+      "ground_truth": "Weekly Sunday dinners (calendar), Wednesday phone calls with Eileen (profile), driving Karl to medical appointments (D2), grocery/pharmacy runs for parents, compiling surgery questions for Karl's knee consult. Emotional dynamic: mom Eileen is more communicative ('Honey, I don't need a parade'), dad Karl is more reserved (career questions at dinner, watches sports). Julio feels tension between loving his parents and not meeting their expectations for traditional career success.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Sunday dinner calendar entries + Karl consult/pharmacy calendar entries + Eileen messenger sessions + Greta coordination sessions about parents"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence suggests Julio uses systematic tracking and data to manage different areas of his life?",
+      "ground_truth": "Systematic tracking appears across domains: (1) Budget spreadsheet (monthly, tracks income/expenses/runway); (2) Mood and sleep journal (1-10 daily rating); (3) Candidate research spreadsheets with weighted issue scores for elections; (4) Screen-time tracking (led to social media reduction in January); (5) Pomodoro timer for productivity. This pattern reflects high conscientiousness in structured analytical tasks — the behavioral economist summary identifies it as 'sophisticated self-monitoring with limited ability to override the patterns the data reveals.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar 'Invoice Pass + Budget Reality Check' entries as evidence of financial tracking + references to routine monitoring in messenger sessions"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "Julio has niece and nephew he's close to. What do you know about them and his relationship with them?",
+      "ground_truth": "Nephew Milo (12) and niece Sophie (9), children of sister Greta and her husband Paul in Syracuse. Julio does Arduino projects with Milo (bought him a beginner kit for his birthday), takes them to MOST (Museum of Science and Technology) during Syracuse visits, does art projects at Greta's kitchen table. He hopes to take them to the Adirondacks when finances allow. The uncle relationship is a source of joy and purpose.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to Milo, Sophie, Arduino, or Syracuse visits + Greta sessions that mention the children"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "What is Julio's relationship with alcohol, and what rules has he established for himself?",
+      "ground_truth": "Moderate, rule-governed drinking: occasional wine while cooking (ritual, not numbing), 1-2 Genny Cream Ales at D&D nights, occasional Bloody Mary at Saturday brunch, cousin Heinrich's Riesling from Seneca Lake. Critical rule: deliberately avoids drinking alone during low periods — established after tracking correlation between evening drinks and worse next-day mood/sleep post-divorce. This is a self-imposed behavioral commitment device.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D&D and social event contexts where casual drinking might be referenced + absence of solo drinking references + any messenger discussions about self-regulation"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "demographer_summary",
+      "question": "What is Julio's educational background, and how does it contrast with his current employment status?",
+      "ground_truth": "B.S. in Applied Mathematics from RIT, M.S. in Computational Science from University of Rochester — upper tier of educational attainment for Monroe County. Despite these credentials, not in workforce for ~3 years, earns $500-800/month sporadically from freelance, draws down savings. This represents significant downward mobility. He is part of a growing demographic of highly educated individuals who exit traditional employment due to misalignment between multi-domain skill profiles, mental health needs, and available labor market structures.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Evidence of high technical capability (coding, workshops, grant writing) coexisting with financial precarity signals (frequent budget checks, invoice pressure)"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Julio takes a prescription medication. What evidence in the logs suggests this, and what behavioral effects does it have?",
+      "ground_truth": "Low-dose prescription for sleep and racing thoughts, started ~2 years ago, costs $30/month. He was initially resistant — sister Greta's reframe ('you wouldn't refuse a cast for a broken arm') helped acceptance. Behavioral effects: baseline sleep improved (~1 hour to fall asleep vs 2-3 pre-medication), bad crashes less frequent but not eliminated. The medication is part of his layered coping scaffold alongside meditation, light therapy, and social commitments. Note: the specific medication is never named (behaviors-not-labels rule).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any references to pharmacy visits, medication routines, or sleep improvement + calendar entries suggesting health management"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "How does Julio's approach to the makerspace grant reflect his broader personality patterns?",
+      "ground_truth": "The grant process mirrors his intensity-crash cycle and perfectionism: initial all-consuming focus ('every finished task reveals three smaller ones'), scope creep from trying to include everything, then painful but necessary narrowing. His self-awareness shows — he recognizes the pattern ('I need the sequence to stay clean or I start wasting energy on the wrong hard part'). Marcus helps ground him ('people remember the stable result and the clear explanation, not the heroic private suffering'). The grant is both a financial strategy and an identity project — rejection would be an 'identity-level blow' as with the previous 42-page application.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 messenger sessions showing scope evolution + Marcus sessions providing grounding + calendar intensity patterns + temporal arc from overwhelm to focus"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Julio. What are his core personality traits, his greatest strengths, and his most significant vulnerabilities?",
+      "ground_truth": "Core traits: Exceptionally high Openness (creative across multiple domains), variable Conscientiousness (high when structured, collapses during emotional dysregulation), moderate Extraversion (values deep connection but struggles with crowds), moderate-to-high Agreeableness (prosocial behavior through volunteering, mentoring, scholarships), low Emotional Stability (somatic stress responses, intensity-crash cycles). Greatest strengths: creative versatility, community-building, self-awareness through systematic tracking, ability to maintain social scaffold as behavioral activation. Most significant vulnerabilities: financial precarity threatening identity, perfectionism causing paralysis, post-divorce relational avoidance, physical stress manifestations (jaw, chest, sleep), susceptibility to identity-level blows from creative rejection.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Full synthesis across all themes, dynamic events, calendar patterns, and messenger conversations — requires holistic reading of the entire log corpus"
+    }
+  ]
+}
+

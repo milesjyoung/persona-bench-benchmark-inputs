@@ -1,0 +1,764 @@
+{
+  "metadata": {
+    "persona": "Mary Alberti",
+    "persona_id": "e7c0574639a244c8972c92aab9501035",
+    "total_test_cases": 70,
+    "generation_date": "2026-04-06",
+    "input_sources": {
+      "preferences": "data/step2b_verification/mary_alberti_verification.json (corrected_extracted_profile)",
+      "dynamic_events": "anmol/mary_alberti_app_logs.json (theme_plan.dynamic_events)",
+      "app_logs": "anmol/mary_alberti_app_logs.json"
+    },
+    "type_distribution": {
+      "type_1_simple_fact_check": 5,
+      "type_2_cross_log_fact_check": 8,
+      "type_3_dynamic_preference_tracking": 5,
+      "type_4_reasoning": 52
+    },
+    "target_accuracy": "40-50%"
+  },
+
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T5",
+      "source_preference": "food_and_dining",
+      "question": "Mary has a weekly cooking ritual. What does she do every Sunday, and what kinds of food does she prepare?",
+      "ground_truth": "Sunday meal prep: chopping vegetables, making sauces, portioning meals for the week. Her specialties include nonna's red sauce, braciole, cheddar-crusted bratwurst, cheese-curd poutine, spiced apple crumble, and pasta e fagioli ($4 per pot, feeds her for 3 days). She is an accomplished home cook specializing in Italian-Midwestern fusion comfort food.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Sunday Meal Prep' or similar recurring Sunday cooking blocks"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T4",
+      "source_preference": "sports_and_fitness",
+      "question": "Mary participates in a regular group fitness activity on Saturday mornings. What is it, and who are some of the regular participants?",
+      "ground_truth": "Saturday morning group runs with the Madison Runners Club around Lake Mendota. Regulars include Dave and Priya. She has been a member for about 2 years and found the club through a local Facebook group.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for Saturday morning runs or 'Madison Runners Club' appearing on Saturdays"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Mary has a close family member she communicates with almost daily. Who is it, and when do they typically talk?",
+      "ground_truth": "Her mother Linda (61, part-time bookkeeper at a dental office). They have daily phone calls, usually during Linda's lunch break or after Mary's shift. Mary also visits her parents 2-3 times per week for errands and company.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Messenger sessions with Linda Alberti showing frequent daily or near-daily communication"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "question": "Mary attends a specific church. What is it called, and what is her family's history with this congregation?",
+      "ground_truth": "St. Maria Goretti parish. The family has attended since her grandparents' generation. Mary attends Sunday morning services and lights a candle for her deceased grandmother (nonna) most Sundays. She goes for the service and leaves rather than participating in social events.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for Sunday morning church or 'St. Maria Goretti' or messenger references to church attendance"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "question": "Mary has a specific planning and organizational tool she uses daily. What is it, and how is it structured?",
+      "ground_truth": "A bullet journal with a color-coded system: blue for work, green for personal, red for money. She uses it for daily, weekly, and monthly planning spreads and tracks running miles, spending, garden tasks, and meal plans. She spends 20 minutes on it daily and has been doing this for 4+ years, with a full shelf of filled journals.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Messenger references to journaling, bullet journal, or 'notebook' where she records things"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Mary has been taking on extra responsibilities at work without the corresponding title. What specific duties has she been documenting, and what did she do about it?",
+      "ground_truth": "She has been handling shift-supervisor duties including inventory counts, training new employees, managing break rotations, fixing prep lists, and resolving customer issues -- all without the shift supervisor title or extra pay. She documented everything in her notebook (count sheets, training notes, extra shifts, problem-solving incidents) and brought it to a meeting where she stayed calm and pointed to the evidence. She received a real date on the calendar for the promotion conversation.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'Close + Inventory Shadow' and supervisor-related tasks + messenger sessions discussing the promotion push with Jess or Linda"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D2",
+      "question": "Mary is planning to further her education. What program is she researching, and what concrete steps has she taken this month?",
+      "ground_truth": "Madison College hospitality management program plus ServSafe certification. Steps taken: printed the enrollment checklist, highlighted difficult parts, blocked time for ServSafe workbook study and financial aid questions, visited or contacted the school for a Financial Aid + Hospitality Pathway Q&A, pinned down details about pacing, fees, aid, and schedule impact. She moved from vague ambition to treating it as something with dates and paperwork.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'ServSafe Workbook' study blocks and 'Financial Aid + Hospitality Pathway Q&A' + messenger sessions discussing college planning"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D3",
+      "question": "A family member had a medical follow-up this month that pulled Mary into additional logistics. Who was it, what was the issue, and what did Mary do?",
+      "ground_truth": "Her father Tony had a PT follow-up for his chronic back issues. Mary handled the grocery pickup, heavier yard bags, drove him to the appointment, made extra stops, and helped coordinate a daily walking and stretching routine the doctors recommended. She offered to fold part of the new regimen into her regular visit days. She described it as 'useful tired instead of spinning-my-wheels tired.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for 'Tony PT Follow-Up' and grocery/errand runs + messenger sessions with Linda about logistics and with Jess about the family burden"
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Mary experienced a running injury this month. What was it, and what adjustments did she make to her routine? Cite evidence from both messages and calendar.",
+      "ground_truth": "Knee soreness that appeared halfway through runs when she had been under-stretching. She switched to a flatter loop by the lake, added an extra ten minutes of stretching before work, kept the heat pack routine after runs, and maintained post-run stretching instead of skipping it to save time. She described wanting 'a calmer baseline so the routine decisions stop feeling like guesswork every single week.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries showing route changes (flatter loop) and added stretching blocks + messenger sessions discussing the knee issue and adjustments with Jess or Priya"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "dynamic_event": "D5",
+      "question": "Mary was involved in organizing a church event this month. What was the event, and what specific responsibilities did she handle?",
+      "ground_truth": "St. Maria Goretti Friday Fish Fry. She prepared pasta salad trays, managed the volunteer shift list, covered the early serving line, organized the supply pile with priority items on top, handled logistics like labels and extension cords, and kept a list of transport assignments. Afterward she wrote notes about what to simplify next time. She described the event as 'six smaller jobs in a trench coat.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for fish fry prep and volunteer coordination + messenger sessions discussing food prep and logistics with Linda or Jess"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "hobbies_and_recreation",
+      "dynamic_event": "D6",
+      "question": "Mary had a gardening milestone this month. What was it, and what planning did it require?",
+      "ground_truth": "Community Garden Plot Open Day at the start of the growing season. She handled the seed tray swap, raised-bed cleanup, supply pile organization, and getting the plot usable before the first warm week. She coordinated with other gardeners and planned spring food production. She noted afterward that the prep 'disappears when it is done right.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for garden prep, seed tray swap, raised-bed cleanup + messenger sessions discussing garden plans and spring planting"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "work_and_career",
+      "question": "Mary tracks her work performance for a specific strategic purpose. What is she tracking, and why? Cite evidence from both calendar and messages.",
+      "ground_truth": "She tracks every extra shift-lead responsibility (inventory counts, training sessions, problem-solving incidents, close procedures) in her bullet journal as evidence for a future promotion conversation with her manager Teresa. She brought this documentation to a meeting (D1) to demonstrate she is already doing shift supervisor work without the title. Calendar shows inventory shadows and training sessions; messages show discussions about building her case.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for inventory and training tasks + messenger sessions discussing promotion strategy and evidence-gathering"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence across both Mary's messages and calendar suggests she lives on a very tight budget? Identify at least three specific indicators.",
+      "ground_truth": "Indicators include: (1) frequent references to watching every dollar and receipt-checking, (2) delaying purchases like running shoes despite injury concerns, (3) substituting cheap meals (rice-and-beans, pasta e fagioli, ramen-and-eggs) when money is tight, (4) an $800 credit card debt from brake repairs she is paying $50/month, (5) discussions about whether she can afford outings or purchases, (6) financial aid questions dominating her college planning. Her take-home pay is approximately $1,900/month against $1,590-$1,650 in fixed costs.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries showing budget-related planning + messenger sessions where cost constraints shape decisions about food, outings, or purchases"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Mary's approach to the shift-supervisor situation changed over the month. How did her strategy evolve from early March to mid-March?",
+      "ground_truth": "Early March: documenting everything quietly and feeling tired of doing supervisor work without the title. Mid-March (around March 8-10): shifted to active preparation -- planning to bring her notebook, extra shift list, and tuition questions to a meeting. By March 10: she had the meeting, stayed calm, pointed to evidence, and received a real date for the promotion conversation. By March 15: she felt less like she was 'waiting for somebody else's permission' and more in control of the timeline.",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early messenger sessions showing quiet frustration and documentation vs. later sessions showing active promotion push and outcome"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D2",
+      "question": "Mary's relationship with the community college plan changed over the month. How did it shift from aspiration to action?",
+      "ground_truth": "Early stage (around March 10): she printed the checklist and started blocking study time, treating it as 'something with dates and paperwork instead of a motivational speech.' Mid-stage (March 13-17): she hit 'concrete friction' -- dates, signatures, form sections requiring detail -- and pinned down pacing and support details. Late stage (March 20): described feeling 'weirdly relieved' because 'the program is still a stretch, but it feels like a stretch with handles now instead of a shiny impossible thing on a shelf.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Progression from vague college references to specific calendar blocks for ServSafe study and financial aid appointments + messenger tone shifting from aspiration to concrete planning"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D3",
+      "question": "How did Mary's involvement in her father's care evolve over the month? Track the progression from initial help to sustained routine.",
+      "ground_truth": "Initial stage (March 15-16): offered to handle grocery pickup and heavy yard work around the PT follow-up. Mid-stage (March 18-20): realized 'it is never just the appointment -- it is the food, the pickup, the extra stop, and then the tired mood.' The doctors recommended a shorter daily walk and stretching routine for Tony, and Mary offered to fold it into her regular visit days. Late stage (March 22-25): moved from ad hoc help to structured support, describing the result as 'useful tired instead of spinning-my-wheels tired.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early calendar entries for one-off errand runs vs. later entries showing regular embedded care tasks + messenger sessions reflecting the shift from reactive to proactive caregiving"
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Mary's running routine changed mid-month. What was her routine before the knee issue, and what did it look like after?",
+      "ground_truth": "Before: standard 3-5 mile routes (including hilly terrain around Lake Mendota and UW Arboretum), skipping or shortening the post-run stretch to save time. After: switched to the flatter loop by the lake, added an extra 10 minutes of pre-work stretching, kept the heat pack routine after runs, maintained post-run stretching as non-negotiable. By March 25 she noted 'the calmer week has actually made the rest of the month easier too.' By March 28 she had 'a cleaner sense now of what to keep doing and what to stop overthinking.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Pre-D4 calendar showing standard run entries vs. post-D4 entries showing flatter route, stretching additions, and heat pack blocks + messenger sessions describing the adjustment process"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "food_and_dining",
+      "dynamic_event": "D5",
+      "question": "The parish fish fry went from chaotic preparation to successful execution. What changed in Mary's approach before versus after the event?",
+      "ground_truth": "Before (March 23-27): scrambling with pasta salad trays, volunteer shift lists, and answering last-minute questions; described it as a long emotional list that she gradually converted into practical logistics (labels, extension cords, transport assignments). She rebuilt the supply pile with priority items on top. After (March 31-April 2): described the prep as invisible once people arrived -- 'the work looked natural once people were in the room' -- and wrote post-event notes about what to simplify next time.",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Pre-fish-fry calendar entries for prep and coordination vs. post-event reflection in messenger sessions + shift from anxious to satisfied tone"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "work_and_career",
+      "question": "Based on the app logs, what are Mary's sources of income and what are her major expenses? How much financial margin does she have?",
+      "ground_truth": "Income: fast food crew member earning approximately $1,900/month take-home ($26,000-$28,000 annual gross), working 35-40 hours/week with biweekly pay, no paid vacation or sick days. Major expenses: rent $900, groceries $250-$300, car costs $200 (2015 Honda Civic), health insurance $120/month ($2,000 deductible), utilities $70-$80, phone $50. Total fixed costs approximately $1,590-$1,650, leaving $250-$310 for variable expenses, savings, and the $50/month credit card payment. Very thin margin -- a sick week ($250 lost) or car repair can trigger an emergency fund drawdown.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries showing work shifts + messenger sessions discussing budget constraints, delayed purchases, and financial anxiety"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "social_and_relationships",
+      "question": "Who is Mary's closest friend, and what evidence across the logs demonstrates the depth and nature of this relationship?",
+      "ground_truth": "Jessica Kowalski (Jess) -- a dental hygienist and high school friend. Evidence: (1) weekly hangouts including craft brewery tastings and home dinners where Jess brings wine and Mary cooks, (2) Jess serves as Mary's primary emotional support, political information source, and social outlet, (3) Jess occasionally crashes on Mary's couch, (4) Jess has suggested sliding-scale therapy and sends political articles, (5) highest-frequency messenger contact spanning personal, financial, career, and emotional topics. Jess is blunt, warm, and politically aware.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "High frequency of Jess sessions across all themes + calendar entries for social outings + range of conversation topics from career to personal to political"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "What role does Mary play in her family's dynamics? How do her relationships with her mother, father, and brother each function differently?",
+      "ground_truth": "Mary is the dutiful nearby child handling practical family support. Mother Linda: daily phone calls, emotional confidante, practical coordinator (shares grocery lists, medical logistics, parish duties). Father Tony: less communicative, bonding through Packers games on Sundays; his chronic back injury from machinist work is a source of both worry and motivation for Mary. Brother Marco: weekly texts, amicable but not close ('He's more spontaneous, more social'), argues about Brewers pitching staff. Mary visits parents 2-3x/week for errands and company, handles Tony's PT logistics (D3), and organizes parish activities (D5) that involve the family.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Frequent Linda messenger sessions about logistics + Tony sessions focused on sports/health + Marco sessions that are less frequent and lighter + calendar entries for family visits and errand runs"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Mary manages her health through multiple self-care practices rather than formal medical care. What are at least four distinct health management practices, and why does she avoid doctors?",
+      "ground_truth": "Practices: (1) running 3-5 miles multiple times per week, (2) 15-minute post-run stretching and icing for knee soreness, (3) peppermint oil on temples for tension headaches, (4) Italian grandmother's home remedies (garlic-honey for sore throat, herbal compresses, garlic broth), (5) switched from coffee to green tea to reduce jitteriness, (6) heat pack for post-run knee recovery. She avoids doctors due to cost (high-deductible insurance with $2,000 deductible), self-reliance identity, and a stoic workplace norm ('you just push through'). She hasn't had a dental visit in over a year or a regular checkup in about two years.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for stretching blocks and run routes + messenger sessions discussing home remedies and health adjustments + absence of medical appointment calendar entries"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "question": "Mary has a detailed long-term career plan. What are the sequential steps in her plan, and what concrete progress has she made this month?",
+      "ground_truth": "Sequential plan: (1) earn shift supervisor promotion at current restaurant (expecting within the year -- D1 progress), (2) enroll at Madison College for hospitality management (D2 -- researching courses, financial aid, ServSafe certification), (3) work as restaurant manager, (4) ultimately open a small family-style diner (15-20 seats) in Madison serving Midwestern-Italian comfort food. Progress this month: documented shift-lead evidence and presented it for promotion (D1), printed college enrollment checklist and started financial aid paperwork (D2), continued building diner fund ($1,200 saved, $50K-$100K needed).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 calendar entries for work tasks + D2 calendar entries for college prep + messenger sessions discussing career milestones and diner dream"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "food_and_dining",
+      "question": "What role does food play in Mary's life beyond basic nutrition? Identify at least three non-nutritional functions food serves.",
+      "ground_truth": "Food functions: (1) Cultural connection to Italian-American heritage -- she taught herself nonna's recipes after her grandmother's passing to preserve family tradition, (2) Coping mechanism -- cooking is phase 2 of her three-phase stress response (she cried while making pasta after her breakup), (3) Financial strategy -- making cheap meals ($4 pasta e fagioli for 3 days) is framed as a 'small victory,' (4) Social bonding -- dinner gatherings with Jess (Jess brings wine, Mary cooks) and Sunday family meals, (5) Career aspiration -- her diner dream is built around serving the food she already cooks (nonna's red sauce, bratwurst, cheese curds). Her garden produces ingredients that connect her to the food cycle.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for meal prep + garden tending + dinner with Jess + messenger sessions where cooking is discussed in emotional, financial, or cultural contexts"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence in the logs suggests Mary is under financial pressure, even if no specific dollar amounts are mentioned?",
+      "ground_truth": "Indicators: (1) discussions about delaying running shoe purchase despite injury because of cost, (2) falling back to cheap meals (rice-and-beans, ramen-and-eggs) when budget is tight, (3) skipping social outings to save money, (4) checking receipts as a habitual behavior, (5) financial aid and tuition questions dominating her college planning, (6) credit card debt from a brake repair she is slowly paying off, (7) references to watching every dollar, (8) no dental or medical visits in over a year, (9) discussions about whether she can afford craft beer outings, (10) garden produce as a budget supplement.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions where financial constraints shape daily decisions + calendar entries showing budget-aware planning + absence of discretionary spending events"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Mary has a coworker with whom she has meaningful conversations about race and policing. Who is this person, and how has this relationship influenced Mary's views?",
+      "ground_truth": "DeShawn Mitchell, a coworker at the fast food restaurant. Direct conversations with DeShawn about his experience being stopped by police while walking home from closing shifts shifted Mary's awareness of racial inequity. This represents an empathy-from-exposure pattern -- Mary processes the information internally and will quietly push back on ignorant comments at work ('not loudly, but I'll say something'), but has not translated it into public action. She also reads articles Jess sends about racial issues.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions with DeShawn focused on work logistics + any references to conversations about policing or race + Jess sessions where articles are shared"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "nature_and_outdoors",
+      "question": "What is Mary's relationship with nature and the outdoors, and how does seasonal change affect her?",
+      "ground_truth": "Mary runs around Lake Mendota and in UW Arboretum regularly, maintains a raised-bed garden plot (April-October) one block from her apartment, and visits Dane County Farmers Market during growing season. She finds gardening therapeutic: 'Getting my hands in the dirt, watching things grow -- it calms me down when I'm stressed.' Seasonal impact is significant: she experiences pronounced energy dips in late January-early February with reduced motivation and flattened engagement, recovering reliably with spring and renewed outdoor activity. In winter her outdoor access drops, she walks less, and mood suffers.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for runs, garden visits, and farmers market + messenger sessions referencing seasonal mood changes + March entries showing recovery as spring approaches"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Mary has a distinctive stress response pattern. Based on the logs, what are the three phases of her coping sequence when something goes wrong?",
+      "ground_truth": "Three-phase behavioral coping sequence: (1) Physical activity first -- after her breakup she went running at night; running is her go-to first response to emotional distress. (2) Tactile/creative engagement second -- she cooked pasta while crying after the breakup; cooking and gardening serve this function. (3) Structured recovery third -- she returns to journaling, batch cooking, and work focus to rebuild routine. This pattern is consistent across different stressors and is reinforced by her high conscientiousness and preference for action over talk.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions showing physical activity after stress + cooking/gardening discussions in emotional contexts + journal/planning references following difficult periods"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "food_and_dining",
+      "question": "How does Mary's food change when she is under financial stress versus when she is doing okay? Cite specific evidence.",
+      "ground_truth": "During stable periods: she cooks from scratch using garden produce and farmers market ingredients, makes elaborate Italian-American dishes (nonna's red sauce, braciole), and hosts dinners for Jess. During financial stress: falls back to rice-and-beans meals, ramen-and-eggs, pasta with garlic and oil, and pasta e fagioli ($4 for 3 days). The 50% employee meal discount becomes more important. She frames making cheap meals well as a 'small victory' rather than deprivation. Her food quality tracks her financial and emotional state.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions referencing specific meals in different financial contexts + calendar entries for meal prep vs. simpler food references during tight periods"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "work_and_career",
+      "question": "Mary describes a tension between staying at her current job and pursuing her long-term goals. What specific evidence shows this conflict, and how does she manage it?",
+      "ground_truth": "The conflict: she is doing shift-supervisor work without the title or pay while trying to save for college and a diner. Manager Teresa relies on her for extra responsibilities without extra compensation. Mary manages by: (1) documenting everything as evidence for promotion leverage (D1), (2) simultaneously researching Madison College (D2) to build a path out, (3) maintaining the diner fund ($1,200) as a tangible commitment to the long-term goal, (4) treating each small achievement as evidence of progress. Her fear is stagnation: 'I'm afraid of hard work that doesn't lead anywhere.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 calendar entries for extra work tasks + D2 calendar entries for college research + messenger sessions expressing frustration with current role alongside hope about future plans"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "What can you infer about Mary's cooking skills and cultural food heritage from the logs?",
+      "ground_truth": "Mary is an accomplished home cook specializing in Italian-Midwestern fusion comfort food. She taught herself her grandmother's Italian recipes after nonna's passing (red sauce, braciole, pasta from scratch), combining them with Midwestern staples (cheddar-crusted bratwurst, cheese-curd poutine, spiced apple crumble). She grows tomatoes, basil, green beans, and herbs in her garden for cooking. Her Sunday meal prep is a weekly ritual. The Italian cooking is a direct cultural connection to her second-generation Italian-American heritage -- her paternal grandparents came from a town south of Naples.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to specific dishes and ingredients + garden produce connecting to recipes + meal prep calendar entries + cultural context in conversations about family"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "Where does Mary shop for groceries, and what does her shopping pattern reveal about her values and constraints?",
+      "ground_truth": "Primary: Hy-Vee and Pick 'n Save for regular groceries ($250-$300/month). Seasonal: Dane County Farmers Market on Capitol Square for local produce. Her garden provides tomatoes, basil, green beans, and herbs. Shopping reveals: (1) cost-consciousness (checks receipts, uses coupons, buys cheap staples), (2) seasonal/local preference when budget allows, (3) self-sufficiency drive through garden produce, (4) identity connection to food quality despite constraints. She substitutes cheaper meals when budget is tight rather than changing stores.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for grocery runs and farmers market + messenger references to grocery shopping, specific stores, and budget-driven food choices"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sports_and_fitness",
+      "question": "What physical activities does Mary participate in, and how do they connect to her broader life? Identify at least three activities and their functions.",
+      "ground_truth": "Activities: (1) Running (3-5 miles, 3+ times/week) -- functions as primary stress relief ('running is my therapy'), fitness maintenance, social connection through Madison Runners Club, and emotional first-response to distress. (2) Community gardening (April-October) -- functions as therapeutic outlet, budget supplement, cultural connection through growing Italian herbs, and mood regulation. (3) Walking to grocery store and garden in summer -- practical exercise tied to daily life. Underlying motivation: father Tony's physical deterioration from manual labor drives her desire to stay healthy and move into management rather than remaining on her feet for decades.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for runs, garden visits, and errands + messenger sessions discussing fitness as stress relief and health motivation"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sports_and_fitness",
+      "question": "Mary is a passionate Wisconsin sports fan. Which teams does she follow, and in what context?",
+      "ground_truth": "Green Bay Packers: watches every Sunday game, often with father Tony -- 'that's kind of our thing.' This is their primary father-daughter bonding activity. Wisconsin Badgers: basketball fan (winter). Milwaukee Brewers: summer fan; argues about pitching staff with brother Marco. Sports fandom is primarily a family bonding mechanism rather than a solo passion -- the Packers connect her to Tony, the Brewers connect her to Marco.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Sunday calendar entries + messenger sessions with Tony referencing Packers + Marco sessions with Brewers references + any sports viewing mentions"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "nature_and_outdoors",
+      "question": "Mary maintains a garden. Where is it, what does she grow, and how does it connect to other areas of her life?",
+      "ground_truth": "Raised-bed plot at a community garden one block from her apartment ($40/season plot rental, ~$50 for soil/seeds/plant food, 3 years running). She grows tomatoes, basil, green beans, and herbs. Connections: (1) food -- garden produce goes into her Italian cooking, supplementing her grocery budget; (2) mental health -- gardening is calming and therapeutic, phase 2 of her stress coping; (3) community -- community garden is one of her civic participation points; (4) seasonal rhythm -- garden season (April-October) corresponds with her better mood periods; (5) culture -- growing Italian herbs connects to her nonna's cooking tradition.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for garden visits and seasonal prep (D6) + messenger sessions about planting, tending, and harvest + connections to cooking discussions"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "entertainment",
+      "question": "What can you infer about Mary's media consumption habits from the logs? What does she read, watch, or listen to?",
+      "ground_truth": "Listens to: John Prine (lyrical storytelling) and Bon Iver (atmospheric indie folk, Wisconsin connection), plus classic rock. Watches: Wes Anderson films as comfort Sunday evening viewing. Reads: practical self-help books about habits and productivity (integrates techniques like the 'one good thing' gratitude entry into her journal). Social media: Instagram (~20-30 min/day) for food, running, and local Madison accounts; follows Bon Iver. Facebook: member of Madison Runners Club and gardening groups, rarely posts. Deleted TikTok after one use. Does not watch cable news. Gets news from NPR occasionally and local Madison accounts.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to music, films, or books + social media usage patterns + any references to entertainment as weekend or evening activity"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "music",
+      "question": "What role does music play in Mary's life, and which artists does she gravitate toward?",
+      "ground_truth": "Music is a background accompaniment rather than a central passion. Core artists: John Prine (lyrical storytelling) and Bon Iver (atmospheric indie folk -- she follows Bon Iver on Instagram, likely drawn to the Wisconsin connection). She also listens to classic rock. Music likely accompanies runs, cooking, and commuting. The preference for Bon Iver and John Prine reflects her appreciation for emotional, story-driven art from familiar cultural territory rather than avant-garde or genre-crossing experimentation.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to music, playlists, or artists + Instagram follows + music in context of daily activities"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology",
+      "question": "Mary has a complex relationship with technology. What evidence shows she is both practically competent and deliberately minimal in her tech use?",
+      "ground_truth": "Practical competence: proficient with POS systems and kitchen equipment at work, uses free online tax filing software, configured automatic savings transfers from direct deposit, researches Madison College courses online. Deliberate minimalism: uses paper bullet journal rather than digital planning tools (4+ years), limits social media to ~20-30 minutes/day, deleted TikTok after one session ('sucked me in for two hours and I felt terrible after'), puts phone down when catching herself scrolling mindlessly, does not use Twitter or watch cable news. She is intentional about which technologies she adopts based on practical utility.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to journaling (paper) + social media discussions + TikTok deletion story + work technology use + online research references"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "community_and_civic",
+      "question": "What are Mary's political views, and how do they connect to her personal experience? Cite specific evidence.",
+      "ground_truth": "Mary avoids partisan identification but leans center-left on pocketbook issues. Her primary policy motivators are minimum wage increases, healthcare affordability, and tipped wages/fast food worker protections -- all directly tied to her own work experience. She votes in presidential elections (early votes when possible to avoid shift conflicts), occasionally misses local elections. Her political information comes from NPR, local Madison news, and primarily Jess as an intermediary. She does not attend protests or rallies, processing political views internally. An intergenerational dynamic exists: father Tony holds more conservative, self-reliant views, mother Linda is more sympathetic, and Mary positions herself pragmatically in the middle.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions touching on policy issues or elections + references to Jess sharing political articles + any discussions about wages, healthcare, or worker protections"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "cultural_and_linguistic",
+      "question": "What cultural heritage does Mary come from, and how does it manifest in her current daily life?",
+      "ground_truth": "Second-generation Italian-American: paternal grandparents immigrated from a town south of Naples. Maternal family has deep Wisconsin roots ('since the cheese factories opened'). Current manifestations: (1) cooks nonna's Italian recipes (red sauce, braciole, pasta from scratch), (2) uses Italian phrase 'A poco a poco' (little by little) as personal motto, (3) attends St. Maria Goretti parish (family congregation since grandparents' generation), (4) lights candle for nonna at church, (5) was raised Catholic and returned to church voluntarily after nonna's death at age 19. Her Midwestern-Italian identity fusion shows in her cooking (cheddar-crusted bratwurst alongside nonna's red sauce) and her values (immigrant work ethic combined with Midwestern groundedness).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to family traditions, Italian cooking, church attendance, and grandmother + calendar entries for church and family meals"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "life_events_and_transitions",
+      "question": "What major life events have shaped Mary's current behavior patterns? Identify at least three pivotal moments and explain how they show up in the logs.",
+      "ground_truth": "Pivotal events: (1) Decision to skip college at 18 due to family financial strain during father's back injury -- visible in her intense focus on Madison College enrollment now (D2) and her receipt-checking habit traced to that period. (2) Grandmother's passing when Mary was 19 -- visible in church candle-lighting, recipe preservation, and 'A poco a poco' motto as ongoing motivation. (3) Father Tony's chronic back injury and physical deterioration -- visible in her explicit motivation to pursue management ('I don't want to end up where he is') and in D3 caregiving logistics. (4) Breakup ~8 months ago -- visible in her three-phase coping pattern and current single status. (5) January illness costing 3 shifts -- visible in heightened financial anxiety and no-sick-days vulnerability.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D2 college planning + D3 father's care + church/cooking references to grandmother + messenger sessions about career motivation linked to father + financial anxiety patterns"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Describe Mary's living situation and daily structure based on the app logs. Where does she live, what anchors her days, and how does her schedule vary?",
+      "ground_truth": "Lives alone in a one-bedroom apartment (second floor, two-story building) on Madison's west side (53717), near the Midvale/beltline area. Rent $900/month. Two routine versions: Opening-shift routine (up 5:30, out 6:15, work 7-2/3) and closing-shift routine (sleep till 9, errands/run in morning, work 3-11). Back-to-back close/open shifts yield only ~5 hours sleep. Anchors: bullet journal 20-minute planning ritual, running 3+ times/week, Sunday meal prep, daily mom phone call, Saturday Runners Club. No pets (lease restriction). Organized: alphabetized spice rack, running shoes by door, everything has its place.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries showing variable shift times + morning run vs. afternoon run patterns + Sunday meal prep + daily planning references + messenger sessions about schedule coordination"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Mary's relationship with Jess differ from her relationship with her mother Linda? What evidence shows each serves a different function?",
+      "ground_truth": "Jess: social companion (craft beer, dinners), emotional confidante (discusses breakup, career frustrations, fears), political information source (sends articles, explains issues), and the person who pushes Mary outside her comfort zone (suggests therapy, invites to protests). Their communication spans personal, financial, career, and social topics. Linda: practical coordinator (medical logistics, grocery lists, parish duties), maternal warmth ('daily phone calls'), and family stability anchor. Linda's communication is more instructional and household-focused, while Jess allows more joking, emotional permission, and topic-jumping. Both are essential but serve distinct functions.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Jess sessions spanning diverse personal topics vs. Linda sessions focused on family logistics and practical matters + different conversational tones"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What is Priya Venkatesh's connection to Mary, and what activities do they share?",
+      "ground_truth": "Priya is a running club friend from the Madison Runners Club, one of the Saturday morning regulars (along with Dave). They have been running together for about 2 years. Priya's voice is fitness-forward and observational -- conversations likely center on running routes, pace, stretching, and race events. The relationship is social but not deeply personal: Mary describes the running club members as 'social but not deep friendships.' Priya may have been a sounding board for the knee injury adjustment (D4).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Priya messenger sessions focused on running and fitness + Saturday calendar entries for group runs + D4-period discussions about knee adjustments"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What is DeShawn Mitchell's relationship to Mary, and what distinguishes their conversations from Mary's other relationships?",
+      "ground_truth": "DeShawn is a coworker at the fast food restaurant. Their relationship is shift-only (Mary does not socialize with coworkers outside work), but they have had meaningful conversations about race and policing. DeShawn told Mary about being stopped by police while walking home from closing shifts, which shifted her awareness of racial inequity. In the logs, DeShawn's voice is concise and work-practical, focused on shift logistics, rush coverage, and practical triage -- very different from Jess's emotional warmth or Linda's maternal instruction.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "DeShawn sessions focused on work logistics (shift coverage, break rotation) + any references to deeper conversations about policing or race embedded in work context"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_patterns",
+      "question": "What evidence suggests Mary uses her bullet journal as more than just a planner? What psychological functions does it serve?",
+      "ground_truth": "The bullet journal functions as: (1) Present-bias mitigation -- a commitment device that makes future goals concrete through daily tracking, (2) Emotional regulation -- the 20-minute daily ritual provides structure and calm, (3) Self-monitoring -- she tracks running miles, spending, garden tasks, and meal plans across domains, (4) Identity reinforcement -- her color-coded system (blue=work, green=personal, red=money) reflects her organized self-concept, (5) Evidence-gathering -- she uses journal entries to document work contributions for promotion leverage (D1), (6) Gratitude practice -- she added a daily 'one good thing that went well' entry from a self-help book. The journal is the backbone of her self-regulation system.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to journaling in multiple contexts (planning, emotional processing, work tracking, financial tracking) + D1 evidence about notebook as promotion tool"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Mary has a pattern of anticipatory rumination. What triggers it, what does it look like, and how does she manage it?",
+      "ground_truth": "Triggers: significant decisions -- promotion conversations, college enrollment, financial choices. Manifestation: lying awake running through scenarios, racing heart, insomnia; occurs 1-2 times per month and has been present since high school. She also experiences seasonal amplification in late January-early February with reduced motivation and flattened engagement. Management: her three-phase coping sequence (run, cook/garden, journal/plan), chamomile tea for slight sleep relief, and actively redirecting from social comparison thoughts ('I've got a plan and I'm working it'). She does not seek professional help due to cost, self-reliance identity, and stoic workplace norms.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions around D1/D2 decision points showing anxiety + calendar adjustments during stressful periods + references to sleep difficulty or racing thoughts"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "How does Mary handle perfectionism and self-criticism, and where does it show up in the logs?",
+      "ground_truth": "Mary's perfectionism manifests as: (1) meticulous organizational systems (color-coded journal, alphabetized spice rack, everything in its place), (2) exhaustive work documentation for promotion (D1), (3) over-preparation for events (fish fry D5 -- described as 'six smaller jobs'), (4) social comparison with college-educated high school peers that she must actively counter. She manages it through: her 'A poco a poco' motto (little by little, from nonna), tracking small wins to build evidence of progress, and reframing cheap meals as victories rather than deprivation. The tension between her ambition and her current station is the core source of self-criticism.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 evidence documentation + D5 over-preparation + messenger sessions about comparison to peers + references to nonna's motto as motivation"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sensory_and_physical_context",
+      "question": "What physical stress symptoms does Mary experience, and what triggers them? Cite evidence from the logs.",
+      "ground_truth": "Symptoms: (1) Tension headaches in temples and back of neck during high-stress periods, managed with Advil and peppermint oil (more frequent in past year due to money/work stress). (2) Knee soreness after runs exceeding 4 miles, onset ~3-4 months ago, worsened by under-stretching (D4). (3) Foot soreness after long 8+ hour shifts from standing all day. (4) Intermittent sleep disruption (1-2x/month) from anticipatory rumination. (5) Dairy sensitivity causing bloating. (6) Jitteriness from coffee (switched to green tea). (7) Back-to-back close/open shifts yielding only ~5 hours sleep. Triggers: financial stress, work pressure, major decisions, and physically demanding schedules.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 messenger sessions about knee soreness + references to headaches, sleep difficulty, or foot soreness + calendar showing schedule-driven physical strain"
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "media_and_information_diet",
+      "question": "How does Mary consume news and information? What can you infer about her trust in different information sources?",
+      "ground_truth": "Sources: NPR occasionally, local Madison news accounts online, follows what city council does, pays attention to ballot measures. Primary political information intermediary: Jess (sends articles, explains issues). Medical information: trusts CDC, healthcare providers, and pharmacists; distrusts social media health claims. Does not watch cable news, does not use Twitter, never engages in online debates ('number one rule'). Trust hierarchy: high trust in medical institutions (gets flu shot annually), moderate trust in local journalism and electoral process, low trust in social media as information source, and low institutional trust regarding healthcare affordability and workplace protections. Practical self-help books are her preferred learning format.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to news, articles from Jess, or political discussions + absence of social media news engagement + references to medical trust"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology",
+      "question": "What apps and tools does Mary use, and what does each one serve?",
+      "ground_truth": "Paper bullet journal (primary planning tool -- not digital), smartphone for calls/texts and limited social media, Facebook (Madison Runners Club group, gardening group), Instagram (food, running, local accounts), free online tax filing software (W-2/standard deduction), work POS systems and kitchen equipment, direct deposit with automatic savings transfer. Deliberately does not use: TikTok (deleted), Twitter, digital planning apps. Her tool usage reflects a strong preference for analog control (paper journal) with technology adopted only for clear practical utility.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger discussions about social media habits, journal use, and technology choices + any references to apps or digital tools in calendar or messages"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "community_and_civic",
+      "question": "Beyond voting, what are Mary's forms of civic participation? What evidence shows she is connected to her community?",
+      "ground_truth": "Civic participation: (1) attends Sunday morning services at St. Maria Goretti, (2) participates in community garden (3 years), (3) member of Madison Runners Club (2 years), (4) organized parish fish fry (D5) including volunteer coordination and food prep, (5) quietly pushes back on ignorant racial comments at work. She does not attend protests, rallies, or political events. Her civic engagement is passive and community-embedded rather than activist. The community garden, running club, and church provide her primary social infrastructure beyond Jess and family.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for church, garden, running club + D5 fish fry entries + messenger discussions about community participation"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "travel",
+      "question": "What can you infer about Mary's travel habits and constraints from the logs?",
+      "ground_truth": "Travel is extremely limited by budget. She has never left the Midwest for extended periods. Her aspirational destinations -- Door County (affordable weekend getaway), Napa Valley (culinary adventure), Kyoto (long-term dream) -- represent a fantasy gradient from achievable to impossible given her current finances. She chose to stay in Madison over transferring to Milwaukee for higher pay, prioritizing roots: 'Everything I care about is here.' Her daily movement is hyperlocal: apartment to work, garden, grocery store, parents' house, Lake Mendota running route. Even the community garden is one block from her apartment.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Absence of travel events in calendar + all activities concentrated in Madison area + messenger references to budget constraints preventing travel + strong attachment to Madison"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Mary maintains multiple hobbies. How do they serve dual functions as both enjoyment and self-regulation? Identify at least four hobbies and their dual roles.",
+      "ground_truth": "Dual-function hobbies: (1) Running -- enjoyment of physical activity AND primary stress relief ('running is my therapy') and phase 1 of emotional coping. (2) Gardening -- enjoyment of growing things AND therapeutic calm ('Getting my hands in the dirt calms me down') plus budget supplement through produce. (3) Cooking -- enjoyment of cultural recipes AND emotional processing (phase 2 of coping) plus financial strategy (cheap meals as victories). (4) Bullet journaling -- enjoyment of organization AND self-regulation tool, commitment device, and evidence-gathering. (5) Craft beer with Jess -- social enjoyment AND identity-affirming expenditure carefully budgeted. All hobbies are structured and routine-based, reflecting her high conscientiousness.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for each hobby + messenger sessions where hobbies are discussed in both enjoyment and coping contexts"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Mary and Jess have a specific social ritual. What is it, and what does it reveal about Mary's approach to discretionary spending?",
+      "ground_truth": "Weekly (when budget allows) craft brewery tastings in Madison, plus home dinners where Jess brings wine and Mary cooks. This reveals: Mary treats craft beer as a 'small identity-affirming expenditure' that she carefully budgets and tracks in her journal. When money is tight, she skips the brewery outing. The home dinner version (Mary cooks, Jess brings wine) is the budget-friendly alternative. She tracks spending on craft beer in her journal alongside all other expenses. The ritual shows her pattern of maintaining social connection within rigid financial constraints.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for Jess hangouts or brewery visits + messenger sessions about planning outings within budget + references to cooking for Jess"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "What backup plans does Mary have if her diner dream doesn't work out? What evidence suggests she's thought about the gap between aspiration and reality?",
+      "ground_truth": "Her sequential plan has built-in intermediate steps that function as backup positions: shift supervisor (immediate), hospitality management degree (medium-term), restaurant manager (fallback career even without diner ownership). The diner fund ($1,200) versus the estimated $50K-$100K need shows she recognizes the scale of the gap and expects to need a business loan or partner. Her decision to stay in Madison over Milwaukee for higher pay reveals she won't sacrifice community for income. The credit card debt from a brake repair and slim financial margin (~$250-$310/month after fixed costs) make the timeline uncertain. Evidence she thinks about the gap: she frames her fear as 'hard work that doesn't lead anywhere.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions about career planning, financial concerns, and diner fund + D2 college enrollment as concrete intermediate step + references to long-term uncertainty"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What can you infer about Mary's romantic life from the logs?",
+      "ground_truth": "Single after a 6-month relationship ended about 8 months ago (around August). Her ex-boyfriend didn't understand her schedule rigidity. She processed the breakup through her three-phase coping sequence: ran at night, cried while cooking pasta, then threw herself into batch cooking and work focus. She is not actively dating. She is very private about personal problems (never posts online, only confides in Jess and mom). The breakup is likely not discussed directly in the logs, but her single status is visible through the absence of a romantic partner in her calendar and social patterns.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Absence of romantic partner in calendar or social events + messenger references to processing the breakup or single life + focus on self-improvement rather than dating"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Mary has a very specific organizational system in her home. What evidence in the logs reveals her level of organization and its psychological function?",
+      "ground_truth": "Evidence of extreme organization: alphabetized spice rack, running shoes by the door, everything has its place. Color-coded bullet journal (blue=work, green=personal, red=money) with daily/weekly/monthly spreads. Dual-routine system: opening-shift and closing-shift versions of her daily routine mapped out in the journal to eliminate decision fatigue. Sunday meal prep with portioning for the week. The psychological function: these systems serve as self-regulation mechanisms for a person with high conscientiousness and anticipatory rumination -- the routines reduce uncertainty and provide a sense of control in a life with many external constraints (variable shifts, tight budget, health worries).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to planning, organization, and routine + calendar showing structured daily patterns + D1 notebook as evidence tool"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Mary uses her grandmother's home remedies. What are they, and what does this practice reveal about her approach to healthcare?",
+      "ground_truth": "Nonna's remedies: garlic-honey for sore throat, herbal compresses for muscle aches, garlic broth for colds. She also uses peppermint oil on temples for headaches (discovered online) and switched from coffee to green tea for jitteriness. This reveals: (1) preference for low-cost, accessible self-care over formal medicine, (2) cultural continuity with Italian grandmother's practices, (3) self-reliance identity that resists depending on expensive healthcare (high-deductible insurance, no checkup in ~2 years), (4) stoic workplace norm ('you just push through') reinforcing self-treatment, (5) practical problem-solving approach -- she tracks what works and adopts effective techniques from any source.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to home remedies, tea switch, or health self-management + absence of doctor/dentist calendar entries + cultural connection to grandmother in health discussions"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Mary made a specific purchase this month that she delayed for a long time. What was it, and what does the delay reveal about her decision-making around spending?",
+      "ground_truth": "New running shoes purchased at an outlet store ($80) after an extended delay due to budget constraints. She recognized her worn shoes were contributing to knee issues but still felt guilty for a week after the purchase. This reveals: (1) extreme loss aversion around spending on herself, (2) physical health sacrificed for financial security, (3) internal conflict between knowing the purchase is necessary and feeling guilty about it, (4) outlet store choice reflects cost-minimization even for necessary purchases, (5) the delay-and-guilt pattern is consistent with her broader framing of self-care spending as a luxury rather than a necessity.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions discussing shoe purchase decision and guilt + connection to knee issues (D4) + references to budgeting for the purchase"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "What is Mary's relationship with her manager Teresa, and how does it shape her work experience?",
+      "ground_truth": "Teresa recognizes Mary's reliability and leans on her for extra responsibilities (inventory, training, closing procedures) without providing extra pay or the shift supervisor title. This creates a structural tension: Mary is performing above her role but not being compensated. Mary's response is strategic rather than confrontational -- she documents every extra contribution in her journal and brought the evidence to a meeting (D1). The relationship is one of quiet exploitation that Mary is turning into leverage. She stayed calm during the meeting and 'pointed to the count sheets, training notes, and the nights where I fixed problems.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 calendar entries for inventory and training tasks + messenger sessions discussing Teresa's reliance on Mary + references to the promotion meeting and its outcome"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "arts_and_culture",
+      "question": "What are Mary's cultural tastes in film, music, and art, and what do they reveal about her personality?",
+      "ground_truth": "Film: Wes Anderson movies as comfort viewing ('Sunday evening Wes Anderson movie on the couch') -- drawn to quirky, warm, visually precise storytelling. Music: John Prine (lyrical, working-class stories) and Bon Iver (atmospheric, Wisconsin-connected indie folk), plus classic rock. Art: occasional local art walks and museum exhibits. Books: practical self-help about habits and productivity. All preferences cluster around accessible, emotionally warm, unpretentious art forms from familiar cultural territory. This reflects her moderate openness -- she seeks novelty within structured, familiar frameworks rather than avant-garde or challenging art. The Wisconsin connection to Bon Iver mirrors her deep attachment to Madison.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to Wes Anderson, music, or art + Instagram follows + any book or media consumption references"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Mary's relationship with her brother Marco compare to her other family relationships?",
+      "ground_truth": "Marco (25, HVAC tech, Milwaukee) is the least close of Mary's key relationships. They text weekly and see each other during holidays. They argue about the Brewers' pitching staff. Mary describes him as 'more spontaneous, more social' -- implying their personalities differ. Unlike her relationship with Linda (daily calls, practical coordination) or Tony (Sunday Packers, caregiving), the Marco relationship is light, amicable, and relatively distant. He lives in Milwaukee, which further limits contact. The contrast highlights that Mary's social world is geographically compact and centered on Madison.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Less frequent Marco messenger sessions vs. much more frequent Linda sessions + Marco conversations focused on lighter topics (sports, casual updates)"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence suggests Mary uses systematic tracking and data to manage different areas of her life?",
+      "ground_truth": "Systematic tracking appears across domains: (1) Bullet journal tracking running miles, spending, garden tasks, and meal plans (daily 20-minute ritual, 4+ years), (2) Color-coded system (blue=work, green=personal, red=money) for categorizing activities, (3) Documenting work contributions for promotion evidence (D1), (4) Tracking food intake to self-diagnose dairy sensitivity, (5) Receipt-checking as a habitual behavior (traced to father's injury period), (6) Automatic savings transfer configured to force consistent saving (Q73), (7) Gratitude entry added from self-help book ('one good thing'). This pattern reflects high conscientiousness and a belief that measurement creates control.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to journaling, tracking, and measurement + D1 evidence documentation + calendar entries reflecting structured planning"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "Mary has connections at her church beyond her family. Who are some of the other parishioners, and what is the nature of these relationships?",
+      "ground_truth": "She mentions the Morettis, the Petersons, and old Mrs. Gustafson as fellow parishioners at St. Maria Goretti. These are light social contacts rather than deep friendships. She goes to Sunday morning services and leaves rather than participating in church social events or small groups. The church provides community continuity (family has attended since grandparents' generation) and spiritual practice (candle-lighting for nonna) but not deep social connection. The fish fry (D5) is the one event where she actively engages with the broader parish community.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D5 fish fry calendar and messenger entries + church calendar entries + any references to parish community members"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_patterns",
+      "question": "Mary has a habit of checking receipts. Where did this behavior come from, and how does it connect to her broader financial management approach?",
+      "ground_truth": "The receipt-checking habit originated during her father's back injury period when the family faced financial hardship: 'I remember checking every receipt and cutting coupons -- that's actually where I got the habit.' It connects to her broader approach: (1) loss aversion around fund depletion (visible distress at emergency fund drawdowns), (2) cost-minimization strategy (receipt-checking, coupons, cheap meals, outlet shopping), (3) present-bias mitigation through tracking (journal system), (4) future-oriented time preferences (deferring gratification for diner fund and college). The receipt-checking is a behavioral trace of childhood financial trauma that became a permanent self-regulation mechanism.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to receipt checking, budget tracking, or spending anxiety + connections to father's injury story + D1/D2 financial planning discussions"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "fashion_and_appearance",
+      "question": "What can you infer about Mary's approach to personal appearance and clothing from the logs?",
+      "ground_truth": "Mary has a practical, low-maintenance approach: she wears a work uniform during shifts and running gear/comfortable everyday clothing otherwise. Her one notable clothing purchase this month -- running shoes at an outlet store ($80) -- was delayed due to budget and caused guilt for a week, despite being necessary for injury prevention. She does not discuss fashion or appearance as a priority. Her spending hierarchy clearly places practical necessities (rent, food, savings) above appearance. This is consistent with her budget constraints, physical work demands, active lifestyle, and self-concept organized around competence rather than presentation.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Running shoe purchase discussion + absence of fashion/clothing references + work uniform context + budget-driven spending priorities visible across messenger sessions"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_patterns",
+      "question": "Mary resists seeking government assistance despite likely qualifying. What is the psychological basis for this resistance, and what evidence supports it?",
+      "ground_truth": "The resistance has three reinforcing layers: (1) Identity-based -- she frames it as 'those programs are for people who are worse off than me,' tying self-reliance to self-worth and competence. (2) Cultural -- her father Tony holds conservative self-reliant views ('tough it out'), and the Italian-American immigrant work ethic (nonna's 'A poco a poco') emphasizes earning through effort. (3) Stoic workplace norm -- 'In food service, everybody's dealing with something... You just push through.' The same pattern drives her avoidance of professional mental health support despite Jess suggesting sliding-scale therapy. She is likely eligible for SNAP based on income but does not apply.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions about financial strain where assistance is discussed or avoided + references to self-reliance + Jess suggesting help and Mary declining"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_patterns",
+      "question": "What is Mary's grandmother's lasting influence on her life? Trace the specific ways nonna's legacy shows up in Mary's current behavior.",
+      "ground_truth": "Nonna's influence appears in at least six behavioral domains: (1) Food -- Mary taught herself nonna's Italian recipes after her passing (red sauce, braciole, pasta from scratch). (2) Language -- she uses nonna's Italian phrase 'A poco a poco' (little by little) as her personal motto. (3) Religion -- Mary returned to St. Maria Goretti after nonna's death at age 19 and lights a candle for her most Sundays. (4) Health -- she uses nonna's home remedies (garlic-honey, herbal compresses, garlic broth). (5) Identity -- the immigrant work ethic narrative anchors Mary's self-concept and career motivation. (6) Garden -- growing Italian herbs (basil, tomatoes) connects to the food tradition. Nonna passed when Mary was 19, making this a formative loss that catalyzed cultural preservation behavior.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to grandmother across cooking, church, health, and motivational contexts + garden entries growing Italian herbs + church candle-lighting references"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Mary. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?",
+      "ground_truth": "Core traits: High Conscientiousness (meticulous planning, routine adherence, goal persistence, 4+ year journal system, receipt-checking, organizational systems), Moderate Introversion (one close friend, processes internally, small social circle, dislikes public expression), Moderate Openness (seeks novelty within familiar frameworks -- new breweries, recipes, self-help techniques -- but gravitates toward routine and practical knowledge), Moderate Agreeableness (empathetic and conflict-avoidant but firm on time boundaries and priorities). Greatest strengths: disciplined self-regulation through structured systems (journal, routines, tracking), resilience through layered coping mechanisms (running, cooking, gardening, planning), strong cultural identity providing meaning and continuity, realistic sequential career planning, deep community roots providing stability. Most significant vulnerabilities: financial precarity ($250-$310/month margin, no sick days, $2,000 insurance deductible), identity-based resistance to seeking help (therapy, government assistance), fear of stagnation as central existential anxiety, anticipatory rumination and seasonal mood dips without professional support, father's declining health as both motivation and emotional burden, social comparison with college-educated peers eroding confidence.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Full synthesis across all themes, dynamic events, calendar patterns, and messenger conversations -- requires holistic reading of the entire log corpus"
+    }
+  ]
+}

@@ -1,0 +1,764 @@
+{
+  "metadata": {
+    "persona": "Alicia Gonzalez",
+    "persona_id": "50f90a6f17de473f9ca15f00afdedf7a",
+    "total_test_cases": 70,
+    "generation_date": "2026-04-06",
+    "input_sources": {
+      "preferences": "data/step2b_verification/alicia_gonzalez_verification.json (corrected_extracted_profile)",
+      "dynamic_events": "anmol/alicia_gonzalez_app_logs.json (theme_plan.dynamic_events)",
+      "app_logs": "anmol/alicia_gonzalez_app_logs.json"
+    },
+    "type_distribution": {
+      "type_1_simple_fact_check": 5,
+      "type_2_cross_log_fact_check": 8,
+      "type_3_dynamic_preference_tracking": 5,
+      "type_4_reasoning": 52
+    },
+    "target_accuracy": "40-50%"
+  },
+
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Alicia has a recurring social commitment on Friday evenings. What is it, and who participates?",
+      "ground_truth": "Board game night every other Friday at her best friend Priya's place. Participants include Priya (data engineer), Priya's partner James, friend Marcus (teaches at Chico State), and rotating others. They play Wingspan, Terraforming Mars, Catan, and Codenames. Alicia is the most competitive player in the group.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Board Game Night at Priya's' appearing biweekly on Fridays"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T1",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia practices a specific form of yoga on a regular schedule. What type, when, and where?",
+      "ground_truth": "Vinyasa yoga classes twice weekly (Monday and Wednesday at 6:30 PM) at Chico Yoga Studio with instructor Mei. She started approximately 2 years ago during her marriage breakdown. Missing both classes in a week noticeably increases her stress levels.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for yoga classes appearing on Monday and Wednesday evenings"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "question": "Alicia volunteers as a tutor at a community venue. What does she teach, how often, and who are her students?",
+      "ground_truth": "She volunteers as a math and programming tutor at a community center every other Tuesday from 3-5 PM. She works with 3-4 high school students, including one student named Maria who is building a Python science fair project.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'Tutoring' appearing biweekly on Tuesdays"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T4",
+      "source_preference": "nature_and_outdoors",
+      "question": "Alicia has a recurring Saturday outdoor activity. What is it and who joins her?",
+      "ground_truth": "She hikes most Saturdays through the Chico Outdoor Club in Butte County trails and Ishi Wilderness. Her regular hiking partner is Tom, a retired man around 65 years old who 'knows every trail in Butte County.' They initially bonded over wildflowers.",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for Saturday hikes appearing regularly"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "source_theme": "T2",
+      "source_preference": "social_and_relationships",
+      "question": "Alicia has a regular weekly call with a family member in another country. Who is it and when?",
+      "ground_truth": "Weekly Sunday FaceTime calls with her maternal grandmother (abuela), who is 82 years old and lives in Colombia. The grandmother calls her 'Mi nieta la cientifica' (my granddaughter the scientist).",
+      "evidence_type": "single_source",
+      "expected_evidence": "Calendar entries for 'FaceTime with Abuela' or similar appearing on Sundays"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Alicia had a major work deadline this month involving a collaboration with another university. What was the project, and what evidence in both her messages and calendar suggests it was a significant time commitment?",
+      "ground_truth": "An internal multilingual demo for the UC Davis collaboration on multilingual generative language models. She had standing meetings Mon/Wed/Thu with the UC Davis team. The demo prep turned the week into a crunch cycle, consuming multiple calendar blocks and discussed across messenger sessions. She noted that 'every finished task reveals three smaller ones.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for UC Davis demo prep blocks and standing meetings + messenger sessions discussing demo coordination, late nights, and crunch-cycle pressure"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D2",
+      "question": "A family member had a medical appointment this month that Alicia helped coordinate. Who was it, what was the appointment for, and what logistical support did Alicia provide?",
+      "ground_truth": "Her mother Rosa finally agreed to a delayed annual physical that she had been avoiding. Alicia handled the paperwork reminder, follow-up call about lab work, managed the stops on appointment day to keep the route short, and offered to set up the calendar note so next year's visit would not vanish again. It involved food, pickup, extra stops, and managing the tired mood afterward.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for Rosa's physical and related errands + messenger sessions with Rosa and/or Diego coordinating logistics and follow-up"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Alicia had to adjust her outdoor routine mid-month due to environmental conditions. What happened, and what changes did she make? Cite evidence from both messages and calendar.",
+      "ground_truth": "Spring pollen, a smoke-sensitive throat, and a heavy sleep week forced her to adjust her hiking routine. She switched to a later trail start and a lower-pollen loop, checked the AQI dashboard, chose gentler hikes, and substituted caffeinated drinks with actual water. She described wanting 'a calmer baseline so the routine decisions stop feeling like guesswork every single week.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries showing adjusted hike times, route substitutions, and AQI check blocks + messenger sessions with Tom or Priya discussing allergy/pollen adjustments"
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D5",
+      "question": "Alicia faced a second intellectual crunch late in the month involving two overlapping work obligations. What were they, and how did she handle the pressure?",
+      "ground_truth": "A grant budget deadline and lab reading-group preparation packet converged at the same time. She cut decorative complexity from the grant work, scheduled a Quiet Thursday Open Mic as a recovery anchor, and needed someone outside the room to remind her that 'finishing and overworking are not the same virtue wearing different shoes.' She ended up exhausted but the work held together.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for grant budget blocks and reading group prep + messenger sessions about intellectual overload and the need to simplify"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "travel",
+      "dynamic_event": "D3",
+      "question": "Alicia was planning a trip that required careful financial coordination. What was the trip, and what financial constraints affected the planning?",
+      "ground_truth": "She was planning a summer trip to Colombia to visit her 82-year-old grandmother, budgeted at $2,000-$2,500. The timing had to fit around conference reimbursement lag ($800-$1,000), rent, and ordinary bills clustering the same week. She chose a less chaotic booking route, completed a passport check, and submitted a days-off request. She noted that 'choosing the less chaotic route is part of the budget conversation, not a separate luxury topic.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for airfare comparison, passport check, days-off request + messenger sessions discussing reimbursement timing, cash-flow juggling, and trip budgeting"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D6",
+      "question": "Alicia had a social event late in the month that served as a reset after two hard work runs. What was it, and what preparation did it require?",
+      "ground_truth": "A wildflower hike combined with a farmers market lunch. It looked festive from the outside but was actually 'six smaller jobs.' She handled trail logistics, snack packing, a low-drama market plan, and supply organization. She rebuilt the supply pile so priorities were on top and wrote notes on what to simplify next time. The prep disappeared when done right, which she found 'satisfying in a way no one else would notice.'",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for wildflower hike and farmers market lunch + messenger sessions about trail prep, supply lists, and social recovery"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia's sleep patterns and self-care routines visibly deteriorate during deadline weeks. What evidence across both calendar and messages shows this pattern?",
+      "ground_truth": "During deadline weeks (D1, D5), she stays up until 1:30-2 AM, gets only 5-6 hours of sleep, reverts to crackers/cheese at her desk, increases coffee from 2 to 4-5 cups, and experiences chest tightness and racing thoughts. Calendar shifts from balanced blocks to late-night work entries. Messenger sessions show her discussing exhaustion and the need for recovery anchors like board game night ('if I leave the recovery part to chance, chance usually votes for more work').",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries showing late-night work blocks during D1/D5 + messenger sessions describing sleep disruption, dietary slippage, and anxiety symptoms"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "question": "Alicia mentors younger students through a specific program. What is the program, and how does her mentoring connect to her own background?",
+      "ground_truth": "She mentors two undergraduates through Technolatinas with monthly one-on-one meetings and quarterly group meetups. She helps them navigate career decisions and family expectations in tech. This connects to her own experience as a Latina in STEM who wished she had a mentor and who turned down a higher-paying industry job to follow her research passion. The mentoring is part of her identity as someone who 'pays forward' opportunities.",
+      "evidence_type": "cross_source",
+      "expected_evidence": "Calendar entries for Technolatinas meetings + messenger sessions about mentoring, career advice, or reflections on her own Latina-in-tech experience"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T1",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D1",
+      "question": "Alicia's approach to the UC Davis multilingual demo changed over the course of the crunch. How did her strategy and emotional state evolve from early March to mid-March?",
+      "ground_truth": "Early March: focused on keeping the sequence clean, worried about wasting energy on the wrong hard parts. Mid-crunch: proactively scheduled board game night as recovery, recognizing 'if I leave the recovery part to chance, chance usually votes for more work.' After cutting scope: grateful they removed decorative complexity. Post-demo: exhausted but satisfied that the work held together. Later: tried to record what helped before 'normal life erases the evidence.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early messenger sessions (around March 4-5) showing planning anxiety vs. mid-sessions (March 7-9) showing scope cuts and relief vs. later sessions (March 11-14) showing exhausted satisfaction and reflection"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "dynamic_event": "D4",
+      "question": "Alicia's outdoor routine shifted mid-month due to environmental factors. What was her routine before the shift, and what did it look like after?",
+      "ground_truth": "Before: regular Saturday hikes at standard times on normal trails through the Chico Outdoor Club. After: switched to later trail starts, lower-pollen loops, AQI dashboard checks before heading out, gentler hikes, and replacing caffeinated drinks with water. She noted that the calmer week 'actually made the rest of the month easier too,' which she found 'annoying only because it proves you were right in the least dramatic way possible.' She gained a 'cleaner sense of what to keep doing and what to stop overthinking.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Pre-D4 calendar showing standard hike times vs. post-D4 entries with later starts, easier routes, and AQI check entries + messenger tone shifting from frustration to acceptance"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T2",
+      "source_preference": "social_and_relationships",
+      "dynamic_event": "D2",
+      "question": "How did the family's approach to Rosa's medical appointment evolve over the month? Track the progression from initial resistance to follow-through.",
+      "ground_truth": "Progression: Rosa's habitual annual-physical avoidance turned 'one simple call into weeks of family debate.' Alicia handled paperwork reminders and follow-up calls. On the day, she managed stops, pickup, extra errands, and the tired mood. Post-appointment: they set up the lab follow-up and a calendar note to prevent next year's visit from vanishing. Alicia offered to help make it more consistent. She shifted from 'spinning-my-wheels tired' to 'useful tired.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Early sessions showing coordination and persuasion around Rosa's reluctance → calendar entries for appointment logistics → later sessions showing follow-up planning and a shift from frustration to useful exhaustion"
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "travel",
+      "dynamic_event": "D3",
+      "question": "Alicia's Colombia trip planning evolved from anxiety to intentional budgeting. What triggered the shift, and how did her emotional relationship with the planning change?",
+      "ground_truth": "Initially, she was watching reimbursement timing, rent, and bills clustering in the same week and trying to choose a version she 'could commit to without regret.' She aimed for an option that left room for the passport check, days-off request, and normal bills. By mid-process, she reminded herself that 'choosing the less chaotic route is part of the budget conversation, not a separate luxury topic.' After finding a workable option, the plan existed and she could 'build around a real thing instead of a floating wish.' Finally, 'the careful version now feels intentional instead of fearful, and that is a better place to stand in.'",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Mid-March messenger sessions showing financial anxiety → later sessions showing deliberate budgeting → final sessions showing emotional shift from fearful to intentional"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "dynamic_event": "D5",
+      "question": "How did Alicia's handling of the grant budget and reading-group prep crunch evolve compared to the earlier UC Davis demo crunch (D1)?",
+      "ground_truth": "D5 mirrors D1 structurally: same intensity, same recognition that 'every finished task reveals three smaller ones,' same need for an outside voice to distinguish finishing from overworking. But D5 shows learning: she proactively scheduled a recovery event (Quiet Thursday Open Mic), cut decorative complexity earlier, and tried to 'record what helped this time before normal life erases the evidence.' The pattern suggests she is building self-awareness about her crunch cycles rather than being blindsided each time.",
+      "evidence_type": "temporal_change",
+      "expected_evidence": "Comparison of D1 and D5 messenger sessions showing similar language but faster adaptation in D5 + calendar showing proactive recovery scheduling in D5 that was reactive in D1"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "question": "Based on the app logs, what is Alicia's job and what does her research focus on? What evidence reveals the nature of her work?",
+      "ground_truth": "She is a computer and information research scientist at a small lab in Chico under Dr. Patel. Her team has 5 people (PI, 2 research scientists including Alicia and colleague Kai, 2 rotating grad students). Her current main project involves generative models for visual narratives from unstructured data. She has an active UC Davis collaboration on multilingual generative language models with standing meetings Mon/Wed/Thu. She spends 15-20% of her time on grant writing and publishes at NeurIPS and ACL.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for UC Davis meetings, grant blocks, lab meetings + messenger sessions discussing research progress, demo prep, and collaboration logistics"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Alicia uses social commitments as deliberate coping mechanisms. What evidence across the logs supports this interpretation, and which commitments serve this function?",
+      "ground_truth": "Board game night at Priya's (biweekly anchor, competitive outlet, check-in opportunity), Saturday hikes with Tom (outdoor decompression, routine maintenance), yoga twice weekly (stress relief, sleep improvement), Sunday FaceTime with abuela (cultural grounding). Evidence: during D1 she explicitly moved board game night onto the schedule because 'if I leave the recovery part to chance, chance usually votes for more work.' During D5 she scheduled Quiet Thursday Open Mic as recovery. During D6 the wildflower hike was the reset after two hard work runs. These social anchors are maintained even during crunch periods.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Recurring calendar commitments maintained during D1/D5 stress periods + messenger sessions where Alicia explicitly discusses keeping social events as protection against overwork and isolation"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia appears to have a stress response pattern that manifests physically. Based on the logs, what symptoms appear, what triggers them, and how does she respond?",
+      "ground_truth": "Symptoms: chest tightness and racing thoughts before deadlines/presentations, chronic undersleeping (5-6.5 hours on bad nights, twice weekly), headaches and focus loss from sleep deprivation, neck/shoulder tension from prolonged computer work, stress eating (crackers/cheese at desk, excessive coffee). Triggers: deadline pressure from D1 demo and D5 grant/reading-group convergence. Response: yoga, morning breathing exercise, elaborate cooking as meditation, painting as anxiolytic ('shuts off the anxious part of my brain'), calling Priya or Diego for verbal processing, reframing aloneness as chosen solitude.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1/D5 messenger sessions describing physical symptoms + calendar shift to recovery-focused entries + messenger discussions about choosing lighter routine and coping strategies"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "work_and_career",
+      "question": "Alicia is building toward multiple long-term professional goals. What are they, what steps has she taken this month, and what obstacles has she encountered?",
+      "ground_truth": "Goals: (1) Continue publishing and advancing at the lab (co-authoring paper with UC Davis), (2) Long-term startup dream for AI-driven creative tools (20-page notes doc, informal market research, needs co-founder), (3) Considering PhD to deepen expertise and expand network. Steps this month: UC Davis multilingual demo (D1), grant budget work (D5), lab reading-group preparation (D5), continued UC Davis collaboration. Obstacles: crunch cycles compressing sleep and self-care (T1), financial constraints from single research salary, perfectionist tendencies causing overwork.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for UC Davis meetings, demo prep, grant blocks, reading group + messenger discussions about career progress, demo anxiety, and grant pressure"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "social_and_relationships",
+      "question": "What role does Alicia play in her family's caregiving dynamics? How do her relationships with her mother, father, and brother each function differently?",
+      "ground_truth": "Alicia is the primary family organizer despite living 1.5 hours from Sacramento. She coordinates Rosa's medical appointments (D2), manages paperwork reminders and follow-up calls, and visits parents twice monthly. Rosa (57): daily phone calls, sends food via cooler bag, shows love through action; Alicia monitors Rosa's health-avoidance behavior. Carlos (60): quieter, shows love by driving to Chico to fix things; nearing retirement with knee problems, Alicia and Diego plan to contribute financially. Diego (25, LA): daily texts, midnight meme exchanges, calls several times weekly; shifted from protective older sister to equals after divorce. Alicia carries anticipatory caretaking responsibility she frames as 'non-negotiable.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Rosa sessions showing health coordination + Carlos/Diego sessions showing different relationship dynamics + calendar entries for Sacramento visits and family logistics"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T2",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence in the logs suggests Alicia manages her finances carefully, even if specific dollar amounts are rarely mentioned?",
+      "ground_truth": "Indicators: (1) Colombia trip planning organized around reimbursement timing and bill clustering (D3); (2) Budget spreadsheet updated weekly-biweekly (developed post-divorce); (3) Conference reimbursement lag of $800-$1,000 creating preemptive spending cuts; (4) Three parallel savings goals (emergency fund, Colombia trip, down payment); (5) Seasonal cost awareness (summer PG&E spikes, Christmas gifts, air filters); (6) Farmers market spending tracked against grocery budget; (7) Strict no-credit-card-debt rule; (8) Art print sales as supplementary income ($150).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D3 messenger sessions showing trip-budget juggling + calendar entries implying financial planning + references to reimbursement timing and bill management"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Alicia maintains multiple creative and social activities simultaneously. Map out her typical weekly schedule based on the app logs. What does a normal week look like?",
+      "ground_truth": "Typical week: Morning 5-minute breathing exercise daily, work at lab with flexible hours, Monday yoga at 6:30 PM, Tuesday painting (studio corner), Wednesday yoga at 6:30 PM, biweekly Tuesday tutoring (3-5 PM), Thursday open mic or live music in downtown bars, biweekly Friday board game night at Priya's, Saturday hiking with Tom + farmers market, Sunday FaceTime with abuela + sometimes soccer pickup games. Intermittent: near-daily calls with Rosa, daily texts with Diego, UC Davis standing meetings Mon/Wed/Thu.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar event patterns across multiple weeks showing recurring activities on specific days"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T5",
+      "source_preference": "community_and_civic",
+      "question": "Alicia is civically engaged beyond just voting. What specific community activities does she participate in, and what drives her civic involvement?",
+      "ground_truth": "Beyond voting in every election including local specials: (1) Mentoring 2 undergrads through Technolatinas, (2) Volunteer tutoring math/programming biweekly, (3) Lab reading group on AI bias and equity, (4) Blog post on algorithmic fairness, (5) Writing to representatives about immigration bills, (6) Helping tia Marta navigate Spanish-language vaccine misinformation, (7) Participating in peaceful local marches, (8) Cross-partisan engagement at hiking club and farmers market. Drivers: parents' naturalization story, Camp Fire (2018) redirecting energy toward local governance, professional expertise in algorithmic fairness, identity as Latina in STEM.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for Technolatinas, tutoring, reading group + messenger discussions about civic engagement, equity concerns, and local politics"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T3",
+      "source_preference": "social_and_relationships",
+      "question": "Who is Alicia's closest friend, and what evidence across the logs demonstrates the depth of this relationship?",
+      "ground_truth": "Priya (data engineer, Indian American, met at a hackathon 3 years ago). Evidence: (1) Board game nights every other Friday at Priya's place; (2) Priya was critical during Alicia's emotional low point, showing up unannounced with soup during a 5-day withdrawal; (3) They bond over 'immigrant family expectations in tech'; (4) Priya's positive therapy experience is influencing Alicia to consider therapy herself; (5) Multiple messenger sessions across different themes route through Priya for emotional check-ins and daily processing; (6) Priya recognizes Alicia's stress signs before Alicia does.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "High frequency of Priya sessions across all themes + calendar entries for board game nights + messenger discussions spanning work stress, health adjustments, and social planning"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia uses multiple wellness practices in combination. Based on the app logs, identify at least four distinct health management practices and show how they appear across different sources.",
+      "ground_truth": "At least: (1) Vinyasa yoga twice weekly (calendar: Mon/Wed 6:30 PM yoga entries), (2) Morning breathing exercise (calendar: 5-min morning blocks + messenger references to calmer starts), (3) Hiking as decompression (calendar: Saturday hike entries + D4 route adjustments), (4) Air purifier and AQI monitoring for allergies/smoke (calendar: AQI dashboard checks + D4 discussions), (5) Painting as anxiolytic (calendar: Tuesday painting sessions + messenger references to 'shutting off the anxious part'), (6) Herbal teas and turmeric capsules (traditional Colombian remedies combined with Western medicine), (7) Hourly stretch reminders per physical therapist.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Multiple calendar event types for wellness activities + corresponding messenger discussions about health adjustments and coping"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T1",
+      "source_preference": "food_and_dining",
+      "question": "What can you infer about Alicia's cooking habits and how they change based on her stress level? Cite specific evidence.",
+      "ground_truth": "During stable periods: elaborate home cooking (Colombian dishes — arepas, bandeja paisa, empanadas, chimichurri-marinated plantains), Sunday meal prep, fresh ingredients from the Saturday farmers market, single-origin Colombian coffee ground fresh each morning. During deadline/stress periods: reverts to crackers and cheese at desk, taqueria burritos three days running, dark chocolate from desk drawer, coffee intake doubles from 2 to 4-5 cups. Elaborate cooking itself serves as stress relief — making empanadas 'is so engaging that I can't think about anything else.' Her food pattern is a reliable indicator of her emotional state.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for Sunday meal prep and farmers market visits + D1/D5 messenger sessions referencing dietary deterioration + messenger references to cooking as meditation"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_theme": "T4",
+      "source_preference": "nature_and_outdoors",
+      "question": "What is Alicia's relationship with nature, and how does it serve multiple functions in her life?",
+      "ground_truth": "Nature serves four functions: (1) Physical health — hiking, biking, yoga outdoors; (2) Stress management — Bidwell Park is 'one of the main reasons I stayed in Chico,' and hiking provides decompression; (3) Spiritual/meditative experience — 'standing at the top of a trail looking out over the valley' has replaced traditional religious observance as a source of awe; (4) Career-defining — she chose her lower-paying research position over San Jose while hiking Upper Bidwell Park ('I just thought, I can't leave this'). Nature is also filtered through health management: seasonal allergies, AQI monitoring (D4), and wildfire smoke force route substitutions and indoor alternatives.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for hikes, farmers market, park visits + D4 discussions about AQI-driven adjustments + messenger sessions where nature comes up as recovery, decision-making context, or spiritual reference"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "food_and_dining",
+      "question": "Where does Alicia shop for groceries, and what does her shopping pattern reveal about her values?",
+      "ground_truth": "Primary: Saturday farmers market (5-minute walk from apartment, fresh produce, seasonal ingredients). Secondary: co-op grocery store near apartment. She spends approximately $350/month on groceries (higher during farmers market stocking-up months) and $40/month on coffee beans from a local roaster plus occasional visits to Naked Lounge coffee shop. Her shopping pattern reveals: (1) cultural connection through food (Colombian ingredients), (2) preference for fresh and local over convenience, (3) budget-conscious seasonal purchasing, (4) the market trip is part of a larger Saturday ritual tied to hiking and outdoor life.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for farmers market visits + proximity to Saturday hike entries + messenger references to cooking ingredients and budget-conscious food choices"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sports_and_fitness",
+      "question": "What physical activities does Alicia participate in, and how are they distributed across her week?",
+      "ground_truth": "Weekly: Vinyasa yoga Mon/Wed 6:30 PM (Chico Yoga Studio with Mei), daily biking for commute and errands on a beat-up road bike, Saturday hikes with Chico Outdoor Club. Seasonal: returning to amateur soccer league this summer with Sunday morning pickup games to prepare, coastal trips during peak wildfire smoke season. Health management: hourly stretch reminders per physical therapist, AQI-dependent route adjustments for hikes (D4). She follows the Sacramento Kings (basketball) and San Francisco 49ers (football). Competitive spirit surfaces in board games and sports despite being 'pretty laid back otherwise.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for yoga, hikes, soccer prep + messenger discussions about adjusting exercise routines for weather/pollen + any sports references"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "entertainment",
+      "question": "What can you infer about Alicia's media consumption and entertainment habits from the logs?",
+      "ground_truth": "Reads: speculative fiction (Ted Chiang), Latinx scholars on race and identity (Roberto Gonzales, Cristina Mora). Watches: TV shows as comfort during emotional lows (binge-watched with Luna during 5-day withdrawal). Listens: cumbia and vallenato (childhood soundtrack), Bjork and experimental soundscapes, ambient music while painting. Attends: live music and poetry slams/open mics on Thursday evenings, gallery openings monthly, board game nights biweekly. Follows: science communicators on social media, epidemiologist/public health podcasts. Strategy board games (Wingspan, Terraforming Mars, Catan, Codenames) as primary group entertainment.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for open mic nights, gallery visits, board game nights + messenger references to reading, music, or entertainment plans"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "music",
+      "question": "What role does music play in Alicia's life, and how does it connect to her cultural identity?",
+      "ground_truth": "Music functions as: (1) Cultural connection — grew up with cumbia and vallenato playing Saturday mornings, mom singing along; (2) Creative fuel — listens to Bjork and ambient/experimental music while painting; (3) Emotional regulation — puts on cumbia or ambient music during painting sessions to 'shut off the anxious part of my brain'; (4) Social life — attends live music events and poetry slams regularly on Thursday evenings; (5) Family bond — brother Diego is a music producer in LA, they bond over creative/music topics. Music bridges her Colombian heritage and her avant-garde creative interests.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to music, painting sessions with music, Thursday night plans + calendar entries for live music or open mic events"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology",
+      "question": "Alicia has a complex relationship with technology — she's highly proficient but maintains deliberate digital boundaries. What evidence shows both her technical expertise and her intentional limits?",
+      "ground_truth": "Technical expertise: Python, R, C++, MATLAB, AWS/GCP professionally; Raspberry Pi weather station with AQI sensor and custom dashboard; Arduino projects at hackathons; generative digital art using custom algorithms; large-format printing. Digital boundaries: app timers (20 min per platform per session), 10 PM digital cutoff rule (70% compliance), aggressive feed curation, muting inflammatory political content on Twitter, attempted bedtime alarms (snoozes them — 'It's a discipline issue, honestly'). Her budget spreadsheet is a post-divorce self-management tool. She uses FaceTime, Zoom, Discord, Slack, Instagram, and Twitter/X each for specific functions.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to coding, tech projects, or digital habits + calendar entries implying technical work + any discussions about screen time or digital boundaries"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "arts_and_culture",
+      "question": "What artistic activities does Alicia practice, and how do they integrate her scientist and artist identities?",
+      "ground_truth": "She practices: (1) Abstract acrylic painting (blues and oranges, heavy texture) on Tuesday evenings and Saturday afternoons in her apartment studio corner; (2) Generative digital art using custom algorithms (dot-based photo recreation, algorithm-generated patterns printed large-format); (3) Photography of food and everyday moments shared on Instagram (~800 followers) with time-lapse painting videos performing well; (4) DIY electronics (Raspberry Pi weather station). She has exhibited twice at Avenue 9 gallery in Chico and is planning a solo show blending generative and hand-painted elements. Gallery owner Sandra encourages her. The generative art directly bridges her coding skills and visual creativity.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for painting sessions, gallery events + messenger sessions about art projects, Instagram posting, or exhibition planning"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "cultural_and_linguistic",
+      "question": "What cultural heritage does Alicia come from, and how does it manifest in her current life?",
+      "ground_truth": "Colombian heritage. Parents immigrated from Colombia (father Carlos from Bogota, mother Rosa from near Cali). Current manifestations: speaks Spanish fluently (grew up with 'En esta casa se habla espanol'), cooks Colombian dishes (arepas, bandeja paisa, empanadas), listens to cumbia and vallenato, attends Spanish-language Mass at St. John the Baptist with Colombian priest Father Ruben (~monthly and holidays), lights votive candles for loved ones, wears grandmother's crucifix necklace, weekly FaceTime with abuela in Colombia, active in Colombian scientist Discord community (~200 members), maintains extended family network in Sacramento (tia Lucia, tia Marta, cousins Sofia and Andres). Saturday morning cumbia and arepas continue childhood tradition.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to Spanish-language conversations, Colombian food preparation, family calls, church attendance + calendar entries for Sunday FaceTime, Sacramento visits, and cultural activities"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Alicia's relationship with her brother Diego differ from her relationship with her friend Priya? What evidence shows each relationship serves a different function?",
+      "ground_truth": "Diego (25, music producer in LA): daily texts, midnight meme exchanges, calls several times weekly. Relationship shifted from protective older sister to equals after divorce — Diego drove up from LA three weekends straight. They bond over creative topics, music, and family. Diego provides sibling loyalty and casual emotional support. Priya (data engineer, Indian American): board game nights, hackathon friendship origin, bond over 'immigrant family expectations in tech.' Priya provides deep emotional processing — showed up with soup during 5-day withdrawal, influences Alicia toward therapy. Priya recognizes Alicia's stress signs. Diego understands through shared family; Priya understands through shared experience as an immigrant-family woman in tech.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Diego sessions showing casual/meme-based communication vs. Priya sessions showing deeper emotional check-ins and support + different messenger tones and topics"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Describe Alicia's living situation and daily environment based on the app logs. Where does she live, what anchors her days, and what shapes her home life?",
+      "ground_truth": "Lives alone with cat Luna (3-year-old tabby from Butte Humane Society) in a one-bedroom apartment off Mangrove Avenue in Chico ($1,250/month), in a small ~12-unit complex with a responsive local family landlord. Painting studio corner set up in the apartment, art supplies on dining table. Bikes a beat-up road bike for daily in-town transit; owns a 2017 Honda Civic (paid off) for longer trips. Runs air purifier year-round for allergies and smoke. Neighborhood is between downtown and the university: farmers market 5 minutes walk, Naked Lounge coffee shop nearby, Bidwell Park 10 minutes by bike. Values solitude for creative work post-divorce ('can paint at 2 AM, leave supplies out'). Friendly with neighbors: the Hendersons (older couple, watch her place) and Jenny (grad student below, shares leftovers).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries showing local activities (yoga, market, park) + messenger references to apartment life, Luna, painting at night, neighborhood interactions"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "Alicia made a defining career decision after graduation. What was it, and what evidence suggests it continues to shape her life?",
+      "ground_truth": "She chose a lower-paying research position under Dr. Patel in Chico over a software engineering job in San Jose that offered approximately 40% more pay plus stock options. This was the first crack in her marriage (now divorced). She made the decision while hiking Upper Bidwell Park ('I just thought, I can't leave this'). Her mother validated it ('Mija, you can always make more money'), father came around after seeing publications. It continues to shape: her financial constraints ($69,600/yr gross in research vs. potential six-figure industry salary), limited dating pool in Chico, but also her research autonomy, outdoor lifestyle, and sense of professional identity.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Financial planning discussions showing budget consciousness + career-related messenger sessions + evidence of research vs. industry tension in professional conversations"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "life_events_and_transitions",
+      "question": "What major life transitions has Alicia experienced, and how do their effects show up in her current behavior patterns visible in the logs?",
+      "ground_truth": "Key transitions: (1) Divorce finalized ~2 years ago — visible in post-divorce identity reconstruction (painting rediscovery, hiking club via coffee shop flyer, Luna adoption, budget spreadsheet, learning to reframe aloneness as chosen solitude); (2) Career crossroads choosing research over industry — visible in financial constraints and budget juggling (D3); (3) Camp Fire 2018 — visible in AQI monitoring (D4), N95 stocking, local political engagement; (4) Paper rejection 6 months ago converging with father's health and anniversary week — visible in the 48-hour grace period strategy she now uses and her multi-layered coping scaffold; (5) Father's approaching retirement — visible in anticipated caretaking planning and Sacramento visits.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Pattern of financial monitoring + AQI/allergy management + wellness routine emphasis + messenger discussions about maintaining routines and family responsibility"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "sensory_and_physical_context",
+      "question": "Alicia lives in a region with significant environmental challenges. What are they, and how do they affect her daily life and routines?",
+      "ground_truth": "Chico's environmental challenges: (1) Wildfire smoke (summer/fall): AQI can exceed 200, confining her indoors. She stocks air filters (~$30 each, multiple per season), N95 masks, runs an air purifier year-round, and plans coastal trips or indoor projects during peak smoke. Smoke triggers post-Camp Fire emotional weight. (2) Extreme heat (summer): regular 100-110 degrees, poor apartment insulation, AC drives PG&E bills to $180+. (3) Spring pollen (D4): oak pollen in Central Valley causes allergies requiring OTC antihistamines (with drowsiness), avoidance of morning hikes, closed windows, route substitutions to lower-pollen loops. Each environmental factor shapes her calendar, spending, and emotional state.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 messenger sessions about pollen/AQI adjustments + calendar entries showing route changes and AQI checks + seasonal spending references in financial discussions"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What is Tom's role in Alicia's life, and what activities connect them?",
+      "ground_truth": "Tom is a retired man around 65 who serves as Alicia's regular hiking partner through the Chico Outdoor Club. He is a 'trail encyclopedia' who 'knows every trail in Butte County.' They initially bonded over wildflowers on their first hike together. They hike most Saturdays in Butte County trails and Ishi Wilderness. Tom represents a different kind of social connection from Alicia's peer friendships — cross-generational, activity-centered, and nature-focused. During D4, Tom likely adjusted routes alongside Alicia for pollen/AQI conditions.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Saturday hike calendar entries + Tom messenger sessions discussing trail logistics, route changes (D4), and hiking plans + D6 wildflower hike coordination"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "Alicia participates in an online community of professionals with a shared background. What is it, and what function does it serve?",
+      "ground_truth": "A Discord server for Colombian scientists abroad with approximately 200 members, about 12 of whom she is close with. Functions: (1) Professional networking — shares papers, discusses grants; (2) Emotional support — vents about impostor syndrome, gets encouragement after rejections; (3) Identity validation — connects her Colombian heritage with her scientific career; (4) Policy discussion — immigration and STEM visa issues. This community bridges her cultural and professional identities in a way her local social circle does not fully replicate.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger sessions referencing Discord, online scientific community, or conversations about immigration/STEM policy + career frustration discussions that reference community support"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "travel",
+      "question": "What can you infer about Alicia's travel patterns and constraints from the logs?",
+      "ground_truth": "Travel is purposeful, budget-constrained, and emotionally significant. Regular: Sacramento (~twice monthly, 1.5 hours each way to see parents). Professional: 2-3 conferences/year (NeurIPS, ACL, smaller workshops), partially lab-funded but $800-$1,000 upfront before reimbursement. Aspirational: Colombia trip to visit 82-year-old grandmother ($2,000-$2,500 budget, D3 planning this month), Patagonia's Torres del Paine, Granada's Alhambra. Seasonal: coastal trips during peak wildfire/smoke. Constraints: single research salary ($69,600 gross), reimbursement lag, three competing savings goals (emergency fund, Colombia, down payment).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D3 messenger sessions about Colombia trip budgeting + calendar entries for Sacramento visits + references to conference travel and reimbursement timing"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "behavioral_economist_summary",
+      "question": "What evidence suggests Alicia prioritizes meaningful work over financial stability? Is this a deliberate choice or a circumstance?",
+      "ground_truth": "Deliberate choice with costly consequences. Evidence: she turned down a ~40% higher-paying software engineering job in San Jose for research autonomy in Chico — the defining career decision that also contributed to her divorce. Current behavior: maintains research career at $69,600 despite qualifications for much higher industry pay, saves $300-$400/month on tight margin, manages three parallel savings goals, juggles conference reimbursement lags (D3). She explicitly identifies as scientist/artist/mentor and accepts income penalties aligned with this self-concept. Her mother's validation ('Mija, you can always make more money') and identity-based motivation ('the drive to understand things, to build things') sustain this choice.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar showing research commitments maintained alongside budget admin + D3 financial juggling + messenger sessions about career identity, work meaning, and financial tradeoffs"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Alicia appears to have a pattern of intense work followed by periods of exhaustion. What evidence in the logs supports this cycle?",
+      "ground_truth": "The intensity-crash cycle: D1 (UC Davis demo crunch) led to late nights, sleep deprivation, and stress eating, followed by explicit recovery scheduling (board game night). D5 (grant budget + reading group) mirrors D1 structurally, with the same 'every finished task reveals three smaller ones' language. Between D1 and D5, she experienced D4's forced routine adjustment due to pollen/AQI. After D5, D6 (wildflower hike) served as the deliberate social reset. Calendar shows oscillation between intense work blocks and recovery-focused entries. Messenger tone shifts from project excitement to acknowledging need for rest.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Temporal pattern: intense calendar blocks (D1 period) → recovery blocks → D5 intensity → D6 recovery + messenger tone shifts across the timeline"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "How does Alicia handle perfectionism, and where does it show up in the logs?",
+      "ground_truth": "Perfectionism manifests in: (1) Crunch cycle overwork — D1 and D5 both show 'every finished task reveals three smaller ones,' trying to maintain decorative complexity before being forced to cut; (2) Night-owl creative sessions sacrificing sleep for painting or coding; (3) Attempted bedtime alarms that she just snoozes ('It's a discipline issue, honestly'); (4) Post-event note-taking (D6: 'wrote down what to simplify next time because apparently I enjoy doing a whole second event for myself in note form'). She combats it through external voices ('needed somebody outside the room to remind me that finishing and overworking are not the same virtue') and deliberate scope reduction.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1/D5 messenger sessions about cutting scope and overwork + D6 sessions about post-event processing + references to sleep issues from late-night creative work"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia manages her wellbeing through both proactive routines and reactive adjustments. Based on the logs, distinguish between her regular maintenance practices and her crisis-response adjustments.",
+      "ground_truth": "Regular maintenance: morning 5-minute breathing exercise, yoga twice weekly, Saturday hikes, daily biking, hourly computer stretches, air purifier, herbal teas, Sunday meal prep, farmers market shopping, 10 PM digital cutoff attempt. Crisis-response (visible in D1/D4/D5): scheduling social anchors as non-negotiable recovery (board game night in D1, Open Mic in D5), switching to lower-pollen routes (D4), replacing caffeine with water (D4), cutting work scope to protect health, relying on painting as anxiolytic, increasing calls to Priya and Diego. The distinction: maintenance is routine-based and preventive; crisis-response is deliberate and schedule-altering.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Regular calendar patterns (yoga, hikes, breathing) vs. D1/D4/D5-period calendar additions showing recovery scheduling and route adjustments + messenger tone shift during crisis periods"
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "media_and_information_diet",
+      "question": "How does Alicia consume news and information? What can you infer about her trust in different information sources?",
+      "ground_truth": "Sources: NPR (national), CalMatters (state policy), Chico Enterprise-Record (local), California voter guide (cover-to-cover), policy newsletters, researcher accounts on Twitter/X, CDC publications, peer-reviewed journals (has training to read primary sources). Podcasts from epidemiologists and public health researchers. Reads Latinx scholars (Gonzales, Mora). Trust hierarchy: high trust in scientific/public health institutions (CDC, peer-reviewed), moderate trust in quality journalism with primary-source citation, avoids cable news entirely ('Too much spin, too little substance'), curates social media aggressively (mutes inflammatory content), actively combats Spanish-language misinformation in family's Facebook groups.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to news sources, articles, or information + discussion patterns showing analytical engagement + references to helping tia Marta with vaccine misinformation"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "technology_and_tool_use",
+      "question": "What digital tools and platforms does Alicia use regularly, and what does each one serve?",
+      "ground_truth": "Instagram (~800 followers, art sharing), Twitter/X (professional networking, science communication), Discord (Colombian scientists server, generative art channels), Facebook (minimal: hiking club and Colombian group only), Slack (5+ workspaces: lab, UC Davis, professional), FaceTime (weekly calls with grandmother), Zoom (UC Davis collaboration), TurboTax (annual filing), budget spreadsheet (weekly-biweekly). App timers: 20 min per platform per session. 10 PM digital cutoff (70% compliance). She uses Python, R, C++, MATLAB, AWS/GCP professionally and Raspberry Pi/Arduino for personal projects. Bedtime alarm reminders that she snoozes.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries implying digital tool use (UC Davis Zoom calls, FaceTime entries) + messenger discussions about app management, screen time, or platform-specific activity"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "community_and_civic",
+      "question": "What political values does Alicia hold, and how do they translate into concrete actions visible in the logs?",
+      "ground_truth": "Leans Democratic, issue-based ('left of center'). Priority issues: immigration (family history), education funding and STEM access, climate/wildfire preparedness (Camp Fire), algorithmic accountability (from AI research). Actions: votes in every election including local specials, reads voter guide cover-to-cover, mentors through Technolatinas, tutors math/programming, maintains AI bias reading group at lab, wrote algorithmic fairness blog post, writes to representatives about immigration bills, helped tia Marta with vaccine misinformation, cross-partisan engagement at hiking club/market, participated in local marches. Environmental values visible in biking as primary transport, farmer market shopping, and AQI monitoring.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for tutoring, Technolatinas, reading group + messenger discussions about civic engagement, equity, and local politics + D4 AQI-related behavior"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Alicia has exhibited artwork at a local gallery. What do you know about her exhibition history and future plans?",
+      "ground_truth": "She has had two group shows at Avenue 9 gallery in Chico — one featuring her generative digital work and one featuring her acrylic paintings. Gallery owner Sandra encourages her toward a solo show, which Alicia is planning as a series blending generative and hand-painted elements. She has also connected with the generative art community through Instagram and been invited to online group shows. She sells occasional art prints online (~$150 from recent sales). The exhibitions bridge her scientist and artist identities — generative art uses her coding skills while acrylics express her visual aesthetic.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for gallery events or painting sessions + messenger discussions about exhibition planning, print sales, or artistic development + Instagram references"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "hobbies_and_recreation",
+      "question": "Alicia is building a DIY electronics project at home. What is it, and what does it reveal about her personality?",
+      "ground_truth": "A Raspberry Pi weather station with temperature, humidity, and AQI sensors that logs data to a custom dashboard. This connects to her professional skills (Python, data visualization), her environmental concerns (AQI monitoring for allergies and wildfire smoke, D4), and her maker identity (Arduino projects at hackathons). It reveals: (1) she applies professional skills to personal life, (2) her environmental health management is data-driven, (3) she tinkers and builds for the joy of it, (4) the AQI sensor has practical daily value given Chico's smoke and pollen conditions.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 references to AQI dashboard + messenger discussions about weather station, sensor readings, or air quality data + calendar entries for tech/project time"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "What can you infer about Alicia's romantic life from the logs?",
+      "ground_truth": "She is divorced (finalized ~2 years ago after marrying her college boyfriend at 23; together ~3 years total, married less than 2). The career choice to stay in Chico contributed to the divorce. Not currently dating — 'not closed off but not actively looking.' She acknowledges Chico's small dating pool. Post-divorce, she went through identity reconstruction: threw herself into work, rediscovered painting, joined hiking club, adopted Luna, reconnected with friends. She still experiences episodic loneliness, especially on unplanned weekend evenings, which she manages through calling friends, coffee shop ambient presence, and reframing as 'chosen solitude.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Absence of romantic partner in calendar/social patterns + messenger references to managing alone time + evidence of solo-living patterns (painting at 2 AM, Luna companionship)"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "Alicia has a pet. What evidence in the logs reveals this, and what role does the pet play in her daily life?",
+      "ground_truth": "Luna, a 3-year-old tabby cat adopted from Butte Humane Society approximately 1.5 years ago, around the time of her divorce. Luna curls up on Alicia's desk while she codes, is vocal, and provides companionship during solitary evenings. Luna costs about $60/month and is part of the post-divorce identity reconstruction — adopting her was one of several deliberate steps to build a new life. During the 5-day emotional withdrawal episode, Luna was a comfort presence for binge-watching TV. Luna is listed as a counter-strategy for loneliness alongside calling friends and going to coffee shops.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any messenger references to Luna or cat care + calendar entries that might reference pet needs + messenger discussions about solo evenings or companionship"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "Alicia collaborates with researchers at another university. What do you know about this collaboration from the logs?",
+      "ground_truth": "Active UC Davis collaboration on multilingual generative language models, started approximately 3 months before the logged period. Standing meetings on Monday, Wednesday, and Thursday. Alicia's bilingual Spanish/English background is an asset to the project. She is co-authoring a paper with the UC Davis collaborator. The collaboration required an internal multilingual demo this month (D1) that turned into a crunch cycle. She is learning to be more disciplined about documentation through this collaboration.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for UC Davis standing meetings (Mon/Wed/Thu) + D1 demo prep blocks + messenger sessions about collaboration logistics, demo anxiety, and paper progress"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Alicia's relationship with her parents manifest in the logs? What specific patterns show her involvement in their lives?",
+      "ground_truth": "Rosa (57): near-daily phone calls (sometimes real conversations, sometimes check-ins), food sent via cooler bag on the bus, coordinated her delayed annual physical (D2), Alicia monitors Rosa's health-avoidance behavior and tries to prevent necessary steps from 'turning invisible.' Carlos (60): quieter, shows love through action (drives to Chico to fix things unprompted), more frequent calls since divorce, approaching retirement with knee problems — Alicia and Diego plan financial support. Twice-monthly Sacramento visits (1.5 hours each way). Extended family in Sacramento (tias, cousins). Holiday gatherings at parents' house with 25+ people.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D2 sessions about Rosa's physical + calendar entries for Sacramento visits + Rosa and Diego messenger sessions showing different family dynamics"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "Alicia uses traditional remedies alongside Western medicine. What evidence shows this dual approach?",
+      "ground_truth": "Traditional Colombian remedies from mother Rosa: agua de panela with lime for colds, chamomile tea and warm compress for stomachache, arnica cream for bruises. Western medicine: OTC antihistamines for spring allergies, ibuprofen for headaches, 6 sessions of physical therapy for neck/shoulder injury, hourly stretch reminders per PT, ergonomic chair/monitor setup, fully up to date on vaccinations including all COVID rounds. Personal hybrid: herbal teas (chamomile for sleep, ginger for digestion), turmeric capsules for inflammation. She trusts CDC, peer-reviewed journals, and her doctor while maintaining cultural health practices.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to herbal remedies, teas, or mother's health advice + calendar entries for PT-recommended activities + discussions about health management approaches"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "Alicia has a side concern about equity and fairness in her professional field. What is it, and how does she act on it?",
+      "ground_truth": "She is concerned about algorithmic bias and fairness in AI. Actions: (1) Initiated a lab reading group on bias in AI and equity in tech after George Floyd-related lab conversation; (2) Wrote a blog post on algorithmic fairness for the lab website that became part of her professional identity ('I'm the person who asks the equity question'); (3) Mentors Latina undergraduates through Technolatinas; (4) Her experiences as the only brown person at conferences inform her perspective; (5) Algorithmic accountability is now one of her core political interests connecting professional expertise to civic engagement. This is woven into both D5 (reading group prep) and her broader identity.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D5 reading group prep discussions + calendar entries for reading group and Technolatinas + messenger sessions about fairness, equity, or the experience of being a Latina in tech"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "What role does painting play in Alicia's mental health management, and how is it integrated into her routine?",
+      "ground_truth": "Painting is her primary anxiolytic: 'Something about working with my hands and focusing on color and texture just shuts off the anxious part of my brain.' She paints on Tuesday evenings and Saturday afternoons in her apartment studio corner (art supplies spread on dining table). She listens to ambient music or cumbia while painting. She posts finished work on Instagram (~800 followers) and has sold prints (~$150). Painting was rediscovered post-divorce as part of identity reconstruction. The ability to paint at 2 AM and leave supplies out is something she explicitly values about living alone. It is one element of a multi-modal coping toolkit alongside yoga, cooking, journaling, and social support.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Calendar entries for painting sessions + messenger discussions about art as stress relief + late-night painting references during or after stressful periods"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "fashion_and_appearance",
+      "question": "What can you infer about Alicia's personal style and appearance from the logs?",
+      "ground_truth": "Minimal information emerges directly, but patterns indicate a practical, bike-friendly, outdoor-oriented lifestyle suggesting casual dress. The one notable accessory is a crucifix necklace given by her grandmother, which she wears as a heritage marker and connection to her abuela rather than a statement of theological belief. Her daily biking commute, hiking, and yoga practice would shape practical clothing choices. No other fashion details emerged in 109 interview questions, suggesting appearance is not a major identity domain for her.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Any references to the crucifix necklace + bike/outdoor activity context implying practical dress + absence of appearance-focused discussions"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "social_and_relationships",
+      "question": "How does Alicia handle loneliness, and what strategies has she developed?",
+      "ground_truth": "Episodic loneliness since divorce, especially on unplanned weekend evenings. Strategies: (1) Calling Diego or Priya for verbal processing; (2) Going to Naked Lounge coffee shop for ambient human presence; (3) Reframing as 'chosen solitude' — deliberate cognitive restructuring; (4) Luna's companionship; (5) Painting or reading as productive solitude activities. She learned during divorce that 'having people who listen without fixing is essential.' Her social calendar (board games, hiking, yoga, FaceTime with abuela) provides structure that prevents isolation from accumulating. The 5-day withdrawal episode after convergent setbacks shows what happens when these strategies are overwhelmed.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger sessions about managing alone time + evidence of social anchors maintained during stress periods + references to coffee shop visits or calling friends on quiet evenings"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "home_and_lifestyle",
+      "question": "What evidence suggests Alicia uses systematic tracking and data to manage different areas of her life?",
+      "ground_truth": "Systematic tracking across domains: (1) Budget spreadsheet (developed post-divorce, updated weekly-biweekly, tracks spending by category); (2) Social media app timers (20 min per platform per session); (3) Hourly stretch reminders on work computer per PT; (4) Raspberry Pi weather station with AQI sensor logging to custom dashboard; (5) Attempted bedtime alarm reminders (snoozes them); (6) Calendar used to prevent things from 'turning invisible' (D2: scheduling Rosa's next physical so it doesn't vanish). This reflects a data-driven personality that extends her professional computational skills into personal life management.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D4 AQI dashboard references + D2 calendar-as-tracking references + financial planning discussions + evidence of systematic approach to scheduling and health"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "cultural_and_linguistic",
+      "question": "How does Alicia's bilingualism manifest in her daily life and professional work?",
+      "ground_truth": "Grew up speaking Spanish exclusively at home per mother's insistence ('En esta casa se habla espanol'), code-switching between home and school without thinking about it. Current manifestations: near-daily Spanish calls with Rosa, weekly Spanish FaceTime with abuela in Colombia, Spanish-language Mass at St. John the Baptist, active in Discord server with other Colombian scientists. Professionally: her bilingual background is an explicit asset in the UC Davis multilingual language model collaboration. She helped tia Marta navigate vaccine misinformation in Spanish-language Facebook groups by translating clinical trial data in person. Bilingualism bridges her personal and professional identities.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "UC Davis collaboration references highlighting bilingual asset + family calls in Spanish context + messenger sessions switching between English and Spanish-language references"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "health_and_wellness",
+      "question": "What is Alicia's relationship with alcohol, and what self-regulation pattern did she develop?",
+      "ground_truth": "Moderate social drinker: 1-2 craft beers or wine weekly, more on social weekends. During her divorce, she noticed an increased nightly wine consumption pattern that lasted several weeks. She recognized the pattern herself, pulled back, and deliberately redirected to yoga and hiking as alternative coping strategies. She also used marijuana recreationally a handful of times (last ~4 months ago at a friend's birthday). The alcohol self-correction demonstrates high self-monitoring ability and proactive behavioral adjustment — she caught the pattern before it became entrenched.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Social event contexts where casual drinking might be referenced + evidence of self-monitoring patterns in other domains + messenger discussions about self-regulation or coping strategy development"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "demographer_summary",
+      "question": "What is Alicia's educational and family background, and how does it contrast with her current socioeconomic position?",
+      "ground_truth": "Parents are working-class immigrants from Colombia: father Carlos (60) is a maintenance supervisor at Valley Properties in Sacramento for 20 years (high school education in Colombia), mother Rosa (57) had partial college in Colombia in early childhood education, worked as a daycare teaching assistant and now does part-time babysitting/housekeeping. Brother Diego (25) works in music production in LA. Alicia's BS in Computer Science from Chico State represents significant upward intergenerational mobility. Yet she earns $69,600/yr in research rather than potential six figures in industry — a deliberate values-based choice that keeps her closer to her family's financial reality than her credentials would normally place her.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Evidence of high technical capability coexisting with budget consciousness + family interaction patterns suggesting working-class background + career discussions about choosing research over industry"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "life_events_and_transitions",
+      "question": "Alicia experienced a severe emotional episode approximately six months ago. What can you piece together about what happened and how she recovered?",
+      "ground_truth": "A paper rejection with harsh feedback coincided with her father Carlos's knee health flare-up and the anniversary week of her wedding. The convergence of these three stressors triggered a 5-day withdrawal: social isolation, binge TV with Luna, cereal for dinner, stopped answering messages. Recovery was catalyzed by Priya showing up unannounced with soup. This episode led Alicia to develop the 48-hour grace period strategy: she now allows herself 2 days of disappointment after rejections, then actively responds with a revision plan and peer consultation. The experience also strengthened her multi-layered coping scaffold.",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Messenger references to the 48-hour grace period or past difficult episodes + evidence of Priya's critical support role + pattern of proactive recovery scheduling visible in D1/D5"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "work_and_career",
+      "question": "How do Alicia's crunch cycles (D1, D5) reflect her broader personality patterns?",
+      "ground_truth": "The crunch cycles mirror her core tensions: high openness drives exploratory tangents that eat into deadlines, moderate-to-high conscientiousness keeps her from abandoning work but not from overextending, and night-owl creativity sacrifices the sleep that sustains her. Both D1 and D5 show the same arc: initial confidence ('I can handle the actual work'), recognition that scope is growing ('every finished task reveals three smaller ones'), needing external perspective ('somebody outside the room to remind me that finishing and overworking are not the same virtue'), exhausted satisfaction when it holds together, and post-crunch reflection to capture lessons. The pattern is self-aware but not yet self-correcting — she recognizes it in hindsight and tries to 'record what helped this time before normal life erases the evidence.'",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "D1 and D5 messenger sessions showing parallel arc + calendar intensity patterns + post-crunch reflection entries + evidence of self-awareness about recurring patterns"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "source_preference": "psychologist_summary",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Alicia. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?",
+      "ground_truth": "Core traits: High Openness to Experience (creative across painting, generative art, DIY electronics, speculative fiction; integrates dual Colombian/American and scientist/artist identities), moderate-to-high Conscientiousness (disciplined finances and career commitment but consistently undermined by night-owl creative sessions and deadline slippage), moderate Extraversion (rich social network with deep solitude needs; reframes aloneness as 'chosen solitude'), high Agreeableness (mentoring-oriented, family-devoted, community-serving, conflict-avoidant but speaks up on equity), moderate and effortfully managed Neuroticism (performance anxiety, nighttime career-comparison rumination, convergent-stressor vulnerability). Greatest strengths: multi-modal emotional regulation toolkit (yoga, painting, cooking, social support, journaling, breathing exercises), systematic self-monitoring (budget spreadsheet, app timers, AQI dashboard), ability to maintain social scaffold as behavioral activation, cultural bridging between Colombian heritage and American professional life. Most significant vulnerabilities: financial precarity from values-based career choice ($69,600 on tight margin with aging parents), perfectionist overwork cycles (D1/D5), convergent-stressor collapse (5-day withdrawal when paper rejection + father's health + anniversary converged), episodic loneliness post-divorce, career-comparison distress ('ambient hum of am I doing enough'), and the unresolved question of whether to seek therapy (gradually warming to the idea through Priya's influence).",
+      "evidence_type": "multi_source_reasoning",
+      "expected_evidence": "Full synthesis across all themes (T1-T5), dynamic events (D1-D6), calendar patterns, and messenger conversations — requires holistic reading of the entire log corpus"
+    }
+  ]
+}

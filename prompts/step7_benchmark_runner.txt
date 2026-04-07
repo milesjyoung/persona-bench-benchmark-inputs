@@ -1,0 +1,120 @@
+SYSTEM:
+
+You are running a benchmark evaluation for Persona-Bench. Your job is to simulate
+what an LLM would do when given ONLY app logs and asked questions about a persona.
+
+────────────────────────────────────────────────────────────────
+CRITICAL CONSTRAINT
+────────────────────────────────────────────────────────────────
+
+You must answer questions based ONLY on the raw app logs provided.
+You know NOTHING about this persona except what the logs tell you.
+Do NOT use any profile, seed data, interview, or verification files.
+
+────────────────────────────────────────────────────────────────
+INPUTS
+────────────────────────────────────────────────────────────────
+
+1. RAW APP LOGS — the messenger conversations and calendar events, presented
+   as plain text with dates, times, senders, and message content. This is the
+   ONLY context the LLM under test receives.
+
+2. TEST CASES — a JSON file containing questions with ground truth answers.
+   Select a representative sample across all 4 types:
+   - 3 Type 1 (simple fact-check)
+   - 2 Type 2 (cross-log)
+   - 2 Type 3 (dynamic tracking)
+   - 8 Type 4 (reasoning)
+   Total: 15 sampled test cases.
+
+────────────────────────────────────────────────────────────────
+PROCESS
+────────────────────────────────────────────────────────────────
+
+1. Read the ENTIRE raw app logs file.
+2. For each selected test case:
+   a. Read the question.
+   b. Answer it based ONLY on what you found in the raw logs.
+   c. Read the ground_truth from the test case file.
+   d. Score your answer:
+      - CORRECT (1.0): captures the key facts in the ground truth
+      - PARTIAL (0.5): got some key facts but missed significant ones
+      - INCORRECT (0.0): missed the main point or got it wrong
+   e. Explain what you got right and what you missed.
+3. Calculate overall accuracy: total score / number of cases = X%
+4. Report accuracy by type.
+
+────────────────────────────────────────────────────────────────
+PREPARING RAW LOGS FROM APP LOG JSON
+────────────────────────────────────────────────────────────────
+
+The app logs JSON file contains metadata, theme plans, and cross-app indices
+that the LLM under test should NOT see. Extract only the raw text:
+
+For messenger sessions (both meaningful_sessions and filler_sessions):
+  - Sort all sessions by date, then by first message time
+  - Format each session as:
+      --- {date} | {persona_name} <-> {other_person} ---
+      [{time}] {sender}: {text}
+
+For calendar events:
+  - Sort by date, then start_time
+  - Format each event as:
+      {date} | {start_time}-{end_time} | {title} | @ {location} |
+      with {participants} | Notes: {notes}
+
+Strip: metadata, theme_plan, persona_inputs_used, cross_app_index,
+       token_stats, session_id, theme_ids, dynamic_event_ids, event_id
+
+────────────────────────────────────────────────────────────────
+OUTPUT FORMAT
+────────────────────────────────────────────────────────────────
+
+{
+  "metadata": {
+    "persona": "{name}",
+    "test_date": "YYYY-MM-DD",
+    "cases_evaluated": 15,
+    "model_used": "model name and version",
+    "raw_log_tokens": approximate token count
+  },
+  "overall_accuracy": "X.X%",
+  "accuracy_by_type": {
+    "type_1_simple_fact_check": "X%",
+    "type_2_cross_log_fact_check": "X%",
+    "type_3_dynamic_preference_tracking": "X%",
+    "type_4_reasoning": "X%"
+  },
+  "evaluations": [
+    {
+      "test_case_id": "TC-XX",
+      "type": "type_X",
+      "question": "...",
+      "answer_from_logs": "what the LLM answered based on raw logs only",
+      "ground_truth": "the correct answer from the test case file",
+      "score": "CORRECT|PARTIAL|INCORRECT",
+      "score_value": 1.0,
+      "explanation": "what was right, what was missed, and why"
+    }
+  ]
+}
+
+────────────────────────────────────────────────────────────────
+SCORING GUIDELINES
+────────────────────────────────────────────────────────────────
+
+CORRECT: The answer identifies the core facts. Minor details may be
+  missing (e.g., exact dollar amount not mentioned but the financial
+  pattern is correctly identified).
+
+PARTIAL: The answer identifies the right theme or topic area but misses
+  significant specific facts. Example: identifies "financial stress"
+  but can't name any specific income sources or amounts.
+
+INCORRECT: The answer is wrong, addresses a different topic, or fails
+  to identify any relevant information from the logs.
+
+TARGET: Overall accuracy should land around 40-50% for a well-calibrated
+benchmark. If accuracy is significantly higher, the test cases may be
+too easy or the logs too explicit. If significantly lower, the logs may
+lack sufficient evidence for the test cases.
