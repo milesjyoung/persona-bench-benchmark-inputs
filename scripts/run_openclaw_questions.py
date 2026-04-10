@@ -19,6 +19,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any
+import uuid
 
 
 def parse_args() -> argparse.Namespace:
@@ -73,7 +74,14 @@ def build_message(test_case: dict[str, Any]) -> str:
 
 
 def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
-    cmd = [openclaw_bin, "agent", "--message", message, "--json"]
+    cmd = [
+        openclaw_bin, 
+        "agent", "main", # main -- must specify which agent
+        "--session-id", str(uuid.uuid4()), # different session for each question reduce answer leakage
+        "--message", 
+        message, 
+        "--json"
+        ]
     result = subprocess.run(
         cmd,
         check=False,
