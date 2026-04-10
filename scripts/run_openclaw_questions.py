@@ -99,11 +99,16 @@ def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
             f"STDERR:\n{result.stderr}"
         )
 
+    raw_output = result.stdout.strip() or result.stderr.strip()
+    json_start = raw_output.find("{")
+    if json_start != -1:
+        raw_output = raw_output[json_start:]
+
     try:
-        return json.loads(result.stdout)
+        return json.loads(raw_output)
     except json.JSONDecodeError as exc:
         raise RuntimeError(
-            "OpenClaw did not return valid JSON on stdout.\n"
+            "OpenClaw did not return valid JSON output.\n"
             f"STDOUT:\n{result.stdout}\n"
             f"STDERR:\n{result.stderr}"
         ) from exc
@@ -118,6 +123,10 @@ def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) 
         content = raw_openclaw_json["message"].get("content")
     if content is None and isinstance(raw_openclaw_json.get("content"), str):
         content = raw_openclaw_json["content"]
+    if content is None and isinstance(raw_openclaw_json.get("payloads"), list):
+        payloads = raw_openclaw_json["payloads"]
+        if payloads and isinstance(payloads[0], dict):
+            content = payloads[0].get("text")
 
     if content is None:
         # Preserve the raw payload even if the output shape differs from what we expect.
@@ -132,8 +141,16 @@ def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) 
 
     # Best case: the model itself returned the requested JSON string.
     if isinstance(content, str):
+        stripped = content.strip()
+        if stripped.startswith("```"):
+            lines = stripped.splitlines()
+            if lines and lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            stripped = "\n".join(lines).strip()
         try:
-            parsed = json.loads(content)
+            parsed = json.loads(stripped)
             if isinstance(parsed, dict):
                 parsed.setdefault("test_case_id", test_case_id)
                 parsed["raw_response"] = raw_openclaw_json
@@ -141,7 +158,7 @@ def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) 
         except json.JSONDecodeError:
             return {
                 "test_case_id": test_case_id,
-                "answer": content,
+                "answer": stripped,
                 "confidence": None,
                 "evidence": [],
                 "raw_response": raw_openclaw_json,
