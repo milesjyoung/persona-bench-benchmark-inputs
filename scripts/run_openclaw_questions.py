@@ -99,19 +99,38 @@ def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
             f"STDERR:\n{result.stderr}"
         )
 
-    raw_output = result.stdout.strip() or result.stderr.strip()
-    json_start = raw_output.find("{")
-    if json_start != -1:
-        raw_output = raw_output[json_start:]
+    parsed = extract_openclaw_json(result.stdout, result.stderr)
+    if parsed is not None:
+        return parsed
 
-    try:
-        return json.loads(raw_output)
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(
-            "OpenClaw did not return valid JSON output.\n"
-            f"STDOUT:\n{result.stdout}\n"
-            f"STDERR:\n{result.stderr}"
-        ) from exc
+    raise RuntimeError(
+        "OpenClaw did not return parseable JSON output.\n"
+        f"STDOUT:\n{result.stdout}\n"
+        f"STDERR:\n{result.stderr}"
+    )
+
+
+def extract_openclaw_json(stdout_text: str, stderr_text: str) -> dict[str, Any] | None:
+    if stdout_text.strip():
+        try:
+            parsed = json.loads(stdout_text)
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            pass
+
+    stderr_lines = stderr_text.splitlines()
+    for index, line in enumerate(stderr_lines):
+        if line.strip() == "{":
+            candidate = "\n".join(stderr_lines[index:])
+            try:
+                parsed = json.loads(candidate)
+                if isinstance(parsed, dict):
+                    return parsed
+            except json.JSONDecodeError:
+                break
+
+    return None
 
 
 def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) -> dict[str, Any]:
