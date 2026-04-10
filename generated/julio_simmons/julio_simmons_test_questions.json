@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "persona": "Julio Simmons",
+    "persona_id": "e7035edf5bc744c9912694a7d4b2a99c",
+    "total_test_cases": 70,
+    "source_file_type": "question_only"
+  },
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Julio has a recurring social commitment on Thursday evenings. What is it, and who participates?"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Julio has a daily morning wellness routine that involves a specific device. What is it and when does he use it?"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Julio facilitates workshops at a community education venue. What is the venue called?"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Julio has a recurring weekly commitment with his parents. What is it and when?"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Julio participates in a performing arts activity on Monday evenings. What is it?"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio has been working on a major grant application this month. What is the grant for, and what evidence in both his messages and calendar suggests it's a significant time commitment?"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "A family member had a medical appointment this month. Who was it, what was it for, and how did Julio help?"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio experienced a health setback mid-month. What symptoms appeared, and what adjustments did he make to his routine? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio prepared for a public-facing event at a community education venue. What was it, and what logistical details did he handle beforehand?"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio dealt with a cash-flow issue this month related to his freelance work. What triggered it, and how is it connected to his calendar?"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio's D&D night served a dual purpose this month beyond gaming. What else was discussed, and who was involved?"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Julio coordinates with a family member about their father's care. Who is this person, what is their profession, and what evidence shows their coordination?"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "hard",
+      "question": "Julio uses multiple wellness practices in combination. Based on the app logs, identify at least three distinct health management practices and show how they appear across different sources."
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Julio's approach to the makerspace grant changed over the month. How did his strategy evolve from early March to late March?"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Julio's health routine shifted mid-month. What was his routine before the shift, and what did it look like after?"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "How did the family's approach to Karl's health situation change over the month? Track the progression from initial concern to concrete planning."
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "Julio's financial situation showed signs of strain this month. What evidence suggests a cash-flow crunch developed, and how did his behavior adapt?"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "The Brainery workshop went from preparation to execution this month. What changed in Julio's messaging about it before vs. after the event?"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the app logs, what are Julio's sources of income and how stable are they? Provide evidence for each source you identify."
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio uses social commitments as a deliberate coping mechanism. What evidence across the logs supports this interpretation, and which commitments serve this function?"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio appears to have a stress response pattern that manifests physically. Based on the logs, what physical symptoms appear, what triggers them, and how does he respond?"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio is building toward a long-term professional goal. What is it, what concrete steps has he taken this month, and what obstacles has he encountered?"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does Julio play in his family's caregiving dynamics? How do his relationships with his mother, father, and sister each function differently in this context?"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs suggests Julio is under financial pressure, even if no specific dollar amounts are mentioned?"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio maintains multiple creative and social activities simultaneously. Map out his typical weekly schedule based on the app logs. What does a normal week look like?"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio volunteers at a science museum. What is it called, what does he do there, and how does this connect to his larger professional goals?"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Julio's closest friend, and what evidence across the logs demonstrates the depth of this relationship?"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio manages his wellbeing through both proactive routines and reactive adjustments. Based on the logs, distinguish between his regular maintenance practices and his crisis-response adjustments."
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio is involved with a local arts festival. What festival, what is his involvement, and how does it connect to his other activities this month?"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio describes a tension between creative aspirations and financial realities. What specific evidence in the logs shows these two forces in conflict, and how does he try to reconcile them?"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Julio's cooking habits and how they change based on his mood or financial state? Cite specific evidence."
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Where does Julio shop for groceries, and what does his shopping pattern reveal about his values?"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical activities does Julio participate in, and how do they vary by season? What evidence shows seasonal patterns?"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio follows local sports teams. Which ones, and in what context does he engage with sports?"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Julio's relationship with nature, and how does it serve multiple functions in his life?"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Julio's media consumption habits from the logs? What does he read, watch, or listen to?"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does music play in Julio's life, and how does it connect to his other activities?"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio has a complex relationship with technology \u2014 he's highly proficient but selective about consumer tech. What evidence shows both his technical skills and his deliberate technology boundaries?"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Julio is civically engaged beyond just voting? What specific community activities does he participate in?"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What cultural heritage does Julio come from, and how does it manifest in his current life?"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What major life transitions has Julio experienced, and how do their effects show up in his current behavior patterns visible in the logs?"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Describe Julio's living situation and daily structure based on the app logs. Where does he live, what anchors his days, and what tools does he use to stay organized?"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Julio's relationship with his sister Greta differ from his relationship with his friend Marcus? What evidence shows each relationship serves a different function?"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Priya Nair's role in Julio's life, and what activities connect them?"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Theo Vasquez's connection to Julio, and what activities do they share?"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Julio prioritizes meaningful work over financial stability? Is this a deliberate choice or a circumstance?"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio appears to have a pattern of intense creative work followed by periods of exhaustion. What evidence in the logs supports this cycle?"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Julio handle perfectionism, and where does it show up in the logs?"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical stress symptoms does Julio experience, and what triggers them? Cite evidence from the logs."
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Julio consume news and information? What can you infer about his trust in different information sources?"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What apps and digital tools does Julio use regularly, and what does each one serve?"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What political values does Julio hold, and how do they translate into concrete actions visible in the logs?"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Julio's travel habits and constraints from the logs?"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio has a creative project he's been developing long-term. What is it, and what evidence suggests it's important to him?"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio is a Dungeon Master for a tabletop RPG campaign. What does this activity reveal about his personality and skills?"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What backup career plans does Julio have if his makerspace dream doesn't work out? What evidence suggests he's thought about this?"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Julio's romantic life from the logs?"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio has a pet. What evidence in the logs reveals this, and what role does the pet play in his daily life?"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio monitors his blood pressure at home. What other evidence suggests cardiovascular health is a concern, and what behavioral changes has he made?"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does meditation play in Julio's life, and how is it integrated into his daily routine?"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio has experience with grant writing. What does the evidence suggest about his grant history and current application?"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What artistic influences shape Julio's creative work, and in what mediums does he work?"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Julio's relationship with his parents manifest in the logs? What specific patterns show his involvement in their lives?"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Julio uses systematic tracking and data to manage different areas of his life?"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio has niece and nephew he's close to. What do you know about them and his relationship with them?"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Julio's relationship with alcohol, and what rules has he established for himself?"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Julio's educational background, and how does it contrast with his current employment status?"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Julio takes a prescription medication. What evidence in the logs suggests this, and what behavioral effects does it have?"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Julio's approach to the makerspace grant reflect his broader personality patterns?"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Julio. What are his core personality traits, his greatest strengths, and his most significant vulnerabilities?"
+    }
+  ]
+}

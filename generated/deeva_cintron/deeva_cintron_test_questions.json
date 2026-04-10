@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "persona": "Deeva Cintron",
+    "persona_id": "f2f5dbaf4d3d43f68adeb7f318afa3a2",
+    "total_test_cases": 70,
+    "source_file_type": "question_only"
+  },
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Deeva has a recurring social commitment on Thursdays. What is it, and who participates?"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Deeva follows a specific dietary restriction prescribed by her doctor. What is it, and how does she adapt her cooking?"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Deeva volunteers at a community institution on Fridays. What is it, and what does she do there?"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Deeva tends a garden. What does she grow, and what structure does Harold build for her?"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Deeva participates in a regular exercise activity. What is it, and when does it happen?"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva organized a major event at the senior center this month. What was it, and what evidence in both her messages and calendar shows the scope of her involvement?"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Harold had a medical appointment this month. What was it for, and how did Deeva manage the logistics? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva prepared for a church event that combined food and crafts. What was it, and what logistical details did she handle? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva experienced a health setback mid-month. What symptoms appeared, and what adjustments did she make? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva worked on planning a special trip this month. Where does she want to go, and what financial considerations shaped the planning? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva organized a family outdoor project this month. What was it, and who helped? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva uses an analog financial tracking system. What evidence across both messages and calendar shows how this system works in practice?"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Deeva has a close friend she walks and plays bridge with. Who is this person, and what evidence shows their relationship across different sources?"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Deeva's approach to the spring luncheon changed over the first half of March. How did her strategy evolve from initial planning to post-event reflection?"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Deeva's health routine shifted in the second half of March. What was her routine before the shift, and what did it look like after?"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "How did the household's approach to Harold's health management change over the month? Track the progression from the appointment through follow-up adjustments."
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "The Paducah trip planning evolved from a dream into a concrete budget exercise. How did Deeva's relationship with this trip change from late March through early April?"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "The church fish fry went from preparation to execution this month. What changed in Deeva's messaging about it before vs. after the event?"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the app logs, what are Deeva's sources of household income and how does she manage expenses? Provide evidence for the financial system you observe."
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva uses weekly social commitments as anchors for her routine. What evidence across the logs supports this interpretation, and which commitments serve this function?"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva manages her health through multiple overlapping systems rather than a single approach. Based on the logs, identify at least four distinct health management practices and show how they appear across different sources."
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva is a prolific quilter. What evidence in the logs reveals her quilting habits, and what functions does quilting serve in her life beyond hobby?"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does Deeva play in Harold's daily care, and how does this caregiving manifest in the logs without being explicitly labeled as caregiving?"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Deeva's cooking habits and how they connect to her financial management?"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Deeva is deeply embedded in her community beyond personal relationships? What specific civic activities does she participate in?"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Patricia Cintron's role in Deeva's life, and what evidence across the logs demonstrates the breadth of their relationship?"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs suggests Deeva has a rigid daily schedule? Map out what a typical day looks like based on the patterns."
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva uses home remedies alongside conventional medicine. What are her home remedies, where did she learn them, and how do they coexist with her doctor's care?"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Deeva's relationship with nature, and how does it serve multiple functions in her life?"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Deeva's entertainment preferences from the logs? What does she read, watch, or listen to?"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has a complex relationship with technology. What evidence shows both her minimal tech use and her deliberate preference for analog methods?"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What political values does Deeva hold, and how do they translate into concrete actions visible in the logs?"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What family structure does Deeva have, and how do the different family members contribute to the household's functioning?"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What sports and fitness activities does Deeva engage with, and what physical limitations shape her participation?"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What artistic and cultural influences shape Deeva's creative work, and in what mediums does she create?"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does music play in Deeva's daily life, and how is it integrated into her routines?"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva consume news and information? What can you infer about her trust in different information sources?"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What cultural heritage does Deeva come from, and how does it manifest in her current daily life?"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What major life transitions has Deeva experienced, and how do their effects show up in her current behavior patterns visible in the logs?"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Describe Deeva's living situation and household management based on the app logs. Where does she live, what anchors her household, and what tools does she use to stay organized?"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva's relationship with Dorothy Krause differ from her relationship with Linda Farrell? What evidence shows each relationship serves a different function?"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Robert Cintron's role in Deeva's life, and what activities connect them?"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical limitations does Deeva manage, and what triggers worsen her symptoms? Cite evidence from the logs."
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva treats her volunteer commitments with professional rigor. What evidence across the logs demonstrates this professional approach?"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Deeva has a pronounced pattern of loss aversion and financial control? How does this pattern appear in both routine behaviors and reactions to financial challenges?"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva appears to have a pattern of using routine as emotional regulation. What evidence in the logs supports this interpretation?"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva handle stress and worry? What coping mechanisms are visible in the logs?"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has a car and specific driving limitations. What evidence in the logs reveals her transportation situation and how she manages it?"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva's food preparation connects her to her mother's traditions. What evidence links her current cooking to her family heritage?"
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva watches birds in her backyard. What system does she use, and what does this hobby reveal about her personality?"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What tools and systems does Deeva use to manage her daily life, and what does her tool preference reveal about her values?"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Deeva's closest non-family friend, and what evidence across the logs demonstrates the depth of this relationship?"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Deeva's travel habits and constraints from the logs?"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has a specific crossword puzzle habit. What does this activity, combined with her other detail-oriented habits, reveal about her cognitive patterns?"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva resists being perceived as a burden. What evidence across the logs shows this pattern, and how does it affect her relationships?"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has an unfulfilled educational aspiration. What is it, and what evidence suggests it matters to her?"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Deeva's relationship with Harold from the logs?"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva sees a doctor regularly. What evidence in the logs suggests her healthcare relationship, and what does her approach to medical authority reveal?"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does faith play in Deeva's daily life? Describe the specific behavioral practices rather than beliefs."
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Deeva is under financial constraint, even if no specific dollar amounts are mentioned in the logs?"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva's relationship with her son James differ from her relationships with Robert and Patricia?"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Deeva's educational background, and how does it relate to her current volunteer work and daily competencies?"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva's relationship with her grandchildren manifest, and what intergenerational influence has occurred?"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Deeva uses systematic tracking and documentation to manage different areas of her life?"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has experienced significant losses in her generation. What evidence suggests this shapes her current emotional baseline?"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Deeva's relationship with alcohol and dining out?"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva has a competitive streak that manifests in specific domains. Where does it show up, and how does it differ from interpersonal aggression?"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Deeva manages nighttime worry through a specific behavioral strategy. What is it, and how does this self-developed technique compare to her other coping methods?"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Deeva's approach to the senior center spring luncheon reflect her broader personality patterns?"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Deeva. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?"
+    }
+  ]
+}

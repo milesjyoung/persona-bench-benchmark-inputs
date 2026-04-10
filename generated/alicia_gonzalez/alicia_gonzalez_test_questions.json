@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "persona": "Alicia Gonzalez",
+    "persona_id": "50f90a6f17de473f9ca15f00afdedf7a",
+    "total_test_cases": 70,
+    "source_file_type": "question_only"
+  },
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Alicia has a recurring social commitment on Friday evenings. What is it, and who participates?"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Alicia practices a specific form of yoga on a regular schedule. What type, when, and where?"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Alicia volunteers as a tutor at a community venue. What does she teach, how often, and who are her students?"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Alicia has a recurring Saturday outdoor activity. What is it and who joins her?"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Alicia has a regular weekly call with a family member in another country. Who is it and when?"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia had a major work deadline this month involving a collaboration with another university. What was the project, and what evidence in both her messages and calendar suggests it was a significant time commitment?"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "A family member had a medical appointment this month that Alicia helped coordinate. Who was it, what was the appointment for, and what logistical support did Alicia provide?"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia had to adjust her outdoor routine mid-month due to environmental conditions. What happened, and what changes did she make? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia faced a second intellectual crunch late in the month involving two overlapping work obligations. What were they, and how did she handle the pressure?"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia was planning a trip that required careful financial coordination. What was the trip, and what financial constraints affected the planning?"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia had a social event late in the month that served as a reset after two hard work runs. What was it, and what preparation did it require?"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia's sleep patterns and self-care routines visibly deteriorate during deadline weeks. What evidence across both calendar and messages shows this pattern?"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Alicia mentors younger students through a specific program. What is the program, and how does her mentoring connect to her own background?"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Alicia's approach to the UC Davis multilingual demo changed over the course of the crunch. How did her strategy and emotional state evolve from early March to mid-March?"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Alicia's outdoor routine shifted mid-month due to environmental factors. What was her routine before the shift, and what did it look like after?"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "How did the family's approach to Rosa's medical appointment evolve over the month? Track the progression from initial resistance to follow-through."
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "Alicia's Colombia trip planning evolved from anxiety to intentional budgeting. What triggered the shift, and how did her emotional relationship with the planning change?"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "How did Alicia's handling of the grant budget and reading-group prep crunch evolve compared to the earlier UC Davis demo crunch (D1)?"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the app logs, what is Alicia's job and what does her research focus on? What evidence reveals the nature of her work?"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia uses social commitments as deliberate coping mechanisms. What evidence across the logs supports this interpretation, and which commitments serve this function?"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia appears to have a stress response pattern that manifests physically. Based on the logs, what symptoms appear, what triggers them, and how does she respond?"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia is building toward multiple long-term professional goals. What are they, what steps has she taken this month, and what obstacles has she encountered?"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does Alicia play in her family's caregiving dynamics? How do her relationships with her mother, father, and brother each function differently?"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs suggests Alicia manages her finances carefully, even if specific dollar amounts are rarely mentioned?"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia maintains multiple creative and social activities simultaneously. Map out her typical weekly schedule based on the app logs. What does a normal week look like?"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia is civically engaged beyond just voting. What specific community activities does she participate in, and what drives her civic involvement?"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Alicia's closest friend, and what evidence across the logs demonstrates the depth of this relationship?"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia uses multiple wellness practices in combination. Based on the app logs, identify at least four distinct health management practices and show how they appear across different sources."
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Alicia's cooking habits and how they change based on her stress level? Cite specific evidence."
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Alicia's relationship with nature, and how does it serve multiple functions in her life?"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Where does Alicia shop for groceries, and what does her shopping pattern reveal about her values?"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical activities does Alicia participate in, and how are they distributed across her week?"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Alicia's media consumption and entertainment habits from the logs?"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does music play in Alicia's life, and how does it connect to her cultural identity?"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia has a complex relationship with technology \u2014 she's highly proficient but maintains deliberate digital boundaries. What evidence shows both her technical expertise and her intentional limits?"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What artistic activities does Alicia practice, and how do they integrate her scientist and artist identities?"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What cultural heritage does Alicia come from, and how does it manifest in her current life?"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia's relationship with her brother Diego differ from her relationship with her friend Priya? What evidence shows each relationship serves a different function?"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Describe Alicia's living situation and daily environment based on the app logs. Where does she live, what anchors her days, and what shapes her home life?"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia made a defining career decision after graduation. What was it, and what evidence suggests it continues to shape her life?"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What major life transitions has Alicia experienced, and how do their effects show up in her current behavior patterns visible in the logs?"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia lives in a region with significant environmental challenges. What are they, and how do they affect her daily life and routines?"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Tom's role in Alicia's life, and what activities connect them?"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia participates in an online community of professionals with a shared background. What is it, and what function does it serve?"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Alicia's travel patterns and constraints from the logs?"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Alicia prioritizes meaningful work over financial stability? Is this a deliberate choice or a circumstance?"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia appears to have a pattern of intense work followed by periods of exhaustion. What evidence in the logs supports this cycle?"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia handle perfectionism, and where does it show up in the logs?"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia manages her wellbeing through both proactive routines and reactive adjustments. Based on the logs, distinguish between her regular maintenance practices and her crisis-response adjustments."
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia consume news and information? What can you infer about her trust in different information sources?"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What digital tools and platforms does Alicia use regularly, and what does each one serve?"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What political values does Alicia hold, and how do they translate into concrete actions visible in the logs?"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia has exhibited artwork at a local gallery. What do you know about her exhibition history and future plans?"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia is building a DIY electronics project at home. What is it, and what does it reveal about her personality?"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Alicia's romantic life from the logs?"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia has a pet. What evidence in the logs reveals this, and what role does the pet play in her daily life?"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia collaborates with researchers at another university. What do you know about this collaboration from the logs?"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia's relationship with her parents manifest in the logs? What specific patterns show her involvement in their lives?"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia uses traditional remedies alongside Western medicine. What evidence shows this dual approach?"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia has a side concern about equity and fairness in her professional field. What is it, and how does she act on it?"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does painting play in Alicia's mental health management, and how is it integrated into her routine?"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Alicia's personal style and appearance from the logs?"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia handle loneliness, and what strategies has she developed?"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Alicia uses systematic tracking and data to manage different areas of her life?"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Alicia's bilingualism manifest in her daily life and professional work?"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Alicia's relationship with alcohol, and what self-regulation pattern did she develop?"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Alicia's educational and family background, and how does it contrast with her current socioeconomic position?"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Alicia experienced a severe emotional episode approximately six months ago. What can you piece together about what happened and how she recovered?"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How do Alicia's crunch cycles (D1, D5) reflect her broader personality patterns?"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Alicia. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?"
+    }
+  ]
+}

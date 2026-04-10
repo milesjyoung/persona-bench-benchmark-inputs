@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "persona": "Maria Buendia",
+    "persona_id": "5237e90a0ca3460dbbcba20adb61922f",
+    "total_test_cases": 70,
+    "source_file_type": "question_only"
+  },
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Maria's children participate in organized weekly activities. What does each child do, and on which days?"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Maria participates in a weekly cultural dance activity. What is it, when does it take place, and where?"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Maria attends a weekly wellness class. What is it, when does she go, and how much does it cost?"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Maria attends a weekly religious service. What church does she go to, and what day?"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Maria is studying for a specific credential. What is it, and how is she preparing?"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria dealt with a scheduling collision this month involving her children's activities and her husband's work. What happened, and how did she manage it?"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria made concrete progress on her education this month. What specific step did she take, and what practical details concerned her?"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria helped organize a cultural performance event this month. What was it, and what logistics did she handle?"
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "A family member had a medical appointment this month that disrupted the household's childcare arrangements. Who was it, what was the appointment for, and how did Maria respond?"
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria took on a food-service role at a community event this month. What was it, and how did it connect to her career aspirations?"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria experienced a health flare-up late in the month. What was it, what triggered it, and what adjustments did she make?"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria and her husband have a recurring financial planning ritual. What is it, and what evidence across the logs reveals the household's financial management approach?"
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Maria coordinates care for her mother. Who else is involved in this caregiving, and how do they communicate about it?"
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Maria's approach to her GED changed over the month. How did it evolve from early March to late March?"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "The Spring Folklorico Showcase went from preparation to execution this month. How did Maria's focus shift before versus after the event?"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "How did the household's approach to Rosa Elena's childcare role change over the month after her knee appointment?"
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Maria's back pain management approach changed over the month. What was her routine before the flare-up, and what did it look like after?"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "How did Maria's household coordination strategy change after the scheduling collision between Carlos's overtime and the kids' activities?"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the app logs, what is the Buendia household's approximate monthly financial picture? What evidence reveals their income and expenses?"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who are the five people Maria communicates with most frequently in the logs, and what function does each relationship serve?"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria is described as a community organizer. What specific community roles does she fill, and what evidence in the logs demonstrates this?"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Maria's cooking habits and how food functions in her life beyond basic nutrition? Cite specific evidence."
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria manages multiple health concerns without regular doctor visits. What are they, and what alternative management strategies does she use?"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria has both short-term and long-term career aspirations. What are they, and what concrete steps toward them are visible in the logs?"
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does Maria's husband Carlos play in the household, and how does their partnership function based on the logs?"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs reveals Maria's relationship with her Mexican-American cultural identity? How does she preserve and transmit cultural traditions?"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs suggests Maria's household is under financial pressure, even if no specific dollar amounts are mentioned?"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria appears to have a stress response pattern that manifests physically. Based on the logs, what symptoms appear, what triggers them, and how does she respond?"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Lupita, and what evidence across the logs demonstrates the depth and nature of this friendship?"
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What skills has Maria developed informally, and how do they connect to her career aspirations?"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What cultural celebrations and traditions does Maria organize or participate in, and what role does each serve in her community?"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Where does Maria shop for groceries, and what does her shopping pattern reveal about her values and constraints?"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Diego and Sofia's personalities and how they differ, based on evidence in the logs?"
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria uses traditional Mexican herbal remedies as her first-line health treatment. What remedies does she use, for what ailments, and where does this knowledge come from?"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Maria's civic engagement is growing? What catalyzed her political participation, and where does she get political information?"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What digital tools does Maria use, and what does each one serve? What is notable about her technology relationship?"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is the Buendia household's approach to debt and savings? What evidence reveals their financial safety net?"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Maria's relationship with her mother Rosa Elena, and how does it function on multiple levels?"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does music play in Maria's life, and how is it connected to her other activities?"
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does the Buendia family engage with sports and physical activity? What does each family member's activity reveal?"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria earns money through informal catering. How does this business work, and what evidence suggests it could become a formal career?"
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Patricia Buendia's role in Maria's life, and how does their relationship differ from Maria's other close relationships?"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Maria's relationship with her garden, and how does it serve multiple functions in her life?"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria is bilingual. How does language function in different domains of her life? What evidence shows her navigating between Spanish and English?"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Describe Maria's typical weekly schedule based on the app logs. What anchors her days, and how does she manage competing demands?"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Maria's media consumption habits from the logs? What does she read, watch, or follow?"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Ana Lucia Mendoza's connection to Maria, and what activities bind them together?"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria moderates three Facebook community groups. What are they, and what does this community management role reveal about her position in the neighborhood?"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria responds to income shocks with multiple simultaneous strategies. What evidence suggests this pattern, and what specific strategies does she deploy?"
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Why doesn't Maria see a doctor regularly, and what does this reveal about health care access in her situation?"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What barriers prevent Maria from pursuing formal education and employment, and what is she doing to overcome them?"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Maria's caretaker identity manifest across different relationships in the logs? Who does she take care of, and at what cost to herself?"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria reads multicultural literature through a book club. What do her reading choices and the club's structure reveal about her intellectual life?"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is the physical layout and atmosphere of the Buendia household based on evidence in the logs?"
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria's extended family plays a significant role in her life. Map out the extended family network and each person's function."
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria experienced a significant emotional crisis in fall 2025. What triggered it, and how do its aftereffects show up in her current behavior visible in the logs?"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "The Dia de los Muertos festival was a turning point in Maria's self-concept. What evidence in the logs suggests she now sees herself as a capable leader rather than just a helper?"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Maria bridge different cultural communities in her neighborhood? What specific activities demonstrate cross-cultural connection?"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does the annual tax refund function in the Buendia household's financial system? What evidence suggests it is more than just extra money?"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria advocated for her son at school after a bullying incident. What happened, and what does her response reveal about her parenting approach?"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria has five distinct coping mechanisms for managing routine stress. Based on the logs, identify them and show how each appears in different sources."
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria's ultimate dream is a multicultural community hub. What would it include, and what current activities serve as prototypes?"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does the Catholic Church play in Maria's life beyond spiritual practice? How does St. Patrick's function as an institutional hub?"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests the Buendia family is marginally above government assistance thresholds? How does this gap affect their daily life?"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Maria's relationship with her father differ from her relationship with her mother? What shaped this difference?"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria's family had a significant health episode last winter. What happened, and what does it reveal about the family's support network?"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Maria works an estimated 30-40 hours per week between paid and unpaid labor. Based on the logs, map out her different types of work and estimate which are visible versus invisible."
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Maria's relationship with personal appearance and self-presentation from the logs?"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Maria's attitude toward professional mental health help reflect broader cultural and practical barriers? What evidence suggests her views are evolving?"
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Maria. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?"
+    }
+  ]
+}

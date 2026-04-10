@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "persona": "Mary Alberti",
+    "persona_id": "e7c0574639a244c8972c92aab9501035",
+    "total_test_cases": 70,
+    "source_file_type": "question_only"
+  },
+  "test_cases": [
+    {
+      "id": "TC-01",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Mary has a weekly cooking ritual. What does she do every Sunday, and what kinds of food does she prepare?"
+    },
+    {
+      "id": "TC-02",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Mary participates in a regular group fitness activity on Saturday mornings. What is it, and who are some of the regular participants?"
+    },
+    {
+      "id": "TC-03",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Mary has a close family member she communicates with almost daily. Who is it, and when do they typically talk?"
+    },
+    {
+      "id": "TC-04",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Mary attends a specific church. What is it called, and what is her family's history with this congregation?"
+    },
+    {
+      "id": "TC-05",
+      "type": "type_1_simple_fact_check",
+      "difficulty": "easy",
+      "question": "Mary has a specific planning and organizational tool she uses daily. What is it, and how is it structured?"
+    },
+    {
+      "id": "TC-06",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary has been taking on extra responsibilities at work without the corresponding title. What specific duties has she been documenting, and what did she do about it?"
+    },
+    {
+      "id": "TC-07",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary is planning to further her education. What program is she researching, and what concrete steps has she taken this month?"
+    },
+    {
+      "id": "TC-08",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "A family member had a medical follow-up this month that pulled Mary into additional logistics. Who was it, what was the issue, and what did Mary do?"
+    },
+    {
+      "id": "TC-09",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary experienced a running injury this month. What was it, and what adjustments did she make to her routine? Cite evidence from both messages and calendar."
+    },
+    {
+      "id": "TC-10",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary was involved in organizing a church event this month. What was the event, and what specific responsibilities did she handle?"
+    },
+    {
+      "id": "TC-11",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary had a gardening milestone this month. What was it, and what planning did it require?"
+    },
+    {
+      "id": "TC-12",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "Mary tracks her work performance for a specific strategic purpose. What is she tracking, and why? Cite evidence from both calendar and messages."
+    },
+    {
+      "id": "TC-13",
+      "type": "type_2_cross_log_fact_check",
+      "difficulty": "medium",
+      "question": "What evidence across both Mary's messages and calendar suggests she lives on a very tight budget? Identify at least three specific indicators."
+    },
+    {
+      "id": "TC-14",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Mary's approach to the shift-supervisor situation changed over the month. How did her strategy evolve from early March to mid-March?"
+    },
+    {
+      "id": "TC-15",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "Mary's relationship with the community college plan changed over the month. How did it shift from aspiration to action?"
+    },
+    {
+      "id": "TC-16",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "medium",
+      "question": "How did Mary's involvement in her father's care evolve over the month? Track the progression from initial help to sustained routine."
+    },
+    {
+      "id": "TC-17",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "Mary's running routine changed mid-month. What was her routine before the knee issue, and what did it look like after?"
+    },
+    {
+      "id": "TC-18",
+      "type": "type_3_dynamic_preference_tracking",
+      "difficulty": "hard",
+      "question": "The parish fish fry went from chaotic preparation to successful execution. What changed in Mary's approach before versus after the event?"
+    },
+    {
+      "id": "TC-19",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the app logs, what are Mary's sources of income and what are her major expenses? How much financial margin does she have?"
+    },
+    {
+      "id": "TC-20",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Who is Mary's closest friend, and what evidence across the logs demonstrates the depth and nature of this relationship?"
+    },
+    {
+      "id": "TC-21",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does Mary play in her family's dynamics? How do her relationships with her mother, father, and brother each function differently?"
+    },
+    {
+      "id": "TC-22",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary manages her health through multiple self-care practices rather than formal medical care. What are at least four distinct health management practices, and why does she avoid doctors?"
+    },
+    {
+      "id": "TC-23",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a detailed long-term career plan. What are the sequential steps in her plan, and what concrete progress has she made this month?"
+    },
+    {
+      "id": "TC-24",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does food play in Mary's life beyond basic nutrition? Identify at least three non-nutritional functions food serves."
+    },
+    {
+      "id": "TC-25",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence in the logs suggests Mary is under financial pressure, even if no specific dollar amounts are mentioned?"
+    },
+    {
+      "id": "TC-26",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a coworker with whom she has meaningful conversations about race and policing. Who is this person, and how has this relationship influenced Mary's views?"
+    },
+    {
+      "id": "TC-27",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Mary's relationship with nature and the outdoors, and how does seasonal change affect her?"
+    },
+    {
+      "id": "TC-28",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a distinctive stress response pattern. Based on the logs, what are the three phases of her coping sequence when something goes wrong?"
+    },
+    {
+      "id": "TC-29",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Mary's food change when she is under financial stress versus when she is doing okay? Cite specific evidence."
+    },
+    {
+      "id": "TC-30",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary describes a tension between staying at her current job and pursuing her long-term goals. What specific evidence shows this conflict, and how does she manage it?"
+    },
+    {
+      "id": "TC-31",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Mary's cooking skills and cultural food heritage from the logs?"
+    },
+    {
+      "id": "TC-32",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Where does Mary shop for groceries, and what does her shopping pattern reveal about her values and constraints?"
+    },
+    {
+      "id": "TC-33",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical activities does Mary participate in, and how do they connect to her broader life? Identify at least three activities and their functions."
+    },
+    {
+      "id": "TC-34",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary is a passionate Wisconsin sports fan. Which teams does she follow, and in what context?"
+    },
+    {
+      "id": "TC-35",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary maintains a garden. Where is it, what does she grow, and how does it connect to other areas of her life?"
+    },
+    {
+      "id": "TC-36",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Mary's media consumption habits from the logs? What does she read, watch, or listen to?"
+    },
+    {
+      "id": "TC-37",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What role does music play in Mary's life, and which artists does she gravitate toward?"
+    },
+    {
+      "id": "TC-38",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a complex relationship with technology. What evidence shows she is both practically competent and deliberately minimal in her tech use?"
+    },
+    {
+      "id": "TC-39",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What are Mary's political views, and how do they connect to her personal experience? Cite specific evidence."
+    },
+    {
+      "id": "TC-40",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What cultural heritage does Mary come from, and how does it manifest in her current daily life?"
+    },
+    {
+      "id": "TC-41",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What major life events have shaped Mary's current behavior patterns? Identify at least three pivotal moments and explain how they show up in the logs."
+    },
+    {
+      "id": "TC-42",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Describe Mary's living situation and daily structure based on the app logs. Where does she live, what anchors her days, and how does her schedule vary?"
+    },
+    {
+      "id": "TC-43",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Mary's relationship with Jess differ from her relationship with her mother Linda? What evidence shows each serves a different function?"
+    },
+    {
+      "id": "TC-44",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Priya Venkatesh's connection to Mary, and what activities do they share?"
+    },
+    {
+      "id": "TC-45",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is DeShawn Mitchell's relationship to Mary, and what distinguishes their conversations from Mary's other relationships?"
+    },
+    {
+      "id": "TC-46",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Mary uses her bullet journal as more than just a planner? What psychological functions does it serve?"
+    },
+    {
+      "id": "TC-47",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a pattern of anticipatory rumination. What triggers it, what does it look like, and how does she manage it?"
+    },
+    {
+      "id": "TC-48",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Mary handle perfectionism and self-criticism, and where does it show up in the logs?"
+    },
+    {
+      "id": "TC-49",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What physical stress symptoms does Mary experience, and what triggers them? Cite evidence from the logs."
+    },
+    {
+      "id": "TC-50",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Mary consume news and information? What can you infer about her trust in different information sources?"
+    },
+    {
+      "id": "TC-51",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What apps and tools does Mary use, and what does each one serve?"
+    },
+    {
+      "id": "TC-52",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Beyond voting, what are Mary's forms of civic participation? What evidence shows she is connected to her community?"
+    },
+    {
+      "id": "TC-53",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Mary's travel habits and constraints from the logs?"
+    },
+    {
+      "id": "TC-54",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary maintains multiple hobbies. How do they serve dual functions as both enjoyment and self-regulation? Identify at least four hobbies and their dual roles."
+    },
+    {
+      "id": "TC-55",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary and Jess have a specific social ritual. What is it, and what does it reveal about Mary's approach to discretionary spending?"
+    },
+    {
+      "id": "TC-56",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What backup plans does Mary have if her diner dream doesn't work out? What evidence suggests she's thought about the gap between aspiration and reality?"
+    },
+    {
+      "id": "TC-57",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Mary's romantic life from the logs?"
+    },
+    {
+      "id": "TC-58",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a very specific organizational system in her home. What evidence in the logs reveals her level of organization and its psychological function?"
+    },
+    {
+      "id": "TC-59",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary uses her grandmother's home remedies. What are they, and what does this practice reveal about her approach to healthcare?"
+    },
+    {
+      "id": "TC-60",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary made a specific purchase this month that she delayed for a long time. What was it, and what does the delay reveal about her decision-making around spending?"
+    },
+    {
+      "id": "TC-61",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Mary's relationship with her manager Teresa, and how does it shape her work experience?"
+    },
+    {
+      "id": "TC-62",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What are Mary's cultural tastes in film, music, and art, and what do they reveal about her personality?"
+    },
+    {
+      "id": "TC-63",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "How does Mary's relationship with her brother Marco compare to her other family relationships?"
+    },
+    {
+      "id": "TC-64",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What evidence suggests Mary uses systematic tracking and data to manage different areas of her life?"
+    },
+    {
+      "id": "TC-65",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has connections at her church beyond her family. Who are some of the other parishioners, and what is the nature of these relationships?"
+    },
+    {
+      "id": "TC-66",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary has a habit of checking receipts. Where did this behavior come from, and how does it connect to her broader financial management approach?"
+    },
+    {
+      "id": "TC-67",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What can you infer about Mary's approach to personal appearance and clothing from the logs?"
+    },
+    {
+      "id": "TC-68",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Mary resists seeking government assistance despite likely qualifying. What is the psychological basis for this resistance, and what evidence supports it?"
+    },
+    {
+      "id": "TC-69",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "What is Mary's grandmother's lasting influence on her life? Trace the specific ways nonna's legacy shows up in Mary's current behavior."
+    },
+    {
+      "id": "TC-70",
+      "type": "type_4_reasoning",
+      "difficulty": "hard",
+      "question": "Based on the totality of evidence in the app logs, construct a psychological profile of Mary. What are her core personality traits, her greatest strengths, and her most significant vulnerabilities?"
+    }
+  ]
+}
