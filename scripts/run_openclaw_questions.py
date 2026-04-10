@@ -76,7 +76,8 @@ def build_message(test_case: dict[str, Any]) -> str:
 def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
     cmd = [
         openclaw_bin, 
-        "agent", "main", # main -- must specify which agent
+        "agent", 
+        "--agent", "main", # main -- must specify which agent
         "--session-id", str(uuid.uuid4()), # different session for each question reduce answer leakage
         "--message", 
         message, 
