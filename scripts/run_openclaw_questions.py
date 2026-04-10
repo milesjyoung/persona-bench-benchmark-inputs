@@ -47,6 +47,10 @@ def parse_args() -> argparse.Namespace:
         help="Resume by skipping test_case_ids already present in the output file.",
     )
     parser.add_argument(
+        "--start-from",
+        help="Start asking from this test_case_id (for example: TC-49).",
+    )
+    parser.add_argument(
         "--indent",
         type=int,
         default=2,
@@ -208,6 +212,7 @@ def main() -> None:
     existing = load_existing_answers(output_file) if args.resume else None
     completed_ids = set()
     answers: list[dict[str, Any]] = []
+    started = args.start_from is None
 
     if existing:
         answers = list(existing.get("answers") or [])
@@ -219,6 +224,11 @@ def main() -> None:
 
     for index, test_case in enumerate(test_cases, start=1):
         test_case_id = test_case["id"]
+        if not started:
+            if test_case_id == args.start_from:
+                started = True
+            else:
+                continue
         if test_case_id in completed_ids:
             continue
 
@@ -242,6 +252,9 @@ def main() -> None:
             json.dumps(payload, indent=args.indent) + "\n",
             encoding="utf-8",
         )
+
+    if args.start_from is not None and not started:
+        raise SystemExit(f"start-from test case not found: {args.start_from}")
 
     print(f"Wrote {output_file}", file=sys.stderr)
 
