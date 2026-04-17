@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -94,6 +95,10 @@ def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
         text=True,
     )
 
+    parsed = extract_openclaw_json(result.stdout, result.stderr)
+    if parsed is not None:
+        return parsed
+
     if result.returncode != 0:
         raise RuntimeError(
             "OpenClaw command failed.\n"
@@ -102,10 +107,6 @@ def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
             f"STDOUT:\n{result.stdout}\n"
             f"STDERR:\n{result.stderr}"
         )
-
-    parsed = extract_openclaw_json(result.stdout, result.stderr)
-    if parsed is not None:
-        return parsed
 
     raise RuntimeError(
         "OpenClaw did not return parseable JSON output.\n"
@@ -138,6 +139,9 @@ def extract_openclaw_json(stdout_text: str, stderr_text: str) -> dict[str, Any] 
 
 
 def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) -> dict[str, Any]:
+    if raw_openclaw_json.get("meta", {}).get("stopReason") == "error":
+        return build_empty_answer(test_case_id)
+
     content = None
 
     if isinstance(raw_openclaw_json.get("assistant"), dict):
@@ -152,15 +156,7 @@ def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) 
             content = payloads[0].get("text")
 
     if content is None:
-        # Preserve the raw payload even if the output shape differs from what we expect.
-        return {
-            "test_case_id": test_case_id,
-            "answer": None,
-            "confidence": None,
-            "evidence": [],
-            "raw_response": raw_openclaw_json,
-            "parse_error": "Could not find assistant content field in OpenClaw JSON response.",
-        }
+        return build_empty_answer(test_case_id)
 
     # Best case: the model itself returned the requested JSON string.
     if isinstance(content, str):
@@ -175,27 +171,34 @@ def extract_model_payload(raw_openclaw_json: dict[str, Any], test_case_id: str) 
         try:
             parsed = json.loads(stripped)
             if isinstance(parsed, dict):
-                parsed.setdefault("test_case_id", test_case_id)
-                parsed["raw_response"] = raw_openclaw_json
-                return parsed
+                return {
+                    "test_case_id": parsed.get("test_case_id", test_case_id),
+                    "answer": parsed.get("answer"),
+                    "confidence": parsed.get("confidence"),
+                    "evidence": parsed.get("evidence"),
+                }
         except json.JSONDecodeError:
-            return {
-                "test_case_id": test_case_id,
-                "answer": stripped,
-                "confidence": None,
-                "evidence": [],
-                "raw_response": raw_openclaw_json,
-                "parse_error": "Assistant content was not valid JSON.",
-            }
+            return build_empty_answer(test_case_id)
 
+    return build_empty_answer(test_case_id)
+
+
+def build_empty_answer(test_case_id: str) -> dict[str, Any]:
     return {
         "test_case_id": test_case_id,
         "answer": None,
         "confidence": None,
-        "evidence": [],
-        "raw_response": raw_openclaw_json,
-        "parse_error": "Assistant content field was present but not parseable.",
+        "evidence": None,
     }
+
+
+def atomic_write_json(path: Path, payload: dict[str, Any], indent: int) -> None:
+    temp_path = path.with_name(f"{path.name}.tmp")
+    temp_path.write_text(
+        json.dumps(payload, indent=indent) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temp_path, path)
 
 
 def main() -> None:
@@ -238,8 +241,12 @@ def main() -> None:
             flush=True,
         )
         message = build_message(test_case)
-        raw_result = run_openclaw(args.openclaw_bin, message)
-        parsed_answer = extract_model_payload(raw_result, test_case_id)
+        try:
+            raw_result = run_openclaw(args.openclaw_bin, message)
+            parsed_answer = extract_model_payload(raw_result, test_case_id)
+        except Exception as exc:
+            print(f"Error for {test_case_id}: {exc}", file=sys.stderr, flush=True)
+            parsed_answer = build_empty_answer(test_case_id)
         answers.append(parsed_answer)
 
         payload = {
@@ -248,10 +255,7 @@ def main() -> None:
             "source_questions_file": str(questions_file),
             "answers": answers,
         }
-        output_file.write_text(
-            json.dumps(payload, indent=args.indent) + "\n",
-            encoding="utf-8",
-        )
+        atomic_write_json(output_file, payload, args.indent)
 
     if args.start_from is not None and not started:
         raise SystemExit(f"start-from test case not found: {args.start_from}")
