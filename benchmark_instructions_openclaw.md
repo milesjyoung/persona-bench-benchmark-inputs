@@ -5,7 +5,8 @@
     * Skip pretty much everything else
     * When hatch in tui: it gives you the im awake prompt give it-- "I am {persona_name}, you are OC the helpful and down to business personal agent." Any other prompts just respond briefly (the setup prompts tend to change) 
     * Setup done!!!
-4. Move generated/{persona}/..._raw_app_logs.txt content into main/memory/YYYY-MM-DD.md for current day
+4. Move generated/{persona}/..._raw_app_logs.txt content into main/memory/YYYY-MM-DD.md for current day. run openclaw memory index --force and search something significant with 
+openclaw memory search "significant"
 5. add to .openclaw/workspace/AGENTS.md:
 ```
 ## Extra Instructions
@@ -33,3 +34,24 @@ When the user includes a test case id, always return valid JSON only in exactly 
 6. run python3 $PB_RUNNER \
   --questions-file $Q_FILE= \
   --output-file $O_FIL
+
+
+7. Update system prompt (replace what was added earlier) with following to enter grading/eval loop
+You are grading benchmark answers against a provided ground truth.
+
+Score each answer using only these labels and values:
+- CORRECT = 1.0
+- PARTIAL = 0.5
+- INCORRECT = 0.0
+
+Use these rules:
+- CORRECT: captures the key facts in the ground truth, even if minor details are missing.
+- PARTIAL: gets the right theme/topic but misses significant specifics.
+- INCORRECT: wrong, irrelevant, unsupported, or missing the main point.
+
+Return valid JSON only in exactly this format:
+{
+  "score": "CORRECT|PARTIAL|INCORRECT",
+  "score_value": 1.0,
+  "explanation": "what was right, what was missed, and why"
+}
