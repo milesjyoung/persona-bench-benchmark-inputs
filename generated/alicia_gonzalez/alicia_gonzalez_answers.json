@@ -1,0 +1,1635 @@
+{
+  "persona": "Alicia Gonzalez",
+  "persona_id": "50f90a6f17de473f9ca15f00afdedf7a",
+  "source_questions_file": "/home/user01/Desktop/persona-bench-benchmark-inputs/generated/alicia_gonzalez/alicia_gonzalez_test_questions.json",
+  "answers": [
+    {
+      "test_case_id": "TC-01",
+      "answer": "Alicia\u2019s recurring Friday evening social commitment is biweekly board game night at Priya\u2019s. The recorded participants are Alicia Gonzalez and Priya Kapoor.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2652-L2652"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L507-L510"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-02",
+      "answer": "Alicia\u2019s regular yoga practice is Vinyasa yoga. It is recorded as a recurring 6:30 PM to 7:30 PM evening class at Chico Yoga Studio.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2598-L2598"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2688-L2688"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-03",
+      "answer": "I could confirm that Alicia volunteers in a Community Tutoring Shift at the Chico Community Center, and the recorded dates suggest it happens about every two weeks. I could not find supported memory identifying what she teaches or who the students are.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2614-L2614"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2666-L2666"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-04",
+      "answer": "Alicia\u2019s recurring Saturday outdoor activity is a hiking outing, recorded as Outdoor Club Morning on the trails. Tom Bridwell joins her.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2655-L2655"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2646-L2646"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-05",
+      "answer": "The recurring weekly call is Family FaceTime on Sundays from 4:30 PM to 5:15 PM. The recorded participants are Alicia Gonzalez, Rosa Gonzalez, and Diego Gonzalez, but the memory does not clearly isolate which one is the family member in Colombia.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2609-L2609"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2633-L2633"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2658"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-06",
+      "answer": "The project was the UC Davis Multilingual Demo. Her messages describe it as deadline week where every finished task reveals more work, and she says she has to keep the sequence clean or everything gets louder, which signals high pressure. Her calendar also shows repeated multi-hour blocks for Deep Work - Multilingual Models with Kai Lindstrom and other research work blocks, showing it was taking substantial scheduled time.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L3-L8"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2619-L2619"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2671-L2671"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-07",
+      "answer": "It was Rosa Gonzalez\u2019s annual physical. Alicia helped by handling the paperwork reminder, making the follow-up call about lab work, managing the stops and route, arranging timing, and covering practical day-of logistics like pickup, food, and an extra stop so the day would be less tiring.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2619-L2619"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L536-L541"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L640-L643"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-08",
+      "answer": "Mid-month, Alicia adjusted her outdoor routine because Chico\u2019s AQI and pollen conditions were making longer trail time feel unwise. In her messages, she says she still wanted the trail time but was no longer interested in proving toughness against air quality, and that she needed to switch to a later trail start and a lower-pollen loop for a while. The calendar reflects that change with AQI and route-planning checks and a modified outing listed as Bidwell Low-Pollen Loop with Tom Bridwell.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1398-L1403"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1116-L1122"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2646-L2646"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-09",
+      "answer": "The late-month crunch was the overlap between grant work and reading-group responsibilities, specifically Grant Narrative + Budget Edits alongside Reading Group Lead and Grant Review. Alicia handled the pressure by trying to keep the scope clean and by deliberately protecting recovery time, including moving Quiet Thursday Open Mic onto her calendar instead of leaving decompression to chance.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2665-L2665"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2677-L2677"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1606-L1610"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-10",
+      "answer": "The trip was her summer Colombia trip to see family. The planning was constrained by conference reimbursement timing, rent, and ordinary bills landing in the same week, so she was trying to avoid buying a ticket that would create a second financial crisis or leave her with a cheap but exhausting itinerary.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L708-L715"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L818-L827"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2656-L2658"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-11",
+      "answer": "The event was Wildflower Hike + Farmers Market Lunch. It served as a restorative reset, and preparing for it required keeping the rest of the week simple and handling the hidden logistics ahead of time, including the order of the day, labels, supplies, and handoffs so nothing had to be patched together in public.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2699-L2699"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2056-L2061"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2463-L2463"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-12",
+      "answer": "The pattern shows up in both what Alicia says and how her calendar is framed. In messages, she explicitly says that when a project enters deadline mode, the collateral damage shows up in dinner, sleep, and whether her apartment looks inhabited. In the calendar, her self-care items are described as protective interventions, for example yoga is something she guards because it steadies her sleep schedule and interrupts the tendency to keep working until she \u201cbecomes a rumor,\u201d and board game night is framed as recovery she needs after a lab crunch rather than a reward she has to earn.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1606-L1610"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2598-L2598"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2622-L2622"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-13",
+      "answer": "I checked memory and could not find supported information identifying a specific mentoring program for younger students or how Alicia connects that mentoring to her own background.",
+      "confidence": "low",
+      "evidence": []
+    },
+    {
+      "test_case_id": "TC-14",
+      "answer": "In early March, Alicia was in a high-pressure, overloaded mode. She described the UC Davis multilingual demo as a deadline-week project where every completed task spawned more tasks, and she felt she had to keep the sequence tightly controlled or everything would get louder. By the next phase, she had narrowed the demo down enough that it finally made sense. By mid-March, her strategy had shifted from trying to carry every possibility at once to making the work smaller, clearer, and more honest. Emotionally, she moved from anxious and brittle toward relieved, reflective, and more grounded about what she wanted to keep from the process.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L3-L8"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1087-L1092"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-15",
+      "answer": "Before the shift, Alicia\u2019s outdoor routine was a longer Saturday morning hiking routine with Tom Bridwell, recorded as Outdoor Club Morning or Saturday Hike at Butte County Trails. After the shift, it became a scaled-down version: a later start, a lower-pollen route, and more explicit AQI and trail-condition checks, reflected in the Bidwell Low-Pollen Loop at Lower Bidwell Park.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2631-L2631"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1116-L1122"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2646-L2646"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-16",
+      "answer": "Early in the month, the family was still dealing with Rosa\u2019s tendency to let the annual physical slip into \u201cnext month,\u201d with concern floating around more as worry than as a plan. Then Alicia and Diego turned it into a concrete appointment, with Diego helping on timing and Alicia handling paperwork, routing, and lab follow-up. By mid-month, Alicia was explicitly maintaining follow-through with a call to Rosa about the lab work, because she wanted boring consistency instead of one virtuous burst followed by silence. Later in the month, Alicia describes the whole situation as calmer because the practical pieces were finally written down instead of remaining vague family concern.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2619-L2619"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L536-L541"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2630"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1589-L1593"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-17",
+      "answer": "The shift was triggered when Alicia finally sat down with the actual numbers and timing for the Colombia trip, instead of treating it as a vague looming expense. Once she aligned the dates, cash flow, and budget realities, the planning stopped feeling like a floating threat. Emotionally, it moved from anxiety and \u201cfinancial jump scare\u201d energy into something more intentional and calm, where the careful part felt cleaner and attached to a real route through the month rather than a free-floating sense of risk.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L705-L711"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L280-L286"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2656-L2658"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-18",
+      "answer": "Compared with the earlier UC Davis demo crunch, Alicia handled the grant budget and reading-group prep more deliberately. In the UC Davis crunch, she first sounded overwhelmed, describing a task cascade and the need to control sequence so everything would not get louder. In the later grant and reading-group crunch, she seems to have applied that lesson earlier: she narrowed the work down, cut decorative complexity, aimed for a cleaner packet, and explicitly focused on keeping the work smaller, clearer, and more honest. Emotionally, the later crunch sounds less panicked and more disciplined.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L3-L8"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1776-L1783"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1569-L1577"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-19",
+      "answer": "Based on the app logs, Alicia appears to be an academic or research-lab researcher, likely in a university-adjacent lab setting rather than a conventional corporate job. Her research focus is multilingual models, and her work also includes grant writing, budget/grant review, and leading a reading group. The nature of her work is revealed by repeated calendar blocks for deep work on multilingual models at the Research Lab in Chico, the UC Davis multilingual demo, grant narrative and budget edits, reading-group leadership, and messages where she talks explicitly about research culture, scope, evidence, and collaboration.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2618-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2676-L2679"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2664-L2667"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1256-L1261"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-20",
+      "answer": "The logs strongly support the idea that Alicia uses social commitments deliberately as coping and recovery structure, not just for fun. She explicitly describes board game night as part of the recovery plan, says structured social time is more effective than leaving decompression to chance, and calls game night a kind of low-pressure structure or even mental-health infrastructure. Other commitments serving this function include yoga, which she protects because it steadies her sleep and interrupts overwork, open mic nights, which she uses to step out of work mode and keep the week from feeling flat, and family FaceTime, which is described as emotional infrastructure even when it looks like ordinary logistics.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L507-L510"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L573-L578"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2636-L2636"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2685-L2688"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2633-L2633"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-21",
+      "answer": "The logs suggest Alicia\u2019s stress shows up physically as disrupted sleep, skipped or disordered meals, reduced patience, and environment-linked body strain, especially a smoke-sensitive throat during spring pollen and bad air stretches. The triggers are both workload stress, especially deadline periods where she says collateral damage hits dinner and sleep, and environmental stressors like pollen, AQI, and heavier fatigue weeks. Her response is to shift from stubbornness to maintenance: she changes the week around, uses AQI checks and gentler hikes, gets an allergy medication review, prioritizes water and calmer routines, and protects stabilizing habits like yoga and structured recovery time.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L105-L105"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1173-L1180"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L121-L121"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2621"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-22",
+      "answer": "Alicia appears to be building toward at least two long-term professional goals: first, a research career centered on honest, collaborative, mission-driven work rather than prestige performance, and second, substantive technical progress in multilingual-model research supported by grants, demos, and reading-group leadership. This month she took concrete steps through repeated deep-work blocks on multilingual models, work on the UC Davis multilingual demo, grant narrative and budget edits, and leading or preparing reading-group discussions. The main obstacles were deadline crunches, expanding scope, admin drag, and a research culture she describes as full of performative urgency and prestige anxiety, which creates pressure beyond the actual science.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L904-L911"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2618-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2664-L2667"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2676-L2679"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1256-L1261"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-23",
+      "answer": "The logs support Alicia as a practical care coordinator in her family, someone who turns diffuse concern into actual plans, timing, follow-through, and recurring support. Her relationship with Rosa, likely her mother, functions through indirect but steady tenderness, with care carried in familiar rituals like recipes, prayer requests, church talk, and regular calls rather than explicit emotional narration. Her relationship with Diego functions more as logistical and strategic support, where he helps make plans concrete, repeatable, and less crisis-shaped. I could not find enough supported evidence in the logs to distinguish separate roles for both a father and a brother beyond what is shown for Rosa and Diego.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1588-L1597"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1010-L1014"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1921-L1927"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-24",
+      "answer": "The logs show careful financial management through repeated budgeting rituals and the way Alicia talks about timing, tradeoffs, and cash flow rather than impulse spending. She regularly schedules \"Budget Pass + Travel Notes\" and \"Coffee Beans, Bills, and Flight Math,\" and the notes say her spreadsheet habit tracks both practical numbers and the small choices that would otherwise become future stress. In messages about the Colombia trip, she explicitly weighs reimbursement timing, rent, and ordinary bills, and says she wants a version that does not create a second crisis after buying the ticket. That pattern suggests deliberate, ongoing budgeting even when exact dollar amounts are not recorded.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2627-L2630"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2661-L2664"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L705-L711"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2656-L2658"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-25",
+      "answer": "A normal week for Alicia looks like a blend of research work, maintenance routines, creative time, and low-pressure social anchors. Weekday mornings often include lab or deep-work blocks on multilingual-model research. Early in the week she often has yoga, which helps regulate sleep, and Tuesday nights are commonly painting or sketch time at home. Midweek or Thursday often includes an open mic or live music night, while board game night appears as a biweekly structured social ritual. She also does regular budget or travel-planning sessions in the evenings. Saturdays usually include Family FaceTime in the late afternoon and some kind of outdoor plan, often a hike with Tom, preceded by AQI or trail-condition checks. Overall, her week is built around balancing focused research with recurring creative, social, family, and self-regulation routines.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2603-L2606"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2667-L2670"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2600-L2603"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2609-L2612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-26",
+      "answer": "The logs show Alicia participating in at least two concrete forms of civic involvement beyond voting: she does recurring volunteer tutoring at the Chico Community Center, and she attends or considers attending local community meetings tied to housing and wildfire-prep issues. What drives her is a practical, place-based sense of responsibility. She says these topics are not abstract policy hobbies in Chico, because they affect real things like resilience, shelter, air, evacuation planning, and who gets pushed out first. She is motivated less by abstract argument than by wanting local conversations to stay honest, specific, and connected to actual lives.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2614-L2614"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2666-L2666"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L198-L201"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L70-L75"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2413-L2419"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-27",
+      "answer": "Alicia\u2019s closest friend appears to be Priya Kapoor. The logs show Priya as the person Alicia repeatedly turns to across many parts of life, including deadline stress, health and recovery, trip budgeting, social planning, and post-crunch reflection. Their recurring board game nights at Priya\u2019s are framed as part of Alicia\u2019s recovery structure, and Priya regularly gives grounded, intimate responses that help Alicia recalibrate rather than just chat. The relationship looks deep because it is both emotionally supportive and practically woven into Alicia\u2019s routines.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L943-L953"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L466-L476"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L396-L403"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-28",
+      "answer": "The logs show Alicia using several health-management practices together. At least four distinct ones are clear: (1) yoga, which she protects because it stabilizes sleep and interrupts overwork; (2) AQI and route checking before outdoor plans, so she can adapt activity levels to air and pollen conditions; (3) formal allergy-med management, including an Allergy Med Review rather than improvising; and (4) gentler, adjusted outdoor exercise, like choosing a later or lower-pollen hike instead of pushing through. A fifth also appears across the logs: structured recovery time, such as board game night, which is explicitly treated as part of her recovery plan. These practices show up across both calendar entries and messages, where she talks about choosing the calmer version of the week, protecting useful routines, and preferring breathable scenery over stubbornness.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2636-L2639"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1125-L1133"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L723-L730"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-29",
+      "answer": "The logs suggest Alicia\u2019s cooking habits are routine-based and emotionally meaningful when she is regulated, but they simplify or start to fray when stress rises. In calmer periods, she treats coffee, breakfast, and family food as real infrastructure, saying they steady the day and carry both emotional and practical value. Under deadline stress, food becomes one of the first things to degrade: she explicitly says collateral damage shows up in dinner and later describes herself as needing to \"eat something resembling dinner.\" She also says that when work or logistics intensify, she tries to keep the house side simple so meals do not turn into \"a frantic inventory check.\" So the pattern is: under lower stress, she values familiar, grounded food rituals; under higher stress, she shifts toward minimal, functional eating and tries to reduce cooking complexity.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L858-L861"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L853-L858"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L105-L105"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L635-L635"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2056-L2058"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-30",
+      "answer": "Alicia\u2019s relationship with nature is practical, emotional, and regulatory all at once. The logs show that hiking and outdoor time are not casual extras for her, they are one of her clearest reset mechanisms and even one of the strongest reasons she stayed in Chico. Nature gives her restoration, movement, and perspective, but it also functions as something she manages intelligently through AQI checks, route planning, pollen-aware adjustments, and gentler trail choices when needed. So it serves multiple roles at once: self-care, emotional recovery, physical activity, place attachment, and a way to keep the week from collapsing entirely into work.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2654-L2657"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1125-L1133"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-31",
+      "answer": "I checked the logs and could not find supported evidence naming a specific grocery store or regular grocery-shopping location for Alicia. What the logs do support is that she cares a lot about food rituals, familiar ingredients, and practical steadiness. References to family food, being stubborn about certain ingredients and methods, and the role of breakfast and coffee suggest she values food that is both emotionally rooted and functionally stabilizing, but not enough to identify where she shops.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L765-L768"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L853-L858"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2056-L2058"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-32",
+      "answer": "Alicia\u2019s main physical activities are yoga and outdoor exercise, especially hiking. Yoga appears repeatedly in the evenings, often around 6:30 to 7:30 PM, making it a recurring weekday routine. Outdoor activity is concentrated around weekends, with Saturday hikes or Outdoor Club mornings with Tom, sometimes adjusted into a gentler or lower-pollen loop depending on conditions. There are also AQI and route-check routines that shape whether the next day becomes a hike, a bike ride, or an indoor reset, which suggests her physical activity is regular but flexibly managed across the week.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2598-L2600"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2612-L2615"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-33",
+      "answer": "The logs suggest Alicia\u2019s entertainment habits lean more toward live, social, and participatory culture than passive media consumption. She regularly goes to open mics or tiny live shows, and she describes them as giving her art, city feeling, and a little anonymity without demanding a big social performance. She also clearly enjoys structured board games, especially strategy-style games, and treats game night as both fun and restorative. In addition, she keeps up visual-art time for herself through painting and generative sketch sessions. I did not find strong evidence about specific movies, TV, or other passive media habits, but the logs strongly support local live music, board games, and art-making as her main entertainment patterns.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L433-L437"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1524-L1528"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1099-L1103"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1518-L1524"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2667-L2670"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-34",
+      "answer": "Music seems to function less as passive entertainment for Alicia and more as a regular way of restoring dimensionality, identity, and social ease. She keeps small music nights and open mics on the calendar as an \"anti-flattening measure,\" and describes them as one of the few outings that give her art, city feeling, and a little anonymity without requiring a big emotional performance. The logs also suggest music connects to her cultural identity mainly through place and lived belonging: live local music helps her feel embedded in a town she actually moves through, rather than flattened into work and screens. I did not find strong direct evidence tying music to a specific ethnic or family tradition, so that part is lower-confidence.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L589-L595"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1435-L1439"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L594-L600"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1658-L1664"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-35",
+      "answer": "The logs show Alicia as highly technically proficient through the substance of her work: she has repeated deep-work blocks on multilingual models, works on the UC Davis multilingual demo, does grant and reading-group prep in a research-lab setting, and even keeps generative sketch sessions where paint and code coexist. At the same time, she maintains intentional limits around tech-heavy life. She repeatedly pushes back on prestige theater and shiny environments, prefers smaller mission-driven rooms, and protects analog or embodied activities because too much screen-mediated work makes the week feel flat. Her open mics, game nights, painting, and local routines all function as deliberate boundaries against letting technical work consume her whole identity.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2618-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2676-L2679"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2615-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L371-L376"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L586-L592"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2035-L2040"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-36",
+      "answer": "Alicia clearly practices visual art, especially painting and generative sketch work. The logs show recurring painting nights and \"Canvas + Generative Sketch Time,\" with notes that the apartment feels better when both paint and code artifacts exist somewhere besides the laptop lid. That is the clearest evidence of how her scientist and artist identities integrate: her art practice is not separate from her technical life, it explicitly combines analog making with computational or code-based creativity. The routine also seems to function as regulation, giving her a way to stay whole instead of being reduced to research alone.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2615-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-37",
+      "answer": "The logs support that Alicia has a strong family connection to Colombia, and likely lives within a Colombian or Colombian-connected family culture in the present. That heritage shows up in the weekly \"Family FaceTime - Sacramento + Colombia,\" in plans for a summer Colombia family trip, and in the way she describes food rituals as tying a normal Chico morning to both Sacramento and Colombia at once. In her current life, it seems to manifest through regular family contact, travel planning, and everyday food practices that carry memory, identity, and continuity.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2609-L2612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L705-L711"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L765-L768"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-38",
+      "answer": "Alicia\u2019s relationship with Diego appears more family-logistical and strategic, while her relationship with Priya is more friendship-based, restorative, and day-to-day emotionally regulating. With Diego, the logs often center on turning concern into plans, for example around Rosa\u2019s appointment, where he helps make support repeatable, concrete, and less crisis-shaped. With Priya, Alicia processes stress, recovery, social rituals, and self-care, and Priya often helps her protect humane structure like board game nights or open-mic recovery before work consumes the week. So Diego functions more like a steady family planning ally, while Priya functions more like her closest recovery and emotional-grounding friend.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L90-L96"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-39",
+      "answer": "The logs suggest Alicia lives in an apartment in Chico and moves through a fairly structured daily environment built around research work, home routines, and local rituals. Her days are anchored by practical habits like morning coffee and breakfast, lab focus blocks, recurring yoga, AQI or route checks before outdoor plans, and regular family calls with Sacramento and Colombia. Home life seems shaped by both work and creativity, with the apartment serving as a place for budgeting, painting, generative sketching, and recovery, while also reflecting stress when deadlines spill over into dinner, sleep, and whether the place feels inhabited. Overall, her environment looks urban-small-city, research-centered, and carefully managed so the home can support both work and personhood.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2603-L2606"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L42-L47"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2609-L2612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L105-L105"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-40",
+      "answer": "The strongest supported inference is that Alicia made a defining decision to build her career in smaller, mission-driven research environments in Chico rather than chase bigger, shinier prestige paths after graduation. She repeatedly says she keeps choosing smaller, mission-driven rooms over fancier options, and that \"specific, collaborative, and not spiritually obnoxious\" is her gold standard. The decision still shapes her life because her current work is rooted in the Research Lab in Chico, and even her nonwork routines, especially hiking, are described as part of why she stayed in Chico at all. So the logs suggest a post-graduation choice to prioritize meaningful work, manageable humans, and place-based life over higher-status but less sustainable paths.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L371-L376"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L991-L997"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2618-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-41",
+      "answer": "The logs support at least three major life transitions shaping Alicia\u2019s current behavior. First, she appears to have made a life move or settlement decision that left her in Chico, and that still shows up in how strongly she relies on local anchors like hiking, small music nights, and other place-based routines. Second, she seems to be living at a distance from parts of her family network, with regular family life spanning Sacramento and Colombia, which shows up in structured FaceTime calls, travel planning, and careful family logistics. Third, she is clearly in an adult research-career phase, and that transition shows up in her highly structured lab work, grant deadlines, scope management, and deliberate recovery routines. Together, those transitions seem to produce a current pattern of building stability through routines, place attachment, and repeatable care structures.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2606-L2609"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2633-L2636"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2441-L2448"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2642-L2645"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2685-L2688"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-42",
+      "answer": "The logs show Alicia living with at least two significant environmental challenges: air quality and seasonal pollen, with wildfire-related conditions clearly part of the broader local context. These affect her daily life in practical ways, including AQI dashboard checks, route planning before outdoor activity, later or lower-pollen hikes, allergy-med review, and reshaping her week when smoke-sensitive throat symptoms or heavier fatigue show up. They also affect her civic attention, since she explicitly says housing and wildfire prep are local issues she follows because the consequences are concrete where she lives.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2612-L2615"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1173-L1180"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L198-L201"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-43",
+      "answer": "Tom appears to be a close local friend and regular outdoor companion in Alicia\u2019s life. The clearest recurring activity connecting them is hiking or Outdoor Club mornings, including later adjusted or lower-pollen trail plans when conditions require it. The logs also suggest they overlap around local civic concerns and community events, with Tom appearing in conversations about local politics and resilience issues. Overall, he seems to function as both a steady hiking partner and a thoughtful local friend who shares some of Alicia\u2019s place-based routines and values.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2654-L2657"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L68-L75"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L877-L882"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-44",
+      "answer": "I checked the logs and could not find supported evidence of a specific online community of professionals with a shared background that Alicia participates in. The logs do show her thinking a lot about research culture, collaboration, and mission-driven professional spaces, but not a clearly identified online professional community serving that role.",
+      "confidence": "low",
+      "evidence": []
+    },
+    {
+      "test_case_id": "TC-45",
+      "answer": "The logs suggest Alicia travels selectively and plans carefully around money, timing, and energy rather than traveling casually. The clearest major trip is a planned family trip to Colombia, and she treats it as meaningful but financially constrained, weighing reimbursement timing, rent, and ordinary bills before booking. On a smaller scale, her local movement seems routine and low-key, for example biking home from open mics and structuring outdoor trips around AQI, pollen, and energy. Overall, her travel pattern looks deliberate, budget-aware, family-connected, and shaped by both environmental conditions and workload.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L705-L711"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2656-L2658"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1524-L1528"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-46",
+      "answer": "The logs suggest Alicia does prioritize meaningful work, but not because she is careless about stability. She repeatedly says she chooses smaller, mission-driven rooms over bigger, shinier options, and that \"specific, collaborative, and not spiritually obnoxious\" is her gold standard. That points to a deliberate values-based choice. At the same time, the logs do not show her dismissing financial stability, they show her managing it carefully through budgeting and planning. So the best supported reading is that this is a deliberate tradeoff: she is intentionally choosing meaningful work, while still working hard to keep her finances viable.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1379-L1384"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L991-L997"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1913-L1918"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2661-L2664"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-47",
+      "answer": "The logs clearly support a cycle where Alicia pushes through intense work periods and then has to deliberately manage the aftermath. In messages, she says that when projects enter deadline mode, the collateral damage shows up in dinner, sleep, and whether her apartment looks inhabited. Elsewhere, she describes needing recovery built into the calendar before work flattens the week, and she talks about post-deadline landing and trying to keep the cleaner routines that survived the crunch. The calendar reinforces this by framing yoga, board game nights, open mics, and other social or restorative activities as part of recovery rather than optional extras.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L105-L105"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1569-L1577"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2685-L2688"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-48",
+      "answer": "Alicia handles perfectionism by trying to replace overexpansion and overthinking with narrower scope, cleaner decisions, and more honest versions of the work. It shows up most clearly in her work patterns: she says things got better once she stopped pretending every possibility had to survive the same week, and she describes narrowed-down versions of projects finally making sense after cutting decorative complexity. It also shows up in health and daily life, where she books an allergy-med review because otherwise she would keep circling the same problem and narrating it to herself forever. So the pattern is that perfectionism appears as scope creep, decorative complexity, and recursive overthinking, and she responds by imposing clearer edges and choosing boring useful answers over dramatic ones.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2329-L2335"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1509-L1516"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L144-L152"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-49",
+      "answer": "Alicia\u2019s regular maintenance practices are the steady routines she keeps to prevent things from sliding: yoga for sleep regulation, AQI or route checks before outdoor plans, recurring outdoor activity, family calls, art or social recovery rituals, and morning coffee or breakfast as daily infrastructure. Her crisis-response adjustments are what she does once strain is already showing: reshaping the week around pollen and smoke sensitivity, switching to a gentler or lower-pollen hike, getting an allergy-med review, simplifying house logistics, and deliberately adding recovery time when deadline damage starts hitting dinner, sleep, and energy. In short, maintenance is her repeatable baseline, while crisis response is her adaptive recalibration when work, environment, or health conditions spike.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2598-L2600"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2612-L2615"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1173-L1180"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2645-L2648"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L105-L105"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-50",
+      "answer": "The logs suggest Alicia prefers concrete, practical, and locally grounded information over abstract or performative sources. She uses tools like the AQI dashboard for day-to-day decisions, pays close attention to local politics when issues affect real things like housing, wildfire prep, rent, evacuation, and air quality, and values community meetings when they stay specific. In family life, she also seems to trust information carried through familiar relational channels, like regular calls and indirect family updates wrapped in ordinary rituals. By contrast, she appears more skeptical of \"internet politics,\" branding, browser-history fog, and grandstanding, especially when those drift away from lived consequences.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2603-L2606"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L198-L201"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1501-L1504"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L77-L82"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1010-L1014"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L283-L289"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-51",
+      "answer": "The logs support several regular digital tools and platforms in Alicia\u2019s life. She uses an AQI dashboard for environmental decision-making before hikes or outdoor plans. She uses spreadsheets or spreadsheet-like budgeting tools for \"Coffee Beans, Bills, and Flight Math\" and travel budgeting. She uses FaceTime for recurring family calls linking Sacramento and Colombia. Slack appears in her work life as part of the research environment and deadline pressure. And her generative sketch practice implies she uses creative digital tools alongside traditional art-making, with code serving both artistic and technical purposes.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2648-L2651"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-52",
+      "answer": "Alicia\u2019s political values look grounded in practicality, honesty, local accountability, and care for materially affected people rather than ideological performance. She repeatedly says she wants conversations to stay specific and connected to actual lives, especially around housing, wildfire prep, shelter, air, and displacement. Those values translate into concrete actions in the logs through her attention to local politics, willingness to attend community meetings if they stay substantive, and recurring volunteer tutoring, which reflects an outward-facing civic commitment rather than only private beliefs.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L198-L205"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1501-L1504"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L877-L882"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2614-L2614"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2666-L2666"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-51",
+      "answer": "The logs support a few regular digital tools and platforms, but not an exhaustive list. The clearest ones are: an AQI dashboard, which Alicia uses to decide whether outdoor plans become a hike, bike ride, or indoor reset; spreadsheets or spreadsheet-like budgeting tools, which she uses for bills, flight math, and travel notes; FaceTime, which connects her with family in Sacramento and Colombia; Slack, which shows up as part of her research-work environment and deadline pressure; and generative sketch tools, which she uses to blend code with visual art practice.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2648-L2651"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2633-L2636"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-54",
+      "answer": "I could not find strong support in the logs that Alicia is building a DIY electronics project at home. The closest evidence is a recurring \"Weather Station Cleanup + Trail Decision\" routine, which suggests some kind of home weather-monitoring setup, but the logs do not clearly say she built it herself or describe it as an electronics project. If that weather-station inference is right, it would fit her personality as practical, detail-oriented, and inclined to create small systems that make daily life more manageable, but that part remains an inference rather than a confirmed fact.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2600-L2603"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2636-L2639"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2667-L2670"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2694-L2697"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-55",
+      "answer": "The logs do not provide strong evidence of an active romantic relationship, partner, or dating life. What they do show clearly is that Alicia has deep, emotionally important non-romantic relationships, especially with Priya Kapoor, who appears to be her closest friend and a major source of support, and with family members who are woven into her daily life. Interactions with Tom Bridwell and Kai Lindstrom read as thoughtful friendship, collegiality, or practical companionship, but the available evidence does not support confidently labeling them as romantic. So the safest inference is that Alicia\u2019s relational life is rich and supportive, but her romantic status is not clearly established in the logs.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L396-L403"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2651-L2654"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L101-L111"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1-L12"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-56",
+      "answer": "I could not find supported evidence in the logs that Alicia has a pet. The retrieved results mostly point to routines like yoga, AQI checks, budgeting, and outdoor planning, but none clearly mention an animal, pet care, feeding, walking, or veterinary logistics. So I cannot responsibly infer either the existence of a pet or its role in her daily life from the available logs.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2612-L2615"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2651-L2654"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2593-L2600"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-57",
+      "answer": "The logs suggest Alicia is involved in work connected to another university, most clearly through the \"UC Davis Multilingual Demo,\" but they do not provide much concrete detail about the collaboration structure itself. What is visible is that this work is serious, deadline-driven, and technically complex, with Alicia paying close attention to sequencing, scope, and keeping the project honest and manageable. The broader research context also shows that she prefers collaborations that are specific, candid, and low on academic performance. So the best supported inference is that she is engaged in substantive university-to-university research work, likely around multilingual models, but the logs do not clearly identify the outside collaborators, their institution beyond UC Davis, or the exact terms of the partnership.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1-L12"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L988-L994"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1256-L1261"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-58",
+      "answer": "The logs show Alicia\u2019s relationship with her parents, or at least with the parent figures visible in the record, as steady, practical, and care-heavy rather than overtly dramatic. The clearest pattern is with Rosa: Alicia helps turn concern into concrete family logistics, especially around Rosa\u2019s annual physical, lab follow-through, reminders, and written-down plans. More broadly, Alicia describes family care as indirect but consistent, with information arriving through familiar channels like recipes, prayer requests, church talk, and ordinary check-ins rather than explicit emotional declarations. The strongest supported pattern is that Alicia stays actively involved through recurring calls, practical follow-up, and ongoing low-drama maintenance. I do not see enough supported evidence to cleanly distinguish separate patterns for both parents beyond what is visible with Rosa and the broader family system.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1588-L1597"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2630-L2633"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1929-L1935"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-59",
+      "answer": "I could not find strong support that Alicia explicitly uses traditional remedies alongside Western medicine. The clearest Western-medicine evidence is the documented Allergy Med Review at Chico Pharmacy and the family\u2019s attention to routine medical care like Rosa\u2019s annual physical. There is also family context involving church talk, prayer requests, and indirect care language, but the logs do not clearly show Alicia using specific traditional remedies such as herbal treatments, home cures, or culturally specific medicine practices. So a dual approach is possible, but it is not firmly supported by the available evidence.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2618-L2621"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2633-L2636"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-60",
+      "answer": "Alicia\u2019s side concern seems to be that her professional field rewards prestige theater, social performance, and inflated visionary language more than honest, collaborative, reality-based work. That is partly an equity concern because she repeatedly prefers environments where scope, evidence, and actual contribution matter more than performance layers or fancier logos. In practice, she acts on it by choosing smaller mission-driven rooms, pushing for clean conversations about scope and evidence, and trying to keep grant and research work specific, executable, and not bloated. The logs show her treating fairness less as a slogan than as a professional norm: make the room honest, reduce ego noise, and protect the people doing the work.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L205-L209"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L479-L485"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L654-L659"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2664-L2667"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1683-L1689"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-61",
+      "answer": "Painting functions as both creative expression and mental-health regulation for Alicia. The logs describe her art blocks, including painting and generative sketch time, as a hobby but also as a regulation strategy that helps the apartment feel more inhabited and gives her a life outside deadlines, code, and work pressure. It is integrated into her routine through recurring evening studio-corner blocks, especially Tuesday art time, which she treats as part of keeping the week dimensional rather than purely functional.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2615-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L522-L528"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-62",
+      "answer": "The logs do not provide much direct description of Alicia\u2019s appearance, clothing, or personal style. The safest inferences are indirect: she seems to prefer practical, low-drama, somewhat understated presentation, because her routines and outings consistently favor manageable, low-pressure environments over flashy or high-performance scenes. Her interest in painting, generative sketch work, yoga, hiking, and small live-music nights also suggests an artistic but functional style sensibility. But those are broad personality-based inferences, not clear visual evidence from the logs.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2648-L2651"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2651-L2654"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2615-L2618"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-63",
+      "answer": "Alicia seems to handle loneliness by building low-pressure, repeatable forms of connection rather than waiting for big emotional rescue moments. She relies on structured social rituals like board game night, weekly family FaceTime, yoga, open mics, and outdoor plans with familiar people, because they give contact, rhythm, and relief without requiring her to invent a whole social self from scratch. She also uses art and small cultural outings to keep the week from feeling flat, and she appears to understand that recovery works better when it is scheduled before isolation hardens into exhaustion. Her strategy is basically preventive social infrastructure: familiar people, recurring plans, and manageable settings.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2651-L2654"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1634-L1638"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2691-L2694"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-64",
+      "answer": "The logs show Alicia using systematic tracking across health, environment, work, and finances. She regularly checks an AQI dashboard and route conditions before outdoor plans, uses spreadsheets for budgeting, bills, and flight math, and relies on calendar blocks to keep work from expanding uncontrollably. In family care, she explicitly feels calmer once practical pieces are written down with times and names instead of floating around as vague concern. Even her allergy management shifts toward clearer data, with an allergy-med review replacing improvisation. Overall, she repeatedly turns stress into manageable systems by tracking conditions, recording plans, and giving decisions concrete structure.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2639-L2642"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2670-L2673"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2603-L2606"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1588-L1597"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-65",
+      "answer": "Alicia\u2019s bilingualism is most strongly suggested, rather than directly described, through the overlap between her professional work on multilingual models and her family life, which is tied to Colombia and recurring cross-country family calls. Professionally, the logs clearly place her in deep work and demo preparation around multilingual models, so language difference is part of her formal research world. In daily life, the family context, Colombia travel planning, and transnational family communication suggest that multilingual or bicultural navigation is part of her ordinary environment. But the logs do not explicitly spell out which languages she uses day to day, so the strongest claim is that multilingualism appears directly in her work and indirectly in her family life.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1-L12"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2676-L2679"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2656-L2659"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-66",
+      "answer": "I could not find supported evidence in the logs about Alicia\u2019s relationship with alcohol specifically. The retrieved material points instead to a broader self-regulation pattern: she relies on structured, low-pressure routines like board game nights, yoga, and other repeatable social rituals to manage stress and decompression. So while the logs do show a clear self-regulation strategy, they do not support a specific claim about alcohol use or an alcohol-related rule she developed.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L571-L578"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1450-L1455"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-67",
+      "answer": "The logs support only a limited picture here. Alicia\u2019s current position looks university-adjacent and intellectually specialized: she works on multilingual models, demos, grants, and reading-group leadership in a research-lab environment. Her family background appears closely tied to Sacramento and Colombia, with regular family calls, church-inflected family communication, and practical multigenerational care. On socioeconomic position, the clearest contrast is that despite being in a highly skilled research setting, she still manages money carefully through repeated budgeting, flight math, and timing-sensitive planning rather than moving with obvious financial ease. I do not see enough supported evidence to make a stronger claim about her earlier educational background or class origins.",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2670-L2673"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2664-L2667"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2658-L2661"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1786-L1792"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2606-L2609"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-68",
+      "answer": "I could not find supported evidence in the logs of a specific severe emotional episode from approximately six months ago. What the logs do show is a recurring pattern of deadline-related strain, with collateral damage to sleep, meals, and basic household functioning, followed by deliberate recovery efforts. Her recovery methods are clearer than any single past crisis: she protects routines, narrows project scope, schedules humane social structure like board game nights or open mics, and tries to keep the cleaner habits that survive a crunch instead of treating recovery as an afterthought. So I can describe her recovery pattern, but not confidently reconstruct a distinct severe episode six months earlier.",
+      "confidence": "low",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1576-L1582"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2621-L2624"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2329-L2335"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-69",
+      "answer": "Alicia\u2019s crunch cycles reflect a broader personality pattern where care, ambition, and over-responsibility can initially tip into overexpansion, but she increasingly corrects by choosing honesty, scope control, and recovery structure. In the earlier crunch, she tends to absorb too many possibilities at once, letting work sprawl into sleep, meals, and the rest of life. In the later one, the same conscientiousness is still there, but she handles it more deliberately by narrowing scope sooner, cutting decorative complexity, and protecting recovery time. So the larger pattern is not just that she works hard, it is that she is learning to turn intensity into something cleaner, smaller, and more sustainable without betraying her standards.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L180-L189"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1576-L1582"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2664-L2667"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2329-L2335"
+        }
+      ]
+    },
+    {
+      "test_case_id": "TC-70",
+      "answer": "Alicia comes across as highly conscientious, reflective, caring, and values-driven. She is intellectually serious, emotionally observant, and unusually good at turning vague pressure into specific plans, whether in research, family care, health management, or budgeting. Her greatest strengths are disciplined thought, practical follow-through, ethical seriousness, and the ability to build humane structure around difficult work. She is also relationally loyal, using steady friendship, family maintenance, and recurring rituals as real infrastructure rather than decoration. Her most significant vulnerabilities are overextension, perfectionist scope creep, and a tendency for stress to show up physically and domestically, in sleep, meals, patience, and general life maintenance. She can drift into carrying too much at once, especially when meaningful work, family duty, and self-imposed standards collide. Overall, the logs suggest a person who is capable, honest, and resilient, but who has to work consciously against turning care into self-erasure.",
+      "confidence": "high",
+      "evidence": [
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L205-L209"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1605-L1612"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2329-L2335"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1588-L1597"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L2670-L2673"
+        },
+        {
+          "source": "memory",
+          "reference": "memory/2026-04-16.md#L1173-L1180"
+        }
+      ]
+    }
+  ]
+}
