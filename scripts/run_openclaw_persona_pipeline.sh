@@ -110,6 +110,7 @@ MEMORY_FILE="${MEMORY_DIR}/${MEMORY_DATE}.md"
 AGENTS_FILE="${WORKSPACE_DIR}/AGENTS.md"
 BACKUP_DIR="${RESULTS_DIR}/workspace_backups"
 mkdir -p "${BACKUP_DIR}" "${MEMORY_DIR}"
+ORIGINAL_AGENTS_FILE="${BACKUP_DIR}/AGENTS.original.${timestamp:-pending}.md"
 
 for required in \
   "${RAW_LOGS_FILE}" \
@@ -126,15 +127,21 @@ do
 done
 
 timestamp="$(date +%Y%m%d_%H%M%S)"
+ORIGINAL_AGENTS_FILE="${BACKUP_DIR}/AGENTS.original.${timestamp}.md"
 if [[ -f "${AGENTS_FILE}" ]]; then
   cp "${AGENTS_FILE}" "${BACKUP_DIR}/AGENTS.${timestamp}.bak"
+  cp "${AGENTS_FILE}" "${ORIGINAL_AGENTS_FILE}"
+else
+  : > "${ORIGINAL_AGENTS_FILE}"
 fi
 if [[ -f "${MEMORY_FILE}" ]]; then
   cp "${MEMORY_FILE}" "${BACKUP_DIR}/memory_${MEMORY_DATE}.${timestamp}.bak"
 fi
 
 write_inference_agents() {
-  cat > "${AGENTS_FILE}" <<'EOF'
+  cat "${ORIGINAL_AGENTS_FILE}" > "${AGENTS_FILE}"
+  cat >> "${AGENTS_FILE}" <<'EOF'
+
 ## Persona-Bench Inference Mode
 When answering questions about the user's life, schedule, habits, relationships, or recent events, check memory for relevant messenger and calendar context first.
 
@@ -159,7 +166,9 @@ EOF
 }
 
 write_eval_agents() {
-  cat > "${AGENTS_FILE}" <<'EOF'
+  cat "${ORIGINAL_AGENTS_FILE}" > "${AGENTS_FILE}"
+  cat >> "${AGENTS_FILE}" <<'EOF'
+
 ## Persona-Bench Eval Mode
 You are grading benchmark answers against a provided ground truth.
 
