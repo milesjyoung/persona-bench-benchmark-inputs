@@ -10,12 +10,49 @@ This folder contains an instrumented OpenClaw benchmark harness for studying:
 
 It is designed to wrap the existing Persona-Bench OpenClaw pipeline without replacing it.
 
+## Recommended VM setup
+
+Install SSH and `tmux` early so you can reconnect to the VM and keep long runs alive:
+
+```bash
+sudo apt update
+sudo apt install -y openssh-server tmux
+sudo systemctl enable --now ssh
+hostname -I
+```
+
+Recommended `tmux` flow:
+
+Start a session:
+
+```bash
+tmux new -s memorybench
+```
+
+Detach and leave the run going:
+
+```text
+Ctrl+b d
+```
+
+List sessions later:
+
+```bash
+tmux ls
+```
+
+Reattach:
+
+```bash
+tmux attach -t memorybench
+```
+
 ## Files
 
 - `openclaw_trace_wrapper.py`
   - Wrapper around `openclaw`
   - Captures every OpenClaw invocation used by the benchmark pipeline
-  - Saves stdout/stderr, before/after manifests, changed-file diffs, and structured JSONL logs
+  - Saves before/after manifests, changed-file diffs, and structured JSONL logs
 
 - `run_memory_experiment.sh`
   - Top-level runner for one persona under one condition
@@ -44,7 +81,6 @@ For every OpenClaw invocation during the run:
 - duration
 - return code
 - `test_case_id` when the wrapper can extract it from the prompt
-- stdout/stderr captures
 - before/after manifests of tracked workspace/state files
 - changed files and unified diffs
 
@@ -52,16 +88,15 @@ Tracked file classes include:
 
 - `MEMORY.md`
 - daily memory files under `workspace/memory/`
-- markdown/json/toml/text files under the OpenClaw workspace
-- markdown/json/toml/text files under the OpenClaw state dir
-- any tracked path containing `memory`, `dream`, or `flush`
+- memory database files under the OpenClaw state dir
+- dream-related files under `.dreams/` or paths containing `dream`
 
 The wrapper also emits:
 
 - `memory_calls.jsonl`
   - explicit `openclaw memory ...` CLI calls
 - `flush_events.jsonl`
-  - any invocation whose argv or output appears to mention `flush`
+  - currently expected to remain empty unless explicit flush detection is added later
 
 ## What the summary computes
 
@@ -91,7 +126,6 @@ This harness can track:
 
 - explicit OpenClaw memory CLI calls
 - workspace/state file mutations
-- output text that appears to mention memory tools or flushing
 
 It cannot guarantee perfect visibility into internal tool calls that OpenClaw does not surface in CLI output or files. So the “memory access statistics” are best thought of as:
 
@@ -102,7 +136,9 @@ It cannot guarantee perfect visibility into internal tool calls that OpenClaw do
 ## Baseline run
 
 ```bash
+chmod +x ./scripts/run_openclaw_persona_pipeline.sh
 chmod +x ./memory_experiment/run_memory_experiment.sh
+tmux new -s memorybench
 
 ./memory_experiment/run_memory_experiment.sh \
   --persona alicia_gonzalez \
@@ -185,8 +221,6 @@ memory_experiment/runs/20260423_153000_alicia_gonzalez_baseline/
   flush_events.jsonl
   summary.json
   hooks/
-  stdout/
-  stderr/
   manifests/
   diffs/
   versions/

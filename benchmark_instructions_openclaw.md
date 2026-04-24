@@ -20,8 +20,11 @@ I am {persona_name}, you are OC the helpful and down to business personal agent.
 ```bash
 caffeinate -dimsu
 ```
-   - On the Ubuntu VM, disable suspend:
+   - On the Ubuntu VM, disable suspend, screen blanking, and lock:
 ```bash
+gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target

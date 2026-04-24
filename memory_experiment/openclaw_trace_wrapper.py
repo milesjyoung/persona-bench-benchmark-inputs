@@ -21,7 +21,6 @@ from pathlib import Path
 from typing import Any
 
 
-TEXT_SUFFIXES = {".md", ".txt", ".json", ".jsonl", ".toml", ".yaml", ".yml", ".log"}
 MAX_DIFF_BYTES = 2 * 1024 * 1024
 IGNORE_PARTS = {".git", "__pycache__", "node_modules", ".DS_Store"}
 TEST_CASE_PATTERN = re.compile(r"test_case_id:\s*(TC-\d+)", re.IGNORECASE)
@@ -44,8 +43,6 @@ def ensure_run_dir() -> None:
     if RUN_DIR is None:
         raise SystemExit("PB_TRACE_RUN_DIR is required for openclaw_trace_wrapper.py")
     for relative in [
-        "stdout",
-        "stderr",
         "manifests",
         "diffs",
         "versions",
@@ -73,10 +70,15 @@ def tracked_roots() -> list[tuple[str, Path]]:
 def should_track(path: Path) -> bool:
     if any(part in IGNORE_PARTS for part in path.parts):
         return False
-    if path.suffix.lower() in TEXT_SUFFIXES:
-        return True
     lower = str(path).lower()
-    return "memory" in lower or "dream" in lower or "flush" in lower
+    name = path.name.lower()
+    if name == "memory.md":
+        return True
+    if "/memory/" in lower or "\\memory\\" in lower:
+        return True
+    if "dream" in lower or ".dreams" in lower:
+        return True
+    return False
 
 
 def snapshot_files() -> dict[str, dict[str, Any]]:
@@ -149,11 +151,6 @@ def classify_command(argv: list[str]) -> tuple[str, str | None]:
         subcommand = argv[1] if len(argv) > 1 else None
         return f"memory_{subcommand or 'unknown'}", (argv[2] if len(argv) > 2 else None)
     return argv[0], None
-
-
-def detect_flush(argv: list[str], stdout_text: str, stderr_text: str) -> bool:
-    haystack = " ".join(argv).lower() + "\n" + stdout_text.lower() + "\n" + stderr_text.lower()
-    return "flush" in haystack
 
 
 def detect_memory_mentions(stdout_text: str, stderr_text: str) -> dict[str, int]:
@@ -266,13 +263,8 @@ def main() -> int:
     write_json(RUN_DIR / "manifests" / f"{invocation_id}_after.json", after_manifest)
     changed_files = compare_manifests(invocation_id, before_manifest, after_manifest)
 
-    stdout_path = RUN_DIR / "stdout" / f"{invocation_id}.stdout.txt"
-    stderr_path = RUN_DIR / "stderr" / f"{invocation_id}.stderr.txt"
-    stdout_path.write_text(stdout_text, encoding="utf-8")
-    stderr_path.write_text(stderr_text, encoding="utf-8")
-
     mentions = detect_memory_mentions(stdout_text, stderr_text)
-    flush_suspected = detect_flush(argv, stdout_text, stderr_text)
+    flush_suspected = False
 
     event = {
         "invocation_id": invocation_id,
@@ -285,8 +277,6 @@ def main() -> int:
         "memory_query": memory_query,
         "test_case_id": test_case_id,
         "returncode": process.returncode,
-        "stdout_file": str(stdout_path.relative_to(RUN_DIR)),
-        "stderr_file": str(stderr_path.relative_to(RUN_DIR)),
         "changed_file_count": len(changed_files),
         "changed_memory_file_count": sum(1 for item in changed_files if item["is_memory_file"]),
         "changed_dream_file_count": sum(1 for item in changed_files if item["is_dream_file"]),
@@ -305,8 +295,6 @@ def main() -> int:
                 "command_type": command_type,
                 "memory_query": memory_query,
                 "returncode": process.returncode,
-                "stdout_file": str(stdout_path.relative_to(RUN_DIR)),
-                "stderr_file": str(stderr_path.relative_to(RUN_DIR)),
             },
         )
 
