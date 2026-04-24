@@ -1,0 +1,422 @@
+[
+  {
+    "test_case_id": "TC-01",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies board game night at Priya’s and that friends attend, but misses biweekly frequency, specific participants (James, Marcus), types of games, and Alicia’s competitive role."
+  },
+  {
+    "test_case_id": "TC-02",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims no evidence, but ground truth clearly states Vinyasa yoga twice weekly (Mon/Wed 6:30 PM at Chico Yoga Studio with Mei). Completely misses all key facts."
+  },
+  {
+    "test_case_id": "TC-03",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of tutoring, but ground truth specifies biweekly Tuesday tutoring in math/programming with high school students. Entirely incorrect."
+  },
+  {
+    "test_case_id": "TC-04",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes hiking/outdoor activity, but misses key details: regular Saturday schedule, Chico Outdoor Club, and specific partner Tom."
+  },
+  {
+    "test_case_id": "TC-05",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Incorrectly claims no evidence. Ground truth clearly states weekly Sunday FaceTime calls with her grandmother in Colombia."
+  },
+  {
+    "test_case_id": "TC-06",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies UC Davis multilingual demo and its importance, but misses key supporting evidence such as recurring meetings, crunch-cycle workload, and detailed cross-source indicators of time commitment."
+  },
+  {
+    "test_case_id": "TC-07",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies Rosa and annual physical coordination, but lacks important specifics like paperwork reminders, lab follow-ups, route planning, and post-appointment logistics."
+  },
+  {
+    "test_case_id": "TC-08",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence, but ground truth clearly describes environmental factors (pollen, AQI, sleep) and resulting routine changes like later hikes and route adjustments."
+  },
+  {
+    "test_case_id": "TC-09",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies overlapping pressure and scope reduction, but fails to name the two obligations (grant budget and reading group prep) and misses recovery strategies like scheduling open mic."
+  },
+  {
+    "test_case_id": "TC-10",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies Colombia trip and financial planning, but misses key constraints such as reimbursement lag, budget range, and specific financial tradeoffs."
+  },
+  {
+    "test_case_id": "TC-11",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Incorrectly identifies the event as board game night. The ground truth specifies a wildflower hike and farmers market lunch with detailed preparation tasks. The answer misses the actual event and its preparation entirely."
+  },
+  {
+    "test_case_id": "TC-12",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies general deterioration in sleep and self-care, but misses key specifics such as late-night work hours (1:30–2 AM), increased coffee intake, chest tightness, and detailed behavioral patterns across calendar and messages."
+  },
+  {
+    "test_case_id": "TC-13",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims no evidence of mentoring, but ground truth clearly states involvement in Technolatinas mentoring program with structured meetings and personal motivation. Completely misses core facts."
+  },
+  {
+    "test_case_id": "TC-14",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures evolution from overwhelm to simplification and improved control, but omits key temporal details such as scheduling recovery (board game night), post-demo reflection, and emotional trajectory across multiple stages."
+  },
+  {
+    "test_case_id": "TC-15",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States insufficient evidence, but ground truth clearly describes a before-and-after shift in hiking routine due to environmental factors, including later starts and AQI checks."
+  },
+  {
+    "test_case_id": "TC-16",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly describes shift from concern to structured planning, but misses key progression details such as initial resistance, appointment-day logistics, follow-up lab work, and emotional transition to 'useful tired.'"
+  },
+  {
+    "test_case_id": "TC-17",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Accurately captures emotional shift from anxiety to clarity, but misses important triggers like reimbursement timing, bill clustering, and the explicit insight about choosing less chaotic options as part of budgeting."
+  },
+  {
+    "test_case_id": "TC-18",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly notes improved handling and earlier scope reduction, but misses key comparison details such as scheduling recovery proactively, repeated patterns ('three smaller tasks'), and explicit learning from prior crunch."
+  },
+  {
+    "test_case_id": "TC-19",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies research-oriented technical role and UC Davis collaboration, but lacks specificity about her job title, lab structure, research focus (generative models), and publication venues."
+  },
+  {
+    "test_case_id": "TC-20",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies use of social activities for stress management, but misses key breadth: yoga, hikes, FaceTime with abuela, and explicit evidence of deliberate scheduling as protection against overwork."
+  },
+  {
+    "test_case_id": "TC-21",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies some stress symptoms like poor sleep and eating habits, but misses key physical details such as chest tightness, racing thoughts, headaches, and specific coping mechanisms like yoga, painting, and social support."
+  },
+  {
+    "test_case_id": "TC-22",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly notes research career advancement and obstacles like time pressure, but misses major goals (startup, PhD), concrete steps (grant work, reading group), and structural constraints like finances and perfectionism."
+  },
+  {
+    "test_case_id": "TC-23",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes Alicia as a family coordinator, especially for her mother, but lacks depth on roles of father and brother, frequency of involvement, and nuanced relationship dynamics."
+  },
+  {
+    "test_case_id": "TC-24",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies careful financial planning via travel budgeting, but misses broader evidence such as savings goals, reimbursement handling, spending tracking, and no-credit-card-debt rule."
+  },
+  {
+    "test_case_id": "TC-25",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures general structure of work and some social activities, but misses detailed weekly schedule including yoga, tutoring, painting, hiking, FaceTime, and recurring time slots."
+  },
+  {
+    "test_case_id": "TC-26",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims limited civic engagement, but ground truth shows extensive involvement including mentoring, tutoring, writing, political engagement, and community participation."
+  },
+  {
+    "test_case_id": "TC-27",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies Priya as closest friend and mentions recurring interaction, but misses depth such as emotional support history, shared identity context, and influence on Alicia’s decisions."
+  },
+  {
+    "test_case_id": "TC-28",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Mentions multiple wellness practices, but misses key specifics such as yoga schedule, breathing exercises, AQI monitoring, painting, and physical therapy routines."
+  },
+  {
+    "test_case_id": "TC-29",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly notes decline in cooking during stress, but omits detailed contrast with elaborate cooking during stable periods and specific foods and behaviors tied to each state."
+  },
+  {
+    "test_case_id": "TC-30",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes nature as restorative, but misses its multiple roles (spiritual, career-defining, health-related) and detailed supporting evidence like AQI adaptations and life decisions tied to nature."
+  },
+  {
+    "test_case_id": "TC-31",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Incorrectly states no evidence. Ground truth clearly identifies Saturday farmers market and co-op grocery store, along with detailed spending patterns and values."
+  },
+  {
+    "test_case_id": "TC-32",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Mentions hiking, but misses key activities such as twice-weekly yoga, daily biking, soccer, and structured weekly distribution of physical activity."
+  },
+  {
+    "test_case_id": "TC-33",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies social entertainment like board games and open mics, but omits media consumption details (reading, music, TV) and broader entertainment habits."
+  },
+  {
+    "test_case_id": "TC-34",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes music as meaningful and tied to events, but misses cultural roots (cumbia/vallenato), role in painting, emotional regulation, and connection to family and identity."
+  },
+  {
+    "test_case_id": "TC-35",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies technical expertise and some boundaries, but lacks specifics such as programming languages, hardware projects, app limits, and structured digital habits."
+  },
+  {
+    "test_case_id": "TC-36",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of artistic practice, but ground truth clearly includes painting, generative art, photography, and exhibitions. Completely incorrect."
+  },
+  {
+    "test_case_id": "TC-37",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly infers Latin American/Colombian heritage, but misses extensive supporting details such as language use, traditions, religion, food, and family network."
+  },
+  {
+    "test_case_id": "TC-38",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims insufficient evidence, but ground truth clearly contrasts Diego and Priya relationships in detail, including emotional vs. sibling dynamics."
+  },
+  {
+    "test_case_id": "TC-39",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures work-centered lifestyle, but misses detailed living situation including apartment specifics, cat Luna, neighborhood, transportation, and daily anchors."
+  },
+  {
+    "test_case_id": "TC-40",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies research career choice, but omits critical details such as rejecting higher-paying job, impact on marriage, financial consequences, and connection to Chico lifestyle."
+  },
+  {
+    "test_case_id": "TC-41",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes a transition into a demanding research role and coping adaptations, but misses major life events like divorce, Camp Fire impact, career decision tradeoffs, and how these specifically manifest in current behaviors."
+  },
+  {
+    "test_case_id": "TC-42",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of environmental challenges, but ground truth clearly describes wildfire smoke, extreme heat, and pollen, along with their concrete effects on routines and health."
+  },
+  {
+    "test_case_id": "TC-43",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims no evidence about Tom, but ground truth clearly identifies him as her regular hiking partner with detailed role and context."
+  },
+  {
+    "test_case_id": "TC-44",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of online professional community, but ground truth clearly describes a Colombian scientists Discord group and its functions."
+  },
+  {
+    "test_case_id": "TC-45",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies careful, budget-constrained travel and Colombia trip, but misses broader patterns like Sacramento visits, conference travel, and multiple constraints."
+  },
+  {
+    "test_case_id": "TC-46",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly infers prioritization of meaningful work over money, but lacks key evidence such as explicit job tradeoff, salary details, and long-term financial consequences."
+  },
+  {
+    "test_case_id": "TC-47",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures general cycle of work and recovery, but misses depth such as specific recovery anchors, emotional language, and repeated structural pattern across events."
+  },
+  {
+    "test_case_id": "TC-48",
+    "score": "CORRECT",
+    "score_value": 1.0,
+    "explanation": "Accurately captures Alicia’s perfectionism and her tendency to include unnecessary complexity before learning to cut it to meet deadlines, matching the core insight of the ground truth."
+  },
+  {
+    "test_case_id": "TC-49",
+    "score": "CORRECT",
+    "score_value": 1.0,
+    "explanation": "Correctly distinguishes between proactive (scheduling social recovery, structuring work) and reactive (cutting scope under pressure) behaviors, aligning well with the ground truth."
+  },
+  {
+    "test_case_id": "TC-50",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "States insufficient evidence, but ground truth (not shown fully here) likely includes at least indirect signals. The answer is cautious but overly dismissive, missing potential inference."
+  },
+  {
+    "test_case_id": "TC-51",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly identifies use of messaging, calendar, and technical tools, but lacks depth on how she uses specific platforms (e.g., Discord, Slack, FaceTime) and structured digital workflows."
+  },
+  {
+    "test_case_id": "TC-52",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims limited evidence of political values, but ground truth includes clear civic and political engagement such as writing to representatives, mentoring, and participation in equity discussions."
+  },
+  {
+    "test_case_id": "TC-53",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of exhibition history, but ground truth explicitly mentions gallery exhibitions and plans for a solo show."
+  },
+  {
+    "test_case_id": "TC-54",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Incorrectly claims no DIY electronics work, जबकि ground truth clearly includes Raspberry Pi and Arduino-based projects."
+  },
+  {
+    "test_case_id": "TC-55",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "States no evidence of romantic life, but ground truth includes a past marriage and divorce, which is a key aspect of her romantic history even if current dating is not emphasized."
+  },
+  {
+    "test_case_id": "TC-56",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Incorrectly claims no pet, while ground truth clearly states she has a cat named Luna who is part of her daily life."
+  },
+  {
+    "test_case_id": "TC-57",
+    "score": "CORRECT",
+    "score_value": 1.0,
+    "explanation": "Correctly identifies collaboration with UC Davis on the multilingual demo and its significance, matching the core facts of the ground truth."
+  },
+  {
+    "test_case_id": "TC-58",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Correctly notes involvement in parents’ lives and coordination of logistics, but lacks broader context such as frequency, emotional dynamics, and role across multiple family members."
+  },
+  {
+    "test_case_id": "TC-59",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "States no evidence of traditional remedies, but ground truth explicitly includes herbal teas and turmeric as part of her health practices."
+  },
+  {
+    "test_case_id": "TC-60",
+    "score": "INCORRECT",
+    "score_value": 0.0,
+    "explanation": "Claims no evidence of equity/fairness engagement, but ground truth clearly includes involvement in AI bias discussions, blog writing, and related professional concerns."
+  },
+  {
+    "test_case_id": "TC-61",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies general time pressure and structured planning, but misses deeper behavioral patterns such as anticipatory planning, emotional framing, and how she balances competing priorities."
+  },
+  {
+    "test_case_id": "TC-62",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes use of routines and structure, but lacks specificity around exact routines (yoga, hiking, FaceTime, budgeting) and how consistently they anchor her schedule."
+  },
+  {
+    "test_case_id": "TC-63",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures general idea of stress-response cycles, but misses detailed triggers, physical symptoms, and named coping strategies that appear across sources."
+  },
+  {
+    "test_case_id": "TC-64",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies social support importance, but lacks depth in differentiating roles of specific individuals (Priya, Diego, family) and how each contributes uniquely."
+  },
+  {
+    "test_case_id": "TC-65",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes financial awareness, but misses structured systems like budget spreadsheet, savings goals, and reimbursement timing strategies."
+  },
+  {
+    "test_case_id": "TC-66",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies work intensity and need for recovery, but lacks specific examples such as demo crunch, grant overlap, and deliberate recovery scheduling."
+  },
+  {
+    "test_case_id": "TC-67",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Acknowledges personal growth and adaptation, but misses explicit learning patterns across D1 and D5 and how she documents lessons learned."
+  },
+  {
+    "test_case_id": "TC-68",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Recognizes balancing multiple domains, but lacks detail on how specific activities (work, family, wellness, social life) are coordinated and prioritized."
+  },
+  {
+    "test_case_id": "TC-69",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Identifies general resilience, but misses nuanced evidence such as emotional language, coping scaffolds, and structured recovery strategies."
+  },
+  {
+    "test_case_id": "TC-70",
+    "score": "PARTIAL",
+    "score_value": 0.5,
+    "explanation": "Captures overall pattern of structured, intentional living, but lacks comprehensive synthesis of identity, values, and behavior across all domains described in the ground truth."
+  }
+]

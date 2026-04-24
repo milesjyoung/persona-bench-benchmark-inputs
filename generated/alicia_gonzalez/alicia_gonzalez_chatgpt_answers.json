@@ -1,0 +1,676 @@
+{
+    "persona": "Alicia Gonzalez",
+    "persona_id": "50f90a6f17de473f9ca15f00afdedf7a",
+    "source_questions_file": "/home/user01/Desktop/persona-bench-benchmark-inputs/generated/alicia_gonzalez/alicia_gonzalez_test_questions.json",
+    "answers": [
+        {
+            "test_case_id": "TC-01",
+            "answer": "Alicia regularly attends a board game night at Priya’s on Friday evenings with Priya and friends.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 08:23 PM Board Game Night at Priya's"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-02",
+            "answer": "There is no evidence in the logs of Alicia practicing a specific type of yoga on a regular schedule.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-03",
+            "answer": "There is no evidence in the logs that Alicia volunteers as a tutor or teaches at a community venue.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-04",
+            "answer": "Alicia participates in outdoor activities like hikes, sometimes connected to events like a wildflower hike with others.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 06:15 PM Wildflower Hike + Farmers Market Lunch"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-05",
+            "answer": "There is no clear evidence of a regularly scheduled weekly international call with a specific family member.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-06",
+            "answer": "The major project was the UC Davis Multilingual Demo, which dominated her time and required careful sequencing and scope control.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 Alicia describes demo complexity and deadline pressure"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-07",
+            "answer": "Alicia helped coordinate Rosa’s annual physical by organizing logistics and turning concern into a concrete plan.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 07:05 PM Rosa Annual Physical planning"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-08",
+            "answer": "There is no clear evidence of a specific environmental disruption forcing a change to her outdoor routine in the provided logs.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-09",
+            "answer": "Alicia experienced overlapping work pressure involving project completion and ongoing research tasks, which she handled by narrowing scope and focusing on essentials.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-07 narrowing scope and removing decorative complexity"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-10",
+            "answer": "Alicia was planning a summer trip to Colombia and had to align dates and finances carefully to reduce uncertainty.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 discussion of Colombia trip planning and finances"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-11",
+            "answer": "Alicia attended a board game night at Priya’s as a reset after intense work periods, which required scheduling it in advance to ensure she actually took a break.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 08:23 PM scheduled Board Game Night to ensure recovery"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-12",
+            "answer": "During deadline weeks, Alicia notes collateral damage to sleep, meals, and home upkeep, showing deterioration in self-care routines.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 08:10 PM mentions impact on dinner, sleep, and living space"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-13",
+            "answer": "There is no clear evidence in the logs that Alicia mentors younger students through a specific program.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-14",
+            "answer": "Alicia’s approach evolved from feeling overwhelmed by hidden complexity to focusing on clean sequencing and cutting unnecessary features, leading to a calmer and more controlled mindset.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 early stress about complexity and sequencing"
+                },
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-07 gratitude for cutting decorative complexity and narrowing scope"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-15",
+            "answer": "There is insufficient evidence of a clear before-and-after shift in a consistent outdoor routine tied to environmental factors.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-16",
+            "answer": "The family moved from vague concern about Rosa’s health to a structured plan with scheduled logistics, which reduced emotional pressure and made support more sustainable.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 mentions shifting from concern to written plan for Rosa’s appointment"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-17",
+            "answer": "The shift was triggered by aligning dates and finances into a concrete plan, transforming anxiety into a sense of clarity and control, with risk becoming more manageable and defined.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 describes peace when numbers and dates aligned"
+                },
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-06 describes moving from vague risk to a clear route through the month"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-18",
+            "answer": "Compared to the earlier UC Davis crunch, Alicia later handled pressure more calmly by reducing scope earlier and prioritizing clarity over ambition, avoiding the same level of overwhelm.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 initial overwhelm during demo crunch"
+                },
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05–07 emphasis on smaller scope, cleaner routines, and calmer approach"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-19",
+            "answer": "Alicia works in research involving technical or scientific projects, likely in a collaborative academic or engineering setting, with a focus on structured problem-solving and multilingual or communication systems.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Repeated references to research culture, engineering/science work, and UC Davis Multilingual Demo"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-20",
+            "answer": "Alicia deliberately uses structured social activities like board game nights and small music events to manage stress and restore balance after intense work periods.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 08:23 PM schedules board game night as recovery"
+                },
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-08 08:45 PM describes open mics as anti-flattening ritual"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-21",
+            "answer": "Alicia experiences physical stress symptoms like disrupted sleep, poor eating habits, and general bodily strain during intense deadlines, which she manages by simplifying tasks and forcing recovery periods.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 notes sleep disruption and missed meals during deadline"
+                },
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-07 mentions simplifying workload to reduce strain"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-22",
+            "answer": "Alicia is working toward advancing her research career and building meaningful technical contributions, taking steps like completing major demos and collaborations, while facing obstacles like time pressure and cognitive overload.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "UC Davis demo work and research-related discussions across early March"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-23",
+            "answer": "Alicia plays a coordinating and supportive caregiving role in her family, helping organize logistics for her mother, while maintaining communicative but less intensive involvement with other family members.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 coordinating Rosa’s medical appointment"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-24",
+            "answer": "Alicia demonstrates careful financial management by aligning travel plans with budgets and emphasizing clarity in financial constraints before committing to decisions.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 Colombia trip planning with budget alignment"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-25",
+            "answer": "A typical week includes intense research work during weekdays, structured social time like Friday board game nights, occasional outdoor or cultural activities, and administrative or family coordination tasks.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Patterns across early March messages including work, social, and family planning"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-26",
+            "answer": "There is limited direct evidence of formal civic engagement, but Alicia participates in community-oriented and culturally meaningful activities that suggest broader social awareness.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-27",
+            "answer": "Priya appears to be Alicia’s closest friend, shown by recurring social plans, emotional openness, and shared routines like board game nights.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Repeated mentions of Priya and regular social plans like board game nights"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-28",
+            "answer": "Alicia uses multiple wellness practices including structured social time, outdoor activities, workload simplification, and deliberate scheduling of rest.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Board game night for recovery, outdoor hike mention, and workload adjustments"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-29",
+            "answer": "Alicia’s cooking habits decline during stress periods, with missed meals or reduced attention to food when deadlines intensify.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 mentions dinner and meals as collateral damage"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-30",
+            "answer": "Nature serves as both recreation and emotional reset for Alicia, providing a contrast to cognitive work and helping restore balance.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 wildflower hike and outdoor references as restorative activity"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-31",
+            "answer": "There is no clear evidence in the logs specifying where Alicia shops for groceries or detailed shopping patterns.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-32",
+            "answer": "Alicia participates in light physical activities such as hiking and walking, typically occurring on weekends or as part of social outings.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 wildflower hike and outdoor activity mention"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-33",
+            "answer": "Alicia’s entertainment habits include social activities like board games and attending small music or open mic events rather than passive media consumption.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 board game night and 2026-03-08 open mic mention"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-34",
+            "answer": "Music plays a reflective and grounding role in Alicia’s life, particularly through attending open mic events that connect her to community and identity.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-08 describes open mics as meaningful ritual"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-35",
+            "answer": "Alicia shows technical expertise through complex research work and demos, while maintaining boundaries by limiting overextension and intentionally scheduling offline recovery time.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "UC Davis demo technical complexity and deliberate scheduling of downtime"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-36",
+            "answer": "There is no clear evidence in the logs of specific artistic practices beyond attending cultural events like music performances.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-37",
+            "answer": "Alicia likely has Latin American heritage, suggested by family connections such as Rosa and her planned travel to Colombia, which reflects cultural ties.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 Colombia trip planning and family context"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-38",
+            "answer": "There is insufficient evidence to clearly compare Alicia’s relationship with her brother Diego versus her friend Priya in detail.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-39",
+            "answer": "Alicia lives in a work-centered environment where research tasks anchor her daily life, with home routines shaped by workload fluctuations and recovery needs.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Repeated mentions of work dominating schedule and affecting home routines"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-40",
+            "answer": "Alicia chose a research-focused career path after graduation, prioritizing intellectually meaningful work despite the pressures it introduces.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Ongoing commitment to research projects and academic-style collaborations"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-41",
+            "answer": "Alicia has undergone transitions into a demanding research role, with effects visible in her structured coping strategies and fluctuating stress-management routines.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Patterns of adapting to research pressure and workload cycles across March"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-42",
+            "answer": "There is insufficient explicit evidence of specific environmental challenges affecting Alicia’s region or daily routines.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-43",
+            "answer": "There is no clear evidence in the logs identifying Tom’s role or his connection to Alicia’s activities.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-44",
+            "answer": "There is no clear evidence describing Alicia’s participation in an online professional community with a shared background.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-45",
+            "answer": "Alicia’s travel patterns are infrequent and carefully planned, constrained by finances and scheduling, as shown in her deliberate approach to the Colombia trip.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-04 Colombia trip planning with financial and scheduling alignment"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-46",
+            "answer": "Alicia appears to prioritize meaningful research work over financial optimization, as seen in her continued commitment to demanding projects despite stress and limited financial flexibility.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Focus on research impact and demo completion alongside careful budgeting"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-47",
+            "answer": "The logs show cycles of intense work leading to exhaustion, followed by deliberate recovery through social activities and reduced workload.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Deadline stress followed by scheduling board game night and rest"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-48",
+            "answer": "Alicia’s perfectionism appears in her initial attempts to include complex or ‘decorative’ features, which she later learns to cut to meet deadlines.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-07 reflection on removing unnecessary complexity"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-49",
+            "answer": "Her proactive practices include scheduling social time and structuring work, while reactive responses include cutting scope and simplifying tasks during crises.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Board game scheduling vs. last-minute scope reduction during crunch"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-50",
+            "answer": "There is insufficient evidence to determine Alicia’s specific news consumption habits or trust in information sources.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-51",
+            "answer": "Alicia regularly uses messaging for coordination, calendar scheduling for structuring commitments, and technical tools for research and demos.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Frequent coordination messages about work, social plans, and logistics"
+                },
+                {
+                    "source": "calendar",
+                    "reference": "Scheduled events such as board game night and work-related commitments"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-52",
+            "answer": "There is limited explicit evidence of Alicia’s political values or direct political actions in the logs.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-53",
+            "answer": "There is no clear evidence that Alicia has exhibited artwork at a gallery or has an exhibition history.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-54",
+            "answer": "There is no evidence in the logs of Alicia building a DIY electronics project at home.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-55",
+            "answer": "There is no clear evidence about Alicia’s romantic life in the logs.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-56",
+            "answer": "There is no evidence indicating that Alicia has a pet or describing a pet’s role in her life.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-57",
+            "answer": "Alicia collaborates with researchers at another university through the UC Davis multilingual demo project, which required coordination and significant effort.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Multiple mentions of UC Davis collaboration and demo preparation"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-58",
+            "answer": "Alicia maintains active involvement in her parents’ lives by coordinating logistics like medical appointments and staying in communication about family matters.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "2026-03-05 coordination of Rosa’s medical appointment"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-59",
+            "answer": "There is no clear evidence showing Alicia using traditional remedies alongside Western medicine.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-60",
+            "answer": "There is insufficient evidence indicating Alicia is actively addressing equity or fairness concerns in her professional field.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-61",
+            "answer": "There is no clear evidence that painting plays a role in Alicia’s mental health management or routine.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-62",
+            "answer": "There is insufficient evidence to infer details about Alicia’s personal style or appearance.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-63",
+            "answer": "Alicia manages loneliness by maintaining structured social rituals like board game nights and attending community events.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Board game nights and open mic events used as regular social anchors"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-64",
+            "answer": "Alicia uses systematic tracking through structured planning, aligning schedules, and organizing tasks to manage work and personal life.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "References to planning, aligning dates and budgets, and structuring tasks"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-65",
+            "answer": "Alicia’s bilingualism is suggested through her multilingual research work and cultural connections such as her Colombia trip planning.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "UC Davis multilingual demo and Colombia-related context"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-66",
+            "answer": "There is no clear evidence describing Alicia’s relationship with alcohol or any self-regulation patterns related to it.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-67",
+            "answer": "Alicia likely comes from a family with Latin American roots and has progressed into a research-oriented professional environment, suggesting upward educational mobility.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Family references and Colombia trip alongside advanced research work"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-68",
+            "answer": "There is no clear evidence in the logs describing a severe emotional episode six months ago or its recovery process.",
+            "confidence": "low",
+            "evidence": []
+        },
+        {
+            "test_case_id": "TC-69",
+            "answer": "Alicia’s crunch cycles show a pattern of overcommitment followed by stress, then adaptive correction through simplification and recovery routines.",
+            "confidence": "high",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Repeated patterns of intense work, stress, and later scope reduction and recovery"
+                }
+            ]
+        },
+        {
+            "test_case_id": "TC-70",
+            "answer": "Alicia is a driven, intellectually curious, and structured individual who values meaningful work and relationships, with strengths in adaptability and planning, but vulnerabilities around stress, overcommitment, and self-care during high-pressure periods.",
+            "confidence": "medium",
+            "evidence": [
+                {
+                    "source": "messenger",
+                    "reference": "Consistent patterns of high ambition, structured coping, and stress-related tradeoffs across March logs"
+                }
+            ]
+        }
+    ]
+}
