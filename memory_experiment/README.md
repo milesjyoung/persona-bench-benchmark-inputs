@@ -12,7 +12,46 @@ It is designed to wrap the existing Persona-Bench OpenClaw pipeline without repl
 
 ## Recommended VM setup
 
-Install SSH and `tmux` early so you can reconnect to the VM and keep long runs alive:
+1. Clone the repo on the Ubuntu VM:
+```bash
+git clone https://github.com/milesjyoung/persona-bench-benchmark-inputs.git
+cd persona-bench-benchmark-inputs
+chmod +x ./scripts/run_openclaw_persona_pipeline.sh
+chmod +x ./memory_experiment/run_memory_experiment.sh
+```
+
+2. Install and configure OpenClaw:
+   - Follow [OpenClaw install](https://docs.openclaw.ai/install)
+   - Complete the quickstart and provider/API key setup
+   - You need a model provider and embeddings configured
+   - Skip the extra onboarding beyond basic setup
+   - If the TUI asks for a wake-up prompt, use the following configure whatever else with what makes sense to you (minimal):
+```text
+I am {persona_name}, you are OC the helpful and down to business personal agent.
+```
+
+3. Prepare the VM and host so long runs do not stop:
+   - On the Mac host, keep the machine awake:
+```bash
+caffeinate -dimsu
+```
+   - On the Ubuntu VM, disable suspend, screen blanking, and lock:
+```bash
+gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+   - Run the benchmark inside `tmux` on the VM:
+```bash
+sudo apt install -y tmux
+tmux new -s bench
+```
+
+
+4. Install SSH and `tmux` early so you can reconnect to the VM and keep long runs alive:
 
 ```bash
 sudo apt update
@@ -136,8 +175,6 @@ It cannot guarantee perfect visibility into internal tool calls that OpenClaw do
 ## Baseline run
 
 ```bash
-chmod +x ./scripts/run_openclaw_persona_pipeline.sh
-chmod +x ./memory_experiment/run_memory_experiment.sh
 tmux new -s memorybench
 
 ./memory_experiment/run_memory_experiment.sh \
@@ -157,14 +194,12 @@ This will:
 
 ## Dreaming-enabled run
 
-Use the same harness but pass commands that enable and disable dreaming in your OpenClaw environment:
+Use the same harness but pass in dreaming flag. Make sure to configure dreaming first:
 
 ```bash
 ./memory_experiment/run_memory_experiment.sh \
   --persona alicia_gonzalez \
-  --condition dreaming \
-  --enable-dreaming-cmd '<your command to enable dreaming>' \
-  --disable-dreaming-cmd '<your command to disable dreaming>'
+  --condition dreaming
 ```
 
 The harness does not invent a dreaming command for you because that may vary with your OpenClaw setup. Instead, it gives you hook points and tracks the resulting file changes.
