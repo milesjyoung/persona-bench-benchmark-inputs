@@ -20,6 +20,8 @@ Options:
   --memory-date YYYY-MM-DD       Daily memory file name
                                  Default: today
   --start-from TC-XX             Resume question loop at a test case
+  --question-session-mode MODE   Question runner session mode: isolated|shared
+                                 Default: isolated
   --resume                       Resume answers/eval files
   --skip-questions               Skip benchmark answer generation
   --skip-eval                    Skip eval loop
@@ -41,6 +43,7 @@ STATE_DIR="${HOME}/.openclaw"
 OPENCLAW_BIN="openclaw"
 MEMORY_DATE="$(date +%F)"
 START_FROM=""
+QUESTION_SESSION_MODE="isolated"
 RESUME=0
 SKIP_QUESTIONS=0
 SKIP_EVAL=0
@@ -88,6 +91,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --start-from)
       START_FROM="${2:-}"
+      shift 2
+      ;;
+    --question-session-mode)
+      QUESTION_SESSION_MODE="${2:-}"
       shift 2
       ;;
     --resume)
@@ -183,6 +190,7 @@ PIPELINE_ARGS=(
   --workspace-dir "${WORKSPACE_DIR}"
   --memory-date "${MEMORY_DATE}"
   --openclaw-bin "${TRACE_WRAPPER}"
+  --question-session-mode "${QUESTION_SESSION_MODE}"
 )
 if [[ "${RESUME}" -eq 1 ]]; then
   PIPELINE_ARGS+=(--resume)

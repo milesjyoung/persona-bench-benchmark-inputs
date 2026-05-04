@@ -134,6 +134,8 @@ The wrapper also emits:
 
 - `memory_calls.jsonl`
   - explicit `openclaw memory ...` CLI calls
+- `compaction_events.jsonl`
+  - invocations where auto-compaction was directly observed from session metadata or transcript entries
 - `flush_events.jsonl`
   - currently expected to remain empty unless explicit flush detection is added later
 
@@ -144,6 +146,9 @@ The wrapper also emits:
 - total invocation count
 - command counts by type
 - explicit memory CLI call count
+- auto-compaction trigger count
+- test cases during which auto-compaction was observed
+- overall token totals from OpenClaw usage metadata
 - suspected flush event count
 - memory change event count
 - dream change event count
@@ -253,6 +258,7 @@ memory_experiment/runs/20260423_153000_alicia_gonzalez_baseline/
   run_metadata.json
   invocations.jsonl
   memory_calls.jsonl
+  compaction_events.jsonl
   flush_events.jsonl
   summary.json
   hooks/

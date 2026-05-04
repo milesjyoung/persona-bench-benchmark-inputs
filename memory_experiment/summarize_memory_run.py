@@ -40,6 +40,7 @@ def main() -> None:
     invocations = load_jsonl(run_dir / "invocations.jsonl")
     memory_calls = load_jsonl(run_dir / "memory_calls.jsonl")
     flush_events = load_jsonl(run_dir / "flush_events.jsonl")
+    compaction_events = load_jsonl(run_dir / "compaction_events.jsonl")
 
     command_counts = Counter(item.get("command_type", "unknown") for item in invocations)
     changed_files_counter = Counter()
@@ -48,15 +49,31 @@ def main() -> None:
     dream_change_events = 0
     memory_md_change_events = 0
     daily_memory_change_events = 0
+    total_usage_tokens = 0
+    total_last_call_tokens = 0
+    models = Counter()
 
     for item in invocations:
         test_case_id = item.get("test_case_id")
         changed_files = item.get("changed_files") or []
+        session_observation = item.get("session_observation") or {}
+        usage = item.get("usage") or {}
+        last_call_usage = item.get("last_call_usage") or {}
 
         if any(change.get("is_memory_file") for change in changed_files):
             memory_change_events += 1
         if any(change.get("is_dream_file") for change in changed_files):
             dream_change_events += 1
+        try:
+            total_usage_tokens += int(usage.get("total", 0) or 0)
+        except (TypeError, ValueError):
+            pass
+        try:
+            total_last_call_tokens += int(last_call_usage.get("total", 0) or 0)
+        except (TypeError, ValueError):
+            pass
+        if item.get("model_name"):
+            models[item["model_name"]] += 1
 
         for change in changed_files:
             path = change.get("path")
@@ -79,9 +96,12 @@ def main() -> None:
                 "memory_change_events": 0,
                 "dream_change_events": 0,
                 "flush_suspected_count": 0,
+                "auto_compaction_observed_count": 0,
+                "memory_flush_observed_count": 0,
                 "changed_files": [],
                 "memory_search_calls": 0,
                 "memory_index_calls": 0,
+                "compaction_counts_before_after": [],
             },
         )
         question_entry["invocation_ids"].append(item.get("invocation_id"))
@@ -90,6 +110,17 @@ def main() -> None:
         question_entry["memory_change_events"] += 1 if any(change.get("is_memory_file") for change in changed_files) else 0
         question_entry["dream_change_events"] += 1 if any(change.get("is_dream_file") for change in changed_files) else 0
         question_entry["changed_files"].extend(change.get("path") for change in changed_files if change.get("path"))
+        question_entry["auto_compaction_observed_count"] += 1 if session_observation.get("auto_compaction_observed") else 0
+        question_entry["memory_flush_observed_count"] += 1 if session_observation.get("memory_flush_observed") else 0
+        if session_observation.get("auto_compaction_observed"):
+            question_entry["compaction_counts_before_after"].append(
+                {
+                    "before": session_observation.get("compaction_count_before"),
+                    "after": session_observation.get("compaction_count_after"),
+                    "transcript_before": session_observation.get("transcript_compaction_entries_before"),
+                    "transcript_after": session_observation.get("transcript_compaction_entries_after"),
+                }
+            )
 
     for item in memory_calls:
         test_case_id = next(
@@ -107,15 +138,30 @@ def main() -> None:
                 "memory_change_events": 0,
                 "dream_change_events": 0,
                 "flush_suspected_count": 0,
+                "auto_compaction_observed_count": 0,
+                "memory_flush_observed_count": 0,
                 "changed_files": [],
                 "memory_search_calls": 0,
                 "memory_index_calls": 0,
+                "compaction_counts_before_after": [],
             },
         )
         if item.get("command_type") == "memory_search":
             question_entry["memory_search_calls"] += 1
         if item.get("command_type") == "memory_index":
             question_entry["memory_index_calls"] += 1
+
+    compaction_test_cases = [item.get("test_case_id") for item in compaction_events if item.get("test_case_id")]
+    unique_compaction_test_cases = sorted(set(compaction_test_cases))
+    compaction_events_by_question = Counter(compaction_test_cases)
+    memory_flush_test_cases = sorted(
+        set(
+            item.get("test_case_id")
+            for item in compaction_events
+            if item.get("test_case_id") and item.get("memory_flush_observed")
+        )
+    )
+    dominant_model = models.most_common(1)[0][0] if models else None
 
     summary = {
         "run_dir": str(run_dir),
@@ -130,6 +176,14 @@ def main() -> None:
         "unique_test_cases_observed": len(per_question),
         "memory_change_event_rate": pct(memory_change_events, len(invocations)),
         "dream_change_event_rate": pct(dream_change_events, len(invocations)),
+        "overall_token_count_usage_total": total_usage_tokens,
+        "overall_token_count_last_call_total": total_last_call_tokens,
+        "model_names_observed": dict(models),
+        "dominant_model_name": dominant_model,
+        "auto_compaction_trigger_count": len(compaction_events),
+        "auto_compaction_test_cases": unique_compaction_test_cases,
+        "auto_compaction_events_by_test_case": dict(compaction_events_by_question),
+        "memory_flush_observed_test_cases": memory_flush_test_cases,
         "top_changed_files": changed_files_counter.most_common(25),
         "question_trace": sorted(per_question.values(), key=lambda item: item["test_case_id"]),
     }

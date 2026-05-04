@@ -153,6 +153,150 @@ def classify_command(argv: list[str]) -> tuple[str, str | None]:
     return argv[0], None
 
 
+def extract_session_id(argv: list[str]) -> str | None:
+    for index, arg in enumerate(argv):
+        if arg == "--session-id" and index + 1 < len(argv):
+            return argv[index + 1]
+    return None
+
+
+def extract_openclaw_json(stdout_text: str, stderr_text: str) -> dict[str, Any] | None:
+    if stdout_text.strip():
+        try:
+            parsed = json.loads(stdout_text)
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            pass
+
+    stderr_lines = stderr_text.splitlines()
+    for index, line in enumerate(stderr_lines):
+        if line.strip() == "{":
+            candidate = "\n".join(stderr_lines[index:])
+            try:
+                parsed = json.loads(candidate)
+                if isinstance(parsed, dict):
+                    return parsed
+            except json.JSONDecodeError:
+                break
+
+    return None
+
+
+def session_store_path() -> Path | None:
+    if STATE_DIR is None:
+        return None
+    path = STATE_DIR / "agents" / "main" / "sessions" / "sessions.json"
+    return path if path.exists() else None
+
+
+def session_transcript_path(session_id: str) -> Path | None:
+    if STATE_DIR is None:
+        return None
+    path = STATE_DIR / "agents" / "main" / "sessions" / f"{session_id}.jsonl"
+    return path if path.exists() else path
+
+
+def find_session_record(node: Any, session_id: str) -> dict[str, Any] | None:
+    if isinstance(node, dict):
+        node_session_id = node.get("sessionId") or node.get("id") or node.get("session_id")
+        if node_session_id == session_id:
+            return node
+        for value in node.values():
+            found = find_session_record(value, session_id)
+            if found is not None:
+                return found
+    elif isinstance(node, list):
+        for item in node:
+            found = find_session_record(item, session_id)
+            if found is not None:
+                return found
+    return None
+
+
+def count_transcript_compactions(path: Path | None) -> int:
+    if path is None or not path.exists():
+        return 0
+    count = 0
+    try:
+        for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(obj, dict) and obj.get("type") == "compaction":
+                count += 1
+    except OSError:
+        return 0
+    return count
+
+
+def get_session_snapshot(session_id: str | None) -> dict[str, Any] | None:
+    if not session_id:
+        return None
+
+    snapshot: dict[str, Any] = {
+        "session_id": session_id,
+        "compaction_count": None,
+        "memory_flush_at": None,
+        "memory_flush_compaction_count": None,
+        "transcript_compaction_entries": 0,
+    }
+
+    store = session_store_path()
+    if store and store.exists():
+        try:
+            payload = json.loads(store.read_text(encoding="utf-8"))
+            record = find_session_record(payload, session_id)
+            if isinstance(record, dict):
+                snapshot["compaction_count"] = record.get("compactionCount")
+                snapshot["memory_flush_at"] = record.get("memoryFlushAt")
+                snapshot["memory_flush_compaction_count"] = record.get("memoryFlushCompactionCount")
+        except (OSError, json.JSONDecodeError):
+            pass
+
+    transcript = session_transcript_path(session_id)
+    snapshot["transcript_compaction_entries"] = count_transcript_compactions(transcript)
+    snapshot["transcript_path"] = str(transcript) if transcript is not None else None
+    return snapshot
+
+
+def compare_session_snapshots(before: dict[str, Any] | None, after: dict[str, Any] | None) -> dict[str, Any]:
+    if before is None and after is None:
+        return {
+            "auto_compaction_observed": False,
+            "memory_flush_observed": False,
+        }
+
+    before = before or {}
+    after = after or {}
+    before_compactions = before.get("compaction_count") or 0
+    after_compactions = after.get("compaction_count") or 0
+    before_transcript = before.get("transcript_compaction_entries") or 0
+    after_transcript = after.get("transcript_compaction_entries") or 0
+    before_flush_count = before.get("memory_flush_compaction_count") or 0
+    after_flush_count = after.get("memory_flush_compaction_count") or 0
+    before_flush_at = before.get("memory_flush_at")
+    after_flush_at = after.get("memory_flush_at")
+
+    return {
+        "auto_compaction_observed": (after_compactions > before_compactions) or (after_transcript > before_transcript),
+        "memory_flush_observed": (after_flush_count > before_flush_count) or (before_flush_at != after_flush_at and after_flush_at is not None),
+        "compaction_count_before": before.get("compaction_count"),
+        "compaction_count_after": after.get("compaction_count"),
+        "memory_flush_at_before": before.get("memory_flush_at"),
+        "memory_flush_at_after": after.get("memory_flush_at"),
+        "memory_flush_compaction_count_before": before.get("memory_flush_compaction_count"),
+        "memory_flush_compaction_count_after": after.get("memory_flush_compaction_count"),
+        "transcript_compaction_entries_before": before.get("transcript_compaction_entries"),
+        "transcript_compaction_entries_after": after.get("transcript_compaction_entries"),
+        "transcript_path": after.get("transcript_path") or before.get("transcript_path"),
+    }
+
+
 def detect_memory_mentions(stdout_text: str, stderr_text: str) -> dict[str, int]:
     combined = (stdout_text + "\n" + stderr_text).lower()
     return {
@@ -246,6 +390,8 @@ def main() -> int:
 
     command_type, memory_query = classify_command(argv)
     test_case_id = extract_test_case_id(argv)
+    session_id = extract_session_id(argv)
+    session_before = get_session_snapshot(session_id)
     process = subprocess.run(
         [REAL_OPENCLAW_BIN, *argv],
         capture_output=True,
@@ -262,9 +408,15 @@ def main() -> int:
     after_manifest = snapshot_files()
     write_json(RUN_DIR / "manifests" / f"{invocation_id}_after.json", after_manifest)
     changed_files = compare_manifests(invocation_id, before_manifest, after_manifest)
+    session_after = get_session_snapshot(session_id)
+    session_observation = compare_session_snapshots(session_before, session_after)
 
     mentions = detect_memory_mentions(stdout_text, stderr_text)
     flush_suspected = False
+    raw_response = extract_openclaw_json(stdout_text, stderr_text)
+    agent_meta = raw_response.get("meta", {}).get("agentMeta", {}) if isinstance(raw_response, dict) else {}
+    usage = agent_meta.get("usage", {}) if isinstance(agent_meta, dict) else {}
+    last_call_usage = agent_meta.get("lastCallUsage", {}) if isinstance(agent_meta, dict) else {}
 
     event = {
         "invocation_id": invocation_id,
@@ -276,13 +428,20 @@ def main() -> int:
         "command_type": command_type,
         "memory_query": memory_query,
         "test_case_id": test_case_id,
+        "session_id": session_id,
         "returncode": process.returncode,
+        "model_provider": agent_meta.get("provider"),
+        "model_name": agent_meta.get("model"),
+        "prompt_tokens": agent_meta.get("promptTokens"),
+        "usage": usage,
+        "last_call_usage": last_call_usage,
         "changed_file_count": len(changed_files),
         "changed_memory_file_count": sum(1 for item in changed_files if item["is_memory_file"]),
         "changed_dream_file_count": sum(1 for item in changed_files if item["is_dream_file"]),
         "flush_suspected": flush_suspected,
         "memory_mentions": mentions,
         "changed_files": changed_files,
+        "session_observation": session_observation,
     }
     append_jsonl(RUN_DIR / "invocations.jsonl", event)
 
@@ -308,6 +467,20 @@ def main() -> int:
                 "test_case_id": test_case_id,
                 "returncode": process.returncode,
                 "changed_files": changed_files,
+            },
+        )
+
+    if session_observation.get("auto_compaction_observed"):
+        append_jsonl(
+            RUN_DIR / "compaction_events.jsonl",
+            {
+                "invocation_id": invocation_id,
+                "timestamp": started_at,
+                "test_case_id": test_case_id,
+                "session_id": session_id,
+                **session_observation,
+                "prompt_tokens": agent_meta.get("promptTokens"),
+                "last_call_usage": last_call_usage,
             },
         )
 

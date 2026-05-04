@@ -15,6 +15,8 @@ Options:
   --memory-date YYYY-MM-DD       Daily memory filename to write
                                  Default: today's date
   --start-from TC-XX             Start question run from this test case
+  --question-session-mode MODE   Question runner session mode: isolated|shared
+                                 Default: isolated
   --resume                       Resume existing answers/eval files
   --skip-questions               Skip answer generation
   --skip-eval                    Skip evaluation
@@ -34,6 +36,7 @@ PERSONA=""
 WORKSPACE_DIR="${HOME}/.openclaw/workspace"
 MEMORY_DATE="$(date +%F)"
 START_FROM=""
+QUESTION_SESSION_MODE="isolated"
 RESUME=0
 SKIP_QUESTIONS=0
 SKIP_EVAL=0
@@ -56,6 +59,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --start-from)
       START_FROM="${2:-}"
+      shift 2
+      ;;
+    --question-session-mode)
+      QUESTION_SESSION_MODE="${2:-}"
       shift 2
       ;;
     --resume)
@@ -202,6 +209,7 @@ QUESTION_ARGS=(
   --questions-file "${QUESTIONS_FILE}"
   --output-file "${ANSWERS_FILE}"
   --openclaw-bin "${OPENCLAW_BIN}"
+  --session-mode "${QUESTION_SESSION_MODE}"
 )
 if [[ "${RESUME}" -eq 1 ]]; then
   QUESTION_ARGS+=(--resume)

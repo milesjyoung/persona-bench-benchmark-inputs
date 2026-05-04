@@ -52,6 +52,16 @@ def parse_args() -> argparse.Namespace:
         help="Start asking from this test_case_id (for example: TC-49).",
     )
     parser.add_argument(
+        "--session-mode",
+        choices=["isolated", "shared"],
+        default="isolated",
+        help="Use a fresh session per question or a single shared session for the whole run. Default: isolated.",
+    )
+    parser.add_argument(
+        "--session-id",
+        help="Optional explicit session ID to use when --session-mode shared.",
+    )
+    parser.add_argument(
         "--indent",
         type=int,
         default=2,
@@ -78,12 +88,12 @@ def build_message(test_case: dict[str, Any]) -> str:
     )
 
 
-def run_openclaw(openclaw_bin: str, message: str) -> dict[str, Any]:
+def run_openclaw(openclaw_bin: str, message: str, session_id: str) -> dict[str, Any]:
     cmd = [
         openclaw_bin, 
         "agent", 
         "--agent", "main", # main -- must specify which agent
-        "--session-id", str(uuid.uuid4()), # different session for each question reduce answer leakage
+        "--session-id", session_id,
         "--message", 
         message, 
         "--json"
@@ -216,6 +226,7 @@ def main() -> None:
     completed_ids = set()
     answers: list[dict[str, Any]] = []
     started = args.start_from is None
+    shared_session_id = args.session_id or str(uuid.uuid4())
 
     if existing:
         answers = list(existing.get("answers") or [])
@@ -241,8 +252,9 @@ def main() -> None:
             flush=True,
         )
         message = build_message(test_case)
+        session_id = shared_session_id if args.session_mode == "shared" else str(uuid.uuid4())
         try:
-            raw_result = run_openclaw(args.openclaw_bin, message)
+            raw_result = run_openclaw(args.openclaw_bin, message, session_id)
             parsed_answer = extract_model_payload(raw_result, test_case_id)
         except Exception as exc:
             print(f"Error for {test_case_id}: {exc}", file=sys.stderr, flush=True)
