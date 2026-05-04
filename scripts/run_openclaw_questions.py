@@ -18,6 +18,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any
 import uuid
@@ -122,6 +123,63 @@ def run_openclaw(openclaw_bin: str, message: str, session_id: str) -> dict[str, 
         "OpenClaw did not return parseable JSON output.\n"
         f"STDOUT:\n{result.stdout}\n"
         f"STDERR:\n{result.stderr}"
+    )
+
+
+def get_session_record(openclaw_bin: str, session_id: str) -> dict[str, Any] | None:
+    result = subprocess.run(
+        [openclaw_bin, "sessions", "--json"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return None
+    try:
+        payload = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return None
+    sessions = payload.get("sessions")
+    if not isinstance(sessions, list):
+        return None
+    for session in sessions:
+        if isinstance(session, dict) and session.get("sessionId") == session_id:
+            return session
+    return None
+
+
+def wait_for_shared_session_idle(
+    openclaw_bin: str,
+    session_id: str,
+    timeout_s: float = 30.0,
+    poll_interval_s: float = 1.0,
+    quiet_polls: int = 2,
+) -> None:
+    deadline = time.time() + timeout_s
+    last_updated_at: int | None = None
+    stable_polls = 0
+
+    while time.time() < deadline:
+        session = get_session_record(openclaw_bin, session_id)
+        if session is None:
+            stable_polls = 0
+            last_updated_at = None
+            time.sleep(poll_interval_s)
+            continue
+
+        updated_at = session.get("updatedAt")
+        if isinstance(updated_at, int) and updated_at == last_updated_at:
+            stable_polls += 1
+            if stable_polls >= quiet_polls:
+                return
+        else:
+            stable_polls = 0
+            last_updated_at = updated_at if isinstance(updated_at, int) else None
+
+        time.sleep(poll_interval_s)
+
+    raise RuntimeError(
+        f"Timed out waiting for shared session {session_id} to go idle."
     )
 
 
@@ -268,6 +326,8 @@ def main() -> None:
             "answers": answers,
         }
         atomic_write_json(output_file, payload, args.indent)
+        if args.session_mode == "shared":
+            wait_for_shared_session_idle(args.openclaw_bin, shared_session_id)
 
     if args.start_from is not None and not started:
         raise SystemExit(f"start-from test case not found: {args.start_from}")

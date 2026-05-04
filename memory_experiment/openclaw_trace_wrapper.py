@@ -197,21 +197,23 @@ def session_transcript_path(session_id: str) -> Path | None:
     return path if path.exists() else path
 
 
-def find_session_record(node: Any, session_id: str) -> dict[str, Any] | None:
+def find_session_record(node: Any, session_id: str, path: str = "") -> tuple[dict[str, Any] | None, str | None]:
     if isinstance(node, dict):
         node_session_id = node.get("sessionId") or node.get("id") or node.get("session_id")
         if node_session_id == session_id:
-            return node
-        for value in node.values():
-            found = find_session_record(value, session_id)
+            return node, path or None
+        for key, value in node.items():
+            child_path = f"{path}.{key}" if path else str(key)
+            found, found_path = find_session_record(value, session_id, child_path)
             if found is not None:
-                return found
+                return found, found_path
     elif isinstance(node, list):
-        for item in node:
-            found = find_session_record(item, session_id)
+        for index, item in enumerate(node):
+            child_path = f"{path}[{index}]"
+            found, found_path = find_session_record(item, session_id, child_path)
             if found is not None:
-                return found
-    return None
+                return found, found_path
+    return None, None
 
 
 def count_transcript_compactions(path: Path | None) -> int:
@@ -234,27 +236,57 @@ def count_transcript_compactions(path: Path | None) -> int:
     return count
 
 
+def coerce_int(value: Any) -> int | None:
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def first_present(mapping: dict[str, Any], keys: list[str]) -> Any:
+    for key in keys:
+        if key in mapping:
+            return mapping.get(key)
+    return None
+
+
 def get_session_snapshot(session_id: str | None) -> dict[str, Any] | None:
     if not session_id:
         return None
 
     snapshot: dict[str, Any] = {
         "session_id": session_id,
-        "compaction_count": None,
+        "session_store_key": None,
+        "compaction_count": 0,
         "memory_flush_at": None,
-        "memory_flush_compaction_count": None,
+        "memory_flush_compaction_count": 0,
         "transcript_compaction_entries": 0,
+        "input_tokens": None,
+        "output_tokens": None,
+        "total_tokens": None,
+        "context_tokens": None,
+        "compaction_checkpoint": None,
     }
 
     store = session_store_path()
     if store and store.exists():
         try:
             payload = json.loads(store.read_text(encoding="utf-8"))
-            record = find_session_record(payload, session_id)
+            record, record_path = find_session_record(payload, session_id)
             if isinstance(record, dict):
-                snapshot["compaction_count"] = record.get("compactionCount")
+                snapshot["session_store_key"] = record_path
+                snapshot["compaction_count"] = coerce_int(record.get("compactionCount")) or 0
                 snapshot["memory_flush_at"] = record.get("memoryFlushAt")
-                snapshot["memory_flush_compaction_count"] = record.get("memoryFlushCompactionCount")
+                snapshot["memory_flush_compaction_count"] = coerce_int(record.get("memoryFlushCompactionCount")) or 0
+                snapshot["input_tokens"] = coerce_int(first_present(record, ["inputTokens", "inputTokenCount"]))
+                snapshot["output_tokens"] = coerce_int(first_present(record, ["outputTokens", "outputTokenCount"]))
+                snapshot["total_tokens"] = coerce_int(first_present(record, ["totalTokens", "totalTokenCount"]))
+                snapshot["context_tokens"] = coerce_int(first_present(record, ["contextTokens", "contextTokenCount"]))
+                checkpoint = record.get("compactionCheckpoint")
+                if isinstance(checkpoint, dict):
+                    snapshot["compaction_checkpoint"] = checkpoint
         except (OSError, json.JSONDecodeError):
             pass
 
@@ -281,6 +313,12 @@ def compare_session_snapshots(before: dict[str, Any] | None, after: dict[str, An
     after_flush_count = after.get("memory_flush_compaction_count") or 0
     before_flush_at = before.get("memory_flush_at")
     after_flush_at = after.get("memory_flush_at")
+    checkpoint = after.get("compaction_checkpoint") or before.get("compaction_checkpoint") or {}
+    checkpoint_token_count_before = None
+    checkpoint_summary = None
+    if isinstance(checkpoint, dict):
+        checkpoint_token_count_before = coerce_int(first_present(checkpoint, ["tokenCountBefore", "tokensBefore", "totalTokenCountBefore"]))
+        checkpoint_summary = checkpoint.get("summary")
 
     return {
         "auto_compaction_observed": (after_compactions > before_compactions) or (after_transcript > before_transcript),
@@ -294,6 +332,18 @@ def compare_session_snapshots(before: dict[str, Any] | None, after: dict[str, An
         "transcript_compaction_entries_before": before.get("transcript_compaction_entries"),
         "transcript_compaction_entries_after": after.get("transcript_compaction_entries"),
         "transcript_path": after.get("transcript_path") or before.get("transcript_path"),
+        "session_store_key_before": before.get("session_store_key"),
+        "session_store_key_after": after.get("session_store_key"),
+        "input_tokens_before": before.get("input_tokens"),
+        "input_tokens_after": after.get("input_tokens"),
+        "output_tokens_before": before.get("output_tokens"),
+        "output_tokens_after": after.get("output_tokens"),
+        "total_tokens_before": before.get("total_tokens"),
+        "total_tokens_after": after.get("total_tokens"),
+        "context_tokens_before": before.get("context_tokens"),
+        "context_tokens_after": after.get("context_tokens"),
+        "compaction_checkpoint_token_count_before": checkpoint_token_count_before,
+        "compaction_checkpoint_summary": checkpoint_summary,
     }
 
 
@@ -304,6 +354,19 @@ def detect_memory_mentions(stdout_text: str, stderr_text: str) -> dict[str, int]
         "memory_get_mentions": combined.count("memory_get"),
         "memory_index_mentions": combined.count("memory index"),
     }
+
+
+def extract_message_arg(argv: list[str]) -> str | None:
+    for index, arg in enumerate(argv):
+        if arg == "--message" and index + 1 < len(argv):
+            return argv[index + 1]
+    return None
+
+
+def whitespace_token_estimate(text: str | None) -> int:
+    if not text:
+        return 0
+    return len(text.split())
 
 
 def write_diff(invocation_id: str, rel_path: str, before_path: Path | None, after_path: Path | None) -> str | None:
@@ -391,6 +454,7 @@ def main() -> int:
     command_type, memory_query = classify_command(argv)
     test_case_id = extract_test_case_id(argv)
     session_id = extract_session_id(argv)
+    message_arg = extract_message_arg(argv)
     session_before = get_session_snapshot(session_id)
     process = subprocess.run(
         [REAL_OPENCLAW_BIN, *argv],
@@ -417,6 +481,11 @@ def main() -> int:
     agent_meta = raw_response.get("meta", {}).get("agentMeta", {}) if isinstance(raw_response, dict) else {}
     usage = agent_meta.get("usage", {}) if isinstance(agent_meta, dict) else {}
     last_call_usage = agent_meta.get("lastCallUsage", {}) if isinstance(agent_meta, dict) else {}
+    assistant_text = None
+    if isinstance(raw_response, dict) and isinstance(raw_response.get("payloads"), list):
+        payloads = raw_response.get("payloads") or []
+        if payloads and isinstance(payloads[0], dict):
+            assistant_text = payloads[0].get("text")
 
     event = {
         "invocation_id": invocation_id,
@@ -435,6 +504,8 @@ def main() -> int:
         "prompt_tokens": agent_meta.get("promptTokens"),
         "usage": usage,
         "last_call_usage": last_call_usage,
+        "estimated_input_tokens_whitespace": whitespace_token_estimate(message_arg),
+        "estimated_output_tokens_whitespace": whitespace_token_estimate(assistant_text),
         "changed_file_count": len(changed_files),
         "changed_memory_file_count": sum(1 for item in changed_files if item["is_memory_file"]),
         "changed_dream_file_count": sum(1 for item in changed_files if item["is_dream_file"]),

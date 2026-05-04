@@ -51,7 +51,19 @@ def main() -> None:
     daily_memory_change_events = 0
     total_usage_tokens = 0
     total_last_call_tokens = 0
+    total_estimated_input_tokens_whitespace = 0
+    total_estimated_output_tokens_whitespace = 0
     models = Counter()
+    session_ids_observed: set[str] = set()
+    session_store_keys_observed: set[str] = set()
+    max_input_tokens = 0
+    max_output_tokens = 0
+    max_total_tokens = 0
+    max_context_tokens = 0
+    final_input_tokens = None
+    final_output_tokens = None
+    final_total_tokens = None
+    final_context_tokens = None
 
     for item in invocations:
         test_case_id = item.get("test_case_id")
@@ -74,6 +86,45 @@ def main() -> None:
             pass
         if item.get("model_name"):
             models[item["model_name"]] += 1
+        if item.get("session_id"):
+            session_ids_observed.add(item["session_id"])
+        session_observation = item.get("session_observation") or {}
+        for key_name in ["session_store_key_before", "session_store_key_after"]:
+            value = session_observation.get(key_name)
+            if value:
+                session_store_keys_observed.add(value)
+        try:
+            total_estimated_input_tokens_whitespace += int(item.get("estimated_input_tokens_whitespace", 0) or 0)
+        except (TypeError, ValueError):
+            pass
+        try:
+            total_estimated_output_tokens_whitespace += int(item.get("estimated_output_tokens_whitespace", 0) or 0)
+        except (TypeError, ValueError):
+            pass
+        for value, assign in [
+            (session_observation.get("input_tokens_after"), "input"),
+            (session_observation.get("output_tokens_after"), "output"),
+            (session_observation.get("total_tokens_after"), "total"),
+            (session_observation.get("context_tokens_after"), "context"),
+        ]:
+            if value is None:
+                continue
+            try:
+                num = int(value)
+            except (TypeError, ValueError):
+                continue
+            if assign == "input":
+                max_input_tokens = max(max_input_tokens, num)
+                final_input_tokens = num
+            elif assign == "output":
+                max_output_tokens = max(max_output_tokens, num)
+                final_output_tokens = num
+            elif assign == "total":
+                max_total_tokens = max(max_total_tokens, num)
+                final_total_tokens = num
+            elif assign == "context":
+                max_context_tokens = max(max_context_tokens, num)
+                final_context_tokens = num
 
         for change in changed_files:
             path = change.get("path")
@@ -102,6 +153,7 @@ def main() -> None:
                 "memory_search_calls": 0,
                 "memory_index_calls": 0,
                 "compaction_counts_before_after": [],
+                "session_token_observations": [],
             },
         )
         question_entry["invocation_ids"].append(item.get("invocation_id"))
@@ -119,8 +171,17 @@ def main() -> None:
                     "after": session_observation.get("compaction_count_after"),
                     "transcript_before": session_observation.get("transcript_compaction_entries_before"),
                     "transcript_after": session_observation.get("transcript_compaction_entries_after"),
+                    "checkpoint_token_count_before": session_observation.get("compaction_checkpoint_token_count_before"),
                 }
             )
+        question_entry["session_token_observations"].append(
+            {
+                "input_tokens_after": session_observation.get("input_tokens_after"),
+                "output_tokens_after": session_observation.get("output_tokens_after"),
+                "total_tokens_after": session_observation.get("total_tokens_after"),
+                "context_tokens_after": session_observation.get("context_tokens_after"),
+            }
+        )
 
     for item in memory_calls:
         test_case_id = next(
@@ -162,6 +223,25 @@ def main() -> None:
         )
     )
     dominant_model = models.most_common(1)[0][0] if models else None
+    compaction_checkpoint_token_values = [
+        item.get("compaction_checkpoint_token_count_before")
+        for item in compaction_events
+        if item.get("compaction_checkpoint_token_count_before") is not None
+    ]
+    compaction_checkpoint_summaries = [
+        {
+            "test_case_id": item.get("test_case_id"),
+            "token_count_before": item.get("compaction_checkpoint_token_count_before"),
+            "summary": item.get("compaction_checkpoint_summary"),
+        }
+        for item in compaction_events
+        if item.get("compaction_checkpoint_summary")
+    ]
+    overall_benchmark_token_count = None
+    if final_input_tokens is not None and final_output_tokens is not None:
+        overall_benchmark_token_count = final_input_tokens + final_output_tokens
+    elif max_total_tokens:
+        overall_benchmark_token_count = max_total_tokens
 
     summary = {
         "run_dir": str(run_dir),
@@ -178,12 +258,30 @@ def main() -> None:
         "dream_change_event_rate": pct(dream_change_events, len(invocations)),
         "overall_token_count_usage_total": total_usage_tokens,
         "overall_token_count_last_call_total": total_last_call_tokens,
+        "overall_estimated_input_tokens_whitespace": total_estimated_input_tokens_whitespace,
+        "overall_estimated_output_tokens_whitespace": total_estimated_output_tokens_whitespace,
+        "overall_estimated_token_count_whitespace": (
+            total_estimated_input_tokens_whitespace + total_estimated_output_tokens_whitespace
+        ),
+        "overall_benchmark_token_count": overall_benchmark_token_count,
+        "final_session_input_tokens": final_input_tokens,
+        "final_session_output_tokens": final_output_tokens,
+        "final_session_total_tokens": final_total_tokens,
+        "final_session_context_tokens": final_context_tokens,
+        "max_observed_input_tokens": max_input_tokens,
+        "max_observed_output_tokens": max_output_tokens,
+        "max_observed_total_tokens": max_total_tokens,
+        "max_observed_context_tokens": max_context_tokens,
         "model_names_observed": dict(models),
         "dominant_model_name": dominant_model,
+        "session_ids_observed": sorted(session_ids_observed),
+        "session_store_keys_observed": sorted(session_store_keys_observed),
         "auto_compaction_trigger_count": len(compaction_events),
         "auto_compaction_test_cases": unique_compaction_test_cases,
         "auto_compaction_events_by_test_case": dict(compaction_events_by_question),
         "memory_flush_observed_test_cases": memory_flush_test_cases,
+        "compaction_checkpoint_token_values": compaction_checkpoint_token_values,
+        "compaction_checkpoint_summaries": compaction_checkpoint_summaries,
         "top_changed_files": changed_files_counter.most_common(25),
         "question_trace": sorted(per_question.values(), key=lambda item: item["test_case_id"]),
     }

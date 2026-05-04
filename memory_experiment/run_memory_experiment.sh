@@ -22,6 +22,7 @@ Options:
   --start-from TC-XX             Resume question loop at a test case
   --question-session-mode MODE   Question runner session mode: isolated|shared
                                  Default: isolated
+  --compaction-reserve-tokens N  Increase reserve tokens to trigger auto-compaction earlier
   --resume                       Resume answers/eval files
   --skip-questions               Skip benchmark answer generation
   --skip-eval                    Skip eval loop
@@ -44,6 +45,7 @@ OPENCLAW_BIN="openclaw"
 MEMORY_DATE="$(date +%F)"
 START_FROM=""
 QUESTION_SESSION_MODE="isolated"
+COMPACTION_RESERVE_TOKENS=""
 RESUME=0
 SKIP_QUESTIONS=0
 SKIP_EVAL=0
@@ -97,6 +99,10 @@ while [[ $# -gt 0 ]]; do
       QUESTION_SESSION_MODE="${2:-}"
       shift 2
       ;;
+    --compaction-reserve-tokens)
+      COMPACTION_RESERVE_TOKENS="${2:-}"
+      shift 2
+      ;;
     --resume)
       RESUME=1
       shift
@@ -146,6 +152,8 @@ mkdir -p "${RUN_DIR}/hooks"
 PIPELINE_SCRIPT="${REPO_ROOT}/scripts/run_openclaw_persona_pipeline.sh"
 TRACE_WRAPPER="${REPO_ROOT}/memory_experiment/openclaw_trace_wrapper.py"
 SUMMARY_SCRIPT="${REPO_ROOT}/memory_experiment/summarize_memory_run.py"
+OPENCLAW_CONFIG="${STATE_DIR}/openclaw.json"
+CONFIG_BACKUP="${RUN_DIR}/hooks/openclaw.json.before-run"
 
 for required in "${PIPELINE_SCRIPT}" "${TRACE_WRAPPER}" "${SUMMARY_SCRIPT}"; do
   if [[ ! -f "${required}" ]]; then
@@ -163,6 +171,7 @@ cat > "${RUN_DIR}/run_metadata.json" <<EOF
   "state_dir": "${STATE_DIR}",
   "openclaw_bin": "${OPENCLAW_BIN}",
   "memory_date": "${MEMORY_DATE}",
+  "compaction_reserve_tokens": $(json_string_or_null "${COMPACTION_RESERVE_TOKENS}"),
   "resume": ${RESUME},
   "start_from": $(json_string_or_null "${START_FROM}"),
   "skip_questions": ${SKIP_QUESTIONS},
@@ -183,6 +192,38 @@ run_hook() {
   echo "Running hook: ${label}"
   bash -lc "${command}" >"${stdout_file}" 2>"${stderr_file}"
 }
+
+if [[ -f "${OPENCLAW_CONFIG}" ]]; then
+  cp "${OPENCLAW_CONFIG}" "${CONFIG_BACKUP}"
+fi
+
+restore_config() {
+  if [[ -f "${CONFIG_BACKUP}" ]]; then
+    cp "${CONFIG_BACKUP}" "${OPENCLAW_CONFIG}"
+  fi
+}
+
+trap restore_config EXIT
+
+if [[ -n "${COMPACTION_RESERVE_TOKENS}" ]]; then
+  echo "Setting compaction reserveTokens to ${COMPACTION_RESERVE_TOKENS}"
+  python3 - "${OPENCLAW_CONFIG}" "${COMPACTION_RESERVE_TOKENS}" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+config_path = Path(sys.argv[1])
+reserve_tokens = int(sys.argv[2])
+data = json.loads(config_path.read_text())
+
+agents = data.setdefault("agents", {})
+defaults = agents.setdefault("defaults", {})
+compaction = defaults.setdefault("compaction", {})
+compaction["reserveTokens"] = reserve_tokens
+
+config_path.write_text(json.dumps(data, indent=2) + "\n")
+PY
+fi
 
 PIPELINE_ARGS=(
   "${PIPELINE_SCRIPT}"

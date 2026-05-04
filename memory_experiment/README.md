@@ -148,7 +148,9 @@ The wrapper also emits:
 - explicit memory CLI call count
 - auto-compaction trigger count
 - test cases during which auto-compaction was observed
-- overall token totals from OpenClaw usage metadata
+- overall benchmark token count
+- final/max observed session token counters
+- compaction checkpoint token counts and summaries
 - suspected flush event count
 - memory change event count
 - dream change event count
@@ -229,6 +231,18 @@ Resume from a specific test case:
   --resume \
   --start-from TC-49
 ```
+
+Trigger compaction earlier by increasing reserve tokens:
+
+```bash
+./memory_experiment/run_memory_experiment.sh \
+  --persona alicia_gonzalez \
+  --condition baseline \
+  --question-session-mode shared \
+  --compaction-reserve-tokens 60000
+```
+
+Higher `reserveTokens` means OpenClaw compacts sooner, because it leaves more headroom in the context window.
 
 Skip eval:
 
