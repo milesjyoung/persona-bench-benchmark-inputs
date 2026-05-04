@@ -34,6 +34,24 @@ def pct(numerator: int, denominator: int) -> float:
     return 0.0 if denominator == 0 else round((numerator / denominator) * 100.0, 2)
 
 
+def cumulative_from_resets(values: list[int | None]) -> int | None:
+    seen_any = False
+    cumulative = 0
+    previous = None
+    for value in values:
+        if value is None:
+            continue
+        seen_any = True
+        if previous is None:
+            cumulative += value
+        elif value >= previous:
+            cumulative += value - previous
+        else:
+            cumulative += value
+        previous = value
+    return cumulative if seen_any else None
+
+
 def main() -> None:
     args = parse_args()
     run_dir = args.run_dir.resolve()
@@ -64,6 +82,9 @@ def main() -> None:
     final_output_tokens = None
     final_total_tokens = None
     final_context_tokens = None
+    total_after_series: list[int | None] = []
+    input_after_series: list[int | None] = []
+    output_after_series: list[int | None] = []
 
     for item in invocations:
         test_case_id = item.get("test_case_id")
@@ -125,6 +146,9 @@ def main() -> None:
             elif assign == "context":
                 max_context_tokens = max(max_context_tokens, num)
                 final_context_tokens = num
+        input_after_series.append(session_observation.get("input_tokens_after"))
+        output_after_series.append(session_observation.get("output_tokens_after"))
+        total_after_series.append(session_observation.get("total_tokens_after"))
 
         for change in changed_files:
             path = change.get("path")
@@ -132,7 +156,7 @@ def main() -> None:
                 changed_files_counter[path] += 1
             if path and path.lower().endswith("memory.md"):
                 memory_md_change_events += 1
-            if path and "/memory/" in path.lower():
+            if change.get("is_daily_memory_file"):
                 daily_memory_change_events += 1
 
         if not test_case_id:
@@ -172,6 +196,7 @@ def main() -> None:
                     "transcript_before": session_observation.get("transcript_compaction_entries_before"),
                     "transcript_after": session_observation.get("transcript_compaction_entries_after"),
                     "checkpoint_token_count_before": session_observation.get("compaction_checkpoint_token_count_before"),
+                    "checkpoint": session_observation.get("compaction_checkpoint"),
                 }
             )
         question_entry["session_token_observations"].append(
@@ -237,11 +262,15 @@ def main() -> None:
         for item in compaction_events
         if item.get("compaction_checkpoint_summary")
     ]
-    overall_benchmark_token_count = None
-    if final_input_tokens is not None and final_output_tokens is not None:
-        overall_benchmark_token_count = final_input_tokens + final_output_tokens
-    elif max_total_tokens:
-        overall_benchmark_token_count = max_total_tokens
+    cumulative_session_input_tokens = cumulative_from_resets(input_after_series)
+    cumulative_session_output_tokens = cumulative_from_resets(output_after_series)
+    cumulative_session_total_tokens = cumulative_from_resets(total_after_series)
+    overall_benchmark_token_count = cumulative_session_total_tokens
+    if overall_benchmark_token_count is None:
+        if final_input_tokens is not None and final_output_tokens is not None:
+            overall_benchmark_token_count = final_input_tokens + final_output_tokens
+        elif max_total_tokens:
+            overall_benchmark_token_count = max_total_tokens
 
     summary = {
         "run_dir": str(run_dir),
@@ -264,6 +293,9 @@ def main() -> None:
             total_estimated_input_tokens_whitespace + total_estimated_output_tokens_whitespace
         ),
         "overall_benchmark_token_count": overall_benchmark_token_count,
+        "cumulative_session_input_tokens": cumulative_session_input_tokens,
+        "cumulative_session_output_tokens": cumulative_session_output_tokens,
+        "cumulative_session_total_tokens": cumulative_session_total_tokens,
         "final_session_input_tokens": final_input_tokens,
         "final_session_output_tokens": final_output_tokens,
         "final_session_total_tokens": final_total_tokens,

@@ -24,6 +24,7 @@ from typing import Any
 MAX_DIFF_BYTES = 2 * 1024 * 1024
 IGNORE_PARTS = {".git", "__pycache__", "node_modules", ".DS_Store"}
 TEST_CASE_PATTERN = re.compile(r"test_case_id:\s*(TC-\d+)", re.IGNORECASE)
+DAILY_MEMORY_PATTERN = re.compile(r"(^|[\\/])memory[\\/]\d{4}-\d{2}-\d{2}\.md$", re.IGNORECASE)
 
 
 def getenv_path(name: str) -> Path | None:
@@ -121,6 +122,8 @@ def classify_path(rel_path: str) -> dict[str, bool]:
         "is_memory_file": "/memory/" in lower or name == "memory.md",
         "is_dream_file": "dream" in lower,
         "is_flush_related": "flush" in lower,
+        "is_daily_memory_file": bool(DAILY_MEMORY_PATTERN.search(rel_path)),
+        "is_long_term_memory_file": name == "memory.md",
     }
 
 
@@ -180,6 +183,28 @@ def extract_openclaw_json(stdout_text: str, stderr_text: str) -> dict[str, Any] 
             except json.JSONDecodeError:
                 break
 
+    return None
+
+
+def extract_assistant_text(raw_response: dict[str, Any] | None) -> str | None:
+    if not isinstance(raw_response, dict):
+        return None
+    if isinstance(raw_response.get("assistant"), dict):
+        content = raw_response["assistant"].get("content")
+        if isinstance(content, str):
+            return content
+    if isinstance(raw_response.get("message"), dict):
+        content = raw_response["message"].get("content")
+        if isinstance(content, str):
+            return content
+    content = raw_response.get("content")
+    if isinstance(content, str):
+        return content
+    payloads = raw_response.get("payloads")
+    if isinstance(payloads, list) and payloads and isinstance(payloads[0], dict):
+        text = payloads[0].get("text")
+        if isinstance(text, str):
+            return text
     return None
 
 
@@ -317,7 +342,18 @@ def compare_session_snapshots(before: dict[str, Any] | None, after: dict[str, An
     checkpoint_token_count_before = None
     checkpoint_summary = None
     if isinstance(checkpoint, dict):
-        checkpoint_token_count_before = coerce_int(first_present(checkpoint, ["tokenCountBefore", "tokensBefore", "totalTokenCountBefore"]))
+        checkpoint_token_count_before = coerce_int(
+            first_present(
+                checkpoint,
+                [
+                    "tokenCountBefore",
+                    "tokensBefore",
+                    "totalTokenCountBefore",
+                    "totalTokensBefore",
+                    "inputTokensBefore",
+                ],
+            )
+        )
         checkpoint_summary = checkpoint.get("summary")
 
     return {
@@ -344,6 +380,7 @@ def compare_session_snapshots(before: dict[str, Any] | None, after: dict[str, An
         "context_tokens_after": after.get("context_tokens"),
         "compaction_checkpoint_token_count_before": checkpoint_token_count_before,
         "compaction_checkpoint_summary": checkpoint_summary,
+        "compaction_checkpoint": checkpoint if isinstance(checkpoint, dict) else None,
     }
 
 
@@ -481,11 +518,7 @@ def main() -> int:
     agent_meta = raw_response.get("meta", {}).get("agentMeta", {}) if isinstance(raw_response, dict) else {}
     usage = agent_meta.get("usage", {}) if isinstance(agent_meta, dict) else {}
     last_call_usage = agent_meta.get("lastCallUsage", {}) if isinstance(agent_meta, dict) else {}
-    assistant_text = None
-    if isinstance(raw_response, dict) and isinstance(raw_response.get("payloads"), list):
-        payloads = raw_response.get("payloads") or []
-        if payloads and isinstance(payloads[0], dict):
-            assistant_text = payloads[0].get("text")
+    assistant_text = extract_assistant_text(raw_response)
 
     event = {
         "invocation_id": invocation_id,
